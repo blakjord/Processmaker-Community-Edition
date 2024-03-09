@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="ProcessMaker_Server_Sizing.html" />
+<link rel="shortlink" href="../node/261.html" />
+<title>2.0 - Server Sizing | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"3_B43Rej-qLwEYmbVgKU2vWDSpJ6H7HlBG6foxcMTXg","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-261 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="ProcessMaker_Server_Sizing.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-4_EYv9EUNV23quQpsaD28ZN8Obvh1NUYUUk5ww83UUo" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.0 - Server Sizing</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.8</a></li><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.7</a></li><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.6</a></li><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.5</a></li><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.4</a></li><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.3</a></li><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.2</a></li><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.1</a></li><li><a href="../3.2/ProcessMaker_Server_Sizing.html" class="">3.0</a></li><li><a  class="active-version">2.0</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.0 - Server Sizing" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMaker_Server_Sizing.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.0 - Server Sizing 1/5</option><option value="40">Give 2.0 - Server Sizing 2/5</option><option value="60" selected="selected">Give 2.0 - Server Sizing 3/5</option><option value="80">Give 2.0 - Server Sizing 4/5</option><option value="100">Give 2.0 - Server Sizing 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-9pfelWMzjE2P3srGgPssfZXab9c7-enqlxIhjShakGc" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="ProcessMaker_Server_Sizing.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="ProcessMaker_Server_Sizing.html#Overview">Overview</a></li>
+<li class="toc"><a href="ProcessMaker_Server_Sizing.html#General_Guidelines_for_Server_Sizing">General Guidelines for Server Sizing</a></li>
+<li class="toc"><a href="ProcessMaker_Server_Sizing.html#Calculating_Hardware_Requirements">Calculating Hardware Requirements</a></li>
+<ol class="toc">
+<li class="toc"><a href="ProcessMaker_Server_Sizing.html#Level_1:_Small_Business">Level 1: Small Business</a></li>
+<li class="toc"><a href="ProcessMaker_Server_Sizing.html#Level_2:_Medium_Sized_Business">Level 2: Medium Sized Business</a></li>
+<li class="toc"><a href="ProcessMaker_Server_Sizing.html#Level_3:_Enterprise">Level 3: Enterprise</a></li>
+<li class="toc"><a href="ProcessMaker_Server_Sizing.html#Level_4:_Large_Enterprise">Level 4: Large Enterprise</a></li>
+</ol>
+<li class="toc"><a href="ProcessMaker_Server_Sizing.html#Additional_notes">Additional notes</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>ProcessMaker is a flexible web-based application whose use is designed to accommodate both small-scale implementations for a single department and large-scale deployments for organizations with thousands of users. Large-scale deployments, however, require careful planning and an adequate setup to accommodate the processing, bandwidth and storage needs of the system.</p>
+
+<h2><span id="General_Guidelines_for_Server_Sizing">General Guidelines for Server Sizing</span></h2>
+<p>The key to any sizing projects is to determine and understand some guidelines and types of workloads involved. Check the following statements which will allow you to evaluate accurately your system requirements:</p>
+<p><strong>Process Capability and Memory</strong></p>
+<ul>
+<li><strong>Number of estimated cases</strong> to be created per day. It's important to have an estimated number because this will affect the performance of your ProcessMaker installation.</li>
+<li>Consider the <strong>total number of nominal users</strong> which are expected to be using ProcessMaker.</li>
+<li>Complexity of templates, applications and components. So consider the <strong>number and size of documents</strong> which will be generated to also consider the disk space that should be allotted.</li>
+<li>The amount and the speed of the RAM on the server is more important than its processor. Large scale deployments will hit the RAM limits faster than the CPU limits.</li></ul>
+<p><strong>Network Speed</strong></p>
+<ul>
+<li>Network Latency</li>
+<li>Ensure that your router and Internet bandwidth supports your expected incoming and outgoing traffic.</li>
+</ul>
+<p><strong>I/O performance</strong></p>
+<ul>
+<li>With large-scale deployments, it is always better to use multiple application servers and a separate database server.</li>
+</ul>
+
+<h2><span id="Calculating_Hardware_Requirements">Calculating Hardware Requirements</span></h2>
+<p>The sections below provide guidance on how to calculate hardware requirements, taking various considerations into account. The selection criteria used for each level may vary according to the needs of each company. Following a brief explanation of each level will be explained, so read them carefully to analyze and apply the level which will correspond to your System Requirements.</p>
+<p>Each level was divided in priorities, from <strong>Low priority</strong>, in which companies with little data volume and users will apply to <strong>High priority</strong> for companies with large volumes of data. Those priorities should be considered according to the number of cases, it means that a priority will be applied according to the number of cases and nominal users.</p>
+<p><strong>How do users know which level must be applied</strong></p>
+<p>For example, consider having 200 users of which 120 of them will initiate cases and generate 200 Kb of documents for each case. In a month the total will be:</p>
+<ul>
+<li><strong>Cases created:</strong> <tt>3600</tt></li>
+<li><strong>Total Weight (generated documents) expressed in MB:</strong> <tt>23.4</tt></li>
+</ul>
+<p>According to levels, explained below, this example will be considered to be on a <i>Level 1</i>, with <i>High Priority</i>. Planning in a future, first analyze if business will have an exponential growth, to consider a Level 2, with Medium priority, only if users exceed in number (more than 500 users) and do not exceed the 1000 users. If the company plans to grow over 1000 users, consider applying level 3, and so.</p>
+<p>Similarly, the growth rate depends on each company planning, if it will consider a monthly or annual growth.</p>
+
+<h3><span id="Level_1:_Small_Business">Level 1: Small Business</span></h3>
+<table style="font-size: 12.6999998092651px; font-family: sans-serif; line-height: 19.0499992370605px; border-bottom-color: rgb(95, 158, 239);" cellpadding="5" cellspacing="0"><tbody><tr><th colspan="3" style="color: white; background-image: initial; background-color: rgb(18, 66, 130);">Hardware Levels</th><th style="color: white; background-image: initial; background-color: rgb(18, 66, 130);">Representative graphic</th></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">LEVEL 1</td><td colspan="2" style="border: 1px solid rgb(95, 158, 239); background: rgb(179, 207, 239);">ProcessMaker + Apache + Mysql in the same Server</td><td rowspan="10" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);"><img alt="" src="../sites/default/files/Level1Graphic.png" height="280" width="200"></td></tr><tr><td colspan="3" style="color: white; text-align: center; height: 14px; font-weight: bold; background: rgb(18, 66, 130);">Sizing Criteria</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Workload (New cases per day)</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">0 - 200</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Nominal Users</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">2 - 500</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Application Space Requirement</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">1GB - 100GB</td></tr><tr><td colspan="3" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(36, 101, 181);">&nbsp;</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">RAM</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">CPU Cores (2.6 GHz - 3GHz)</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">Low</td><td style="border: 1px solid rgb(95, 158, 239);">4GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">2</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">Medium</td><td style="border: 1px solid rgb(95, 158, 239);">12 GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">2</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">High</td><td style="border: 1px solid rgb(95, 158, 239);">24 GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">4+</td></tr><tr><td colspan="3" style="border: 1px solid rgb(95, 158, 239); background: rgb(36, 101, 181);">&nbsp;</td><td colspan="4" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(36, 101, 181);">&nbsp;</td></tr></tbody></table><p><strong>Example:</strong></p><p>For organizations which expect to have roughly 2-500 users and generate approximately 150 new cases daily, we recommend the following minimum configuration:</p><ul><li><strong>Server #1:</strong>&nbsp;<i>ProcessMaker/Apache/MySQL:</i>&nbsp;(Processor Dual Core 2.6 GHz - 3GHz) with 12 GB of RAM.</li></ul><p>On this example, numbers will vary according to the Enterprise size and documents generated.</p>
+
+<h3><span id="Level_2:_Medium_Sized_Business">Level 2: Medium Sized Business</span></h3><p>Use the following chart as a reference to check if the Sizing Criteria apply to your Enterprise. Note the graphic should be taken also as a reference, because according to the implementation of each company it will be vary:</p><table style="font-size: 12.6999998092651px; font-family: sans-serif; line-height: 19.0499992370605px; border-bottom-color: rgb(95, 158, 239);" cellpadding="5" cellspacing="0"><tbody><tr><th colspan="3" style="color: white; background-image: initial; background-color: rgb(18, 66, 130);">Hardware Levels</th><th style="color: white; background-image: initial; background-color: rgb(18, 66, 130);">Representative graphic</th></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">LEVEL 2</td><td colspan="2" style="border: 1px solid rgb(95, 158, 239); background: rgb(179, 207, 239);">One Server for ProcessMaker/Apache and another Server for Mysql</td><td rowspan="13" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);"><img alt="" src="../sites/default/files/Level2Graphic.png" height="408" width="250"></td></tr><tr><td colspan="3" style="color: white; text-align: center; height: 14px; font-weight: bold; background: rgb(18, 66, 130);">Sizing Criteria</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Workload (New cases per day)</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">200-1000</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Nominal Users</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">500-2000</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Application Space Requirement</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">100GB - 500GB</td></tr><tr><td colspan="3" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); height: 15px; background: rgb(36, 101, 181);">&nbsp;</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">RAM</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">CPU Cores (2.6 GHz - 3GHz)</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">Low</td><td style="border: 1px solid rgb(95, 158, 239);">Apache 4GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">4</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">MYSQL 4GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">4</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">Medium</td><td style="border: 1px solid rgb(95, 158, 239);">Apache 8GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">8</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">MYSQL 8GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">8</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">High</td><td style="border: 1px solid rgb(95, 158, 239);">Apache 16GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">16</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">MYSQL 32GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">16</td></tr><tr><td colspan="3" style="border: 1px solid rgb(95, 158, 239); background: rgb(36, 101, 181);">&nbsp;</td><td colspan="4" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(36, 101, 181);">&nbsp;</td></tr></tbody></table><p><strong>Example:</strong></p><p>For organizations planning on supporting approximately 1,000 nominal users and expecting to run more than 200 cases but less than 1,000 cases daily, we recommend the following minimum configuration:</p><ul><li><strong>Server #1:</strong>&nbsp;ProcessMaker/Apache: (Processor Core 2.6 GHz - 3GHz) with 16 GB of RAM</li><li><strong>Server #2:</strong>&nbsp;MySQL: (Processor Core 2.6 GHz - 3GHz) with 32GB of RAM</li><li><strong>Server #3</strong>&nbsp;(Optional): Hot Standby ProcessMaker/Apache: (Processor Core 2.6 GHz - 3GHz) with 16 GB of RAM</li></ul><p>On this example, disk space was not considered because it will depend on the amount of documents generated on each case.</p><p>This configuration also adds a higher level of security than our Level 1 Configuration. It gives the company protection by having a hot standby ProcessMaker server and it also provides for a separate database server which can be placed behind the firewall and will be easier to maintain and much more secure from the standpoint of IT Security.</p><p>If you plan on adding more than 1,000 users or more than 800 cases daily, then you should consider our suggestion for a level 3 configuration with 3 servers: 1) ProcessMaker/Apache, 2) MySQL, and 3) <a href="Enterprise_Search.html">Enterprise Search Server</a> with Solr.</p>
+
+<h3><span id="Level_3:_Enterprise">Level 3: Enterprise</span></h3>
+<p>Use the following chart as a reference to check if the Sizing Criteria apply to your Enterprise. Note the graphic should be taken also as a reference, because according to the implementation of each company it will be vary:</p>
+
+<table style="font-size: 12.6999998092651px; font-family: sans-serif; line-height: 19.0499992370605px; border-bottom-color: rgb(95, 158, 239);" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<th colspan="3" style="color: white; background-image: initial; background-color: rgb(18, 66, 130);">Hardware Levels</th>
+<th style="color: white; background-image: initial; background-color: rgb(18, 66, 130);">Representative graphic</th>
+</tr>
+<tr>
+<td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">LEVEL 3</td>
+<td colspan="2" style="border: 1px solid rgb(95, 158, 239); background: rgb(179, 207, 239);">Solr Enterprise Server Apache server + Mysql Server + Solr server</td>
+<td rowspan="16" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);"><img alt="" src="../sites/default/files/Level3Graphic.png" height="426" width="300"><p style="margin-top: 0.4em; margin-bottom: 0.5em; line-height: 1.5em;">&nbsp;</p></td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Workload (Newly created cases per day)</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">1,000 - 4,000</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Nominal Users</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">2,000 - 4,000</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">Application Space Requirement</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">500GB - 5T</td></tr><tr><td colspan="3" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); height: 15px; background: rgb(36, 101, 181);">&nbsp;</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">RAM</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); font-weight: bold; background: rgb(179, 207, 239);">CPU Cores (2.6 GHz - 3GHz)</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">Low</td><td style="border: 1px solid rgb(95, 158, 239);">Apache 8GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">4</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">MySql 8GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">4</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">Solr 8GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">4</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">Medium</td><td style="border: 1px solid rgb(95, 158, 239);">Apache 16GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">8</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">MySql 32GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">12</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">Solr 16GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">8</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">High</td><td style="border: 1px solid rgb(95, 158, 239);">Apache 32GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">12</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">MySql 64GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">24</td></tr><tr><td style="border: 1px solid rgb(95, 158, 239); height: 15px;">&nbsp;</td><td style="border: 1px solid rgb(95, 158, 239);">Solr 32GB</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239);">12</td></tr><tr><td colspan="3" style="border: 1px solid rgb(95, 158, 239); background: rgb(36, 101, 181);">&nbsp;</td><td colspan="4" style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(36, 101, 181);">&nbsp;</td></tr></tbody></table><p><br>For an organization which is planning to support roughly 1,000-4,000 users with approximately 4,000 new cases daily, we recommend the following configuration:</p><ul><li><strong>Server #1:</strong>&nbsp;ProcessMaker/Apache: (Core 2.6 GHz - 3GHz) with 32 GB of RAM.</li><li><strong>Server #2:</strong>&nbsp;Hot Standby ProcessMaker/Apache: (Core 2.6 GHz - 3GHz) with 32 GB of RAM.</li><li><strong>Server #3: MySQL:</strong>&nbsp;(Core 2.6 GHz - 3GHz) with 64GB of RAM.</li><li><strong>Server #4: Solr Search:</strong>&nbsp;(Core 2.6 GHz - 3GHz) 32GB of RAM.</li></ul><p>On this example, disk space was not considered because it will depend on the amount of documents generated on each case.</p>
+<p><strong><font color="red">Note:</font></strong> Check this <a href="Solr_Implementation_in_ProcessMaker.html">documentation</a> to learn more about Solr Implementation.</p>
+
+<h3><span id="Level_4:_Large_Enterprise">Level 4: Large Enterprise</span></h3>
+<p>An organization which plans on having more than 4,000 nominal users, plans to generate more than 4,000 new cases daily, or plans to have significant amounts of database queries will need to consider implementing a more robust infrastructure. For example, financial institutions that handle large volumes of data should consider this level of configuration.</p><table style="font-size: 12.6999998092651px; font-family: sans-serif; line-height: 19.0499992370605px; border-bottom-color: rgb(95, 158, 239);" cellpadding="5" cellspacing="0"><tbody><tr><th colspan="3" style="color: white; background-image: initial; background-color: rgb(18, 66, 130);">Hardware Level</th></tr><tr><td style="border: 1px solid rgb(95, 158, 239); color: white; font-weight: bold; height: 15px; background: rgb(36, 101, 181);">LEVEL 4</td><td style="border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-color: rgb(95, 158, 239); background: rgb(179, 207, 239);">PM Load balancing + DB Clustering + Solr Clustering</td></tr><tr><td colspan="2" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(95, 158, 239); font-weight: bold; text-align: center; background: rgb(179, 207, 239);">To be defined in a consultancy and exhaustive analysis</td></tr></tbody></table><p>In this case we recommend load balanced application servers to help distribute workload across multiple servers or a server cluster, network links, central processing units, disk drives, or other resources. This will ensure optimal resource utilization, maximize throughput, minimize response time, and avoid overload. However, if this level needs to be applied, it should be defined during a consulting engagement with a qualified ProcessMaker Configuration expert which will include exhaustive analysis before implementation.</p>
+<p><strong><font color="red">Note:</font></strong> Check this <a href="Solr_Implementation_in_ProcessMaker.html">documentation</a> to learn more about Solr Implementation.</p>
+
+<h2><span id="Additional_notes">Additional notes</span></h2><p>For large-scale deployments we recommend using ProcessMaker's Enterprise Edition, since it has been optimized to handle larger numbers of cases. When a system is generating in excess of 5,000 new cases daily, accessing the list of cases under the&nbsp;<strong>CASES</strong>&nbsp;menu will become noticeably slower in the Community Edition. The Enterprise Edition has optimized its database queries to provide quicker access to the list of cases in a user's inbox.</p><p>If planning on using Pentaho Reporting in ProcessMaker's Enterprise Edition, we recommend that you install Pentaho on a separate server from ProcessMaker. Pentaho is a Java application which uses a great deal of system resources, so check its&nbsp;<a class="external text" href="http://www.sun.com/bigadmin/features/articles/pentaho_sizing.pdf">recommended system requirements</a>&nbsp;(in section&nbsp;<strong>4.3 Recommended Hardware</strong>) before installing Pentaho.</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

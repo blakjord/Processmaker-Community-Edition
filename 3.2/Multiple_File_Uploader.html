@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Multiple_File_Uploader.html" />
+<link rel="shortlink" href="../node/824.html" />
+<title>3.2 - 3.6 - Multiple File Uploader | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"c8af_QxWi8zzpUntHOxEswIGEpVoEcuRwkvvRhywl8g","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-824 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Multiple_File_Uploader.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Multiple_File_Uploader.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-BUkMZTeBpN4LaHBzlzJIZZrdPPUCx2WM1-m3_vC4tbg" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.6 - Multiple File Uploader</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.7/Multiple_File_Uploader.html" class="">3.8</a></li><li><a href="../3.7/Multiple_File_Uploader.html" class="">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a href="../3.1/Multiple_File_Uploader.html" class="">3.1</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.6 - Multiple File Uploader" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Multiple_File_Uploader.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.6 - Multiple File Uploader 1/5</option><option value="40">Give 3.2 - 3.6 - Multiple File Uploader 2/5</option><option value="60">Give 3.2 - 3.6 - Multiple File Uploader 3/5</option><option value="80" selected="selected">Give 3.2 - 3.6 - Multiple File Uploader 4/5</option><option value="100">Give 3.2 - 3.6 - Multiple File Uploader 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.5</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-LmCs79hNR-KZUlj80Gi5H67c1OD8GU421tEYH_ItQKI" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Multiple_File_Uploader.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#Overview">Overview</a></li>
+<li class="toc"><a href="Multiple_File_Uploader.html#Properties">Properties</a></li>
+<ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#File_Extensions">File Extensions</a></li>
+<li class="toc"><a href="Multiple_File_Uploader.html#Max_File_Size">Max File Size</a></li>
+<ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#Max_File_Size_Validation_With_PHP_Configuration">Max File Size Validation With PHP Configuration</a></li>
+</ol>
+<li class="toc"><a href="Multiple_File_Uploader.html#Size_Unity">Size Unit</a></li>
+<li class="toc"><a href="Multiple_File_Uploader.html#Versioning">Versioning</a></li>
+</ol>
+<li class="toc"><a href="Multiple_File_Uploader.html#Multiple_File_Uploader_Control_Example">Multiple File Uploader Control Example</a></li>
+<ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#Restriction">Restriction</a></li>
+</ol>
+<li class="toc"><a href="Multiple_File_Uploader.html#Multiple_File_Uploader_When_Offline">Multiple File Uploader in Offline Mode</a></li>
+<ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#Multiple_File_Uploader_When_Offline_Example">Multiple File Uploader When Offline Example</a></li>
+</ol>
+<li class="toc"><a href="Multiple_File_Uploader.html#Relating_an_Input_Document_with_a_File">Attaching an Input Document File Using the Multiple File Uploader</a></li>
+<ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#Multiple_File_Uploader_Field_in_a_Grids">Multiple File Uploader Field in a Grid </a></li>
+</ol>
+<li class="toc"><a href="Multiple_File_Uploader.html#Accessing_Files_with_JavaScript">Accessing Files with JavaScript</a></li>
+<ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#JavaScript_Methods">JavaScript Methods</a></li>
+<li class="toc"><a href="Multiple_File_Uploader.html#Structure_of_Multiple_File_Uploader_controls">Structure of Multiple File Uploader Controls</a></li>
+</ol>
+<li class="toc"><a href="Multiple_File_Uploader.html#File_Storage">File Storage</a></li>
+<ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#database_storage">File Storage in the Database</a></li>
+<li class="toc"><a href="Multiple_File_Uploader.html#storage_of_files_in_grids">Storage of Files in Grids</a></li>
+</ol>
+<li class="toc"><a href="Multiple_File_Uploader.html#Accessing_multiple_files_with_triggers">Accessing Multiple Files with PHP</a></li>
+<ol class="toc">
+<li class="toc"><a href="Multiple_File_Uploader.html#multipleFile_storage">Accessing the MultipleFile Case Variable</a></li>
+<li class="toc"><a href="Multiple_File_Uploader.html#Adding_to_multipleFile">Adding Single Files to Multiple File Controls</a></li>
+<li class="toc"><a href="Multiple_File_Uploader.html#Clearing_multiple_files">Clearing All Files in a Multiple File Control</a></li>
+</ol>
+</div></div>
+
+
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 58%;">
+<tbody>
+<tr>
+<td>
+<strong><font color="green">New Feature:</font></strong> The versioning feature is described in this page that is available as of ProcessMaker 3.2.2.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>The Multiple File control, allows more than one file to be uploaded and attached to the current case. To select and upload files, click on the <b>Choose Files</b> button of the control. The dialog box to select the files will vary according to browser.
+  After being selected, the file will be listed below the field. The upload process is immediate, meaning that as soon as the user selects the file, a progress bar will show the percentage of the upload completed. It will turn green to indicate that the
+  file has been completely uploaded to the ProcessMaker server. This makes it possible to save time when submitting the form. The icon of this control in the toolbar of the designer is the following:</p>
+
+<p><img src="../sites/default/files/3.1MultipleFileIcon.png"></p>
+
+<p>
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 58%;">
+    <tbody>
+      <tr>
+        <td>
+          <font color="red"><b>Warning:</b></font>
+          <font color=dimgrey>The Multiple File Uploader control is not supported in <a href="../3.0/Web_Entry.html">Single Dynaform web entry</a> or <a href="../3.0/External_Authentication.html">External Registration</a>. The web entry is supported for Multiple Steps web entry in <b>ProcessMaker 3.2.2</b> and later.</font>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+
+<p>When the control is dropped into the Dynaform designer, the Create/Select Variable window is displayed to create or select a variable.</p>
+<p><img alt="" src="../sites/default/files/3.2MultipleUploaderSelectVariable.png"></p>
+
+<p>After a variable is assigned to the control, the control field will look like the image below: </p>
+<p><img alt="" src="../sites/default/files/3.1MultipleInDynaform.png"></p>
+
+<p>
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+    <tbody>
+      <tr>
+        <td>
+          <font color="red"><b>Warning:</b></font>
+          <font color=dimgrey> The variable assigned to the Multiple File Uploader control is independent of the input document related to the control. Therefore, any changes made to the Input Document will NOT be reflected in the control.</font>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+
+<p></p>
+
+
+<p>While designing a Dynaform or in preview mode, it is not possible to upload a file, but it is possible to preview how uploaded files will be listed. </p>
+
+<p>
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+    <tbody>
+      <tr>
+        <td>
+          <strong><font color="green">Note:</font>
+          </strong>
+          <font color="dimgray"> Multiple File Upload is supported in ProcessMaker Mobile.</font>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Desktop</th>
+            <th>Mobile</th>
+        </tr>
+        <tr>
+            <td><p><img src="../sites/default/files/3.2.2_MultipleModeView.png"></p></td>
+            <td><p><img src="../sites/default/files/3.2.2_MultipleModeViewMobile.png"></p></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>While running a case, the Multiple File Uploader control has a progress bar that indicates how long a file will take to upload.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Desktop</th>
+            <th>Mobile</th>
+        </tr>
+        <tr>
+            <td><p><img src="../sites/default/files/3.2.2_MultipleProgressBar.png"></p></td>
+            <td><p><img src="../sites/default/files/3.2.2_MultipleProgressBarMobile.png"></p></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The Multiple File Uploader control allows users to attach multiple files to the Dynaform when running a case or previewing a Dynaform as follows:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Desktop</th>
+            <th>Mobile</th>
+        </tr>
+        <tr>
+            <td><p><img src="../sites/default/files/3.2.2_MultipleMultipleFilesatsametime.png"></p></td>
+            <td><p><img src="../sites/default/files/3.2.2_MultipleMultipleFilesatsametimeMobile.png"></p></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Once the files are uploaded, a new icon will be displayed to download the files, as shown in the image below.</p>
+<p><img alt="" src="../sites/default/files/3.2.2_MultipleUploaderDownload.png"></p>
+
+<p>
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+    <tbody>
+      <tr>
+        <td>
+          <font color="red"><b>Warning:</b></font>
+          <font color=dimgrey> Note that if the <a href="Configuration_File_env.ini.html#Input_Documents_Download_Restriction">disable_download_documents_session_validation</a> flag is set to "0" or is not included in the env.ini file, the user will be restriced from downloading
+            the file if he/she is not the one who uploaded the file. Therefore, he/she will need an <a href="Process_Permissions.html#Accessing_Input_Documents">Input Document process permission</a> to download the file.</font>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+
+
+<h2><span id="Properties">Properties</span></h2>
+<p> It is possible to customize a file control's functionality and behavior by configuring its <a href="DynaForm_Field_Properties.html">properties</a>:</p>
+
+<table>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#Type">Type</a></td>
+    <td><code>multipleFile</code> (Read Only)</td>
+  </tr>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#Variable">Variable</a></td>
+    <td>
+      <p>Click the <u>...</u> option to select a multiplefile variable from the list of available variables. See <a href="../3.0/HTML5_Responsive_DynaForm_Designer.html#Relating_a_Variable_with_a_Control">this section</a> to learn more about how to relate a
+        variable to a control.<br/> The type of variable supported by this control is the following:<br/>
+        <ul>
+          <li>Multiple File</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#Data_Type">Variable Data Type</a></td>
+    <td>After a variable has been related to the control, this property shows the data type of the variable (Read Only).</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#ID">ID</a></td>
+    <td>
+      <p>[Required]</p>
+      <p>Field and HTML unique identifier.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#Label">Label</a></td>
+    <td>The label of the control</td>
+  </tr>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#Input_Document">Input Document</a></td>
+    <td>Used to link an Input Document to the control.
+      <p>
+        When creating a Multiple File control, the <a href="Multiple_File_Uploader.html#File_Extensions">File Extensions</a>, <a href="Multiple_File_Uploader.html#Max_File_Size">Max File Size</a> and <a href="Multiple_File_Uploader.html#Size_Unity">Size Unit</a> properties are disabled, to enable these properties click the (<b>X</b>)
+        button next to the <a href="DynaForm_Field_Properties.html#Input_Document">Input Document</a> property.
+      </p>
+      <p><img alt="Enable Properties" src="../sites/default/files/3.2.2EnableMultipleUploaderProperties.png"></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#Required">Required</a></td>
+    <td>By checking this option, an asterisk is added to the label to indicate that the field is <i>required</i>, meaning that a file must be uploaded to the field.
+      <p style="margin-left:25px"><strong><font color="green">Note:</font></strong>
+        <font color="dimgray"> The Required property only verifies that there is a file attached to the control, but does not check if the current user had attached another a new file. </font>
+      </p>
+      <p>As of <strong>ProcessMaker3.6.1</strong>, if a Multiple File Uploader field is required and you enable <a href="../3.5/Configuration_File_env.ini.html#Available_Settings"><tt>disable_php_upload_execution</tt></a> , ProcessMaker validates to not upload PHP files and displays the following message:</p>
+      <codeblock>Form cannot be submitted because file(s) <font color="blue">{file_name}</font> (are/is) invalid</codeblock>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#Required_Field_Error_Message">Required Field Error Message</a></td>
+    <td>
+      <p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong>
+        <font color="dimgray"> The following property is available as of ProcessMaker version 3.2.2. </font>
+      </p> By checking the <a href="DynaForm_Field_Properties.html#Required">Required</a> option, this property becomes available to customize the message that will be displayed if the user does not attach a file to the control. The result to add "Please attach your Resume to this application form" is as follows:
+      <table>
+        <tbody>
+            <tr>
+                <th>Desktop</th>
+                <th>Mobile</th>
+            </tr>
+            <tr>
+                <td><p><img src="../sites/default/files/3.2.2MultipleUploaderRequiredMessageEx.png"></p></td>
+                <td><p><img src="../sites/default/files/3.2.2_MultipleUploaderRequiredMessageExMobile.png"></p></td>
+            </tr>
+        </tbody>
+      </table>
+       
+    </td>
+  </tr>
+  <tr>
+    <td><a href="Multiple_File_Uploader.html#File_Extensions">File Extensions</a></td>
+    <td>
+      <p>Set the allowed file extensions in this property. Use a comma to separate all the extensions that will be enabled for the control. For example “<code>.jpg</code>, <code>.png</code>, <code>.pdf</code>”</p>
+
+      <p>If this property is left empty, then any file extension is allowed.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="Multiple_File_Uploader.html#Max_File_Size">Max File Size</a></td>
+    <td>
+      <p>Set the maximum allowed file size of the file to be uploaded. By default the maximum file size is 1024 KB.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="Multiple_File_Uploader.html#Size_Unity">Size Unit</a></td>
+    <td>Define the unit (KB or MB) of the maximum file size.</td>
+  </tr>
+  <tr>
+    <td><a href="Multiple_File_Uploader.html#Versioning">Versioning</a></td>
+    <td>If the Multiple File Uploader control is related to an <a href="DynaForm_Field_Properties.html#Input_Document">Input Document</a> with the versioning property enabled, this property will be set to "Yes", meaning that each field that is uploaded to the control can be replaced by a new one. Otherwise, this property will be set to "No".</td>
+  </tr>
+  <tr>
+    <td><a href="DynaForm_Field_Properties.html#Display_Mode">Display Mode</a></td>
+    <td>
+      <p>[Required]</p>
+      <p>Display mode:</p>
+      <ul>
+        <li><strong>parent:</strong> inherits the display mode defined in the parent container (form/grid).</li>
+        <li><strong>edit:</strong> the control field can be edited by the end user when the Dynaform is rendered.</li>
+        <li><strong>view:</strong> the control can only be viewed when it is rendered. The content can’t be edited.</li>
+        <li><strong>disabled:</strong> the control field will be disabled and displayed in gray when the Dynaform is rendered. The content can't be edited either.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h3><span id="File_Extensions">File Extensions</span></h3>
+<p>The File extensions property defines the allowed extensions of the files that can be uploaded in the Multiple File Uploader field:</p>
+<p><img alt="" src="../sites/default/files/3.1MultipleFileExtensions.png"></p>
+
+<p>The allowed extensions are defined in the format <code><font color=blue><i>filename</i></font>.<font color=blue><i>extension</i></font></code>. Use * (asterisk) as a wildcard; * alone allows all types of files. Use <code>*.<font color=blue><i>extension</i></font></code>  to allow a specific type of file, such as <code>*.pdf</code> or <code>*.doc</code>. To allow multiple types of files, separate them with <code>,</code> (commas). For example, <code>*.png, *.jpg, *.jpeg, *.tif, *.tiff, *.gif</code> allows only image files.</p>
+
+<p>For example, if only plain text files may be attached to the file control, then define this property as <code>*.txt</code>. When running cases, the File control dialog will indicate what type of file can be uploaded:</p>
+<p><img alt="" src="../sites/default/files/3.1MultipleFileExtensionsTXT.png"></p>
+
+<p>If a file named TextLetter.txt is uploaded, the file control will verify that it is a .txt file and allow the Dynaform to be submitted.</p>
+<p><img alt="" src="../sites/default/files/3.2.2_MultipleFileExtensionsTXTGreen.png"></p>
+
+<p>If a file with a different extension is attached, a validation error message is shown. Notice that even if a file is modified to have the allowed file extension, the multiple file control will check the real file type and will display the following message
+  if the file is not allowed.</p>
+<p><img alt="" src="../sites/default/files/3.2.2MultipleFileExtensionError.png"></p>
+<!--<p>
+  This message is also displayed in ProcessMaker Mobile:
+</p>
+<img src="/sites/default/files/3.2.2_MultipleFileExtensionErrorMobile.png" alt="Invalid Format Message Mobile">-->
+
+<p style="margin-left:25px;"><font color=green><b>Note:</b></font> <font color=dimgrey>If using version <b>3.3.1 or later</b>, ProcessMaker will check whether files correspond to their extension and only allow certain types of files to be uploaded. To allow more types of file extensions to be uploaded, see <a href="../3.3/Compatible_Content_and_File_Extensions.html">Compatible Content and File Extensions</a>.</font></p>
+
+<p><strong><u>Considerations:</u></strong></p>
+<ul>
+  <li>
+    <strong>For multiple file fields that are <b>NOT required</b></strong>
+    <ul>
+      <li>If the field accepts all file extensions and no file is attached when running a case, then the validation passes and the form can be sent or submitted without restrictions.</li>
+
+      <li>If the field accepts all file extensions and a file is attached when running a case, then the validation passes unless it has a size limit, in that case another validation, explained in the next property, is evaluated. Nevertheless, if the field only accepts some types of extensions and no file is attached, then the validation passes.</li>
+
+      <li>If the field only accepts certain types of extensions and a file is attached, then the validation passes unless the user attaches a file with an invalid extension. In that case, a message is shown with a warning that indicates that the file extension is not supported. Nevertheless, if the field only accepts certain types of extensions and no file is attached, then the validation passes.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>For <b>required</b> Multiple file fields</strong>
+    <ul>
+      <li>When running a case, if the field accepts all file extensions (*), and there is no file attached to the case, the validation will fail because the field is required and therefore the form cannot be submitted.
+        <p><img alt="" src="../sites/default/files/3.2.2_MultipleFileExtensionsTXTRequired.png"></p>
+      </li>
+
+      <li>When running cases, if the field accepts all file extensions and a file is attached, then the validation PASSES unless it has a size limit; in that case another validation will be performed, as explained in the next property.
+        <p><img alt="" src="../sites/default/files/3.2.2_MultipleFileExtensionsTXTMaxSize.png"></p>
+      </li>
+
+
+      <li>If the field only accepts some types of extensions and no file is attached, then the validation FAILS because the field is required and the form can NOT be sent nor submitted.</li>
+
+      <li>If the field only accepts some types of extensions, and a file with the correct extension is attached, then the validation passes unless the user attaches a file with an invalid extension. In that case, an error message is shown that indicates that
+        the file extension is not supported. In that case, the form can NOT be submitted until a valid file is attached.</li>
+    </ul>
+  </li>
+  <li>
+
+    <strong>Special case</strong>
+    <ul>
+      <li>When running cases, if a file is attached to a required field and the form is submitted to the next step, but then the user goes back to the previous step, the file already submitted is shown as a link under the Multiple File Control.
+
+        <p><img alt="" src="../sites/default/files/3.2.2_MultipleModeView.png"></p>
+
+        <p>If the field is required, and the user removes all the files attached, it is necessary to upload at least one file again.</p>
+      </li>
+    </ul>
+    <li>
+      <li>
+</ul>
+
+<h3><span id="Max_File_Size">Max File Size</span></h3>
+<p>This property defines the maximum allowed size of uploaded files. By default, this property is set as 1024 KB. To define this property, enter a positive number greater than zero:</p>
+<p><img alt="" src="../sites/default/files/3.1MultipleMaxFileSize.png"></p>
+
+<p>If set to zero (0), then the file size is unlimited.</p>
+
+<p>When running a case, the multiple file field will validate the size of the file before attaching it to the field. If the size of the file surpasses the size defined in this control, an error message displays explaining the file is exceeding the maximum file size. The error message is available as of <b>ProcessMaker 3.2.2</b>.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Desktop</th>
+      <th>Mobile</th>
+    </tr>
+    <tr>
+      <td>"File size exceeds the allowable limit of {1MB}"</td>
+      <td>"The file size exceeds the allowed limit of 1.0 MB"</td>
+    </tr>
+    <tr>
+      <td><p><img src="../sites/default/files/3.2.2_MultipleMaxFileSizeProgressBar.png"></p></td>
+      <td><p><img src="../sites/default/files/3.2.2_MaxFileSizeErrorMsgMobile.png"></p></td>
+    </tr>
+  </tbody>
+</table>
+
+    <p><strong><u>Considerations:</u></strong></p>
+    <ul>
+      <li>
+        <strong>For Multiple File fields that are <b>NOT required</b></strong>
+        <ul>
+          <li>If the max file size limit validation for the file attached FAILS, the file is not uploaded to the field. Nevertheless, as the field is not required, the form can still be submitted or sent.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>For <b>required</b> Multiple File fields</strong>
+        <ul>
+          <li>If the max file size limit validation for the file attached FAILS, the file is not uploaded to the field and the form CAN NOT be submitted or sent.</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Multiple File Uploader field in a grid</strong>
+        <ul>
+          <li>Files in grids have the same characteristics as explained previously, but in cases when the grid is not associated to a grid variable, and a valid file is attached and sent, the new data is not inserted into the database. This is because the
+            grid MUST be related to a variable for the data to be sent correctly.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4><span id="Max_File_Size_Validation_With_PHP_Configuration">Max File Size Validation With PHP Configuration</span></h4>
+    <p>As of <b>ProcessMaker 3.3.6</b>, the Max File Size property validates according to the <tt>post_max_size</tt> and <tt>upload_max_filesize</tt> settings in the <a href="Additional_Configuration.html#Uploading_Large_Input_Documents"><tt>php.ini</tt></a> file. Take into account the following considerations when validating Max File Size in Multiple File controls:</p>
+    <ul>
+      <li>The <tt>post_max_size</tt> and <tt>upload_max_filesize</tt> settings in the <a href="Additional_Configuration.html#Uploading_Large_Input_Documents"><tt>php.ini</tt></a> file should be honored. Meaning that no configuration must overwrite these parameters to accept bigger files.</li>
+      <li>The validation applies the smaller value between the Max File Size of the control and the values of the <a href="Additional_Configuration.html#Uploading_Large_Input_Documents"><tt>php.ini</tt></a> file.</li>
+      <li>The <a href="HTML5_Responsive_DynaForm_Designer.html">Dynaform designer</a> validates if the value of the Max File Size control property is bigger than the values in the <tt>php.ini</tt> file. If the values is bigger than the values in <tt>php.ini</tt>, the "<b>The maximum value of this field is XX Mbytes</b>" alert displays. Where XX is the maximum value allowed by the PHP file.
+      <p><img src="../sites/default/files/3.3.6MaxFileSizeValidationWarning.png" alt=""></p></li>
+      <li>The REST endpoints to <a href="REST_API_Designer/Input_Documents.html#Create_input_document">create</a> and <a href="REST_API_Designer/Input_Documents.html#Update_input_document">update</a> an Input Document must return the corresponding error if the file size is bigger than the allowed value in the PHP file. 
+      <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span>The file size is bigger than the maximum allowed<span style="color: #339933;">,</span> the maximum size allowed is XX Mbytes<span style="color: #3366CC;">&quot;&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+      </li>
+    </ul>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">The <tt>post_max_size</tt> considers the size of all files uploaded. Therefore, it is recommended that each file uploaded with the multiple and single file controls in the form is not bigger than the <tt>post_max_size</tt> parameter in the PHP file.</font></p>
+
+    <h3><span id="Size_Unity">Size Unit</span></h3>
+    <p>This property defines the unit (KB, MB) of the size defined in the Max File Size property explained <a href="Multiple_File_Uploader.html#Max_File_Size">previously</a>.</p>
+
+    <h3><span id="Versioning">Versioning</span></h3>
+    <p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong>
+      <font color="dimgray"> The following property is available as of ProcessMaker version 3.2.2. </font>
+    </p>
+
+    <p>If the Multiple File Uploader control is related to an <a href="Input_Documents.html#Creating_Input_Documents">Input Document</a> with versioning enabled, the Versioning property of the Multiple control will be set to "Yes", as shown in the image
+      below.
+    </p>
+
+    <p><img src="../sites/default/files/3.2.2MultipleUploaderVersioningProperty.png"></p>
+
+    <p>This means that it is possible to upload multiple versions of each file to the control. To do this, the Multiple File Control will display the following four options:</p>
+
+    <p><img src="../sites/default/files/3.2.2MultipleUploaderVersioningControl.png"></p>
+    <p>
+      <ul>
+        <li><b>Download the file <img  src="../sites/default/files/3.2.2MultipleFileUploaderDownloadIcon.png">:</b> Download the file selected. Note that each version of the file has its own <b>Download</b> button.</li>
+        <li><b>Upload a new version <img  src="../sites/default/files/3.2.2MultipleFileUploaderEditIcon.png">:</b> Opens the navigation window to select a new version of the file. Only one file can be uploaded at a time.</li>
+        <li><b>Delete the file <img  src="../sites/default/files/3.2.2MultipleFileUploaderDeleteIcon.png">:</b> Deletes the file and all its versions. A single version can NOT be deleted.</li>
+        <li><b>Show versions <img  src="../sites/default/files/3.2.2MultipleFileUploaderShowIcon.png">:</b> Shows all the versions of the file.
+        </li>
+      </ul>
+    </p>
+    <p>Same options display in ProcessMaker Mobile:</p>
+    <img src="../sites/default/files/3.2.2_MultipleUploaderVersioningControlMobile.png" alt="">
+    <p>To upload a new version of the file, click the pencil icon and select the new version of the file in the navigation window that opens. The new version will replace the previous version and the previous version will be listed under the <b>Show versions</b>      button. Older versions can be downloaded but not edited.</p>
+
+    <p><img src="../sites/default/files/3.2.2MultipleUploaderFileUploaded.png"></p>
+    <p>Previous versions from a file display in ProcessMaker Mobile as follows:</p>
+    <img src="../sites/default/files/3.2.2_MultipleUploaderFileUploadedMobile.png" alt="">
+    <p>The list of versions is available in all display modes. Users can upload a new version or delete the file only in Edit mode. In View or Disabled mode, users can download only the files that they uploaded.</p>
+
+    <p><img src="../sites/default/files/3.2.2MultipleUploaderFileVersioningModes.png"></p>
+
+    <p>If the file selected does not met the requirements (file size or extension), an error message will be displayed. To close it, click the little cross at the top right corner of the message.</p>
+
+    <p><img src="../sites/default/files/3.2.2MultipleUploaderFileFlashMessage.png"></p>
+
+    <p>The versions of a file can be seen as well if the Multiple File Uploader is included in a grid.</p>
+
+    <p><img src="../sites/default/files/3.2.2MultipleUploaderVersioningGrid.png"></p>
+    <p style="margin-left:25px"><strong><font color="green">Note:</font></strong>
+      <font color="dimgray"> Versioning is supported on ProcessMaker Mobile.</font>
+    </p>
+
+    <h2><span id="Multiple_File_Uploader_Control_Example">Multiple File Uploader Control Example</span></h2>
+    <p>For this example, add a "fileupload" control by dragging and dropping it onto the Dynaform Designer from the Web Controls panel. The image below shows what the control will look like when its rendered on the Dynaform. </p>
+    <p><img src="../sites/default/files/3.1MultipleExampleAddFile.png"></p>
+
+    <p>Immediately after adding the control, the Create Variable window will appear. A variable can be created in this window, or can be selected from the existing process variables. A variable can also be created by clicking on the <a href="../3.0/Variables.html#Defining_Variables">Variables</a>      button. A new variable will need to be created for this example, so stay in the Create/Select Variable window. Even though the variable name can be edited, keep it as "multipleFileVar001". Click on the underlined Settings option to display more
+      variable configurations.</p>
+    <p><img src="../sites/default/files/3.1MultipleExampleCreateVariable.png"></p>
+
+    <p>The options available in the setting change depending on the type of control. For example, the multiplefile control only has one setting: "Type". The Type setting has only one option, "Multiple File". To learn how to assign an Input Document, read
+      this <a href="Multiple_File_Uploader.html#Relating_an_Input_Document_with_a_File">documentation</a>. Then in the Create Variable window, click on the Save button to finish this configuration. </p>
+
+    <p>Click on the empty space in the control field to display its properties in the left side panel.</p>
+    <p><img src="../sites/default/files/3.2.2MultipleExampleProperties.png"></p>
+
+    <p>Another way to add a variable is by clicking on the underlined ellipsis next to the Variable property, as observed in the image.</p>
+    <p><img src="../sites/default/files/3.1MultipleExamplePropertiesNewVariable.png"></p>
+
+    <p>The Create Variable window will appear, where a variable can be created or selected from existing variables. Once a variable is chosen, the Variable Data Type and the ID properties will be automatically filled in with the name of the variable. </p>
+    <p><img src="../sites/default/files/3.1MultipleExamplePropertiesNewVariableDialog.png"></p>
+    <p>The ID property can be used with JavaScript code. To add JavaScript to the ID property, click on the light grey border of the Dynaform (which is the space outside of the control fields) to display the Dynaform properties. When the properties are displayed,
+      locate the javascript property and click on the edit... button to open the JavaScript editor.</p>
+    <p><img src="../sites/default/files/8PM3_DynaformFieldProperties_File_Id_JavaScript.png"></p>
+    <p>In the JavaScript editor, add code to set the label of the control (read this <a href="../3.0/File_control.html#JavaScript_in_Files">section</a> for more information). For this example, add the following code:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">jQuery<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#multipleFileVar001&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setLabel</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ProcessMaker&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+    <p><img src="../sites/default/files/3.1MultipleExamplejavascript.png"></p>
+
+    <p>When the control is rendered, the label will be then set to "ProcessMaker", as seen in the image below.</p>
+    <p><img src="../sites/default/files/3.1MultipleExamplejavascriptResult.png"></p>
+
+    <p>The following property is the Name property, which is an HTML field name. By default, a control with this property has the same name as the ID. When the ID is changed by the user, the name does not change and keeps its original configuration. The
+      name can also be changed by entering a new value in the property.</p>
+    <p><img src="../sites/default/files/3.1MultipleExampleName.png"></p>
+
+    <p>Continuing on, the Label property changes the label of the control, which will be displayed in the control field when the Dynaform is rendered.</p>
+
+    <p>For the Required property, there is only a checkbox available. When checked, an asterisk is added next to the control field to indicate that the field is required and the form won't be able to be submitted until the field is properly filled in.</p>
+    <p><img src="../sites/default/files/3.1MultipleExampleRequired.png"></p>
+
+    <p>The Display Mode property determines whether the control is editable, viewable, disabled or uses the same display mode set for the entire Dynaform. The image below shows what the control looks like in each view mode. </p>
+    <p><img src="../sites/default/files/3.2.2_MultipleExampleMODEVIEW.png"></p>
+
+<p style="margin-left:25px"><strong><font color="green">Note 1:</font></strong> <font color="dimgray">The file management is different in the iOS system mobile. To learn more about how to upload files in a Multiple File Uploader control, see <a href="../Mobile/Mobile_Controls.html#Uploading_Files_in_iOS">Files in iOS</a>.</font></p>
+<p style="margin-left:25px"><strong><font color="green">Note 2:</font></strong> <font color="dimgray">If you experience <b>Invalid Format/Corrupted File</b> messages when trying to download files in a Multiple File Uploader field, ensure you have configured correctly <code>display_errors</code> and <code>error_reporting</code> according to <a href="https://wiki.processmaker.com/search/node/supported%20stacks">Supported Stacks</a> installed in your server.</font></p>
+
+<h3><span id="Restriction">Restriction</span></h3>
+<p>Please consider the following restriction before uploading files in a Multiple File Uploader control. As a best practice, do not upload files in the <b>Multiple File Uploader</b> control before defining the variables in the ProcessMaker case. In this way, the variable names will be displayed correctly in the <b>Destination Path</b>. Review <a href="Variables.html#Defining_Variables">Defining Variables</a> to define case variables inside a process.</p>
+
+<h2><span id="Multiple_File_Uploader_When_Offline">Multiple File Uploader in Offline Mode</span></h2>
+<p style="margin-left:25px">
+  <strong><font color="green">Available Version: </font></strong>
+  <font color="dimgray">As of ProcessMaker Mobile 2.3.0</font>
+</p>
+<p>As long as you have <a href="Processmaker_Offline_Mobile.html#Enable_a_Task_for_Offline_Support">enabled offline support for the Task</a> that includes the Multiple File Uploader,  you are able to use it. The uploaded files are sent to the server when the connection is re-established along with case routed.</p>
+<h3><span id="Multiple_File_Uploader_When_Offline_Example">Multiple File Uploader When Offline Example</span></h3>
+This is an example about how to use the Multiple File Uploader in offline mode. Please follow the nexts steps:
+
+<ol style="font-weight:bold;">
+    <li>
+      <p style="font-weight:normal;">Access the Administration Settings.</p>
+      <img src="../sites/default/files/3.5.3_Multiple_File_Uploader_When_Offline_Example_1.png">
+    </li>
+    <li>
+      <p style="font-weight:normal;">Make sure that in <b>Offline</b> you are able to <b>Synchronize cases and tables</b>.</p>
+      <img src="../sites/default/files/3.5.3_Multiple_File_Uploader_When_Offline_Example_2.png">
+    </li>
+    <li>
+      <p style="font-weight:normal;">Disable the Wi-Fi.</p>
+      <img src="../sites/default/files/3.5.3_Multiple_File_Uploader_When_Offline_Example_3.png">
+      <p>The <b>Working offline</b> option displays.</p>
+      <img src="../sites/default/files/3.5.3_Multiple_File_Uploader_When_Offline_Example_4.png">
+    </li>
+    <li>
+      <p style="font-weight:normal;">Access a case and make sure that it has the <b>Available offline</b> option.</p>
+      <p style="margin-left:25px">
+        <strong><font color="green">Note: </font></strong>
+        <font color="dimgray">To configure a process that allows its cases to be offline, see <a href="Processmaker_Offline_Mobile.html#Enable_a_Task_for_Offline_Support">how to enable offline support for a Task.</a></font>
+      </p>
+      <img src="../sites/default/files/3.5.3_Multiple_File_Uploader_When_Offline_Example_5.png">
+    </li>
+    <li>
+      <p style="font-weight:normal;">For this example, consider the inputs to be selected of the following image.</p>
+      <img src="../sites/default/files/3.5.3_Multiple_File_Uploader_When_Offline_Example_6.png">
+    </li>
+    <li>
+      <p style="font-weight:normal;">Select multiple files and continue the case. Remember that the uploaded files are sent to the server when the connection is re-established along with case routed.</p>
+      <img src="../sites/default/files/3.5.3_Multiple_File_Uploader_When_Offline_Example_7.png">
+      <p style="font-weight:normal;">The message <b>The case will be sent when back online</b> displays.</p>
+      <img src="../sites/default/files/3.5.3_Multiple_File_Uploader_When_Offline_Example_8.png">
+    </li>
+</ol>
+
+    <h2><span id="Relating_an_Input_Document_with_a_File">Attaching an Input Document File Using the Multiple File Uploader</span></h2>
+
+    <p>It is possible to attach an Input Document to a Dynaform using the Multiple File Uploader field by going to the Multiple File control properties. This means that files uploaded to the Multiple File Uploader field in a Dynaform can be displayed at
+      a later point in an Input Document step. One advantage of associating these fields with an input document, is that the Input Document interface can be used to view all the files uploaded. The user can also delete or add new versions of the files
+      if they have the correct process permissions and versioning is enabled. Another advantage is that Input Documents allow the uploaded file to be tagged and placed into a specific folder under Home > Documents, so it is easier to find the uploaded
+      files later.</p>
+
+    <p>To associate an Input Document with the Multiple File Uploader field, it is recommended to first <a href="../3.0/Input_Documents.html#Creating_Input_Documents">create the Input Document</a>. </p>
+
+    <p>Then, simply click on the underlined ellipsis in the Multiple File Uploader control properties as seen in the image below.</p>
+    <p><img src="../sites/default/files/3.1MultipleInputDoc.png"></p>
+    <p>A new Input Documents window will appear. Select the available Input Document by clicking on it. </p>
+    <p><img src="../sites/default/files/3.1MultipleInputDocSelection.png"></p>
+
+    <p>Uploading files to an Input Document through the Multiple File Uploader field in a Dynaform is useful for uploading more than one file at the same time to an Input Document. To ensure that the user uploads a file to an Input Document, make the Multiple
+      File Uploader field required.</p>
+
+    <p><img src="../sites/default/files/3.1MultipleInputDocShow.png"></p>
+
+    <p>To upload more than one file to an Input Document, then a normal Input Document step should be used.</p>
+
+    <p>After associating the Multiple File variable with the Input Document, the Multiple File properties will take precedence over the Input Document properties.</p>
+
+
+    <h3><span id="Multiple_File_Uploader_Field_in_a_Grids">Multiple File Uploader Field in a Grid </span></h3>
+    <p>Multiple File Uploader fields in grids have the same characteristics as explained above, but in cases when the grid is not associated with any grid variable and a valid file is attached and sent, the new data is not inserted into the database. This
+      is because the grid MUST have an associated variable to correctly save the data. </p>
+
+    <p>The Multiple File Uploader control has a different appearance in grids. To upload a file, click on the green <img alt="" src="../sites/default/files/3.1MultipleOnGridsIcon.png"> icon.</p>
+    <p><img alt="" src="../sites/default/files/3.1MultipleOnGrids.png"></p>
+
+    <p>A new dialog window will be displayed to upload the files.</p>
+    <p><img alt="" src="../sites/default/files/3.1MultipleOnGridsUpload.png"></p>
+
+    <p>Click on the Choose Files button to upload multiple files. To edit a file, just delete it and upload it again. Once done uploading files, close the dialog.</p>
+    <p><img alt="" src="../sites/default/files/3.2.2_MultipleOnGridsUploadedFiles.png"></p>
+
+    <p>The uploaded files will be listed in the Multiple File Uploader field inside the grid.</p>
+    <p><img alt="" src="../sites/default/files/3.1MultipleOnGridsUploadedFilesListed.png"></p>
+
+    <h2><span id="Accessing_Files_with_JavaScript">Accessing Files with JavaScript</span></h2>
+    <p>To learn how to manipulate Dynaform controls using JavaScript, see <a href="../3.0/JavaScript_in_DynaForms.html">JavaScript in DynaForms</a>.</p>
+
+    <p>Files in ProcessMaker 3 have the following </i>field components</i>:</p>
+    <ul>
+      <li><b>Label:</b> The text displayed above or to the left of the field in the Dynaform, which identifies it.</li>
+      <li><b>Value:</b> The filename of the last file selected in the file control.</li>
+      <li><b>Text:</b> An array of the filename(s) in the file control.</li>
+    </ul>
+
+    <h3><span id="JavaScript_Methods">JavaScript Methods</span></h3>
+
+    <p>Some of the JavaScript methods used to manipulate Multiple file fields include:</p>
+
+    <table style="width:auto;">
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href = "../3.0/JavaScript_Functions_and_Methods.html#control.getValue">getValue</code></a>()</td>
+        <td>Returns the filename of the last file selected in the file control, or the last file added to its associated Input Document if no file has been selected.</td>
+      </tr>
+      <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href = "../3.0/JavaScript_Functions_and_Methods.html#control.getText">getText</code></a>()</td>
+        <td>Returns an array of the filenames of the files that were previously added to the Input Document associated with the file control, plus the filename of the last file selected in the file control (if any). The filenames are listed in the order that
+          the files were added. Remember that only one file can be added by the File control, but there can be multiple files that have already been added to the Input Document.</td>
+      </tr>
+      <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.getLabel">getLabel</code></a>()</td>
+        <td>Returns the control field's label, which is the text displayed above or to the left of the field to identify it in the Dynaform.</td>
+      </tr>
+      <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.setLabel">setLabel</code></a>("newLabel")</td>
+        <td>Sets the control field's label, which is the text displayed above or to the left of the field to identify it in the Dynaform.</td>
+      </tr>
+    </table>
+    <p>
+      <font color=green><b>Note:</b></font>
+      <font color=dimgrey>The setValue() and setText() methods exist for file controls, but do not have any effect, since files can only be selected manually by the user.</font>
+    </p>
+    <p>To see code examples for these methods, see <a href="../3.0/JavaScript_Functions_and_Methods.html" class="ref">JavaScript Functions and Methods</a>.</p>
+
+
+    <h3><span id="Structure_of_Multiple_File_Uploader_controls">Structure of Multiple File Uploader Controls</span></h3>
+    <p>A Multiple File Uploader control consists of:
+      <ul>
+        <li>A visible <code>&lt;button&gt;</code> with the ID of the multiple file control, which is clicked to select a file to be uploaded. After a file is selected, the name of the selected file is displayed under this button.</li>
+        <li>A hidden field with the ID <code>"form[<font color=blue><i>id</i></font>]"</code> for each file selected, where the selected file is temporarily stored.</li>
+
+        <li>A hidden input field with the ID <code>"form[<font color=blue><i>id</i></font>_label]"</code>, which holds an array of the files that have been previously uploaded to the Input Document associated with the Multiple File Uploader control, plus
+          the last file selected with the file control.
+        </li>
+      </ul>
+
+      <p>For example, a file control with the ID "receipts" might have the following HTML structure:</p>
+      <div class="geshifilter"><div class="html5 geshifilter-html5" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multipleFileVar001&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;field-multipleFileVar001&quot;</span></span><br />
+<span style="color: #009900;"> &nbsp; &nbsp; &nbsp;<span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;pmdynaform-field-multipleFile pmdynaform-edit-multipleFile &nbsp;form-group col-sm-12 col-md-12 col-lg-12 &nbsp;pmdynaform-field&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;row&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/label.html"><span style="color: #000000; font-weight: bold;">label</span></a> <span style="color: #000066;">for</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multipleFileVar001&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;col-md-2 col-lg-2 control-label pmdynaform-label&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a> data-toggle<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;tooltip&quot;</span> data-placement<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;bottom&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;textlabel&quot;</span>&gt;</span>multipleFile<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;pmdynaform-field-required&quot;</span>&gt;</span>*<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/label.html"><span style="color: #000000; font-weight: bold;">label</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;col-md-10 col-lg-10 pmdynaform-field-control&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;pmdynaform-multiplefile-control&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/button.html"><span style="color: #000000; font-weight: bold;">button</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;button&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;btn btn-uploadfile&quot;</span>&gt;</span>Choose Files<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/button.html"><span style="color: #000000; font-weight: bold;">button</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;file&quot;</span> <span style="color: #000066;">multiple</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiple&quot;</span> <span style="color: #000066;">accept</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">style</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;display:none&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;pmdynaform-multiplefile-box&quot;</span>&gt;&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-row row&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-container col-xs-12&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-icon col-xs-1&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-icon&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fa fa-file-image-o&quot;</span> aria-<span style="color: #000066;">hidden</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;pm-multiplefile-download col-xs-8&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-title&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span> 94f5432c6216e8141daa5980891fc766.jpg<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-buttons col-xs-3&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-button-delete col-xs-5&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fa fa-trash&quot;</span> aria-<span style="color: #000066;">hidden</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-button-download col-xs-5&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;http://192.168.51.113/sysdani31/en/{skin}/cases/cases_ShowDocument?a=86931799257ec16530e59c7069364091&amp;amp;v=1&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fa fa-download&quot;</span> aria-<span style="color: #000066;">hidden</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-button-pencil col-xs-5&quot;</span> <span style="color: #000066;">style</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;display: none&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fa fa-pencil&quot;</span> aria-<span style="color: #000066;">hidden</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-row row&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-container col-xs-12&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-icon col-xs-1&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-icon&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fa fa-file-image-o&quot;</span> aria-<span style="color: #000066;">hidden</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;pm-multiplefile-download col-xs-8&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-title&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span> 3c5c332d7f8018d4447a771dcb284447.jpg<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-buttons col-xs-3&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-button-delete col-xs-5&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fa fa-trash&quot;</span> aria-<span style="color: #000066;">hidden</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-button-download col-xs-5&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;http://192.168.51.113/sysdani31/en/{skin}/cases/cases_ShowDocument?a=21786185157ec168f6d4e05077370210&amp;amp;v=1&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fa fa-download&quot;</span> aria-<span style="color: #000066;">hidden</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;multiplefile-button-pencil col-xs-5&quot;</span> <span style="color: #000066;">style</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;display: none&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fa fa-pencil&quot;</span> aria-<span style="color: #000066;">hidden</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/i.html"><span style="color: #000000; font-weight: bold;">i</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;form[multipleFileVar001][0][appDocUid]&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;hidden&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;86931799257ec16530e59c7069364091&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;form[multipleFileVar001][0][name]&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;hidden&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;94f5432c6216e8141daa5980891fc766.jpg&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;form[multipleFileVar001][0][version]&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;hidden&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;1&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;form[multipleFileVar001][1][appDocUid]&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;hidden&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;21786185157ec168f6d4e05077370210&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;form[multipleFileVar001][1][name]&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;hidden&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;3c5c332d7f8018d4447a771dcb284447.jpg&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;form[multipleFileVar001][1][version]&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;hidden&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;1&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span></div></div>
+
+      <p>The user interacts with the visible button, which doesn't have an ID, but can be searched for using its "pmdynaform-multiplefile-control" class. For example, the following code changes the border color of the button used by the "receipts" multiple
+        file control:</p>
+      <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#receipts&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;button.pmdynaform-control-file&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;1px solid red&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+      <h2><span id="File_Storage">File Storage</span></h2>
+
+      <p>When a file is uploaded to a Multiple File control while running a case, it is stored in the file system of the ProcessMaker server. It is renamed with its unique ID for the case-document and its version number, but it retains its original extension.</p>
+
+      <p>Files are stored in the following location on the server:<br> &nbsp; &nbsp; <tt><a href="../3.0/File_Locations.html#Installation_Directory"><i>INSTALL-DIRECTORY</i></a>/shared/sites/<code><font color=green><i>WORKSPACE</i></font></code>/files/<code><font color=green><i>XXX</i></font>/<font color=green><i>XXX</i></font>/<font color=green><i>XXX</i></font>/<font color=green><i>XXXXXXXXXXXXXXXXXXXXXXX</i></font></code>/<code><font color=green><i>CASE-DOCUMENT-UID</i></font></code>_<code><font color=green><i>VERSION</i></font></code>.<code><font color=green><i>EXT</i></font></code></tt></p>
+      <p><i>Where:</i>
+        <ul>
+          <li><code><font color=green><i>WORKSPACE</i></font></code> is the name of the workspace, which is named "workflow" by default, and can be specified with the <code>@@SYS_SYS</code> system variable in a trigger.
+            <li><code><font color=green><i>XXX</i></font>/<font color=green><i>XXX</i></font>/<font color=green><i>XXX</i></font>/<font color=green><i>XXXXXXXXXXXXXXXXXXXXXXX</i></font></code> represents the case's unique ID. By default, the ID is divided
+              into a series of 4 subdirectories to avoid the <a href="../3.0/Managing_32K_Folders.html">32K file limits</a> of Linux's ext3 file system. In a trigger, the current case ID of the current case is stored in the @@APPLICATION system variable, or
+              can be looked up in the <b><tt>APPLICATION.APP_UID</tt></b>, <b><tt>APP_CACHE_VIEW.APP_UID</tt></b> or <b><tt>APP_DOCUMENT.APP_UID</tt></b> fields in the database. The <a href="../3.0/Internal_Functions_and_Classes.html#G::getPathFromURL.28.29">G::getPathFromUID()</a>              method can be used in a trigger to automatically generate the correct path from the case ID.
+              <li><code><font color=green><i>CASE-DOCUMENT-UID</i></font></code> is the unique ID of the case-document, which is stored in the <b><tt>APP_DOCUMENT.APP_DOC_UID</tt></b> field in the database.
+                <li><code><font color=green><i>VERSION</i></font></code> is the document version number, which is always set to 1, except when the Multiple file Uploader field is related to an Input Document that has versioning enabled and the user has uploaded
+                  a new version of the file (which file fields don't allow). The new version can be found in the <b><tt>APP_DOCUMENT.DOC_VERSION</tt></b> field in the database.
+                  <li><code><font color=green><i>EXT</i></font></code> is the extension of the uploaded file, such as <code>doc</code> or <code>jpg</code>. The file extension can be found by using the <a href="../3.0/Internal_Functions_and_Classes.html#AppDocument::Load.28.29">AppDocument::Load()</a>                    method or by looking up the filename of the uploaded file with the following database query:
+                    <codeblock>SELECT CON_VALUE AS FILENAME FROM CONTENT 
+WHERE CON_ID='<font color=green><i>CASE-UID</i></font>' AND CON_CATEGORY='APP_DOC_FILENAME'</codeblock>
+        </ul>
+
+        <p style="text-align: left;"><b>Example path in Linux/UNIX:</b><br> &nbsp; &nbsp; <tt>/opt/processmaker/shared/sites/workflow/files/905/262/500/57158b1b439014072150115/74863719957158b39af56d2076904431_1.png</tt></p>
+        <p style="text-align: left;"><b>Example path in Bitnami install in Windows:</b></p>
+        <p style="margin-left:25px">
+            <strong><font color="green">Note: </font></strong>
+            <font color="dimgray">Bitnami is no longer used in ProcessMaker as of version 3.4.0. This must be considered when accessing the ProcessMaker directory.</font>
+        </p>
+        <tt>C:\Bitnami\processmaker-3.3.0-1\apps\processmaker\htdocs\shared\sites\workflow\files\905\262\500\57158b1b439014072150115\74863719957158b39af56d2076904431_1.png</tt>
+        <p>In a trigger, the file path to a file can be determined using the defined constants <code>PATH_DOCUMENT</code> (which contains a path such as <code>"/opt/processmaker/shared/sites/workflow/files/"</code>) and <code>PATH_SEP</code> (which is <code>"/"</code>          or <code>"\"</code> depending on the operating system).</p>
+        <p>For example, the following trigger code generates the same path as the examples above:
+          <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$path</span> <span style="color: #339933;">=</span> PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'90526250057158b1b439014072150115'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">'74863719957158b39af56d2076904431_1.png'</span><span style="color: #339933;">;</span></div></div>
+
+          <h3><span id="database_storage">File Storage in the Database</span></h3>
+          <p>When a Dynaform that contains a Multiple File Uploader field is submitted, a new record is created for the uploaded file in the <b><tt>APP_DOCUMENT</tt></b> table in the database, which contains the following fields:</p>
+
+          <p>
+            <ul>
+              <li><code><b>APP_DOC_UID</b></code>: The unique ID of the case document, which identifies the uploaded file. </li>
+              <li><code><b>DOC_VERSION</b></code>: The version of the case document file, which is an integer counting the version starting from <code>1</code>. It can only be greater than <code>1</code> if the file is associated with a variable of an Input
+                Document that has versioning enabled.</li>
+              <li><code><b>APP_UID</b></code>: The unique ID of the case where the file was uploaded.</li>
+              <li><code><b>DEL_INDEX</b></code>: The delegation index of the task in the case where the file was uploaded.</li>
+              <li><code><b>DOC_UID</b></code>: The unique ID of the Input Document that holds the file, if the Multiple File Uploader field is associated with an Input Document. If there is no Input Document associated to the Multiple File Uploader field,
+                then it is set to <code>'-1'</code>.</li>
+              <li><code><b>USR_UID</b></code>: The unique ID of the user who uploaded the file.</li>
+              <li><code><b>APP_DOC_TYPE</b></code>: The type of case document, which is <code>'ATTACHED'</code> if the Multiple File Uploader field is not associated with an Input Document, or <code>'INPUT'</code> if it is associated with an Input Document.</li>
+              <li><code><b>APP_DOC_CREATE_DATE</b></code>: The datetime in <code>'YYYY-MM-DD HH:MM:SS'</code> format when the file was uploaded.</li>
+              <li><code><b>APP_DOC_INDEX</b></code>: The document index of the file.</li>
+              <li><code><b>FOLDER_UID</b></code>: The unique ID of the folder where the file is located in the graphical interface under <b>Home > Documents</b>. If the field is not associated with an Input Document or the Input Document has no specified
+                folder, this field is set to <code>''</code> (empty string).</li>
+              <li><code><b>APP_DOC_PLUGIN</b></code>: Always set to <code>''</code> (empty string). No longer used in ProcessMaker 3.</li>
+              <li><code><b>APP_DOC_TAGS</b></code>: If the field is associated with an Input Document, then this field lists the tags for the Input Document, which are separated by commas. By default, all Input Documents have the <code>'INPUT'</code> tag,
+                but other custom tags can be defined. If not associated to an Input Document, then set to <code>NULL</code>.</li>
+              <li><code><b>APP_DOC_STATUS</b></code>: The status of the file, which is either 'ACTIVE' or 'DELETED'. Note that Multiple File Uploader fields don't provide a way to delete uploaded files, but the file can be deleted by a user who has the
+                <a href="../3.0/Roles.html#PM_FOLDERS_ADD_FILE">PM_FOLDERS_ADD_FILE</a> permission in his/her role in <b>Home > Documents</b>. It can also be deleted if the field is associated with an Input Document that is a step in a task and the user has
+                been assigned the <a href="../3.0/Process_Permissions.html">Process Permissions</a> to delete files in the Input Document. </li>
+              <li><code><b>APP_DOC_STATUS_DATE</b></code>: Always set to <code>NULL</code>. </li>
+              <li><code><b>APP_DOC_FIELDNAME</b></code>: The <i>name</i> (not its <i>id</i>) of the field where the file was uploaded. If uploaded in a Multiple File field in a grid, then it is set to <code>'[<font color=green><i>grid-variable</i></font>][<font color=green><i>row-number</i></font>][<font color=green><i>file-field-name</i></font>]'</code>.
+                For example, a value of <code>'[clientList][2][contractFile]'</code> means that the file was uploaded to the second row of a grid whose variable is "clientList" and whose Multiple File field has the name "contractFile". If the file was uploaded in an Input Document step (not a Multiple File Uploader field), then it is set to <code>NULL</code>.</li>
+              <li><code><b>APP_DOC_DRIVE_DOWNLOAD</b></code>: <a href="http://php.net/manual/en/function.serialize.php">Serialized</a> information, which is always set to <code>'a:0:{}'</code>. </li>
+            </ul>
+          </p>
+
+          <p>Additionally, records are added to the CONTENT table, which contains information about the uploaded file.</p>
+
+          <p>For example, the database has the following information about an uploaded file with the unique ID '74863719957158b39af56d2076904431':</p>
+
+          <codeblock>mysql> <b>select * from CONTENT where CON_ID='74863719957158b39af56d2076904431';</b>
++------------------+------------+----------------------------------+----------+---------------------+ 
+| CON_CATEGORY | CON_PARENT | CON_ID | CON_LANG | CON_VALUE
+| +------------------+------------+----------------------------------+----------+---------------------+ 
+| APP_DOC_COMMENT | 1 | 74863719957158b39af56d2076904431 | en | | 
+| APP_DOC_FILENAME | 1 | 74863719957158b39af56d2076904431 | en | scannedContract.png| 
+| APP_DOC_TITLE | 1 | 74863719957158b39af56d2076904431 | en | 
+| +------------------+------------+----------------------------------+----------+---------------------+ 
+3 rows in set (0.00 sec)
+</codeblock>
+
+          <p>The filename of the uploaded file is found with the query:
+            <codeblock>SELECT CON_VALUE AS FILENAME FROM CONTENT WHERE CON_ID='XXXXXXXXXXXXXXXXXXXXXXX' AND CON_CATEGORY='APP_DOC_FILENAME'
+            </codeblock>
+          </p>
+
+          <p style="margin-left:25px"><strong><font color="red">Warning:</font></strong>
+            <font color="dimgray"> If a user uploads a file into the Multiple File control, but the Dynaform containing the control is not submitted, the files uploaded into the Multiple File control won't be related to the assigned variable and won't be visible in next steps
+              of the process. This behavior is a known issue that will be fixed in upcoming ProcessMaker versions.</font>
+          </p>
+
+
+          <h3><span id="storage_of_files_in_grids">Storage of Files in Grids</span></h3>
+          <p>When a Multiple File Uploader field is placed in a grid, then files can be selected for each row in the grid to be uploaded when the Dynaform is submitted. Each file is stored separately in the server's file system and a separate record is created
+            for each file in the <b><tt>APP_DOCUMENT</tt></b> table. The only difference from a normal Multiple File Uploader field, is that the <b><tt>APP_DOCUMENT.APP_DOC_FIELDNAME</tt></b> field will contain <code>'<font color=green><i>grid-variable</i></font>_<font color=green><i>row-number</i></font>_<font color=green><i>file-name</i></font>'</code>.</p>
+
+          <p>For example, a grid whose variable is named "receipts" is submitted, and it has three rows with a Multiple File field named "receiptFile". The following information might be stored in the <b><tt>APP_DOCUMENT</tt></b> table about the three files:</p>
+          <font size=2>
+            <code>mysql> select APP_DOC_UID, DOC_VERSION, APP_UID, DOC_UID, APP_DOC_TYPE, APP_DOC_INDEX, APP_DOC_FIELDNAME from APP_DOCUMENT;</code>
+
+            <table>
+              <tr>
+                <th>APP_DOC_UID</th>
+                <th>DOC_VERSION</th>
+                <th>APP_UID</th>
+                <th>DOC_UID</th>
+                <th>APP_DOC_TYPE</th>
+                <th>APP_DOC_INDEX</th>
+                <th>APP_DOC_FIELDNAME</th>
+              </tr>
+              <tr>
+                <td>9981562705718050e816959058033346 </td>
+                <td> 1 </td>
+                <td> 2490631975717ff351ccda1005474345 </td>
+                <td> -1 </td>
+                <td> ATTACHED </td>
+                <td> 1 </td>
+                <td> [receipts][1][receiptFile] </td>
+              </tr>
+              <tr>
+                <td> 9208148915718050e921ba1095027176 </td>
+                <td> 1 </td>
+                <td> 2490631975717ff351ccda1005474345 </td>
+                <td> -1 </td>
+                <td> ATTACHED </td>
+                <td> 2 </td>
+                <td> [receipts][2][receiptFile] </td>
+              </tr>
+              <tr>
+                <td> 6366198845716e982128ba0053902036 </td>
+                <td> 1 </td>
+                <td> 3202231885716e94385eca5078684093 </td>
+                <td> -1 </td>
+                <td> ATTACHED </td>
+                <td> 3 </td>
+                <td> [receipts][3][receiptFile] </td>
+              </tr>
+            </table>
+          </font>
+
+
+          <p>
+            <font color=green><b>Note:</b></font>
+            <font color=dimgrey> If a grid containing a multiple file field doesn't have an associated array variable, then the selected files in the grid will not saved when the Dynaform is submitted.</font>
+          </p>
+
+          <p>After the Dynaform is submitted, the filenames of the selected files in the grid's case variable can be found doing a search in the APP_DOCUMENT table for the case ID and for APP_DOC_FIELDNAME, which contains the name of the grid variable and
+            the name of the Multiple File field in the grid, to get the file's ID in the APP_DOC_UID field. Using the file's ID, its filename can be found by querying the CONTENT table.</p>
+
+          <p>The following trigger example creates an array of the filenames uploaded in the current case to a grid whose variable is named "clientList" and Multiple File field is named "contractFile":</p>
+
+          <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$caseId</span> &nbsp; &nbsp;<span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$gridVar</span> &nbsp; <span style="color: #339933;">=</span> <span style="color: #0000ff;">'clientList'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$fileField</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'contractFile'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aFiles</span> &nbsp; &nbsp;<span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT C.CON_VALUE AS FILENAME, AD.* FROM CONTENT C, APP_DOCUMENT AD<br />
+&nbsp; &nbsp;WHERE AD.APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>' AND APP_DOC_FIELDNAME LIKE '<span style="color: #006699; font-weight: bold;">{$gridVar}</span>_%_<span style="color: #006699; font-weight: bold;">{$fileField}</span>' AND<br />
+&nbsp; &nbsp;AD.APP_DOC_STATUS = 'ACTIVE' AND AD.APP_DOC_UID = C.CON_ID AND<br />
+&nbsp; &nbsp;C.CON_CATEGORY = 'APP_DOC_FILENAME' ORDER BY AD.APP_DOC_FIELDNAME&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$results</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$results</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span><span style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$results</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aFiles</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$results</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FILENAME'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+          <h2><span id="Accessing_multiple_files_with_triggers">Accessing Multiple Files with PHP</span></h2>
+          <p>When the user selects files in a Multiple File control, the files are immediately uploaded and saved in the file system of the server where ProcessMaker is installed. The files are also stored in the APP_DOCUMENT table in the database. When
+            the Dynaform holding a Multiple File control is submitted, a case variable is created for the Multiple File control with information about the uploaded files in an array of arrays.
+            <h3><span id="multipleFile_storage">Accessing the MultipleFile Case Variable</span></h3>
+            <p>The files uploaded to Multiple File controls are stored in a case variable with the following format:
+              <codeblock>@=<i><font color=green>MultipleFileVariable</font></i> = array( 
+   array( 
+      "appDocUid" => '<i><font color=green>Unique_ID_AppDocument</font></i>', 
+      "name" => '<i><font color=green>filename.ext</font></i>', 
+      "version" => "1" 
+   ),
+   ... 
+); </codeblock>
+              <p>The version number will always be "1", unless the multipleFile field is associated with an Input Document that has the <a href="Input_Documents.html#Creating_Input_Documents">Enable Versioning</a> option selected.</p>
+              <p>For example, the following Multiple File control associated with the <code>@=multipleContractFiles</code> variable has two files in it:
+                <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@=</span>multipleContractFiles <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;appDocUid&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;6994902925858ad7e22e275057848393&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;name&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;CateringServiceContract.docx&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;version&quot;</span> &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;1&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;appDocUid&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;9230004935858ad85ed6a21022202980&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;name&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;NewServiceContract.pdf&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;version&quot;</span> &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;1&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+                <p>To obtain the ID and filename of the first file in the multipleContractFiles control, create a trigger that is set to execute after the Dynaform holding the multipleContractFile control is submitted, with the following PHP code:
+                  <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>multipleContractFiles<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>multipleContractFiles<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>firstFileId <span style="color: #339933;">=</span> <span style="color: #339933;">@=</span>multipleContractFiles<span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'appDocUid'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>firstFilename <span style="color: #339933;">=</span> <span style="color: #339933;">@=</span>multipleContractFiles<span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'name'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+                  <p>Before trying to access a Multiple File variable, it is a good idea to use <a href="http://php.net/manual/en/function.isset.php">isset()</a> to check if the Multiple File variable was defined (in the case the user used the <b>Steps</b>                    menu to skip the Dynaform), and use <a href="http://php.net/manual/en/function.empty.php">empty()</a> to check whether at least one file was uploaded.</p>
+                  
+
+                      <h3><span id="Adding_to_multipleFile">Adding Single Files to Multiple File Controls</span></h3>
+                      <p>A file that was uploaded to a traditional File control can be transferred to a MultipleFile control. In the following example, a Dynaform contains a File control associated with the <code>@@contractFile</code> variable, where one
+                        file can be uploaded.</p>
+                      <img src="../sites/default/files/MultipleFileExampleForm1.png">
+                      <p>The file that was uploaded by the user is then transferred to a Multiple File control located in a second Dynaform:</p>
+                      <img src="../sites/default/files/3.2.2_MultipleFileExampleForm2.png">
+                      <p>A trigger that is fired <i>before</i> the second Dynaform copies the information about the uploaded file from the first DynaForm and adds it to the MultipleFile control associated with the @=multipleContractFiles variable. The following
+                        trigger code first checks whether a file was selected in the File control and then gets its unique ID and filename. It then checks whether the file as already been added to the MultipleFile control. If not, it adds an associative
+                        array of information about the file to the MultipleFile control:
+                        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//if a selected file in the File control:</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>contractFile<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">@@</span>contractFile <span style="color: #339933;">!=</span> <span style="color: #0000ff;">'[]'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$fileId</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>contractFile<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$filename</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>contractFile_label<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//if the multipleFile doesn't yet exist, then create it:</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>multipleContractFiles<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@=</span>multipleContractFiles <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//check whether the file as already been added:</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$addFile</span> <span style="color: #339933;">=</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>multipleContractFiles <span style="color: #b1b100;">as</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'appDocUid'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #000088;">$fileId</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$addFile</span> <span style="color: #339933;">=</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">break</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$addFile</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//add an additional file:</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@=</span>multipleContractFiles<span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;appDocUid&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$fileId</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;name&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$filename</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;version&quot;</span> &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;1&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+                        <p>To test a sample process that adds the selected file in a File control to a MultipleFile control, download and import the <a href="../sites/default/files/Add_File_to_MultipleFile_control-1.pmx" download>Add_File_to_MultipleFile_control-1.pmx</a>                          process (<i>right click</i> on the link and select "Save Link As").
+
+                          <h3><span id="Clearing_multiple_files">Clearing All Files in a Multiple File Control</span></h3>
+                          <p>To clear all the files in a Multiple File control using a trigger, use <code>for</code> to loop through all the files in the Multiple File variable. For each file, use the <a href="../3.0/Internal_Functions_and_Classes.html#AppDocument::remove.28.29">AppDocument::Remove()</a>                            method to mark the file as deleted in the database and <a href="http://php.net/manual/en/function.unlink.php">unlink()</a> to delete the file from the server's file system. Then, set the Multiple File variable to <span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span></code></span>                            (an empty array) to remove its contents.
+                            <p>For example, if the variable associated with the Multiple File control is named "productSpecFiles", the following trigger will delete the files in the control if the "cancelProduct" checkbox is marked.</p>
+                            <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>cancelProduct<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">@@</span>cancelProduct <span style="color: #339933;">==</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span> and<br />
+&nbsp; &nbsp;<a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>productSpecFiles<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>productSpecFiles<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$ad</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> AppDocument<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>productSpecFiles <span style="color: #b1b100;">as</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//mark as deleted in the APP_DOCUMENT table in database:</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$ad</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">remove</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'appDocUid'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'version'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//construct path to the stored file in the server's file system:</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$ext</span> <span style="color: #339933;">=</span> <a href="http://php.net/pathinfo"><span style="color: #990000;">pathinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'name'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> PATHINFO_EXTENSION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$path</span> <span style="color: #339933;">=</span> PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'appDocUid'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'_'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'version'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'.'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$ext</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//delete file on server's file system:</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/unlink"><span style="color: #990000;">unlink</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$path</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//clear files in Multiple File variable</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@=</span>productSpecFiles <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

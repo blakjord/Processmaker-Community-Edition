@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/REST_API_Designer/Process_Variables.html" />
+<link rel="shortlink" href="752.html" />
+<title>3.2 - 3.8 - REST API Designer - Process Variables | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"NywcWPS4jvDMumihqMH1UKHW0SVnN2xtw_i7IJCqECg","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-752 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="752.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="752.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-gezwVA2GSHMg17RhgAJdyi6_5dwhMbBWZkLbXkX9H-Q" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - REST API Designer - Process Variables</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - REST API Designer - Process Variables" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="752.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - REST API Designer - Process Variables 1/5</option><option value="40">Give 3.2 - 3.8 - REST API Designer - Process Variables 2/5</option><option value="60" selected="selected">Give 3.2 - 3.8 - REST API Designer - Process Variables 3/5</option><option value="80">Give 3.2 - 3.8 - REST API Designer - Process Variables 4/5</option><option value="100">Give 3.2 - 3.8 - REST API Designer - Process Variables 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-Aiq87ymEZQo5t5_EYMhgd9FBmkOyKdN61Mkz2JSZgfQ" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2><span id="Process_Variables_Resources">Process Variables Endpoints</span></h2>
+
+<p>The new Dynaform designer included inside ProcessMaker 3 needs variables to be created in a separate interface before being used and added into forms. This endpoint details the use of these variables inside the new interface.</p>
+<div style=" background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><strong>Contents:</strong> [<a href="752.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b><div id="toc" ><ol class="toc">
+<li class="toc"><a href="752.html#Process_Variables_Resources">Process Variables Endpoints</a></li>
+<ol class="toc">
+<li class="toc"><a href="752.html#GetAllVariables">Get Variables List: <code>GET project/{prj_uid}/process-variables</code></a></li>
+<li class="toc"><a href="752.html#GetAVariable">Get Process Variable: <code>GET project/{prj_uid}/process-variable/{var_uid}</code></a></li>
+<li class="toc"><a href="752.html#CreateAVariable">Create Process Variable: <code>POST project/{prj_uid}/process-variable</code></a></li>
+<li class="toc"><a href="752.html#UpdateAVariable">Update Process Variable: <code>PUT project/{prj_uid}/process-variable/{var_uid}</code></a></li>
+<li class="toc"><a href="752.html#DeleteAVariable">Delete Process Variable: <code>DELETE project/{prj_uid}/process-variable/{var_uid}</code></a></li>
+<li class="toc"><a href="752.html#Execute_Query">Execute Query: <code>POST project/{prj_uid}/process-variable/{var_name}/execute-query</code></a></li>
+<li class="toc"><a href="752.html#QueryOptionsInControl">Query Options in Control: <code>POST project/{prj_uid}/process-variable/{var_name}/execute-query-suggest</code></a></li>
+</ol>
+</div></div>
+
+
+<p><strong>Process variables:</strong></p>
+
+<table class="codecolumn">
+    <tbody>
+        <tr>
+            <th><strong> Name </strong></th>
+            <th><strong> Description </strong></th>
+            <th><strong> Type </strong></th>
+            <th><strong> Value </strong></th>
+        </tr>
+        <tr>
+            <td>prj_uid</td>
+            <td>Project UID</td>
+            <td>String</td>
+            <td>"9541049475298f190420f51086854718" (string of 32 characters)</td>
+        </tr>
+        <tr>
+            <td>var_uid</td>
+            <td>Variable UID</td>
+            <td>String</td>
+            <td>Alphanumeric string of 32 characters</td>
+        </tr>
+        <tr>
+            <td>var_name</td>
+            <td>Variable name</td>
+            <td>String</td>
+            <td>Alphanumeric string up to 60 characters. <strong>Note.-</strong> If modifying the var_name field is
+                not necessary, then it id not necessary to send it in the json request.</td>
+        </tr>
+        <tr>
+            <td>var_field_type</td>
+            <td>Variable type</td>
+            <td>String</td>
+            <td>Alphanumeric string up to 32 characters. <strong>Accepted values:</strong> <em>string</em>, <em>integer</em>,
+                <em>boolean</em>, <em>float</em>, <em>datetime</em>, <em>date_of_birth</em> and <em>date</em></td>
+        </tr>
+        <tr>
+            <td>var_field_size</td>
+            <td>Variable size</td>
+            <td>Integer</td>
+            <td>Integer up to 11 digits</td>
+        </tr>
+        <tr>
+            <td>var_label</td>
+            <td>Variable label</td>
+            <td>String</td>
+            <td>Alphanumeric string up to 32 characters</td>
+        </tr>
+        <tr>
+            <td>var_dbconnection</td>
+            <td>Database connection</td>
+            <td>String</td>
+            <td>Alphanumeric string up to 32 characters</td>
+        </tr>
+        <tr>
+            <td>var_sql</td>
+            <td>SQL query</td>
+            <td>String</td>
+            <td>Alphanumeric string up to 512 characters</td>
+        </tr>
+        <tr>
+            <td>var_null</td>
+            <td>Whether the variable will accept null values</td>
+            <td>Tinyint</td>
+            <td><strong>0.-</strong> No, <strong>1.-</strong> Yes</td>
+        </tr>
+        <tr>
+            <td>var_default</td>
+            <td>Default values</td>
+            <td>String</td>
+            <td>Alphanumeric string up to 32 characters</td>
+        </tr>
+        <tr>
+            <td>var_accepted_values</td>
+            <td>Accepted values</td>
+            <td>String</td>
+            <td>Alphanumeric string up to 32 characters</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3><span id="GetAllVariables">Get Variables List: <code>GET project/{prj_uid}/process-variables</code></span></h3>
+
+<p>Gets the list of the process variables in a project.</p>
+
+<dl>
+    <dd><code><strong>GET</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/process-variables</span></code></dd>
+</dl>
+
+<p><strong>Parameters:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>prj_uid</td>
+                    <td>String</td>
+                    <td>Project UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Result:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>array</td>
+                    <td>Returns an array containing data about all variables in the process.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Example:</strong></p>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;4415812967531539f30a166211600459&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;prj_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;812967531539f30a1662116004594415&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;text_name&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;15&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Nombre:&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_dbconnection&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_sql&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_default&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_accepted_values&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uidv&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;57820440553b1a6e4304938032532769&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;prj_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;812967531539f30a1662116004594415&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;drp_country&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><span style="color: #006600; font-style: italic;">//similar to data type</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;20&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Pais:&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_dbconnection&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;@DBCONNECTION&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_sql&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;select * from iso_country&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_default&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_accepted_values&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+
+<h3><span id="GetAVariable">Get Process Variable: <code>GET project/{prj_uid}/process-variable/{var_uid}</code></span></h3>
+
+<p>Gets a process variable.</p>
+
+<dl>
+    <dd><code><strong>GET</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/process-variable/{var_uid}</span></code></dd>
+</dl>
+
+<p><strong>Parameters:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>prj_uid</td>
+                    <td>String</td>
+                    <td>Project UID</td>
+                </tr>
+                <tr>
+                    <td>var_uid</td>
+                    <td>String</td>
+                    <td>Variable UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Result:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>object</td>
+                    <td>Returns an object with data of the requested variable</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Example:</strong></p>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+&nbsp;Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;4415812967531539f30a166211600459&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;prj_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;812967531539f30a1662116004594415&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;text_name&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_field_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_field_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;15&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Nombre:&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_dbconnection&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_sql&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_default&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_accepted_values&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="CreateAVariable">Create Process Variable: <code>POST project/{prj_uid}/process-variable</code></span></h3>
+<p>Creates a process variable.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><code><strong>POST</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/process-variable</span></code></dd>
+</dl>
+
+<p><strong>Parameters:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>prj_uid</td>
+                    <td>String</td>
+                    <td>Project UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Required Fields:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>var_name</td>
+                    <td>String</td>
+                    <td>Variable name</td>
+                </tr>
+                <tr>
+                    <td>var_field_type</td>
+                    <td>String</td>
+                    <td>Variable type</td>
+                </tr>
+                <tr>
+                    <td>var_label</td>
+                    <td>String</td>
+                    <td>Variable label</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Optional Fields:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>var_field_size</td>
+                    <td>Integer</td>
+                    <td>Variable size</td>
+                </tr>
+                <tr>
+                    <td>var_dbconnection</td>
+                    <td>String</td>
+                    <td>Database connection</td>
+                </tr>
+                <tr>
+                    <td>var_sql</td>
+                    <td>String</td>
+                    <td>SQL query</td>
+                </tr>
+                <tr>
+                    <td>var_null</td>
+                    <td>String</td>
+                    <td>Whether the variable will accept null values</td>
+                </tr>
+                <tr>
+                    <td>var_default</td>
+                    <td>String</td>
+                    <td>Default values</td>
+                </tr>
+                <tr>
+                    <td>var_accepted_values</td>
+                    <td>String</td>
+                    <td>Accepted values</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Result:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>object</td>
+                    <td>Returns an object containing the information about the new variable.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Request</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;drp_ciudad&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">120</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Ciudad:&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_dbconnection&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;@DBCONNECTION&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_sql&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;select * from iso_city&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_default&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_accepted_values&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">201</span> <span style="color: #009900;">&#40;</span>Created<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;4415812967531539f30a166211600459&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;drp_city&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_field_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_field_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #CC0000;">120</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;City:&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_dbconnection&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;@DBCONNECTION&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;select * from iso_city&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_default&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_accepted_values&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="UpdateAVariable">Update Process Variable: <code>PUT project/{prj_uid}/process-variable/{var_uid}</code></span></h3>
+<p>Updates a process variable.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><code><strong>PUT</strong> <span style="color: blue;"> /api/1.0/{workspace}/project/{prj_uid}/process-variable/{var_uid}</span></code></dd>
+</dl>
+
+<p><strong>Parameters:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>prj_uid</td>
+                    <td>String</td>
+                    <td>Project UID</td>
+                </tr>
+                <tr>
+                    <td>var_uid</td>
+                    <td>String</td>
+                    <td>Variable UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Optional Fields:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>var_name</td>
+                    <td>String</td>
+                    <td>Variable name</td>
+                </tr>
+                <tr>
+                    <td>var_field_type</td>
+                    <td>String</td>
+                    <td>Variable type</td>
+                </tr>
+                <tr>
+                    <td>var_label</td>
+                    <td>String</td>
+                    <td>Variable label</td>
+                </tr>
+                <tr>
+                    <td>var_field_size</td>
+                    <td>Integer</td>
+                    <td>Variable size</td>
+                </tr>
+                <tr>
+                    <td>var_dbconnection</td>
+                    <td>String</td>
+                    <td>Database connection</td>
+                </tr>
+                <tr>
+                    <td>var_sql</td>
+                    <td>String</td>
+                    <td>SQL query</td>
+                </tr>
+                <tr>
+                    <td>var_null</td>
+                    <td>String</td>
+                    <td>Whether the variable will accept null values</td>
+                </tr>
+                <tr>
+                    <td>var_default</td>
+                    <td>String</td>
+                    <td>Default values</td>
+                </tr>
+                <tr>
+                    <td>var_accepted_values</td>
+                    <td>String</td>
+                    <td>Accepted values</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Result:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>Empty</td>
+                    <td>No return</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Request</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;4415812967531539f30a166211600459&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;drp_ciudad&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_field_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_field_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">80</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Ciudad:&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_dbconnection&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;@DBCONNECTION&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_sql&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;select * from iso_city&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_default&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;var_accepted_values&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+
+<h3><span id="DeleteAVariable">Delete Process Variable: <code>DELETE project/{prj_uid}/process-variable/{var_uid}</code></span></h3>
+<p>Deletes a process variable.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><code><strong>DELETE</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/process-variable/{var_uid}</span></code></dd>
+</dl>
+
+<p><strong>Parameters:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>prj_uid</td>
+                    <td>String</td>
+                    <td>Project UID</td>
+                </tr>
+                <tr>
+                    <td>var_uid</td>
+                    <td>String</td>
+                    <td>Variable UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Result:</strong></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><strong>Type</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td>empty</td>
+                    <td>No return</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Example:</strong></p>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+<h3><span id="Execute_Query">Execute Query: <code>POST project/{prj_uid}/process-variable/{var_name}/execute-query</code></span></h3>
+<p>Executes an SQL query of a dependent field, such as a dropdown box, checkgroup or radiogroup, that uses an SQL query with one or more dynamic variables to populate its list of options.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><code><strong>POST</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/process-variable/{var_name}/execute-query</span></code></dd>
+</dl>
+
+<p><strong>URL Parameters:</strong></p>
+<p><dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>Workspace name, which is "workflow" by default.</td>
+                    <td>http://www.example.com/api/1.0/<b>workflow</b>/project/84233230756cbb13a780d37064601378/process-variable/dropdownVar001/execute-query</td>
+                </tr>
+                <tr>
+                    <td>prj_uid</td>
+                    <td>Unique ID of the project. This can be found by running a case with the Debugger turned on and
+                        looking at the @@PROCESS system variable.</td>
+                    <td>http://www.example.com/api/1.0/workflow/project/<b>84233230756cbb13a780d37064601378</b>/process-variable/dropdownVar001/execute-query</td>
+                </tr>
+                <tr>
+                    <td>var_name</td>
+                    <td>Name of the variable assigned to the dependent field that uses an SQL query to populate its
+                        list of options. It is not possible to use this endpoint with controls that do not have
+                        an associated variable. Remember that variable names are case sensitive and they can only
+                        contain letters, numbers and <code>_</code> (underscores).</td>
+                    <td>http://www.example.com/api/1.0/workflow/project/84233230756cbb13a780d37064601378/process-variable/<b>dropdownVar001</b>/execute-query</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+</p>
+<p><strong>POST Parameters:</strong></p>
+<p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>{ </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> 'dyn_uid': '406442383573140df944390011262710',
+                    </td>
+                    <td><i>Required.</i> The unique ID of the Dynaform that holds the dependent control associated with the specified
+                        variable.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 'field_uid': 'dropdownVar001',</td>
+                    <td><i>Required.</i> The name of the variable that is associated with the dependent field.</td>
+                </tr>
+
+                <tr>
+                    <td> 'COUNTRY1': 'U%',</td>
+                    <td><i>Required.</i> The variable used in the SQL query of the dependent field. The name of this parameter will change according to the variable name. In this example, the variable used in the SQL query shown in the example below is named @@COUNTRY1, so the parameter name is 'COUNTRY1'. The string defined as its value will be used in the SQL query. The value is case
+                        insensitive. Note that at least one of the variables used in the dependent field must be present in the request body.</td>
+                </tr>
+
+                <tr>
+                    <td> 'app_uid': '37439823957314102c66d78026868117',
+                    </td>
+                    <td><i>Optional.</i> The unique ID of the case whose variable will be queried for the options in
+                        the suggest box.</td>
+                </tr>
+
+                <tr>
+                    <td> 'del_index': 0,</td>
+                    <td><i>Optional.</i> Delegation index of the case specified in the app_uid parameter, which counts
+                        tasks executed in the case starting from 1.</td>
+                </tr>
+ <tr>
+     <td> }</td>
+     <td></td>
+ </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+</p>
+<p><strong>Result:</strong><br>
+<div style="margin-left:25px">
+    <p>If successful, returns an HTTP status code of <code>200</code> (OK) and an array of objects in the following format:</p>
+<p><codeblock>[
+  {
+    "value": "<font color=blue><i>value1</i></font>",
+    "text" : "<font color=blue><i>text1</i></font>"
+  },
+  {
+    "value": "<font color=blue><i>value2</i></font>",
+    "text" : "<font color=blue><i>text2</i></font>"
+  }
+  <font color=blue>...</font>
+]
+</codeblock>
+</p>
+<p>Where <code>"value"</code> is the ID of each option in the control and <code>"text"</code> is its displayed label.</p>
+
+<p>If the <code>{var_name}</code> doesn't exist or if the control doesn't have a SQL query defined, then the HTTP status code will be set to 400 and the response will be <code>NULL</code>.</p>
+</div>
+</p>
+<p><strong>Example:</strong></p>
+<div style="margin-left:25px">
+    <p>A dropdown box is associated with a variable named "selectCountry" and uses the following SQL query to populate its contents:</p>
+    <div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IC_UID<span style="color: #66cc66;">,</span> IC_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_COUNTRY <span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #993333; font-weight: bold;">LIKE</span> @@COUNTRY1 <span style="color: #993333; font-weight: bold;">AND</span> IC_UID <span style="color: #66cc66;">&lt;&gt;</span> @@COUNTRY2</div></div>
+    <p>Where @@COUNTRY1 and @@COUNTRY2 are variables associated to two different textboxes.</p>
+
+    <p><em>Request</em></p>
+    <p>The URL is <tt>http://www.example.com/api/1.0/workflow/project/84233230756cbb13a780d37064601378/process-variable/selectCountry/execute-query</tt> and the POST variables are:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;61907528958ab229099c681078186062&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;field_id&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;dropdownVar001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;COUNTRY1&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;U%&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;COUNTRY2&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;US&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;4029846195956990555d732058297161&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;del_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    <p><em>Response</em></p>
+    <p>All the countries that start with the letter U will be displayed, except the United States.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;UA&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Ukraine&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;UG&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Uganda&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;UM&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;United States Minor Outlying Islands&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;UY&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Uruguay&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;UZ&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Uzbekistan&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+</div>
+<h3><span id="QueryOptionsInControl">Query Options in Control: <code>POST project/{prj_uid}/process-variable/{var_name}/execute-query-suggest</code></span></h3>
+<p>Queries the options in a <a href="../3.0/Suggest_Control.html">suggest box</a>, dropdown box, checkgroup or radiogroup, which uses an SQL query to populate its list of options (or uses a <a href="../3.0/DynaForm_Field_Properties.html#Datasource">datasource</a> "array variable" in version 3.0.1.8 or later).</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><code><strong>POST</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/process-variable/{var_name}/execute-query-suggest</span></code></dd>
+</dl>
+
+<p><strong>URL Parameters:</strong></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>Workspace name, which is "workflow" by default.</td>
+                    <td>http://www.example.com/api/1.0/<b>workflow</b>/project/84233230756cbb13a780d37064601378/process-variable/country/execute-query-suggest</td>
+                </tr>
+                <tr>
+                    <td>prj_uid</td>
+                    <td>Unique ID of the project. This can be found by running a case with the Debugger turned on and
+                        looking at the @@PROCESS system variable.</td>
+                    <td>http://www.example.com/api/1.0/workflow/project/<b>84233230756cbb13a780d37064601378</b>/process-variable/country/execute-query-suggest</td>
+                </tr>
+                <tr>
+                    <td>var_name</td>
+                    <td>Name of the variable with a suggest box, dropdown box, radiogroup or checkgroup, which uses
+                        an SQL query to populate its list of options (or uses a <a href="../3.0/DynaForm_Field_Properties.html#Datasource">datasource</a>                        which is "array variable" in version 3.0.1.8 or later). It is not possible to use this
+                        endpoint with controls that do not have an associated variable. Remember that variable
+                        names are case sensitive and they can only contain letters, numbers and <code>_</code>                        (underscores).</td>
+                    <td>http://www.example.com/api/1.0/workflow/project/84233230756cbb13a780d37064601378/process-variable/<b>country</b>/execute-query-suggest</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>POST Parameters:</strong></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>{ </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> 'dyn_uid': '406442383573140df944390011262710',
+                    </td>
+                    <td><i>Required.</i> The unique ID of the Dynaform that holds the control associated with the specified
+                        variable.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> "field_uid": "suggestVar001",</td>
+                    <td><i>Required.</i> The name of the variable that is associated with the suggest box, dropdown
+                        box, radiogroup or checkgroup.</td>
+                </tr>
+
+                <tr>
+                    <td> "filter": "Adam",</td>
+                    <td><i>Optional.</i> A string that searches the displayed text of the options. The search is case
+                        insensitive and can find results anywhere within the text. If not included, then all options
+                        in the suggest box are returned.</td>
+                </tr>
+                <tr>
+                    <td> "start": 10,</td>
+                    <td><i>Optional.</i> The number of the option where to start. The first option is <code>0</code>,
+                        the second option is <code>1</code>, etc. If not included, then starts at <code>0</code> by default.</td>
+                </tr>
+                <tr>
+                    <td> "limit": 20</td>
+                    <td><i>Optional.</i> The maximum number of options to return, which is <code>10</code> by default.</td>
+                </tr>
+
+                <tr>
+                    <td> "order_by": "ASC",</td>
+                    <td><i>Optional.</i> The sorting order that can be "ASC" or "DESC". If not included, the response
+                        will be retrieved in an ascending order.</td>
+                </tr>
+
+                <tr>
+                    <td> "app_uid": "37439823957314102c66d78026868117",
+                    </td>
+                    <td><i>Optional.</i> The unique ID of a case whose variable will be queried for the options in
+                        the suggest box. This is only used if the <a href="../3.0/DynaForm_Field_Properties.html#Datasource">datasource</a> for the control associated with the specified variable is set to "array variable". Remember
+                        that this array variable must store its list of options in the following format:
+                        <codeblock>array(
+  array('<font color=blue><i>value</i></font>', '<font color=blue><i>text-label</i></font>'),
+  array('<font color=blue><i>value</i></font>', '<font color=blue><i>text-label</i></font>'),
+  <font color=blue>...</font>
+)
+</codeblock></td>
+                </tr>
+
+                <tr>
+                    <td> "del_index": 0,</td>
+                    <td><i>Optional.</i> Delegation index of the case specified in the app_uid parameter, which counts
+                        tasks executed in the case starting from 1.</td>
+                </tr>
+                <tr>
+                    <td> "<i><font color=blue>variable-name</font></i>": "<i><font color=blue>variable-value</font></i>"</td>
+                    <td><i>Optional.</i> If the SQL statement for the control contains variable(s), then the name and value of the variable(s) should be included, so they will be inserted into the SQL statement when it is executed.<br>For example, if the SQL statement for the control is:
+                      <codeblock>SELECT CLIENT_ID, CLIENT_NAME FROM CLIENTS WHERE SALES_AREA=@@selectArea OR COUNTRY=@@selectCountry</codeblock>
+                      Then, the POST parameters would be something like this:
+                      <codeblock>  "selectArea": "MIDWEST",
+  "selectCountry": "UK"</codeblock>
+                 </td>
+                </tr>
+                <tr>
+                    <td>}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><strong>Result:</strong></p>
+<div style="margin-left:25px">
+    <p>If successful, returns an HTTP status code of <code>200</code> (OK) and an array of objects in the following format:
+<codeblock>[
+  {
+    "value": "<font color=blue><i>value1</i></font>",
+    "text" : "<font color=blue><i>text1</i></font>"
+  },
+  {
+    "value": "<font color=blue><i>value2</i></font>",
+    "text" : "<font color=blue><i>text2</i></font>"
+  }
+  <font color=blue>...</font>
+]
+</codeblock>
+<p>Where <code>"value"</code> is the ID of each option in the control and <code>"text"</code> is its displayed label.</p>
+
+    <p>If the <code>{var_name}</code> doesn't exist or if the control doesn't have a defined sql query, then the HTTP status code will be set to 400 and the response will be <code>NULL</code>.
+</div>
+
+<p><strong>Example:</strong></p>
+    <div style="margin-left:25px">
+        <p>A suggest box is associated with a variable named "selectCountry" and it uses the following <b>sql</b> query to populate its contents:</p>
+        <div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IC_UID<span style="color: #66cc66;">,</span> IC_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_COUNTRY</div></div>
+
+        <p><em>Request</em></p>
+        <p>The URL is <tt>http://www.example.com/api/1.0/<b>workflow</b>/project/84233230756cbb13a780d37064601378/process-variable/selectCountry/execute-query-suggest</tt> and the POST variables are:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Nic&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;limit&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;10&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;app_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;field_id&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;selectCountry&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;del_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;86759108558d01d35637f23017076271&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+        <p><em>Response</em></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#91;</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DM&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Dominica&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DO&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Dominican Republic&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;NI&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Nicaragua&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+    </div>
+
+    <p><strong>PHP Example:</strong></p>
+    <div style="margin-left:25px">
+        <p>Using the same "selectCountry" suggest control from the previous example, the following PHP code constructs the HTML code for a list of options in a <code>&lt;select&gt;</code> box.
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'YOXQRMHAMMMKSOENEDENDFQDTJTGTUUS'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'32667560556abe5142235e0090500305'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'mary'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'p@s5w0rD'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: Can't access ProcessMaker REST&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #000088;">$varName</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'selectCountry'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$dynaformId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'406442383573140df944390011262710'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$projectId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'798659366573140bc117490080056441'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/project/<span style="color: #006699; font-weight: bold;">$projectId</span>/process-variable/<span style="color: #006699; font-weight: bold;">$varName</span>/execute-query-suggest&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;filter&quot;</span> &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;limit&quot;</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'50'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;dyn_uid&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$dynaformId</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;POST&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aParams</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">'&lt;p&gt;Select Country:&lt;br&gt;&lt;select id=&quot;selectCountry&quot;&gt;'</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oOption</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;option value=<span style="color: #000099; font-weight: bold;">\&quot;</span><span style="color: #006699; font-weight: bold;">{$oOption-&gt;value}</span><span style="color: #000099; font-weight: bold;">\&quot;</span>&gt;<span style="color: #006699; font-weight: bold;">{$oOption-&gt;text}</span>&lt;/option&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">'&lt;/select&gt;'</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+</div>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

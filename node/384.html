@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.0/Grid_Control.html" />
+<link rel="shortlink" href="384.html" />
+<title>3.0 - Grid Control | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"CSPVhGIpmnRYoRBy74Mh1XLjM9qmRonJg55IYJegbjU","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-384 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="384.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-leDoocNgzhGFSH4BXbHitJx5WoAKWcVAAfVce6-vLxw" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.0 - Grid Control</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.1/Grid_Control.html" class="">3.8</a></li><li><a href="../3.1/Grid_Control.html" class="">3.7</a></li><li><a href="../3.1/Grid_Control.html" class="">3.6</a></li><li><a href="../3.1/Grid_Control.html" class="">3.5</a></li><li><a href="../3.1/Grid_Control.html" class="">3.4</a></li><li><a href="../3.1/Grid_Control.html" class="">3.3</a></li><li><a href="../3.1/Grid_Control.html" class="">3.2</a></li><li><a href="../3.1/Grid_Control.html" class="">3.1</a></li><li><a  class="active-version">3.0</a></li><li><a href="../index.php/2.0/Grids.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.0 - Grid Control" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="384.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.0 - Grid Control 1/5</option><option value="40">Give 3.0 - Grid Control 2/5</option><option value="60">Give 3.0 - Grid Control 3/5</option><option value="80" selected="selected">Give 3.0 - Grid Control 4/5</option><option value="100">Give 3.0 - Grid Control 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.8</span></span> <span class="total-votes">(<span >13</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-aW0EiYAk4v6PiGPUJoym1RKhqflE0-isYmGXjVVJaVM" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="384.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="384.html#Overview">Overview</a></li>
+<li class="toc"><a href="384.html#Grid_Properties">Grid Properties</a></li>
+<ol class="toc">
+<li class="toc"><a href="384.html#Layout">Layout</a></li>
+<li class="toc"><a href="384.html#Page_Size">Page Size</a></li>
+<li class="toc"><a href="384.html#Add_Row">Add Row</a></li>
+<li class="toc"><a href="384.html#Delete_Row">Delete Row</a></li>
+<li class="toc"><a href="384.html#Title">Title</a></li>
+</ol>
+<li class="toc"><a href="384.html#Controls_of_the_Grid">Controls Supported as Grid Columns</a></li>
+<ol class="toc">
+<li class="toc"><a href="384.html#Column_Width">Column Width</a></li>
+<li class="toc"><a href="384.html#Function">Function</a></li>
+</ol>
+<li class="toc"><a href="384.html#Grid_Control_Example">Grid Control Example</a></li>
+<li class="toc"><a href="384.html#JavaScript_in_Grids">JavaScript in Grids</a></li>
+<ol class="toc">
+<li class="toc"><a href="384.html#Accessing_Grids_with_JavaScript">Accessing Grids with JavaScript</a></li>
+<li class="toc"><a href="384.html#JavaScript_Functions">JavaScript Functions</a></li>
+<li class="toc"><a href="384.html#Example_Hiding_a_Grid">Hiding a Grid</a></li>
+<li class="toc"><a href="384.html#Fixed_precision_calculations_in_grids">Fixed precision formulas in grids</a></li>
+<li class="toc"><a href="384.html#Change_events_in_grids">Change event handlers inside grids</a></li>
+<li class="toc"><a href="384.html#Disabling_grids">Disabling grids</a></li>
+<li class="toc"><a href="384.html#Getting_grid_rows">Getting grid rows</a></li>
+<li class="toc"><a href="384.html#Disabling_grid_rows">Disabling grid rows</a></li>
+<li class="toc"><a href="384.html#maximum_grid_rows">Maximum number of grid rows</a></li>
+<li class="toc"><a href="384.html#minumum_grid_rows">Checking if a minimum number of grid rows</a></li>
+<li class="toc"><a href="384.html#fixed_number_of_rows">Fixed number of grid rows</a></li>
+<li class="toc"><a href="384.html#clear_grid">Clearing a grid</a></li>
+</ol>
+<li class="toc"><a href="384.html#PHP_in_Grids">PHP in Grids</a></li>
+<ol class="toc">
+<li class="toc"><a href="384.html#Populating_Whole_Grids">Populating Whole Grids</a></li>
+<li class="toc"><a href="384.html#Populating_Grids_with_a_Database_Query">Populating Grids Using a Database Query</a></li>
+<li class="toc"><a href="384.html#cases_in_grids">Displaying cases info in grids</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p>A grid is a graphic design that presents data in a tabular format consisting of columns and rows. For  Dynaforms on ProcessMaker 3, each column is represented by a control and each row of the columns is a registry of this control. To add a new grid to a DynaForm design, drag the icon below from the toolbar on the left panel and drop it onto the design:</p>
+
+<p><img alt="" src="../sites/default/files/GridImageIconVersion3.png"></p>
+
+<p>After adding the control, the grid will be shown as follows:</p>
+<p><img alt="" src="../sites/default/files/GridFormDesignerVersion3.png"></p>
+
+<p>This grid neither comprises any column  nor any data related to it yet. To define the columns, drag a control to the grid which will enable the first cell and drop it inside it.</p>
+<p><img alt="" src="../sites/default/files/DragAndDropControlInsideGridVersion3.png"></p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> Do not forget to set the <a href="384.html#Column_Width">column width</a> of the control to obtain a correct rendering of the columns in the field. Also, take a look at <a href="384.html#Controls_of_the_Grid">this section</a> to view which controls are supported inside grids.</font></p>
+
+<p>As more columns are added, cells in the grid will be enabled at any position the control is brought.</p>
+<p><img src="../sites/default/files/GridAddColumnsToRightVersion3.png"></p>
+
+<p>It is only possible to insert data inside the grid when checking the DynaForm in its preview (which does not save the data) or when running a case.</p>
+<p><img src="../sites/default/files/ProcessMaker3_Grid_Preview.png"></p>
+<div><p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray"> Data can be lost when columns within the same grid are changed in different tasks Dynaforms on the same process. Consider the following example:</font></p>
+<ul style="margin-left:25px">
+	<li><font color="dimgray">In the first task of a process, the Dynaform has a grid with three columns.</font></li>
+	<li><font color="dimgray">In the second task, you delete one of the columns of the same grid.</font></li>
+	<li><font color="dimgray">In the third task, you recreate the column you deleted in the second task's Dynaform.</font></li>
+</ul>
+<p style="margin-left:25px"><font color="dimgray">If you run a case of that process, data is lost in the grid between the first task and the second. This is because the grid in the second task has one column fewer than in the first task. Despite that the grid has three columns in the third task, the data that was lost between the first task and the second cannot be restored.</font></p></div>
+
+<p>Use the "New" link at the upper left-hand corner of the grid to add a new row.</p>
+<p><img src="../sites/default/files/ProcessMaker3_Grid_NewOption.png"></p>
+
+<p>To delete a row, click on the button with the trash icon at the right side of each row.</p>
+<p><img src="../sites/default/files/ProcessMaker3_Grid_DeleteOption.png"></p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">Until ProcessMaker 3.0.1.7, Grids in ProcessMaker Web Edition are created always with at least one row and <b>the first row can not be deleted</b>.<br>From ProcessMaker 3.0.1.8 on, <b>the first row can be removed</b>.</font></p>
+<p><img alt="" src="../sites/default/files/PM3.0GridNoRecords.png"></p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">If using grids with a large number of rows, then settings in the <b><tt>php.ini</tt></b> file need to be increased to allow over 1000 total fields in a DynaForm. See <a href="../3.0/Changing_the_ProcessMaker_Configuration.html#Increasing_maximum_number_fields">Increasing the maximum number of DynaForm fields</a>.</font></p>
+
+
+<h2><span id="Grid_Properties">Grid Properties</span></h2>
+<p>Click on a grid to display its properties on the left panel:</p>
+<p><img src="../sites/default/files/ProcessMaker3_GridControl_PropertiesPanel.png"></p>
+
+<p>Each control added in the grid works according to its own definition and  properties defined. Take into account that, inside the DynaForm design, only the columns of the grid are defined, some other grid characteristics are set in its properties:</p>
+
+<table>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><a href="../3.0/DynaForm_Field_Properties.html#Type">Type</a></td>
+<td><code>grid</code> (readonly)</td>
+</tr>
+<tr>
+<td><a href="../3.0/DynaForm_Field_Properties.html#Variable">Variable</a></td>
+<td><p>Click on the <u>...</u> option to select the variable from the list of available variables. See <a href="../3.0/HTML5_Responsive_DynaForm_Designer.html#Relating_a_Variable_with_a_Control">this section</a> to learn more of how to relate a variable to a control.<br/>
+Only variables of the following data type can be selected:<br/>
+<ul>
+<li>grid</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr>
+<td><a href="../3.0/DynaForm_Field_Properties.html#Data_Type">Variable Data type</a></td>
+<td>After a variable has been related to the control, this property shows the data type of the variable (readonly).</td>
+</tr>
+<tr>
+<td><a href="../3.0/DynaForm_Field_Properties.html#ID">ID</a></td>
+<td><p>[Required]</p>
+<p>Control and HTML unique identifier.</p>
+</td>
+</tr>
+<tr>
+<td><a href="384.html#Title">Title</a></td>
+<td>Set the title of the grid in this property</td>
+</tr>
+<tr>
+<td><a href="../3.0/DynaForm_Field_Properties.html#Hint">Hint</a></td>
+<td>Used to show help when the grid is rendered. It is shown when the pointer of the mouse is hovered over the ? icon.
+<p><strong><font color="red">Warning:</font></strong> <font color="dimgray"> The Hint icon and message in a grid are cut-off in ProcessMaker mobile. This is a known issue that will be fixed in upcoming versions of ProcessMaker. </font></p>
+</td>
+</tr>
+<tr>
+<td><a href="../3.0/DynaForm_Field_Properties.html#Required">Required</a></td>
+<td>	By checking this option, an asterisk is added in the label to indicate that the field is required. It means that field needs to be mandatorily fulfilled from the control. When a required field is not filled-in with any value, it will not be possible to go to the next step.
+</td>
+</tr>
+<tr>
+<td><a href="../3.0/DynaForm_Field_Properties.html#Display_Mode">Display Mode</a></td>
+<td><p>[Required]</p>
+<p>Display mode:</p>
+<ul>
+<li><strong>parent:</strong> inherits the display mode defined in the parent container (form)</li>
+<li><strong>edit:</strong> the field is enabled for edition when it is rendered.</li>
+<li><strong>view:</strong> the field can only be viewed when it is rendered. The content can’t be edited.</li>
+<li><strong>disabled:</strong> the field is displayed as disabled. The field is displayed in gray in order to indicate the disabled mode. The content can't be edited either.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><a href="384.html#Layout">Layout</a></td>
+<td><p>[Required]</p>
+<p>This property defines the format how the grid will be shown when rendered. The options of this property are the following:</p>
+<ul>
+<li>responsive</li>
+<li>static</li>
+<li>form <font color="red">*</font></li>
+</ul>
+</td>
+</tr>
+<td><a href="384.html#Page_Size">Page Size</a></td>
+<td><p>[Required]</p>
+<p>Define the number of rows display per page.</p>
+</td>
+</tr>
+<td><a href="384.html#Add_Row">Add Row</a></td>
+<td>Enable the add row button</td>
+</tr>
+<tr>
+<td><a href="384.html#Delete_Row">Delete Row</a></td>
+<td>Enable the delete row button</td>
+</tr>
+</table>
+<p><strong><font color="red">*</font></strong> No longer available from version 3.0.1.5</p>
+
+<h3><span id="Layout">Layout</span></h3>
+
+<p>This property sets the way grids will accommodate their rows since the moment they are rendered in the preview of the DynaForm or when running a case.</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyLayoutVersion3.png"></p>
+<p>The options for this property are:</p>
+<ul>
+<li>Responsive</li>
+<li>Static</li>
+<!--<li>Form</li>-->
+</ul>
+<p>For this property, take into account that the <a href="384.html#Column_Width">column width of the controls</a> inside the grid must be correctly configured for a good performance.</p>
+
+<p>When the layout of the grid is set as <i>responsive</i>, the columns accommodate immediately according to the size of the screen making them wider or shrinking them. <!--If there are many columns defined in the Grid <b>do not use</b> the Responsive layout, instead use the <b>Form</b> layout. --> For the <i>static</i> layout, the grid maintains its size despite the size of the screen. In this type of layout, if the length of the grid surpasses the length of the screen, a scroll bar enables so users can still work with the grid. <!--For the <i>form</i> type of layout, when the length of the grid surpasses the length of the screen, the columns of the rows accommodate one after another as form fields. -->See the figures below to view the differences among them.</p>
+
+<p><strong>Responsive Layout</strong></p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridProperty_ResponsiveLayout.png"></p>
+
+<p><strong>Static Layout</strong></p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridProperty_StaticLayout.png"></p>
+<!--
+<p><strong>Form Layout</strong></p>
+<p><img alt="" src="/sites/default/files/ProcessMaker3_GridProperty_FormLayout.png"></p>
+-->
+
+<h3><span id="Page_Size">Page Size</span></h3>
+
+<p>This property sets the page size of the grid. Gets or sets the number of items to display on a single page of the grid.</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyPageSizeVersion3.png"></p>
+<p>When rendering the form and adding more row in the grid than the size defined in this property, a new page is added and
+ the navigation control appears at the bottom of the grid.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridProperty_PageSizeRender.png"></p> 
+<p>By default, this property is set as "None", thus the rows of the grid are added one after another</p>
+
+<h3><span id="Add_Row">Add Row</span></h3>
+<p>This property sets if the grid will have the "New" button enabled or not by checking or unchecking it. By default, this option is checked, which means the "New" button is enabled when rendering the grid in the form.</p>
+<p><img alt="" src="../sites/default/files/ControlProperty_Grid_AddRow_Version3.png"></p>
+
+<h3><span id="Delete_Row">Delete Row</span></h3>
+<p>This property sets if the grid will have the <img alt="" src="../sites/default/files/DeleteRowFromGrid_PM3.png"> button enabled or not by checking or unchecking it. By default, this option is checked, which means the button is enabled when rendering the grid in the form.</p>
+<p><img alt="" src="../sites/default/files/ControlProperty_Grid_DeleteRow_Version3.png"></p>
+
+<h3><span id="Title">Title</span></h3>
+<p>Set the title of the grid in this property.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridControl_TitlePanel.png"></p>
+<p> The title of the grid is displayed in the middle of the screen (of any device) at the top side of the grid.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridControl_TitleRender.png"></p>
+
+<h2><span id="Controls_of_the_Grid">Controls Supported as Grid Columns</span></h2>
+<p>The following are the controls supported inside grids:</p>
+<ul>
+<li><a href="../3.0/Text_and_Textarea_Controls.html">Text and Textarea</a></li>
+<li><a href="../3.0/Dropdown_Control.html">Dropdown</a></li>
+<li><a href="../3.0/Checkbox_and_Checkbox_Group.html#Checkbox">Checkbox</a></li>
+<li><a href="../3.0/Datetime_Control.html">Datetime</a></li>
+<li><a href="../3.0/Suggest_Control.html">Suggest</a></li>
+<li><a href="../3.0/Hidden_Control.html">Hidden</a></li>
+<li><a href="../3.0/Links.html">Link</a></li>
+<li><a href="../3.0/File_control.html">File</a></li>
+</ul>
+
+<p>Take into account that  controls added inside a grid do not accept a Variable related to them. Additionally, these controls have the property <a href="384.html#Column_Width">Column Width</a>, which must be configured  to properly render the grid.</p>
+
+<h3><span id="Column_Width">Column Width</span></h3>
+<p>This property sets the width each column in the grid will take up when rendering the form. This property is only available for the controls added inside a grid and must be mandatorily filled in order to render the grid inside the Preview or, when running a case.</p>
+<p>To set this value in the properties, take into account that depending on the mode of the grid, this setting is done as the following:</p>
+<ul>
+<li><strong>Static: </strong> Set the width of the columns in px. Ex. 250px.</li>
+<li><strong>Responsive</strong> Set the width of the columns in % percentage.
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> Take care of making the correct calculations for this property. If the percentage set in the columns surpasses 100% the last columns (the ones at the right from where 100% surpassed) will  be cut or will not be shown in the DynaForm.</font></p>
+</li>
+</ul>
+<p>By default this column is set as <tt>10</tt>, so take care to set the property correctly whether it is "responsive" or "static".</p>
+<p> To access this property add a control to the grid and go to its properties by clicking on it. For example, if adding the following controls in the grid:</p>
+
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridProperty_ColumnPropertyGridExample.png"></p>
+
+<p>Click on the textbox control "Employee Name" to view its properties and see that at the end of the list there is the property "Column Width".</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridProperty_ColumnPropertyTextbox.png"></p>
+
+<p>As there are three columns in the grid, this control will take up 33% when rendering the form.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridProperty_ColumnPropertyExamplePer.png"></p>
+
+<p>Only the columns that have set up this property are rendered in the grid. If any of the columns have set this property when rendering the forms it will be shown like the following:</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_GridProperty_ColumnPropertyPreviewErr.png"></p>
+
+<h3><span id="Function">Function</span></h3>
+<p><strong><span style="color: green;">Note:</span></strong> <span style="color: dimgrey;"><a href="../3.0/Text_and_Textarea_Controls.html#Validate">Validation</a> rules must be defined in Text controls involved in mathematical functions to restrict data input.</span></p>
+
+<p>This property belongs to the Text control in a grid. It offers predefined mathematical functions to sum columns or to obtain their average.</p>
+<p>This property only works with text controls which are <i>integer</i> or <i>float</i> in the data type of the variable. A text control with this characteristic must be added as a column in the grid and inside its properties the function must be selected:</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyFunctionVersion3.png"></p>
+<p>When running a case or reviewing it inside the Preview, users will see the results automatically as the quantities are entered.</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyFunctionExampleVersion3.png"></p>
+
+<h2><span id="Grid_Control_Example">Grid Control Example</span></h2>
+<p>Add a "Grid" control by dragging and dropping it from the Web Controls located on the left hand panel.</p>
+<p><img src="../sites/default/files/1Grid_Example_AddControl.png"></p>
+<p>Immediately after the control is added, the <a href="../3.0/Variables.html#CreatingVariablesDynaForm">Create Variable</a> window will appear.</p>
+<p><img src="../sites/default/files/2Grid_Example_CreateVariableWindow.png"></p>
+<p>For this example, change the name of the variable and then click on the "Settings" option to add or remove any additional options for the variable. As seen in the image below the "grid" variable does not have many settings. After doing this click on the "Save" button to add the variable to the properties of the control. </p>
+<p><img src="../sites/default/files/3Grid_Example_ChangeVariableNameSettings.png"></p>
+<p>After saving the settings of the variable, go to the control and click on any empty space on it and its properties will be displayed on the left side panel where the "variable", "variable data type" and the "id" properties will be now changed as seen in the image below</p>
+<p><img src="../sites/default/files/4Grid_Example_GridPropertiesTypeVariableVariableType.png"></p>
+<p>Now, the "id" property can be use with JavaScript code.</p>
+<p><img src="../sites/default/files/5Grid_Example_Id_ControlPropertyId.png"></p>
+<p>To add functionality and behavior to the control click on the light grey border of the DynaForm (which is the space outside the controls) to display the properties of the DynaForm. When the properties are displayed locate the "javascript" property and click on the "edit" button to open a JavaScript editor. </p>
+<p><img src="../sites/default/files/6Grid_Example_Id_DynaformProperties.png"></p>
+<p>Once in the editor add the following code which will set the value "ProcessMaker" into the first row and the first column. For more information about javascript code for this control read this <a href="../3.0/Grid_Control.html#JavaScript_in_Grids">section</a>.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">jQuery<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#grid&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'ProcessMaker'</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'1'</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'1'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p><img src="../sites/default/files/7Grid_Example_Id_JavaScriptCode.png"></p>
+<p>When the control is rendered the value which is "ProcessMaker" will be set in the first row and first column as added in the code.</p>
+<p><img src="../sites/default/files/8Grid_Example_Id_RenderedCode.png"></p>
+<p>Next is the "title" property which sets the name of the control that will be displayed as a the title of the grid when the control is rendered as seen in the image below.</p>
+<p><img src="../sites/default/files/9Grid_Example_Title_AddTitle.png"></p>
+<p>Now the "hint" property is used to show help when the grid is rendered. For this example add a hint such as "Add more information". The result of this is shown in the image below.</p>
+<p><img src="../sites/default/files/10Grid_Example_Hint_AddAHint.png"></p>
+<p>The following property is the "display mode" property which has different effects in a control depending on which option is selected. The illustration below shows every effect the "display mode" property has in the control.</p>
+<p><img src="../sites/default/files/11Grid_Example_DisplayMode_AllModes.png"></p>
+<p>The "layout" property defines the format of how the grid will be shown. The "responsive" option is set as default when the control is added. This option means that the control responds to alterations made when the control is rendered. And on the contrary the "static" option will not respond to the changes and will stay inactive to the alterations. </p>
+<p><img src="../sites/default/files/12Grid_Example_Layout_ResponsiveStatic.png"></p>
+<p>The "page size" control will define the number of rows display per page by adding a pagination control. For example is the page size is chosen to be 20 then the control will add 20 rows and the pagination will add a page.</p>
+<p><img src="../sites/default/files/13Grid_Example_PageSize_ChooseNumber.png"></p>
+<p>The last two properties are the "add row" and "delete row" properties which by default are always checked meaning that rows can be added and deleted. In the image below a row can be added by clicking on the "+ New" option and delete a row by clicking on the red garbage can.</p>
+<p><img src="../sites/default/files/14Grid_Example_AddDeleteRow_RenderedControl.png"></p>
+<p>If this properties are now wished to be shown then unchecked them and the result of that action will be the following. </p>
+<p><img src="../sites/default/files/15Grid_Example_AddDeleteRow_Unchecked.png"></p>
+
+<h2><span id="JavaScript_in_Grids">JavaScript in Grids</span></h2>
+<p>To learn more of how to access fields and controls using JavaScript, and the JavaScript functions supported by them; it is very important to first read the documentation about <a href="../3.0/JavaScript_in_DynaForms.html">JavaScript in Dynaforms</a></p>
+<p>For the grid elements, take into account the following:</p>
+<p><img src="../sites/default/files/ProcessMaker3_GridControl_JSInformation.png"></p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> For dropdowns, the value is different than the text:<br/>
+<img src="../sites/default/files/ProcessMaker3_Comboxes_JavaScript_LabelValueText.png">
+</font></p>
+
+<h3><span id="Accessing_Grids_with_JavaScript">Accessing Grids with JavaScript</span></h3>
+<p>Please, read <a href="../3.0/JavaScript_Functions_and_Methods.html#Ways_to_access_DynaForm_Controls">this documentation</a> to learn ways to access controls and fields inside Dynaforms. Also, take into account the following for grids:</p>
+<p>To <u>access grids</u> using jquery use the following methods:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">jQuery<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#gridId&quot;</span><span style="color: #009900;">&#41;</span> </div></div>
+or<br/>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#gridId&quot;</span><span style="color: #009900;">&#41;</span></div></div>
+<p>Which is the same.</p>
+<p>Remember that when a grid is a complex element that is contained inside a <code>div</code> element in the HTML of the form. The <code>div</code>'s ID is the one set in the properties of the grid is set by default as "<code>grid000000000X</code>" where "x" represents the numbering of already added grids in the design. Nevertheless, it is possible to set a custom ID in the properties to have a better management of grids.<br/>
+  The elements inside the grid, such as its title and controls are contained inside their own divs (including their elements) which makes it a complex element. For that reason, it is important to manage the ProcessMaker functions described below. Take into account the following:<br/>
+  
+  <img src="../sites/default/files/ProcessMaker3_GridControl_PropertiesID.png">
+  </p>
+  
+</p>
+<h3><span  id="JavaScript_Functions">JavaScript Functions</span></h3>
+
+<table>
+<tr>
+<th>Functions</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#control.getControl"><code>getControl</code></a>()</td>
+<td><p>Remember that when the form is rendered, each control is hold inside a <code>div</code> element, so use this function to work with the control as it is.</p>
+<p>Also you can get control directly using:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span>“#form\\<span style="color: #009900;">&#91;</span>fieldid\\<span style="color: #009900;">&#93;</span>”<span style="color: #009900;">&#41;</span><br />
+$<span style="color: #009900;">&#40;</span>“#form\\<span style="color: #009900;">&#91;</span>name\\<span style="color: #009900;">&#93;</span>”<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">val</span><span style="color: #009900;">&#40;</span>‘Hello world’<span style="color: #009900;">&#41;</span><span style="color: #339933;">;&lt;/</span>td<span style="color: #339933;">&gt;</span></div></div>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.getValue"><code>getValue</a></code>(row,col)</td>
+<td>Gets the value of the grid cell.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#control.getLabel"><code>getLabel</a></code>()</td>
+<td>Gets the label / title of the grid.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#control.getLabel"><code>getLabel</a></code>(col)</td>
+<td>Gets the label /title of the column.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.getText"><code>getText</a></code>(row,col)</td>
+<td>Gets the text of the cell if exist.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.setValue"><code>setValue</a></code>(value, row, col)</td>
+<td>Sets the value of the cell.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.setText"><code>setText</a></code>(text, row, col)</td>
+<td>Sets the text of the cell. Same as setValue.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#control.setLabel"><code>setLabel</a></code>(gridLabel)</td>
+<td>Sets the grid label.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#control.setLabel"><code>setLabel</a></code>(columnLabel, col)</td>
+<td>Sets the column label.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.getSummary"><code>getSummary</a></code>("columnId")<br/>
+<a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.getSummary"><code>getSummary</a></code>(col)
+</td>
+<td>Get the value of the summary function of the specified column ex: average, sum</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.getNumberRows"><code>getNumberRows</a></code>()</td>
+<td>Gets the number of rows of the grid.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.addRow"><code>addRow</a></code>()<br/>
+<a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.addRow"><code>addRow</a></code>([{label1:value1}, {label2:value2}])
+</td>
+<td>Adds a new row to the grid and returns the index of the new row.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.deleteRow"><code>deleteRow</a></code>(rowIndex)</td>
+<td>Deletes the specified row in the grid.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.onAddRow"><code>onAddRow</a></code>(callback)</td>
+<td>Event is fired when a new row is added, and return: row, gridtable, index.
+example:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">jQuery<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#gridId&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onAddRow</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>row<span style="color: #339933;">,</span> grid<span style="color: #339933;">,</span> index<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+<span style="color: #006600; font-style: italic;">//code here</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.onDeleteRow"><code>onDeleteRow</a></code>(callback)</td>
+<td>Event is fired when a grid row is deleted. For example:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">jQuery<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#gridId&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onDeleteRow</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>row<span style="color: #339933;">,</span> grid<span style="color: #339933;">,</span> index<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+<span style="color: #006600; font-style: italic;">//code here</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.hideColumn"><code>hideColumn</a></code>(colIndex)</td>
+<td>Hide the specified grid column.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<a href="../3.0/JavaScript_Functions_and_Methods.html#grid.showColumn"><code>showColumn</a></code>(colIndex)</td>
+<td>Show the specified grid column.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<code>disableValidation(colIndex)</code></td>
+<td>Disable validation in the field. Disable all the configured validations including the required validation. Note that the required asterisk must be removed from the label.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<code>enableValidation(colIndex)</code></td>
+<td>Enable validation in the field. Enable all the validations of the field including the required validation.</td>
+</tr>
+<tr>
+<td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#gridId")</a>.<code>getControl(row, col)</code></td>
+<td>Gets one of the controls inside the grid. </td>
+</tr>
+</table>
+<p><strong><font color="green">Note:</font></strong> <font color="dimgray">To see code examples of these functions, see <a href="../3.0/JavaScript_Functions_and_Methods.html">JavaScript Functions and Methods</a>.</font></p>
+
+<h3><span id="Example_Hiding_a_Grid">Hiding a Grid</span></h3>
+<p>It is possible to hide or show the table which holds a grid with the <a href="https://api.jquery.com/toggle-event/">toggle</a> jquery event. For example let's hide a grid <code>"grid1"</code> whenever the checkbox <code>"HideGrid"</code> is checked and show it whenever the checkbox is unchecked. To do this, let's create the boolean variable "<code>HideGrid</code>" with the following options:</p>
+
+<codeblock>True: Hide
+False: Show
+</codeblock>
+
+<p>Let's create a new DynaForm, open it and add a checkbox control and a grid control to the design. Click on the <code>checkbox</code>, go to its properties and relate the control with the variable "HideGrid", previously created and that will be all the configuration to be done for the checkbox.</p>
+<p><img src="../sites/default/files/ProcessMaker3_GridControl_RelateCheckbox.png"></p>
+
+<p>Now, add some controls to the grid (in the example the textboxes "Name" and "Telephone" were added as well as the textarea "Address"), click on the grid to view its properties at the left panel and set the ID of the grid as <code>"grid1"</code>.</p>
+<p><img src="../sites/default/files/ProcessMaker3_GridControlExample_Properties.png"></p>
+
+<p>After doing this, the controls have the necessary configuration to have them working correctly. Now, click on the form to view its properties, click on the "edit..." button and add the following code to the editor.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span>document<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">ready</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#HideGrid'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">click</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">function</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//console.log($('#HideGrid').getControl().is(&quot;:checked&quot;)); //uncomment to check which values the checkbox control has</span><br />
+&nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#grid1&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">toggle</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">checked</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Try it by rendering it in the preview of the form. When it is first rendered the form is like the following:</p>
+<p><img src="../sites/default/files/ProcessMaker3_GridControlExample_PropertiesFirstRender.png"></p>
+<p>Check the checkbox "Hide Grid??" to hide the grid.</p>
+<p><img src="../sites/default/files/ProcessMaker3_GridControlExample_PropertiesChecked.png"></p>
+<p>Uncheck it to show the grid</p>
+<p><img src="../sites/default/files/ProcessMaker3_GridControlExample_PropertiesUnChecked.png"></p>
+<p>To check the value of the checkbox when the user clicks on it, uncomment the following line in the code:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp; &nbsp;console.<span style="color: #660066;">log</span><span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#HideGrid'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getControl</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">is</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;:checked&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//uncomment to check which values the checkbox control has</span></div></div>
+<p>Let's see the values the checkbox took in the console of the browser (press the <code>"F12"</code> key of the board), and view the console:</p>
+<p><img src="../sites/default/files/ProcessMaker3_GridControlExample_ConsoleValues.png"></p>
+<p>When checked, the checkbox returns <code>"true"</code>, when unchecked, the checkbox returns <code>"false"</code></p>
+
+<h3><span id="Fixed_precision_calculations_in_grids">Fixed precision formulas in grids</span></h3>
+<p>The formulas in grids do not specify the precision of their calculations, so the results of formulas can have a <a href="https://processmaker.atlassian.net/browse/TRI-1303">variable number of decimal digits</a>.  
+
+<p>For example, an "invoiceList" grid contains fields with the IDs "price", "taxRate" and "total" to calculate the total price of each item.  The "total" field uses the following formula: 
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">price + (price * taxRate)</div></div>
+<p>The number of decimal digits in the "total" field changes depending on the numbers entered into the "price" and "taxRate" fields:</p>
+<img src = "../sites/default/files/GridWithOneFormulaField.png">
+<p>
+<p>Another problem is that having multiple fields using formulas in grids can cause <a href="https://processmaker.atlassian.net/browse/TRI-1302">problems in the calculations</a>. For example, in the following grid, the "tax" and "total" fields both use formulas:</p>
+<img src = "../sites/default/files/GridWithTwoFormulaFields.png">
+<p>The two formulas in the same grid cause conflicts and yield erroneous results:</p> 
+<img src = "../sites/default/files/CrazyFormulaResultsInGrids.png">
+<p>Both of these problems can be fixed by using JavaScript. Instead of using formulas to calculate the "tax" and "total" fields, JavaScript can be added to the DynaForm to calculate the values of the "tax" and "total" fields in the grid. The following JavaScript code loops through the grid and recalculates the "tax" and total" for each row in the grid when any value is changed in the DynaForm:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> roundToFixed<span style="color: #009900;">&#40;</span>_float<span style="color: #339933;">,</span> _digits<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">var</span> rounder <span style="color: #339933;">=</span> <span style="">Math</span>.<span style="color: #660066;">pow</span><span style="color: #009900;">&#40;</span><span style="color: #CC0000;">10</span><span style="color: #339933;">,</span> _digits<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #009900;">&#40;</span><span style="">Math</span>.<span style="color: #660066;">round</span><span style="color: #009900;">&#40;</span>_float <span style="color: #339933;">*</span> rounder<span style="color: #009900;">&#41;</span> <span style="color: #339933;">/</span> rounder<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">toFixed</span><span style="color: #009900;">&#40;</span>_digits<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;form&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setOnchange</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>field<span style="color: #339933;">,</span> newVal<span style="color: #339933;">,</span> oldVal<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">var</span> totalRows <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#invoiceList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getNumberRows</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">var</span> i <span style="color: #339933;">=</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;=</span> totalRows<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; price &nbsp; <span style="color: #339933;">=</span> parseFloat<span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#invoiceList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span>i<span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; taxRate <span style="color: #339933;">=</span> parseFloat<span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#invoiceList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span>i<span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; tax &nbsp; &nbsp; <span style="color: #339933;">=</span> price <span style="color: #339933;">*</span> taxRate<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//make sure the user entered valid values:</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>isNaN<span style="color: #009900;">&#40;</span>tax<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; tax <span style="color: #339933;">=</span> <span style="color: #3366CC;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; total <span style="color: #339933;">=</span> <span style="color: #3366CC;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; tax &nbsp; &nbsp; <span style="color: #339933;">=</span> roundToFixed<span style="color: #009900;">&#40;</span>tax<span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; total &nbsp; <span style="color: #339933;">=</span> roundToFixed<span style="color: #009900;">&#40;</span>price <span style="color: #339933;">+</span> <span style="color: #009900;">&#40;</span>price <span style="color: #339933;">*</span> taxRate<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span> &nbsp;<br />
+&nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#invoiceList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span>tax<span style="color: #339933;">,</span> &nbsp; i<span style="color: #339933;">,</span> <span style="color: #CC0000;">3</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#invoiceList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span>total<span style="color: #339933;">,</span> i<span style="color: #339933;">,</span> <span style="color: #CC0000;">4</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div> 
+<p>The custom <code>roundToFixed()</code> function is used to set two decimal digits in the calculations for the "tax" and "total" fields. To learn more, see <a href="../3.0/JavaScript_in_DynaForms.html#Working_with_Numbers">Working with Numbers in JavaScript</a>. The <code>isNaN()</code> function is used to check whether the user entered valid numbers in the fields. If it calculates a result which is not a number (NaN), then the tax and total fields are set to <code>''</code> (empty string).  
+
+<p>Using this JavaScript code, both fields are calculated correctly with two decimal digits when the user changes a value in the grid:</p>
+<img src = "../sites/default/files/GridCalculatedWithJS.png">
+
+<p>To see an example of this code, download the sample <a href="../sites/default/files/Fixed_precision_grid_math-1.pmx">Fixed_precision_grid_math-1.pmx</a> process.</p>
+
+
+<h3><span id="Change_events_in_grids">Change event handlers inside grids</span></h3>
+<p>ProcessMaker does not provide a <a href="../3.0/JavaScript_Functions_and_Methods.html#control.setOnchange">setOnchange()</a> method for grids or the fields inside grids, however, change <a href="../3.0/JavaScript_in_DynaForms.html#Tying_Code_to_Events">event handlers</a> can be set for the individual fields inside a grid. The fields inside a grid have an ID of <code>"form[<font color=blue><i>gridId</i></font>][<font color=blue><i>rowNumber</i></font>][<font color=blue><i>fieldId</i></font>]"</code>, where the first row number is <code>1</code>, the second row is <code>2</code>, etc.</p>
+<p>For example, a grid with the ID "ReceiptList" contains a "receipt" File field to upload a scanned file of a receipt and a "amount" textbox to enter the total for a receipt. The "amount" field has a sum function, which lists the summed total for all the receipts below the column.</p>
+<img src="../sites/default/files/ReceiptListGridInDesigner.png">
+<p>The "receipt" field in the first row would have an ID of <code>"form[ReceiptList][1][receipt]"</code> and the "amount" field in the second row would have an ID of <code>"form[ReceiptList][2][amount]"</code>. To access a field inside a grid by its ID with a <a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery selector</a>, the <code>[</code> and <code>]</code> in the ID have to be escaped with <code>\\</code>:</p>
+<codeblock>$("#form\\[<font color=blue><i>gridId</i></font>\\]\\[<font color=blue><i>rowNumber</i></font>\\]\\[<font color=blue><i>fieldId</i></font>\\]")</codeblock>
+<p>For example, the following JavaScript code sets the color of the text in the amount field in the second row to green.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[ReceiptList<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[2<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[amount<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;color&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;green&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p>A change event handler can be set for a single field inside a grid in this manner:</p>
+<codeblock>$("#form\\[<font color=blue><i>gridId</i></font>\\]\\[<font color=blue><i>rowNumber</i></font>\\]\\[<font color=blue><i>fieldId</i></font>\\]").change( function() {
+   //event handler code
+} );
+</codeblock>
+<p>For example, the following JavaScript code sets a change event hander for the "amount" field in the first row in the grid. If the user sets the "amount" field in the first row to a value greater than 300, then the border color of this field is changed to red. The field's <a href="../3.0/JavaScript_Functions_and_Methods.html#css">css()</a> method is called to change its border color. Note that <span class="geshifilter"><code class="jquery geshifilter-jquery"><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span><span style="color: #009900;">&#41;</span></code></span> is used to convert from the field's DOM object to its jQuery object, so its <code>css()</code> method can be called.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[ReceiptList<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[1<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[amount<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">change</span><span style="color: #009900;">&#40;</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">300</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;1px solid red&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span> <span style="color: #006600; font-style: italic;">//set the &quot;amount&quot; field's border back to default light gray color:</span><br />
+&nbsp; &nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span> <br />
+<span style="color: #009900;">&#125;</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p>If the user enters <code>400</code> in the "amount" field in the first row, then its border changes to red.</p>
+<img src="../sites/default/files/ReceiptListAmountFieldRed.png">
+
+<p>Grids can have variable number of rows, so this same change event handler has to be set for each new "amount" field when the user clicks on the <b>New</b> button to add another row to the grid. The <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.onAddRow"><i>grid</i>.onAddRow()</a> method can used to execute code when a new row is added to a grid. The following code sets a new change event handler for each "amount" field in the new row added to the "ReceiptList" grid:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> checkAmount<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">300</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;1px solid red&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span> <span style="color: #006600; font-style: italic;">//set the &quot;amount&quot; field's border back to default light gray color:</span><br />
+&nbsp; &nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span> <br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #006600; font-style: italic;">//set the change event handler for the first row when the DynaForm loads:</span><br />
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[ReceiptList<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[1<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[amount<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">change</span><span style="color: #009900;">&#40;</span> checkAmount <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #006600; font-style: italic;">//set the change event hander for each new row added to the grid:</span><br />
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#ReceiptList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onAddRow</span><span style="color: #009900;">&#40;</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>aRow<span style="color: #339933;">,</span> oGrid<span style="color: #339933;">,</span> rowNumber<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[ReceiptList<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[&quot;</span> <span style="color: #339933;">+</span> rowNumber <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[amount<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">change</span><span style="color: #009900;">&#40;</span> checkAmount <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p>An easier way to set a change event handler in grids is to use the <a href="../3.0/JavaScript_Functions_and_Methods.html#form.setOnchange"><i>form</i>.setOnchange()</a> method for the entire DynaForm and check whether the ID of the field which was changed is inside the grid. The <code><i>form</i>.setOnchange()</code> method will report that the ID of a changed field inside a grid is <code>"[<font color=blue><i>gridId</i></font>][<font color=blue><i>rowNumber</i></font>][<font color=blue><i>fieldId</i></font>]"</code>, such as <code>"[ReceiptList][2][amount]"</code>. 
+<p>The following example shows how to change the border color of a grid depending on the total of a sum function in a grid.</p>
+
+<p>The following JavaScript code is added to the DynaForm to check whether the summed total for the "amount" column is greater than 500. If so, it changes to the grid's border color to red. If less than 500, then it is set back to the default color, which is a light gray color.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> checkAmountTotal<span style="color: #009900;">&#40;</span>fieldId<span style="color: #339933;">,</span> newVal<span style="color: #339933;">,</span> oldVal<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #006600; font-style: italic;">//if a value is changed inside the &quot;ReceiptList&quot; grid:</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>fieldId.<span style="color: #660066;">search</span><span style="color: #009900;">&#40;</span><span style="color: #009966; font-style: italic;">/^\[ReceiptList\]/</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//if the summed &quot;amount&quot; column is greater than 500: </span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#ReceiptList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getSummary</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;amount&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;=</span> <span style="color: #CC0000;">500</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//change the &quot;ReceiptList&quot; grid's border to red</span><br />
+&nbsp; &nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#ReceiptList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;div.pmdynaform-grid-tbody&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;1px solid red&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span> &nbsp;<span style="color: #006600; font-style: italic;">//return grid to default border color</span><br />
+&nbsp; &nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#ReceiptList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;div.pmdynaform-grid-tbody&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;form&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setOnchange</span><span style="color: #009900;">&#40;</span> checkAmountTotal <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p>The <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.getSummary"><i>grid</i>.getSummary()</a> method is used to obtain the summed total of the "amount" column in the "ReceiptList" grid. The border of the grid is in a <code>&lt;div&gt;</code> whose style is named <code>pmdynaform-grid-tbody</code>. </p>
+
+<p>When the user enters values in the "amount" fields which total more than <code>500</code>, then the border color of the grid changes to red, but it changes to light gray when the summed total is less than <code>500</code>.</p>
+<img src="../sites/default/files/ReceiptListGrid.png">
+
+<h3><span id="Disabling_grids">Disabling grids</span></h3>
+<p>A grid and all the controls inside it can be disabled with the following JavaScript code:</p>
+<codeblock>$('#<font color=blue><i>grid-id</i></font>').find("input,button,textarea,select").attr("disabled", true);</codeblock>
+<p>Likewise, all the controls inside a grid can be enabled with the following code:</p>
+<codeblock>$('#<font color=blue><i>grid-id</i></font>').find("input,button,textarea,select").attr("enabled", true);</codeblock>
+<p><b>Example: Disable grid when a checkbox is marked:</b></p>
+<div style="margin-left:25px;">
+<p>A DynaForm has a checkbox with the ID "disableGrid" and a grid with the ID "clientList.</p> 
+<img src="../sites/default/files/clientListGridExample.png">
+<p>When the "disableGrid" checkbox is marked, the grid's controls are disabled, and when unmarked, the grid's controls are enabled. The following JavaScript code uses the <a href="../3.0/JavaScript_Functions_and_Methods.html#form.setOnchange">setOnchange()</a> method to add a change event handler to the "disableGrid" checkbox to enable or disable the grid:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#disableGrid&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setOnchange</span><span style="color: #009900;">&#40;</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>newVal<span style="color: #339933;">,</span> oldVal<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #006600; font-style: italic;">//if using PM 3.0.1.8 or later:</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>newVal <span style="color: #339933;">==</span> <span style="color: #3366CC;">'[&quot;1&quot;]'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;input,button,textarea,select&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">attr</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;disabled&quot;</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;input,button,textarea,select&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">attr</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;disabled&quot;</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>This example works in version 3.0.1.8 and later. Unfortunately, the setOnchange() method <a href="http://bugs.processmaker.com/view.php?id=20508">does not work correctly with checkboxes in version 3.0.1.7</a>, so it is recommended to use a dropdown or a button instead of a checkbox if using version 3.0.1.7.</font></p>
+</div>
+
+<p><b>Example: Disable existing rows in a grid, but allow new rows</b></p>
+<div style="margin-left:25px;">
+<p>The "clientList" grid from the previous example allows new rows to be added to the grid, but it does not allow existing rows to edited or deleted. When the DynaForm loads, it checks the <code>data</code> property of the grid. If it is equal to an empty array, then it is a empty grid, so it doesn't disable the first grid row, which is created by default. Otherwise, the code disables the existing rows and then add one new row at the end of the grid that the user can edit.</p> 
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> oGrid <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#clientList'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//set to the ID of the grid</span><br />
+<br />
+<span style="color: #006600; font-style: italic;">//if not an empty grid:</span><br />
+<span style="color: #006600; font-style: italic;">//(need to convert to JSON string because can't compare two arrays)</span><br />
+<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>JSON.<span style="color: #660066;">stringify</span><span style="color: #009900;">&#40;</span>oGrid.<span style="color: #660066;">getInfo</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">data</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">!=</span> <span style="color: #3366CC;">'[]'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #006600; font-style: italic;">//disable all the fields in all the existing rows:</span><br />
+&nbsp; oGrid.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;input,button,textarea,select&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">attr</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;disabled&quot;</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #006600; font-style: italic;">//add one empty row at the end which isn't disabled:</span><br />
+&nbsp; oGrid.<span style="color: #660066;">addRow</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+</div>
+
+<h3><span id="Getting_grid_rows">Getting grid rows</span></h3>
+<p>Each row inside a grid is placed inside a <code>&lt;div&gt;</code> with the class "pmdynaform-grid-row". An array of the rows in a grid can be obtained with the following code:
+<codeblock>$('#<font color=blue><i>grid-id</i></font>').find("div.pmdynaform-grid-row")</codeblock>
+<p>The DOM object for the div which holds a specified grid row can be obtained with:
+<codeblock>$('#<font color=blue><i>grid-id</i></font>').find("div.pmdynaform-grid-row")[<font color=blue><i>row-number</i></font>]</codeblock>
+<p>Where <code><font color=blue><i>row-number</i></font></code> is 0 for the first row, 1 for the second row, 2 for the third row, etc.</p> 
+<p>This DOM object can be converted into a jQuery object by enclosing it in <code>$(<font color=blue><i>DOMobject</font></i>)</code>:
+<codeblock>$($('#<font color=blue><i>grid-id</i></font>').find("div.pmdynaform-grid-row")[<font color=blue><i>row-number</i></font>])</codeblock>
+<p><b>Example: Change background color of rows</b></p>
+<div style="margin-left:25px;">
+<p>Using the "clientList" grid from the previous example, the following code sets the background color to red of every row whose "name" field is empty:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> gridId <span style="color: #339933;">=</span> <span style="color: #3366CC;">'clientList'</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//set to the ID of the grid</span><br />
+<span style="color: #000066; font-weight: bold;">function</span> setEmptyRowsToRed<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> aGridVals <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#'</span><span style="color: #339933;">+</span>gridId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//loop through grid and check whether the &quot;name&quot; field is empty in each row</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>i <span style="color: #339933;">=</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;=</span> aGridVals.<span style="color: #660066;">length</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[&quot;</span><span style="color: #339933;">+</span>gridId<span style="color: #339933;">+</span><span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[&quot;</span><span style="color: #339933;">+</span>i<span style="color: #339933;">+</span><span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[name<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">val</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//subtract 1 because array starts counting from zero, not one.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $<span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#&quot;</span><span style="color: #339933;">+</span>gridId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;div.pmdynaform-grid-row&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#91;</span>i<span style="color: #339933;">-</span><span style="color: #CC0000;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;background-color&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;red&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #006600; font-style: italic;">//execute when value in form changes:</span><br />
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;form&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setOnchange</span><span style="color: #009900;">&#40;</span> <span style="color: #000066; font-weight: bold;">function</span> <span style="color: #009900;">&#40;</span>fieldId<span style="color: #339933;">,</span> newVal<span style="color: #339933;">,</span> oldVal<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;setEmptyRowsToRed<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+setEmptyRowsToRed<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//execute when DynaForm loads</span></div></div>
+</div>          
+<h3><span id="Disabling_grid_rows">Disabling grid rows</span></h3>
+<p>The controls inside a specified grid row can be disabled with the following JavaScript code:</p>
+<codeblock>$($('#<font color=blue><i>grid-id</i></font>').find("div.pmdynaform-grid-row")[<font color=blue><i>row-number</i></font>]).find("input,button,textarea,select").attr("disabled", true)</codeblock>
+<p>Where <code><font color=blue><i>row-number</i></font></code> is 0 for the first row, 1 for the second row, 2 for the third row, etc.</p> 
+<p><b>Example:</b></p>
+<div style="margin-left:25px;">
+<p>The "clientList" grid from the previous example has a hidden field with the ID "disableRow" in each row. The contents of this grid are set by following trigger code which was executed before the DynaForm:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@=</span>clientList <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #cc66cc;">1</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'name'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'John Doe'</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #0000ff;">'disableRow'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'yes'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #cc66cc;">2</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'name'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'Sally Slim'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'disableRow'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'no'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #cc66cc;">3</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'name'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'Mary Moe'</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #0000ff;">'disableRow'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'yes'</span><span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p>Then, the following JavaScript code is added to the DynaForm which holds the "clientList" grid. It loops through each row when the DynaForm loads and disables any row whose "disableRow" field is set to <code>"yes"</code>: </p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> gridId <span style="color: #339933;">=</span> <span style="color: #3366CC;">'clientList'</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//set to the ID of the grid</span><br />
+<span style="color: #000066; font-weight: bold;">var</span> aRows <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#&quot;</span><span style="color: #339933;">+</span>gridId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;div.pmdynaform-grid-row&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066; font-weight: bold;">var</span> aGridVals <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#'</span><span style="color: #339933;">+</span>gridId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #006600; font-style: italic;">//loop through grid and check whether the &quot;disableRow&quot; field equals &quot;yes&quot; in each row</span><br />
+<span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>i <span style="color: #339933;">=</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;=</span> aGridVals.<span style="color: #660066;">length</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[&quot;</span><span style="color: #339933;">+</span>gridId<span style="color: #339933;">+</span><span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[&quot;</span><span style="color: #339933;">+</span>i<span style="color: #339933;">+</span><span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[disableRow<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">val</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">&quot;yes&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//subtract 1 because array starts counting from zero, not one.</span><br />
+&nbsp; &nbsp; &nbsp; $<span style="color: #009900;">&#40;</span>aRows<span style="color: #009900;">&#91;</span>i<span style="color: #339933;">-</span><span style="color: #CC0000;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;input,button,textarea,select&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">attr</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;disabled&quot;</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+</div>
+
+<h3><span id="maximum_grid_rows">Maximum number of grid rows</span></h3>
+<p>The <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.onAddRow"><i>grid</i>.onAddRow()</a> and <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.deleteRow"><i>grid</i>.deleteRow()</a> methods can be used to limit the maximum number of rows in a grid. If using the ProcessMaker App, then use <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.onShowRowDialog.28.29"><i>grid</i>.onShowRowDialog()</a> instead of <code><i>grid</i>.onAddRow()</code>.
+
+<p><b>Example:</b></br>
+The following JavaScript code limits a grid whose whose ID is "clientsList" to a maximum of 5 rows.</p> 
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> env <span style="color: #339933;">=</span> PMDynaform.<span style="color: #660066;">getEnvironment</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #006600; font-style: italic;">//if using ProcessMaker App:</span><br />
+<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>env <span style="color: #339933;">==</span> <span style="color: #3366CC;">&quot;android&quot;</span> <span style="color: #339933;">||</span> env <span style="color: #339933;">==</span> <span style="color: #3366CC;">&quot;iOS&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onShowRowDialog</span><span style="color: #009900;">&#40;</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>aNewRow<span style="color: #339933;">,</span> oGrid<span style="color: #339933;">,</span> rowIndex<span style="color: #339933;">,</span> rowModel<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>rowIndex <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">5</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> &nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">deleteRow</span><span style="color: #009900;">&#40;</span>rowIndex<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span> <br />
+<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onAddRow</span><span style="color: #009900;">&#40;</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>aNewRow<span style="color: #339933;">,</span> oGrid<span style="color: #339933;">,</span> rowIndex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>rowIndex <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">5</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">deleteRow</span><span style="color: #009900;">&#40;</span>rowIndex<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<div style="margin-left:25px">
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>This code example works in version 3.0.1.8 and later. For earlier versions, use the following code which doesn't support the ProcessMaker App:</font></p>
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onAddRow</span><span style="color: #009900;">&#40;</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>aNewRow<span style="color: #339933;">,</span> oGrid<span style="color: #339933;">,</span> rowIndex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>rowIndex <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">5</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">deleteRow</span><span style="color: #009900;">&#40;</span>rowIndex<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> </div></div>
+</div>
+
+<h3><span id="minumum_grid_rows">Checking if a minimum number of grid rows</span></h3>
+<p>The <a href="../3.1/JavaScript_Functions_and_Methods.html#form.setOnSubmit"><i>form</i>.setOnSubmit()</a> method can be used to check whether the user added a minimum or maximum number of rows to a grid, before submitting a DynaForm. The submit action can be stopped by creating an event handler which returns <code>false</code>. The <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.getNumberRows"><i>grid</i>.getNumberRows()</a> method is used to check how many rows are in a grid.</p>
+
+<p><b>Example:</b><br>
+A grid with the ID "clientsList" needs to have a minimum of at least 3 rows and a maximum of no more than 10 rows. If the clients list has too few or too many clients, the following JavaScript code displays a message to the user and stops the submit action by returning <code>false</code>, so the user has a chance to delete or add rows before submitting the form again.
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> formId <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;form&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">prop</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+getFormById<span style="color: #009900;">&#40;</span>formId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setOnSubmit</span><span style="color: #009900;">&#40;</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientsList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getNumberRows</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&lt;</span> <span style="color: #CC0000;">3</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #000066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Please add at least 3 clients to the list&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//stop form submit</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientsList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getNumberRows</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">10</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #000066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;A maximum of 10 clients is allowed.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">+</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Please eliminate some clients.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//stop form submit</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> </div></div>
+
+<h3><span id="fixed_number_of_rows">Fixed number of grid rows</span></h3>
+<p>To set a fixed number of rows in a grid, first unmark the <b>add row</b> and <b>delete row</b> properties in the grid, so the user cannot add and delete rows. Then, create a <code>for</code> loop which calls <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.addRow"><i>grid</i>.addRow()</a> to add as many rows to the grid as needed. Remember that one row already exists by default. 
+
+<p><b>Example:</b><br> 
+If needing 5 rows in a grid whose ID is "clientsList", the following JavaScript will add 4 additional rows to the 1 existing row when the DynaForm loads:  
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>i<span style="color: #339933;">=</span><span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> <span style="color: #CC0000;">4</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientsList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">addRow</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p>If the grid may already be populated, the following code uses <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.getNumberRows"><i>grid</i>.getNumberRows()</a> to check how many rows need to be added or deleted to get a total of 5 rows. It then calls <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.addRow"><i>grid</i>.addRow()</a> or <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.deleteRow"><i>grid</i>.deleteRow()</a> repeatedly to get 5 rows in the grid:</p>
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> nRowsNeeded <span style="color: #339933;">=</span> <span style="color: #CC0000;">5</span> <span style="color: #339933;">-</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientsList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getNumberRows</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>nRowsNeeded <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>i<span style="color: #339933;">=</span><span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> nRowsNeeded<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientsList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">addRow</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>nRowsNeeded <span style="color: #339933;">&lt;</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>i<span style="color: #339933;">=</span><span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&gt;</span> nRowsNeeded<span style="color: #339933;">;</span> i<span style="color: #339933;">--</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#clientsList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">deleteRow</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="clear_grid">Clearing a grid</span></h3>
+<p>If needing to clear a grid, then all the rows in the grid can be deleted by looping through the rows in the grid and calling the <a href="../3.0/JavaScript_Functions_and_Methods.html#grid.deleteRow"><i>grid</i>.deleteRow()</a> method for each row. The first row in grids, however, cannot be deleted, so it is necessary to loop through the fields in the first row and set their values to <code>""</code> (empty string). 
+<p>The following JavaScript example defines the <code>clearGrid()</code> function to clear the contents of a specified grid. In this example a grid with the ID "clientsList" needs to be cleared when a custom button with the ID "emptyGrid" is clicked. The code example creates a <coded>click</code> <a href="../3.0/JavaScript_in_DynaForms.html#Tying_Code_to_Events">event handler</a> for the "emptyGrid" button which calls the <code>clearGrid()</code> function.
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">function</span> clearGrid<span style="color: #009900;">&#40;</span>gridId<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">var</span> nRow <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#&quot;</span><span style="color: #339933;">+</span>gridId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getNumberRows</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">;</span> nRow <span style="color: #339933;">&gt;=</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">;</span> nRow<span style="color: #339933;">--</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//Can't delete the first row, so clear all its fields</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>nRow <span style="color: #339933;">==</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">var</span> aCols <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#&quot;</span><span style="color: #339933;">+</span>gridId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getInfo</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">columns</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>nField <span style="color: #000066; font-weight: bold;">in</span> aCols<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">var</span> <a href="http://docs.jquery.com/Attributes/val"><span style="color: #000066;">val</span></a> <span style="color: #339933;">=</span> <span style="color: #3366CC;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>aCols<span style="color: #009900;">&#91;</span>nField<span style="color: #009900;">&#93;</span>.<span style="color: #660066;">type</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">'checkbox'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="http://docs.jquery.com/Attributes/val"><span style="color: #000066;">val</span></a> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//workaround to clear date fields. See: https://processmaker.atlassian.net/browse/TRI-1280</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>aCols<span style="color: #009900;">&#91;</span>nField<span style="color: #009900;">&#93;</span>.<span style="color: #660066;">type</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">'datetime'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">var</span> gridFieldId <span style="color: #339933;">=</span> <span style="color: #3366CC;">'form['</span> <span style="color: #339933;">+</span> gridName <span style="color: #339933;">+</span> <span style="color: #3366CC;">'][1]['</span> <span style="color: #339933;">+</span> aCols<span style="color: #009900;">&#91;</span>nField<span style="color: #009900;">&#93;</span>.<span style="color: #660066;">id</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;[id='&quot;</span><span style="color: #339933;">+</span>gridFieldId<span style="color: #339933;">+</span><span style="color: #3366CC;">&quot;]']&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Attributes/val"><span style="color: #000066;">val</span></a><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;[id='&quot;</span><span style="color: #339933;">+</span>gridFieldId<span style="color: #339933;">+</span><span style="color: #3366CC;">&quot;_label]']&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Attributes/val"><span style="color: #000066;">val</span></a><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>aCols<span style="color: #009900;">&#91;</span>nField<span style="color: #009900;">&#93;</span>.<span style="color: #660066;">type</span> <span style="color: #339933;">!=</span> <span style="color: #3366CC;">'link'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#&quot;</span><span style="color: #339933;">+</span>gridId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span><a href="http://docs.jquery.com/Attributes/val"><span style="color: #000066;">val</span></a><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span> parseInt<span style="color: #009900;">&#40;</span>nField<span style="color: #009900;">&#41;</span><span style="color: #339933;">+</span><span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#&quot;</span><span style="color: #339933;">+</span>gridId<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">deleteRow</span><span style="color: #009900;">&#40;</span>nRow<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span> &nbsp; &nbsp; &nbsp;<br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#emptyGrid&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Events/click"><span style="color: #000066;">click</span></a><span style="color: #009900;">&#40;</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;clearGrid<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;clientsList&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="PHP_in_Grids">PHP in Grids</span></h2>
+<p>When a DynaForm is submitted which contains a grid field, the case variable related to the grid contains an associative array of associative arrays. The outer associative array has keys which start counting from the number 1 (not 0 like a normal array). Each row in the grid is stored as an inner associative array where the grid field names are the ID's set in the designer for each control inside the grid and the entered data are the values.</p>
+
+<h3><span id="Populating_Whole_Grids">Populating Whole Grids</span></h3>
+<p>A new grid can be populated by assigning an associative array of associative arrays to the case variable for the grid.</p>
+<p>For example, to populate a grid named "EmployeesGrid" with the fields "Name", "Salary" and "HireDate":</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@=</span>EmployeesGrid <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'1'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Name'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'John Doe'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Salary'</span><span style="color: #339933;">=&gt;</span><span style="color:#800080;">22525.99</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'HireDate'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'2012-12-31'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'2'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Name'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'Jane Roe'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Salary'</span><span style="color: #339933;">=&gt;</span><span style="color:#800080;">40000.00</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'HireDate'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'1997-06-01'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'3'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Name'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'Jill Hill'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'Salary'</span><span style="color: #339933;">=&gt;</span><span style="color:#800080;">33600.10</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'HireDate'</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">'2008-01-25'</span><span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Populating_Grids_with_a_Database_Query">Populating Grids Using a Database Query</span></h3>
+<p>A grid can also be populated by a database query, since SELECT statements with <a href="../3.0/ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a> return records as an array of associative arrays, which is the same format used by grids. As long as the database has the same field names as the grid field names, the data will be displayed correctly in the grid. Remember that field names are case sensitive. </p>
+
+<p>For example, the values in the "EmployeesGrid" can be set by querying a table named Employees which also has the fields Name, Salary and HireDate.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'SELECT Name, Salary, HireDate FROM Employees'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@=</span>EmployeesGrid <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #339933;">;</span></div></div>
+
+<p>Generally, grid columns must have the same ID as the columns of the table from where data will be retrieved. If the database uses different field names than the grid field names, then use AS to rename the fields. For example, if an external database with the table EMPLOYEES contains the fields FULL_NAME, STARTING_SALARY and HIRE_DATE, then those fields can be renamed to match the field names in the “EmployeesGrid”:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'SELECT FULL_NAME AS Name, STARTING_SALARY AS Salary HIRE_DATE as HireDate FROM EMPLOYEES'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@=</span>EmployeesGrid <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #339933;">;</span></div></div>
+
+<!--h3<span id="Importing_spreadsheet">Importing spreadsheets into grids</span>
+<p>The <a href="https://github.com/PHPOffice/PHPExcel">PHPExcel</a> library can be used to import a spreadsheet into a grid. PHPExcel can import Excel, LibreOffice/OpenOffice, Gnumeric, HTML and CSV files. The following example shows how to import a simple file with names and email addresses and display them in a grid.
+<p>First, download the PHPExcel code by clicking on the <b>Clone or Download</b> button in the PHPExcel <a href="https://github.com/PHPOffice/PHPExcel">git page</a>.</p>
+<img src="/sites/default/files/DownloadPHPExcel.png">
+<p>Then, decompress the zip file and place PHPExcel's <b><tt>Classes</tt></b> directory in a location on the ProcessMaker server, such as <tt>/opt/Classes</tt> or <tt>C:\opt\Classes</tt>.</p>
+<p>For example on a Linux/UNIX machine:</p>
+<div style="margin-left:25px">
+<codeblock>wget https://codeload.github.com/PHPOffice/PHPExcel/zip/6a4be7da3c7ac7fb5f00dba5ab18e77a19fc97d8
+unzip 6a4be7da3c7ac7fb5f00dba5ab18e77a19fc97d8
+cd PHPExcel-6a4be7da3c7ac7fb5f00dba5ab18e77a19fc97d8/
+cp -r Classes /opt/Classes
+</codeblock
+<p>In order to make the files accessible to PHP, change the owner of the files to the Apache user, which <code>apache</code> in Red Hat/CentOS and <code>www-data</code> in Debian/Ubuntu.</p>
+<codeblock>chown -R apache:apache /opt/Classes</codeblock>
+</div>
+<p>Then, login to ProcessMaker and create a File variable named <code>clientsFile</code> which is associated with an Input Document. This variable will hold the spreadsheet file which is uploaded to ProcessMaker. </p>
+<img src="/sites/default/files/ImportExcelFileVariable.png"> 
+<p>Also add a grid variable named <code>clientsList</code>.</p>
+<img src="/sites/default/files/ImportExcelVariablesList.png">
+<p>Then, create a DynaForm with a File control to upload the spreadsheet file. This control is associated with the <code>clientsFile</code> variable.</p>
+<img src="/sites/default/files/ImportExcelUploadFileForm.png">
+<p>Then, create a second DynaForm with a grid control which will display the contents of the spreadsheet file. This control is associated with the <code>clientsList</code> variable. The grid contains three text fields with the IDs <code>firstName</code>, <code>lastName</code> and <code>email</code>.</p> 
+<img src="/sites/default/files/ImportExcelGridInDesigner.png">
+<p>Then, create the following trigger which is set to fire <i>before</i> the second DynaForm which contains the grid:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//set to UID of form where file is uploaded</span><br />
+<span style="color: #000088;">$dynaformId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'806608774582f864c701900097932694'</span><span style="color: #339933;">;</span> <br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>clientsFile_label<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">@@</span>clientsFile_label <span style="color: #339933;">!=</span> <span style="color: #0000ff;">'[]'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$filename</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>clientsFile_label<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$fileId</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>clientsFile<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$ext</span> <span style="color: #339933;">=</span> <a href="http://php.net/pathinfo"><span style="color: #990000;">pathinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$filename</span><span style="color: #339933;">,</span> PATHINFO_EXTENSION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #000088;">$d</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> AppDocument<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aFile</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$d</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">Load</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$fileId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$path</span> <span style="color: #339933;">=</span> PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$fileId</span> <span style="color: #339933;">.</span><span style="color: #0000ff;">'_'</span><span style="color: #339933;">.</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DOC_VERSION'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span><span style="color: #0000ff;">'.'</span><span style="color: #339933;">.</span> <span style="color: #000088;">$ext</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">require_once</span> <span style="color: #0000ff;">'/opt/Classes/PHPExcel.php'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">require_once</span> <span style="color: #0000ff;">'/opt/Classes/PHPExcel/IOFactory.php'</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #000088;">$inputFileType</span> <span style="color: #339933;">=</span> PHPExcel_IOFactory<span style="color: #339933;">::</span><span style="color: #004000;">identify</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$path</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//identify type of file </span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oReader</span> <span style="color: #339933;">=</span> PHPExcel_IOFactory<span style="color: #339933;">::</span><span style="color: #004000;">createReader</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$inputFileType</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oReader</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setReadDataOnly</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//get data as plain text </span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <br />
+&nbsp; &nbsp;try <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$oExcel</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$oReader</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$path</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aData</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$oExcel</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getActiveSheet</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">toArray</span><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//uncomment to debug: &nbsp; &nbsp; </span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//print &quot;&lt;pre&gt;&quot;; var_dump($aData); die; </span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span> <br />
+&nbsp; &nbsp;catch <span style="color: #009900;">&#40;</span>Exception <span style="color: #000088;">$e</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">SendMessageText</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$e</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getMessage</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ERROR'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; PMFRedirectToStep<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #339933;">@%</span>INDEX<span style="color: #339933;">,</span> <span style="color: #0000ff;">'DYNAFORM'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$dynaformId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aData</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&lt;=</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">SendMessageText</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;File <span style="color: #006699; font-weight: bold;">$filename</span> contains no data&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'WARNING'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; PMFRedirectToStep<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #339933;">@%</span>INDEX<span style="color: #339933;">,</span> <span style="color: #0000ff;">'DYNAFORM'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$dynaformId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #339933;">@=</span>clientsList <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//assume that the first row of spreadsheet contains labels &nbsp; &nbsp; &nbsp;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span><span style="color: #339933;">=</span><span style="color: #cc66cc;">2</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;=</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aData</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@=</span>clientsList<span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'firstName'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aData</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'A'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'lastName'</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aData</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'B'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'email'</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aData</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'C'</span><span style="color: #009900;">&#93;</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span> &nbsp; <br />
+<span style="color: #009900;">&#125;</span> &nbsp;</div></div>
+<p>This code first checks whether the user has uploaded a file, whose filename is placed in the <code>@@clientsFile_label</code> variable inside an array encoded in JSON, such as <code>'["email_list.xls"]'</code>. json_decode() is used to convert it into an array. In version 3.0.1.8 and later, the unique ID of the uploaded file is placed in the <code>@@clientsFile</code> variable inside an array encoded in JSON, such as <code>'["135375121582d22740630e2039942828"]'</code>. In previous version of ProcessMaker which do not create this variable, this ID needs to be <a href="/3.0/File_control#Link_to_file">looked up</a> in the <b><tt>APP_DOCUMENT</tt></b> table.</p>
+<p>Then, the trigger uses the <a href="/3.0/Internal_Functions_and_Classes#AppDocument::Load.28.29">AppDocument::Load()</a> method to look up the version number of the uploaded file (which will almost always be <code>1</code>). This method can also be used to get other information about the uploaded file if needed. The path where the uploaded file is <a href="/3.0/File_control#File_Storage">stored on the ProcessMaker server</a> is then constructed using the case ID, the file ID, its version number and its extension (which was obtained with <a href="http://php.net/manual/en/function.pathinfo.php">pathinfo()</a>).</p>
+<p>Then the PHPExcel library is imported and <code>PHPExcel_IOFactory::identify()</code> is used to detect the file type. PHPExcel then loads the spreadsheet file and converts in into an array. (To see the structure of this array, uncomment the line to dump the contents of <code>$aData</code> to the screen.) The code then loops through the array, filling the contents of the grid's variable.<p>
+<p>To see a working example, download and import the process <a href="/sites/default/files/Import_spreadsheet_into_grid-1.pmx" download>Import_spreadsheet_into_grid</a> (right click the link and select "Save Link As").
+<p>For example, the following spreadsheet holds a list of names and emails:</p>
+<img src="/sites/default/files/ImportExcelData.png">
+<p>This file is uploaded to the File control when a case is run.</p>
+<img src="/sites/default/files/ImportExcelUploadFormWithFile.png">
+<p>Then the trigger fired before the second form with the grid will import the contents of the spreadsheet and place them in the grid.</p>
+<img src="/sites/default/files/ImportExcelToGrid.png">-->
+
+<h3><span id="cases_in_grids">Displaying cases info in grids</span></h3>
+<p>The <tt>APP_CACHE_VIEW</tt> table in the database holds information about cases, which is used to generate the list of cases under the <b>Home</b> menu. Each record in this table contains information about a task in a case, which has been assigned to a user. This example shows how to create a DynaForm for searching the <tt>APP_CACHE_VIEW</tt> table and displaying information about the tasks in a grid. Managers might use this information to evaluate how well workers are doing their tasks. This example also shows how to execute a trigger by clicking on submit button and then use a trigger which populates a grid and returns to the DynaForm to redisplay it with the populated grid.</p>
+<p>First, create following variables:
+<ul>
+<li><code>caseList</code>: Holds the grid with information about the cases.
+<li><code>caseListJson</code>: Holds a JSON string which contains the information which is displayed in the grid. This information will be passed in a hidden field to the DynaForm and will be used to set the links to the cases.
+<li><code>selectProcess</code>: Holds the unique ID of a process to search for in the <tt>APP_CACHE_VIEW</tt> table.
+<li><code>selectTask</code>: Holds the unique ID of a task to search for in the <tt>APP_CACHE_VIEW</tt> table.
+<li><code>selectUser</code>: Holds the unique ID of an assigned user to search for in the <tt>APP_CACHE_VIEW</tt> table.
+<li><code>submitButton</code>: Indicates which button was clicked to close the DynaForm with the grid of case information.
+</ul>
+<p><img src="../sites/default/files/TaskTimesVariables.png"></p>
+<p>Then, create a DynaForm with fields to search for and a grid to display the search results:</p>
+<img src="../sites/default/files/TaskTimesInGrid.png">
+<p>This DynaForm has the following controls:</p>
+<ul>
+<li>Dropdown associated with the <code>selectProcess</code> string variable. It is populated with the following SQL query:<br>
+<span class="geshifilter"><code class="sql geshifilter-sql"><span style="color: #993333; font-weight: bold;">SELECT</span> <span style="color: #ff0000;">''</span><span style="color: #66cc66;">,</span> <span style="color: #ff0000;">'All processes'</span> <span style="color: #993333; font-weight: bold;">UNION</span> <span style="color: #993333; font-weight: bold;">SELECT</span> PRO_UID<span style="color: #66cc66;">,</span> PRO_TITLE <span style="color: #993333; font-weight: bold;">FROM</span> PROCESS</code></span>
+<li>Dropdown associated with the <code>selectTask</code> string variable. It is <a href="../3.0/Dependent_Fields.html">dependent field</a>, which is populated with the tasks from the selected process. It uses the following SQL query:<br>
+<span class="geshifilter"><code class="sql geshifilter-sql"><span style="color: #993333; font-weight: bold;">SELECT</span> <span style="color: #ff0000;">''</span><span style="color: #66cc66;">,</span> <span style="color: #ff0000;">'Any task'</span> <span style="color: #993333; font-weight: bold;">UNION</span> <span style="color: #993333; font-weight: bold;">SELECT</span> TAS_UID<span style="color: #66cc66;">,</span> TAS_TITLE <span style="color: #993333; font-weight: bold;">FROM</span> TASK <span style="color: #993333; font-weight: bold;">WHERE</span> PRO_UID<span style="color: #66cc66;">=</span>@@selectProcess</code></span>
+<li>Suggest box associated with the <code>selectUser</code> variable. It is populated with the following SQL query:<br>
+<span class="geshifilter"><code class="sql geshifilter-sql"><span style="color: #993333; font-weight: bold;">SELECT</span> USR_UID<span style="color: #66cc66;">,</span> concat<span style="color: #66cc66;">&#40;</span>USR_FIRSTNAME<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">' '</span><span style="color: #66cc66;">,</span> USR_LASTNAME<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">' ('</span><span style="color: #66cc66;">,</span> USR_USERNAME<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">')'</span><span style="color: #66cc66;">&#41;</span> <span style="color: #993333; font-weight: bold;">FROM</span> USERS</code></span>
+<li>Submit button with the ID "search". If clicked, then a subsequent trigger will use the entered search terms to populate the grid. 
+<li>Grid with the ID "caseList", which is associated with the <code>caseList</code> variable. It has the following grid fields which are all in "view" mode:
+<ul>
+<li>Link with the ID "caseNo", which links to the case.
+<li>Textbox with the ID "process", which displays the title of the process.
+<li>Textbox with the ID "task", which displays the title of the task.
+<li>Textbox with the ID "user", which displays the first and last name of the assigned user to the task.
+<li>Textbox with the ID "startDate", which displays the datetime when the task was  assigned to the user.
+<li>Textbox with the ID "overdueDate", which displays the datetime when the task was due.
+<li>Textbox with the ID "finishDate", which displays the datetime when the task was finished. If not finished, then it is blank.
+<li>Textbox with the ID "totalTime", which displays the number of hours which it took to complete the task. If the task hasn't yet been completed, then the number of hours up to the present that have elapsed.
+</ul>
+</li>
+<li>Submit button with the ID "submit". If clicked, then the case will continue normally to the next step in the task (or route to the next task if the last step). 
+</ul>
+<p>This DynaForm has the following JavaScript code:
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[search<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">on</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;click&quot;</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#submitButton&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;search&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#caseListJson&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">!=</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> oCaseList <span style="color: #339933;">=</span> JSON.<span style="color: #660066;">parse</span><span style="color: #009900;">&#40;</span><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#caseListJson&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> nRows <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#caseList&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getNumberRows</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>i <span style="color: #339933;">=</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;=</span> nRows<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">var</span> caseNo <span style="color: #339933;">=</span> oCaseList<span style="color: #009900;">&#91;</span>i<span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #3366CC;">'caseNo'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">var</span> url &nbsp; &nbsp;<span style="color: #339933;">=</span> oCaseList<span style="color: #009900;">&#91;</span>i<span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #3366CC;">'url'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[caseList<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[&quot;</span> <span style="color: #339933;">+</span>i<span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[caseNo<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Traversing/find"><span style="color: #000066;">find</span></a><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;span&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Attributes/html"><span style="color: #000066;">html</span></a><span style="color: #009900;">&#40;</span>caseNo<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#form<span style="color: #000099; font-weight: bold;">\\</span>[caseList<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[&quot;</span> <span style="color: #339933;">+</span>i<span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\\</span>]<span style="color: #000099; font-weight: bold;">\\</span>[caseNo<span style="color: #000099; font-weight: bold;">\\</span>]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">prop</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;href&quot;</span><span style="color: #339933;">,</span> url<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p>When the "Search" button is clicked, the value "search" is placed in the "submitButton" hidden field, so that the subsequent trigger will know that the "Search" button was clicked to close the form.</p>
+<p>When the DynaForm loads, the JavaScript code checks whether there is a value in the "caseListJson" field. This hidden field holds the contents of the grid in JSON form. This information is used to set the links in the "caseNo" fields in the grid. The code first converts the JSON string into an object of objects which holds the data for each row in the grid. It then loops throught each row in the grid and sets the "caseNo" links.</p>
+
+</p>Next, create the following trigger which will use the search terms selected in the DynaForm to query the <tt>APP_CACHE_VIEW</tt> table in the database:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>submitButton <span style="color: #339933;">==</span> <span style="color: #0000ff;">'search'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>submitButton <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$where</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>selectProcess<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$where</span> <span style="color: #339933;">.=</span> <span style="color: #0000ff;">&quot;PRO_UID='&quot;</span><span style="color: #339933;">.@@</span>selectProcess<span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;'&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span>&nbsp; &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>selectTask<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$where</span> <span style="color: #339933;">.=</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$where</span><span style="color: #009900;">&#41;</span> ? <span style="color: #0000ff;">''</span> <span style="color: #339933;">:</span> <span style="color: #0000ff;">' AND '</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;TAS_UID='&quot;</span><span style="color: #339933;">.@@</span>selectTask<span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;'&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span>&nbsp; &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>selectUser<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$where</span> <span style="color: #339933;">.=</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$where</span><span style="color: #009900;">&#41;</span> ? <span style="color: #0000ff;">''</span> <span style="color: #339933;">:</span> <span style="color: #0000ff;">' AND '</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;USR_UID='&quot;</span><span style="color: #339933;">.@@</span>selectUser<span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;'&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp;<span style="color: #000088;">$where</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$where</span><span style="color: #009900;">&#41;</span> ? <span style="color: #0000ff;">''</span> <span style="color: #339933;">:</span> <span style="color: #0000ff;">'WHERE '</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$where</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #000088;">$sql</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT APP_UID, DEL_INDEX, APP_NUMBER, APP_STATUS,<br />
+&nbsp; &nbsp; &nbsp; USR_UID, PREVIOUS_USR_UID, TAS_UID, PRO_UID, DEL_DELEGATE_DATE, <br />
+&nbsp; &nbsp; &nbsp; DEL_INIT_DATE, DEL_FINISH_DATE, DEL_TASK_DUE_DATE, DEL_RISK_DATE, <br />
+&nbsp; &nbsp; &nbsp; APP_TITLE, APP_PRO_TITLE, APP_TAS_TITLE, APP_CURRENT_USER, <br />
+&nbsp; &nbsp; &nbsp; APP_CREATE_DATE, APP_FINISH_DATE, APP_UPDATE_DATE FROM APP_CACHE_VIEW <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #006699; font-weight: bold;">$where</span> ORDER BY APP_NUMBER DESC&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aCases</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$sql</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp;<span style="color: #339933;">@=</span>caseList <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aCases</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$startTime</span> &nbsp;<span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INIT_DATE'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$finishDate</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_FINISH_DATE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$finishTime</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$finishDate</span> <span style="color: #339933;">==</span> <span style="color: #009900; font-weight: bold;">null</span> ? <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-d H:i:s'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> <span style="color: #000088;">$finishDate</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$hours</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$finishTime</span> <span style="color: #339933;">-</span> <span style="color: #000088;">$startTime</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">/</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">/</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;../cases/open?APP_UID=&quot;</span><span style="color: #339933;">.</span><span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;&amp;DEL_INDEX=&quot;</span><span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;&amp;action=draft&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@=</span>caseList<span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'caseNo'</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_NUMBER'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'url'</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'process'</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_PRO_TITLE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'task'</span> &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_TAS_TITLE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'user'</span> &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_CURRENT_USER'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'startDate'</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INIT_DATE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'overdueDate'</span><span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_TASK_DUE_DATE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'finishDate'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_FINISH_DATE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">'totalTime'</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$hours</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$i</span><span style="color: #339933;">++;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//uncomment to debug:</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//print &quot;&lt;pre&gt;&quot;; var_dump(@=caseList); die;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>caseListJson <span style="color: #339933;">=</span> <a href="http://php.net/json_encode"><span style="color: #990000;">json_encode</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>caseList<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;PMFRedirectToStep<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #339933;">@%</span>INDEX<span style="color: #339933;">,</span> <span style="color: #0000ff;">'DYNAFORM'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'512296547583375724080b7028326320'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p>This trigger is set to execute <i>after</i> the DynaForm.
+
+<p>The trigger code first checks whether the "Search"  button was clicked. It then constructs an SQL query based on the values selected in the "selectProcess", "selectTask" and "selectUser" fields. Then, it uses <a href="../3.0/ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a> to search in the <tt>APP_CACHE_VIEW</tt> table for all the tasks in cases which match the search criteria. Then, creates an array to hold the contents of the "caseList" grid and populates it by looping through the records returned by the query. For each task, it calculates the number of elapsed hours and constructs the URL to open the task in the case. Note that if the task is already completed, then this URL will direct to the case summary. If the logged-in user doesn't have <a href="../3.0/Process_Permissions.html">process permissions</a> to open the case, then he/she will be directed to the Inbox.
+
+<p>Finally, <a href="http://php.net/manual/en/function.json-encode.php">json_encode()</a> is called to convert the contents of the grid into a JSON string and place them in the "caseListJson" hidden field. The <a href="../3.0/ProcessMaker_Functions.html#PMFRedirectToStep.28.29">PMFRedirectToStep()</a> function is used to redirect the web browser back to the DynaForm and display the populated grid.</p>
+
+<p>If this DynaForm is used in a process, then it can be executed over and over without ever terminating the case, so only one new case needs to created. After selecting the search criteria and clicking on the "Search" button, the grid will be populated:</p>
+<p><img src="../sites/default/files/TaskTimesSearchResults.png"></p>
+
+<p>To test this process, download and import the <a href="../sites/default/files/Show_task_times-2.pmx" download>Show Task Times</a> process (<i>right click</i> on the link and select "Save Link As").</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

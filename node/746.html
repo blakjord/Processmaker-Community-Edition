@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.1/REST_API_Administration/PM_Tables.html" />
+<link rel="shortlink" href="746.html" />
+<title>3.1 - 3.8 - REST API Administration - PM Tables | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"qydz3EWYFA5qfVaHpQNjGLzOpZuKKlK8DhmOWqkCLSw","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-746 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="746.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="746.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-Ez0BtSDRmvT71rLg23ua8ylgQrqeMHIaB-keLMkfFZY" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - 3.8 - REST API Administration - PM Tables</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - 3.8 - REST API Administration - PM Tables" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="746.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - 3.8 - REST API Administration - PM Tables 1/5</option><option value="40">Give 3.1 - 3.8 - REST API Administration - PM Tables 2/5</option><option value="60" selected="selected">Give 3.1 - 3.8 - REST API Administration - PM Tables 3/5</option><option value="80">Give 3.1 - 3.8 - REST API Administration - PM Tables 4/5</option><option value="100">Give 3.1 - 3.8 - REST API Administration - PM Tables 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.5</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-P9TJdqu8VrCcggBJcWWWF5198HIbDE9spzrgo5IYJGo" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><!-- PM Tables -->
+<h2><span class="mw-headline" id="PM_Tables">PM Tables </span></h2>
+
+
+
+<p>The following REST endpoints are used to manage <a href="../3.0/PM_Tables.html">PM tables</a> in ProcessMaker:</p>
+<div style=" background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><strong>Contents:</strong> [<a href="746.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b><div id="toc" ><ol class="toc">
+<li class="toc"><a href="746.html#PM_Tables">PM Tables </a></li>
+<ol class="toc">
+<li class="toc"><a href="746.html#PM_Tables_List:_GET_.2Fpmtable">PM Tables List: <code>GET /pmtable</code></a></li>
+<li class="toc"><a href="746.html#Get_PM_Table_Structure:_GET_.2Fpmtable.2F.7Bpmt_uid.7D">Get PM Table Structure: <code>GET /pmtable/{pmt_uid}</code></a></li>
+<li class="toc"><a href="746.html#Get_PM_Table_Data:_GET_.2Fpmtable.2F.7Bpmt_uid.7D.2Fdata">Get PM Table Data: <code>GET /pmtable/{pmt_uid}/data</code></a></li>
+<ol class="toc">
+<li class="toc"><a href="746.html#Data_PM_Table:_Querying_Filter">Querying Filter (Where)</a></li>
+</ol>
+<li class="toc"><a href="746.html#Create_PM_Table:_POST_.2Fpmtable">Create PM Table: <code>POST /pmtable</code></a></li>
+<li class="toc"><a href="746.html#Add_PM_Table_Data:_POST_.2Fpmtable.2F.7Bpmt_uid.7D.2Fdata">Add PM Table Data: <code>POST /pmtable/{pmt_uid}/data</code></a></li>
+<li class="toc"><a href="746.html#Update_PM_Table_Structure:_PUT_.2Fpmtable.2F.7Bpmt_uid.7D">Update PM Table Structure: <code>PUT /pmtable/{pmt_uid}</code></a></li>
+<li class="toc"><a href="746.html#Update_PM_Table_Data:_PUT_.2Fpmtable.2F.7Bpmt_uid.7D.2Fdata">Update PM Table Data: <code>PUT /pmtable/{pmt_uid}/data</code></a></li>
+<li class="toc"><a href="746.html#Delete_PM_Table:_DELETE_.2Fpmtable.2F.7Bpmt_uid.7D">Delete PM Table: <code>DELETE /pmtable/{pmt_uid}</code></a></li>
+<li class="toc"><a href="746.html#Delete_PM_Table_Data:_DELETE_.2Fpmtable.2F.7Bpmt_uid.7D.2Fdata.2F...">Delete PM Table Data: <code>DELETE /pmtable/{pmt_uid}/data/...</code></a></li>
+</ol>
+</div></div>
+
+
+
+<p><u><b>Permissions:</b></u></p>
+<p>These endpoints need the following permission:</p>
+<p>
+<table style="width: 55%">
+<tr>
+  <th style="border:1px solid #5F9EEF;background:#2465B5;color:White;font-weight:bold;height:30px;valign:center;">Permission Needed</th>
+</tr>
+<tr>
+  <td style="text-align: center;"><a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a></td>
+</tr>
+</table>
+</p>
+
+<p><u><b>PM Tables:</b></u></p>
+
+<table style="border:1px solid #5F9EEF;" cellspacing="0">
+    <tbody>
+        <tr>
+            <th style="border:1px solid #5F9EEF;background:#2465B5;color:White;font-weight:bold;height:30px;valign:center;"><b>Name</b></th>
+            <th style="border:1px solid #5F9EEF;background:#2465B5;color:White;font-weight:bold;height:30px;valign:center;"><b>Description</b></th>
+            <th style="border:1px solid #5F9EEF;background:#2465B5;color:White;font-weight:bold;height:30px;valign:center;"><b>Type</b></th>
+            <th style="border:1px solid #5F9EEF;background:#2465B5;color:White;font-weight:bold;height:30px;valign:center;"><b>Value</b></th>
+        </tr>
+        <tr>
+            <td style="border:1px solid #5F9EEF;">pmt_tab_name</td>
+            <td style="border:1px solid #5F9EEF;">PM Table name</td>
+            <td style="border:1px solid #5F9EEF;">String</td>
+            <td style="border:1px solid #5F9EEF;">"name" o "pmt_NAME"(String)</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #5F9EEF;">pmt_tab_dsc</td>
+            <td style="border:1px solid #5F9EEF;">PM Table description</td>
+            <td style="border:1px solid #5F9EEF;">String</td>
+            <td style="border:1px solid #5F9EEF;">"PM table description"(String)</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #5F9EEF;">fields</td>
+            <td style="border:1px solid #5F9EEF;">PM Table fields</td>
+            <td style="border:1px solid #5F9EEF;">Array</td>
+            <td style="border:1px solid #5F9EEF;"> </td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #5F9EEF;">fld_dyn</td>
+            <td style="border:1px solid #5F9EEF;">Field name known in a DynaForm</td>
+            <td style="border:1px solid #5F9EEF;">String</td>
+            <td style="border:1px solid #5F9EEF;">"Acceptance"(String)</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #5F9EEF;">fld_name</td>
+            <td style="border:1px solid #5F9EEF;">Field name for the MySQL table creation</td>
+            <td style="border:1px solid #5F9EEF;">String</td>
+            <td style="border:1px solid #5F9EEF;">"ACCEPTED" (String)</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #5F9EEF;">fld_label</td>
+            <td style="border:1px solid #5F9EEF;">Field label in the PM graphic</td>
+            <td style="border:1px solid #5F9EEF;">String</td>
+            <td style="border:1px solid #5F9EEF;">"PM Table description"(String)</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #5F9EEF;">fld_type</td>
+            <td style="border:1px solid #5F9EEF;">MySQL field type, which may be: "BOOLEAN", "TINYINT", "SMALLINT", "INTEGER", "BIGINT", "DOUBLE", "FLOAT",
+                "REAL", "DECIMAL", "CHAR", "VARCHAR", "LONGVARCHAR", "DATE", "TIME" or "DATETIME"</td>
+            <td style="border:1px solid #5F9EEF;">String</td>
+            <td style="border:1px solid #5F9EEF;">"VARCHAR"(String MySQL type field)</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #5F9EEF;">fld_size</td>
+            <td style="border:1px solid #5F9EEF;">MySQL field size</td>
+            <td style="border:1px solid #5F9EEF;">Integer</td>
+            <td style="border:1px solid #5F9EEF;">23 (Numeric)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br><span style="font-weight: bold;font-size: 1.20em; color: #4C5255;"><u><b>Available methods:</b></u></span></p>
+
+<h3><span class="mw-headline" id="PM_Tables_List:_GET_.2Fpmtable">PM Tables List: <code>GET /pmtable</code></span></h3>
+
+<p><span id="GetPMTables">Get a list of the PM tables in the workspace. It does not include any Report Tables.</span></p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/pmtable</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Description</b></th>
+                    <th><b>Example</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>Workspace name</td>
+                    <td>/api/1.0/<b>workflow</b>/pmtable</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+<p>If successful, the HTTP status is set to <code>200</code> (OK) and an array of PM Table objects is returned:</p>
+<table class="codecolumn">
+    <tbody>
+        <tr>
+            <td>[ </td>
+            <td>Start array.</td>
+        </tr>
+        <tr>
+            <td> { </td>
+            <td>Start PM Table object.</td>
+        </tr>
+        <tr>
+            <td> "pmt_uid", </td>
+            <td>Unique ID of the PM Table.</td>
+        </tr>
+        <tr>
+            <td> "pmt_tab_name", </td>
+            <td>Table in the <b><tt>wf_{workspace}</tt></b> database.</td>
+        </tr>
+        <tr>
+            <td> "pmt_tab_description", </td>
+            <td>Description of the PM Table.</td>
+        </tr>
+        <tr>
+            <td> "pmt_tab_class_name", </td>
+            <td>PHP class name for the PM Table.</td>
+        </tr>
+        <tr>
+            <td> "pmt_num_rows", </td>
+            <td>Number of records in the PM Table.</td>
+        </tr>
+        <tr>
+            <td> "fields": [ </td>
+            <td>An array of fields in the PM Table.</td>
+        </tr>
+        <tr>
+            <td> { </td>
+            <td>Start Field object.</td>
+        </tr>
+        <tr>
+            <td> "fld_uid", </td>
+            <td>Unique ID of the field.</td>
+        </tr>
+        <tr>
+            <td> "fld_index": </td>
+            <td>Index number of the field, counting from the number 0.</td>
+        </tr>
+        <tr>
+            <td> "fld_name": </td>
+            <td>Name of the field in the database.</td>
+        </tr>
+        <tr>
+            <td> "fld_description": </td>
+            <td>Label of the field.</td>
+        </tr>
+        <tr>
+            <td> "fld_type": </td>
+            <td>Type of the field.</td>
+        </tr>
+        <tr>
+            <td> "fld_size": </td>
+            <td>Field size.</td>
+        </tr>
+        <tr>
+            <td> "fld_null": </td>
+            <td>Set to "1" if a NULL (empty) value is allowed. Otherwise, set to "0".</td>
+        </tr>
+        <tr>
+            <td> "fld_auto_increment":</td>
+            <td>Set to "1" if the field will be auto-incremented. Otherwise, set to "0".</td>
+        </tr>
+        <tr>
+            <td> "fld_key": </td>
+            <td>Set to "1" if a key field, meaning that its values are unique. Otherwise, set to "0".</td>
+        </tr>
+        <tr>
+            <td> "fld_table_index": </td>
+            <td>Set to "1" if the field will be indexed. Otherwise, set to "0".</td>
+        </tr>
+        <tr>
+            <td> }, </td>
+            <td>End Field object.</td>
+        </tr>
+        <tr>
+            <td> ... </td>
+            <td>Any additional Field objects.</td>
+        </tr>
+        <tr>
+            <td> ] </td>
+            <td>End array of Field objects.</td>
+        </tr>
+        <tr>
+            <td> }, </td>
+            <td>End PM Table object.</td>
+        </tr>
+        <tr>
+            <td> ... </td>
+            <td>Any additional PM Table objects.</td>
+        </tr>
+        <tr>
+            <td>] </td>
+            <td>End array of PM Table objects.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>For example:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;pmt_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;33532851355ef56860e8297082884997&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;pmt_tab_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;PMT_CLIENTS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;pmt_tab_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Table with information about clients&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;pmt_tab_class_name&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;PmtClients&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;pmt_num_rows&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">28</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;22501963155ef568633c460054115944&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;ID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;ID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;BIGINT&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;8&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;58722687755ef568650b502051774480&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;COMPANY_NAME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;CompanyName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;50&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+
+<p><b>PHP Example:</b></p>
+<p>Print out the PM Tables and the fields in each table.</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;IAIERTORPBHIJZXEPNSUANXLKYPKODJU&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;71308091055cb7094026089092397336&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;mary&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;p4sSw0rD&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/pmtable&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oPmTable</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Table <span style="color: #006699; font-weight: bold;">{$oPmTable-&gt;pmt_tab_name}</span>:<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oPmTable</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">fields</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oField</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\t</span><span style="color: #006699; font-weight: bold;">{$oField-&gt;fld_name}</span> (<span style="color: #006699; font-weight: bold;">{$oField-&gt;fld_type}</span>)<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span class="mw-headline" id="Get_PM_Table_Structure:_GET_.2Fpmtable.2F.7Bpmt_uid.7D">Get PM Table Structure: <code>GET /pmtable/{pmt_uid}</code></span></h3>
+
+<p><span id="GetAPMTable">Get the structure from a specified PM Table, including a list of its fields and their properties.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Description</b></th>
+                    <th><b>Example</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>Workspace name</td>
+                    <td>/api/1.0/<b>workflow</b>/pmtable/33532851355ef56860e8297082884997</td>
+                </tr>
+                <tr>
+                    <td>pmt_uid</td>
+                    <td>Unique ID of the PM Table</td>
+                    <td>/api/1.0/workflow/pmtable/<b>33532851355ef56860e8297082884997</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+<p>If successful, the HTTP status is set to <code>200</code> (OK) and a PM Table object is returned, such as:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;33532851355ef56860e8297082884997&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_tab_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;PMT_CLIENTS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_tab_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Table with information about clients&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_tab_class_name&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;PmtClients&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_num_rows&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">28</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;22501963155ef568633c460054115944&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;ID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;ID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;BIGINT&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;8&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;58722687755ef568650b502051774480&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;COMPANY_NAME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;CompanyName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;50&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#93;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b></p>
+<p>Print out the number of records in a PM Table and list the fields in the PM Table.</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;IAIERTORPBHIJZXEPNSUANXLKYPKODJU&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;71308091055cb7094026089092397336&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;mary&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;p4sSw0rD&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$tableId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'33532851355ef56860e8297082884997'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/pmtable/<span style="color: #006699; font-weight: bold;">$tableId</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Table <span style="color: #006699; font-weight: bold;">{$oRet-&gt;response-&gt;pmt_tab_name}</span> has <span style="color: #006699; font-weight: bold;">{$oRet-&gt;response-&gt;pmt_num_rows}</span> records<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span class="mw-headline" id="Get_PM_Table_Data:_GET_.2Fpmtable.2F.7Bpmt_uid.7D.2Fdata">Get PM Table Data: <code>GET /pmtable/{pmt_uid}/data</code></span></h3>
+
+<p><span id="GetDataAPMTable">Get the data (records) from a <a href="../3.0/PM_Tables.html">PM table</a>.</span></p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}/data</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Description</b></th>
+                    <th><b>Example</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>Workspace name</td>
+                    <td>/api/1.0/<b>workflow</b>/pmtable/33532851355ef56860e8297082884997/data</td>
+                </tr>
+                <tr>
+                    <td>pmt_uid</td>
+                    <td>Unique ID of the PM Table.</td>
+                    <td>/api/1.0/workflow/pmtable/<b>33532851355ef56860e8297082884997/data</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Optional Parameters:</b></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Description</b></th>
+                    <th><b>Example</b></th>
+                </tr>
+                <tr>
+                    <td>filter</td>
+                    <td>Value that will be search in all the PMTable's fields.</td>
+                    <td>/api/1.0/<b>workflow</b>/pmtable/33532851355ef56860e8297082884997/data?filter=<font color="blue"><b>555655656</b></font></td>
+                </tr>
+<tr><td>q={where:spec}</td><td>string</td><td>This is a generic way to search via the filterType "where" (only this one is supported) and where<br>
+spec is the specification of the filter, for example for a where filter, this is a logical condition that the results must match.<br>For example, 
+<code>GET /api/1.0/workflow/pmtable/33532851355ef56860e8297082884997/data?q={"where":{"name":"Felix","lastname":"Mondaca"}}</code> will return the row of the PM Table that has the values: "Felix", "Mondaca" in the fields "name" and "lastname", respectively .</td></tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+<p>If successful, the HTTP status is set to <code>200</code> (OK) and an object is returned with the rows of data in the PM Table and the number of rows.</p>
+<p>For example:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;rows&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;company_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Western Fuels Corp.&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;235 W. Elm St, Greenwood, NC 34928&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;has_contract&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;__index__&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;lg&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;company_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Wrightspeed Transport&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2845 MLK Drive, Los Angeles, CA 28764&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;has_contract&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;__index__&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;lw&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;3&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;company_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Albemarle Chemical&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2810 E. 26th St., Brooklyn, NY 98245&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;has_contract&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;__index__&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;mA&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;count&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">3</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>The field names are automatically converted to lowercase.</font></p>
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>Integers, floating-point numbers (real numbers) and boolean values are converted to strings. In the above example, the <b><tt>id</tt></b> is an integer and the <b><tt>has_contract</tt></b> is a boolean in MySQL. Also, the <b><tt>__index__</tt></b> field is automatically created by MySQL to index the PM Table.</font></p>
+
+<p><b>PHP Example:</b></p>
+<p>Print out the records in a PM Table in an HTML table. First get the structure of the PM Table with <tt>GET /api/1.0/workflow/pmtable/{pmt_uid}</tt> in order to print out the label (description) of each field in the headers of the HTML table. Then, get the records with <tt>GET /api/1.0/workflow/pmtable/{pmt_uid}/data</tt> and print out each record as a record in the HTML table.</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;IAIERTORPBHIJZXEPNSUANXLKYPKODJU&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;71308091055cb7094026089092397336&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;mary&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;p4sSw0rD&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$tableId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'33532851355ef56860e8297082884997'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/pmtable/<span style="color: #006699; font-weight: bold;">$tableId</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aFields</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//array of fields in the PM Table</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'&lt;table border=&quot;1&quot; cellpadding=&quot;3&quot; cellspacing=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;'</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;&lt;tbody&gt;<span style="color: #000099; font-weight: bold;">\n</span>&lt;tr&gt;&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">fields</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oField</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aFields</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtolower"><span style="color: #990000;">strtolower</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oField</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">fld_name</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//convert field names to lowercase</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;th&gt;<span style="color: #006699; font-weight: bold;">{$oField-&gt;fld_description}</span>&lt;/th&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;/tr&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #000088;">$url2</span> &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/pmtable/<span style="color: #006699; font-weight: bold;">$tableId</span>/data&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oRet2</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url2</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet2</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet2</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">rows</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oRow</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$aRow</span> <span style="color: #339933;">=</span> <a href="http://php.net/get_object_vars"><span style="color: #990000;">get_object_vars</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRow</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//convert object to associative array</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;tr&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aFields</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$fieldName</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">' &nbsp;&lt;td&gt;'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$aRow</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$fieldName</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;/td&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;/tr&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;/tbody&gt;&lt;/table&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h4><span class="mw-headline" id="Data_PM_Table:_Querying_Filter">Querying Filter (Where)</span></h4>
+<p>A filter of type <b>WHERE</b> can be applied to this endpoint to narrow the endpoint response.<br>
+
+<dl><dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}/data?q={"where":{"property":"value"}}</font></dd></dl></p>
+
+<p>If wanting to search for multiple properties, separate them with a <code>","</code> (comma).<br>
+
+<dl><dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}/data?q={"where":{"property":"value","property2":"value2",...}}</font></dd></dl></p>
+
+<p><b>Filter Parameters:</b></p>
+<p><dl><dd>
+<table class="codecolumn"><tbody>
+<tr>
+  <th><b>Name</b></th>
+  <th><b>Type</b></th>
+  <th><b>Description</b></th>
+  <th><b>Example</b></th>
+</tr>
+<tr>
+  <td>property</td>
+  <td>String</td>
+  <td>The name of a property (field) in the PM Table. The field name is case insensitive.</td>
+  <td>/api/1.0/workflow312Of/pmtable/16470336958222eae1e9918043923507/data?q={"where":{<font color="#ff3333">"name"</font>:"Travis Grady"}}</td>
+</tr>
+<tr>
+  <td>value</td>
+  <td>String</td>
+  <td>Value to be searched. The value is case insensitive.</td>
+  <td>/api/1.0/workflow312Of/pmtable/16470336958222eae1e9918043923507/data?q={"where":{"name":<font color="#ff3333">"Travis Grady"</font>}}</td>
+</tr>
+</tbody></table>
+</dd></dl></p>
+
+<p><b>Value Parameter</b></p>
+<p>Inside the value parameter the following comparison operators can be used:</p>
+<p>
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr>
+  <th><b>Operator</b></th>
+  <th><b>Description</b></th>
+  <th><b>Example</b></th>
+</tr>
+
+<tr>
+  <td>Not Equal</td>
+  <td>The "NOT EQUAL" operator returns all the records that are NOT the equal to the comparison value. </td>
+  <td>/api/1.0/workflow312Of/pmtable/16470336958222eae1e9918043923507/data?q={"where":{"name":{<font color="#ff3333">"neq":"Travis Grady"</font>}}}</td>
+</tr>
+<tr>
+  <td>Like</td>
+  <td>The "LIKE" comparison operator enables to match the value using SQL regular expressions. The "%" sign is used to define missing letters, both before and after the value.</td>
+  <td>/api/1.0/workflow312Of/pmtable/16470336958222eae1e9918043923507/data?q={"where":{"name":{<font color="#ff3333">"like":"H%"</font>}}}</td>
+
+</tr>
+<tr>
+  <td>nLike</td>
+  <td>The "NOT LIKE" comparison operator enables to return all the results where the records values are NOT like the comparison value.</td>
+  <td>/api/1.0/workflow312Of/pmtable/16470336958222eae1e9918043923507/data?q={"where":{"Phone":{<font color="#ff3333">"nlike":"%667%"</font>}}}</td>
+</tr>
+</tbody></table>
+</dd></dl>
+</p>
+
+<p><b><font color=green>Note:</font></b> <font color=dimgrey>The URL may not contain spaces. If needing to include a space, then it needs to be URL encoded as <code>%20</code>. <a href="https://www.php.net/manual/en/function.rawurlencode.php">rawurlencode()</a> in PHP and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encode​URIComponent()</a> in JavaScript can be used  to replace spaces in the URL.</font></p>
+
+<p><b>Example:</b><br>
+If successful, then the HTTP status code is set to <code>200</code> and there is a status object.</p>
+
+<em>Response</em><br>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rows&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Travis Grady&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;phone&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;55533433&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;__index__&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;lg&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;count&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><br />
+<span style="color: #009900;">&#125;</span></div></div></p>
+
+
+
+<!--
+<p><b>Result:</b></p>
+<p>If successful, the HTTP status is set to <code>200</code> (OK) and an object is returned with the rows of data in the PM Table and the number of rows.</p>
+<p>For example:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rows&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;4&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Henry Townshend&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;phone&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;55545678&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;__index__&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;mQ&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;6&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Heather Mason&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;phone&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;55511223&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;__index__&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;mw&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;count&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">2</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+-->
+
+<h3><span class="mw-headline" id="Create_PM_Table:_POST_.2Fpmtable">Create PM Table: <code>POST /pmtable</code></span></h3>
+
+<p><span id="CreatePMTable">Create a new PM Table.</span></p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>POST</b> <font color="blue">/api/1.0/{workspace}/pmtable</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Description</b></th>
+                    <th><b>Example</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>Workspace name</td>
+                    <td>/api/1.0/<b>workflow</b>/pmtable</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>POST Fields:</b></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>{ </td>
+                    <td>Start object.</td>
+                </tr>
+                <tr>
+                    <td> "pmt_tab_name", </td>
+                    <td>The name of the PM Table, which only consists of ASCII letters, numbers and underscores ("_").
+                        It will automatically be converted to UPPERCASE. It is strongly recommended that it begin
+                        with <code>"PMT_"</code>.</td>
+                </tr>
+                <tr>
+                    <td> "pmt_tab_dsc", </td>
+                    <td><i>Optional.</i> Description of the PM Table.</td>
+                </tr>
+                <tr>
+                    <td> "fields" </td>
+                    <td>An array of field objects.</td>
+                </tr>
+                <tr>
+                    <td> [ </td>
+                    <td>Start the array.</td>
+                </tr>
+                <tr>
+                    <td> { </td>
+                    <td>Start object defining field.</td>
+                </tr>
+                <tr>
+                    <td> "fld_name",</td>
+                    <td>The field name, which should only contain ASCII letters, numbers and underscores ("_"). It
+                        will automatically be converted to UPPERCASE. It is recommended that it be in UPPERCASE.</td>
+                </tr>
+                <tr>
+                    <td> "fld_label,</td>
+                    <td>The field's label.</td>
+                </tr>
+                <tr>
+                    <td> "fld_type",</td>
+                    <td>The <a href="http://dev.mysql.com/doc/refman/5.0/en/data-types.html">field type</a>, which
+                        can be:
+                        <ul>
+                            <li>BIGINT: An integer of 8 bytes between <code>-9223372036854775808</code> and <code>9223372036854775807</code>.</li>
+                            <li>BOOLEAN: A binary value of either <code>1</code> (true) or <code>0</code> (false), but this <a href="http://bugs.processmaker.com/view.php?id=18454">stored as an INTEGER</a> in the database.</li>
+                            <li>CHAR: A string of a characters between <code>0</code> and <code>255</code> in length. The number of characters stored in the database is fixed. If the field size is 100, then 100 characters are stored in the database, even if the value in the field has fewer characters.</li>
+                            <li>DATE: A date in the <code>'YYYY-MM-DD'</code> format. The supported range is <code>'1000-01-01'</code> to <code>'9999-12-31'</code>.</li>
+                            <li>DATETIME: A datetime in the <code>'YYYY-MM-DD HH:MM:SS'</code> format. The supported range is <code>'1000-01-01 00:00:00'</code> to <code>'9999-12-31 23:59:59'</code>.</li>
+                            <li>DECIMAL: A decimal number, which has exactly 2 decimal digits. This is the recommended type when using currency.</li>
+                            <li>DOUBLE: A decimal number of 8 bytes. The supported range is <code>-1.7976931348623157E+308</code> to <code>-2.2250738585072014E-308</code>, <code>0</code>, and <code>2.2250738585072014E-308</code> to <code>1.7976931348623157E+308</code>.</li>
+                            <li>FLOAT: A decimal number of 4 bytes. The supported range is <code>-3.402823466E+38</code> to <code>-1.175494351E-38</code>, <code>0</code>, and <code>1.175494351E-38</code> to <code>3.402823466E+38</code>.</li>
+                            <li>INTEGER: An integer of 4 bytes between <code>-2147483648</code> and <code>2147483647</code>.</li>
+                            <li>LONGVARCHAR: A string of a variable number of characters, between 0 and 16,777,215 characters long. This is a synonym for a MEDIUMTEXT field.</li>
+                            <li>REAL: A synonym for DOUBLE (unless the REAL_AS_FLOAT SQL mode is enabled).</li>
+                            <li>SMALLINT: An integer of 2 bytes between <code>-32768</code> and <code>32767</code>.</li>
+                            <li>TIME: The time in 'HH:MM:SS' format.</li>
+                            <li>TIMESTAMP: A <a href="http://bugs.processmaker.com/view.php?id=18454">synonym for DATETIME</a>.</li>
+                            <li>TINYINT: An integer of 1 byte between <code>-128</code> and <code>127</code>.</li>
+                            <li>VARCHAR: A string of a variable number of characters, between 0 and 255 characters in length before MySQL 5.0.3 and between 0 and 65,535 characters in MySQL 5.0.3 and later.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td> "fld_size",</td>
+                    <td>The field size is <i>required</i> for CHAR and VARCHAR fields, where it sets the maximum number
+                        of allowed characters. The field size is <i>optional</i> for BOOLEAN, TINYINT, SMALLINT,
+                        INTEGER and BIGINT fields, where it sets the maximum number of allowed digits. It is also
+                        <i>optional</i> for FLOAT, REAL and DECIMAL fields, where it sets the maximum number of
+                        digits before the decimal point. The number of decimal digits cannot be specified, although
+                        it is automatically set to 2 in DECIMAL fields. For example, setting <code>fld_size</code>                        to <code>4</code> allows numbers between <code>-9999.X</code> and <code>9999.X</code> with
+                        the number of decimals determined by the maximum for the data type.<br>The <code>fld_size</code>                        should NOT be included in <a href="http://bugs.processmaker.com/view.php?id=18451">DOUBLE</a>,
+                        DATE, TIME, DATETIME, TIMESTAMP and LONGVARCHAR fields or it will cause a 400 error with
+                        no response object. Likewise, a 400 error will be caused if the <code>fld_size</code> is
+                        set to a value larger than the allowed size, such as <code>50</code> for an INTEGER.</td>
+                </tr>
+                <tr>
+                    <td> "fld_null", </td>
+                    <td><i>Optional.</i> Set to <code>1</code> if this field may have a value of <code>NULL</code>,
+                        meaning "no data". Otherwise, set to <code>0</code>, meaning that the field must have a
+                        value. If not included, then set to <code>1</code> by default.</td>
+                </tr>
+                <tr>
+                    <td> "fld_autoincrement",</td>
+                    <td><i>Optional.</i> Set to <code>1</code> if this field will be auto-incremented, meaning that
+                        the value will be automatically inserted as the maximum existing value in the field plus
+                        1. This option is recommended for ID fields. Otherwise set to <code>0</code>, which is
+                        the default.</td>
+                </tr>
+                <tr>
+                    <td> "fld_key" </td>
+                    <td><i>Optional.</i> Set to <code>1</code> if this field should be a primary key field, meaning
+                        that its value will be unique and it will used to index the table. Otherwise set to <code>0</code>,
+                        which is the default if not included.</td>
+                </tr>
+                <tr>
+                    <td> } </td>
+                    <td>End of object defining the field.</td>
+                </tr>
+                <tr>
+                    <td> ... </td>
+                    <td>Any additional field objects.</td>
+                </tr>
+                <tr>
+                    <td> ] </td>
+                    <td>End array of field objects.</td>
+                </tr>
+                <tr>
+                    <td>} </td>
+                    <td>End object.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+<p>If the table is created, then the HTTP status code is set to <code>201</code> (Created) and a object is returned with information about the new PM Table. See the JSON example below.</p>
+
+<p><b>JSON example:</b></p>
+<p><i>Request:</i>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_tab_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;PMT_CONTRACTS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_tab_dsc&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Clients for accounting services&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;ID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;ID number&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;INTEGER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">8</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_autoincrement&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;NAME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Contractor Name&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">120</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;AMOUNT&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Contract Amount&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;DECIMAL&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;DUE_DATE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Contract Due Date&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;DATE&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#93;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p><i>Response:</i>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;83869640955f217bb427890052454465&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_tab_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;PMT_CONTRACTS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_tab_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Contracts for accounting services&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_tab_class_name&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;PmtContracts&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;pmt_num_rows&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;52437664155f217bb6f79b6006806943&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;ID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;ID number&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;INTEGER&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">8</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">0</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;78554318355f217bb8ea6b4079739653&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;NAME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Contractor Name&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">120</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">0</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;11719892455f217bb999165017574602&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">2</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;AMOUNT&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Contract Amount&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;DECIMAL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NULL<span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">0</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;60151324555f217bba48057032011257&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">3</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;DUE_DATE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Contract Due Date&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;DATE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NULL<span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">0</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#93;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP example:</b></p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;IAIERTORPBHIJZXEPNSUANXLKYPKODJU&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;71308091055cb7094026089092397336&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;amos&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;sample&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$aVars</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;pmt_tab_name&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;PMT_CONTRACTS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;pmt_tab_dsc&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Contracts for accounting services&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;fields&quot;</span> &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_name&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;integer_&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_label&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;ID number&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_type&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;INTEGER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_key&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_size&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">8</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_null&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_autoincrement&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">1</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_name&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;NAME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_label&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Contractor Name&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_type&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_size&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">120</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_name&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;AMOUNT&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_label&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Contract Amount&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_type&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;DECIMAL&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_name&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;DUE_DATE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_label&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Contract Due Date&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;fld_type&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;DATE&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/pmtable&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;POST&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aVars</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">201</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;PM Table with UID '<span style="color: #006699; font-weight: bold;">{$oRet-&gt;response-&gt;pmt_uid}</span>' created.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>If using PHP, the POST variables will need to be passed through the <a href="http://php.net/manual/en/function.http-build-query.php">http_build_query()</a> which will cause problems with fields which include the <code>fld_size</code>. The ProcessMaker source code <a href="http://bugs.processmaker.com/view.php?id=18448">needs to be changed</a> to avoid an error.</font></p>
+
+<h3><span class="mw-headline" id="Add_PM_Table_Data:_POST_.2Fpmtable.2F.7Bpmt_uid.7D.2Fdata">Add PM Table Data: <code>POST /pmtable/{pmt_uid}/data</code></span></h3>
+
+<p><span id="CreateDataPMTable">Add a new record to a PM Table</span>.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>POST</b> <font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}/data</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Description</b></th>
+                    <th><b>Example</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>Workspace name</td>
+                    <td>/api/1.0/<b>workflow</b>/pmtable/22815673755f209dd749c90081062413/data</td>
+                </tr>
+                <tr>
+                    <td>pmt_uid</td>
+                    <td>Unique ID of PM Table</td>
+                    <td nowrap>/api/1.0/workflow/pmtable/<b>22815673755f209dd749c90081062413</b>/data</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>POST Fields:</b></p>
+
+<p>The following <i>object</i> where the member variables have the same names as the fields in the PM Table and their values will be inserted in a new record in the PM Table.</p>For example:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;ID&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">1262</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//INTEGER</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;CLIENT_NAME&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Sprockets Inc.&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//CHAR</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;ADDRESS&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;214 Elm St.<span style="color: #000099; font-weight: bold;">\n</span>Durham, FL 47621&quot;</span><span style="color: #339933;">,</span> <span style="color: #006600; font-style: italic;">//VARCHAR with new line</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;AMOUNT&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">13435.99</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//DECIMAL</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;WORK_START&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;2015-10-31 14:04:45&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//DATETIME</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;PAUSE_TIME&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;13:34:20&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//TIME</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;DUE_DATE&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2015-12-31&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//DATE</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;HAS_CONTRACT&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//BOOLEAN</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>Result:</b></p>
+<p>If successful, the HTTP status is set to <code>201</code> (Created) and the new record which has been inserted in the PM Table is returned, with the field names in lowercase.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;field_name1&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VALUE1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;field_name2&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VALUE2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;...<br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP example:</b></p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #009900;">&#123;</span><br />
+<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;IAIERTORPBHIJZXEPNSUANXLKYPKODJU&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;71308091055cb7094026089092397336&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;amos&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;sample&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$tableId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'22815673755f209dd749c90081062413'</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$aVars</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;ID&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">1262</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//INTEGER</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;CLIENT_NAME&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Sprockets Inc.&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//CHAR</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;ADDRESS&quot;</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;214 Elm St.<span style="color: #000099; font-weight: bold;">\n</span>Durham, FL 47621&quot;</span><span style="color: #339933;">,</span> <span style="color: #666666; font-style: italic;">//VARCHAR with new line</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;AMOUNT&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color:#800080;">13435.99</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//DECIMAL</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;WORK_START&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;2015-10-31 14:04:45&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//DATETIME</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;PAUSE_TIME&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;13:34:20&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//TIME</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;DUE_DATE&quot;</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;2015-12-31&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//DATE</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;HAS_CONTRACT&quot;</span><span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">1</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//BOOLEAN</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/pmtable/&quot;</span><span style="color: #339933;">;</span><span style="color: #666666; font-style: italic;">//$tableId/data&quot;;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aVars</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">201</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">'&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Record inserted!&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span> <span style="color: #009900;">&#125;</span></div></div></body>
+
+</html>
+</pre>
+
+<p><font color=green><b>Note:</b></font> <font>Remember that ProcessMaker's MySQL database stores character data in the UTF-8 character set, so any strings should be converted to UTF-8 if they are in another character set, using a function such as <a href="http://php.net/manual/en/function.iconv.php">iconv()</a> in PHP. </font></p>
+
+<h3><span class="mw-headline" id="Update_PM_Table_Structure:_PUT_.2Fpmtable.2F.7Bpmt_uid.7D">Update PM Table Structure: <code>PUT /pmtable/{pmt_uid}</code></span></h3>
+
+<p><span id="UpdatePMTable">Update the structure of a <font color="#483D8B">PM table</font>.</span></p>
+
+<p><b>Consideration:</b></p>
+<ul>
+<li>Must send the whole new structure of the table. If the table would have field A, B, C and the update sends A, B, D then C column is removed and D column is added.</li>
+</ul>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>PUT</b> <font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>pmt_uid</td>
+                    <td>String</td>
+                    <td>PM Table UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Optional Fields:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>pmt_tab_dsc</td>
+                    <td>String</td>
+                    <td>PM Table description</td>
+                </tr>
+                <tr>
+                    <td>fields</td>
+                    <td>Array</td>
+                    <td> </td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>empty</td>
+                    <td>No return</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Example:</b><br><i>Request</i></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;pmt_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;7822035995b58ce1946b645036512354&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;pmt_tab_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PMT_REVIEW_LOCAL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;pmt_tab_dsc&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;local&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;8108661975b5f3669552bb1022329705&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;IDC&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;IDClocal&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;INTEGER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;5&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_autoincrement&quot;</span><span style="color: #339933;">:</span><span style="color: #003366; font-weight: bold;">true</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;2661455575b5f36695e2bb9092967745&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;LOCAL_FIELD&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;LOCAL FIELD&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;202&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span><span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_autoincrement&quot;</span><span style="color: #339933;">:</span><span style="color: #003366; font-weight: bold;">false</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><i>Response</i></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span><span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+
+<h3><span class="mw-headline" id="Update_PM_Table_Data:_PUT_.2Fpmtable.2F.7Bpmt_uid.7D.2Fdata">Update PM Table Data: <code>PUT /pmtable/{pmt_uid}/data</code></span></h3>
+
+<p><span id="UpdateDataPMTable">Update the data of an existing record in a <font color="#483D8B">PM table</font></span>.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>PUT</b> <font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}/data</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>pmt_uid</td>
+                    <td>String</td>
+                    <td>PM Table UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>PUT Fields:</b></p>
+
+<p>An object where the member variables have the same names as the fields in the PM Table and their values will be inserted in an existing record in the PM Table.</p>
+
+<p><b>Result:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>empty</td>
+                    <td>No return</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Example:</b><br><i>Request</i></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;CAMPO1&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;valor1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;CAMPO2&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;valor2&quot;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<p><i>Response</i></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span><span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+
+<h3><span class="mw-headline" id="Delete_PM_Table:_DELETE_.2Fpmtable.2F.7Bpmt_uid.7D">Delete PM Table: <code>DELETE /pmtable/{pmt_uid}</code></span></h3>
+
+<p><span id="DeletePMTable">Delete a specified <font color="#483D8B">PM table</font> and all its data.</span></p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>DELETE</b> <font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>pmt_uid</td>
+                    <td>String</td>
+                    <td>PM Table UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>empty</td>
+                    <td>No return</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Example</b><br><i>Response</i></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span><span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+
+<h3><span class="mw-headline" id="Delete_PM_Table_Data:_DELETE_.2Fpmtable.2F.7Bpmt_uid.7D.2Fdata.2F...">Delete PM Table Data: <code>DELETE /pmtable/{pmt_uid}/data/...</code></span></h3>
+
+<p><span id="DeleteDataPMTable">Delete a record from a <font color="#483D8B">PM table</font>, by specifying its primary key(s). The PM Table can have up to 3 primary key fields.</span></p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.1/Roles.html#PM_SETUP_PM_TABLES">PM_SETUP_PM_TABLES</a> permission assigned to their role to have access to the endpoint information</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>DELETE</b> <font color="blue"> /api/1.0/{workspace}/pmtable/{pmt_uid}/data/{key1}/{value1}</font>
+        <dl>
+            <dd>
+                <dl>
+                    <dd>(<font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}/data/{key1}/{value1}/{key2}/{value2}</font>)</dd>
+                    <dd>(<font color="blue">/api/1.0/{workspace}/pmtable/{pmt_uid}/data/{key1}/{value1}/{key2}/{value2}/{key3}/{value3}</font>)</dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>pmt_uid</td>
+                    <td>String</td>
+                    <td>PM Table UID</td>
+                </tr>
+                <tr>
+                    <td>key1/key2/key3</td>
+                    <td>String</td>
+                    <td>Name of the PM Table primary key field (depending on the number of key fields in the table)</td>
+                </tr>
+                <tr>
+                    <td>value1/value2/value3</td>
+                    <td>String</td>
+                    <td>Value of the PM Table primary key field (depending on the number of key fields in the table)</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>empty</td>
+                    <td>No return</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Example:</b><br><i>Response</i></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span><span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+<!-- PM Tables End-->
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

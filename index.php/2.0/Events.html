@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Events.html" />
+<link rel="shortlink" href="../../node/127.html" />
+<title>2.0 - Events | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"tvn-dr-T39UJ_tpGzOGX2tviXeSt0ubDW89jlTbRuXA","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-127 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../../index.html" title="Home"><img src="../../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Events.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-3LnPp1FTvidbXDpPu91xO7p4cSvI2gJcR5EdS6THSb0" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.0 - Events</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../../3.3/Events.html" class="">3.8</a></li><li><a href="../../3.3/Events.html" class="">3.7</a></li><li><a href="../../3.3/Events.html" class="">3.6</a></li><li><a href="../../3.3/Events.html" class="">3.5</a></li><li><a href="../../3.3/Events.html" class="">3.4</a></li><li><a href="../../3.3/Events.html" class="">3.3</a></li><li><a href="../../3.2/Events.html" class="">3.2</a></li><li><a href="../../3.0/Events.html" class="">3.1</a></li><li><a href="../../3.0/Events.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.0 - Events" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Events.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.0 - Events 1/5</option><option value="40" selected="selected">Give 2.0 - Events 2/5</option><option value="60">Give 2.0 - Events 3/5</option><option value="80">Give 2.0 - Events 4/5</option><option value="100">Give 2.0 - Events 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-o3p5rh7_s5MFzTwHIL6rsFNMi-IdDdjvyDd4xUXjA1M" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Events.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Events.html#Overview">Overview</a></li>
+<li class="toc"><a href="Events.html#Types_of_events">Types of events </a></li>
+<li class="toc"><a href="Events.html#Creating_an_Event">Creating an Event </a></li>
+<ol class="toc">
+<li class="toc"><a href="Events.html#Creating_Intermediate_Message_Event">Creating Intermediate Message Event</a></li>
+<ol class="toc">
+<li class="toc"><a href="Events.html#Configuring_a_Send_Message_Event">Configuring a Send Message Event </a></li>
+</ol>
+<li class="toc"><a href="Events.html#Creating_Intermediate_Conditional_Event">Creating Intermediate Conditional Event</a></li>
+<li class="toc"><a href="Events.html#Creating_Intermediate_Timer_Event">Creating Intermediate Timer Event</a></li>
+</ol>
+<li class="toc"><a href="Events.html#Executing_a_cron.php">Executing <tt>cron.php</tt></a></li>
+<li class="toc"><a href="Events.html#Events_log">Events log</a></li>
+<ol class="toc">
+<li class="toc"><a href="Events.html#Checking_Events_log_on_the_Database">Checking Events log on the Database</a></li>
+<li class="toc"><a href="Events.html#Checking_Events_log_on_ProcessMaker">Checking Events log on ProcessMaker</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>Most actions in a process are executed in response to the user, but sometimes an action needs to be executed according to a specific timing in the process. In ProcessMaker, <strong>events</strong> are actions which execute relative to the time when a task or a series of tasks begins or ends, that's why it is required to have the <a href="../Executing_cron.php.html" rel="nofollow">cron properly configured</a>. Since events are tied to the operation of task(s), they will <strong>only</strong> be executed, if the task(s) have not yet concluded. If the selected task(s) have already finished (or the case is paused, canceled or deleted), the event will not execute.</p><p>Events can either send an email message or execute a trigger. From version 2.0 and later, three types of <i>conditional events</i> can be added, so events can be executed based upon the state of a particular case. In order for events to be automatically executed at the correct timing, the server running ProcessMaker will have to be configured to execute a Scheduled Task if using Windows or a <tt>cron</tt> job if using Linux/UNIX.</p>
+<!-- RESOLVED
+<p><span style="color: red; font-size: 8pt"><strong>Note:</strong></span> Events must be executed from the second task, if the event is trying to be executed on the first task it won't work properly. For version 2.0.43 this issue will be solved. For more information see <a href="http://bugs.processmaker.com/view.php?id=9103" rel="nofollow">here</a>.</p>-->
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> It's important to mention that the event will be running during the execution of the task scheduled, if the task is derivated the event will be closed and it won't be executed. For instance, if an event is created to remember to a certain user that a case is on his/her inbox, the event will remember the user to open that case to check and complete it, and the event will be available during the execution of that particular case. </font></p>
+<p>Also, when setting the events, <strong>weekends are not being considered</strong> in the calculation, so it won't be possible to configure the event to be executed in 2 days without included the weekends, the event will include also the weekends. Form version <strong>2.5.2</strong>, the functionality to omit the weekends was added, so basically you have to create a <a href="Calendars.html" title="2.0/Calendars">new Calendar</a> specifying the days your event will consider.</p>
+
+<h2><span id="Types_of_events">Types of events </span></h2>
+<p>From version 2.0 and later, events have been reorganized into three types:</p>
+<ul>
+<li><img alt="" height="22" src="../../sites/default/files/IntermediateMessageEventIcon.png" width="21"> An <i>Intermediate message event</i> is used to send an email notification.</li>
+<li><img alt="" height="21" src="../../sites/default/files/IntermediateConditionalEventIcon.png" width="21"> An <i>Intermediate Conditional event </i>executes a trigger, depending on a condition.</li>
+<li><img alt="" height="22" src="../../sites/default/files/IntermediateTimerEventIcon.png" width="23"> An <em>I</em><i>ntermediate timer event</i> executes a trigger defining either a Single or Multiple task.</li>
+</ul>
+
+<h2><span id="Creating_an_Event">Creating an Event </span></h2>
+<p>To create a new event, right click on a blank area in the process map and choose <strong>Events</strong> from the dropdown menu and the three options will display:</p>
+<p><img alt="" height="205" src="../../sites/default/files/EventsOptionDesigner2.5.png" width="396"></p>
+<p>Choose one depending on the requirements and click on the <strong>New</strong> link at the upper left corner of the list.</p>
+<p><img alt="" height="179" src="../../sites/default/files/CreateEventNew2.5.png" width="630"></p>
+
+<h3><span id="Creating_Intermediate_Message_Event">Creating Intermediate Message Event</span></h3>
+<div class="floatright"><img alt="" height="453" src="../../sites/default/files/NewEventConfigurationWindow.png" width="490"></div><p><strong>Event Message</strong></p><ul>
+<li><strong>Description:</strong> A description of the event, which is how the event will be identified and displayed in the list.</li>
+<li><strong>Status:</strong> Set to “Active” for the event to go into effect. To disable the event, set to “Inactive”.</li>
+</ul>
+<p><strong>Behaviour</strong></p>
+<ul>
+<li><strong>Type:</strong> Select whether the event's timing will be set in relation to a “Single Task” or “Multiple Tasks”. If the latter, then the event's timing can span multiple consecutive tasks in the process.</li>
+<li><strong>The time starts with task:</strong> Select the starting task from which the event will be timed.
+<ul>
+<li><strong>To:</strong> If the option "Multiple Tasks" was selected, then also select the ending task.</li>
+</ul>
+</li>
+<li><strong>Estimated Task duration:</strong> Enter the anticipated amount of time in days which will pass before the task or tasks are completed. If fractions of days are needed, decimal numbers can be used. For example, for a time 4 hours, enter "0.17" (4/24). For 45 hours, enter "1.88" (45/24).</li>
+<li><strong>Execution time:</strong> Enter the number of days relative to the beginning or end of the task when the event will be executed. This can be set to either a positive or negative number of days, which are counted either from the start or end of the interval. The timing can be a decimal number, so 6 hours would be "0.25" (6/24). If you set "0" it means that the event will be executed right "After interval ends" or "After interval starts", depending on what is chosen next, with no interval time to wait.</li>
+<li>Select whether the timer will begin counting "After interval ends" or "After interval starts".</li>
+</ul>
+<p><strong>Graphical representation of the timer</strong></p>
+<p>The timer setting can be confusing. To visually verify when the event will be executed releative to the timing of the selected tasks(s), look at where the clock icon appears in the timeline.</p>
+<p>No event can be <i>before</i> the starting task, since ProcessMaker has no idea when the starting task will begin in absolute time. If a negative number is used to set the timing before the starting task, the clock icon will disappear from the graphical representation, indicating that the timing is impossible.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> PHP's <a href="http://www.php.net/manual/en/book.image.php" rel="nofollow">GD library</a> has to be installed in order for the graphic representation of the timer to be displayed.</font></p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>If an event has an <strong>Interval Time</strong> of 5 days and its <strong>Timer</strong> is set to 8 days "After the interval starts", then event is anticipated to execute 3 days after the end of the task(s).</li>
+<li>If an event has an <strong>Interval Time</strong> of 7 days and its <strong>Timer</strong> is set to -3 days "After the interval ends", then event is anticipated to execute 4 days after the first task begins.</li>
+</ul>
+
+<h4><span id="Configuring_a_Send_Message_Event">Configuring a Send Message Event </span></h4>
+<div class="floatright"><img alt="" height="452" src="../../sites/default/files/EventMessageConfigurationWindow2.5.png" width="559"></div><p>Define the properties of the email to be sent:</p>
+<ul>
+<li><strong>Subject:</strong> The subject of the email.</li>
+<li><strong>Send<i> </i>To:</strong> Select who will receive the email will be sent to. It has the following options:
+<ul>
+<li>To add the email of a user who is not a registered user, enter their email address in the textbox at the top of the list and click on <img alt="" height="15" src="../../sites/default/files/EventMessagePluIcon.png" width="15">. (Only their email addresses will be accepted and not their names.)</li>
+<li>The (Current Task User) can be added to the <strong>Send To</strong> list by clicking on <img alt="" height="13" src="../../sites/default/files/EventMessageAddCurrentUserIcon.png" width="15"> (which is already selected by default).</li>
+<li>To add a ProcessMaker user, click on <img alt="" height="15" src="../../sites/default/files/EventMessageAddUsersIcon.png" width="14"> and select a user to add to the list.</li>
+<li>To remove email recipient(s) from the <strong>Send To</strong> list, select one or more recipients and click on <img alt="" height="15" src="../../sites/default/files/EventMessageRemoveUsersIcon.png" width="15">.</li>
+<li>To add everyone in a ProcessMaker group, click on <img alt="" height="15" src="../../sites/default/files/EventMessageAddGroupsIcon.png" width="15"> and select the group to add to the list.</li>
+<li>To add a variable click on <img alt="" height="15" src="../../sites/default/files/EventMessageAddVarIcon.png" width="18"> and a new window with the list of all dynaforms will display</li>
+</ul>
+</li>
+<li><strong>Carbon Copy:</strong> Add email addresses or users to receive an exact copy of the email.</li>
+<li><strong>Blind Carbon Copy:</strong> Add email addresses or users to receive a <i>blind carbon copy</i> of the email, which means that the other recipients will not be informed that the BBC recipients were sent the email.</li>
+<li><strong>E-Mail Template:</strong> Select one of the HTML template files which will form the body of the message. If the template file contains system and case variables they will be automatically inserted. New email template files can created by <i>right clicking</i> on the Process Map and selecting <a href="../Process_Files_Manager.html" title="Process Files Manager">Process File Manager</a> from the menu.</li>
+</ul>
+<dl></dl><p>When done defining the email properties, click on <strong>Save</strong>.</p>
+
+<h3><span id="Creating_Intermediate_Conditional_Event">Creating Intermediate Conditional Event</span></h3>
+
+<div class="floatright"><img alt="" height="452" src="../../sites/default/files/NewConditionalEventConfiguration2.5.png" width="486"></div>
+<p><strong>Event Message</strong></p>
+<ul>
+<li><strong>Description:</strong> A description of the event, which is how the event will be identified and displayed in the list.</li>
+<li><strong>Status:</strong> Set to “Active” for the event to go into effect. To disable the event, set to “Inactive”.</li>
+</ul>
+<p><strong>Behaviour</strong></p>
+<ul>
+<li><strong>Type:</strong> Select whether the event's timing will be set in relation to a “Single Task” or “Multiple Tasks”. If the latter, then the event's timing can span multiple consecutive tasks in the process.</li>
+<li><strong>Type:</strong> Select whether the event's timing will be set in relation to a <i>Single Task</i> or <i>Multiple Tasks</i>. If the latter, then the event's timing can span multiple consecutive tasks in the process.</li>
+<li><strong>The time starts with task:</strong> Select the starting task from which the event will be timed.</li>
+<li><strong>Estimated Task duration:</strong> Enter the anticipated amount of time in days which will pass before the task or tasks are completed. If fractions of days are needed, decimal numbers can be used. For example, for a time 4 hours, enter "0.17" (4/24). For 45 hours, enter "1.88" (45/24).</li><li><strong>Execution time:</strong> Enter the number of days relative to the beginning or end of the task when the event will be executed. This can be set to either a positive or negative number of days, which are counted either from the start or end of the interval. The timing can be a decimal number, so 6 hours would be "0.25" (6/24). If you set "0" it means that the event will be executed right "After interval ends" or "After interval starts", depending on what is chosen next, with no interval time to wait.
+<ul>
+<li>Select whether the timer will begin counting "After interval ends" or "After interval starts".</li>
+</ul>
+</li>
+<li><strong>Execute Trigger:</strong> Select the trigger who will be executed with the event. Triggers available will be the ones who were created during the process.</li>
+<li><strong>Condition:</strong> Write a condition for the trigger execution.</li>
+</ul>
+<p>Click on <strong>Continue</strong> and the window with the trigger script will open:</p>
+<p><img alt="" height="451" src="../../sites/default/files/TriggerScriptConditionalEvent.png" width="554"></p>
+<p>It is possible to add code to be executed on the trigger script.</p>
+
+<h3><span id="Creating_Intermediate_Timer_Event">Creating Intermediate Timer Event</span></h3>
+<div class="floatright"><img alt="" height="453" src="../../sites/default/files/NewTimerlEventConfiguration2.5.png" width="487"></div>
+<p><strong>Event Message</strong></p>
+<ul>
+<li><strong>Description:</strong> A description of the event, which is how the event will be identified and displayed in the list.</li>
+<li><strong>Status:</strong> Set to “Active” for the event to go into effect. To disable the event, set to “Inactive”.</li>
+</ul>
+<p><strong>Behaviour</strong></p>
+<ul>
+<li><strong>Type:</strong> Select whether the event's timing will be set in relation to a “Single Task” or “Multiple Tasks”. If the latter, then the event's timing can start from one task to another.</li>
+<li><strong>The time starts with task:</strong> Select the starting task from which the event will be timed.
+<ul>
+<li><strong>To:</strong> If the option "Multiple Tasks" was selected, then also select the ending task.</li>
+</ul>
+</li>
+<li><strong>Estimated Task duration:</strong> Enter the anticipated amount of time in days which will pass before the task or tasks are completed. If fractions of days are needed, decimal numbers can be used. For example, for a time 4 hours, enter "0.17" (4/24). For 45 hours, enter "1.88" (45/24).</li>
+<li><strong>Execution time:</strong> Enter the number of days relative to the beginning or end of the task when the event will be executed. This can be set to either a positive or negative number of days, which are counted either from the start or end of the interval. The timing can be a decimal number, so 6 hours would be "0.25" (6/24). If you set "0" it means that the event will be executed right "After interval ends" or "After interval starts", depending on what is chosen next, with no interval time to wait.
+<ul>
+<li>Select whether the timer will begin counting "After interval ends" or "After interval starts".</li>
+</ul>
+</li>
+<li><strong>Execute Trigger:</strong> Select the trigger who will be executed with the event. Triggers available will be the ones who were created during the process.
+<ul>
+<li><strong>Condition:</strong> Write a condition for the trigger execution.</li>
+</ul>
+</li>
+</ul>
+<p>Click on <strong>Continue<i> </i></strong>and the window with the<i><strong><i> </i></strong></i>trigger script will open. It is possible to add code to be executed on the trigger script.</p>
+
+<h2><span id="Executing_a_cron.php">Executing <tt>cron.php</tt></span></h2>
+<p>If a <tt>cron</tt> hasn't been programed to be executed, then it is possible to execute it manually. <a href="../Executing_cron.php.html" rel="nofollow">Execute the cron</a> as the image below, and the characteristics for the event set will display:</p>
+<p><img alt="" height="382" src="../../sites/default/files/ExecuteCronEvents.png" width="655"></p>
+
+<h2><span id="Events_log">Events log</span></h2><h3><span id="Checking_Events_log_on_the_Database">Checking Events log on the Database</span></h3>
+<p>The list and status of events executed will be found on <tt>wf_&lt;WORKSPACE&gt; APP_EVENT</tt> table. In that table it is possible to check if an event as executed or not.</p>
+
+<h3><span id="Checking_Events_log_on_ProcessMaker">Checking Events log on ProcessMaker</span></h3>
+<p>From version <strong>2.0.44</strong> an event log was added inside <strong>Administration tab</strong>, only users with <tt>PROCESSMAKER_ADMIN</tt> and <tt>PROCESSMAKER_MANAGER</tt> <a href="Roles.html" title="2.0/Roles">role</a> will have access to the event log</p>
+<p>When the event is executed, log is stored at <strong>ADMIN &gt; Settings &gt; Log &gt; Events</strong></p>
+<p><img alt="" height="213" src="../../sites/default/files/ProcessEventsLogs.png" width="1264"></p>
+<p>Where:</p>
+<ul>
+<li><strong>Process</strong>: it displays the name of the process.</li>
+<li><strong>Tasks</strong>: it displays the name of the task where the event was executed.</li>
+<li><strong>Case Title</strong>: Title or number of the case where the event was executed.</li>
+<li><strong>Action Date</strong>: date when the task where the event was scheduled was executed.</li>
+<li><strong>Last Execution</strong>: date when the cron was executed.</li>
+<li><strong>Event Type</strong>: Type of the event executed.</li>
+<li><strong>Status</strong>: Status of the event. Possible status:
+<ul>
+<li><strong>OPEN:</strong> if the event is still on execution.</li>
+<li><strong>CLOSE:</strong> If the event was executed successfully.</li>
+</ul>
+</li>
+</ul></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

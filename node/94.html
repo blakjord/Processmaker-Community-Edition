@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/ProcessMaker_Installation_in_Hosted_Environment.html" />
+<link rel="shortlink" href="94.html" />
+<title>ProcessMaker Installation in Hosted Environment | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"aciza3cKL9vGOLtxJJOK_SCYAviWmQ4E-rEnHWn3j-s","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-94 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="94.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-pBiBJJfIq5pkcfHMeiiF6UAQAkd4CSyUDArCp-1ke4U" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">ProcessMaker Installation in Hosted Environment</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+          </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="ProcessMaker Installation in Hosted Environment" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="94.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give ProcessMaker Installation in Hosted Environment 1/5</option><option value="40">Give ProcessMaker Installation in Hosted Environment 2/5</option><option value="60" selected="selected">Give ProcessMaker Installation in Hosted Environment 3/5</option><option value="80">Give ProcessMaker Installation in Hosted Environment 4/5</option><option value="100">Give ProcessMaker Installation in Hosted Environment 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.6</span></span> <span class="total-votes">(<span >5</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-LFVk6yMEwWJmRsQFgzOC3ln95X8xYnE4bYQXtUEnjdk" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="94.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="94.html#Overview">Overview</a></li>
+<li class="toc"><a href="94.html#Requirements">Requirements </a></li>
+<li class="toc"><a href="94.html#PHP_Settings">PHP Settings </a></li>
+<li class="toc"><a href="94.html#Installation">Installation </a></li>
+<li class="toc"><a href="94.html#Configuring_Apache">Configuring Apache</a></li>
+<li class="toc"><a href="94.html#Subdomain_Creation">Subdomain Creation</a></li>
+<li class="toc"><a href="94.html#MySql_Databases_Setup">MySql Databases Setup </a></li>
+<li class="toc"><a href="94.html#ProcessMaker_Configuration">ProcessMaker Configuration </a></li>
+</ol>
+</div></div>
+</p>
+<h2><span id="Overview">Overview</span></h2><p>Before trying to install ProcessMaker on a hosted account, make sure that your hosting provider meets the requirements for ProcessMaker. The following instructions are valid from release 1.1-1705 on.</p>
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray">Many people have reported problems trying to install in a hosted account. To avoid problems, it is recommended to get a <a href="http://en.wikipedia.org/wiki/Virtual_private_server">Virtual Private Server (VPS)</a> which provides "root" or administrator access for doing a <a href="../index.php/Main_Page.html#installation" title="Main Page">normal ProcessMaker installation</a>. In any case, ProcessMaker generally consumes too much memory and processing cycles to run adequately on most hosted accounts. If looking for a cheap VPS for $5 per month or less, see http://www.lowendbox.com.<br>For installation in a VPS, do NOT follow these instructions!</font></p>
+
+<h2><span id="Requirements">Requirements </span></h2><p><strong>Server:</strong></p><ul><li>Apache 2.2.3 or greater with the following modules enabled:<ul><li>deflate</li><li>expires</li><li>rewrite</li><li>vhost_alias</li></ul></li><li>MySQL 4.1.20 or greater</li></ul><p>(If using ProcessMaker 1.8 or later or the &nbsp;<a href="https://wiki.processmaker.com/index.php/Pentaho_BI_Suite_Connector" title="Pentaho BI Suite Connector">Pentaho Reports</a> plugin, MySQL 5.1.6 or later is required.)</p><ul><li>PHP 5.1.6 or greater (but not PHP 5.3.X if using ProcessMaker 1.8 or earlier) with the following modules enabled:<ul><li>mysql</li><li>xml</li><li>mbstring</li><li>mcrypt</li><li>soap (necessary if using web services)</li><li>ldap (necessary if integrating with LDAP or Active Directory)</li><li>gd (recommended if using Events)</li><li>curl (necessary for uploading/downloading files)</li><li>In addition, install PHP's <a href="http://php.net/manual/en/features.commandline.php">command line interface (CLI)</a> if planning on using Events, the Case Scheduler, workspace backup/restore, or developing plugins with the Gulliver Framework.</li></ul></li></ul>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> The installation in a hosted environment has not yet been tested in PHP 5.5.</font></p>
+
+<p><strong>Clients:</strong></p><ul><li>Mozilla Firefox (recommended) or Internet Explorer 7 or greater</li></ul><h2><span id="PHP_Settings">PHP Settings </span></h2><p>ProcessMaker requires the following PHP modules:</p><dl><dd>mysql, xml, mbstring</dd></dl><p>The following PHP modules are <i>recommended</i>, but ProcessMaker should be able to run without them:</p><dl><dd>soap, gd, ldap, curl</dd></dl><p>If they aren't included, call your hosting provider and ask for them to be included in PHP.</p><p>Make sure that PHP has the following settings:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&nbsp; short_open_tag = On<br />
+&nbsp; file_uploads = On<br />
+&nbsp; memory_limit = 80M &nbsp; &nbsp;</div></div>
+
+<p>If these PHP settings are provided by your hosting provider, consult with your hosting provider to find out how to create a custom <strong><tt>php.ini</tt></strong> file in your hosted account:</p>
+<ul><li><a href="https://www.ionos.es/">1&amp;1 IONOS</a></li><li><a href="http://help.godaddy.com/article/1085">GoDaddy</a></li><li><a href="http://helpdesk.bluehost.com/index.php/kb/article/128">Blue Host</a></li><li><a href="https://help.dreamhost.com/hc/es">Dream Host</a></li></ul>
+<p>If planning on uploading large <a href="../index.php/2.0/Input_Documents.html" title="Input Documents">Input Documents</a> while running processes, the <tt>max_post_size</tt> and <tt>upload_max_filesize</tt> should be increased to more than the default 2MB. For instance, if planning on uploading files as large as 16MB, then:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">max_post_size = 16M <br />
+upload_max_filesize = 16M</div></div>
+
+<p>If using ProcessMaker 1-2.2552 or a previous version, enable ASP tags:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">asp_tags = On</div></div>
+
+<p>Apache will generally have to be restart or reloaded for new PHP settings to take effect. Ask your hosting provider how this can be done.</p>
+<h2><span id="Installation">Installation </span></h2>
+<p>Download the latest ProcessMaker tarball from http://sourceforge.net/projects/processmaker/files</p>
+<p>Then, extract the <tt>pmos-1.X-XXXX.tar.gz</tt> file under your <tt><strong>/public_html/</strong></tt> directory (or where you store your publicly accessible web files). If you have access to a Linux/UNIX command line on your host, use the command:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">tar --directory /your_account/public_html/ -xzvf pmos-1.X-XXXX.tar.gz</div></div>
+
+<p>If your hosting provider doesn't provide decompression utilities, you might have to decompress the files on your local computer (with a program like <a href="http://www.gnu.org/software/tar/">tar</a>, <a href="http://www.7-zip.org">7-Zip</a> or <a href="http://www.rarlab.com">Winrar</a>) and then upload them to your hosted account.</p>
+<p>This will create a new <strong><tt>processmaker</tt></strong> directory containing all the ProcessMaker files and directories.</p>
+<p>Set the following directories to be world readable and world writable:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">/your_account/public_html/processmaker/workflow/engine/config/<br />
+/your_account/public_html/processmaker/workflow/engine/plugins/<br />
+/your_account/public_html/processmaker/workflow/engine/xlmform/<br />
+/your_account/public_html/processmaker/workflow/engine/content/languages/<br />
+/your_account/public_html/processmaker/workflow/engine/js/labels</div></div>
+
+<p>If you have access a Linux/UNIX command line, use the commands:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">cd /your_account/public_html/processmaker/workflow/engine/<br />
+chmod 777 config content/languages plugins xmlform js/labels &nbsp; </div></div>
+
+<p>If you don't have access to the command line, make these changes with the file manager provided by your hosting provider.</p>
+<p>Then, create the following directories to store shared files and compiled cache files needed by ProcessMaker and make them world readable and world writable:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">/your_account/processmaker<br />
+/your_account/processmaker/shared<br />
+/your_account/processmaker/compiled</div></div>
+
+<p>Make sure that these directories are not included in your <strong><tt>public_html</tt></strong> directory, so they won't be accessible to the internet. If you have access to a Linux/UNIX command line, use the commands:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mkdir -p processmaker/shared processmaker/compiled<br />
+chmod 775 processmaker<br />
+chmod 777 processmaker/shared processmaker/compiled</div></div>
+
+<h2><span id="Configuring_Apache">Configuring Apache</span></h2>
+<p>Because ProcessMaker uses a special redirect for the web pages, a <a href="http://httpd.apache.org/docs/current/configuring.html#htaccess"><tt>.htaccess</tt></a> file, it has to be created in the <strong><tt>public_html</tt></strong> directory of the ProcessMaker installation.</p>
+<p>Make sure that your hosting provider supports custom <tt><strong>.htaccess</strong></tt> files in any directory (not just the root directory):</p>
+<ul><li><a href="http://faq.1and1.com/scripting_languages_supported/php/8.html">1&amp;1 Hosting</a></li><li><a href="http://help.godaddy.com/article/1082">GoDaddy</a></li><li><a href="http://www.bluehostreview.org/bluehost-htaccess-file">Blue Host</a></li><li><a href="https://help.dreamhost.com/hc/es/articles/216456227">Dream Host</a></li></ul>
+<p>Then create a <strong><tt>.htaccess</tt></strong> file in the <strong><tt>public_html</tt></strong> within the ProcessMaker installation:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">/your_account/public_html/processmaker/workflow/public_html/.htaccess</div></div>
+
+<p>This file should contain the following code:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">AddDefaultCharset UTF-8<br />
+<br />
+&nbsp; &nbsp; Options FollowSymlinks<br />
+<br />
+&nbsp; &nbsp; RewriteEngine on<br />
+&nbsp; &nbsp; RewriteRule ^.*/(.*)$ sysGeneric.php [NC,L]<br />
+<br />
+&nbsp; &nbsp; ExpiresActive On &nbsp; &nbsp;<br />
+&nbsp; &nbsp; ExpiresDefault &quot;access plus 1 day&quot; <br />
+&nbsp; &nbsp; ExpiresByType image/gif &quot;access plus 1 day&quot;<br />
+&nbsp; &nbsp; ExpiresByType image/png &quot;access plus 1 day&quot;<br />
+&nbsp; &nbsp; ExpiresByType image/jpg &quot;access plus 1 day&quot;<br />
+&nbsp; &nbsp; ExpiresByType text/css &quot;access plus 1 day&quot;<br />
+&nbsp; &nbsp; ExpiresByType text/javascript &quot;access plus 1 day&quot;<br />
+<br />
+&nbsp; &nbsp; AddOutputFilterByType DEFLATE text/html</div></div>
+
+<h2><span id="Subdomain_Creation">Subdomain Creation</span></h2>
+<p>Create a new subdomain where ProcessMaker can be accessed from a web browser. The document root of this subdomain should be defined as:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">/public_html/processmaker/workflow/public_html/</div></div>
+
+<p>As shown in the following illustration:</p>
+<p><img alt="" src="../sites/default/files/Subdomain-def.png" height="181" width="747"></p>
+<h2><span id="MySql_Databases_Setup">MySql Databases Setup </span></h2>
+<p>Create a MySql user to access the databases used by ProcessMaker.</p>
+<p><img alt="" src="../sites/default/files/Pmuser-creation.png" height="222" width="746"></p>
+<p>Then, create the following three MySQL databases to be used by ProcessMaker:</p>
+<p>1. <strong>wf_workflow</strong> to store information about processes, cases and user.</p>
+<p>2. <strong>rb_workflow</strong> to implement Role Based Access Control for users.</p>
+<p>3. <strong>rp_workflow</strong> to store data from Report Tables.</p>
+<p>Then, add the <i><strong>pmuser</strong></i> to the three created databases, which in this example will be named "AJAXLAB":</p>
+<p><img alt="" src="../sites/default/files/Ihe-user-database.png" height="128" width="243"></p>
+<p>Grant <strong>ALL privileges</strong> to the <i><strong>pmuser</strong></i> for the three databases:</p>
+<p><img alt="" src="../sites/default/files/Ihe-database-privileges.png" height="423" width="553"></p>
+<h2><span id="ProcessMaker_Configuration">ProcessMaker Configuration </span></h2>
+<p>Open your browser and go to the created ProcessMaker subdomain. You should see the Installation Configuration page. If you don't see it, please check the installation steps.</p>
+<p>On the Installation Configuration page, enter your MySQL database account information, corresponding to the created <i><strong>pmuser</strong></i>.</p>
+<p><img alt="" src="../sites/default/files/Ihe-pmuser-test.png.png" height="208" width="697"></p>
+<p>Enter your MySQL ProcessMaker database, corresponding to the three created databases: wf_workflow, rb_workflow, rp_workflow</p>
+<p><img alt="" src="../sites/default/files/Ihe-database-test.png" height="126" width="444"></p>
+<p>Enter the path to get to your <strong>Data Directory</strong>, which is the <strong><tt>processmaker/shared</tt></strong> directory you created. Also, enter the path to the <strong>Compiled Templates Directory</strong> which is the <strong><tt>processmaker/compiled</tt></strong> directory which you created.</p>
+<p>Then, test your connection and paths, by clicking the on the tab "Test" option upper right-hand corner.</p>
+<p><img alt="" src="../sites/default/files/Ihe-directories-test.png" height="98" width="698"></p>
+<p><img alt="" src="../sites/default/files/Ihe-user-test.png" height="103" width="397"></p>
+<p>If the configuration is good, click on the <strong>Install</strong> button, in the upper right-hand corner to begin the installation of ProcessMaker.</p>
+<p>After few seconds you will get the confirmation of your installation. If it was successful, click on the button "Finish installation" and enjoy ProccessMaker. Otherwise, please visit our forums (http://forum.processmaker.com/) to get support.</p>
+<p>To login to ProcessMaker use the credentials for the ProcessMaker Administrator user, which were defined in the Configuration screen. By default they are:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&nbsp; &nbsp; &nbsp; &nbsp; User: &nbsp; &nbsp; &nbsp;admin<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Password: &nbsp;admin<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Workspace: workflow</div></div>
+
+<p><b>Important!</b> The “admin” user will be able to access to all the features and functionality in your ProcessMaker installation, such as: system configuration, processes creation and editing, user and group management, case management, and report and dashboard oversight among others. Thus, it is strongly recommended you take care to configure a difficult-to-guess password for this account. Take a look at this list of <a href="https://krebsonsecurity.com/password-dos-and-donts/" rel="nofollow">password dos and don’ts</a>. You may also consider using a strong password generator like <a href="https://strongpasswordgenerator.com/" rel="nofollow">this one</a>.</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

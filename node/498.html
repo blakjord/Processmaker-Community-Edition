@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.0/Get_the_ProcessMaker_Cases_List_in_an_external_application.html" />
+<link rel="shortlink" href="498.html" />
+<title>3.0 - 3.8 - Get the ProcessMaker Cases List in an External Application | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"sQ4uQcVnUASmjV_ZjK_mXG-Myqv1yYRTqPqh0sLntWA","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-498 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="498.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="498.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-j8Rde38xm7fENBeZRlo7OJlAo_DRnc6go-zG3uTx2V4" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.0 - 3.8 - Get the ProcessMaker Cases List in an External Application</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a  class="active-version">3.0</a></li><li><a href="../index.php/Get_the_ProcessMaker_Cases_List_in_an_external_application.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.0 - 3.8 - Get the ProcessMaker Cases List in an External Application" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="498.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.0 - 3.8 - Get the ProcessMaker Cases List in an External Application 1/5</option><option value="40">Give 3.0 - 3.8 - Get the ProcessMaker Cases List in an External Application 2/5</option><option value="60" selected="selected">Give 3.0 - 3.8 - Get the ProcessMaker Cases List in an External Application 3/5</option><option value="80">Give 3.0 - 3.8 - Get the ProcessMaker Cases List in an External Application 4/5</option><option value="100">Give 3.0 - 3.8 - Get the ProcessMaker Cases List in an External Application 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-1gowrZaluEU_3oWOBDO92bRvDSlEp2GBoDf8TNeAsyA" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="498.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="498.html#Overview">Overview</a></li>
+<li class="toc"><a href="498.html#Requirements">Requirements</a></li>
+<li class="toc"><a href="498.html#Setting_Up_the_Server">Setting Up the Server</a></li>
+<li class="toc"><a href="498.html#Registering_the_Application">Registering the Application</a></li>
+<li class="toc"><a href="498.html#Create_the_caselister_Files">Create the aselister Files</a></li>
+<ol class="toc">
+<li class="toc"><a href="498.html#app-data.json:_Application_credentials">app-data.json: Application credentials</a></li>
+<li class="toc"><a href="498.html#home.html:_Initial_Page">home.html: Initial Page</a></li>
+<li class="toc"><a href="498.html#access.html:_Request_Application_Authorization">access.html: Request Application Authorization</a></li>
+<li class="toc"><a href="498.html#grant.php:_Obtain_Access_Token">grant.php: Obtain Access Token</a></li>
+<li class="toc"><a href="498.html#cases.html:_Display_Case_Folders">cases.html: Display Case Folders</a></li>
+<li class="toc"><a href="498.html#todo-list.html:_List_Inbox_Cases">todo-list.html: List Inbox Cases</a></li>
+</ol>
+<li class="toc"><a href="498.html#Accessing_the_External_Application">Accessing the External Application</a></li>
+<li class="toc"><a href="498.html#Getting_the_Access_Token_Using_the_Refresh_Code">Getting the Access Token Using the Refresh Code </a></li>
+</ol>
+</div></div>
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>In the following example, the REST application named "caselister" creates a web page that uses the cases endpoint in the ProcessMaker REST API to show how to get a list of the ProcessMaker <a href="../3.2/REST_API_Cases.html#GetListCasesTODO" title="3.2/REST API Cases">cases found in the inbox</a> for a logged-in user.</p>
+
+<h2><span class="mw-headline" id="Requirements">Requirements</span></h2>
+<ul><li>ProcessMaker v 3.x.</li>
+    <li>A server running Apache or a similar web server.</li>
+    <li>If using a Linux server, root privileges are needed to create/copy files inside the Apache public directory, which is often located at <tt>/var/www</tt>. Or, configure Apache to use another directory.</li>
+    <li>On a Windows server, administrator privileges may be needed to edit the Apache configuration files if they are located under the <tt>Program Files</tt> directory.</li>
+</ul>
+
+<h2><span class="mw-headline" id="Setting_Up_the_Server">Setting Up the Server</span></h2>
+<p>In this example, a ProcessMaker server is installed at <font color="blue">http://192.168.1.110:32</font> and the example "caselister" application is installed on a separate server at <font color="blue">http://localhost</font>, which will use the ProcessMaker REST API.</p>
+
+<p>The "caselister" application, however, can be run on the same server running ProcessMaker. The easiest way to do this is to create a <b><tt>caselister</tt></b> directory at <b><a href="../3.0/File_Locations.html#Installation_Directory" title="File Locations">&lt;PROCESSMAKER-DIRECTORY&gt;</a>/workflow/public_html/caselister</tt></b>, which will contain application's code. Then the "caselister" application can be accessed from the web browser at the address:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">http://{pm-server}/caselister/home.php</div></div>
+
+<p>If using Linux/UNIX, make sure the <b><tt>caselister</tt></b> directory is world readable and executable and all files inside it are world readable.</p>
+
+<p>The second way to run the "caselister" application on the same server as ProcessMaker is to add another port to the Apache web server. For example, create the following file named <b><tt>caselister.conf</tt></b> to run the "caselister" application on port 8000:</p>
+
+<codeblock>&lt;VirtualHost *:8000&gt;
+   DocumentRoot <i><b>/var/www/caselister</b></i>
+   &lt;Directory <i><b>/var/www/caselister</b></i>&gt;
+      Options Indexes FollowSymLinks MultiViews
+      AllowOverride All
+      Order allow,deny
+      allow from all
+   &lt;/Directory&gt;
+
+   ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+   &lt;Directory "/usr/lib/cgi-bin"&gt;
+      AllowOverride None
+      Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+      Order allow,deny
+      Allow from all
+   &lt;/Directory&gt;
+
+   ErrorLog ${APACHE_LOG_DIR}/error.log
+   # Possible values include: debug, info, notice, warn, error, crit, alert, emerg.
+   LogLevel warn
+   CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;
+
+NameVirtualHost *:8000
+Listen 8000
+</codeblock>
+
+<p>Change <i><b><tt>/var/www/caselister</tt></b></i> to the path where the caselister code is located.</p>
+<p>Then add the <b><tt>caselister.conf</tt></b> file to the directory of Apache sites. This location depends on your server:</p>
+<dl>
+    <dd><b>RedHat/CentOS/Fedora:</b>
+        <dl>
+            <dd><tt>/etc/httpd/conf.d/caselister.conf</tt></dd>
+        </dl>
+    </dd>
+    <dd><b>Debian/Ubuntu/Mint:</b>
+        <dl>
+            <dd><tt>/etc/apache2/sites-available/caselister.conf</tt></dd>
+            <dd>Then issue the following command as root or with <code>sudo</code>:
+                <dl>
+                    <dd><code>a2ensite caselister</code></dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+    <dd><b>SuSE/OpenSUSE:</b>
+        <dl>
+            <dd><tt>/etc/apache2/conf.d/caselister.conf</tt></dd>
+        </dl>
+    </dd>
+    <dd><b>Windows Vista/7/8/Server 2008</b> (with Automatic ProcessMaker Installer):
+        <dl>
+            <dd><tt>C:\Users\<i><b>USERNAME</b></i>\AppData\Roaming\ProcessMaker-<i><b>X_X_X</b></i>\processmaker\apache\conf\caselister.conf</tt></dd>
+            <dd>Then in the <tt>apache\conf\httpd.conf</tt> file, add the line:
+                <dl>
+                    <dd><code>Include "conf/caselister.conf"</code></dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+    <dd><b>Windows XP/Server 2003</b> (with Automatic ProcessMaker Installer):
+        <dl>
+            <dd><tt>C:\Program Files\ProcessMaker-<i><b>X_X_X</b></i>\processmaker\apache\conf\caselister.conf</tt></dd>
+            <dd>Then in the <tt>apache\conf\httpd.conf</tt> file, add the line:
+                <dl>
+                    <dd><code>Include "conf/caselister.conf"</code></dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<p>Finally <a href="../3.0/Additional_Configuration.html#Restarting_Apache">restart the Apache server</a> to use the new web site.</p>
+
+<h2><span class="mw-headline" id="Registering_the_Application">Registering the Application</span></h2>
+<p>First register the application in ProcessMaker to request the access token, which in this example will be used to obtain access to the ProcessMaker Cases list. Log in to ProcessMaker as any user, then redirect the web browser to the following URL:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">http://&lt;PM-SERVER&gt;/sys&lt;WORKSPACE&gt;/en/neoclassic/oauth2/applications</div></div>
+<p><img src="../sites/default/files/PM3_OAuthExample1.png"></p>
+
+<p>Click <b>New</b> and fill out the following form to register a new application:</p>
+<p><img src="../sites/default/files/PM3_OAuthExample2.png"></p>
+
+<ul><li><b>Name:</b> Enter a name to identify the application.</li>
+    <li><b>Description:</b> Enter a description of the application.</li>
+    <li><b>Web Site:</b> Enter a URL for the application's home page.</li>
+    <li><b>Callback URL:</b> Enter the URL for the code to get the access token. The application will be redirected to this location after calling the <code>{workspace}/oauth2/authorize</code> endpoint.</li></ul>
+
+<p>When done filling out the form, click on <b>Save Changes</b>. Once the application has been successfully registered, its credentials will be generated, which are used by the external application to obtain access to ProcessMaker:</p>
+<p><img alt="ChowCaselisterApplicationDetails.png" src="../sites/default/files/PM3_OAuthExample3.png"></p>
+<p>Copy the <code>Client ID</code> and <code>Client secret</code> that will be used by the external application to obtain authorization from ProcessMaker:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Client ID: HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF<br />
+Client secret: 28060566356f0b9db4f0429090515303</div></div>
+
+<p>The <code>Client ID</code> and <code>Client secret</code> are also shown by clicking on <b>Details</b> after selecting the application.</p>
+<p><img alt="ChowCaselisterApplicationDetails.png" src="../sites/default/files/PM3_OAuthExample4.png"></p>
+
+<h2><span class="mw-headline" id="Create_the_caselister_Files">Create the aselister Files</span></h2>
+<p>Create a directory named <b>caselister</b> on the local server on a path that is web accessible, such as <b><tt>/var/www/caselister</tt></b> or <b><tt>wamp/www/caselister</tt></b> if using WampServer.</p>
+<p>Then create the following files inside the <b><tt>caselister</tt></b> folder, which will hold the code for the caselister and store the OAuth 2.0 credentials needed to obtain the access token:</p>
+<ul><li><a href="498.html#app-data.json:_Application_credentials"><code>app-data.json</code></a>: The credentials to obtain the access token.</li>
+    <li><a href="498.html#home.html:_Initial_Page"><code>home.html</code></a>: The initial page with a link to go to the access.html page and start authentication.</li>
+    <li><a href="498.html#access.html:_Request_application_authorization"><code>access.html</code></a>: The web page to authenticate the application.</li>
+    <li><a href="498.html#grant.php:_Obtain_access_token"><code>grant.php</code></a>: The PHP code to get the access token.</li>
+    <li><a href="498.html#cases.html:_Display_case_folders"><code>cases.html</code></a>: Displays links to the user's Inbox and Draft cases.</li>
+    <li><a href="498.html#todo-list.html:_List_Inbox_cases"><code>todo-list.html</code></a>: Displays a list of cases in the user's Inbox.</li></ul>
+
+<h3><span class="mw-headline" id="app-data.json:_Application_credentials">app-data.json: Application credentials</span></h3>
+<p>Create a new file named <b><tt>app-data.json</tt></b> inside the <b><tt>caselister</tt></b> folder to hold the credentials for the registered REST application.</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;client_id&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;client_secret&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;28060566356f0b9db4f0429090515303&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>This file will later be automatically overwritten by code in <b><tt>grant.php</tt></b> to include the <code>access_token</code>, which is a code used to access ProcessMaker <a href="../3.1/REST_API.html">REST endpoints</a>, and a <code>refresh_token</code>, which is used to acquire another access token when the current access token expires.</p>
+
+<h3><span class="mw-headline" id="home.html:_Initial_Page">home.html: Initial Page</span></h3>
+<p>Create the <b><tt>caselister/home.html</tt></b> file, which is the first page in the application. It contains a link to go to the <tt>access.html</tt> page to initiate authorization so the caselister application can access the ProcessMaker REST.</p>
+
+<div class="geshifilter"><div class="html4strict geshifilter-html4strict" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">charset</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;utf-8&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">http-equiv</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;X-UA-Compatible&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;IE=edge&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;viewport&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span><br />
+&nbsp;<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;page&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;header&quot;</span> data-position<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fixed&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/h1.html"><span style="color: #000000; font-weight: bold;">h1</span></a>&gt;</span>CaseLister app using ProcessMaker REST<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/h1.html"><span style="color: #000000; font-weight: bold;">h1</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;main&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;ui-content&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/ul.html"><span style="color: #000000; font-weight: bold;">ul</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;listview&quot;</span> data-inset<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;true&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;list-divider&quot;</span>&gt;</span>Welcome to the PM Client<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;access.html&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;&lt;<a href="http://december.com/html/4/element/strong.html"><span style="color: #000000; font-weight: bold;">strong</span></a>&gt;</span>To start using the PM Client, <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a><span style="color: #66cc66;">/</span>&gt;</span>first login in:<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/strong.html"><span style="color: #000000; font-weight: bold;">strong</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/img.html"><span style="color: #000000; font-weight: bold;">img</span></a> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;http://wiki.processmaker.com/sites/default/files/full-logo.png&quot;</span> <span style="color: #000066;">width</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;150&quot;</span> <span style="color: #66cc66;">/</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/ul.html"><span style="color: #000000; font-weight: bold;">ul</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;footer&quot;</span> data-position<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fixed&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span></div></div>
+
+<h3><span class="mw-headline" id="access.html:_Request_Application_Authorization">access.html: Request Application Authorization</span></h3>
+<p>After registering the application, it is necessary to request authorization to access the list of cases in the ProcessMaker inbox. Create the <b><tt>caselister/access.html</tt></b> file containing the following code:</p>
+
+<div class="geshifilter"><div class="html4strict geshifilter-html4strict" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">charset</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;utf-8&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">http-equiv</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;X-UA-Compatible&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;IE=edge&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;viewport&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;page&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;header&quot;</span> data-position<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fixed&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/h1.html"><span style="color: #000000; font-weight: bold;">h1</span></a>&gt;</span>PM Login<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/h1.html"><span style="color: #000000; font-weight: bold;">h1</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;main&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;ui-content&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #808080; font-style: italic;">&lt;!-- Change the server name &quot;192.168.1.110:3018&quot;, the workspace &quot;dani3018&quot;</span><br />
+<span style="color: #808080; font-style: italic;"> &nbsp; &nbsp;and client_id &quot;HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF&quot; according to your preferences--&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/iframe.html"><span style="color: #000000; font-weight: bold;">iframe</span></a> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;http://192.168.1.110:3018/dani3018/oauth2/authorize?response_type=code&amp;amp;client_id=HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF</span><br />
+<span style="color: #009900;"> &nbsp; &nbsp; &nbsp;&amp;amp;scope=*&quot;</span> <span style="color: #000066;">frameborder</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">height</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;620&quot;</span> <span style="color: #000066;">width</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;1000&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/iframe.html"><span style="color: #000000; font-weight: bold;">iframe</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span></div></div>
+
+<p>Change the direction of the <code>iframe</code> to your <b>server</b> and your <b>workspace</b>, and set the <b><code>client_id</code></b> for the caselister application, so that it can get authorization to access ProcessMaker.</p>
+
+<h3><span class="mw-headline" id="grant.php:_Obtain_Access_Token">grant.php: Obtain Access Token</span></h3>
+<p>To get the access token, ceate the <b><tt>caselister/grant.php</tt></b> file with the following code:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span> <a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_GET</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'error'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/print_r"><span style="color: #990000;">print_r</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_GET</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #666666; font-style: italic;">//Change the server name and workspace</span><br />
+<span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;http://192.168.1.110:3018/api/1.0/dani3018&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$endpoint</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/token&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$appData</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/file_get_contents"><span style="color: #990000;">file_get_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;app-data.json&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$postParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">'grant_type'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'authorization_code'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">'code'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$_GET</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'code'</span><span style="color: #009900;">&#93;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$endpoint</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HEADER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_USERPWD<span style="color: #339933;">,</span> <span style="color: #000088;">$appData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_id'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;:&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$appData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_secret'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_TIMEOUT<span style="color: #339933;">,</span> <span style="color: #cc66cc;">30</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <span style="color: #000088;">$postParams</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_USERAGENT<span style="color: #339933;">,</span><span style="color: #0000ff;">'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$data</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$data</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&quot;access_token&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <a href="http://php.net/file_put_contents"><span style="color: #990000;">file_put_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;app-data.json&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/json_encode"><span style="color: #990000;">json_encode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/array_merge"><span style="color: #990000;">array_merge</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$appData</span><span style="color: #339933;">,</span> <span style="color: #000088;">$data</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;location: cases.html&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span> <span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;&lt;br&gt;<span style="color: #000099; font-weight: bold;">\n</span>&lt;font color=red&gt;No access token returned from <span style="color: #006699; font-weight: bold;">$endpoint</span>&lt;/font&gt;&lt;br&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;Check the direction, the Client ID '<span style="color: #006699; font-weight: bold;">{$appData['client_id']}</span>' and Client Secret '<span style="color: #006699; font-weight: bold;">{$appData['client_secret']}</span>'.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<p>Where:</p>
+<p>
+<ul>
+    <li><code>$apiServer</code>: Includes the server where ProcessMaker is installed as well as the workspace where the cases will be obtained from the inbox. In this example, the workspace <b>dani3018</b> is used.</li>
+    <li><code>$endpoint</code>: Includes <i>token</i> at the end of the URL to get the access token.</li>
+    <li><code>$appData</code>: This variable stores the content of the <b><tt>app-data.json</tt></b> file, which stores the authorization credentials so that the application can access ProcessMaker's data.</li>
+    <li><code>$postParams</code> The post parameters sent to the ProcessMaker API including the <b>grant-type</b>, which is set to <code>authorization_code</code>, and the <b>code</b>, which is the application's authorization code.</li>
+</ul>
+</p>
+<p>Finally, if the access token is generated successfully, content like the following will automatically be written to the <b><tt>app-data.json</tt></b> file:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+<span style="color: #3366CC;">&quot;client_id&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF&quot;</span><span style="color: #339933;">,</span><br />
+<span style="color: #3366CC;">&quot;client_secret&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;28060566356f0b9db4f0429090515303&quot;</span><span style="color: #339933;">,</span><br />
+<span style="color: #3366CC;">&quot;access_token&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;eecc27bf33eda39abf3f985f819974df9e113449&quot;</span><span style="color: #339933;">,</span><br />
+<span style="color: #3366CC;">&quot;expires_in&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">3600</span><span style="color: #339933;">,</span><br />
+<span style="color: #3366CC;">&quot;token_type&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;bearer&quot;</span><span style="color: #339933;">,</span><br />
+<span style="color: #3366CC;">&quot;scope&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;*&quot;</span><span style="color: #339933;">,</span><br />
+<span style="color: #3366CC;">&quot;refresh_token&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;1fac3000e826c6cde6e4d729a129ae9922bd8850&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>In this example, the <code>access_token</code> was successfully granted, which can be used to access ProcessMaker REST endpoints until the it expires. <code>expires_in</code> lists in how many seconds the access token will expire.  <code>scope</code> is set to "*", meaning that all scopes have access to the REST API. Currently <code>scope</code> is not used by ProcessMaker REST, but future versions may offer scopes to limit access to certain parts of the REST API, such as read-only case endpoints or administration endpoints. If the token expires, <code>refresh_token</code> can be used to request a new access token.</p>
+
+<h3><span class="mw-headline" id="cases.html:_Display_Case_Folders">cases.html: Display Case Folders</span></h3>
+<p>Then, create the <b><tt>caselister/cases.html</tt></b> file, which displays links to see the cases in the Inbox and Draft folder of the logged-in user.</p>
+
+<div class="geshifilter"><div class="html4strict geshifilter-html4strict" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">charset</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;utf-8&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">http-equiv</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;X-UA-Compatible&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;IE=edge&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;viewport&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;page&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;header&quot;</span> data-position<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fixed&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/h1.html"><span style="color: #000000; font-weight: bold;">h1</span></a>&gt;</span>My Cases<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/h1.html"><span style="color: #000000; font-weight: bold;">h1</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;main&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;ui-content&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/ul.html"><span style="color: #000000; font-weight: bold;">ul</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;listview&quot;</span> data-inset<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;false&quot;</span> data-divider-theme<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;a&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;list-divider&quot;</span>&gt;</span>Home<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;todo-list.html&quot;</span>&gt;</span>Inbox<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;#&quot;</span>&gt;</span>Drafts<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/ul.html"><span style="color: #000000; font-weight: bold;">ul</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;footer&quot;</span> data-position<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fixed&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span></div></div>
+
+<p>Look at the line:</p>
+
+<span class="geshifilter"><code class="html4strict geshifilter-html4strict"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;todo-list.html&quot;</span>&gt;</span>Inbox<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span></code></span>
+
+<p>After clicking on the <font color="blue"><u>Inbox</u></font> option, the browser will be redirected to the <b><tt>todo-list.html</tt></b> file, where all cases will be listed.</p>
+
+<h3><span class="mw-headline" id="todo-list.html:_List_Inbox_Cases">todo-list.html: List Inbox Cases</span></h3>
+<p>Once the request has been accepted, this page will display the inbox, which is a list of cases with TO DO status that are assigned to the logged-in user. Create the <b><tt>caselister/todo-list.html</tt></b> file with the following content:</p>
+
+<div class="geshifilter"><div class="html4strict geshifilter-html4strict" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">charset</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;utf-8&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">http-equiv</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;X-UA-Compatible&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;IE=edge&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #000000; font-weight: bold;">meta</span></a> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;viewport&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;page&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;header&quot;</span> data-position<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fixed&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/h1.html"><span style="color: #000000; font-weight: bold;">h1</span></a>&gt;</span>My Cases<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/h1.html"><span style="color: #000000; font-weight: bold;">h1</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;main&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;ui-content&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/ul.html"><span style="color: #000000; font-weight: bold;">ul</span></a> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;todo-list&quot;</span> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;listview&quot;</span> data-inset<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;false&quot;</span> data-divider-theme<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;a&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;list-divider&quot;</span>&gt;</span>TO DO<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/ul.html"><span style="color: #000000; font-weight: bold;">ul</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> data-role<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;footer&quot;</span> data-position<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;fixed&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; $(document).ready( function() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; $.get(&quot;app-data.json&quot;, function(appdata) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Change the server name and the workspace<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var apiserver = 'http://192.168.1.110:3018/api/1.0/dani3018';<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var endpoint = '/cases';<br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $.ajax({<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;url: apiserver + endpoint,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type: &quot;GET&quot;,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;contentType: false,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;beforeSend: function(request) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; request.setRequestHeader(&quot;Authorization&quot;, &quot;Bearer &quot; + appdata.access_token);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;success: function (data) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log(data);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $.each(data, function(index, record) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$('#todo-list').append('<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;#&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;ui-btn ui-btn-icon-right ui-icon-carat-r&quot;</span>&gt;</span>Case #' +<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;record.app_number + '<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/b.html"><span style="color: #000000; font-weight: bold;">b</span></a>&gt;</span> - ' + record.app_tas_title + '<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #000000; font-weight: bold;">a</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/li.html"><span style="color: #000000; font-weight: bold;">li</span></a>&gt;</span>');<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });<br />
+&nbsp; &nbsp; &nbsp; &nbsp; },<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'json'<br />
+&nbsp; &nbsp; &nbsp; &nbsp; );<br />
+&nbsp; &nbsp; &nbsp; });<br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span></div></div>
+
+<p>Make sure to change the value of the <b><code>apiserver</code></b> variable to the direction of your ProcessMaker server.</p>
+<p>This code downloads <a class="external text" href="http://jquery.com/download/" rel="nofollow">JQuery</a> library, which contains a number of useful JavaScript functions for AJAX calls. When the page is done loading, it uses the <a class="external text" href="http://api.jquery.com/jquery.get/" rel="nofollow">jQuery.get()</a> function to download the contents of the <b><tt>app-data.json</tt></b> file, which contains the access token necessary to access the ProcessMaker REST. Note that <b><code>$</code></b> is an alias for <b><code>jQuery</code></b>.</p>
+<p>Then, the [jQuery.ajax() <a class="external free" href="http://api.jquery.com/jquery.ajax" rel="nofollow">http://api.jquery.com/jquery.ajax</a>] function calls the <a href="../REST_API_Cases.html#GetListCasesTODO" title="REST API Cases">Cases list</a> endpoint at <code>http://{pm-server}/api/1.0/{workspace}/cases</code> to retrieve a list of cases with TO DO status for the logged-in user. If the TO DO list is successfully returned, the <a class="external text" href="http://api.jquery.com/jquery.each/" rel="nofollow">jQuery.each()</a> function iterates through the list and prints each case number and its current task's title.</p>
+
+<h2><span class="mw-headline" id="Accessing_the_External_Application">Accessing the External Application</span></h2>
+<p>Once all files are configured correctly, open a web browser and enter the address of the caselister application:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">http://localhost/caselister/home.php</div></div>
+
+<p>The following page will be displayed:</p>
+<p><img src="../sites/default/files/PM3_OAuthHome.png"/></p>
+<p>If no user is currently logged into ProcessMaker, then request authorization to access that page:</p>
+<p><img src="../sites/default/files/PM3_OAuthAccess_.png"/></p>
+
+<p>Log in to ProcessMaker and you will be redirected to the authorization page. Authorize the request by clicking on <b>Accept</b>:</p>
+<p><img src="../sites/default/files/PM3_OAuthAccess.png"/></p>
+<p>The Cases list will be displayed:</p>
+<p><img src="../sites/default/files/PM3_OAuthAccess_1.png"/></p>
+<p>Click on <b>Inbox</b> link to list all available cases:</p>
+<p><img src="../sites/default/files/PM3_OAuthExample5.png" /></p>
+<p>Remember that those cases are coming from the ProcessMaker instance defined in the <code>app.js</code> file. By going to that ProcessMaker instance, the same cases listed in the application will be listed:</p>
+<p><img src="../sites/default/files/PM3_OAuthExample6.png" /></p>
+
+<!--
+<h2><span class="mw-headline" id="Getting_the_Access_Token_Using_the_Refresh_Code">Getting the Access Token Using the Refresh Code </span></h2>
+<p>When the access token expires, a new one must be obtained.</p>
+--></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

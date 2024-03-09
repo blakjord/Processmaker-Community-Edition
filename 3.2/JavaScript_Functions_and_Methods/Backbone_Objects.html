@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Backbone_Objects.html" />
+<link rel="shortlink" href="../../node/784.html" />
+<title>3.2 - 3.8 - JavaScript Functions and Methods - Backbone Objects | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"kjXH7ZriJdnKKRSFGwRN1ugpG4kfz5bll4hZnULP7dc","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-784 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../../index.html" title="Home"><img src="../../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Backbone_Objects.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Backbone_Objects.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-rQP7L_FHB4h860mS8uQV5QTRLbtE_U7N0BlxSdRq3dw" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - JavaScript Functions and Methods - Backbone Objects</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a href="../../3.1/JavaScript_Functions_and_Methods.html" class="">3.1</a></li><li><a href="../../3.0/JavaScript_Functions_and_Methods.html" class="">3.0</a></li><li><a href="../../index.php/JavaScript_Functions.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - JavaScript Functions and Methods - Backbone Objects" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Backbone_Objects.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - JavaScript Functions and Methods - Backbone Objects 1/5</option><option value="40">Give 3.2 - 3.8 - JavaScript Functions and Methods - Backbone Objects 2/5</option><option value="60" selected="selected">Give 3.2 - 3.8 - JavaScript Functions and Methods - Backbone Objects 3/5</option><option value="80">Give 3.2 - 3.8 - JavaScript Functions and Methods - Backbone Objects 4/5</option><option value="100">Give 3.2 - 3.8 - JavaScript Functions and Methods - Backbone Objects 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form--lTwaYAWUzdXigvf3FzdArANTY9_GgUpE6bWDpQ7_9A" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div class="getting-started-index">
+    <ul>
+        <li><a href="../JavaScript_Functions_and_Methods.html">1. Overview</a></li>
+        <li><a href="Accessing_Controls.html">2. Ways to Access Dynaform Controls</a></li>
+        <li><a href="Obtaining_JQuery_Objects.html">3. Obtaining jQuery Objects</a></li>
+
+        <li><a class="getting-started-index-active">4. Backbone Objects for Controls and Forms</a></li>
+
+        <li><a href="Controls.html">5. Methods for Controls</a></li>
+        <li><a href="Dynaforms.html">6. jQuery Objects for Forms</a></li>
+        <li><a href="Files.html">7. File Methods</a></li>
+        <li><a href="Links.html">8. Link Methods</a></li>
+        <li><a href="../../3.3/JavaScript_Functions_and_Methods/Grid.html">9. Grid Methods and Properties</a></li>
+        <li><a href="Environment_Helpers.html">10. Environment Helpers</a></li>
+        <li><a href="Additional_Examples.html">11. Additional Examples</a></li>
+    </ul>
+</div>
+
+
+<div class="getting-started-content">
+<div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Backbone_Objects.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Backbone_Objects.html#Backbone_objects">Backbone Objects for Controls and Forms</a></li>
+<ol class="toc">
+<li class="toc"><a href="Backbone_Objects.html#Functions_to_obtain_Backbone_objects">Functions to Obtain Backbone Objects</a></li>
+<ol class="toc">
+<li class="toc"><a href="Backbone_Objects.html#getFieldById">getFieldById('<font color="blue"><em>id</em></font>')</a></li>
+<li class="toc"><a href="Backbone_Objects.html#getFieldByName">getFieldByName('<font color="blue"><em>name</em></font>')</a></li>
+<li class="toc"><a href="Backbone_Objects.html#getFieldByAttribute">getFieldByAttribute(<font color="blue"><em>attr</em></font>, <font color="blue"><em>value</em></font>)</a></li>
+<li class="toc"><a href="Backbone_Objects.html#getFormById">getFormById('<font color="blue"><em>id</em></font>')</a></li>
+</ol>
+<li class="toc"><a href="Backbone_Objects.html#Methods_and_properties_in_Backbone_objects">Methods and Properties in Backbone Objects</a></li>
+</ol>
+</div></div>
+
+
+    <h2><span  id="Backbone_objects">Backbone Objects for Controls and Forms</span></h2>
+
+    <p><a href="http://backbonejs.org/">Backbone.js</a> is a library that provides the <i>model</i> for Dynaforms and their controls. ProcessMaker offers three custom functions, <a href="Backbone_Objects.html#getFieldById">getFieldById()</a>, <a href="Backbone_Objects.html#getFieldByName">getFieldByName()</a> and <a href="Backbone_Objects.html#getFieldByAttribute">getFieldByAttribute()</a>, which are used to obtain the Backbone objects for Dynaform controls. The <a href="Backbone_Objects.html#getFormById">getFormById()</a> function is used to obtain the Backbone object for the Dynaform.</p>    The Backbone object supports most of the custom methods for manipulating controls, such as <a href="Backbone_Objects.html#getValue"><i>control</i>.getValue()</a>,
+    <a href="Backbone_Objects.html#link.setHref"><i>link</i>.setHref()</a>, <a href="Backbone_Objects.html#grid.getNumberRows"><i>grid</i>.getNumberRows()</a>,
+    plus it offers the <a href="Backbone_Objects.html#control.setFocus">setFocus()</a> method, which is not provided by the jQuery object.</p>
+
+    <h3><span  id="Functions_to_obtain_Backbone_objects">Functions to Obtain Backbone Objects</span></h3>
+
+    <h4><span  id="getFieldById">getFieldById('<font color="blue"><em>id</em></font>')</span></h4>
+    <p>The <code>getFieldById()</code> method returns an object that is generated by <a href="http://backbonejs.org/">Backbone</a> to manipulate the controls in a Dynaform. Its properties can be used to access the outer DIV of a control, which is used to resize controls when a form's width changes.<br>
+</p>
+    <codeblock>window.getFieldById("<i><font color="blue">id</font></i>")</codeblock>
+    <p><b>Parameter:</b><br>
+<b><code>id</code></b>: The control's ID.</p>
+
+    <p><b>Return Value:</b><br>
+Returns a Backbone object whose properties may vary according to the type of control and whether the control has a variable assigned to it. All input controls should have the <code>cid</code>, <code>$el</code>, <code>el</code>, <code>model</code>, <code>parent</code> and <code>project</code> properties. A textbox that has a variable assigned to it has the following content:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; cid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;xxxxx&quot;</span><span style="color: #339933;">,</span> <span style="color: #006600; font-style: italic;">//client ID automatically assigned to the form by BackboneJS</span><br />
+&nbsp; &nbsp; $el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #006600; font-style: italic;">//Access to the jQuery object for the control's outer DIV</span><br />
+&nbsp; &nbsp; el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #006600; font-style: italic;">//Access to the DOM object for the control's outer DIV</span><br />
+&nbsp; &nbsp; dependenciesField<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; dependentFieldsData<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; formulaFieldsAssociated<span style="color: #339933;">:</span><span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; model<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; parent<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; previousValue<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;xxxxx&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; project<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #000066;">__proto__</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p>Inside the returned Backbone object, the <code>$el</code> property is the jQuery object of the <code>&lt;div&gt;</code> that encompasses the outer <code>&lt;div&gt;</code> of a Dynaform control. Likewise, the <code>el</code> property is the DOM object of the <code>&lt;div&gt;</code> that encompasses the outer <code>&lt;div&gt;</code> of a Dynaform control.</p>
+
+    <p>For example, here is the HTML structure of the "company" textbox control that uses the <code>companyName</code> variable:
+<div class="geshifilter"><div class="html4strict geshifilter-html4strict" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;pmdynaform-field-text pmdynaform-edit-text &nbsp;form-group col-sm-12 col-md-12 col-lg-12 pmdynaform-field&quot;</span></span><br />
+<span style="color: #009900;"> &nbsp; &nbsp;<span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;field-companyName&quot;</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;company&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/label.html"><span style="color: #000000; font-weight: bold;">label</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;col-md-2 col-lg-2 control-label pmdynaform-label&quot;</span> <span style="color: #000066;">for</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;companyName&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;textlabel&quot;</span> <span style="color: #000066;">title</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> data-placement<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;bottom&quot;</span> data-toggle<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;tooltip&quot;</span>&gt;</span>Company Name<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/span.html"><span style="color: #000000; font-weight: bold;">span</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/label.html"><span style="color: #000000; font-weight: bold;">label</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;col-md-10 col-lg-10 pmdynaform-field-control&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> autocomplete<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;off&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> placeholder<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;pmdynaform-control-text form-control&quot;</span> mask<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;form[company]&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;hidden&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;form[company_label]&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span></div></div>
+Calling <span class="geshifilter"><code class="javascript geshifilter-javascript">getFieldById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;company&quot;</span><span style="color: #009900;">&#41;</span>.$el</code></span> returns the jQuery object for the outermost <code>&lt;div&gt;</code> without a class name, whereas calling <span class="geshifilter"><code class="jquery geshifilter-jquery"><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#company&quot;</span><span style="color: #009900;">&#41;</span></code></span> returns the jQuery object of the outer <code>&lt;div class="...pmdynaform-field" ...&gt;</code>. To get to that same outer &lt;div&gt; with the Backbone object, use: <span class="geshifilter"><code class="javascript geshifilter-javascript">getFieldById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;company&quot;</span><span style="color: #009900;">&#41;</span>.$el.<span style="color: #660066;">children</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span></code></span></p>
+
+    <p><b>Examples:</b></p>
+    <div style="margin-left: 25px;">
+        <p>Set the value of the "totalAmount" field to "499.99":</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">getFieldById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;totalAmount&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;499.99&quot;</span><span style="color: #009900;">&#41;</span></div></div>
+        <p>This example sets the width of the "totalAmount" control's outermost DIV to 500 pixels. It accesses its jQuery object, which is located in its <code>$el</code> property, and then uses jQuery's css() function to set the width:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">getFieldById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;totalAmount&quot;</span><span style="color: #009900;">&#41;</span>.$el.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;width&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;500px&quot;</span><span style="color: #009900;">&#41;</span></div></div>
+        <p>The following code does the same thing through the DOM object of the outermost DIV that is located in its <code>el</code> property:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">getFieldById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;totalAmount&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">el</span>.<span style="color: #660066;">style</span>.<span style="color: #660066;">width</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;500px&quot;</span></div></div>
+    </div>
+    <div style="margin-left:25px">
+        <font color=green><b>Note:</b></font> <font color=dimgrey>Most of the style properties of the control's area should be set in the outer DIV with the "pmdynaform-field" class name, which is the child node. For example, to set the border color of a control's area to red and its background color to yellow:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">getFieldById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;totalAmount&quot;</span><span style="color: #009900;">&#41;</span>.$el.<span style="color: #660066;">children</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;1px solid red&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+getFieldById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;totalAmount&quot;</span><span style="color: #009900;">&#41;</span>.$el.<span style="color: #660066;">children</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;background-color&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;yellow&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p>This is the same as using the jQuery selector function:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#totalAmount&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;1px solid red&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#totalAmount&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;background-color&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;yellow&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div></font>
+    </div>
+
+    <h4><span  id="getFieldByName">getFieldByName('<font color="blue"><em>name</em></font>')</span></h4>
+    <p><code>getFieldByName()</code> searches for control(s) using the name of the variable used by the control and returns an array of matching Backbone object(s).</p>
+    <codeblock>window.getFieldByName("<i><font color="blue">name</font></i>")</codeblock>
+    <p>
+<b>Parameter:</b><br>
+<b><code>name</code></b>: The name of the variable used by a DynaForm control. Set to "" (an empty string) to search for all the controls that do not have an assigned variable.</p>
+
+    <strong>Return Value:</strong><br> Returns an array of the Backbone object(s) for the control(s):<br>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; cid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;xxxxx&quot;</span><span style="color: #339933;">,</span> <span style="color: #006600; font-style: italic;">//client ID automatically assigned to the form by Backbone</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; $el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #006600; font-style: italic;">//Access to the jQuery object for the control's outermost DIV</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #006600; font-style: italic;">//Access to the DOM object for the control's outermost DIV</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; dependenciesField<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; dependentFieldsData<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; formulaFieldsAssociated<span style="color: #339933;">:</span><span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; model<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; parent<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; previousValue<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;xxxxx&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; project<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066;">__proto__</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+    <p><code>getFieldByName("<font color=blue><em>name</em></font>")[0]</code> returns the same object as <code>getFieldById("<font color=blue><em>id</em></font>")</code>, so its <code>$el</code>, <code>el</code>, and other properties can be accessed in the same way. </p>
+
+    <p><strong>Example:</strong></p>
+    <div style="margin-left: 25px;"><p>Get the ID of the control that uses the "clientType" variable:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> id <span style="color: #339933;">=</span> getFieldByName<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;clientType&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#91;</span><span style="color: #CC0000;">0</span><span style="color: #009900;">&#93;</span>.<span style="color: #660066;">model</span>.<span style="color: #660066;">id</span><span style="color: #339933;">;</span></div></div>
+    </div>
+
+    <h4><span  id="getFieldByAttribute">getFieldByAttribute(<font color="blue"><em>attr</em></font>, <font color="blue"><em>value</em></font>)</span></h4>
+    <p>The <code>getFieldByAttribute()</code> method searches for controls whose attribute matches a specified value.<br>
+</p>
+    <codeblock>window.getFieldByAttribute(<font color="blue"><em>attr</em></font>, <font color="blue"><em>value</em></font>)</codeblock>
+    <p><b>Parameters:</b><br>
+<b><code>attr</code></b>: The name of an attribute. See the object below
+      for all the available attributes.<br>
+<b><code>value</code></b>: The value of the attribute to search for.</p>
+    <p>The attributes of a control can be found in the
+<code>getFieldById("<font color=blue><em>id</em></font>").model.attributes</code> object, which can vary depending on the type of control. See this list of the <a href="../../3.0/JavaScript_in_DynaForms.html#Available_Attributes">available attributes</a> for controls.</p>
+
+    <p><b>Return Value:</b><br>
+Returns an array of all the Backbone control objects that match the search attribute. The properties of each object vary according to the type of control.<br>
+</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//properties for a textbox control:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; cid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;xxx&quot;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #006600; font-style: italic;">//client ID automatically assigned to the control by Backbone</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; $el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #006600; font-style: italic;">//The jQuery object for the control's outer DIV</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #006600; font-style: italic;">//The DOM object for the control's outer DIV</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; dependenciesField<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; dependentFieldsData<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; formulaFieldsAssociated<span style="color: #339933;">:</span><span style="color: #009900;">&#91;</span>...<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; previousValue<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;xxx&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; model<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; parent<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; project<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//properties for a radio control:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; cid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;xxx&quot;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #006600; font-style: italic;">//client ID automatically assigned to the control by Backbone</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; $el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #006600; font-style: italic;">//The jQuery object for the control's outer DIV</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #006600; font-style: italic;">//The DOM object for the control's outer DIV</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; clicked<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; previousValue<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;xxx&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; model<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; parent<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; project<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div> Remember that the <code>$el</code> and <code>el</code> properties are for the outer DIV. To access the
+    inner DIV, use <code>getFieldByAttribute(<em><font color=blue>attr</font></em>, <em><font color=blue>value</font></em>)[<em><font color=blue>i</font></em>].el.childNodes[1]</code>.
+    To access the input field of a control, use:
+    <code>getFieldByAttribute(<em>attr</em>,<em>value</em>)[<em>i</em>].$el.find("input")</code>, however the hidden
+    input fields will need to be ignored. To find only textboxes and textareas use: <code>getFieldByAttribute(<em><font color=blue>attr</font></em>,<em><font color=blue>value</font></em>)[<em><font color=blue>i</font></em>].$el.find(".form-control")</code><br>
+    <p><strong>Example:</strong></p>
+    <div style="margin-left: 25px;"><p>Return all the controls that occupy 6 columns and set the background color of their inner DIVs to blue.</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> aFields <span style="color: #339933;">=</span> getFieldByAttribute<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">6</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>i<span style="color: #339933;">=</span><span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> aFields.<span style="color: #660066;">length</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; aFields<span style="color: #009900;">&#91;</span>i<span style="color: #009900;">&#93;</span>.<span style="color: #660066;">el</span>.<span style="color: #660066;">childNodes</span><span style="color: #009900;">&#91;</span><span style="color: #CC0000;">1</span><span style="color: #009900;">&#93;</span>.<span style="color: #660066;">style</span>.<span style="color: #660066;">backgroundColor</span><span style="color: #339933;">=</span><span style="color: #3366CC;">&quot;blue&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+    <h4><span  id="getFormById">getFormById('<font color="blue"><em>id</em></font>')</span></h4>
+    <p>The <code>getFormById()</code> method returns the Backbone object of a Dynaform.</p>
+    <codeblock>window.getFormById("<i><font color="blue">id</font></i>")</codeblock>
+    <p><b>Parameter:</b><br>
+<b><code>id</code></b>: The Dynaform's unique ID, which is 32 hexadecimal
+      characters. It can be obtained by clicking on the border of the Dynaform
+      and viewing its <b>id</b> property.</p>
+    <img src="../../sites/default/files/SeeDynaFormID.png">
+
+    <p><b>Return Value:</b><br>
+Returns a Dynaform object, with content such as:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; cid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;view4&quot;</span><span style="color: #339933;">,</span> <span style="color: #006600; font-style: italic;">//client ID automatically assigned to the form by Backbone</span><br />
+&nbsp; &nbsp; $el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #006600; font-style: italic;">//The jQuery object for form</span><br />
+&nbsp; &nbsp; el<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #006600; font-style: italic;">//The DOM object for form</span><br />
+&nbsp; &nbsp; factory<span style="color: #339933;">:</span> &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; items<span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; model<span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; Project<span style="color: #339933;">:</span> &nbsp; <span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; viewsBuild<span style="color: #339933;">:</span><span style="color: #009900;">&#123;</span>...<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    <p>The object that is returned contains the <code>$el</code> object, which allows access to the form's jQuery methods and properties. Use the <code>el</code> object to access the form as a normal <a href="http://www.w3schools.com/jsref/dom_obj_form.asp">form object</a>. For example, <code>getFormById("<i><font color="blue">id</font></i>").el.submit()</code> can be used to submit the form. <code>getFormById("<i><font color="blue">id</font></i>").el.reset()</code> can be used to reset the form back to its original values. <code>getFormById("<i><font
+color="blue">id</font></i>").el.length</code> is the number of
+ inputs in the form and <code>getFormById("<i><font color="blue">id</font></i>").el.elements</code> is an array of those inputs.</p>
+    <p><b>Example 1:</b><br>
+<div style="margin-left: 25px;">
+      When the Dynaform is submitted, check whether the "amount" and "tax"
+      fields add up to less than 500. If greater, then display an alert
+      telling the user to enter a smaller amount into those fields and resubmit
+      the form. In the event handler of the submit event, return false to
+      prevent the submit action from taking place.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">getFormById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;256626355556e105e388481009169452&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">el</span>.<span style="color: #660066;">onsubmit</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> total <span style="color: #339933;">=</span> parseFloat<span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#amount&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> parseFloat<span style="color: #009900;">&#40;</span>$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#tax&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>total <span style="color: #339933;">&gt;=</span> <span style="color: #CC0000;">500</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Error: The amount plus tax must be less than 500. Please enter a new amount.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//stop submit</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span> &nbsp;<span style="color: #006600; font-style: italic;">//allow submit</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">The <code>el.onsubmit</code> function does not work in ProcessMaker Mobile. This function just works in ProcessMaker Web. To work in both ProcessMaker platforms, review the <a href="Dynaforms.html#form.setOnSubmit"><code>setOnSubmit()</code> helper example</a>.</font></p>
+</div>
+<h3><span id="Methods_and_properties_in_Backbone_objects">Methods and Properties in Backbone Objects</span></h3>
+<p>Apart from the custom methods used to manipulate a control, the Backbone object also holds the control's model information</a> at:</p>
+
+<codeblock>getFieldById("<font color=blue><i>id</i></font>").model</codeblock>
+
+<p>The <i>control</i>.model.attributes</a> is an object with all the attribute properties of the control and the <i>control</i>.model.keys()</a> method can be used to obtain an array of the attribute names used by a control.
+
+<p>The <code>.$()</code> method in the Backbone object is a jQuery selector that searches for elements inside the control. For example, to obtain the "companyName" control's label:
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> label <span style="color: #339933;">=</span> getFieldById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;companyName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;span.textlabel&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Attributes/html"><span style="color: #000066;">html</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+</div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

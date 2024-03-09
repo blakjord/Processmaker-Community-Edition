@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Routing_Rules.html" />
+<link rel="shortlink" href="../../node/65.html" />
+<title>2.0 - Routing Rules | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"5cV3wEgwEMPPyyOFCVo1-_nkc64oEax2feOCoWyRzrM","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-65 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../../index.html" title="Home"><img src="../../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Routing_Rules.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-sQWaFwNMJgSgWdTtX6l1yNOm8-0NdWBhM5B-7dmtopo" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.0 - Routing Rules</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../../3.2/Gateways.html" class="">3.8</a></li><li><a href="../../3.2/Gateways.html" class="">3.7</a></li><li><a href="../../3.2/Gateways.html" class="">3.6</a></li><li><a href="../../3.2/Gateways.html" class="">3.5</a></li><li><a href="../../3.2/Gateways.html" class="">3.4</a></li><li><a href="../../3.2/Gateways.html" class="">3.3</a></li><li><a href="../../3.2/Gateways.html" class="">3.2</a></li><li><a href="../../3.1/Gateways.html" class="">3.1</a></li><li><a href="../../3.0/Gateways.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.0 - Routing Rules" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Routing_Rules.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.0 - Routing Rules 1/5</option><option value="40">Give 2.0 - Routing Rules 2/5</option><option value="60">Give 2.0 - Routing Rules 3/5</option><option value="80" selected="selected">Give 2.0 - Routing Rules 4/5</option><option value="100">Give 2.0 - Routing Rules 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.3</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-gIKNFU-deIhRIt4Ry_OUU5MQX7g1KR2m8CSD0_GTFVA" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Routing_Rules.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Routing_Rules.html#Defining_Routing_Rules">Defining Routing Rules</a></li>
+<ol class="toc">
+<li class="toc"><a href="Routing_Rules.html#Applying_Routing_Rules">Applying routing rules</a></li>
+<ol class="toc">
+<li class="toc"><a href="Routing_Rules.html#Starting_Task_Routing_Rule">Starting Task Routing Rule</a></li>
+<li class="toc"><a href="Routing_Rules.html#End_of_Process_Routing_Rule">End of Process Routing Rule</a></li>
+<li class="toc"><a href="Routing_Rules.html#Sequential_Routing_Rule">Sequential Routing Rule</a></li>
+<li class="toc"><a href="Routing_Rules.html#Selection_Routing_Rule">Selection Routing Rule</a></li>
+<ol class="toc">
+<li class="toc"><a href="Routing_Rules.html#How_to_Customize_the_Appearance_of_the_Description">How to Customize the Appearance of the Description</a></li>
+</ol>
+<li class="toc"><a href="Routing_Rules.html#Evaluation_Routing_Rule">Evaluation Routing Rule</a></li>
+<li class="toc"><a href="Routing_Rules.html#Parallel_.28Fork.29_Routing_Rule">Parallel (Fork) Routing Rule</a></li>
+<ol class="toc">
+<li class="toc"><a href="Routing_Rules.html#Pausing_threads">Pausing threads</a></li>
+</ol>
+<li class="toc"><a href="Routing_Rules.html#Parallel_by_Evaluation_.28Fork.29_Routing_Rule">Parallel by Evaluation (Fork) Routing Rule</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Defining_Routing_Rules">Defining Routing Rules</span></h2>
+
+<p>Routing rules, which are also known as derivation rules, control workflow between tasks in a process. In other words, they determine which is the first task in a process and how work moves to the subsequent tasks, and so on until the process ends. Routing rules can move the workflow along a single path or divide the workflow into multiple threads. They can also evaluate conditions to determine which are the subsequent task(s) and even send the workflow down subprocesses, which are separate workflows with their own set of cases.</p>
+
+<p><strong>Types of Routing Rules:</strong></p>
+
+<ul>
+<li><img alt="" height="23" src="../../sites/default/files/Sequential.gif" width="25"> <strong>Sequential</strong>: When one task is completed, a sequential routing rule will move the workflow directly to subsequent task(s).</li>
+<li><img alt="" height="23" src="../../sites/default/files/Selection.gif" width="25"> <strong>Selection</strong>: A selection routing rule allows the user assigned to the task to manually select the subsequent task(s) to be performed in the process.</li>
+<li><img alt="" height="23" src="../../sites/default/files/Evaluation.gif" width="25"> <strong>Evaluation</strong>: An evaluation routing rule uses a condition (which is a true or false expression in PHP) to decide whether the workflow moves to subsequent task(s).</li>
+<li><img alt="" height="23" src="../../sites/default/files/ParallelFork.gif" width="25"> <strong>Parallel (Fork)</strong>: A parallel (fork) routing rule divides the workflow into two or more parallel tasks.</li>
+<li><img alt="" height="23" src="../../sites/default/files/ParallelByEvaluationFork.gif" width="25"> <strong>Parallel By Evaluation (Fork)</strong>: A parallel by evaluation routing rule uses a condition to decide whether to divide the workflow into two more parallel tasks.</li>
+<li><img alt="" height="23" src="../../sites/default/files/ParallelJoin.gif" width="25"> <strong>Parallel (Join)</strong>: A parallel (join) routing unites multiple parallel tasks in the workflow that had previously been divided by a parallel (fork) routing. All the parallel tasks must be completed before a parallel routing can take place.</li>
+</ul>
+
+<dl><dd>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> To ensure that the workflow continues all of the sub-threads need a parallel join. 
+<img alt="" height="23" src="../../sites/default/files/ParallelJoin.gif"> to connect them to the next task.
+</dd></dl></font></p>
+
+<dl><dd>Only when all the true evaluated task(s) have been finished the subsequent task will start. If it is necessary, use a dummy task to enclose the remaining path.</dd></dl>
+
+<ul>
+<li><img alt="" height="23" src="../../sites/default/files/EndOfProcess.gif" width="23"> <strong>End of Process</strong>: End of process marks where to terminate the workflow.</li>
+<li><img alt="" height="23" src="../../sites/default/files/StartingTask.gif" width="23"> <strong>Starting Task</strong>: Starting task marks where to begin a process.</li>
+</ul>
+
+<h3><span id="Applying_Routing_Rules">Applying routing rules</span></h3>
+
+<p>Routing rules are applied to specific tasks (and ProcessMaker even treats them as task objects). To apply a routing rule to a task, click on an icon in the Routing Rules Toolbar and drag the icon to the task while still holding down on the mouse button. Release the mouse button over a task to attach the routing rule to that task.</p>
+<p><img alt="" height="186" src="../../sites/default/files/RoutingRule0.png" width="526"></p>
+<p>Then drag the routing rule, which is shown as a red connector dot, to the subsequent task while still holding down on the mouse button, then release over the subsequent task to connect the two tasks.</p>
+<p><img alt="" height="150" src="../../sites/default/files/DragRoutingRule2ndTask.png" width="306"> <img alt="" height="142" src="../../sites/default/files/RoutingRule2.png" width="302"> <img alt="" height="141" src="../../sites/default/files/RoutingRule3.png" width="297"></p>
+<p>If the work can flow down multiple threads (paths) in the process, drag and drop additional routing rules from the toolbar to connect them as well.</p>
+<p><img alt="" height="141" src="../../sites/default/files/MultipleThreadsWorkflow.png" width="379"></p>
+<p>To change a routing rule to a different type, simple drag a routing rule from the toolbar and drop it on the task with an existing routing rule. When asked "Are you sure you want to change the derivation rule?", click <strong>Accept</strong> to change the type of routing rule.</p>
+<p>Once a routing rule connects tasks, it can be edited by either clicking on the routing rule symbol in the Process Map or by right clicking on a task and selecting the option <strong>Derivation Rules </strong>from the menu.</p>
+<p><img alt="" height="291" src="../../sites/default/files/EditRoutingRuleNew_1.png" width="623"></p>
+
+<h4><span id="Starting_Task_Routing_Rule">Starting Task Routing Rule</span></h4>
+
+<p>Every process must have at least one <img alt="" height="23" src="../../sites/default/files/StartingTask.gif" " width="23"> <strong>Starting Task</strong> routing rule which indicates which task should start the process. Either drag and drop the <img alt="" height="23" src="../../sites/default/files/StartingTask.gif"> icon from the toolbar to a task or right click on the task and select the option <strong>Properties</strong> from the dropdown menu. Under the <strong>Definition</strong> tab, mark the checkbox <strong>Starting Task</strong>.</p>
+
+<p><img alt="" height="367" src="../../sites/default/files/SelectStartingTaskCheckbox.png" width="506"></p>
+
+<p>Processes can have multiple starting tasks and even multiple work paths. For instance, an organization with a Sales department might want to start its "Invoice Process" at two different points: either by first contacting the client or by first sending a quote. In addition, it might want to start the "Invoice Process" with a different work path in the Finance department. If Sales is handling the invoice, then different tasks are executed than if Finance is handling it.</p>
+
+<p><img alt="" height="317" src="../../sites/default/files/MultipleStartingTasks.png" width="501"></p>
+
+<p>If a process has multiple starting tasks, then the person who starts the case may select which task starts the process. In the dropdown box, the name of the process is provided followed by the name of the starting task in parenthesis.</p>
+<p><img alt="" height="222" src="../../sites/default/files/SelectMultipleStartingTasksNew1.png" width="500"></p>
+
+<h4><span id="End_of_Process_Routing_Rule">End of Process Routing Rule</span></h4>
+
+<p>All processes must have at least one task with an <img alt="" height="23" src="../../sites/default/files/EndOfProcess.gif"  width="23"> <strong>End of Process</strong> routing rule to terminate the process. There can be multiple ending points to any process. To add an <strong>End of Process</strong>routing rule to a task, drag and drop the <img alt="" height="23" src="../../sites/default/files/EndOfProcess.gif" width="23"> icon from the toolbar to a task or <i>right click</i> on a task which has an evaluation or selection routing rule and select the option <strong>Derivation Rules</strong>. Click the <strong>New</strong> link to add a routing rule, then in the dropdown box, select the option "End of process".</p>
+
+<h4><span id="Sequential_Routing_Rule">Sequential Routing Rule</span></h4>
+
+<p>With a <img alt="" height="23" src="../../sites/default/files/Sequential.gif"> <strong>sequential</strong> routing rule, workflow automatically flows to subsequent tasks, so no special configuration is required, after connecting the tasks.</p>
+
+<h4><span id="Selection_Routing_Rule">Selection Routing Rule</span></h4>
+
+<p>A <img alt="" height="23" src="../../sites/default/files/Selection.gif"> <strong>selection</strong> routing rule allows the user assigned to the task to manually select which task will be the next in the workflow. After completing a task, the user will be presented with the available subsequent tasks and asked to choose one.</p>
+<p>For instance, if creating a process to handle billing in dollars and Euros, a selection routing rule could be used to decide whether to generate a bill in dollars or in Euros.</p>
+<p><img alt="" height="173" src="../../sites/default/files/SelectionRoutingRuleMap.png" width="402"></p>
+<p>After adding the selection routing rule, double click on the routing rule to add "Descriptions" to the selection routing rule explaining why to choose the "Billing Dollars" and "Billing Euros" tasks.</p><p><img alt="" height="292" src="../../sites/default/files/SelectionRoutingRuleDescriptions.png" width="625"></p>
+<p>These descriptions will help the user decide which task to choose when running a case:</p>
+<p><img alt="" height="301" src="../../sites/default/files/SelectionRoutingRuleDialog.png" width="453"></p>
+
+<h5><span id="How_to_Customize_the_Appearance_of_the_Description">How to Customize the Appearance of the Description</span></h5>
+
+<p>This routing rule allows users a customization of its description in HTML or JavaScript code on its final view when running a case.</p>
+<p>Follow the steps below to try it out on your own process:</p>
+<p>1.- Click on the routing rule icon:</p>
+<p><img alt="" height="197" src="../../sites/default/files/Routing_1.png" width="268"></p>
+<p>2.- Add the HTML code (specifying a color or type of letter) after the description:</p>
+<p><img alt="" height="265" src="../../sites/default/files/RoutingRulesConfig2.png" width="610"></p>
+<p>3.- Run the process:</p><p><img alt="" height="302" src="../../sites/default/files/Routing_2.png" width="452"></p>
+
+<h4><span id="Evaluation_Routing_Rule">Evaluation Routing Rule</span></h4>
+
+<p>An <img alt="" height="23" src="../../sites/default/files/Evaluation.gif"> <strong>evaluation</strong> routing rule uses a condition to decide whether the workflow moves to subsequent task(s). If the condition, which is a PHP expression, evaluates to <strong>true</strong>, then the workflow will move to the subsequent task. For more information on how to create conditions which will evaluate to <strong>true</strong> or <strong>false</strong>, see <a href="../Using_Conditions.html" style="color: rgb(11, 0, 128); background: none;" title="Using Conditions">Using Conditions</a>.</p>
+<p>An evaluation routing rule is commonly used to decide between multiple tasks. If all the conditions are false then a case will never complete. If all the conditions are true, then the workflow will move to all the subsequent tasks, which may not be what is desired. Therefore, it is very important to test conditions and make sure that they don't yield unexpected outcomes.</p><p>The previous example of a billing processes could also be implemented with an evaluation routing rule instead of a selection routing rule.</p>
+
+<p><img alt="" height="170" src="../../sites/default/files/BillingEvaluationRuleMap.png" width="393"></p>
+<p>If a DynaForm is filled out in the "Initiate Billing" task, the user can select whether the bill will be in dollars or Euros.</p>
+<p><img alt="" height="242" src="../../sites/default/files/BillingForm.png" width="450"></p>
+<p>The choice of dollars or is be stored in the variable @@Currency which could be used in the conditions for the routing rule. Click on the evaluate routing rule in the Process Map and add the conditions.</p>
+<p><img alt="" height="292" src="../../sites/default/files/BillingEvaluationRules.png" width="628"></p>
+<div id="ConditionError">If you get the following error message when running a case with an evaluation routing rule, check to see that you have defined a condition.</div>
+<p><img alt="" height="121" src="../../sites/default/files/NoDerivationRuleError.png" width="467"></p>
+<p>If a condition exists, then the problem is probably due to the fact that the condition contains an undefined variable. Verify that the variable exists, by clicking on the <strong>[ @@ ]</strong> button find the variable in the list of available variables. Remember that variable names in PHP are case sensitive.</p>
+<p>If the variable was defined in a DynaForm, then the problem is that the values which are being entered into the DynaForm aren't being saved to variables. To allow your users to save their entered data in the Dynaform, add a <strong>Submit</strong> button to the DynaForm. To remind users to click the Submit button, go to the <strong>Properties</strong> tab of the DynaForm Designer and select the option "Show Prompt" for <strong>Next Step Link</strong>. If you want the data to be automatically saved to variables without the hassle of clicking the Submit button, select the option "Save and Continue".</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> Sometimes, there is a problem when a condition on Evaluation Route is saved, for example take the condition below:
+
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">@@</span>Currency<span style="color: #339933;">==</span><span style="color: #0000ff;">&quot;Euros&quot;</span></code></span>
+
+<p>Save it and open it again, that will be changed into:</p>
+
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">@@</span>Currency<span style="color: #339933;">==</span>\<span style="color: #0000ff;">&quot;Euros<span style="color: #000099; font-weight: bold;">\&quot;</span></span></code></span>
+</font></p>
+<p>That will solved switching off <tt> <a class="external text" href="http://php.net/manual/en/info.configuration.php#ini.magic-quotes-gpc">quotes-gpc magic_quotes_gp</a></tt> on <tt> php.ini</tt> configuration.</p>
+<p><u><strong>Example of how to Route a Case to the User who Started it</strong></u></p>
+<p>This example explains how to route a case to the user who first started it using an evaluation routing rule. In the example, the first task has assigned the "Manager" and "Senior Manager" groups with 3 and 5 users each. The user who starts the case requests some kind of desktop help. This request arrives to the "IT" group in the second task. The user who receives the request must provide feedback about the request the final task that brings a report of the request.</p>
+<p>The design of the process is the following:</p>
+<p><img alt="" height="324" src="../../sites/default/files/EvaluationExampleProcessMap.png" width="209"></p>
+<p>The process uses the trigger "SaveUser", that saves the information of the user who starts the case:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp; <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>FirstUser<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@@</span>FirstUser <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">;</span></div></div>
+
+
+<p>The task "Request Desktop Help" has assigned the groups "Manager" (3 users) and "Senior Manager" (5 users). The task also has the trigger "SaveUser" assigned before the assignment of the task. Finally, the assignment rule of this task is <a href="Tasks.html#Value_Based_Assignment" style="color: rgb(11, 0, 128); background: none;" title="2.0/Tasks">"Value Based Assignment"</a> with the value "@@FirstUser".</p>
+
+<div style="width: 340px;"><div class="thumb" style="margin: 2px; width: 335px; text-align: center; border: 1px solid rgb(204, 204, 204); background-color: rgb(249, 249, 249);"><div style="margin: 41px auto;"><img alt="" height="188" src="../../sites/default/files/EvaluationExampleTaskUsers.png" width="305"></div></div>
+<div class="gallerytext" style="overflow: hidden; font-size: 12px; padding: 2px 4px; word-wrap: break-word;"><p><strong>Users Assigned</strong></p></div></div><div style="width: 340px;"><div class="thumb" style="margin: 2px; width: 335px; text-align: center; border: 1px solid rgb(204, 204, 204); background-color: rgb(249, 249, 249);"><div style="margin: 40.5px auto;"><img alt="" height="167" src="../../sites/default/files/EvaluationExampleTaskTrigger.png" width="269"></div></div>
+<div class="gallerytext" style="overflow: hidden; font-size: 12px; padding: 2px 4px; word-wrap: break-word;"><p><strong>Assignation of the Trigger</strong></p></div></div><div style="width: 340px;"><div class="thumb" style="margin: 2px; width: 335px; text-align: center; border: 1px solid rgb(204, 204, 204); background-color: rgb(249, 249, 249);"><div style="margin: 59px auto;"><img alt="" height="152" src="../../sites/default/files/EvaluationExampleTaskAssignmentRules.png" width="305"></div></div>
+<div class="gallerytext" style="overflow: hidden; font-size: 12px; padding: 2px 4px; word-wrap: break-word;"><p><strong>Assignment Rule</strong></p></div></div>
+
+<p>After filling a request form, the route derives the request to a user of the IT group assigned in the task "Provide Feedback". In this task, the IT user gives a feedback of the problem and could return it to the first user or, if the problem is fixed, generate a report. In the Dynaform of the feedback, the user selects from the dropdown "action" whether to return the feedback to the first user (Yes) or not (No).</p>
+<p><img alt="" height="75" src="../../sites/default/files/EvaluationRRSendFeedback.png" width="496"></p>
+<p>The evaluation routing rule evaluates the value of the dropdown. If the value is "Yes", it derives the route to the first task, to the user who made the request (the user who started the case with the value saved by the trigger "saveUser"). Else, if the value of the dropdown is "No", the route is derived to the task "Generate Report". The configuration of the routing rule is the following:</p>
+<p><img alt="" height="360" src="../../sites/default/files/EvaluationRuleConfigurationExample.png" width="707"></p>
+
+<h4><span id="Parallel_.28Fork.29_Routing_Rule">Parallel (Fork) Routing Rule</span></h4>
+
+<p>A <img alt="" height="23" src="../../sites/default/files/ParallelFork.gif" width="25"> <strong>parallel (fork)</strong> routing rule divides the workflow in multiple threads (branches) which operate concurrently. Once the task has been completed the workflow will take different sub-threads starting at the same time. As an example, in the credit card application, where two parallel tasks will take place, because the facility officer sends a request for employment and credit checks.</p>
+<p><img alt="" height="243" src="../../sites/default/files/ParalleRoutingRuleMap.png" width="394"></p>
+<p>Once the parallel (fork) rules have been added, by double clicking on the routing rule you can see the following illustration. There it is possible to define more parallel tasks.</p>
+<p><img alt="" height="290" src="../../sites/default/files/ParalleRoutingRuleDescriptions.png" width="309"></p>
+<p>In order to ensure the workflow continues only when every parallel task is finished, they need a <strong>parallel Join</strong> <img alt="" height="23" src="../../sites/default/files/ParallelJoin.gif">. For this reason, drag and drop the route of the first parallel task defined and connect it to the next task. Repeat this step for every task that used the parallel (fork) routing rule. The description in the parallel (fork) will show what we have in the next illustration, so we know the task has been derived two times (this will depend on the number of parallel assignation we made).</p>
+<p><img alt="" height="211" src="../../sites/default/files/ParalleRoutingRuleDialog.png" width="441"></p>
+
+<h5><span id="Pausing_threads">Pausing threads</span></h5>
+<p>Usually threads in a parallel routing rule are independent form each other, but what happen if a thread needs to be paused?.</p>
+
+<p>Let's take the above example, if <strong>Credit Check</strong> task is paused, user assign to the other task, <strong>Employment Verification</strong> will be able to continue the case since threads are independent; however, the case could not be completed until the task will be unpaused, always following the definition of a Parallel routing rule.</p>
+
+<h4><span id="Parallel_by_Evaluation_.28Fork.29_Routing_Rule">Parallel by Evaluation (Fork) Routing Rule</span></h4>
+
+<p>A <strong>parallel by evaluation (fork)</strong> routing rule divides the workflow in multiple paths, evaluating the condition for each of the paths to determine which ones will be executed. A path will only be executed if its condition evaluates to <strong>true</strong>. If <strong>false</strong>, it won't be executed, so make sure that at least one of the conditions evaluates to <strong>true</strong> to avoid errors. For more information on how to create conditions which will evaluate to <strong>true</strong> or <strong>false</strong>, see <a href="../Using_Conditions.html" style="color: rgb(11, 0, 128); background: none;" title="Using Conditions">Using Conditions</a>.</p>
+<p>All of the sub-paths between the parallel fork and the parallel join must finish executing, before the workflow can move on to the next task after the parallel join.</p>
+<p>For instance, if creating a process to handle reporting expenses, where the employee will fill out a form and send it. We will use a parallel by (fork) to evaluate the report expense.</p>
+<p><img alt="" height="418" src="../../sites/default/files/ParalleByRoutingRuleMap.png" width="571"></p>
+<p>After adding the parallel by evaluation (fork), double click on the routing rule to add “Descriptions”, explaining when the task “Local Manager Approval”, “Regional Manager Approval” and/or “CEO Approval” will be started. When this conditions are being evaluated there can be more than one evaluated true, if that happen then one or more task will be started.</p>
+<p><img alt="" height="253" src="../../sites/default/files/ParalleByRoutingRuleDescriptions.png" width="500"></p>
+<p>These descriptions will show the user the path the task will be taking, when the case is running.</p>
+<p><img alt="" height="201" src="../../sites/default/files/ParalleByRoutingRuleDialog.png" width="434"></p>
+<p><u><strong>Example Using Checkboxes Values in the Parallel by Evaluation Routing Rule</strong></u></p>
+<p>The next example uses a parallel by evaluation routing rule to derive the path to the next task. Nevertheless, the values evaluated in the routing rule are obtained from a checkbox group in the Dynaform of the first task. The details of how to do it are explained in the example.</p>
+<p>The design of the process is the following:</p>
+<p><img alt="" height="324" src="../../sites/default/files/ExRRParallelbyEvalProcessMap.png" width="675"></p>
+<p>In the task <i>"Report Expense"</i>, at the end of the Dynaform, add the checkbox group <i>"checkSupervisor"</i>:</p>
+<p><img alt="" height="141" src="../../sites/default/files/ExRRParallelbyEvalDynaform.png" width="492"></p>
+<p>The XML of the checkbox group is the following:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;">&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;checkSupervisor</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;checkgroup&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">optgroup</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Select a Supervisor<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;option</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;1&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>Local Manager Approval<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/option<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;option</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;2&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>Regional Manager Approval<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/option<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;option</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;3&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>CEO Approval<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/option<span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/checkSupervisor<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>Create the trigger "triggerRouting" that will recover the value selected by the user in the checkbox group:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp; &nbsp;<span style="color: #000088;">$rArray</span> <span style="color: #339933;">=</span> <a href="http://php.net/explode"><span style="color: #990000;">explode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;|&quot;</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>checkSupervisor<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>checkGroup <span style="color: #339933;">=</span> <span style="color: #000088;">$rArray</span><span style="color: #339933;">;</span></div></div>
+
+<p>The trigger recovers the value of the checkbox group and uses the PHP function <a href="http://php.net/manual/en/function.explode.php">explode()</a> in the variable <code>$rArray</code> and sets it in the variable <code>@@checkGroup</code>.</p>
+<p>Assign the trigger to the first task after the Dynaform is routed.</p>
+<p>Now, configure the routing rule like the following:</p>
+<p><img alt="" height="274" src="../../sites/default/files/ExRRParallelbyEvalGatewayConfig.png" width="532"></p>
+<p>The routing rule evaluates the array sent in the trigger in the variable <tt>@@checkGroup</tt>. For this, it uses the PHP function <a href="http://php.net/manual/en/function.in-array.php">in_array()</a> to check the value returned for the checkbox group.</p>
+<p>The route will go to task <i>"Local Manager Approval"</i> if the first option of the checkbox group was selected. Remember that the value set for the first option was "1". Likewise, the route will go to "Regional Manager Approval" if the second option was chosen and to "CEO Approval" if the third option was chosen.</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

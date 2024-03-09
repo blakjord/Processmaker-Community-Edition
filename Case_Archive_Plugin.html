@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Case_Archive_Plugin.html" />
+<link rel="shortlink" href="node/926.html" />
+<title>3.4 - 3.7 - Case Archive Plugin | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"gjNNzGMUb-qUsvS0ofmy6kwnulxmej_m30lh8yajrvM","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-926 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="index.html" title="Home"><img src="sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Case_Archive_Plugin.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Case_Archive_Plugin.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-xE2AMXRmc9jduyFs1W3aj93NZbqVFIM1-_J2mpOJxTQ" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.4 - 3.7 - Case Archive Plugin</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a href="index.php/Case_Archive_and_Restore.html" class="">3.2</a></li><li><a href="index.php/Case_Archive_and_Restore.html" class="">3.1</a></li><li><a href="index.php/Case_Archive_and_Restore.html" class="">3.0</a></li><li><a href="index.php/Case_Archive_and_Restore.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.4 - 3.7 - Case Archive Plugin" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Case_Archive_Plugin.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.4 - 3.7 - Case Archive Plugin 1/5</option><option value="40" selected="selected">Give 3.4 - 3.7 - Case Archive Plugin 2/5</option><option value="60">Give 3.4 - 3.7 - Case Archive Plugin 3/5</option><option value="80">Give 3.4 - 3.7 - Case Archive Plugin 4/5</option><option value="100">Give 3.4 - 3.7 - Case Archive Plugin 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.3</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form--wGMWYKMf_MZeUXS4nFr8vT_yPBaXkTR1frvuQH1k5Y" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Case_Archive_Plugin.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Case_Archive_Plugin.html#Overview">Overview</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#How_the_plugin_works">How the Plugin Works</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Requirements">Requirements</a></li>
+<ol class="toc">
+<li class="toc"><a href="Case_Archive_Plugin.html#ProcessMaker_Compatibility">ProcessMaker Compatibility</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#User_Requirements">User Requirements</a></li>
+</ol>
+<li class="toc"><a href="Case_Archive_Plugin.html#Installation">Install and Enable the Plugin</a></li>
+<ol class="toc">
+<li class="toc"><a href="Case_Archive_Plugin.html#Permissions">Permissions</a></li>
+</ol>
+<li class="toc"><a href="Case_Archive_Plugin.html#Restrictions_and_Recommendations_before_starting">Restrictions and Recommendations Before Starting</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Archive_and_Unarchive_cases">Archive and Unarchive Cases</a></li>
+<ol class="toc">
+<li class="toc"><a href="Case_Archive_Plugin.html#Archive_Cases">Archive Cases Through the Command Line</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Unarchive_Cases">Unarchive Cases</a></li>
+<ol class="toc">
+<li class="toc"><a href="Case_Archive_Plugin.html#Case_Archive_Search">Unarchive Cases Through the User Interface - Case Archive Search</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Unarchive_Command_Line">Unarchive Cases Through the Command Line</a></li>
+</ol>
+<li class="toc"><a href="Case_Archive_Plugin.html#Completed_Cases_Examples">Completed Cases Examples</a></li>
+<ol class="toc">
+<li class="toc"><a href="Case_Archive_Plugin.html#Basic_examples">Basic Examples</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Examples_using_start_date">Examples Using <code>--start_date</code></a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Examples_using_end_date">Examples Using <code>--end_date</code></a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Examples_using_start_date_and_end_date">Examples Using <code>--start_date</code> And <code>--end_date</code></a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Examples_of_wrong_date_interval">Examples Of Wrong Date Interval</a></li>
+</ol>
+<li class="toc"><a href="Case_Archive_Plugin.html#Report_Tables">Add Report Tables to an Archive</a></li>
+<ol class="toc">
+<li class="toc"><a href="Case_Archive_Plugin.html#Add_Report_Tables">Add all the Report Tables to an Archive</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Exclude_Report_Tables">Exclude Report Tables</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Resume_Report_Tables">Resume Archiving Report Tables</a></li>
+</ol>
+<li class="toc"><a href="Case_Archive_Plugin.html#Regenerate_Report_Tables">Regenerate Archived Report Tables</a></li>
+<ol class="toc">
+<li class="toc"><a href="Case_Archive_Plugin.html#Regenerate_Report_Table">Regenerate an Archived Report Table</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Regenerate_All_Data">Regenerate all Data from an Archived Report Table</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="Case_Archive_Plugin.html#Archive_Manifest_Log">Archive Manifest Log</a></li>
+<li class="toc"><a href="Case_Archive_Plugin.html#Error_Log">Error Log</a></li>
+</ol>
+</div></div>
+</p>
+<p>
+<img src="sites/default/files/faviconpm_23.png" alt="" width="16" height="16"> 
+<span style="color: #009688"><strong>Plugin Version:</strong></span>
+<span style="color: dimgrey"><strong>4.1.1</strong></span> |
+<a href="https://drive.google.com/file/d/1SllwFusNLyRqtyKqmP_APKcJcL1zinNn/view?usp=sharing" target="_blank">Release Notes</a></p>
+<hr>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>In running systems, where a lot of information is manipulated every day, data is very important to be consulted, but not all data is required to be stored in the database, especially old data. That's the reason why old information is archived to get historical data.</p>
+<p>The Case Archive Plugin is designed to empower ProcessMaker in order to provide the functionality to archive and unarchive old cases, thus the data in ProcessMaker tables is reduced and the database queries resolution gets faster.</p>
+<p>Moreover, Case Archiving is a plugin designed to manage the database efficiently. The case archiving functionality decreases data size within the database, allowing to decrease source consuming and database stress, while the unarchiving functionality allows to restore all or specific archived cases.</p>
+<p>Its main characteristics are:</p>
+<ul>
+    <li>Supports PHP 7.1.x, 7.2.x, and 7.3.x.</li>
+    <li>Allows ProcessMaker users with the proper permissions to archive and unarchive millions of cases.</li>
+    <li>Creates records in the database instances to fast access. Access the database through the PHP My Admin or the SQL console.
+        <p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">The user that was used to install ProcessMaker in the server has the permissions to create databases and access to all databases in the server. The user is able to <a href="3.2/Clearing_the_Case_List_Cache.html#Changing_the_MySQL_Location_or_its_.22root.22_user">change the MySQL location</a>.</font></p>    
+    </li>
+    <li>User interface to search archived cases and see the case status. User interface is similar to the Advanced Search.</li>
+    <li>Allows for better maintenance and audit controls for ProcessMaker instances.</li>
+    <li>Ensures that large scale implementations can offload old cases from the main inbox, in order to ensure speed at high scale.</li>
+    <li>Cases can be unarchived to user inboxes at any time.</li>
+    <li>Allows to decrease source consuming and database stress.</li>
+</ul>
+
+<h2><span id="How_the_plugin_works">How the Plugin Works</span></h2>
+<p>The following points describe how the Case Archive plugin works:</p>
+<ul>
+    <li>Cases can be archived by using console commands.</li>
+    <li>Cases can be unarchived by using the user interface and console commands.</li>
+</ul>
+
+<h2><span id="Requirements">Requirements</span></h2>
+<h3><span id="ProcessMaker_Compatibility">ProcessMaker Compatibility</span></h3>
+<ul>
+    <li>This plugin version is fully compatible with ProcessMaker 3.3.2 and later.</li>
+</ul>
+
+<h3><span id="User_Requirements">User Requirements</span></h3>
+<ul>
+    <li>The user role needs to have the <a href="Case_Archive_Plugin.html#Permissions"><code>CASE_ARCHIVE_LIST</code></a> permission to access the <a href="Case_Archive_Plugin.html#Case_Archive_Search">Case Archive Search</a>.</li>
+    <li>The user role needs to have the <a href="Case_Archive_Plugin.html#Permissions"><code>CASE_ARCHIVE_UNARCHIVE</code></a> permission to unarchive cases through the interface.</li>
+    <li>According to your web server, the Apache or NGINX permission to archive and unarchive cases into the server through the console commands.</li>
+</ul>
+
+<h2><span id="Installation">Install and Enable the Plugin</span></h2>
+<p>Follow these steps to complete the enterprise plugin installation.</p>
+    <p><b>1. </b>Log in with a user, such as "admin", who has the <a href="3.3/Roles.html#PM_SETUP_ADVANCE" title="Roles">PM_SETUP_ADVANCE</a> permission in their <a href="3.3/Roles.html" title="Roles">role</a>.</p>
+    <p><b>2. </b>Go to <strong>ADMIN &gt; Plugins &gt; Enterprise Manager</strong>.</p>
+    <p><b>3. </b>In the <strong>Enterprise Plugins</strong> tab, install the plugin doing one of the following:</p>
+    <ul>
+    <li>Click <img alt="" height="19" src="sites/default/files/InstallPluginIcon.png" width="20"><strong>Install from File</strong> and upload the plugin file.</li>
+    <li>Click the Case Archive plugin's <strong>Install now</strong> or <strong>Upgrade now</strong> buttons in the list of available plugins. 
+    <p><img src="sites/default/files/3.6.0CaseArchive4.1.1_Install.png" alt=""></p>
+</li>
+    </ul>
+    <p>For more information about plugin options, see <a href="3.2/Enterprise_Manager_Tool.html#Enterprise_Plugins_-_Listing_Available_Plugins">Enterprise Manager Tool</a>.</p>
+    <p><b>4. </b>After installing the plugin, make sure that the plugin is enabled <img alt="" height="20" src="sites/default/files/EnabledIcon.png" width="22">. If the plugin is not enabled, click the <b>Enable</b> button, as shown in the graphic below.</p>
+<p><img src="sites/default/files/3.6.0CaseArchive4.1.1_Enable.png" alt=""></p>
+<p>After enabling the plugin, you can archive and unarchive cases through the console commands.</p>
+
+<h3><span id="Permissions">Permissions</span></h3>
+<p>After enabling the plugin, the following permissions are enabled:</p>
+  <ul>
+    <li><b><tt>CASE_ARCHIVE_LIST</tt></b>: Enables the <a href="Case_Archive_Plugin.html#Case_Archive_Search">Case Archive search</a> option under <b>Home &gt; Search</b>. Also, the search criteria is enabled.</li>
+    <li><b><tt>CASE_ARCHIVE_UNARCHIVE</tt></b>: Enables the <a href="Case_Archive_Plugin.html#Unarchive_Cases">Unarchive Cases</a> option where cases can be unarchived.</li>
+  </ul>
+
+<h2><span id="Restrictions_and_Recommendations_before_starting">Restrictions and Recommendations Before Starting</span></h2>
+<p>Take into consideration the following <b>restrictions</b>:
+<ul>
+    <li>It is not possible to archive cases from multiple workspaces. The Archive and Unarchive commands just work in the workspace where the plugin is enabled.</li>
+    <li>Unarchiving cases is limited to the user interface. Only 25 cases can be unarchived at the same time in the <a href="Case_Archive_Plugin.html#Case_Archive_Search">Case Archive search</a> interface.</li>
+    <li>If a workspace database schema is updated (tables related to the cases), the Case Archive database does not synchronize the workspace schema.</li>
+</ul></p>
+<p>Take into consideration the following <b>recommendations</b>:
+<ul>
+    <li>Do not run the Archive and Unarchive commands as a <b>root</b> user.</li>
+    <li>If the user unarchives cases from workspaces where the process elements (like tasks and users) were deleted, the Unarchived cases can present problems like not listing in the Inbox.</li>
+    <li>For performance reasons, the <a href="Case_Archive_Plugin.html#Case_Archive_Search">Case Archive search</a> list cases are sorted only by Case Number.</li>
+    <li>The Case Archive notification that displays in the <a href="Case_Archive_Plugin.html#Case_Archive_Search">Case Archive search</a> list when a database is created or updated is cumulative. Therefore, the prior week's created/updated databases display with the new changes.</li>
+    <li>It is recommended to run the archive command without using ProcessMaker when creating or routing cases to avoid errors in the archived cases. It is possible by using a maintenance window frame.</li>
+    <li>The Case Archive starting and ending dates are based on the case creation date.</li>
+    <li>Paused cases can only be unarchived through the Command Line.</li>
+    <li>As a best practice unpause paused cases before archiving them because paused cases are on hold to perform a step.</li>
+</ul></p>
+
+<h2><span id="Archive_and_Unarchive_cases">Archive and Unarchive Cases</span></h2>
+<p>The Case Archive plugin has two options, <a href="Case_Archive_Plugin.html#Archive
+    _cases">archive</a> and <a href="Case_Archive_Plugin.html#Unarchive_Cases">unarchive</a> cases depending on what the requirement is.</p>
+
+<h3><span id="Archive_Cases">Archive Cases Through the Command Line</span></h3>
+<p>Take into consideration that you can just archive cases through the command line. To archive cases, follow the next steps:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">In the console, depending on your web server, log on as Apache or NGINX user.</p></li>
+    <li><p style="font-weight:normal;">Go to the following path:</p>
+    <codeblock style="font-weight:normal;">cd /opt/processmaker
+</codeblock></li>
+    <li><p style="font-weight:normal;">Archive cases by running the following command:</p>
+        <codeblock style="font-weight:normal;">./processmaker workspace-archive-cases [<i><b>workspace_name</b></i>] [<i><b>data_base_name</b></i>]
+</codeblock>
+<p style="font-weight:normal;">Where:</p>
+<ul style="font-weight:normal;">
+    <li><b>workspace_name</b>: Workspace name is where the cases are to be archived. This setting is required.</li>
+    <li><b>data_base_name</b>: Database name is where the information cases are to be archived. If the database name exists, it updates the database cases. This setting is required. This name after creation preceded by <code>[workspace]_XXXX</code> in uppercase and the name automatically converts in uppercase without the use of special characters but base English alphabet, a hyphen, underscore and Numbers.
+    <codeblock>A - Z, 0 - 9, -, _</codeblock></li>
+</ul></li>
+    <li>
+        <p style="font-weight:normal;">Optionally, the command has the following:</p>
+        <p style="font-weight:normal; margin-left:25px;"><strong><font color="green">Note:</font></strong> <font color="dimgray">The Case Archive <b>start_date</b> and <b>end_date</b> are based on the case creation date.</font></p>
+    <ul style="font-weight:normal;">
+        <li><b>--start_date:</b> To define a starting date for the case archive. Set it between single quotes in the <b>rfc3339</b> format: <code>YYYY-MM-DDThh:mm:ss+00:00</code>. The time is <code>UTC 00:00:00</code>. If no starting date is defined, the plugin takes the date of the older case of the ProcessMaker instance in the workspace.</li>
+        <li><b>--end_date:</b> To define an ending date for the case archive. Set it between single quotes in the <b>rfc3339</b> format: <code>YYYY-MM-DDThh:mm:ss+00:00</code>. The time is <code>UTC 23:59:59</code>. If no ending date is defined, the plugin takes the date of the newest case of the ProcessMaker instance in the workspace.</li>
+        <li><b>--process:</b> To define a specific process that has to be inside single quotes <code>Process UID</code>.</li>
+        <li><b>--category:</b> To define a specific process category that has to be inside single quotes <code>Process Category UID</code>.
+            <p><strong><font color="green">Note:</font></strong> <font color="dimgray">It is only possible to select a process or a category but not both.</font></p></li>
+        <li><b>--case_status:</b> To define a specific case status to be filtered using <code>TO_DO</code>, <code>DRAFT</code>, <code>COMPLETED</code>, <code>CANCELLED</code>.</li>
+        <li><b>--case_number:</b> To define a specific case number. This option does not require any other command options.</li>
+        <li><b>--start_finish_date:</b> Available as of <b>Case Archive 4.1.1</b>. To define a starting date for the case archive of all completed cases. Set it between single quotes in the <a href="https://datatracker.ietf.org/doc/html/rfc3339">rfc3339</a> format: <code>YYYY-MM-DDThh:mm:ss+00:00</code>. Take into account that the starting date works for cases equal or major to the defined date. The date uses the case property <code>APP_FINISH_DATE</code>.</li>
+        <li><b>--end_finish_date:</b> Available as of <b>Case Archive 4.1.1</b>. To define a end date for the case archive of all completed cases. Set it between single quotes in the <a href="https://datatracker.ietf.org/doc/html/rfc3339">rfc3339</a> format: <code>YYYY-MM-DDThh:mm:ss+00:00</code>. Take into account that the end date works for cases equal or less to the defined date. The date uses the case property <code>APP_FINISH_DATE</code>.</li>
+    </ul>
+    <p style="font-weight:normal; margin-left:25px;"><strong><font color="green">Note:</font></strong> <font color="dimgray">Check detailed <a href="Case_Archive_Plugin.html#Completed_Cases_Examples">examples about how to use the <b>--start_finish_date</b> and <b>--end_finish_date</b> parameters, including how to do not use these command parameters</a>.</font></p>
+</li>
+    <li><p style="font-weight:normal;">For example, run the following command line:</p>
+    <codeblock style="font-weight:normal;">sudo -u nginx ./processmaker workspace-archive-cases --case_status=TO_DO workflow3411 test2</codeblock>
+    <p><img src="sites/default/files/3.5.0CaseArchive4.0.0_ConsoleArchive.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">The next time that you open the <a href="Case_Archive_Plugin.html#Case_Archive_Search">Case Archive search</a> user interface, the following confirmation message displays:</p>
+    <p><img src="sites/default/files/3.5.0CaseArchive4.0.0_ConsoleArchiveConfirmation.png" alt=""></p>
+    <p style="font-weight:normal;">Take into account that this is a confirmation message of a new repository. However, there could be a message of an update in the archive repository, which means that you can cumulate archived cases in a created database.</p></li>
+</ol>
+<p>The archive process has to work without interruptions. However, there is a runtime to be considered for large processes.</p>
+<p>Any error in the case archiving has to consider ways not to lose, nor corrupt data in ProcessMaker and a possibility to recover information. The possible error messages are the following:</p>
+<ul>
+    <li>The <code>workspace_name</code> parameter is mandatory to use in the case archive. Without this definition, the command <code>workspace-archive-cases</code> returns the following error message:
+    <codeblock>We are very sorry but you didn't define a valid workspace, please contact your system administrator to provide information about the workspace</codeblock></li>
+    <li>The <code>data_base_name</code> parameter is mandatory to create a new database with the archive or allocate the archive in an existing archive database. Without this definition, the command  <code>workspace-archive-cases</code> returns the following error message:
+    <codeblock>Please send the two required arguments (workspace and Database name collection().</codeblock></li>
+    <li>If the <code>data_base_name</code> already exists, ProcessMaker requests a confirmation to be added in the database archived the cases with the following message to receive a confirmation and then press Intro:
+    <codeblock>The Archive DataBase already exists, do you want to add this archiving into the workflow_XXXX Archive? (Y 'Yes' / N 'No'): </codeblock></li>
+    <li>If any invalid database name is entered, the following error message displays:
+    <codeblock>The Archive DataBase name is using an incorrect format please use capital letters that can have numbers and all spaces have to be replaced with a hyphen or underscore</codeblock>
+    </li>
+</ul>
+
+<h3><span id="Unarchive_Cases">Unarchive Cases</span></h3>
+<p>There are two ways to unarchive cases:</p>
+<ul>
+    <li><a href="Case_Archive_Plugin.html#Case_Archive_Search">Unarchive Cases Through the User Interface</a></li>
+    <li><a href="Case_Archive_Plugin.html#Unarchive_Command_Line">Unarchive Cases Through the Command Line</a></li>
+</ul>
+
+<h4><span id="Case_Archive_Search">Unarchive Cases Through the User Interface - Case Archive Search</span></h4>
+<p>The <b>Case Archive search</b> has the same characteristics as the <a href="3.2/Cases/Search.html#Advanced_Search">Advanced Search</a> except for some exceptions that describe each point. A user with the <a href="Case_Archive_Plugin.html#Permissions"><tt>CASE_ARCHIVE_LIST</tt></a> permission can access the <b>Case Archive search</b> with the list of all the archived cases with the possibility to search specific cases with a criteria search. A user with the <a href="Case_Archive_Plugin.html#Permissions"><tt>CASE_ARCHIVE_UNARCHIVE</tt></a> with the <a href="Case_Archive_Plugin.html#Permissions"><tt>CASE_ARCHIVE_LIST</tt></a> permission, the <b>Case Archive search</b> brings the <b>Unarchive Cases</b> option. All archived cases are listed in <b>Home &gt; Search &gt; Case Archive search</b>. The following graphic describes the <b>Case Archive search</b>:</p>
+<p><img alt="" src="sites/default/files/3.5.0CaseArchive4.0.0_List.png" /></p>
+<p>Item one describes the Unarchive option. Items two to nine describe the search criteria that helps you to search archived cases by using some criteria, find specific information, especially when a great number of cases were archived. And item ten describes the list of archived cases:</p>
+
+<ol>
+    <li><b>Unarchive Cases:</b> After selecting some cases or all cases in the list page, this option is enabled to unarchive cases. Remember that only 25 cases can be unarchived at the same time.</li>
+    <li><b>Data Base Archive:</b> Allows you filter cases of databases created for archived cases.</li>
+    <li><b>Category:</b> Allows you to filter cases of a defined process category.</li>
+    <li><b>Process:</b> Allows you to filter cases of a specific process by entering the name of a process. This field has an autocomplete feature, which lists all the processes matching cases.</li>
+    <li><b>Status:</b> Allows you to filter cases by selecting all statuses or a specific status, such as Draft, To Do, Completed and Canceled.</li>
+    <li><b>User:</b> Allows you to filter cases by entering a specific user. This field displays a suggestion field with an autocomplete feature. All coincidences display while text is entered.</li>
+    <li><b>Date From - To:</b> Allows you to filter cases by selecting a date range of the archived cases by clicking on the calendar icon. Click on the <b>X</b> button next to the <b>Date From</b> and <b>To</b> fields to clear the dates selected.</li>
+    <li><b>Filter By:</b> Allows you filter cases by Case Number, Case Title or Task, and where the search of the text entered in the <b>Search</b> field is performed.</li>
+    <li><b>Search:</b> After clicking this button, displays results of the defined search criteria.</li>
+    <li><b>Archived Case List:</b> It displays a list of archived cases with the following information:
+        <ul>
+            <li>Case Number (<b>#</b>)</li>
+            <li><a href="3.2/Case_Summary.html">Summary</a> that just displays:
+                <ul>
+                    <li><b>General Information:</b> Case properties and current tasks.</li>
+                    <li><b>Uploaded Documents:</b> Files uploaded to Input Documents.</li>
+                    <li><b>Generated Documents:</b> Files generated in Output Documents.</li>
+                </ul>     
+            </li>
+            <li>If you have permissions upon the process, the <b>Case Notes</b> displays.</li>
+            <li>Case Title (<b>Case</b>)</li>
+            <li>Process</li>
+            <li>Task</li>
+            <li>Current User</li>
+            <li>Last Modified</li>
+            <li>Data Base Archive</li>
+            <li>Due Date</li>
+            <li>Status</li>
+        </ul>
+        Remember that in the Archived Case list, for performance reasons, it is only possible to sort by Case Number.
+    </li>
+</ol><br>
+<p>The filter is saved per user as in the <a href="3.2/Cases/Search.html#Save_Filter">Advanced Search - Save Filter</a>.</p>
+<p>While a case is archived, it is not possible to open it under any circumstance, but it is possible to access the case summary and case notes if the user belongs to the workspace and has the pertinent permissions.</p>
+<p>Any update in the Case Archive displays notifications in flash messages at the right-bottom of the screen with a descriptive note as follows:</p>
+<p><img src="sites/default/files/3.5.0CaseArchive4.0.0_ConsoleArchiveConfirmation.png" alt=""></p>
+<p>After one week of a database creation, the notification disappears from the list of new databases. The notifications are:</p>
+<ul>
+    <li>New Case Archive Database:
+        <codeblock>A new database archive has been added “TRAVEL_REQUEST_2020“</codeblock>
+    </li>
+    <li>Update in an existing database:
+        <codeblock>Database archive updated “TRAVEL_REQUEST_2020“</codeblock></li>
+    <li>Unarchived cases (Just for users that have the permission to unarchive cases):
+        <codeblock>You have unarchived cases from the database archive “TRAVEL_REQUEST_2020“ </codeblock>
+        <codeblock>You have unarchived cases from the database archive “TRAVEL_REQUEST_2019”, “ON_BOARDING_2003", “APRAISAL_REPORT_2020”</codeblock>
+    </li>
+</ul>
+
+<p>To unarchive cases, follow the next steps:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">Go to <b>Home &gt; Search &gt; Case Archive search</b>. All the archived cases list.</p></li>
+    <li><p style="font-weight:normal;">Filter your cases to unarchive as described previously.</p></li>
+    <li><p style="font-weight:normal;">There is a checkbox to select cases. Select your cases or select all cases by clicking the checkbox at the list bar.</p></li>
+    <li><p style="font-weight:normal;">Click the <b>Unarchive Cases</b> button.</p></li>
+    <li><p style="font-weight:normal;">Confirm unarchiving cases.</p></li>
+    <li><p style="font-weight:normal;">After confirming, the unarchived cases are sent to the Task Manager for unarchiving.</p></li>
+    <li><p style="font-weight:normal;">The Task Manager finalizes unarchiving, and reloads the list if you are still in the <b>Case Archive search</b>.</p></li>
+    <p><img style="border: #bebebe 1px outset; margin-left: auto; margin-right: auto;" src="sites/default/files/3.5.0CaseArchive4.0.0_Unarchiving.gif" alt=""></p>
+</ol>
+
+<h4><span id="Unarchive_Command_Line">Unarchive Cases Through the Command Line</span></h4>
+<p>Some users prefer to use the command line to run commands. That is why the process to unarchive cases can run using the command line. The procedure to unarchive cases is the same as the one to use to archive cases.</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">In the console, depending on your web server, log on as Apache or NGINX user.</p></li>
+    <li><p style="font-weight:normal;">Go to the following path:</p>
+    <codeblock style="font-weight:normal;">cd /opt/processmaker
+</codeblock></li>
+    <li><p style="font-weight:normal;">Unarchive cases by running the following command:</p>
+        <codeblock style="font-weight:normal;">./processmaker workspace-unarchive-cases [<i><b>workspace_name</b></i>] [<i><b>data_base_name</b></i>]
+</codeblock>
+<p style="font-weight:normal;">Where:</p>
+<ul style="font-weight:normal;">
+    <li><b>workspace_name</b>: Workspace name is where the cases to unarchive are. This setting is required.</li>
+    <li><b>data_base_name</b>: Database name is where the cases information to unarchive are. This setting is required.</li>
+</ul></li>
+    <li><p style="font-weight:normal;">Optionally, the command has the following:</p>
+    <ul style="font-weight:normal;">
+        <li><b>--start_date:</b> To define a starting date to unarchive cases. Set it between single quotes in the <b>rfc3339</b> format: <code>YYYY-MM-DDThh:mm:ss+00:00</code>. The time is <code>UTC 00:00:00</code>.</li>
+        <li><b>--end_date:</b> To define an ending date for the case archive. Set it between single quotes in the <b>rfc3339</b> format: <code>YYYY-MM-DDThh:mm:ss+00:00</code>. The time is <code>UTC 23:59:59</code>.</li>
+        <li><b>--process:</b> To define a specific process that has to be inside single quotes like <code>Process UID</code>.</li>
+        <li><b>--category:</b> To define a specific process category that has to be inside single quotes like <code>Process Category UID</code>.</li>
+        <li><b>--case_status:</b> To define a specific case status to be filtered using <code>TO_DO</code>, <code>DRAFT</code>, <code>PAUSED</code>, <code>COMPLETED</code>, <code>CANCELLED</code>.</li>
+        <li><b>--case_number:</b> To define a specific case number. This option does not require any other command options.</li>
+        <li><b>-o:</b> This restriction gives the option to overwrite any data while restoring the archive. Only in case, the archived database has been exported to a new server and that server has the same cases in their current workspace. If not the cases will not change the workspace information.</li>
+        <li><b>--start_finish_date:</b> Available as of <b>Case Archive 4.1.1</b>. To define a starting date for the case archive of all completed cases. Set it between single quotes in the <a href="https://datatracker.ietf.org/doc/html/rfc3339">rfc3339</a> format: <code>YYYY-MM-DDThh:mm:ss+00:00</code>. Take into account that the starting date works for cases equal or major to the defined date. The date uses the case property <code>APP_FINISH_DATE</code>.</li>
+        <li><b>--end_finish_date:</b> Available as of <b>Case Archive 4.1.1</b>. To define a end date for the case archive of all completed cases. Set it between single quotes in the <a href="https://datatracker.ietf.org/doc/html/rfc3339">rfc3339</a> format: <code>YYYY-MM-DDThh:mm:ss+00:00</code>. Take into account that the end date works for cases equal or less to the defined date. The date uses the case property <code>APP_FINISH_DATE</code>.</li>
+    </ul>
+    <p style="font-weight:normal; margin-left:25px;"><strong><font color="green">Note:</font></strong> <font color="dimgray">Check detailed <a href="Case_Archive_Plugin.html#Completed_Cases_Examples">examples about how to use the <b>--start_finish_date</b> and <b>--end_finish_date</b> parameters, including how to do not use these command parameters</a>.</font></p>
+    </li>
+</ol>
+
+<p>For example, run the following command line:</p>
+<codeblock style="font-weight:normal;">sudo -u nginx ./processmaker workspace-unarchive-cases --case_status=TO_DO workflow3411 test2</codeblock>
+<p><img src="sites/default/files/3.5.0CaseArchive4.0.0_ConsoleUnArchive.png" alt=""></p>
+<p>The next time that you open the <a href="Case_Archive_Plugin.html#Case_Archive_Search">Case Archive search</a> user interface, the following confirmation message displays:</p>
+<p><img src="sites/default/files/3.5.0CaseArchive4.0.0_ConsoleUnArchiveConfirmation.png" alt=""></p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">After the archived database does not have any cases within the database, it remains created unless it is deleted manually. Therefore it will not be listed in the <b>Case Archive search</b>. Consider that an empty database is not listed in the <b>Case Archive search</b>.</font></p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray">Archived cases can not be unarchived if the main process is not in the workspace. This inconsistency creates problems. Therefore, it is mandatory to have the main process in the workspace. If all cases from a process are archived, any modification of the process like removing a task is under the user's own risk. Pending cases that are in a removed task are lost unless the process is restored to its original structure.</font></p>
+
+<h3><span id="Completed_Cases_Examples">Completed Cases Examples</span></h3>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray"> These examples are available as of Case Archive 4.1.1.</font></p>
+<p>This section describes examples when archiving or unarchiving cases using the command line with the <b>--start_finish_date</b> and <b>--end_finish_date</b> parameters. Check the following examples:</p>
+<ul>
+    <li><a href="Case_Archive_Plugin.html#Basic_examples">Basic examples</a></li>
+    <li><a href="Case_Archive_Plugin.html#Examples_using_start_date">Examples using <code>--start_date</code></a></li>
+    <li><a href="Case_Archive_Plugin.html#Examples_using_end_date">Examples using <code>--end_date</code></a></li>
+    <li><a href="Case_Archive_Plugin.html#Examples_using_start_date_and_end_date">Examples using <code>--start_date</code> and <code>--end_date</code></a></li>
+    <li><a href="Case_Archive_Plugin.html#Examples_of_wrong_date_interval">Examples of wrong date interval</a></li>
+</ul>
+
+<p>Use the <code>--start_date</code> and <code>--end_date</code> parameters to filter started cases::</p>
+<ul>
+    <li><b>start_date:</b> It is related to the creation of the case in <code>APP_CREATE_DATE</code>.</li>
+    <li><b>end_date:</b> It is related to the creation of the case in <code>APP_CREATE_DATE</code>.</li>
+</ul>
+
+<p>Consider that the examples that combine <b>--start_finish_date</b> and <b>--end_finish_date</b> with <code>--start_date</code> and <code>--end_date</code> might affect the performance while archiving or unarchiving cases.</p>
+
+<h4><span id="Basic_examples">Basic Examples</span></h4>
+<p>These examples provide basic knowledge using the <b>--start_finish_date</b> and <b>--end_finish_date</b> parameters. All of them apply also for unarchiving cases.</p>
+<p><b>Example 1:</b> Completed cases after December the 1st 2021.
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_finish_date='2021-12-01T23:00:00+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock></p>
+<p><b>Example 2:</b> Completed cases before December 31st 2021.
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --end_finish_date='2021-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock></p>
+<p><b>Example 3:</b> Completed cases between November 1st 2021 till November 31st 2021.
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_finish_date='2021-11-01T00:00:00+00:00' --end_finish_date='2021-11-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]
+</codeblock></p>
+<p><b>Example 4:</b> Created cases after November 1st 2021 and completed to December 31st 2021.
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2021-11-01T00:00:00+00:00' --end_finish_date='2021-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock></p>
+
+<h4><span id="Examples_using_start_date">Examples Using <code>--start_date</code></span></h4>
+<p>These examples describe created cases starting from a specific date and completed till a specific date.</p>
+<p><b>Example 1:</b> Archive cases created on January the 1st 2020 and completed on December 31st 2020.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2020-01-01T00:00:00+00:00' --end_finish_date='2020-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 2:</b> Unarchive cases created on January the 1st 2020 and completed on December 31st 2020.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --start_date='2020-01-01T00:00:00+00:00' --end_finish_date='2020-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 3:</b> Archive cases created on January the 1st 2020 and completed from December 31st 2020.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2020-01-01T00:00:00+00:00' --start_finish_date='2020-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 4:</b> Unarchive cases created on January the 1st 2020 and completed from December 31st 2020.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --start_date='2020-01-01T00:00:00+00:00' --start_finish_date='2020-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+
+<h4><span id="Examples_using_end_date">Examples Using <code>--end_date</code></span></h4>
+<p>Created cases till a specific date and completed till a specific date.</p>
+<p><b>Example 1:</b> Archive cases created till December the 31st 2008 and completed on December 31st 2010.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --end_date='2008-12-31T23:59:59+00:00' --end_finish_date='2010-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 2:</b> Unarchive cases created till December the 31st 2008 and completed on December 31st 2010.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --end_date='2008-12-31T23:59:59+00:00' --end_finish_date='2010-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 3:</b> Archive cases created till December the 31st 2008 and completed as of December 31st 2010.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --end_date='2008-12-31T23:59:59+00:00' --start_finish_date='2010-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 4:</b> Unarchive cases created till December the 31st 2008 and completed as of December 31st 2010.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --end_date='2008-12-31T23:59:59+00:00' --start_finish_date='2010-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+
+<h4><span id="Examples_using_start_date_and_end_date">Examples Using <code>--start_date</code> And <code>--end_date</code></span></h4>
+<p>Created and completed cases in a date interval and completed till a specific date.</p>
+<p><b>Example 1:</b> Archive cases created between January 1st 2008 till December 31st 2012 and completed on December 31st 2014.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --end_finish_date='2014-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 2:</b> Unarchive cases created between January 1st 2008 till December 31st 2012 and completed on December 31st 2014.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --end_finish_date='2014-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 3:</b> Archive cases created between January 1st 2008 till December 31st 2012 and completed as of December 31st 2014.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --start_finish_date='2014-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 4:</b> Unarchive cases created between January 1st 2008 till December 31st 2012 and completed as of December 31st 2014.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --start_finish_date='2014-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 5:</b> Archive cases created between January 1st 2008 till December 31st 2012 and completed between January 1st 2014 till December 31st 2018.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --start_finish_date='2014-01-01T00:00:00+00:00' --end_finish_date='2018-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 6:</b> Unarchive cases created between January 1st 2008 till December 31st 2012 and completed between January 1st 2014 till December 31st 2018.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --start_finish_date='2014-01-01T00:00:00+00:00' --end_finish_date='2018-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+
+<h4><span id="Examples_of_wrong_date_interval">Examples Of Wrong Date Interval</span></h4>
+<p>The following section describe archived and unarchived cases in which their creation date is after the finished date. It is considered as a bad practice and might create an error with the running of the archive or unarchive commands. As a good practice, consider consequent date interval.</p>
+<p><b>Example 1:</b> Archive cases created on January the 1st 2020 and completed on December 31st 2010.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2020-01-01T00:00:00+00:00' --end_finish_date='2010-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 2:</b> Unarchive cases created on January the 1st 2020 and completed on December 31st 2010.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --start_date='2020-01-01T00:00:00+00:00' --end_finish_date='2010-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 3:</b> Archive cases created till December the 31st 2008 and completed on December 31st 2000.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --end_date='2008-12-31T23:59:59+00:00' --end_finish_date='2000-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 4:</b> Unarchive cases created till December the 31st 2008 and completed on December 31st 2000.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --end_date='2008-12-31T23:59:59+00:00' --end_finish_date='2000-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 5:</b> Archive cases created between January 1st 2008 till December 31st 2012 and completed on December 31st 2004.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --end_finish_date='2004-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 6:</b> Unarchive cases created between January 1st 2008 till December 31st 2012 and completed on December 31st 2004.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --end_finish_date='2004-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 7:</b> Archive cases created between January 1st 2008 till December 31st 2012 and completed between January 1st 2004 till December 31st 2006.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-archive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --start_finish_date='2004-01-01T00:00:00+00:00' --end_finish_date='2006-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+<p><b>Example 8:</b> Unarchive cases created between January 1st 2008 till December 31st 2012 and completed between January 1st 2004 till December 31st 2006.</p>
+<codeblock>sudo -u nginx ./processmaker workspace-unarchive-cases --start_date='2008-01-01T00:00:00+00:00' --end_date='2012-12-31T23:59:59+00:00' --start_finish_date='2004-01-01T00:00:00+00:00' --end_finish_date='2006-12-31T23:59:59+00:00' [WORKSPACE] [COLLECTION_NAME]</codeblock>
+
+<h3><span id="Report_Tables">Add Report Tables to an Archive</span></h3>
+<p>The Case Archive plugin creates Report Tables in the Case Archive collections from processes in the main workflow through command line.</p>
+
+<h4><span id="Add_Report_Tables">Add all the Report Tables to an Archive</span></h4>
+<p>Follow these steps to Report Tables to an archive:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">Go to the following path:</p>
+    <codeblock style="font-weight:normal;">cd /opt/processmaker
+</codeblock></li>
+    <li><p style="font-weight:normal;">Run <b>workspace-archive-cases</b> line command to add all the Report Tables of processes in an archive.</p>
+        <codeblock style="font-weight:normal;">sudo -u nginx ./processmaker workspace-archive-cases [<i><b>workspace_name</b></i>] [<i><b>data_base_name</b></i>]
+</codeblock>
+<p style="font-weight:normal;">Where:</p>
+<ul style="font-weight:normal;">
+    <li><b>workspace_name</b>: Workspace name is where the cases are to be archived. This setting is required.</li>
+    <li><b>data_base_name</b>: Database name is where the information cases are to be archived. This setting is required.</li>
+</ul>
+</ol>
+
+<h4><span id="Exclude_Report_Tables">Exclude Report Tables</span></h4>
+<p>Follow these steps to exclude Report Tables from an archive:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">Go to the following path:</p>
+    <codeblock style="font-weight:normal;">cd /opt/processmaker
+</codeblock></li>
+    <li><p style="font-weight:normal;">Run <b>--no_report_tables</b> line command if you do not want to add the Report Tables information in the current collection.</p>
+        <codeblock style="font-weight:normal;">sudo -u nginx ./processmaker workspace-archive-cases --no-report-tables [<i><b>workspace_name</b></i>] [<i><b>data_base_name</b></i>]
+</codeblock>
+<p style="font-weight:normal;">Where:</p>
+<ul style="font-weight:normal;">
+    <li><b>workspace_name</b>: Workspace name is where the cases to unarchive are. This setting is required.</li>
+    <li><b>data_base_name</b>: Database name is where the cases information to unarchive are. This setting is required.</li>
+</ul>
+</ol>
+
+<h4><span id="Resume_Report_Tables">Resume Archiving Report Tables</span></h4>
+<p>Sometimes none or some of the Report Tables might have been archived. Follow these steps to resume archiving them:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">Go to the following path:</p>
+    <codeblock style="font-weight:normal;">cd /opt/processmaker
+</codeblock></li>
+    <li><p style="font-weight:normal;">Run <b>workspace-archive-report-tables <<i><b>workspace</b></i>> <<i><b>collection</b></i>></b> line command to complete listing the Report Tables missing in a collection when it is achieved without the Report Tables.</p>
+        <codeblock style="font-weight:normal;">sudo -u nginx ./processmaker workspace-archive-report-tables [<i><b>workspace_name</b></i>] [<i><b>collection_name</b></i>]
+</codeblock>
+<p style="font-weight:normal;">Where:</p>
+<ul style="font-weight:normal;">
+    <li><b>workspace_name</b>: Workspace name is where the cases are to be archived. This setting is required.</li>
+    <li><b>collection_name</b>: Collection name is a list of Report Tables to be archived. This setting is required.</li>
+</ul>
+</ol>
+
+
+
+<h3><span id="Regenerate_Report_Tables">Regenerate Archived Report Tables</span></h3>
+<p>The Case Archive plugin regenerates Archived Report Tables from line commands according to different scenarios. They are used to create consistency between the archive collection’s data and the report table structure when it is updated.</p>
+
+<h4><span id="Regenerate_Report_Table">Regenerate an Archived Report Table</span></h4>
+<p>Follow these steps to regenerate an Archived Report Table in the case archive collection:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">Go to the following path:</p>
+    <codeblock style="font-weight:normal;">cd /opt/processmaker
+</codeblock></li>
+    <li><p style="font-weight:normal;">Run <b>workspace-archive-report-tables-regeneration <<i><b>workspace</b></i>> <<i><b>collection</b></i>></b> line command to regenerate an Archived Report Table in the case archive collection when it doesn't have the base report table in the application workspace.</p>
+        <codeblock style="font-weight:normal;">sudo -u nginx ./processmaker workspace-archive-report-tables-regeneration [<i><b>workspace_name</b></i>] [<i><b>collection_name</b></i>]
+</codeblock>
+<p style="font-weight:normal;">Where:</p>
+<ul style="font-weight:normal;">
+    <li><b>workspace_name</b>: Workspace name is where the cases are to be archived. This setting is required.</li>
+    <li><b>collection_name</b>: Collection name is a list of Report Tables to be archived. This setting is required.</li>
+        <!--<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">If a problem occurs while the Archived Report Table is being generated, the console times out and displays the following message:</a>.<br><b>The Report Table Renegeration of the collection <<i>collection</i>> stopped, please confirm to resume this operation: Yes / No</b></font></p>-->
+</ul>
+</ol>
+
+<h4><span id="Regenerate_All_Data">Regenerate all Data from an Archived Report Table</span></h4>
+<p>Follow these steps to regenerate all data from an Archived Report Table:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">Go to the following path:</p>
+    <codeblock style="font-weight:normal;">cd /opt/processmaker
+</codeblock></li>
+    <li><p style="font-weight:normal;">Run <b>workspace-archive-report-tables-regeneration --all-data <<i><b>workspace</b></i>> <<i><b>collection</b></i>></b> line command to regenerate the entire report table of the archive collection. This command is highly recommended if a change has been made in the base report table such as a modification in the report table structure.</p>
+        <codeblock style="font-weight:normal;">sudo -u nginx ./processmaker workspace-archive-report-tables-regeneration --all-data [<i><b>workspace_name</b></i>] [<i><b>collection_name</b></i>]
+</codeblock>
+<p style="font-weight:normal;">Where:</p>
+<ul style="font-weight:normal;">
+    <li><b>workspace_name</b>: Workspace name is where the cases are to be archived. This setting is required.</li>
+    <li><b>collection_name</b>: Collection name is a list of Report Tables to be archived. This setting is required.</li>    
+        <p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">This process has to encrypt the APP_DATA information and generate all report table information. As a result, some time is required to perform this generation process.</font></p> 
+</ul>
+</ol>
+
+<h2><span id="Archive_Manifest_Log">Archive Manifest Log</span></h2>
+<p>Logs are created per archived database and workspace managed as a manifest of changes with the following information.</p>
+
+<ul>
+    <li>Register all archived cases through the command line mentioning the filter, the cases, date, and the user.</li>
+    <li>Register all archived cases as an update of a current archive through the command line mentioning the filter, the cases, date and user.</li>
+    <li>Register all unarchived cases through the command line mentioning the filter, the cases, date and user.</li>
+    <li>Register all unarchived cases through the <b>Case Archive search</b> user interface mentioning the cases, date, user and role.</li>
+</ul>
+
+<p>For example:</p>
+<codeblock><200> May 12 15:27:20 Archive Cases INFO: Start writing the log file []
+<200> May 12 15:27:25 Archive Cases INFO: With filter(s):  {"case_status":"DRAFT","start_date":"2020-01-01","end_date":null,"process":null,"category":null,"case_number":null}
+<200> May 12 15:27:25 Archive Cases INFO: Case Number: #14, Title: #14 ["1551204175ebaf8696e64c1015525923"]
+<200> May 12 15:27:25 Archive Cases INFO: Case Number: #15, Title: #15 ["6048087275ebaf86db9dd74008044406"]
+<200> May 12 15:27:26 Archive Cases INFO: 2 case(s) have been archived by user:  ["root"]
+<200> May 12 15:28:05 Archive Cases INFO: With filter(s):  {"category":"7418256175e724a04ee2e72064114303","end_date":"2020-01-01","start_date":null,"process":null,"case_status":null,"case_number":null}
+<200> May 12 15:28:06 Archive Cases INFO: 0 case(s) have been archived by user:  ["root"]</codeblock>
+
+<h2><span id="Error_Log">Error Log</span></h2>
+
+<p>For the error log, take into account the following:</p>
+<ul>
+    <li>All errors are logged in the ProcessMaker Standard Logs that describe all references for the error occurred based on the ProcessMaker logs format.</li>
+    <li>All errors are logged in the Archive Manifest Log with the filter selected, time, user, and error type.</li>
+</ul></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

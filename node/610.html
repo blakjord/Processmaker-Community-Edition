@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../Plugin_Trigger_Code_Security_Scanner_v2.html" />
+<link rel="shortlink" href="610.html" />
+<title>3.1 - 3.8 - Plugin/Trigger Code Security Scanner | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"Df7cY3_ZqA4YQQsolDG11VNty4gcsC2087Q6PoDS8YQ","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-610 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="610.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="610.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-L8O-wTl5lXmh3Lu0fckqxiPljJXyZgxVOdUVzvf7vWo" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - 3.8 - Plugin/Trigger Code Security Scanner</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a href="../Plugin_Trigger_Code_Security_Scanner.html" class="">3.0</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - 3.8 - Plugin/Trigger Code Security Scanner" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="610.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - 3.8 - Plugin/Trigger Code Security Scanner 1/5</option><option value="40">Give 3.1 - 3.8 - Plugin/Trigger Code Security Scanner 2/5</option><option value="60" selected="selected">Give 3.1 - 3.8 - Plugin/Trigger Code Security Scanner 3/5</option><option value="80">Give 3.1 - 3.8 - Plugin/Trigger Code Security Scanner 4/5</option><option value="100">Give 3.1 - 3.8 - Plugin/Trigger Code Security Scanner 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.2</span></span> <span class="total-votes">(<span >5</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-C7HWrYaeGW4iYuZ3EL1y57C-HN9xneUAIvZeFRMTUGQ" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="610.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="610.html#Overview">Overview</a></li>
+<li class="toc"><a href="610.html#Installation">Installation</a></li>
+<li class="toc"><a href="610.html#Configuration">Configuration</a></li>
+<ol class="toc">
+<li class="toc"><a href="610.html#Configuring_the_env.ini_file">Configuring the <tt>env.ini</tt> File</a></li>
+<li class="toc"><a href="610.html#Creating_a_Custom_Blacklist">Creating a Custom Blacklist</a></li>
+<ol class="toc">
+<li class="toc"><a href="610.html#Functions_Blacklisted_by_Default_in_ProcessMaker_Public_Cloud_Environments">Functions Blacklisted by Default in ProcessMaker's Public Cloud Environments</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="610.html#Checking_the_Code_of_Plugins_and_Triggers">Checking the Code of Plugins and Triggers</a></li>
+<ol class="toc">
+<li class="toc"><a href="610.html#When_adding_new_code">When adding new code</a></li>
+<li class="toc"><a href="610.html#For_already_added_code">For already added code</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p>ProcessMaker offers the Plugin/Trigger Code Security Scanner feature. This feature allows analyzing source code from custom plugins and triggers in order to help find security flaws in the PHP code. Additionally, ProcessMaker administrators have the ability to create a black list of functions that can be used for arbitrary code execution in the server.</p>
+
+<p>ProcessMaker scans the code of custom plugins and triggers in the following cases: </p>
+<ul>
+<li>Code scanning when a custom plugin is imported (it does not include ProcessMaker Enterprise plugins)</li>
+<li>Code scanning when enabling a custom plugin (when the plugin files are physically located in the plugins directory)</li>
+<li>Code scanning when importing a process.</li>
+<li>Code scanning when creating/modifying the code of a trigger.</li>
+<li>Code scanning when executing a case of a process that has triggers in the steps of its tasks (if the trigger has undesired code, it is not executed).</li>
+</ul>
+
+<p>This feature allows checking the existing code of existing plugins and triggers in ProcessMaker with <a href="610.html#Checking_the_Code_of_Plugins_and_Triggers">two new options</a> added to the <code>processmaker</code> and <code>gulliver</code> commands. Additionally, the code is verified in designing time when a trigger is saved inside the designer, when a plugin is imported and/or when a plugin is enabled in ProcessMaker.</p>
+
+<h2><span id="Installation">Installation</span></h2>
+<p>When the Enterprise Edition is installed with its license, the Plugin/Trigger Code Security Scanner feature becomes available. Go to <strong>ADMIN &gt; Plugins &gt; Enterprise Manager &gt; Enterprise Features</strong> to verify that the <strong>codeScanner</strong> feature is installed and enabled.</p>
+
+<p><img src="../sites/default/files/3.1CodeScannerFeature.png"></p>
+
+<h2><span id="Configuration">Configuration</span></h2>
+<p>By default, this feature is not configured to scan new or existing code of plugins or triggers when ProcessMaker is installed or upgraded. Therefore, read following section to configure the feature and start the Code Scanner.</p>
+
+<h3><span id="Configuring_the_env.ini_file">Configuring the <tt>env.ini</tt> File</span></h3>
+<p>To enable the Trigger/Code Security Scanner feature, it is necessary to add an additional attribute to the <code>env.ini</code> file. This configuration can be done in the env.ini file that each workspace has, in that way it will take effect only in those workspaces. Or, it can be done in the global env.ini file, for all the ProcessMaker Installation.</p> 
+
+<p>Locate the <code>env.ini</code> file:</p>
+
+<p>Global location:</p>
+<codeblock><font color="blue">INSTALL-DIRECTORY</font>/processmaker/workflow/engine/config/env.ini
+</codeblock>
+
+<p>Workspace location:</p>
+<codeblock><font color="blue">INSTALL-DIRECTORY</font>/processmaker/shared/sites/<font color="blue">WORKSPACE-NAME</font>/env.ini
+</codeblock>
+
+<p>Open the <code>env.ini</code> file with an editor and add the following line:</p>
+<codeblock>enable_blacklist = 1
+</codeblock>
+<p><b>ProcessMaker 3.3.17</b> and later allows you to set which blacklisted activities to monitor. Use the <span class="geshifilter"><code class="text geshifilter-text">code_scanner_scope</code></span> parameter with the following arguments:</p>
+<ul>
+       <li><span class="geshifilter"><code class="text geshifilter-text">import_plugin</code></span>: The plugins are scanned when uploaded.</li>
+       <li><span class="geshifilter"><code class="text geshifilter-text">enable_plugin</code></span>: The plugins are scanned when enabled.</li>
+       <li><span class="geshifilter"><code class="text geshifilter-text">import_process</code></span>: The code of the processes are scanned when uploaded.</li>
+       <li><span class="geshifilter"><code class="text geshifilter-text">trigger</code></span>: The code is scanned when creating, modifying or executing a trigger.</li>
+</ul>
+
+<h3><span id="Creating_a_Custom_Blacklist">Creating a Custom Blacklist</span></h3>
+<p>The first step when working with this feature is to create the file that will contain the list of functions that should be evaluated in ProcessMaker. To do this, create a new plain file using your favorite text editor such as Notepad ++ and name it <tt>blacklist.ini</tt>.</p>
+<p>Add the <a href="http://php.net/manual/en/extensions.membership.php">PHP</a> functions (These functions are listed in the following <a href="610.html#Functions_Blacklisted_by_Default_in_ProcessMaker_Public_Cloud_Environments">section</a>) that will be evaluated by the code scanner. For example, the file could contain the following options:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">;</span>Classes<br />
+<span style="color: #339933;">;=======</span><br />
+DashletInterface<br />
+<br />
+<span style="color: #339933;">;</span>Functions<br />
+<span style="color: #339933;">;=========</span><br />
+<a href="http://php.net/eval"><span style="color: #990000;">eval</span></a><br />
+<a href="http://php.net/exec"><span style="color: #990000;">exec</span></a><br />
+<a href="http://php.net/assert"><span style="color: #990000;">assert</span></a><br />
+<a href="http://php.net/preg_replace"><span style="color: #990000;">preg_replace</span></a><br />
+<a href="http://php.net/create_function"><span style="color: #990000;">create_function</span></a><br />
+<br />
+<span style="color: #339933;">;</span>Information Disclosure<br />
+<span style="color: #339933;">;======================</span><br />
+<a href="http://php.net/phpinfo"><span style="color: #990000;">phpinfo</span></a><br />
+<a href="http://php.net/posix_mkfifo"><span style="color: #990000;">posix_mkfifo</span></a><br />
+<a href="http://php.net/posix_getlogin"><span style="color: #990000;">posix_getlogin</span></a><br />
+<a href="http://php.net/posix_ttyname"><span style="color: #990000;">posix_ttyname</span></a><br />
+<a href="http://php.net/getenv"><span style="color: #990000;">getenv</span></a><br />
+<a href="http://php.net/get_current_user"><span style="color: #990000;">get_current_user</span></a><br />
+<a href="http://php.net/proc_get_status"><span style="color: #990000;">proc_get_status</span></a><br />
+<a href="http://php.net/get_cfg_var"><span style="color: #990000;">get_cfg_var</span></a><br />
+<a href="http://php.net/disk_free_space"><span style="color: #990000;">disk_free_space</span></a><br />
+<a href="http://php.net/disk_total_space"><span style="color: #990000;">disk_total_space</span></a><br />
+<a href="http://php.net/diskfreespace"><span style="color: #990000;">diskfreespace</span></a><br />
+<a href="http://php.net/getcwd"><span style="color: #990000;">getcwd</span></a><br />
+<a href="http://php.net/getmygid"><span style="color: #990000;">getmygid</span></a><br />
+<a href="http://php.net/getmyinode"><span style="color: #990000;">getmyinode</span></a><br />
+<a href="http://php.net/getmypid"><span style="color: #990000;">getmypid</span></a><br />
+<a href="http://php.net/getmyuid"><span style="color: #990000;">getmyuid</span></a></div></div>
+
+<p>Check <a href="http://stackoverflow.com/questions/3115559/exploitable-php-functions">this useful information</a> about exploitable PHP functions.</p>
+
+<p>Now, add this file to the following route in ProcessMaker:</p>
+<codeblock>
+<font color="blue">&lt;INSTALL-DIRECTORY&gt;</font>/workflow/engine/config
+</codeblock>
+<p>These are all the steps needed to configure the code scanner in ProcessMaker.</p>
+
+<h4><span id="Functions_Blacklisted_by_Default_in_ProcessMaker_Public_Cloud_Environments">Functions Blacklisted by Default in ProcessMaker's Public Cloud Environments</span></h4>
+<p>The following functions are included by default in the blacklist file in each ProcessMaker Public Cloud environment (Enterprise Trial, Sandbox, and Enterprise):</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">__autoload<br />
+apache_child_terminate<br />
+apache_get_modules<br />
+apache_get_version<br />
+apache_getenv<br />
+apache_lookup_uri<br />
+apache_request_headers<br />
+apache_response_headers<br />
+apache_setenv<br />
+array_diff_uassoc<br />
+array_diff_ukey<br />
+array_filter<br />
+array_intersect_uassoc<br />
+array_intersect_ukey<br />
+array_map<br />
+array_reduce<br />
+array_udiff<br />
+array_udiff_assoc<br />
+array_udiff_uassoc<br />
+array_uintersect<br />
+array_uintersect_assoc<br />
+array_uintersect_uassoc<br />
+array_walk<br />
+array_walk_recursive<br />
+bcompiler_load<br />
+bcompiler_load_exe<br />
+bcompiler_parse_class<br />
+bcompiler_read<br />
+call_user_func<br />
+call_user_func_array<br />
+call_user_method<br />
+call_user_method_array<br />
+chdir<br />
+chgrp<br />
+chmod<br />
+chown<br />
+chroot<br />
+class_alias<br />
+class_exists<br />
+classkit_method_add<br />
+classkit_method_redefine<br />
+classkit_method_rename<br />
+closelog<br />
+com_event_sink<br />
+com_get_active_object<br />
+com_load_typelib<br />
+com_print_typeinfo<br />
+constant<br />
+copy<br />
+create_function<br />
+dba_open<br />
+dba_popen<br />
+debug_backtrace<br />
+debug_print_backtrace<br />
+delete<br />
+dir<br />
+dirname<br />
+dl<br />
+eio_chmod<br />
+eio_chown<br />
+eio_lstat<br />
+eio_mknod<br />
+eio_nop<br />
+eio_open<br />
+eio_read<br />
+eio_readahead<br />
+eio_readdir<br />
+eio_readlink<br />
+eio_realpath<br />
+eio_rename<br />
+eio_rmdir<br />
+eio_sendfile<br />
+eio_stat<br />
+eio_statvfs<br />
+eio_symlink<br />
+eio_sync<br />
+eio_sync_file_range<br />
+eio_syncfs<br />
+eio_truncate<br />
+eio_unlink<br />
+eio_utime<br />
+eio_write<br />
+error_get_last<br />
+error_log<br />
+error_reporting<br />
+eval<br />
+event_buffer_set_callback<br />
+exec<br />
+expect_popen<br />
+file<br />
+file_get_contents<br />
+file_put_contents<br />
+finfo_open<br />
+flock<br />
+fopen<br />
+forward_static_call<br />
+forward_static_call_array<br />
+fsockopen<br />
+ftp_connect<br />
+ftp_exec<br />
+ftp_get<br />
+ftp_put<br />
+ftp_raw<br />
+ftp_site<br />
+get_defined_vars<br />
+get_include_path<br />
+get_included_files<br />
+get_loaded_extensions<br />
+get_required_files<br />
+getcwd<br />
+getenv<br />
+getrusage<br />
+getservbyname<br />
+getservbyport<br />
+gupnp_control_point_callback_set<br />
+gupnp_device_action_callback_set<br />
+gupnp_service_proxy_add_notify<br />
+gupnp_service_proxy_callback_set<br />
+gzopen<br />
+header<br />
+header_register_callback<br />
+header_remove<br />
+headers_list<br />
+highlight_file<br />
+ibase_set_event_handler<br />
+ignore_user_abort<br />
+ini_alter<br />
+ini_get<br />
+ini_get_all<br />
+ini_restore<br />
+ini_set<br />
+interface_exists<br />
+iterator_apply<br />
+ldap_set_rebind_proc<br />
+mail<br />
+mb_ereg_replace_callback<br />
+memory_get_peak_usage<br />
+mysqli_set_local_infile_handler<br />
+mysqlnd_ms_set_user_pick_server<br />
+mysqlnd_qc_set_is_select<br />
+mysqlnd_qc_set_user_handlers<br />
+newt_component_add_callback<br />
+newt_set_help_callback<br />
+newt_set_suspend_callback<br />
+nsapi_virtual<br />
+ob_start<br />
+oci_register_taf_callback<br />
+opendir<br />
+openlog<br />
+override_function<br />
+parsekit_compile_file<br />
+parsekit_compile_string<br />
+passthru<br />
+pcntl_exec<br />
+pcntl_setpriority<br />
+pcntl_signal<br />
+pfsockopen<br />
+php_ini_loaded_file<br />
+php_ini_scanned_files<br />
+php_sapi_name<br />
+php_strip_whitespace<br />
+php_uname<br />
+phpcredits<br />
+phpinfo<br />
+phpversion<br />
+posix_access<br />
+posix_ctermid<br />
+posix_getcwd<br />
+posix_getgrgid<br />
+posix_getgrnam<br />
+posix_getgroups<br />
+posix_getlogin<br />
+posix_getpwnam<br />
+posix_getpwuid<br />
+posix_kill<br />
+posix_mkfifo<br />
+posix_mknod<br />
+posix_ttyname<br />
+posix_uname<br />
+preg_replace<br />
+preg_replace_callback<br />
+preg_replace_callback_array<br />
+proc_nice<br />
+proc_open<br />
+putenv<br />
+readgzfile<br />
+readline_callback_handler_install<br />
+register_shutdown_function<br />
+register_tick_function<br />
+rename_function<br />
+restore_error_handler<br />
+restore_exception_handler<br />
+restore_include_path<br />
+runkit_import<br />
+runkit_sandbox_output_handler<br />
+scandir<br />
+session_abort<br />
+session_commit<br />
+session_create_id<br />
+session_decode<br />
+session_destroy<br />
+session_encode<br />
+session_get_cookie_params<br />
+session_id<br />
+session_module_name<br />
+session_name<br />
+session_regenerate_id<br />
+session_register_shutdown<br />
+session_reset<br />
+session_save_path<br />
+session_set_cookie_params<br />
+session_set_save_handler<br />
+session_start<br />
+session_status<br />
+session_unset<br />
+session_write_close<br />
+set_error_handler<br />
+set_exception_handler<br />
+set_include_path<br />
+set_local_infile_handler<br />
+set_time_limit<br />
+setcookie<br />
+setrawcookie<br />
+shell_exec<br />
+shmop_open<br />
+show_source<br />
+socket_create<br />
+socket_create_listen<br />
+socket_set_blocking<br />
+socket_set_timeout<br />
+spl_autoload<br />
+spl_autoload_extensions<br />
+spl_autoload_register<br />
+spl_autoload_unregister<br />
+sqliteCreateFunction<br />
+stream_context_create<br />
+stream_context_set_default<br />
+stream_context_set_option<br />
+stream_context_set_params<br />
+stream_copy_to_stream<br />
+stream_filter_register<br />
+stream_get_contents<br />
+stream_get_line<br />
+stream_get_transports<br />
+stream_get_wrappers<br />
+stream_resolve_include_path<br />
+stream_socket_client<br />
+stream_socket_recvfrom<br />
+stream_socket_sendto<br />
+stream_socket_server<br />
+stream_wrapper_register<br />
+svn_checkout<br />
+svn_commit<br />
+svn_update<br />
+sys_get_temp_dir<br />
+syslog<br />
+system<br />
+trait_exists<br />
+trigger_error<br />
+uasort<br />
+uksort<br />
+user_error<br />
+usort<br />
+version_compare<br />
+virtual<br />
+win32_create_service<br />
+win32_start_service<br />
+win32_stop_service<br />
+xml_set_character_data_handler<br />
+xml_set_default_handler<br />
+xml_set_element_handler<br />
+xml_set_end_namespace_decl_handler<br />
+xml_set_external_entity_ref_handler<br />
+xml_set_notation_decl_handler<br />
+xml_set_processing_instruction_handler<br />
+xml_set_start_namespace_decl_handler<br />
+xml_set_unparsed_entity_decl_handler<br />
+xmlrpc_server_register_introspection_callback<br />
+xmlrpc_server_register_method<br />
+yaml_emit<br />
+yaml_emit_file<br />
+yaml_parse<br />
+yaml_parse_file<br />
+yaml_parse_url<br />
+zend_version</div></div>
+
+<h2><span id="Checking_the_Code_of_Plugins_and_Triggers">Checking the Code of Plugins and Triggers</span></h2>
+<p>There are two levels of code verification with the code scanner of ProcessMaker:</p>
+
+<h3><span id="When_adding_new_code">When adding new code</span></h3>
+<p>After this feature has been configured, all input code in triggers will be verified inside the code editor in the designer:</p>
+<p><img src="../sites/default/files/ProcessMaker3_CodeScanner_TriggerDesginerVerification.png"></p>
+<p>Already uploaded plugins are verified after they are <strong>Disabled</strong> and then <strong>Enabled</strong>:</p>
+<p><img src="../sites/default/files/ProcessMaker3_CodeScanner_PluginPlugins.png"></p>
+<p>This feature also scans the code of plugins at the moment they are imported.</p>
+
+<h3><span id="For_already_added_code">For already added code</span></h3>
+<p></p>
+<ul>
+<li><strong><code>check-plugin-disabled-code</code></strong>: This feature adds the following option to the <a href="../3.0/Plugin_Development.html#Setting_up_the_gulliver_script"><code>./gulliver</code></a> command that shows the information of undesired code in plugins already uploaded to ProcessMaker. To execute this command, first go to the:
+<codeblock>cd  <font color="blue">&lt;INSTALL-DIRECTORY&gt;</font>/gulliver/bin
+</codeblock>
+
+<p>Then, execute the command as follows:</p>
+
+<p><b>Linux:</b><br>
+<codeblock>./gulliver check-plugin-disabled-code <font color="blue">plugin-type</font>
+</codeblock>
+</p>
+<p><b>Windows:</b><br>
+<codeblock>php.exe -f gulliver check-plugin-disabled-code <font color="blue">plugin-type</font>
+</codeblock>
+</p>
+
+<p>Where the <font color="blue">plugin-type</font> can be:<br>
+<ul>
+	<li><code>enterprise-plugin</code> will check all the Enterprise Plugins installed.</li>
+	<li><code>custom-plugin</code> will check all the Custom Plugins installed.</li>
+	<li><code>all</code> will check all the plugins.</li>
+	<li><code>plugin-name</code> will check only the plugin with the name specified.</li>
+</ul></p>
+
+<p><img src="../sites/default/files/ProcessMaker3_CodeScanner_Gulliver.png"></p>
+</li>
+
+<li><strong><code>check-workspace-disabled-code</code></strong>: The following option is added to the <code>./processmaker</code> command to check the code and shows information about the workspaces with undesired code in triggers. 
+ To execute this command, first go to the:
+<codeblock>cd <font color="blue">&lt;INSTALL-DIRECTORY&gt;</font>/processmaker
+</codeblock>
+
+Then, execute the command as follows:
+<p><b>Linux:</b><br>
+<codeblock>./processmaker check-workspace-disabled-code <font color="blue">workspace-name</font>
+</codeblock>
+</p>
+<p><b>Windows:</b><br>
+<codeblock>php.exe -f processmaker check-workspace-disabled-code <font color="blue">workspace-name</font>
+</codeblock>
+</p>
+
+<p><img src="../sites/default/files/ProcessMaker3_CodeScanner_ProcessMaker.png"></p>
+</li>
+</ul></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

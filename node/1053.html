@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.7/ProcessMaker_Functions/Case_Functions.html" />
+<link rel="shortlink" href="1053.html" />
+<title>3.7 - 3.8 - ProcessMaker Functions - Case Functions | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"SvyCV1c47OWdQbSOI_xq_0eJnYDznLHLbsbuCjdCfWM","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-1053 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="1053.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="1053.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-_CHuU1ERBdNjI8SPEVeSxlDJxBh7Vw3koj0mi0khYiE" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.7 - 3.8 - ProcessMaker Functions - Case Functions</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a href="../3.3/ProcessMaker_Functions/Case_Functions.html" class="">3.6</a></li><li><a href="../3.3/ProcessMaker_Functions/Case_Functions.html" class="">3.5</a></li><li><a href="../3.3/ProcessMaker_Functions/Case_Functions.html" class="">3.4</a></li><li><a href="../3.3/ProcessMaker_Functions/Case_Functions.html" class="">3.3</a></li><li><a href="../3.2/ProcessMaker_Functions/Case_Functions.html" class="">3.2</a></li><li><a href="../3.1/ProcessMaker_Functions.html" class="">3.1</a></li><li><a href="../3.0/ProcessMaker_Functions.html" class="">3.0</a></li><li><a href="../index.php/ProcessMaker_Functions.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.7 - 3.8 - ProcessMaker Functions - Case Functions" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="1053.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.7 - 3.8 - ProcessMaker Functions - Case Functions 1/5</option><option value="40">Give 3.7 - 3.8 - ProcessMaker Functions - Case Functions 2/5</option><option value="60">Give 3.7 - 3.8 - ProcessMaker Functions - Case Functions 3/5</option><option value="80" selected="selected">Give 3.7 - 3.8 - ProcessMaker Functions - Case Functions 4/5</option><option value="100">Give 3.7 - 3.8 - ProcessMaker Functions - Case Functions 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >4</span></span> <span class="total-votes">(<span >1</span> vote)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-JXUwwUSYeST3Osf5O8beSdjzxK_pu-TgfgJOzzFzxtU" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div class="getting-started-index">
+    <ul>
+        <li><a href="../3.2/ProcessMaker_Functions.html">1. Overview</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Process_Functions.html">2. Process Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Task_Functions.html">3. Task Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Dynaform_and_Field_Functions.html">4. Dynaform and Field Functions</a></li>
+        <li><a class="getting-started-index-active">5. Case Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Case_Routing_Functions.html">6. Case Routing Functions</a></li>
+        <li><a href="../3.5/ProcessMaker_Functions/Case_Notes_Functions.html">7. Case Notes Functions</a></li>
+        <li><a href="../3.7/ProcessMaker_Functions/User_Functions.html">8. User Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Group_Functions.html">9. Group Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Email_Functions.html">10. Email Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Document_Functions.html">11. Document Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Unique_ID_Functions.html">12. Unique ID Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Date_Functions.html">13. Date Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/String_Functions.html">14. String Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Database_Functions.html">15. Database Functions </a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Grid_Functions.html">16. Grid Functions</a></li>
+    </ul>
+</div>
+
+<div class="getting-started-content">
+    <div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="1053.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="1053.html#Case_Functions">Case Functions</a></li>
+<ol class="toc">
+<li class="toc"><a href="1053.html#PMFCaseList.28.29">PMFCaseList()</a></li>
+<li class="toc"><a href="1053.html#PMFCaseInformation.28.29">PMFCaseinformation()</a></li>
+<li class="toc"><a href="1053.html#PMFTaskCase.28.29">PMFTaskCase()</a></li>
+<ol class="toc">
+<li class="toc"><a href="1053.html#PMFTaskCaseConsideration">Consideration</a></li>
+</ol>
+<li class="toc"><a href="1053.html#PMFNewCase.28.29">PMFNewCase()</a></li>
+<li class="toc"><a href="1053.html#PMFNewCaseImpersonate.28.29">PMFNewCaseImpersonate()</a></li>
+<li class="toc"><a href="1053.html#PMFPauseCase.28.29">PMFPauseCase()</a></li>
+<li class="toc"><a href="1053.html#PMFUnpauseCase.28.29">PMFUnpauseCase()</a></li>
+<li class="toc"><a href="1053.html#PMFDeleteCase.28.29">PMFDeleteCase()</a></li>
+<li class="toc"><a href="1053.html#PMFCancelCase.28.29">PMFCancelCase()</a></li>
+<li class="toc"><a href="1053.html#PMFUnCancelCase">PMFUnCancelCase()</a></li>
+<li class="toc"><a href="1053.html#PMFSendVariables.28.29">PMFSendVariables()</a></li>
+<li class="toc"><a href="1053.html#setCaseTrackerCode.28.29">setCaseTrackerCode()</a></li>
+<li class="toc"><a href="1053.html#PMCaseLink_Function">PMCaseLink()</a></li>
+<ol class="toc">
+<li class="toc"><a href="1053.html#Direct_Case_Link_Uses">Direct Case Link Uses</a></li>
+<li class="toc"><a href="1053.html#Opening_the_Link_on_Mobile_Devices">Opening the Link on Mobile Devices</a></li>
+<li class="toc"><a href="1053.html#Example_in_a_Trigger">Example in a Trigger</a></li>
+<li class="toc"><a href="1053.html#Open_the_Case_Using_URL">Open the Case Using the URL</a></li>
+<li class="toc"><a href="1053.html#Permissions_and_Considerations">Permissions and Considerations</a></li>
+<ol class="toc">
+<li class="toc"><a href="1053.html#ProcessMaker_Active_Session">ProcessMaker Active Session</a></li>
+<li class="toc"><a href="1053.html#Case_Status_and_User_Permissions">Case Status and User Permissions</a></li>
+<li class="toc"><a href="1053.html#Other_considerations">Other considerations</a></li>
+</ol>
+</div></div>
+
+    <!-- CASE Functions -->
+
+    <h2><span id="Case_Functions">Case Functions</span></h2>
+
+
+    <h3><span id="PMFCaseList.28.29">PMFCaseList()</span></h3>
+    <p><code>PMFCaseList()</code> returns a list of the pending cases (i.e., cases that have a status of "To Do" or "Draft") belonging to a specified user. Note that the specified user must be designated to work on the current task of these cases.</p>
+
+<codeblock><i>array</i> <strong>PMFCaseList</strong>(<i>string</i> userUID)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>string</i> <strong>userUID</strong>: The unique ID of a user who is assigned to work on the cases.</li></ul>
+    <p><strong>Return Value:</strong></p>
+    <p>A list of cases, with the following structure:</p>
+
+<codeblock>[0] <i>array</i>
+(
+    <i>associative array</i>
+    (
+        [<i>string</i> guid]
+        [<i>string</i> name]
+        [<i>string</i> status]
+        [<i>int</i> delIndex]
+    )
+)
+...
+</codeblock>
+
+    <p><strong>Where:</strong></p>
+    <ul><li><i>string</i> <strong>guid</strong>: The unique ID of a case.</li>
+        <li><i>string</i> <strong>name</strong>: The label of a case.</li>
+        <li><i>string</i> <strong>status</strong>: The status of a case.</li>
+        <li><i>int</i> <strong>delIndex</strong>: The current delegation index.</li></ul>
+    <p><strong>Example:</strong></p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>GRID_CASES <span style="color: #339933;">=</span> PMFCaseList<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+
+
+
+    <h3><span id="PMFCaseInformation.28.29">PMFCaseinformation()</span></h3>
+    <p><code>PMFCaseinformation()</code> returns an associative array of information about a specified case, as long as the user currently logged in has privileges to access the case. If the task is specified with the Index parameter, it also returns information about the task.</p>
+
+    <codeblock><i>array</i> <strong>PMFCaseinformation</strong>(<i>string</i> APP_UID, <i>int</i> DEL_INDEX, <i>bool</i> requestAppData (optional))
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul>
+        <li><i>string</i> <strong>APP_UID</strong>: The unique ID of the case.</li>
+        <li><i>string</i> <strong>DEL_INDEX</strong>: Optional parameter. By default, it is set as <code>0</code>, The delegation index to get the thread information.</li>
+        <li><i>string</i> <strong>requestAppData</strong>: Optional parameter. By default, it is set as <code>false</code>. Set as <code>true</code> to get the case data.</li>
+    </ul>
+
+    <p><strong>Return Value 1:</strong></p>
+    <p>If the last parameter <code>requestAppData</code> is not set or set as <code>false</code>, it returns an array with the following structure:</p>
+
+<codeblock>[0] <i>array</i>
+(
+    <i>associative array</i>
+    (
+        [<i>int</i> DEL_INDEX]
+        [<i>int</i> DEL_PREVIOUS]
+        [<i>string</i> DEL_TYPE]
+        [<i>int</i> DEL_PRIORITY]
+        [<i>string</i> DEL_THREAD_STATUS]
+        [<i>int</i> DEL_THREAD]
+        [<i>datetime</i> DEL_DELEGATE_DATE]
+        [<i>datetime</i> DEL_INIT_DATE]
+        [<i>datetime</i> DEL_TASK_DUE_DATE]
+        [<i>datetime</i> DEL_FINISH_DATE]
+    )
+)
+...
+</codeblock>
+
+    <p><strong>Where:</strong></p>
+    <ul>
+        
+        <li><i>int</i> <b>DEL_INDEX:</b> The positive integer identifying the order of the specified task in the process, which starts counting from 1.</li>
+        <li><i>int</i> <b>DEL_PREVIOUS</b>: The positive integer identifying the previous task in the process, which starts counting from 1.</li>
+        <li><i>string</i> <b>DEL_TYPE</b>: The type of delegation for the task, which is generally "NORMAL".</li>
+        <li><i>int</i> <b>DEL_PRIORITY</b>: The priority for the task, which can be "1" (VERY HIGH), "2" (HIGH), "3" (NORMAL), "4" (LOW), "5" (VERY LOW).</li>
+        <li><i>string</i> <b>DEL_THREAD_STATUS</b>: The status of the task's thread, which can be "OPEN" (if the case is TO DO or DRAFT) or "CLOSED" (if the case is CANCELLED, PAUSED or COMPLETED).</li>
+        <li><i>int</i> <b>DEL_THREAD</b>: The positive number for the task's thread, which starts counting from 1.</li>
+        <li><i>datetime</i> <b>DEL_DELEGATE_DATE</b>: The DateTime when the case was routed to the specified task in the process, in the format "YYYY-MM-DD HH:MM:SS".</li>
+        <li><i>datetime</i> <b>DEL_INIT_DATE</b>: The DateTime when the specified task was initiated, which is generally the same as the ["DEL_DELEGATE_DATE"].</li>
+        <li><i>datetime</i> <b>DEL_TASK_DUE_DATE</b>: The DateTime when the task is scheduled to be completed, according to the settings in the task properties and the calendar (which can be determined by the user, task, process or workspace).</li>
+        <li><i>datetime</i> <b>DEL_FINISH_DATE</b>: The DateTime when the task was completed (or canceled). If not yet completed, then set to NULL.</li>
+    </ul>
+
+
+    <p><strong>Return Value 2:</strong></p>
+    <p>If the last parameter <code>requestAppData</code> is set as <code>true</code>, it returns an array with the following structure:</p>
+
+<codeblock>[0] <i>array</i>
+(
+    <i>associative array</i>
+    (
+        [<i>string</i> APP_UID]
+        [<i>int</i> APP_NUMBER]
+        [<i>string</i> APP_STATUS]
+        [<i>int</i> APP_STATUS_ID]
+        [<i>string</i> PRO_UID]
+        [<i>int</i> APP_INIT_USER]
+        [<i>int</i> APP_CUR_USER]
+        [<i>datetime</i> APP_CREATE_DATE]
+        [<i>datetime</i> APP_INIT_DATE]
+        [<i>datetime</i> APP_FINISH_DATE]
+        [<i>datetime</i> APP_UPDATE_DATE]
+        [<i>int</i> PRO_ID]
+        [<i>int</i> APP_INIT_USER_ID]
+        [<i>string</i> STATUS]
+        [<i>string</i> CREATOR]
+        [<i>int</i> CURRENT_USER_UID]
+        [<i>datetime</i> CREATE_DATE]
+        [<i>datetime</i> UPDATE_DATE]
+        [<i>string</i> TAS_UID]
+        [<i>string</i> TASK]
+        [<i>int</i> INDEX]
+        [<i>int</i> TAS_ID]
+        [<i>int</i> PRO_ID]
+    )
+)
+...
+</codeblock>
+    <p><strong>Where:</strong></p>
+    <ul>
+        <li><i>string</i> <b>APP_UID</b>: The unique ID for the case. Example: 6654103664dcaee7a15e1e5076744766</li>
+        <li><i>int</i> <b>APP_NUMBER</b>: The case number. Example: 53</li>
+        <li><i>string</i> <b>APP_STATUS</b>: The status of the case, which can be "TO_DO", "DRAFT", "PAUSED", "CANCELLED", "COMPLETED" or "UNASSIGNED".</li>
+        <li><i>int</i> <b>APP_STATUS_ID</b>:  The status ID of the case</li>
+        <li><i>string</i> <b>PRO_UID</b>: The unique ID for the process.</li>
+        <li><i>int</i> <b>APP_INIT_USER</b>: The unique ID of the user who initiated the case.</li>
+        <li><i>int</i> <b>APP_CUR_USER</b>: The unique ID of the user who is currently assigned to work on the case.</li>
+        <li><i>datetime</i> <b>APP_CREATE_DATE</b>: The DateTime when the case was created in the format "YYYY-MM-DD HH:MM:SS". Ex: "2011-04-25 13:08:01"</li>
+        <li><i>datetime</i> <b>APP_INIT_DATE</b>: The DateTime when the case was initiated in the format "YYYY-MM-DD HH:MM:SS". This is always the same as the ["APP_CREATE_DATE"].</li>
+        <li><i>datetime</i> <b>APP_FINISH_DATE</b>: The DateTime when the case finished in the format "YYYY-MM-DD HH:MM:SS". If the case hasn't finished yet, then set to "1902-01-01 00:00:00".</li>
+        <li><i>datetime</i> <b>APP_UPDATE_DATE</b>: The DateTime when the case was last updated in the format "YYYY-MM-DD HH:MM:SS".</li>
+        <li><i>int</i> <b>PRO_ID</b>: The unique ID for the process.</li>
+        <li><i>int</i> <b>APP_INIT_USER_ID</b>: The unique ID of the user who initiated the case.</li>
+        <li><i>string</i> <b>STATUS</b>: The status for the case.</li>
+        <li><i>string</i> <b>CREATOR</b>: The creator name for the case.</li>
+        <li><i>int</i> <b>CURRENT_USER_UID</b>: </li>
+        <li><i>datetime</i> <b>CREATE_DATE</b>: The DateTime when the case was created in the format "YYYY-MM-DD HH:MM:SS". Ex: "2011-04-25 13:08:01"</li>
+        <li><i>datetime</i> <b>UPDATE_DATE</b>: The DateTime when the case was updated in the format "YYYY-MM-DD HH:MM:SS". Ex: "2011-04-25 13:08:01"</li>
+        <li><i>string</i> <b>TAS_UID</b>: The unique ID for the task case.</li>
+        <li><i>string</i> <b>TASK</b>: The name for the task case.</li>
+        <li><i>int</i> <b>INDEX</b>: The index for the case.</li>
+        <li><i>int</i> <b>TAS_ID</b>: The Task ID for the case.</li>
+        <li><i>int</i> <b>PRO_ID</b>: The Process ID for the case.</li>
+    </ul>
+
+
+
+    <p><strong>Example:</strong></p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> PMFCaseinformation<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+    <p>
+        <font color=green><b>Note:</b></font>
+        <font color=dimgrey>It is recommended not to use ProcessMaker variables to store the result of the function. If you use ProcessMaker variables, be sure to clear the variable before using it.</font>
+    </p>
+
+
+
+
+
+    <h3><span id="PMFTaskCase.28.29">PMFTaskCase()</span></h3>
+    <p><code>PMFTaskCase()</code> returns all the tasks that have open delegations in the specified case.</p>
+
+    <codeblock><i>array</i> <strong>PMFTaskCase</strong>(<i>string</i> caseUID)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>string</i> <strong>caseUID</strong>: The unique ID of a case.</li></ul>
+    <p><strong>Return Value:</strong></p>
+    <p>A list of tasks, with the following structure:</p>
+
+    <codeblock>[0] <i>array</i>
+(
+   <i>associative array</i>
+   (
+      [<i>string</i> guid]
+      [<i>string</i> name]
+   )
+)
+...
+</codeblock>
+
+    <p><strong>Where:</strong></p>
+    <ul><li><i>string</i> <strong>guid</strong>: The unique ID of a task.</li>
+        <li><i>string</i> <strong>name</strong>: The name of a task.</li></ul>
+    <p><strong>Example:</strong></p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@@</span>pendingTasksForCase <span style="color: #339933;">=</span> PMFTaskCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+
+
+<h4><span id="PMFTaskCaseConsideration">Consideration</span></h4>
+<p>The use of <code>PMFTaskCase()</code> function when there is a Script Task inside parallel tasks is considered as a bad practice. This is because threads that are after a Script Task are not registered yet in the database, thereby generating inconsistency in the data that the <code>PMFTaskCase()</code> function returns.</p>
+<p>By example, check the following flow:</p>
+<img src="../sites/default/files/3.4.0ProcessMakerFunctions_PMFTaskCaseConsideration1.png">
+<p>If <code>PMFTaskCase()</code> function is used after Task 1, Tasks 3 and 4 are not yet registered in the database.
+So the tasks that return <code>PMFTaskCase()</code> function will not include threads 3 and 4 and data will be incorrect.</p>
+
+    <h3><span id="PMFNewCase.28.29">PMFNewCase()</span></h3>
+    <p><code>PMFNewCase()</code> creates a new case starting in the specified task.</p>
+
+    <codeblock><i>variant</i> <strong>PMFNewCase</strong>(<i>string</i> processUID, <i>string</i> userUID, <i>string</i> taskUID, <i>array</i> variables, <i>string</i> status)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>string</i> <strong>processUID</strong>: The unique ID of the process, which can be found in the following ways:
+    <ul><li>Use the <code>@@PROCESS</code> system variable to get the unique ID of the current process.</li>
+        <li>Use the <a href="1053.html#PMFProcessList.28.29">PMFProcessList()</a> function or <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#processList.28.29" title="3.0/ProcessMaker WSDL Web Services">processList()</a> web service.</li>
+        <li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.PROCESS.PRO_UID</tt></strong> field in the database or use a query like:
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> PRO_UID <span style="color: #993333; font-weight: bold;">FROM</span> PROCESS <span style="color: #993333; font-weight: bold;">WHERE</span> PRO_TITLE <span style="color: #66cc66;">=</span> <span style="color: #ff0000;">'Expense Report Process'</span></div></div>
+        </li>
+    </ul>
+    </li>
+    </ul>
+    <ul><li><i>string</i> <strong>userUID</strong>: The unique ID of the user, which can be found in the following ways:
+<ul><li>Use the @@USER_LOGGED system variable to get the unique ID of the user currently logged in.</li>
+        <li>Use the <a href="1053.html#PMFUserList.28.29">PMFUserList()</a> function or <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#userList.28.29" title="3.0/ProcessMaker WSDL Web Services">userList()</a> web service.</li>
+        <li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.USERS.USR_UID</tt></strong> field in the database.</li></ul>
+    </li>
+    <li><i>string</i> <strong>taskUID</strong>: The unique ID of the task, which can be found in the following ways:
+    <ul><li>Use the <code>@@TASK</code> system variable to get the unique ID of the current task.</li>
+    <li>Use the <a href="1053.html#PMFTaskList.28.29">PMFTaskList()</a> function or <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#taskList.28.29" title="3.0/ProcessMaker WSDL Web Services">taskList()</a> web service.</li>
+    <li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.TASK.TAS_UID</tt></strong> field in the database or get the starting task of the current process with the following query:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT TAS_UID FROM TASK WHERE PRO_UID='&quot;</span> <span style="color: #339933;">.@@</span>PROCESS <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;' AND TAS_START='TRUE'&quot;</span><span style="color: #009900;">&#41;</span></div></div>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    <ul>
+        <li><i>array</i> <strong>variables</strong>: An associative array of the variables that will be sent to the case. The keys are the variable names and the values are the values of the case variables. If the case variable is a grid, then set the value to an associative array of associative arrays. See Example 3 below. If no variables are needed, then set to an empty array: <span class="kw3" style="color: rgb(153, 0, 0);">array</span>(</span>)</span></span>
+</li>
+    </ul>
+
+    <ul>
+        <li><i>string</i> <strong>status</strong>: (Optional) The new case status. If set to <code>"TO_DO"</code> the new case will be displayed directly in the user's inbox tray. If set to <code>"DRAFT"</code> or not included, the case will be displayed in the draft tray.</li>
+    </ul>
+
+    <p><strong>Return Value:</strong></p>
+    <p>If an error occurred, it returns zero. Otherwise, it returns a string with the case UID of the new case.</p>
+
+    <p><strong>Example 1:</strong><br>Create a new case of the current process, designating the current user to work on the new case. The starting task ID is hard coded in the trigger code and no case variables are set in the new case. After creating the new case, call <code>Cases::LoadCase()</code> to find out the new case number and the name of its assigned user. Then, call the <code>G::SendMessageText()</code> function to display a message in the next screen about the new case. </p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$taskUID</span> &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">'7766592404f358fb90dcdc9043579725'</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to the starting task's unique ID</span><br />
+<span style="color: #000088;">$newCaseUID</span> <span style="color: #339933;">=</span> PMFNewCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #000088;">$taskUID</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;TO_DO&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #666666; font-style: italic;">//if a new case was created, display a message in the next screen:</span><br />
+<span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$newCaseUID</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$c</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Cases<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$aCaseInfo</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$c</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">LoadCase</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$newCaseUID</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$msg</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'New Case #'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$aCaseInfo</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_NUMBER'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">' is assigned to '</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$aCaseInfo</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&quot;CURRENT_USER&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">SendMessageText</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$msg</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'INFO'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$msg</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;Unable to create new case.&quot;</span> <span style="color: #339933;">.</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>__ERROR__<span style="color: #009900;">&#41;</span> ? <span style="color: #339933;">@@</span>__ERROR__ <span style="color: #339933;">:</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">SendMessageText</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$msg</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ERROR'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><strong>Example 2:</strong><br>Look up the ID of a process named "Expense Report Process" and its starting task in the database. Then, call the <code>Derivation::getAllUsersFromAnyTask()</code> method to get an array of the users who are assigned to that starting task. Use the <a href="http://php.net/manual/en/function.rand.php">rand()</a> function to randomly choose one to assign to the new case. Set the values of case variables named "Model", "Price" and "OrderDate" in the new case.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//Look up the process UID</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT PRO_UID FROM PROCESS WHERE PRO_TITLE = 'Expense Report Process'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$processUID</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'PRO_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #666666; font-style: italic;">//Look up the UID of the starting task for the process:</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT TAS_UID FROM TASK WHERE PRO_UID='<span style="color: #006699; font-weight: bold;">$processUID</span>' AND TAS_START='TRUE'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$taskUID</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'TAS_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #666666; font-style: italic;">//Randomly choose a user from the list of assigned users for the starting task:</span><br />
+<span style="color: #000088;">$d</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Derivation<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aUsers</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$d</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getAllUsersFromAnyTask</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$taskId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> Exception<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;There are no assigned users for task <span style="color: #006699; font-weight: bold;">$taskUID</span>.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000088;">$noUser</span> <span style="color: #339933;">=</span> <a href="http://php.net/rand"><span style="color: #990000;">rand</span></a><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$userUID</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$noUser</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #666666; font-style: italic;">//Create an associative array of case variables named &quot;Model&quot;, &quot;Price&quot; and &quot;OrderDate&quot;:</span><br />
+<span style="color: #000088;">$aData</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Model'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Acme Coyote Trap'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Price'</span> <span style="color: #339933;">=&gt;</span> <span style="color:#800080;">29.99</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'OrderDate'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'2010-12-31'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+PMFNewCase<span style="color: #009900;">&#40;</span><span style="color: #000088;">$processUID</span><span style="color: #339933;">,</span> <span style="color: #000088;">$userUID</span><span style="color: #339933;">,</span> <span style="color: #000088;">$taskUID</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aData</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p><strong>Example 3:</strong><br>Start a new case, setting a grid case variable named "clientsGrid" that has the fields "firstName", "lastName" and "telephone" and has 3 rows of data:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$taskUID</span> &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">'7766592404f358fb90dcdc9043579725'</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//look up the starting task's unique ID</span><br />
+<span style="color: #000088;">$aGrid</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;1&quot;</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;firstName&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Greg&quot;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #0000ff;">&quot;lastName&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Brown&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;telephone&quot;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;471.826-4329&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;2&quot;</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;firstName&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Anne&quot;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #0000ff;">&quot;lastName&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Smith&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;telephone&quot;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;913.626-9518&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;3&quot;</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;firstName&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Sally&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;lastName&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Slim&quot;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #0000ff;">&quot;telephone&quot;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;765.652-8608&quot;</span><span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$newCaseId</span> <span style="color: #339933;">=</span> PMFNewCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #000088;">$taskUID</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;clientsGrid&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aGrid</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;TO_DO&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <h3><span id="PMFNewCaseImpersonate.28.29">PMFNewCaseImpersonate()</span></h3>
+    <p><code>PMFNewCaseImpersonate()</code> creates a new case. It is similar to <a href="1053.html#PMFNewCase.28.29">PMFNewCase()</a>, but it impersonates the session variables, so it is more robust than PMFNewCase().</p>
+
+    <codeblock><i>string</i> <strong>PMFNewCaseImpersonate</strong>(<i>string</i> processUID, <i>string</i> userUID, <i>array</i> variables, <i>string</i> taskUID)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>string</i> <strong>processUID</strong>: The unique ID of the process.</li>
+        <li><i>string</i> <strong>userUID</strong>: The unique ID of the user.</li>
+        <li><i>array</i> <strong>variables</strong>: An associative array of the variables that will be sent to the case. The array keys are the variable names and the array values are the values of the case variables. See <a href="1053.html#PMFSendVariables.28.29">PMFSendVariables()</a> for the format of different variables in ProcessMaker. If no variables are needed, then set to an empty array: <span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span></code></span></li>
+        <li><i>string</i> <strong>taskUID</strong>: <i>Optional.</i> The unique ID of the task where the case will start. If the process only has <i>one</i> starting task or the user is only assigned to <i>one</i> of the starting tasks, then it is not necessary to specify the task. </li></ul>
+
+    <p><strong>Return Value:</strong></p>
+    <p>Returns the new case <code>UID</code>; otherwise, an error message will be displayed.</p>
+
+    <p><font color=green><b>Note:</b></font> <font color=dimgrey> The status of the new case will automatically be set to <code>DRAFT</code>. To change the status so the new case will appear in the user's <b>Inbox</b> (instead of the <b>Draft</b> box), see the <a href="../3.0/Trigger_Examples.html#Changing_Case_Status_to_TO_DO">Create new case and change its status</a> section.</font></p>
+
+    <p><strong>Example:</strong></p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aData</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'varname1'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'varvalue1'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'varname2'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'varvalue2'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'varname3'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'varvalue3'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFNewCaseImpersonate<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #000088;">$aData</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+
+    <h3><span id="PMFPauseCase.28.29">PMFPauseCase()</span></h3>
+    <p><code>PMFPauseCase()</code> pauses a specified case.</p>
+
+    <codeblock><i>int</i> <strong>PMFPauseCase</strong>(<i>string</i> caseUID, <i>int</i> delIndex, <i>string</i> userUID, <i>string</i> unpauseDate=null)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <p>
+<ul><li><i>string</i> <strong>caseUID</strong>: The unique ID of the case, which can be found in the following ways:
+<ul><li>Use the <code>@@APPLICATION</code> system variable to get the unique ID of the current case.</li>
+<li>Use <a href="1053.html#PMFCaseList.28.29">PMFCaseList()</a>, <a href="../index.php/Simple_Trigger_Web_Services.html#WSCaseList" title="Simple Trigger Web Services">WSCaseList()</a>, or the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="3.0/ProcessMaker WSDL Web Services">caseList()</a> web service.</li></ul></li>
+
+<li><i>int</i> <strong>delIndex</strong>: The delegation index of the current task in the case. For the current case, use the system variable <code>@%INDEX</code>.</li>
+
+<li><i>string</i> <strong>userUID</strong>: The unique ID of the user who will pause the case. Note that PMFPauseCase() allows any user to pause any case. The user's unique ID can be found in the following ways:
+<ul><li>Get the UID of the currently logged-in user with the <code>@@USER_LOGGED</code> system variable or <code>$_SESSION['USER_LOGGED']</code>.</li>
+
+<li>Use the <a href="1053.html#PMFUserList.28.29">PMFUserList()</a> or <a href="../index.php/Simple_Trigger_Web_Services.html#WSUserList" title="Simple Trigger Web Services">WSUserList()</a> functions, or the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#userList.28.29" title="ProcessMaker WSDL Web Services">userList()</a> web service.</li>
+
+<li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.USERS.USR_UID</tt></strong> field in the database with <a href="1053.html#executeQuery.28.29">executeQuery()</a>.</li></ul></li>
+
+<li><i>string</i> <strong>unpauseDate</strong>: <i>Optional.</i> The datetime in the format <code>"YYYY-MM-DD HH:MM:SS"</code> indicates when the case will be unpaused. If set to NULL or "" (empty string), then the case will be paused indefinitely, until a user manually unpauses it. If the hours, minutes or seconds aren't included in the datetime, then they automatically set to zero. Note that the case will be automatically unpaused at the configured datetime by the <b><tt>cron.php</tt></b> script, so the server needs to <a href="../3.0/Executing_cron.php.html">periodically execute this script</a>.  Ex: <code>"2015-12-31 17:59:59"</code> <i>or</i> <code>"2017-01-08"</code></li></ul>
+</p>
+
+    <p><strong>Return Value:</strong></p>
+    <p>Returns <code>1</code> if the case is paused successfully; otherwise, returns <code>0</code> if an error occurred.</p>
+
+
+    <p><b>Example:</b><br>
+Pause the current case. Then, call <a href="http://php.net/manual/en/function.header.php">header()</a> to redirect the web browser to the Inbox and call <a href="http://php.net/manual/en/function.die.php">die()</a> to stop the case from trying to advance to the next step.</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PMFPauseCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #339933;">@%</span>INDEX<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;2016-09-23&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Location: casesListExtJsRedirector&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+    <p><font color=green><b>Note 1:</b></font> <font color=dimgrey>If calling <code>die()</code> in a trigger that is executed immediately <i>after</i> a Dynaform, it will prevent the form's data from being saved. Therefore it is recommended to set this trigger to execute <i>before</i> the next step in the task (or <i>before assignment</i> if the last step in the task), so that the form's data will be saved.</font></p>
+<p><font color=green><b>Note 2:</b></font> <font color=dimgrey>If the <code>$caseUID</code> is set to the ID of the current case and the <code>$delIndex</code> is set to the delegation index of the current task, then <code>PMFPauseCase()</code> will call <code>die()</code> to prevent the current case from advancing. This means that any code after calling <code>PMFPauseCase()</code> will not be executed.</font></p>
+
+
+    <h3><span id="PMFUnpauseCase.28.29">PMFUnpauseCase()</span></h3>
+    <p><code>PMFunpauseCase()</code> unpauses a specified case.</p>
+
+    <codeblock><i>int</i> <strong>PMFUnpauseCase</strong>(<i>string</i> caseUid, <i>string</i> delIndex, <i>string</i> userUID)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <p>
+<ul><li><i>string</i> <strong>caseUID</strong>: The unique ID of the case, which can be found in the following ways:
+<ul><li>Use the <code>@@APPLICATION</code> system variable to get the unique ID of the current case.</li>
+<li>Use the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="3.0/ProcessMaker WSDL Web Services">caseList()</a> web service.</li></ul></li>
+
+<li><i>string</i> <strong>delIndex</strong>: The delegation index of the current task in the case. For the current case, use the system variable <code>@%INDEX</code>.</li>
+
+<li><i>string</i> <strong>userUID</strong>: The unique ID of the user who will unpause the case, which can be found in the following ways:
+
+<ul><li>Get the UID of the currently logged-in user with the <code>@@USER_LOGGED</code> system variable or <span class="re0" style="color: rgb(0, 0, 136);">$_SESSION</span>[</span><span class="st_h" style="color: rgb(0, 0, 255);">'USER_LOGGED'</span>]</span></span>.</li>
+<li>Use the <a href="1053.html#PMFUserList.28.29">PMFUserList()</a> or <a href="../index.php/Simple_Trigger_Web_Services.html#WSUserList" title="Simple Trigger Web Services">WSUserList()</a> functions, or the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#userList.28.29" title="ProcessMaker WSDL Web Services">userList()</a> web service.</li>
+<li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.USERS.USR_UID</tt></strong> field in the database with <a href="1053.html#executeQuery.28.29">executeQuery()</a>.</li></ul></li></ul>
+</p>
+
+    <p><strong>Return Value:</strong></p>
+    <p>Returns <code>1</code> if the case is unpaused successfully; otherwise, returns <code>0</code> if an error occurred.</p>
+
+
+    <h3><span id="PMFDeleteCase.28.29">PMFDeleteCase()</span></h3>
+    <p><code>PMFDeleteCase()</code> deletes a specified case. Note that the case will be deleted completely and it will not appear in the Participated tray.
+To cancel a case use <a href="1053.html#PMFCancelCase.28.29">PMFCancelCase()</a> instead of <code>PMFDeleteCase()</code>.</p>
+
+    <codeblock><i>int</i> <strong>PMFDeleteCase</strong>(<i>string</i> caseUID)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>string</i> <strong>caseUID</strong>: The unique ID of a case. For the current case use the system variable <code>@@APPLICATION</code>. Other case UIDs can be found with <a href="1053.html#PMFCaseList.28.29">PMFCaseList()</a>, <a href="../index.php/Simple_Trigger_Web_Services.html#WSCaseList" title="Simple Trigger Web Services">WSCaseList()</a>, <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="ProcessMaker WSDL Web Services">caseList()</a> or by querying the field <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_UID</tt></strong>.</li></ul>
+    <p><strong>Return value:</strong></p>
+    <ul><li>Returns 1 if the case was successfully deleted, otherwise returns 0 if an error occurred.</li></ul>
+
+    <p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray"> If the current case is the one that is starting, the case cannot be deleted.</font></p>
+
+    <p><strong>Example:</strong></p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span><span style="color: #b1b100;">return</span> <span style="color: #339933;">=</span> PMFDeleteCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Location: casesListExtJsRedirector&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>This example uses <a href="http://php.net/manual/en/function.header.php">header()</a> with <code>"Location: casesListExtJsRedirector"</code> to go back to the list of cases (inbox) after deleting the case.</span></p>
+
+
+    <h3><span id="PMFCancelCase.28.29">PMFCancelCase()</span></h3>
+    <p><code>PMFCancelCase()</code> cancels a specified case in "TO DO" status. A <a href="../3.0/Cases.html#Cancel"> canceled case</a> can be reviewed in the Participated tray. Use <a href="1053.html#PMFDeleteCase.28.29">PMFDeleteCase</a> for cases in "DRAFT" status that cannot be canceled.</p>
+
+    <codeblock><i>int</i> <strong>PMFCancelCase</strong>(<i>string</i> caseUID, <i>int</i> delIndex, <i>string</i> userUID)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul>
+    <li><i>string</i> <strong>caseUID</strong>: The unique ID of the case, which can be found in the following ways:
+        <ul><li>Use the <code>@@APPLICATION</code> system variable to get the unique ID of the current case.</li>
+        <li>Use the <a href="1053.html#PMFCaseList.28.29">PMFCaseList()</a>, <a href="../index.php/Simple_Trigger_Web_Services.html#WSCaseList" title="Simple Trigger Web Services">WSCaseList()</a> or the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="3.0/ProcessMaker WSDL Web Services">caseList()</a> web service.</li></ul>
+    </li>
+    <li><i>int</i> <strong>delIndex</strong> (<i>Optional</i>): The delegation index of the current task in the case. For the current case, use the <code>@%INDEX</code> system variable.</li>
+    <li><i>string</i> <strong>userUID</strong> (<i>Optional</i>): The unique ID of the user who will cancel the case. For the currently logged-in user, use the <code>@@USER_LOGGED</code> system variable.</li></ul>
+    <p><strong>Return value:</strong></p>
+    <ul><li>Returns <tt>1</tt> if the case was successfully canceled.</li>
+           <li>Returns <tt>0</tt> if the case is in "DRAFT" status.</li>
+</ul>
+    <p><strong>Example:</strong></p>
+    <p>The following trigger code cancels the current case:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span><span style="color: #b1b100;">return</span> <span style="color: #339933;">=</span> PMFCancelCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #339933;">@%</span>INDEX<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span><span style="color: #b1b100;">return</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Case cancelled.&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p><strong><font color="red">Warning:</font></strong> <font color="dimgray"> As of <b>ProcessMaker 3.3.0</b> to cancel cases with parallel threads, provide only the <strong>caseUID</strong> parameter like <code>PMFCancelCase(@@APPLICATION)</code>.</font></p> 
+
+    <h3><span id="PMFUnCancelCase">PMFUnCancelCase()</span></h3>
+
+    <p><code>PMFUnCancelCase()</code> restores a canceled case. A <a href="../3.2/Cases.html#Cancel">case cancelled</a> can be reviewed in the inbox tray. Take into consideration that only roles with the <a href="../3.1/Roles.html#PM_UNCANCELCASE">PM_UNCANCELCASE</a> permission will be able to restore a case.</p>
+
+    <codeblock><i>int</i> <strong>PMFUnCancelCase</strong>(<i>string</i> caseUID, <i>string</i> userUID)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>string</i> <strong>caseUID</strong>: The unique ID of the case, which can be found in the following ways:
+<ul><li>Use the <code>@@APPLICATION</code> system variable to get the unique ID of the current case.</li>
+        <li>Use the <a href="1053.html#PMFCaseList.28.29">PMFCaseList()</a>, <a href="../index.php/Simple_Trigger_Web_Services.html#WSCaseList" title="Simple Trigger Web Services">WSCaseList()</a> or the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="3.0/ProcessMaker WSDL Web Services">caseList()</a> web service.</li></ul>
+    </li>
+    <li><i>string</i> <strong>userUID</strong>: The unique ID of the user who will receive the case when uncancelling the case. For the currently logged-in user, use the <code>@@USER_LOGGED</code> system variable.</li></ul>
+
+    <p><strong>Return value:</strong></p>
+    <p>Returns 1 if the case was successfully uncancelled, otherwise returns 0 if an error occurred. If the user does not have the <a href="../3.1/Roles.html#PM_UNCANCELCASE">PM_UNCANCELCASE</a> permission assigned, it will return 0.</p>
+
+    <p><strong>Example:</strong></p>
+    <p>The following trigger code uncancels the current case and uses the die() function to prevent the next step from being executed:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span><span style="color: #b1b100;">return</span> <span style="color: #339933;">=</span> PMFUnCancelCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Case restored.&quot;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #339933;">;</span></div></div>
+
+    <p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray"> If the case canceled has multiple threads opened, all threads are restored and assigned to the user provided in this function.</font></p> 
+
+    <h3><span id="PMFSendVariables.28.29">PMFSendVariables()</span></h3>
+    <p><code>PMFSendVariables()</code> sends an array of case variables to a specified case instead of the one running this function. The main objective when using this function is to update variable(s) data, using ProcessMaker variable prefixes (<code>@@</code>, <code>@=</code>, etc.), from other cases instead of the current case. For example, Case <b>A</b> using <code>PMFSendVariables</code> could update variable(s) data from Case <b>B</b>.</p>
+    <p>These variables are stored in the <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_DATA</tt></strong> field and can be displayed by any subsequent Dynaform that has a field name that is the same as the case variable name.</p>
+
+    <codeblock><i>int</i> <strong>PMFSendVariables</strong>(<i>string</i> caseUID, <i>array</i> variables)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>string</i> <strong>caseUID</strong>: The unique ID of the case that will receive the variable. Note that the case ID changes with each new task in the process.</li>
+        <li><i>array</i> <strong>variables</strong>: An associative array that will hold the case variables to sent to the case. The keys are the case variable names and the values are the values of the case variables.</li></ul>
+    <p><strong>Return Value:</strong></p>
+    <p>Returns 1 if the variables were sent successfully to the case; otherwise, returns 0 if an error occurred.</p>
+    <p><strong>Example:</strong></p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aData</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Model'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Acme Blender #2'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Price'</span> <span style="color: #339933;">=&gt;</span> <span style="color:#800080;">27.40</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'OrderDate'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'2010-12-31'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendVariables<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #000088;">$aData</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="setCaseTrackerCode.28.29">setCaseTrackerCode()</span></h3>
+<p><code>setCaseTrackerCode()</code> sets the code and PIN of a case, which are used when an unregistered user logs into the <a href="../3.0/Case_Tracker.html" title="Case Tracker">Case Tracker</a> to view the details of a particular case. By default, the code for a case is its case number and its PIN (public identification number) is a semi-random string of 4 characters (numbers and letters) autogenerated by ProcessMaker; however, <code>setCaseTrackerCode()</code> can set the case code and PIN to any desired values.</p>
+
+<codeblock><i>int</i> <strong>setCaseTrackerCode</strong>(<i>string</i> caseUID, <i>string</i> code, <i>string</i> PIN = '')
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string</i> <strong>caseUID</strong>: The unique ID of a case. For the current case use the system variable <code>@@APPLICATION</code>. Other case UIDs can be found with <a href="1053.html#PMFCaseList.28.29">PMFCaseList()</a>, <a href="../index.php/Simple_Trigger_Web_Services.html#WSCaseList" title="Simple Trigger Web Services">WSCaseList()</a>, <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="ProcessMaker WSDL Web Services">caseList()</a> or by querying the <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_UID</tt></strong> field in the database.</li>
+    <li><i>string</i> <strong>code</strong>: The new code of a case up to 100 characters long, which will be stored in the <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_PROC_CODE</tt></strong> field in the database. To keep the case code as the case number, set it to @@APP_NUMBER for the case number of the current case or for another case look up its case number in the <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_NUMBER</tt></strong> field in the database.</li>
+    <li><i>string</i> <strong>PIN</strong>: <i>Optional.</i> The new PIN (personal identification number) in UPPERCASE, which will be stored in the <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_PIN</tt></strong> field as an MD5 hash and will be available in the system variable <code>@@PIN</code> for the current case. If not included or set to <code>''</code> (an empty string), then the PIN will not be changed. Note that if the PIN is not in UPPERCASE, then it will not be possible to login to the Case Tracker.</li></ul>
+<p><strong>Return Value:</strong></p>
+<p>If successful, returns one; otherwise returns zero or an error number.</p>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">setCaseTrackerCode<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'999'</span><span style="color: #339933;">,</span> generateCode<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">4</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ALPHANUMERIC'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="PMCaseLink_Function">PMCaseLink()</span></h3>
+<p>The Direct Case Link feature makes it possible to open a case inside the ProcessMaker Web server or ProcessMaker Mobile app through a link. This link can be used in <a href="../3.2/Notifications.html">notifications</a>, <a href="../3.2/Templates.html">templates</a>, <a href="../3.2/Output_Documents.html">output documents</a>, <a href="../3.0/Links.html">links</a> inside Dynaforms or defined and stored in <a href="../3.2/Variables.html">case variables</a>. The Direct Case Link is unique regardless of case status. This means that the link will be generated according to the case status and will open the case in the corresponding task.</p>
+<p>The <code>PMCaseLink</code> function creates a direct link that redirects the user to a case.</p>
+
+<codeblock><i>string</i> <strong>PMFCaseLink</strong> (<i>string</i> caseUID, <i>string</i> workspace, <i>string</i> language, <i>string</i> skin)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<p><ul>
+    <li><i>string</i> <strong>caseUID</strong>: (Required) The unique ID of the case, which can be found in the following ways:
+        <ul>
+            <li>Use the <code>@@APPLICATION</code> system variable to get the unique ID of the current case.</li>
+            <li>Use <a href="1053.html#PMFCaseList.28.29">PMFCaseList()</a>, <a href="../index.php/Simple_Trigger_Web_Services.html#WSCaseList" title="Simple Trigger Web Services">WSCaseList()</a>, or the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="3.0/ProcessMaker WSDL Web Services">caseList()</a> web service.</li>
+        </ul>
+    </li>
+    <li><i>string</i> <strong>workspace</strong>: (Optional) The workspace. If not set, the current workspace where the case is executed will be selected.</li>
+    <li><i>string</i> <strong>language</strong>: (Optional) The language the case will be displayed in. If not set, the case will be opened in the default language configured in the user's profile. If the user didn't define a default language or is using the community edition, the default system language is selected (Admin/settings/system/default language).</li>
+    <li><i>string</i> <strong>skin</strong>: (Optional) The skin name. If not set, the <a href="../3.2/System.html#Changing_the_Default_Skin">default skin</a> is selected. </li>
+</ul></p>
+<p><strong>Return Value:</strong></p>
+<p>Returns a <b>string</b> if the case link was generated successfully. Otherwise, returns <code>false</code> if an error ocurred.</p>
+
+<p><strong>Example:</strong></p>
+<codeblock>@@app_link = PMFCaseLink(@@APPLICATION, 'workflow', 'en', 'neoclassic');
+</codeblock>
+
+<p>The returned value will be a link to open the case:<br>
+<codeblock>http://192.168.51.113/sysworkflow/en/neoclassic/cases/opencase/68619581958515d1adf0bb9076920199</codeblock></p>
+
+<h4><span id="Direct_Case_Link_Uses">Direct Case Link Uses</span></h4>
+<p>The URL generated by the direct case link function can be used in different cases:
+<ul>
+    <li><a href="../3.2/Notifications.html">Notifications</a></li>
+    <li><a href="../3.2/Events.html">Email events</a></li>
+    <li><a href="../3.2/Templates.html">Templates</a></li>
+    <li><a href="../3.2/Output_Documents.html">Output Documents</a></li>
+    <li><a href="../3.2/Variables.html">Variables</a> (Defined or stored)</li>
+</ul>
+</p>
+
+<h4><span id="Opening_the_Link_on_Mobile_Devices">Opening the Link on Mobile Devices</span></h4>
+
+<p>In previous versions, when the direct case link was opened on a mobile device, the link was opened in the device's browser.</p>
+
+<p>As of ProcessMaker 3.2, a special flag can be set in the <a href="../3.2/Configuration_File_env.ini.html#Available_Settings:">env.ini</a> configuration file of each workspace or in the ProcessMaker installation to open the link generated by the direct case link function directly in the ProcessMaker mobile application.</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">redirect_to_mobile = 0|1</div></div>
+
+<p>Set to flag to 1 to open the case in the ProcessMaker mobile application. Note that the user assigned to the case must be logged in to the mobile app.</p>
+
+<p>In the following example, a task notification has been sent to the next assigned user. The user taps the case link sent in the email notification. Since the device does NOT have a default browser assigned to open the link, a browser has to be selected.</p>
+
+<p>The device will open the browser for a second to verify the flag's value, and then ProcessMaker Mobile will open automatically displaying the case associated with the case link.</p>
+
+<p><img style="border: #bebebe 1px outset; margin-left: auto; margin-right: auto;" src="../sites/default/files/3.2DirectCaseLinkMobile1.gif"></p>
+
+<p>If the <code>redirect_to_mobile</code> flag is set to 0 or not set at all, when the user taps the case link on a mobile device, the case will open in the browser that the user selects.</p>
+
+<p><img style="border: #bebebe 1px outset; margin-left: auto; margin-right: auto;" src="../sites/default/files/3.2DirectCaseLinkMobile0.gif"></p>
+
+<p>Please note the following points: </p>
+<ul>
+    <li>If the application is not installed on the mobile device and the <code>redirect_to_mobile</code> flag is set to 1, the case will NOT be opened.</li>
+
+    <li><p>If the case was already routed, or is not assigned to the user logged in to the mobile application, the following alert will be displayed and the case won't be displayed.</p>
+
+    <p><img src="../sites/default/files/MobileRTLCaseTaken.png"></p>
+    </li>
+
+    <li><p>If the case is unassigned and the user who is logged in to the mobile application is assigned to the assignment pool, 
+    the following screen will be displayed to claim the case.</p>
+    
+    <p><img src="../sites/default/files/MobileRTLCaseClaimTheCase.png"></p>
+
+    </li>
+</ul>
+
+<h4><span id="Example_in_a_Trigger">Example in a Trigger</span></h4>
+<p>In order to do the example follow these steps:</p>
+<p><b>1. </b>Create a new string variable named <b>app_Link</b> to store the link.</p>
+<p><img src="../sites/default/files/3.1DirectCaseLinkCreatevariable.png"></p>
+
+<p><b>2. </b>Create a trigger named <b>Case Link</b> and place the following code:</p>
+
+<codeblock>$link = PMFCaseLink(@@APPLICATION);
+@@app_link = $link;</codeblock>
+<p><img src="../sites/default/files/3.1DirectCaseLinkCreateTrigger.png"></p>
+
+<p><b>3. </b>Place the trigger <i>before Dynaform</i> in the first step of the first task to generate the Direct Case Link.</p>
+<p><img src="../sites/default/files/3.1DirectCaseLinkTriggerPlace.png"></p>
+
+<p><b>4. </b>Create a notification in the first task to notify the next assigned user(s) by email.</p>
+<p><img src="../sites/default/files/3.1DirectCaseLinkNotification.png"></p>
+
+<p><b>5. </b>When running a new case, after the first task is routed, an email containing the Direct Case Link will be sent to all the users assigned to the next task.</p>
+<p><img src="../sites/default/files/3.1DirectCaseLinkEmailNotification.png"></p>
+
+<h4><span id="Open_the_Case_Using_URL">Open the Case Using the URL</span></h4>
+<p>Open the case in your favorite browser using the generated Direct Case Link. This link opens the ProcessMaker interface, including the main menu and the case list (inbox, draft, etc.). The case linked to by the Direct Case Link will be displayed in the central area.</p>
+<p><img src="../sites/default/files/3.1DirectCaseLinkRedirected.png"></p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray"> As of <b>ProcessMaker 3.3.3</b>, in Internet Explorer 11, the link opens only the form in a new tab as it does when opening the cases from the Inbox.</p>
+
+<h4><span id="Permissions_and_Considerations">Permissions and Considerations</span></h4>
+
+<h5><span id="ProcessMaker_Active_Session">ProcessMaker Active Session</span></h5>
+<p>To open the case linked to by the Direct Case Link, the user needs to be logged into ProcessMaker. Therefore, take into consideration the following situations:</p>
+
+<ul>
+<li><b>Case opened in a new tab: </b> If the link is open inside a browser with an active ProcessMaker session, then the case will be opened in a new tab. An active session means that the user has already logged in using the ProcessMaker login screen or the configured SSO.
+</li>
+<li><b>The user is not logged in: </b> If the user is not logged into Processmaker, then the Processmaker login page or the Single Sign On Login page is displayed.
+<p><img src="../sites/default/files/3.1DirectCaseLinkNotLogged.png"></p>
+</li>
+</ul>
+
+<p>Once logged in, ProcessMaker will be automatically redirected to the case.</p>
+
+<h5><span id="Case_Status_and_User_Permissions">Case Status and User Permissions</span></h5>
+<p>The same Direct Case Link can be used to open the case for the user current assigned to the case, the supervisor or another user that has participated in the case. 
+
+ProcessMaker will display the case's information depending on the user's permissions and the case status. The possible conditions when opening the case are described as follows:</p>
+
+<ul>
+<li><b>The user is not participating in the case: </b> If the user doesn't participate in the case and doesn’t have specific process permissions, generic case information is displayed.
+<p><img src="../sites/default/files/3.1DirectCaseLinkNotParticipated.png"></p>
+</li>
+
+<li><b>The user participated in the case and is assigned to a task: </b> If the user is currently assigned to a task, then the browser is automatically redirected to the specific task in the case.
+<p><img src="../sites/default/files/3.1DirectCaseLinkRedirected.png"></p>
+</li>
+
+<li><b>The user participated in the case but is not currently assigned to the current task/step: </b>
+If the user participated in the case and is not assigned to a task, or the case is completed, paused, or deleted, then the summary form of the case is displayed.
+
+<p><img src="../sites/default/files/3.1DirectCaseLinkNotAssigned.png"></p>
+</li>
+
+<li><b>The user participated in the case and is assigned to more than one task: </b> If the user has more than one task in a case in their inbox, the inbox is displayed filtered by the case number to show all the parallel tasks assigned to the user in the same case. The user must select the task to open in the inbox.
+
+<p><img src="../sites/default/files/3.1DirectCaseLinkMoreTasks.png"></p>
+</li>
+
+</ul>
+
+<h5><span id="Other_considerations">Other considerations</span></h5>
+<p>Take into consideration the following points:</p>
+<ul>
+<li>A Direct Case Link can be generated in a different language, skin or workspace to the one that was generated.</li>
+
+<li>If the language parameter was set, the user that receives the Direct Case Link will open ProcessMaker in the language defined in the link, regardless of the profile language.</li>
+</ul>
+
+</div>
+<!-- END CASE Functions -->
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

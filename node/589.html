@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.1/Dependent_Fields.html" />
+<link rel="shortlink" href="589.html" />
+<title>3.1 - 3.4 - Dependent Fields | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"GvUl2YtQJrUjmn9IABWl9MdAWDjJsSsJj6DELJhtimo","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-589 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="589.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="589.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-Dqc4vHIpimPsFgccCXeSxP69lWpBAX4MwW5nTjMYsxw" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - 3.4 - Dependent Fields</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.5/Dependent_Fields.html" class="">3.8</a></li><li><a href="../3.5/Dependent_Fields.html" class="">3.7</a></li><li><a href="../3.5/Dependent_Fields.html" class="">3.6</a></li><li><a href="../3.5/Dependent_Fields.html" class="">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a href="../3.0/Dependent_Fields.html" class="">3.0</a></li><li><a href="../index.php/Dependent_Fields.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - 3.4 - Dependent Fields" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="589.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - 3.4 - Dependent Fields 1/5</option><option value="40">Give 3.1 - 3.4 - Dependent Fields 2/5</option><option value="60" selected="selected">Give 3.1 - 3.4 - Dependent Fields 3/5</option><option value="80">Give 3.1 - 3.4 - Dependent Fields 4/5</option><option value="100">Give 3.1 - 3.4 - Dependent Fields 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3</span></span> <span class="total-votes">(<span >5</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-64ttRU47XVouQdks7YQaGdGsUD1Pp9LBUXbI7tOFP_U" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="589.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="589.html#Overview">Overview</a></li>
+<ol class="toc">
+<li class="toc"><a href="589.html#Loading_Information">Loading Information</a></li>
+</ol>
+<li class="toc"><a href="589.html#Supported_Controls">Supported Controls</a></li>
+<li class="toc"><a href="589.html#Independent_Control_Configuration">Independent Control Configuration</a></li>
+<li class="toc"><a href="589.html#Dependent_Control_Configuration">Dependent Control Configuration</a></li>
+<li class="toc"><a href="589.html#Examples">Examples</a></li>
+<ol class="toc">
+<li class="toc"><a href="589.html#Using_Dropdown_Boxes">Using Dropdown Boxes</a></li>
+<li class="toc"><a href="589.html#Using_Suggest_Boxes">Using Suggest Boxes</a></li>
+<li class="toc"><a href="589.html#Using_Text_and_Textarea_Fields">Using Text and Textarea Fields</a></li>
+<li class="toc"><a href="589.html#Dependent_Fields_Inside_Grids">Dependent Fields Inside Grids</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p>A <b>dependent field</b> is a field which is populated by a database query which references the value of another field (which is known as the <i>independent field</i>) in the same Dynaform. Each time the value in the independent field changes, the database is automatically requeried to repopulate the dependent field.</p>
+
+<p>Normally, the SQL <tt>SELECT</tt> statement used to query a database and populate a DynaForm field is only executed once when the DynaForm is initially rendered. However, a field becomes a <i>dependent field</i> if its SQL statement contains a reference to the ID of another field in the same Dynaform. Each time the value changes in the independent field (which is the field referenced in the SQL query), the database will be requeried.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">
+<span id="Note_About_SQL_Details_For_Controls">It is very important</span> to read <a href="../3.2/DynaForm_Field_Properties.html#Considerations_When_Creating_a_SQL_Query_Using_ProcessMaker_Variables">this section</a> to learn about how controls manage the values retrieved by a SQL query.
+</font></p>
+
+<p>If the value of the independent field should be treated as a string, then reference the ID of the independent field as <code>@@<font color=blue>INDEPENDENT_FIELD</font></code>. When its value is inserted into the SQL <tt>SELECT</tt> statement, it will be enclosed in double quotes.</p>
+
+<p>If the dependent field is a <a href="../3.0/Dropdown_Control.html">dropdown</a> box, <a href="../3.0/Suggest_Control.html">suggest</a> box or <a href="../3.0/Checkbox_and_Checkbox_Group.html#Checkgroup">checkgroup</a>, then the SQL query will populate the list of available options in the control. The SQL query should return <i>two</i> fields, where the first field contains the <i>value</i> of each option (which is what is saved) and the second field contains the <i>label</i> of each option (which is the text displayed to the user).</p>
+
+<p>If the dependent field is a <a href="../3.0/Text_and_Textarea_Controls.html#Textbox_Control">textbox</a> or <a href="../3.0/Text_and_Textarea_Controls.html#Textarea_Control">textarea</a>, then only <i>one</i> field needs to be returned by the SQL query. The value inserted into the textbox or textarea will be the first field in the first record returned by the query.</p>
+
+<codeblock>SELECT <font color=blue>VALUE_FIELD</font> FROM <font color=blue>TABLE</font> WHERE <font color=blue>FIELD</font> = <font color=blue>@@INDEPENDENT_FIELD</font>
+</codeblock>
+
+<p>When referenced as <code><font color=blue>@@INDEPENDENT_FIELD</font></code>, the value of the field will be enclosed in double quotation marks. Any <code>\</code> (backslashes) in the text will be removed for security reasons and <code>'</code> (single quotation marks) and <code>"</code> double quotation marks will be escaped with backslashes to become <code>\'</code> and <code>\"</code>, so the value can be safely included in an SQL query.</p> 
+
+<p>For example, a dependent field has the following SQL query:</p>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> FACTORY_ID<span style="color: #66cc66;">,</span> FACTORY_NAME <span style="color: #993333; font-weight: bold;">FROM</span> PRODUCERS <span style="color: #993333; font-weight: bold;">WHERE</span> PRODUCT<span style="color: #66cc66;">=</span>@@searchProduct</div></div> 
+
+<p>If a value of <code>O'brien's "Rite/-\Aid"</code> is entered in the textbox with the ID "searchProduct", then the SQL query sent to the database will be:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> FACTORY_ID<span style="color: #66cc66;">,</span> FACTORY_NAME <span style="color: #993333; font-weight: bold;">FROM</span> PRODUCERS <span style="color: #993333; font-weight: bold;">WHERE</span> PRODUCT<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;O<span style="color: #000099; font-weight: bold;">\'</span>brien<span style="color: #000099; font-weight: bold;">\'</span>s <span style="color: #000099; font-weight: bold;">\&quot;</span>Rite/-Aid<span style="color: #000099; font-weight: bold;">\&quot;</span>&quot;</span></div></div>
+
+<p>If the value of the independent field should not be changed, then reference it as <code><font color=blue>@=INDEPENDENT_FIELD</font></code> which inserts the value without enclosing it in double quotation marks or escaping any quotation marks:</p>
+<codeblock>SELECT VALUE_FIELD, LABEL_FIELD FROM TABLE WHERE FIELD = <font color=blue>@=INDEPENDENT_FIELD</font></codeblock>
+
+<div style="margin-left:25px">
+<p><strong><font color="red">Warning:</font></strong> <font color="dimgray">  Only use <code>@=INDEPENDENT_FIELD</code> if sure that the user can't use the independent field to introduce <a href="https://en.wikipedia.org/wiki/SQL_injection">SQL injection</a> attacks. In general, it is recommended to always use <code>@@</code> instead of <code>@=</code> for security reasons. For example, if needing to use the value of the independent field as a number rather than a string, it is recommended to use the <code>CAST()</code> function to convert the value of the independent field into an integer or decimal number.</p>
+
+<p>For example, the following query uses <code>CAST()</code> to convert to a decimal number and an unsigned integer in MySQL:</p>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> BUDGET_ITEM<span style="color: #66cc66;">,</span> DESCRIPTION <span style="color: #993333; font-weight: bold;">FROM</span> FINANCES <br />
+<span style="color: #993333; font-weight: bold;">WHERE</span> AMOUNT <span style="color: #66cc66;">&lt;</span> <span style="color: #993333; font-weight: bold;">CAST</span><span style="color: #66cc66;">&#40;</span>@@amount <span style="color: #993333; font-weight: bold;">AS</span> <span style="color: #993333; font-weight: bold;">DECIMAL</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">10</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #993333; font-weight: bold;">OR</span><br />
+QUANTITY <span style="color: #66cc66;">&gt;=</span> <span style="color: #993333; font-weight: bold;">CAST</span><span style="color: #66cc66;">&#40;</span>@@quantity <span style="color: #993333; font-weight: bold;">AS</span> <span style="color: #993333; font-weight: bold;">UNSIGNED</span><span style="color: #66cc66;">&#41;</span></div></div>
+<p>The parameters for <code>CAST()</code> vary in each type of database, so check the documentation for <a href="https://dev.mysql.com/doc/refman/5.7/en/cast-functions.html">MySQL</a>, <a href="https://www.postgresql.org/docs/9.2/static/sql-createcast.html">PostgreSQL</a>, <a href="https://msdn.microsoft.com/en-us/library/ms187928.aspx">MS SQL Server</a> and <a href="https://docs.oracle.com/cd/B19306_01/server.102/b14200/functions016.htm">Oracle</a>.</p>
+
+<p>The input of a field can be limited by adding a validate property of <code>^[-+]?[0-9]+\.?[0-9]*$</code> to only allow integer and decimal numbers or by adding a JavaScript mask such as: $("#[control-id").getControl().mask("99.99") to only allow decimal numbers.</p>
+
+<p>Nonetheless, the graphical interface of Dynaforms can be bypassed with JavaScript or by directly calling the REST endpoint <code>POST project/{prj_uid}/process-variable/{var_name}/execute-query</code>, so do not rely on the interface for security.</p></font>
+</div>
+
+
+<p>If querying for a date or a datetime in a MySQL database, then use <code>@@INDEPENDENT_FIELD</code> so its value will be treated as a string. Remember that MySQL stores dates in "YYYY-MM-DD" format and datetimes in "YYYY-MM-DD HH:MM:SS" format.</p>
+
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">Dependent fields only work when their <a href="../3.0/DynaForm_Field_Properties.html#Display_Mode"><b>display mode</b></a> property is set to "edit" and "disabled". If set to "view", then the dependent field will not query the database. This will be fixed for future versions.</font></p>
+
+<h3><span id="Loading_Information">Loading Information</span></h3>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.4.0</font></p>
+
+<p>The loading information refers to a loading spinner displayed when the dependent fields data are loading. Additional loading information is related to messages. An error message displays when the data is not loaded correctly and a warning message displays when a submit event runs and the data is still loading.</p>
+
+<p>The loading information is available to the <a href="../3.0/Dropdown_Control.html">Dropdown</a>, <a href="../3.0/Text_and_Textarea_Controls.html#Textbox_Control">Textbox</a>, <a href="../3.0/Text_and_Textarea_Controls.html#Textarea_Control">Textarea</a>, <a href="../3.0/Checkbox_and_Checkbox_Group.html#Checkgroup">Checkgroup</a> and <a href="../3.0/Radio_and_Radio_Group_Control.html">Radiogroup</a> controls.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"><a href="../3.0/Suggest_Control.html">Suggest</a> controls does not require a spinner loader as it loads its domain once the user interacts with the control. For Suggest controls, the dependent elements will only clear their value.</font></p>
+
+<p>The loading spinner starts when the dependency is triggered, and it replaces the dependent fields when loading information until the loading is finished.</p>
+<table style="width: 65%;">
+    <tr>
+        <td><img src="../sites/default/files/3.4.0DependentFields_LoadingInformation.gif" alt=""></td>
+    </tr>
+</table>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">As of ProcessMaker 3.5.0, the loading icon does not display when loading the options in a dependent field since the dependent field loads asynchronously that it displays faster.</p>
+
+<p>The error message displays in the following scenarios:</p>
+<ul>
+    <li>Request timeout</li>
+    <li>Internal errors</li>
+    <li>Query error</li>
+</ul>
+<p>The error message displays at the top of the screen. After the message is displayed, fields are cleared.</p>
+<p><img src="../sites/default/files/3.4.0DependentFields_ErrorMessage.png" alt=""></p>
+<p>If the loading data fails, the error is recorded in the <a href="../3.3/ProcessMaker_Standard_Logging.html">ProcessMaker Standard Logging</a> as a 400 severity level.</p>
+
+<p>When running a case, a warning message displays after the following actions:</p>
+<ul>
+    <li>Clicking the <strong>Next Step</strong> link.</li>
+    <li>Clicking a <a href="../3.2/Submit_and_Button_Controls.html#Submit">submit</a> button defined in the Dynaform.</li>
+    <li>In a trigger, using the <a href="../3.2/JavaScript_Functions_and_Methods/Dynaforms.html#form.submitForm"><code>submitForm</code></a> method.</li>
+    <li>In a trigger, using the <a href="../3.2/JavaScript_Functions_and_Methods/Dynaforms.html#form.saveForm"><code>saveForm</code></a> method.</li>
+</ul>
+<p>The warning message displays at the top of the screen and the loading remains:</p>
+<p><img src="../sites/default/files/3.4.0DependentFields_WarningMessage.png" alt=""></p>
+ 
+<h2><span id="Supported_Controls">Supported Controls</span></h2>
+<p>Only the following controls can be used as dependent fields:</p>
+<ul>
+<li><a href="../3.0/Dropdown_Control.html">Dropdown</a></li>
+<li><a href="../3.0/Suggest_Control.html">Suggest</a></li>
+<li><a href="../3.0/Text_and_Textarea_Controls.html#Textbox_Control">Textbox</a></li>
+<li><a href="../3.0/Text_and_Textarea_Controls.html#Textarea_Control">TextArea</a></li>
+<li><a href="../3.0/Checkbox_and_Checkbox_Group.html#Checkgroup">Checkgroup</a></li>
+<li><a href="../3.0/Radio_and_Radio_Group_Control.html">Radiogroup</a></li>
+</ul>
+
+<p style="margin-left:25px"><b><font color="green">Note:</font></b> <font color=dimgrey>If using a suggest box as a dependent field, do  <strong>NOT</strong> use <a href="http://www.w3schools.com/php/php_mysql_select_limit.asp">LIMIT</a> in the SQL query.</font></p>
+
+<h2><span id="Independent_Control_Configuration">Independent Control Configuration</span></h2>
+<p>The control's ID is used to reference the independent field. The ID property is set in the DynaForm designer, see the image below:</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyIDWithVariableVersion3.png"></p>
+<p>The dependent field can use the <code>employeeName</code> identifier in the SQL property.</p>
+
+<h2><span id="Dependent_Control_Configuration">Dependent Control Configuration</span></h2>
+<p>The dependent control is configured using the <b>sql</b> property:</p>
+<p>To establish a dependent field relationship, the SQL statement includes a reference to the ID of the independent field. When the value of the independent field changes, the SQL statement in the dependent field is used to requery the database.</p> 
+
+<p>For example:</p> 
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IL_UID<span style="color: #66cc66;">,</span> IL_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_LOCATION <span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #66cc66;">=</span> @@myCountryDropDown </div></div>
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>If an SQL statement is used to populate a dropdown box or suggest box, the results of the database query will be appended <i>after</i> the fixed list defined in the <b>options</b> property.</font></p>
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>The independent and dependent fields must be in the <i>same</i> form, subform or grid in order to work correctly. For example, if the dependent field is in a subform and its independent field is in a master form, then the database query will <b>not</b> work. Dependent fields in grids can <i>only</i> reference independent fields which are in the same row in their grid. It is not possible to reference fields in other rows or outside the grid.</font></p>
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey> Hidden controls cannot be used as the independent field in an SQL query. If not wishing to user to see the independent field, then create a text control whose value is used in the SQL query. Then, add JavaScript code to the DynaForm that uses the <a href="../3.1/JavaScript_Functions_and_Methods.html#hide">hide()</a> method to hide the text control. For example, if the independent field has the ID "account", then the following JavaScript code will hide it:</font>
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#account&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Effects/hide"><span style="color: #000066;">hide</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+</p>
+
+<h2><span id="Examples">Examples</span></h2>
+<h3><span id="Using_Dropdown_Boxes">Using Dropdown Boxes</span></h3>
+<p>Dropdowns can be set as <i>dependent fields</i> of other fields based on their states and values.</p>
+<p>In order to establish this dependency, the variables should normally be defined with a <code>SQL SELECT</code> statement to populate the fields with values from a database, which will be shown once the DynaForm is rendering in the preview or running the form.</p> 
+
+<p>For example, for the country-state-location dependency, let's add three dropdowns in the DynaForm designer and relate them to the variables <code>COUNTRIES</code>, <code>SUBDIVISION</code> and <code>LOCATION</code>.</p>
+
+<p>The <code>COUNTRIES</code> variable and has the following SQL sentence:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IC_UID<span style="color: #66cc66;">,</span> IC_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_COUNTRY</div></div>
+
+<p>The <code>SUBDIVISION</code> variable has the SQL sentence:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IS_UID<span style="color: #66cc66;">,</span> IS_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_SUBDIVISION <br />
+<span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #66cc66;">=</span> @@COUNTRIES <span style="color: #993333; font-weight: bold;">ORDER</span> <span style="color: #993333; font-weight: bold;">BY</span> IS_NAME</div></div>
+
+<p>And for the <code>LOCATION</code> variable:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IL_UID<span style="color: #66cc66;">,</span> IL_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_LOCATION <br />
+<span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #66cc66;">=</span> @@COUNTRIES <span style="color: #993333; font-weight: bold;">AND</span> IS_UID <span style="color: #66cc66;">=</span> @@SUBDIVISION</div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> Take into account <a href="../3.0/Triggers.html#Typing_rules_for_Case_Variables">these typing rules</a> to use case variables in the queries. </font></p>
+
+<p>For the dependency and correct retrieval of the data the query must be case sensitive. It means that if the name of the table or the name of the fields contain uppercase or lowercase letters in the database, the query must have the same considerations.</p> 
+
+<p>Then, relate each dropdown added in the form to the <code>COUNTRIES</code>, <code>SUBDIVISION</code> and <code>LOCATION</code> variables. The dependency will be set automatically.</p>
+
+<p>When rendering the form, to obtain the following result:</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyDependentFieldResultVersion3.png"></p>
+<p>Let's check the dependency:</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyDependentFieldResult2Version3.png"></p>
+
+<p>If having problems setting the dependent fields, take into account the following:</p>
+
+<ul>
+<li>The name of the variables may have not matched the name of the fields or the table set in the database (since the query must be case sensitive).</li>
+<li>There must be a blank space between the equals symbol and the variables so that the correct expression should be <code>IC_UID = @@COUNTRIES</code></li>
+</ul>
+
+<h3><span id="Using_Suggest_Boxes">Using Suggest Boxes</span></h3>
+<p>Suggest controls can be set as <i>dependent fields</i> of other fields based on their states and values.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">As of <b>ProcessMaker 3.4.0</b>, <a href="../3.2/Suggest_Control.html">Suggest controls</a> work with any dependent control with its value (the first table column selected in the query of the suggest control).</font></p>
+
+<p>In order to establish this dependency, the variables should normally be defined with a <code>SQL SELECT</code> statement to populate the fields with values from a database, which will be shown once the DynaForm is rendering in the preview or running the form.</p> 
+
+<p>For example, for the country-state-location dependency, let's add three suggest controls in the DynaForm designer and relate them to the variables <code>COUNTRIES</code>, <code>SUBDIVISION</code> and <code>LOCATION</code>.</p>
+
+<p>The <code>COUNTRIES</code> variable has the following SQL sentence defined when the variable was created:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IC_UID<span style="color: #66cc66;">,</span> IC_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_COUNTRY</div></div>
+
+<p>The <code>SUBDIVISION</code> variable has the SQL sentence:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IS_UID<span style="color: #66cc66;">,</span> IS_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_SUBDIVISION <br />
+<span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #66cc66;">=</span> @@COUNTRIES <span style="color: #993333; font-weight: bold;">ORDER</span> <span style="color: #993333; font-weight: bold;">BY</span> IS_NAME</div></div>
+
+<p>And for the <code>LOCATION</code> variable:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IL_UID<span style="color: #66cc66;">,</span> IL_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_LOCATION <br />
+<span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #66cc66;">=</span> @@COUNTRIES <span style="color: #993333; font-weight: bold;">AND</span> IS_UID <span style="color: #66cc66;">=</span> @@SUBDIVISION</div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> Take into account <a href="../3.0/Triggers.html#Typing_rules_for_Case_Variables">these typing rules</a> to use case variables in the queries.</font></p>
+
+<p>For the dependency and correct retrieval of the data the query must be case sensitive. It means that if the name of the table or the name of the fields contain uppercase or lowercase letters in the database, the query must have the same considerations.</p> 
+
+<p>Then, relate each suggest control added in the form to the <code>COUNTRIES</code>, <code>SUBDIVISION</code> and <code>LOCATION</code> variables. The dependency will be set automatically.</p>
+
+<p>When rendering the form, let's look for "Argentina" in the first suggest field.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_Suggest_SubdivisionEx.png"></p>
+<p>As you can see, the suggest controls "suggest" all coincidences in the field as text is entered. After selecting "Argentina", the dependency is shown in the fields by filling the other two with the subdivisions of that country (with the first returned value) and the location that is dependent on the country and the subdivision (thus the options shown are the ones that depend on the second and the first field)</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_Suggest_DependentFieldsEx.png"></p>
+<p>For the "Subdivision" field, let's look for "Jujuy"</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_Suggest_SubdivisionEx.png"></p>
+<p>After selecting "Jujuy" and filling the Subdivision field, the dependency of  "Location" also changes according to the country selected ("Argentina") and the subdivision ("Jujuy"). Now, let's see the options for "Jujuy" of "Argentina" </p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_Suggest_LocationEx.png"></p>
+
+<p>If having problems setting the dependent fields, take into account the following</p>
+
+<ul>
+<li>The name of the variables may have not respected the name of the fields or the table set in the database (since the query must be case sensitive).</li>
+<li>Take into account that <code>"ic_uid="@#COUNTRIES""</code> does not retrieve any data when executing the queries. There must be a blank space between the equal symbol and the variables so that the correct expression should be <code>"ic_uid = "@#COUNTRIES""</code></li>
+</ul>
+
+<h3><span id="Using_Text_and_Textarea_Fields">Using Text and Textarea Fields</span></h3>
+<p>In textboxes and textarea, the SQL query sets the value in the field, so if a textbox or textarea is used as a dependent field, its value will be changed when the value in the independent field changes.</p>
+
+<p>This example shows how to use multiple dependent fields which depend on the value of one independent field. A table named <strong>EMPLOYEE</strong> contains the <strong>ID</strong>,  <strong>EMPLOYEE_NAME</strong> and <strong>DEP_CODE</strong> fields, where the employee's name and the code of his/her department are stored.</p>
+
+<p>Create the variables that will hold the values of the independent and dependent fields in the DynaForm. The <strong>empCode</strong> (string) variable will hold the ID of the employee in which the user will input data and it will be the "independent" variable in the form. The <strong>empName</strong> (string) variable will be one of the dependent fields on the employee code and will show the name of the employee after the user inputs the code of the employee. The dependency will be set by the following query in the <a href="../3.0/Variables.html#Defining_Variables">SQL property of the variable</a>.</p>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> EMPLOYEE_NAME<span style="color: #66cc66;">,</span> EMPLOYEE_NAME <span style="color: #993333; font-weight: bold;">FROM</span> PMT_EMPLOYEE <span style="color: #993333; font-weight: bold;">WHERE</span> ID <span style="color: #66cc66;">=</span> @@empCode</div></div>
+<p>The <strong>depCode</strong> variable will also be dependent on the employee code and will show the code of the department where the user works. The dependency will be set by the following query:</p>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> DEP_CODE<span style="color: #66cc66;">,</span> DEP_CODE <span style="color: #993333; font-weight: bold;">FROM</span> PMT_EMPLOYEE <span style="color: #993333; font-weight: bold;">WHERE</span> ID <span style="color: #66cc66;">=</span> @@empCode</div></div>
+<p>Then, create a DynaForm with three textbox fields: <tt>Employee Code</tt>, <tt>Employee Name</tt> and <tt>Department Code</tt>. Relate the fields with the corresponding variables and render the form. When an employee code is entered in the first field, the employee's name and department codes will automatically be inserted in the other two fields.</p>
+<p>First, enter the code of the employee:</p>
+<p><img src="../sites/default/files/ProcessMaker3_DependentFields_TextEmpCode.png"></p>
+<p>Now, click on any blank space of the form and wait until the other fields are shown.</p>
+<p><img src="../sites/default/files/ProcessMaker3_DependentFields_TextEmpCodeDep.png"></p>
+
+<h3><span id="Dependent_Fields_Inside_Grids">Dependent Fields Inside Grids</span></h3>
+
+<p>It is also possible to set the dependency of columns inside grids in ProcessMaker 3.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">It is not possible to set a dependency between a field outside a grid and a field inside a grid.</font></p> 
+<p>For example, let's take the same PM table used in the example below: PMT_EMPLOYEE.</p>
+<p>In the DynaForm designer, add a grid. Inside the grid, add a dropdown, a textbox and a texarea:</p>
+<p><img src="../sites/default/files/ProcessMaker3_DependentFields_Grid.png"></p>
+<p>The first column (the dropdown control) will be the independent field in the grid. This field will only display the stored codes of the employees of the PMT_EMPLOYEE table. To do this, click on the dropdown control to access its properties and set the control as follows: </p>
+<codeblock>
+- <strong>id: </strong> employee_name
+- <strong>label: </strong> CODE
+- <strong>sql: </strong> SELECT ID, ID FROM PMT_EMPLOYEE
+- <strong>column width: </strong> 34
+- <strong>options: </strong> (key) 0, (label) --- Select Option ---- // this text will be shown in the dropdown when it is first rendered
+</codeblock>
+
+<p>Now, set the dependency of the second column (the textbox) in the grid. This field will show the name of the employee after the code of the employee is selected in the dropdown. Click on the textbox to set the following properties:</p>
+<codeblock>
+- <strong>label: </strong> EMPLOYEE NAME
+- <strong>sql: </strong> SELECT EMPLOYEE_NAME, EMPLOYEE_NAME FROM PMT_EMPLOYEE WHERE ID = @@employee_code
+- <strong>column width: </strong> 33
+</codeblock>
+
+<p>Now, set the dependency of the third column (the textarea) in the grid. This field will show the code of the department where the employee works after the code of the employee is selected in the dropdown. Click on the textarea to set the following properties:</p>
+<codeblock>
+- <strong>label: </strong> DEPARTMENT CODE
+- <strong>sql: </strong> SELECT DEP_CODE, DEP_CODE FROM PMT_EMPLOYEE WHERE ID = @@employee_code
+- <strong>column width: </strong> 33
+</codeblock>
+
+<p>Now, render the form and select a value from the dropdown field in the grid.</p>
+<p><img src="../sites/default/files/ProcessMaker3_DependentFields_GridDropdownRender.png"></p>
+
+<p>Select a code from the dropdown and the dependency will be shown in the next columns:</p>
+<p><img src="../sites/default/files/ProcessMaker3_DependentFields_GridRender.png"></p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray">SQL queries can work with a <a href="../3.1/Grid_Control.html">Grid</a> control only if the variable used in the SQL query are used in the current columns of the grid control. Also a grid control can work with the following <a href="../3.2/Triggers.html#System_Variables_in_Triggers">system variables</a>: <code>@@APPLICATION</code>, <code>@@PROCESS</code>, <code>@@TASK</code>, <code>@@INDEX</code>, <code>@@USER_LOGGED</code> or <code>@@USR_USERNAME</code>.</font></p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

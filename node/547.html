@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.0/Simple_Report_Plugin.html" />
+<link rel="shortlink" href="547.html" />
+<title>3.1 - 3.8 - Simple Reports Plugin | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"REX1s9XC0oOxOj25oAPVvFKniTH6m5Y1DZIQA_A0PSE","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-547 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="547.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="547.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-N4Jh1BnhgY4YTHcho6VK5oXu8pPZvksZKFcaaVvutR8" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - 3.8 - Simple Reports Plugin</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - 3.8 - Simple Reports Plugin" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="547.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - 3.8 - Simple Reports Plugin 1/5</option><option value="40">Give 3.1 - 3.8 - Simple Reports Plugin 2/5</option><option value="60">Give 3.1 - 3.8 - Simple Reports Plugin 3/5</option><option value="80">Give 3.1 - 3.8 - Simple Reports Plugin 4/5</option><option value="100" selected="selected">Give 3.1 - 3.8 - Simple Reports Plugin 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >4.8</span></span> <span class="total-votes">(<span >5</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-_QVHpAvDb0FEukbgQ0Uu9T8LTygExTdiQyN110J7Sdg" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="547.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="547.html#Overview">Overview</a></li>
+<li class="toc"><a href="547.html#Requirements">Requirements</a></li>
+<li class="toc"><a href="547.html#Installation_and_Configuration">Installation and Configuration </a></li>
+<li class="toc"><a href="547.html#Simple_Reporting_Option">Simple Reports Option</a></li>
+<li class="toc"><a href="547.html#Creating_a_Simple_Report">Creating a Simple Report</a></li>
+<ol class="toc">
+<li class="toc"><a href="547.html#Setting_Up_Permissions">Setting Up Permissions</a></li>
+<li class="toc"><a href="547.html#Setting_Up_Filters">Setting Up Filters</a></li>
+</ol>
+<li class="toc"><a href="547.html#Checking_the_Simple_Report">Checking the Simple Report</a></li>
+<li class="toc"><a href="547.html#Applying_Filters">Applying Filters</a></li>
+</ol>
+</div></div>
+</p>
+
+<p><img src="../sites/default/files/faviconpm_23.png" alt="" width="16" height="16">
+	<span style="color: #009688"><strong>Plugin Version:</strong></span>
+	<span style="color: dimgrey"><strong>3.5.3</strong></span> | <a href="https://drive.google.com/file/d/1J7_isaAX1Wn5VcDZzi6fGTXrdhJsAp0X/view?usp=sharing">Release Notes</a>
+</p>
+<hr>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>The Simple Reports plugin is an extension that generates reports	from the data in <a href="../3.1/Report_Tables.html" title="Report Tables">report tables</a> and viewed inside the ProcessMaker interface under the Case menu.</p>
+
+<h2><span id="Requirements">Requirements</span></h2>
+<p><b>ProcessMaker Versions</b></p>
+<ul>
+	<li>ProcessMaker v. 3.1 or later</li>
+</ul>
+
+<p><b>Supported Browsers</b></p>
+<ul>
+	<li>See the <a href="../3.1/Supported_Browsers.html">supported browsers for ProcessMaker 3.1</a>.</li>
+</ul>
+
+<p><b>Supported Stacks</b></p>
+<ul>
+	<li>See the <a href="../3.1/Supported_Stacks.html">supported stacks for ProcessMaker 3.1</a>.</li>
+</ul>
+
+<h2><span id="Installation_and_Configuration">Installation and Configuration </span></h2>
+
+<p>Log on with a user, such as "admin," who has the <a href="../3.1/Roles.html#PM_SETUP_ADVANCE" title="3.1/Roles">PM_SETUP_ADVANCE</a> permission in their <a href="../3.1/Roles.html" title="3.10/Roles">role</a>, and then go to <strong>ADMIN &gt; Plugins &gt; Enterprise Manager</strong>. In the next graphic, do one of the following:</p>
+<ul>
+	<li>Install the Simple Report plugin by clicking on <img alt="" height="19" src="../sites/default/files/InstallPluginIcon.png" width="20"><strong>Install from File</strong> and uploading the plugin file.</li>
+	<li>	Click on the Simple Report plugin's <strong>Install Now</strong> button in the list of available plugins.<br>
+	</li>
+</ul>
+<p><img src="../sites/default/files/3.0SimpleReport351Install.png"></p>
+<p>After installing the plugin, make sure that the <b>Simple Report</b> plugin is enabled&nbsp;	<img alt="" height="20" src="../sites/default/files/EnabledIcon.png" width="22">. If the plugin is not enabled, click the <b>Enable button</b>, as shown in the graphic below.</p>
+<p><img src="../sites/default/files/3.0SimpleReport351InstallEnable.png"></p>
+
+<h2><span id="Simple_Reporting_Option">Simple Reports Option</span></h2>
+<p>After the plugin is enabled, an option named Reports is added under the Home panel as shown in the graphic below.</p>
+<p><img src="../sites/default/files/3.0SimpleReportPlugin_Home.png"></p>
+
+<p>Note that the Reports option does NOT display any reports if the user does not have the <a href="547.html#Setting_Up_Permissions">simple report permission</a>.</p>
+
+<h2><span id="Creating_a_Simple_Report">Creating a Simple Report</span></h2>
+<p>A simple report is created by converting a <a href="../3.0/Report_Tables.html#Creating_Report_Tables" title="3.0/Report Tables">report table</a>.</p>
+<p>To create a simple report, follow these steps:</p>
+<ol>
+	<li>Create a report table by opening a process and then clicking the Report Tables option in the Process Objects toolbox. A new window displays to create the report table as seen in the graphic below.</li>
+	<li>Define the table name, description, and columns that will
+	be part of the report table and then click <b>Create</b>.
+	<p><img src="../sites/default/files/PM31SimpleReportPlugin_CreateRepTable.png"/></p>
+	The report table is listed in the Report Tables window.
+	<p><img src="../sites/default/files/PM31SimpleReportPlugin_ResultCreateRT.png"></p></li>
+	<li>To convert the created report table into a simple report, right-click on the report table line and then select the <b>Convert to Simple Report</b> option as seen in the graphic below.
+	<p><img src="../sites/default/files/PM31SimpleReportPlugin_ConvertToSR.png"></p>
+	</li>
+</ol>
+<p>A green "Simple Report" label is added to the report table's description, showing that the report table is now a simple report.</p>
+<p><img src="../sites/default/files/PM31SimpleReportPlugin_DescriptionSimpleReport.png"></p>
+<p>A simple report can be turned back to a report table by right-clicking the report line and then selecting the <b>Convert to Native Report Table</b> option.</p>
+<p><img src="../sites/default/files/PM31SimpleReportPlugin_ConvertToRT.png"></p>
+
+<h3><span id="Setting_Up_Permissions">Setting Up Permissions</span></h3>
+
+<p>A simple report is only available as long as the proper permissions are given to	a specific department, user, group, or all users. By default, simple reports are not available to any user.</p>
+<p>To set up permissions, follow these steps:</p>
+<ol>
+	<li>After the simple report is created, right click on it and choose the <b>Permissions</b> option.
+	<p><img src="../sites/default/files/PM3.1SimpleReportPlugin_Permissions.png"></p>
+	A new window opens with the following options as noted in the graphic below:
+	<ul>
+		<li><strong>New:</strong> Create a new permission.</li>
+		<li><strong>Edit:</strong> Edits an existing permission.</li>
+		<li><strong>Status:</strong> Toggle whether the permission is activate or inactive. It means if the permissions assigned to the Simple Report are applied or not. Note that the status can be changed only if there is more than one permission set.</li>
+		<li><strong>Delete:</strong> Delete a permission. To delete a permission, more than one permission must be set.</li>
+	</ul>
+	<p><img src="../sites/default/files/PM31SimpleReportPlugin_AssignNewPermissions.png"></p>
+	</li>
+	<li>Create a permission by clicking on the <b>New</b> button in the menu. The <b>Add Permission</b> screen displays within the Report Tables window.
+	<p><img src="../sites/default/files/PM31SimpleReportPlugin_AddNewPermissions.png"></p>
+	<p>Fill out the following information:</p>
+	<ul>
+		<li><strong>Simple Report:</strong> Enter the name of the simple report.</li>
+		<li><strong>Assign To:</strong> Select one of the following options to specify the scope of the permission to access the report:
+		<p><img src="../sites/default/files/PM3.1SimpleReportPlugin_AddNewPermissions_AssignTo.png"></p>
+		<ul>
+			<li><strong>User:</strong></tt> Select to indicate a single user can access the report. Select the name of the user that will have access to the report in the <b>Name</b> field. Note that the <b>Name</b> field only lists users created in the current workspace.</li>
+			<li><strong>Department:</strong></tt> Select to indicate a department can access the report. Select the name of the department that will have access to the report in the <b>Name</b> field. Note that the <b>Name</b> field only lists departments created in the current workspace.</li>
+			<li><strong>Group:</strong></tt> Select to indicate a group can access the report. Select the name of the group that will have access to the report in the <b>Name</b> field. Note that the <b>Name</b> field only lists groups created in the current workspace.</li>
+			<li><strong>Everybody:</strong></tt> Select to indicate all users in the current workspace can access the simple report.</li>
+		</ul>
+		</li>
+	</ul>	
+	</li>
+	<li>Click the <b>Save</b> button. The permission is listed in the Report Tables window.
+	<p><img src="../sites/default/files/PM3.1SimpleReportPlugin_ReportTables_AdminAssigned.png"></p>
+	<p>The Report Tables window provides the following information about permissions:</p>
+	<ul>
+		<li><strong>Assigned to:</strong> Shows to which user, department, or group	has the permission aplies.</li>
+		<li><strong>Create:</strong> Shows the creation date of the permission.</li>
+		<li><strong>Update:</strong> Shows the date of the permission modification.</li>
+		<li><strong>Status:</strong> Shows if the permission is <font color="Green">Active</font> or <font color="Red">Inactive</font>.</li>
+	</ul>
+	<p>Use the <b>Back</b> button to return to the <b>Report Tables</b> window.</p>
+	</li>
+</ol>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> If a ProcessMaker process is exported to another ProcessMaker installation, tables and report tables are not exported. Therefore, permissions given to simple reports will no longer be available.</font></p>
+
+<h3><span id="Setting_Up_Filters">Setting Up Filters</span></h3>
+<p>Filters can be set to more than one field to target more specific
+	search results. These filters are only available after the plugin is enabled.</p>
+<p>Follow these steps to set up a filter:</p>
+
+<ol>
+	<li>Edit the report table that was turned into a simple report
+	either by doing one of the following:
+	<ul>
+		<li>Go to the Report Tables option inside the process designer.</li>
+		<li>Go to <strong>Admin &gt; Settings &gt; PM Tables</strong>, and then
+		click the <strong>Edit</strong> button.
+		<p><img alt="" src="../sites/default/files/PM3.1SimpleReportPlugin_ReportTableEdit.png"></p></li>
+	</ul>
+	A Filter column is added to the right of the <b>Index</b> column when the report table is turned into a simple report.
+	</li>
+	<li>Set a filter to a field by double-clicking on the field row and then checking the box that is displayed in the <b>Filter</b> column.</li>
+	<li>Click on the <b>Update</b> button to save the changes.</li>
+</ol>
+
+<p><img alt="" src="../sites/default/files/PM3.1_ReportTableFilters.png"></p>
+
+<p>The row value of the Filter column changes to "Yes". In this example,
+	the user is able to configure filters in the "EMPLOYEEEMAIL" and
+	"EMPLOYEENAME" fields.</p>
+<p><img alt="" src="../sites/default/files/PM3.1_ReportTableFiltersSet.png"></p>
+
+<h2><span id="Checking_the_Simple_Report">Checking the Simple Report</span></h2>
+
+<p>Remember that to see the data in a simple report, the report table must
+	have at least one case record. In other words, at least one case must have
+	been started.</p>
+
+<p>To see the simple report, go to <b>Home > Documents > Reports</b>. The
+	Simple Report interface is displayed where each simple report is
+	displayed in a tab.</p>
+<p><img src="../sites/default/files/PM31SimpleReportPlugin_Home_Reports.png"></p>
+
+<p>The Reports panel has the following options:</p>
+
+<ul>
+	<li><strong>Export Page To Excel File:</strong> Exports the current page to
+		an Excel file.</li>
+	<li><strong>Export All to Excel File:</strong> If there is more than one
+		page, all pages are exported to an Excel file.</li>
+	<li><strong>Export Page to CSV File:</strong> Exports the current page to
+		an Excel file with the <i>.csv</i> format (usually used with tabular
+		data separating the values with a comma).</li>
+	<li><strong>Export All to CSV File:</strong> If more than one page is found
+		in this section, this option exports all pages to an Excel
+		file with the <i>.csv</i> format.</li>
+	<li><strong>Filter By:</strong> Applies a filter to the fields configured
+		in the Report Table.
+	</li>
+	<li><strong>Filter Reset:</strong> Clears any filter applied and shows the
+		initial configuration of the list.</li>
+</ul>
+<p><img src="../sites/default/files/PM3.1SimpleReportPlugin_Toolbar.png"></p>
+
+<p>For example, click the <strong>Export Page To Excel File</strong> button,
+	and the Excel document is downloaded automatically. Open the <tt>.xls</tt>	file with an Excel editor to see the data contained in the simple report.</p>
+<p><img alt="" src="../sites/default/files/PM3.1ExcelReport.png"></p>
+
+<h2><span id="Applying_Filters">Applying Filters</span></h2>
+
+<p>Filters can be used to narrow the data displayed by the simple report.
+	These filters support two wildcard operators in conjunction with the LIKE
+	and NOT LIKE operators, the underscore (<tt>_</tt>), and the percent symbol
+	( <tt>%</tt>).</p>
+<p>
+	<table>
+		<tr>
+			<th colspan="2">Wildcards</th>
+		</tr>
+		<tr>
+			<td>Percent Symbol (%)</td>
+			<td>Matches one or more characters.</td>
+		</tr>
+		<tr>
+			<td>The underscore (_)</td>
+			<td>Matches one character.</td>
+		</tr>
+	</table>
+</p>
+
+<p>See some examples of LIKE, NOT LIKE, and EQUAL AND NOT EQUAL TO using the word "example" in the following tables:
+</p>
+
+<p>
+	<table>
+		<tr>
+			<th colspan="2">LIKE</th>
+
+		</tr>
+		<tr>
+			<td>% at the beginning
+			</td>
+			<td>LIKE %mple</td>
+		</tr>
+		<tr>
+			<td>% at the end</td>
+			<td>LIKE exam%</td>
+		</tr>
+		<tr>
+			<td>% in the middle of the string</td>
+			<td>LIKE 'e%xample'</td>
+		</tr>
+		<tr>
+			<td>% at the beginning and end</td>
+			<td>LIKE %xampl%</td>
+		</tr>
+		<tr>
+			<td>_ any coincidence</td>
+			<td>LIKE e_____e</td>
+		</tr>
+		<tr>
+			<td>A combination</td>
+			<td>LIKE 'e_%_%'</td>
+		</tr>
+	</table>
+</p>
+<p>
+	<table>
+		<tr>
+			<th colspan="2">NOT LIKE</th>
+
+		</tr>
+		<tr>
+			<td>% at the beginning</td>
+			<td>NOT LIKE %xample</td>
+		</tr>
+		<tr>
+			<td>% at the end</td>
+			<td>NOT LIKE exampl%</td>
+		</tr>
+		<tr>
+			<td>% at the beginning and at the end</td>
+			<td>NOT LIKE %xampl%</td>
+		</tr>
+		<tr>
+			<td>_ any coincidence</td>
+			<td>NOT LIKE e_____e</td>
+		</tr>
+		<tr>
+			<td>A combination</td>
+			<td>NOT LIKE 'e_%__%'</td>
+		</tr>
+	</table>
+</p>
+
+<p>The equal (=) and not equal (!=) operators can be used as well with strings
+	and/or numbers.
+</p>
+<p>
+	<table>
+		<tr>
+			<th colspan="2">EQUAL AND NOT EQUAL</th>
+		</tr>
+		<tr>
+			<td>String</td>
+			<td>= example <br> != example
+			</td>
+		</tr>
+		<tr>
+			<td>Numbers</td>
+			<td> = 1 <br> != 1
+			</td>
+		</tr>
+	</table>
+</p>
+
+<p>For example, configure a filter to narrow the records that are displayed
+	in the simple report by clicking the <strong>Filter By</strong> option.</p>
+
+<p><img alt="" src="../sites/default/files/3.1SimpleReportFilterOption.png"></p>
+
+<p>In the <b>Filters</b> window, the fields in the report table that were configured in the search criteria will display. A logical operator, such as LIKE, NOT LIKE, = or !=, and a criterion can be applied to each one of these fields.</p>
+
+<p><img alt="" src="../sites/default/files/3.1SimpleReportPlugin3-3-0LogicalOperator.png"></p>
+
+<p>In this example, the "EMPLOYEEEMAIL" and "EMPLOYEENAME" fields were configured
+	in the report table, and the <b>LIKE</b> operator was selected along with
+	the "travisgrady%" as criteria to display only the records that contain an
+	employee email that starts with "travisgrady".</p>
+
+<p><img alt="" src="../sites/default/files/3.1SimpleReportPlugin3-3-0-ExampleCriteriaField.png"></p>
+
+<p>Remember that it is possible to filter by more than two fields if a result
+	needs to be more precise.</p>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

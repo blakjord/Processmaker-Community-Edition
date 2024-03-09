@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/Audit_Log.html" />
+<link rel="shortlink" href="678.html" />
+<title>3.2 - 3.8 - Audit Log | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"WgtX_1Erm1hcerdnC8e2BBiZhqPIXn6sjktBqoRjFaE","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-678 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="678.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="678.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-BQ60X-6n4cIiZrL0McqSPiyo178yUAowvBRP3Ty6bNI" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - Audit Log</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a href="../index.php/2.8/Audit_Log.html" class="">3.1</a></li><li><a href="../index.php/2.8/Audit_Log.html" class="">3.0</a></li><li><a href="../index.php/2.8/Audit_Log.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - Audit Log" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="678.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - Audit Log 1/5</option><option value="40">Give 3.2 - 3.8 - Audit Log 2/5</option><option value="60" selected="selected">Give 3.2 - 3.8 - Audit Log 3/5</option><option value="80">Give 3.2 - 3.8 - Audit Log 4/5</option><option value="100">Give 3.2 - 3.8 - Audit Log 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-8r1G1p0GZ1elqrOpDdkfZd919yhfAc0ks2s9ceP6zEU" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="678.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="678.html#Overview">Overview</a></li>
+<li class="toc"><a href="678.html#Enabling_the_Audit_Log">Enabling the Audit Log</a></li>
+<ol class="toc">
+<li class="toc"><a href="678.html#Disabling_the_Audit_Log">Disabling the Audit Log</a></li>
+</ol>
+<li class="toc"><a href="678.html#Accessing_the_Audit_Log">Accessing the Audit Log</a></li>
+<li class="toc"><a href="678.html#Actions_Type">Actions Type</a></li>
+<ol class="toc">
+<li class="toc"><a href="678.html#Designer_Actions">Designer Actions</a></li>
+<li class="toc"><a href="678.html#Log_actions">Log Actions</a></li>
+<li class="toc"><a href="678.html#Plugins_Actions">Plugins Actions</a></li>
+<li class="toc"><a href="678.html#Settings_Actions">Settings Actions</a></li>
+<li class="toc"><a href="678.html#Users_Actions">Users Actions</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+
+<p>ProcessMaker offers an <i>Audit Log</i> which provides chronological records so that administrators can monitor the security of their ProcessMaker installation and view a history of the actions performed by users under the <strong>ADMIN</strong> menu, which includes the <strong>Settings</strong>, <strong>Plugins</strong>, <strong>Users</strong> and <strong>Logs</strong> tabs.</p>
+
+<p>The records of the log can be used to check what actions users have executed in each tab under the <strong>ADMIN</strong> menu, when these actions were executed and from which IP address. The Audit Log currently shows a list with these details beside a brief description of the action. For example, if a <a href="../3.1/PM_Tables.html" title="3.1/PM Tables"> PM Table</a> was created and deleted:</p>
+
+<p><img src="../sites/default/files/3.2AuditLogExample.png"></p>
+
+<p>The Audit Log records all possible actions under the  menu, except accessing logs (e.g. the <a href="../3.2/Events.html" title="3.2/Events"> Events</a> Log), some information windows (e.g. PHP Information), the actions of some additional plugins (e.g. <a href="../3.0/FTP_Monitor.html" title="FTP Monitor"> FTP Monitor</a>) and the changes inside the <a href="../3.0/User_Experience.html" title="3.0/User Experience"> User Experience</a>.</p>
+
+<p>This feature is available with the acquisition of your ProcessMaker Enterprise Edition license. To check if your instance has this feature installed, go to <strong>Admin &gt; Plugins &gt; Enterprise Manager</strong> and click on the <strong>Enterprise Features</strong> tab where it should be listed as installed and enabled.</p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogFeatureEnterpriseFeature.png"></p>
+
+<h2><span id="Enabling_the_Audit_Log">Enabling the Audit Log</span></h2>
+
+<p>In order to start logging users' actions, the Audit Log must first be enabled by going to <strong>ADMIN &gt; Settings &gt; Audit Log</strong>:</p>
+<p><img alt="" src="../sites/default/files/3.2Access_Audit_Log.png"></p>
+
+<p>Check the option <b>Enable Audit Log</b> to enable it and then click on <b>Save Settings</b>.</p>
+<p><img alt="" src="../sites/default/files/3.2Enable_Audit_Log.png"></p>
+
+<p>After saving the configuration, a message is displayed at the bottom of the page:</p>
+<p><img alt=""  src="../sites/default/files/3.2Audit_Log_Enable_Message.png"></p>
+
+<h3><span id="Disabling_the_Audit_Log">Disabling the Audit Log</span></h3>
+<p>If the Audit Log need to be disabled, go to <strong>ADMIN &gt; Settings &gt; Audit Log</strong> and uncheck the option <b>Enable Audit Log</b>. After saving, a message will be shown at the bottom of the page.</p><p><img alt="" src="../sites/default/files/3.2Audit_Log_Disable_Message.png" ></p>
+
+<h2><span id="Accessing_the_Audit_Log">Accessing the Audit Log</span></h2>
+
+<p>Access the records in the Audit Log by going to <strong>ADMIN &gt; Logs &gt; Audit Log</strong>.</p>
+
+<!--Until PM 3.2.2<p><img alt="" src="/sites/default/files/3.2Access_Audit_Logs_Log.png" ></p>-->
+<!--As of PM 3.2.3--> <p><img src="../sites/default/files/3.2.3LogsAuditLog.png" alt=""></p>
+
+<p>In the panel that opens on the right, all actions will be listed which were executed while the plugin was enabled:</p>
+<p><img alt="" src="../sites/default/files/3.2Audit_Log_Actions_Details.png" ></p>
+
+<p><strong>1. Action:</strong> Select a type of action to filter the Audit Log. To see all types of actions, select <i>All</i>.</p>
+<p><img alt="" src="../sites/default/files/3.2Audit_Log_Action.png" ></p>
+
+<dl>
+    <dd>The list immediately refreshes after selecting a filter of the actions.</dd>
+</dl>
+
+<p><strong>2. Description:</strong> Enter a phrase to search for all log records which contain that phrase. After entering a phrase click on the <i>Search</i> button to show all matching records. Note that the search is case insensitive and will search in all columns in the Audit Log.</p>
+
+<p><img alt="" src="../sites/default/files/3.2Audit_Log_Search_Description.png"></p>
+
+<p><strong>3. From - To:</strong> Use these two fields to filter the log records starting from a specified date to a specified date. See all records up to a specified date, enter a date in the <strong>To</strong> field, but leave the <strong>From</strong> field blank . To see all records after a specified date, enter a date in the <strong>From</strong> field but leave the <strong>To</strong> field blank. To remove the date filter, delete both the <strong>From</strong> and <strong>To</strong> dates. Then click on the <i>Search</i> button.</p>
+
+<p><img alt=""  src="../sites/default/files/3.2Audit_Log_Search_FromTo.png"></p>
+
+<p><strong>4. Reset Filters:</strong> Click on this button to clear the Description, From and To fields. Then click on the <b>Search</b> button to refresh the list in the Audit Log.</p>
+
+<p><strong>5. Search:</strong> Click on this button to search the records log according the criteria set in the Description, From and To fields.</p>
+
+<p><strong>6. Date:</strong> Shows the date and time when the Action was recorded in the format <strong><tt>YYYY-MM-DD HH:MM:SS</tt></strong>.</p>
+
+<p><strong>7. User:</strong> Lists the last and first name of the user who performed the recorded Action .</p>
+
+<p><strong>8. IP Client.</strong> Shows the IP address of the user who performed the action.</p>
+<p><strong>9. Action.</strong> Shows the type of action, which was performed in the admin section in the <a href="678.html#Settings_Actions"> Settings</a>, <a href="678.html#Plugins_Actions"> Plugins</a>, <a href="678.html#Users_Actions"> Users</a> and <a href="678.html#Log_actions">Logs</a> tabs.</p>
+<p><strong>10. Description.</strong> Shows a brief description of the action.</p>
+<p>The columns <i>Date</i>, <i>Action</i> and <i>Description</i> can be ordered alphabetically in ascending or descending order by clicking in the column header, which will show an arrow indicating the direction of the sort. To reverse the sort order, click on the header again.</p>
+
+<h2><span id="Actions_Type">Actions Type</span></h2>
+<p>The actions type for Audit logs are the following:</p>
+<ul>
+    <li><a href="678.html#Designer_Actions">Designer</a></li>
+    <li><a href="678.html#Log_actions">Log Actions</a></li>
+    <li><a href="678.html#Plugins_Actions">Plugins Actions</a></li>
+    <li><a href="678.html#Settings_Actions">Settings Actions</a></li>
+    <li><a href="678.html#Users_Actions">Users Actions</a></li>
+</ul>
+
+<h3><span id="Designer_Actions">Designer Actions</span></h3>
+<p>The Designer Log records the following actions under the <b>Designer</b> ProcessMaker tab.</p>
+<p>
+    <table>
+        <tr>
+            <th>Process Elements</th>
+            <th>Process Element Properties</th>
+            <th>Process Objects</th>
+        </tr>
+        <tr>
+            <td>* Add Sub-Process<br>* Add Task<br>* Add Text<br>* Add Vertical Line<br>* Add horizontal line<br>* Delete All Lines<br>* Delete Line<br>* Delete Sub-Process<br>* Delete Task<br>* Delete Text<br>* Save Line Position<br>* Save Text Position<br>* Save Task Position<br>* Save Task Properties</td>
+            <td>* Assign Group Task<br>* Assign Trigger<br>* Assign User Task<br>* Assign user<br>* Delete Group Task<br>* Delete User Task<br>* Derivation Rule<br>* Down Trigger<br>* Edit Event<br>* Edit Text<br>* Event deleted<br>* New Condition From Step<br>* Options Menu Task<br>* Save New Step<br>* Step Delete<br>* Step Down<br>* Step Up<br>* Up Trigger<br>* Web Entry</td>
+            <td>* Assign Supervisor Dynaform<br>* Assign Supervisor Input<br>* Case trackers<br>* Create Dynaform<br>* Create New Database connection<br>* Create New Input Document<br>* Create New trigger<br>* Create new Case Scheduler<br>* Create new Output Document<br>* Delete Case Scheduler<br>* Delete Data from PM Table<br>* Delete Database Connection<br>* Delete Dynaform<br>* Delete Input Document<br>* Delete Output Document<br>* Delete Routes<br>* Delete Trigger<br>* Process File Manager<br>* Remove Group<br>* Remove Supervisor Dynaform<br>* Remove Supervisor Input<br>* Update Case Scheduler<br>* Update Database Connection<br>* Update Dynaform add/deleted fields<br>* Update Input Document<br>* Update Output Document<br>* Updated conditions editor in dynaform</td>
+        </tr>
+        <tr>
+            <th colspan="3">Process Actions</th>
+        </tr>
+        <tr>
+            <td colspan="3">* Delete Process<br>* Export Process<br>* Import Process<br>* Process Edited<br>* Process Permissions</td>
+        </tr>
+    </table>
+</p>
+<p><u><b>Example</b></u></p>
+<p>These are the steps to assign a user to a task and then check it on the <b>Audit Log</b>:</p>
+<ol style="font-weight:bold;">
+    <li>
+        <p style="font-weight:normal;">Right click on the <b>Task</b> to show its options.</p>
+        <img alt="" src="../sites/default/files/3.6.5_AuditLogExample_AssignUserToTask1.png">
+    </li>
+    <li>
+        <p style="font-weight:normal;">Assign the user to the <b>Assigned user list</b>.</p>
+        <img alt="" src="../sites/default/files/3.6.5_AuditLogExample_AssignUserToTask2.png">
+    </li>
+    <li>
+        <p style="font-weight:normal;">Enter to <b>Admin > Logs > Audit Log</b> to check the action recorded inside the <b>Audit Log</b>. The action described in this case is <b>Assign user to Task.</b>.</p>
+        <img alt="" src="../sites/default/files/3.6.5_AuditLogExample_AssignUserToTask3.png">
+    </li>
+</ol>
+
+<h3><span id="Log_actions">Log Actions</span></h3>
+<p>The Audit Log records the following actions under <strong>ADMIN &gt; Logs</strong></p>
+<p>
+<table><tbody>
+<tr>
+<th><a href="../3.1/Executing_cron.php.html#Checking_the_Cron_Log_in_ProcessMaker" title="Executing cron.php"><span style="color: white;">Cron</span></a></th></tr>
+<tr>
+<td>* Clear Cron</td></tr></tbody>
+</table>
+</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">The options: <a href="../3.2/Events.html" title="3.2/Events"> "Events"</a>, <a href="../index.php/Case_Scheduler.html" title="/index.php/Case_Scheduler"> "Case Scheduler"</a> and Emails are not recorded inside the log.</font></p>
+<p><u><strong>Example</strong></u></p><p><a href="../3.1/Executing_cron.php.html#Checking_the_Cron_Log_in_ProcessMaker" title="Executing cron.php">Clear the Cron</a> log inside <strong>Admin &gt; Logs &gt; Cron</strong></p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogExampleClearCron.png"></p>
+<p>View the action registered inside the Audit Log by going to <strong>Admin &gt; Logs &gt; Audit Log</strong>:</p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogExampleClearCronAction.png"></p>
+<p>The description for this action when clearing the Cron is <i>Clear Cron</i>.</p>
+
+<h3><span id="Plugins_Actions">Plugins Actions</span></h3>
+<p>The Audit Log records the following actions under <strong>Admin &gt; Plugins</strong>:</p>
+<p>
+<table>
+<tbody>
+<tr>
+<th><a href="../3.2/Enterprise_Manager_Tool.html" title="Enterprise Edition"><span style="color: white;"> Enterprise Manager</span></a></th>
+<th><a href="../3.0/Plugins.html" title="Plugins"><span style="color: white;"> Plugins Manager</span></a></th>
+</tr>
+<tr>
+    <td>* Install Plugin<br>* Enable Plugin<br>* Disable Plugin</td>
+    <td>* Install Plugin<br>* Enable Plugin<br>* Disable Plugin</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><u><strong>Example</strong></u></p>
+<p><a href="../3.0/Plugins.html#Enable_and_Disable_a_Plugin" title="3.0/Plugins">Enable and disable a plugin</a> by going to <strong>Admin &gt; Plugins &gt; Plugins Manager</strong>.</p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogExampleDisablePlugin.png" ></p>
+<p>The action described for disabling a plugin inside the Audit Log is: "Disable Plugin".</p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogEnableDisablePlugin.png" ></p>
+
+<h3><span id="Settings_Actions">Settings Actions</span></h3>
+<p>The Audit Log records the following actions executed under <strong>ADMIN &gt; Settings</strong>:</p>
+<p>
+<table><tbody>
+<tr>
+    <th><a href="../3.0/Logo.html" title="Logo"><span style="color: white;">Logo</span></a></th>
+    <th><a href="../3.2/Email_Settings.html" title="3.2/Email Settings"><span style="color: white;">Email</span></a></th>
+    <th><a href="../3.0/Calendars.html" title="3.0/Calendars"><span style="color: white;">Calendars</span></a></th>
+    <th><a href="../3.0/Process_Categories.html" title="Process Categories"><span style="color: white;">Process Categories</span></a></th>
+    </tr>
+<tr>
+    <td>* Apply - Replace Logo<br>* Upload Logo<br>* Delete Logo<br>* Restore the default logo</td>
+    <td>* Update Email Settings<br>* Create Email Settings</td>
+    <td>* Create Calendar<br>* Update Calendar<br>* Delete Calendar</td>
+    <td>* Create Category<br>* Update Category<br>* Delete Category</td>
+</tr>
+<tr>
+<th><a href="../3.0/Languages.html" title="3.0/Languages"><span style="color: white;"> Languages</span></a></th>
+<th><a href="../3.1/Skins.html" title="3.1/Skins"><span style="color: white;">Skins</span></a></th>
+<th><a href="../3.0/Heartbeat.html" title="Heartbeat"><span style="color: white;">Heart Beat</span></a></th>
+<th><a href="../3.2/Environment_Settings.html" title="Environment Settings"><span style="color: white;">Environment</span></a></th>
+</tr>
+<tr>
+    <td>* Upload Language<br>* Export Language<br>* Delete Language</td>
+    <td>* Create Skin<br>* Import Skin<br>* Export Skin<br>* Delete Skin</td>
+    <td>* Enable Heart Beat<br>* Disable Heart Beat<br>* Contribute to the ProcessMaker project enabling heart beat anonymous usage data</td>
+    <td>* Update Environment Settings</td>
+</tr>
+<tr>
+    <th><a href="../3.2/Clearing_the_Case_List_Cache.html" title="Clearing the Case List Cache"><span style="color: white;">Cases List Cache Builder</span></a></th>
+    <th><a href="../3.0/Clear_Cache.html" title="Clear Cache"><span style="color: white;"> Clear Cache</span></a></th>
+    <th><a href="../3.1/PM_Tables.html" title="PM Tables"><span style="color: white;">PM Tables</span></a></th>
+    <th><a href="../3.0/ProcessMaker_WSDL_Web_Services.html" title="2.0/ProcessMaker WSDL Web Services"><span style="color: white;">Web Services Test</span></a></th>
+</tr>
+<tr>
+    <td>* Build Cache</td>
+    <td>* Clear Cache</td>
+    <td>* Create PM Table<br>* Update PM Table<br>* Delete PM Table<br>* Add Data in a PM Table<br>* Update Data from PM Table<br>* Delete Data of a PM Table<br>* Import Table<br>* Export Table</td>
+    <td><i>No action is recorded in the log as it is just testing.</i></td>
+</tr>
+<tr>
+<th><a href="../3.2/login.html" title="Login"><span style="color: white;"> Login</span></a></th>
+<th><a href="../3.0/Dashboards.html" title="Dashboards"><span style="color: white;"> Dashboard</span></a></th>
+<th><a href="../3.2/System.html" title="System"><span style="color: white;"> System</span></a></th>
+<th><span style="color: white;">System Information</span></th>
+</tr>
+<tr>
+    <td>* Update Login Settings</td>
+    <td>* Create Dashlet Instance<br>* Update Dashlet Instance (include Deactivate and Activate)<br>* Delete Dashlet Instance</td>
+    <td>* Upload System Settings</td><td><i>No action is recorded in the log since this is only an Information screen.</i></td>
+</tr>
+<tr>
+<th>Check PM Requirements</th>
+<th>PHP Information</th>
+<th>Audit Log</th>
+<th><a href="../3.2/Cases_List_Builder.html" title="Cases List Builder"><span style="color: white;">Cases List</span></a></th>
+</tr>
+<tr>
+    <td><i>No action is recorded in the log since this is only a test.</i></td>
+    <td><i>No action is recorded in the log as this is only an Information screen.</i></td>
+    <td>* Enable Audit Log<br>* Disable Audit Log</td>
+    <td>Set Columns</td>
+</tr>
+<tr>
+    <th colspan="2">Google Service Settings</th>
+    <th colspan="2">SAML plugin</th>
+</tr>
+<tr>
+    <td colspan="2">* Disconnect G Suite<br>* G Suite Configuration Saved<br>* Request G Suite connection<br>* Update G Suite groups</td>
+    <td colspan="2">* SAML Authentication Enable<br>* SAML Authentication Provider<br>* Syncing Users</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><u><strong>Example</strong></u></p><p>Create a new <a href="../3.0/Process_Categories.html" title="Process Categories">Process Category</a> by going to <strong>Admin &gt; Settings &gt; Process Categories</strong>.</p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogExampleNewProcessCategory.png" ></p>
+<p>Create the category: "RRHH"</p>
+<p><img alt="" src="../sites/default/files/AuditLogExampleRRHHProcessCategory.png" ></p>
+<p>View the action recorded in the Audit Log by going to <strong>Admin &gt; Logs &gt; Audit Log</strong>:</p>
+<p><img alt=" " src="../sites/default/files/AuditLogExampleRRHHProcessCategory_0.png" ></p>
+<p>The description for creating a new category inside the Audit Log is: "Create Category".</p>
+<p><img alt=" " src="../sites/default/files/3.2AuditLogCreateCategory.png" ></p>
+
+<h3><span id="Users_Actions">Users Actions</span></h3>
+<p>The Audit Log records the following actions executed under <strong>Admin &gt; Users</strong>:</p>
+<p>
+<table>
+<tbody>
+<tr>
+<th><a href="../3.0/Managing_Users.html" title="Managing Users"><span style="color: white;"> Users</span></a></th>
+<th><a href="../3.0/Managing_Users.html#Groups" title="Managing Users"><span style="color: white;"> Groups</span></a></th>
+<th><a href="../3.0/Managing_Users.html#Departments_and_Sub-Departments" title="Managing Users"><span style="color: white;">Departments</span></a></th>
+</tr>
+<tr>
+    <td>* Create User<br>* Update User<br>* Delete User<br>* Enable User<br>* Disable User<br>*Remove User<br>* Authentication Source</td>
+    <td>* Create New Group<br>* Update Group<br>* Assign Users To Group</td>
+    <td>* Create Department<br>* Create Sub Department<br>* Update Department<br>* Update Sub Department<br>* Delete Department<br>* Assign Manager to Department<br>* Assign Users to Department<br>* Remove Users from Department</td>
+</tr>
+<tr>
+<th><a href="../3.1/Roles.html" title="3.1/Roles"><span style="color: white;">Roles</span></a></th>
+<th><a href="../3.0/External_Authentication.html" title="3.0/External Authentication"><span style="color: white;"> Authentication Sources</span></a></th>
+<th><a href="../3.0/User_Experience.html" title="3.0/User Experience"><span style="color: white;">User Experience</span></a></th>
+</tr>
+<tr>
+    <td>* Create New Role<br>* Update Role<br>* Delete Role<br>* Assign Users To Role<br>* Delete User To Role<br>* Add Permission to a Role<br>* Delete Permission To Role<br>*Delete Permissions</td>
+    <td>* Create Authentication Source<br>* Update Authentication Source<br>* Delete Authentication Source<br>* Assign Authentication Source</td>
+    <td><i>The User Experience is not recorded in the log</i></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><u><strong>Example</strong></u></p>
+<p><a href="../3.0/Managing_Users.html#Creating_New_Users" title="3.0/Managing Users">Create a new user</a> by going to <strong>Admin &gt; Users &gt; Users</strong></p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogExampleCreateUser.png" ></p>
+<p>Fill in information about the new user and save it.</p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogExampleCreateUserrmiller.png"></p>
+<p>View the action recorded inside the Audit Log by going to <strong>Admin &gt; Logs &gt; Audit Log</strong>. The action described for creating a new user inside the Audit Log is: "Create User".</p>
+<p><img alt="" src="../sites/default/files/3.2AuditLogExampleCreateUserLog.png"></p>
+
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

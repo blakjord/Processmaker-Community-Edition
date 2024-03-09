@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="External_Authentication.html" />
+<link rel="shortlink" href="../node/553.html" />
+<title>3.0 - 3.8 - External Authentication | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"dA49UtRAHJCh9OXW6G9J8pFzT_4-P--TJOqUaMDOEJ4","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-553 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="External_Authentication.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="External_Authentication.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-rc_AFKS30CGYZJNlp1cUtg6vArJjhVAKlot-HB-54rM" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.0 - 3.8 - External Authentication</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a  class="active-version">3.0</a></li><li><a href="../index.php/2.0/External_Authentication.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.0 - 3.8 - External Authentication" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="External_Authentication.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.0 - 3.8 - External Authentication 1/5</option><option value="40">Give 3.0 - 3.8 - External Authentication 2/5</option><option value="60" selected="selected">Give 3.0 - 3.8 - External Authentication 3/5</option><option value="80">Give 3.0 - 3.8 - External Authentication 4/5</option><option value="100">Give 3.0 - 3.8 - External Authentication 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-yt5HRaj6aYUjaUi6H3QrLNERXF7fPha_RG6Mhn-owGI" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="External_Authentication.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="External_Authentication.html#Overview">Overview</a></li>
+<li class="toc"><a href="External_Authentication.html#Configuring_Authentication_Sources">Configuring Authentication Sources</a></li>
+<li class="toc"><a href="External_Authentication.html#Importing_External_Users">Importing External Users</a></li>
+<li class="toc"><a href="External_Authentication.html#Assigning_Authentication_Sources_to_Existing_Users">Assigning Authentication Sources to Existing Users</a></li>
+<li class="toc"><a href="External_Authentication.html#Changing_user_password_after_importing_and_synchronization">Changing user password after importing and synchronization</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>External authentication makes it possible to import users' profiles, so users can use the same username and password in ProcessMaker as they use for their other applications. ProcessMaker supports multiple authentication sources, so that one user may be verified by ProcessMaker, another by LDAP, another by Active Directory, etc.</p>
+
+<p>ProcessMaker Community Edition only offers manual import of LDAP and Active Directory users and doesn't support synchronizing departments and groups. For organizations needing better integration with LDAP or Active Directory, the Enterprise Edition includes an <a href="Advanced_LDAP.html" title="ProcessMaker Advanced LDAP plugin">Advanced LDAP</a> plugin, which supports departments, one-click synchronization of departments and/or sub-departments and also groups, and automatic import of new users at login.</p>
+
+<h2><span id="Configuring_Authentication_Sources">Configuring Authentication Sources</span></h2>
+
+<p>Go to <strong>ADMIN &gt; Users &gt; Authentication Sources</strong> displays a list of the available authentication sources.</p>
+<p><img alt="" src="../sites/default/files/3.0AuthenticationOption.png"></p>
+
+<p>To add a new Authentication Source, click on <b>New</b>, to create an authentication source. Then select the Provider, ProcessMaker Community Edition only comes with the normal <b>ldap</b> importer. Once selected, click on <b>Continue</b>.</p>
+<p><img alt="" src="../sites/default/files/3.0AuthenticationNewProvider.png"></p>
+
+<p>In the next part, define the properties of how to access the Authentication Source.</p>
+<p><img alt="" src="../sites/default/files/3.0AuthenticationNewConfiguration.png"></p>
+
+<p>Define the following fields:</p>
+
+<ul>
+<li><strong>Name</strong>: Enter a label which will identify the Authentication Source.</li>
+
+<li><strong>Type</strong>: Select whether using <b>LDAP</b> or <b>Active Directory</b>.</li>
+
+<li><strong>Server Address</strong>: Enter the IP address or domain name of the LDAP or Active Directory server. If located on the same machine, then enter "localhost".</li>
+
+<li><strong>Port</strong>: Enter the port number for the LDAP or Active Directory service. By default, LDAP and Active Directory use port 389. If unsure, use the <strong><code>netstat -l</code></strong> and <strong><code>netstat -plunt</code></strong> commands in Linux/UNIX or <strong><code>netstat -a</code></strong> and <strong><code>netstat -ab</code></strong> commands in Windows to determine which port is being used.
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">The usage of <strong>LDAPS</strong> and its default <strong>port 636</strong> is currently <strong>deprecated</strong>. It is strongly recommended to use <strong>start-TLS</strong> which uses the default <strong>port 389</strong>.</font></p>
+</li>
+
+<li><strong>Enabled TLS</strong>: Select <b>Yes</b> if using Transport Security Layer (TLS) or Secure Socket Layer (SSL) to connect to the Authentication Source. Otherwise, select <b>No</b>.</li>
+
+<li><strong>Version</strong>: Select whether using version 2 or 3 of the LDAP protocol.</li>
+
+<li><strong>Base DN</strong>: Enter the <i>Distinguished Name</i> from the Base object. In most cases this will be the domain components (dc) of the Distinguished Name. For example, the Base DN for processmaker.com would be "dc=processmaker,dc=local". For more information on constructing DN chains, see <a href="http://www.zytrax.com/books/ldap/apa/dn-rdn.html">this LDAP guide</a>.</li>
+
+<li><strong>Anonymous</strong>: If the LDAP or Active Directory server accepts anonymous searches for users, then select <b>Yes</b>. If a login is required, then select <b>No</b>.
+
+<ul>
+	<li><strong>Username</strong>: Field appears if not using anonymous logins. Enter a username to login to the LDAP or Active Directory server.</li>
+	<li><strong>Password</strong>: Field appears if not using anonymous logins. Enter a password to login to the LDAP or Active Directory server.</li>
+</ul>
+</li>
+
+<li><strong>Identifier for an imported user</strong>: Enter the object to identify users, which will be their username in ProcessMaker.
+	<ul>
+		<li>For <b>Active Directory</b>, enter <code><b>samaccountname</b></code>.</li>
+		<li>For <b>Open LDAP</b>, enter <code><b>uid</b></code>.</li>
+	</ul>
+Be careful what you type on this field since this is a <strong>case sensitive field</strong>. If you try to use uppercase or capitalization instead of the regular format, LDAP searches won't work.</li>
+
+<li><strong>Additional Filter</strong>: Enter a filter which will be used when searching for users in the the authentication source.</li>
+</ul>
+
+<p>After filling the fields, click on <strong>Save</strong> to create the new Authentication Source.</p>
+
+<h2><span id="Importing_External_Users">Importing External Users</span></h2>
+
+<p>After configuring the new Authentication Source, it will be listed. Click on it, and the <strong>Import Users</strong> button will become available. Click on it, to start importing users.</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationNewImportUsers.png"></p>
+
+<p>A search box will appear to search users.</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationNewSearchUsers.png"></p>
+
+<p>To search for all available users from the Authentication Source, leave the <strong>Keyword</strong> search box empty and click on <strong>Search</strong>. To search for specific users, enter text that appears in one of the search <strong>Attributes</strong> for the Authentication Source. The search is case insensitive and the wildcard "*" can be used to search for any number of characters (including zero characters).</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationNewSearchUsersExample.png"></p>
+
+<p>Take into consideration that users whose usernames already exist in ProcessMaker can not be imported. All other users will have a checkbox next to them which can be marked to import them.</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationNewSearchUsersExampleAlreadyImported.png"></p>
+
+<p>To select all available users, click on the <strong>[SELECT-ALL]</strong> link at the top. After selecting the users to be imported, then click the <strong>Import</strong> button at the bottom.</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationNewSearchUsersExampleImport.png"></p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> If there are more than one page of users to be imported and even if the <i><strong>SELECT_ALL </strong></i> option is clicked, it will only import users who are listed on the current page.</font></p>
+
+<p>After being imported, users will be displayed under the <b>Users</b> tab and should be able to login to ProcessMaker using their usernames and passwords from LDAP or Active Directory.</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationNewSearchUsersExampleImported.png"></p>
+
+<p>If the external authentication source changes its address or goes offline, its users will not be able to login to ProcessMaker, so it is a good idea to <a href="External_Authentication.html#Assigning_Authentication_Sources_to_Existing_Users">convert those users to another authentication source</a> or to ProcessMaker's internal authentication.</p>
+
+<p>Note that it is not possible to change an imported user's password from inside ProcessMaker. Their passwords will have to be changed inside LDAP or Active Directory, however, other information like email, address, telephone, etc. can be changed in ProcessMaker but it will not be synchronized with the external authentication source.</p>
+
+<h2><span id="Assigning_Authentication_Sources_to_Existing_Users">Assigning Authentication Sources to Existing Users</span></h2>
+
+<p>The Authentication Source can be changed for an existing user in ProcessMaker. It may be necessary to change a user's authentication source if their LDAP or Active Directory server moves to a new location or goes offline. Likewise, if a user's account gets deleted in the LDAP or Active Directory server, authentication should be switched from the external Authentication Source to ProcessMaker's internal authentication, so the user can continue to login to ProcessMaker.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> Only users which have the permission "PROCESSMAKER_ADMIN" can assign authentication sources to existing users.</font></p>
+
+<p>To switch an user's authentication source, go to <strong>USERS</strong> select an imported user from the list and then click on <strong>Summary</strong>.</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationAssigningChangeSummary.png"></p>
+
+<p>The <strong>Authentication</strong> tab will be enabled, where the <strong>Authentication Source Assignment</strong> will display:</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationAssigningChangeSummaryAuthentication.png"></p>
+
+<p>Change the <b>Authentication Source</b> to the default option "ProcessMaker", which is the way that users are internally verified by ProcessMaker. When users are first imported into ProcessMaker, their passwords are also imported and stored in ProcessMaker's databases, so the users will revert to using their original password at the time of import.</p>
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationAssigningChangeSummaryAuthenticationChange.png"></p>
+
+<p>Otherwise, select from one of the available external authentication sources. In the <strong>DN</strong> text field, which appears for external authentication sources, enter the LDAP "Distinguished Name" for the user. The DN is a chain of information needed to validate a user, which depends upon the configuration of your LDAP or Active Directory, but generally consists of a cn (common name) or uid (user ID), ou (organizational unit) and dc (domain component). This chain should be written as if walking up the Directory Information Tree (DIT), starting from the specific user and going to the general domain name.</p>
+
+<p>For instance, if John Doe has a user ID of "johndoe" and is found in the organizational unit of "staff" at the domain of "example.com", then his DN chain would be <code>uid=johndoe,ou=staff,dc=example,dc=com</code>. See <a href="http://www.zytrax.com/books/ldap/apa/dn-rdn.html">this LDAP guide</a> for more information about constructing DN chains.</p>
+
+<p>After selecting the <strong>Authentication Source</strong> (and defining the <strong>DN</strong>), click on <strong>Save</strong> to change a user's authentication source.</p>
+
+<p>Users can also be found by entering a search string into the <strong>DN</strong> text field and clicking <strong>Save</strong>. All users which match the search string will be displayed (however, their authentication source can only be changed individually). The search is case insensitive and the wildcard * can be used to match any number of characters. For instance a search for "jo*n" would find users "jon", "John Doe" and "jOannE". If the DN text box is left blank, then a list will be displayed of all the users found in an authentication source.</p>
+
+<h2><span id="Changing_user_password_after_importing_and_synchronization">Changing user password after importing and synchronization</span></h2>
+
+<p>First, check if the user is related to Active Directory by going to <strong>ADMIN &gt; Users</strong> choosing the user which password need to be changed and click on the <strong>Summary</strong> button. Inside Summary, go to the <b>Authentication</b> tab.
+
+<p><img alt="" src="../sites/default/files/3.0AuthenticationChangePass.png"></p>
+
+<p>The Authorization Source Assignment of the user will be displayed:
+<ul>
+<li>If the <i>Authentication Source</i> option is an <b>LDAP</b> connection, the password must be changed in the <b>Active Directory Server</b>.</li>
+
+<li>If the <i>Authentication Source</i> option is a <b>MYSQL</b> connection, the password can be changed directly from inside ProcessMaker by editing the <a href="Managing_Users.html#Change_Password">user's profile</a>.
+<p><img alt="" src="../sites/default/files/3.0AuthenticationAssigningChangeSummaryAuthenticationChangePass.png"></p></li>
+
+<p>A secure password must meet the following requirements:</p>
+<ul>
+<li>The password must be at least six characters long.</li>
+<li>The password must contain characters from at least three of the following five categories:
+ 	<ul>
+ 		<li>English uppercase characters (A - Z)</li>
+ 		<li>English lowercase characters (a - z)</li>
+ 		<li>Base 10 digits (0 - 9)</li>
+ 		<li>Non-alphanumeric (For example: !, $, #, or %)</li>
+ 		<li>Unicode characters</li>
+ 	</ul>
+ </li>
+ <li>Do NOT use space after and before the password</li>
+ </ul>
+
+
+
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

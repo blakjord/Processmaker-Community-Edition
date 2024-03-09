@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Process_Supervisors.html" />
+<link rel="shortlink" href="../node/664.html" />
+<title>3.2 - 3.5 - Process Supervisors | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"7wgfxwJmBBE0OdzzKoPjxKFobZkmkqQcgtz0SFytTUQ","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-664 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Process_Supervisors.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Process_Supervisors.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form--FabrchrghYfACp7ZhlI1FXYQcfuiu2DcIZ4rWw3lGE" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.5 - Process Supervisors</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.6/Process_Supervisors.html" class="">3.8</a></li><li><a href="../3.6/Process_Supervisors.html" class="">3.7</a></li><li><a href="../3.6/Process_Supervisors.html" class="">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a href="../3.1/Process_Supervisors.html" class="">3.1</a></li><li><a href="../3.0/Process_Supervisors.html" class="">3.0</a></li><li><a href="../index.php/Process_Supervisors.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.5 - Process Supervisors" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Process_Supervisors.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.5 - Process Supervisors 1/5</option><option value="40">Give 3.2 - 3.5 - Process Supervisors 2/5</option><option value="60" selected="selected">Give 3.2 - 3.5 - Process Supervisors 3/5</option><option value="80">Give 3.2 - 3.5 - Process Supervisors 4/5</option><option value="100">Give 3.2 - 3.5 - Process Supervisors 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.7</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-lI_b8yrREMFb1JlR_58KoANUoasUONYjXc05qWb34ZQ" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Process_Supervisors.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Process_Supervisors.html#Overview">Overview </a></li>
+<li class="toc"><a href="Process_Supervisors.html#Adding_a_process_supervisor">Adding a Process Supervisor</a></li>
+<ol class="toc">
+<li class="toc"><a href="Process_Supervisors.html#User_Permissions">User Permissions</a></li>
+<li class="toc"><a href="Process_Supervisors.html#Defining_a_Process_Supervisor">Defining a Process Supervisor</a></li>
+<li class="toc"><a href="Process_Supervisors.html#Adding_a_Supervisor">Adding a Supervisor</a></li>
+<ol class="toc">
+<li class="toc"><a href="Process_Supervisors.html#Available_Users_List_and_Assigned_Supervisors_List">Available Users List and Assigned Supervisors List</a></li>
+<li class="toc"><a href="Process_Supervisors.html#Available_Objects_and_Assigned_Objects">Available Objects and Assigned Objects</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="Process_Supervisors.html#Working_as_a_process_supervisor">Working as a Process Supervisor</a></li>
+<ol class="toc">
+<li class="toc"><a href="Process_Supervisors.html#Review">Review</a></li>
+<ol class="toc">
+<li class="toc"><a href="Process_Supervisors.html#Editing_Dynaforms_Input_Documents_as_Supervisor">Editing Dynaforms and Input Documents as Supervisor</a></li>
+<li class="toc"><a href="Process_Supervisors.html#Reviewing_the_Case_as_Supervisor">Reviewing the Case as Supervisor</a></li>
+</ol>
+<li class="toc"><a href="Process_Supervisors.html#Reassign">Reassign</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview </span></h2>
+
+<p>Process supervisors are users who have special privileges to oversee, review and modify the cases of a particular process. Often the manager or department head in an organization will be assigned as a process supervisor. Unlike <a href="../3.1/Process_Permissions.html" title="3.1/Process Permissions"> process permissions</a>, which give read-only access to cases, a process supervisor can be given both read and write access to cases.</p>
+
+<p>Process supervisors can:</p>
+
+<ul>
+    <li>Edit the data of cases with To Do status.</li>
+    <li>See all the cases in a process even if they are not assigned to any tasks in the case or haven’t participated in the case.</li>
+    <li>Edit the data in Dynaforms if they have ben assigned to those Dynaforms.</li>
+    <li>Delete and resubmit input documents if they have been assigned to those input documents.</li>
+    <li>Upload new input documents when a case is running, so users who are running the case can see the new uploaded documents.</li>
+    <li>Unpause cases from the <a href="../3.1/Cases.html"> case list</a>.</li>
+</ul>
+
+<p>Process supervisors can't modify information in a completed case, so completed cases won't be listed in the review option unless they are searched by case ID. If DynaForms, output and input documents from a completed case need to be visible to the supervisor, then the correct process permission to see those documents needs be given to the supervisor.</p>
+
+<h2><span id="Adding_a_process_supervisor">Adding a Process Supervisor</span></h2>
+
+<h3><span id="User_Permissions">User Permissions</span></h3>
+<p>Before starting to work with process supervisors, it is necessary to assign the following permissions to the supervisor user.</p>
+
+<p>
+<ul>
+	<li><a href="../3.1/Roles.html#PM_SUPERVISOR">PM_SUPERVISOR</a>: (Required). To assign a user as a supervisor, the user must have the PM_SUPERVISOR permission assigned to their role. Otherwise, the user won't be displayed in the <a href="Process_Supervisors.html#Available_Users_List_and_Assigned_Supervisors_List">Available Users list</a>.</li>
+	<li><a href="../3.1/Roles.html#PM_REASSIGNCASE_SUPERVISOR">PM_REASSIGNCASE_SUPERVISOR</a>: (Optional) To <a href="Process_Supervisors.html#Reassigning_a_Case">reassign</a> any supervised case, the user must have the PM_REASSIGNCASE_SUPERVISOR permission assigned to their role. Otherwise, the Reassign menu option won't be available under the home tab.</li>
+</ul>
+</p>
+
+<h3><span id="Defining_a_Process_Supervisor">Defining a Process Supervisor</span></h3>
+<p>Only users with the <tt><a href="../3.1/Roles.html#PM_SUPERVISOR"> PM_SUPERVISOR</a></tt> permission in their <a href="../3.1/Roles.html#Managing_Roles">role</a> can be assigned as process supervisors. This permission is included by default in the PROCESSMAKER_ADMIN and PROCESSMAKER_MANAGER roles, but not in the PROCESSMAKER_OPERATOR role.</p>
+
+<p>Since it is generally not a good idea to give managers and department heads the full capabilities of a <tt>PROCESSMAKER_ADMIN</tt> role, because they might accidentally modify the definition of the processes, it is recommended to give process supervisors the <tt>PROCESSMAKER_MANAGER</tt> role, or to <a href="../3.1/Roles.html#Managing_Roles">create a new role</a> to perform specific actions.</p>
+
+<p>For example to edit case data, create a new role with the following permissions:<br>
+<ul>
+	<li>PM_LOGIN</li>
+	<li>PM_CASES</li>
+	<li>PM_SUPERVISOR</li>
+	<li>PM_REASSIGNCASES</li>
+</ul>
+</p>
+
+<p>To see all the cases from all the other processes, add the following two permissions:<br>
+<ul>
+	<li>PM_ALLCASES</li>
+	<li>PM_DASHBOARD</li>
+</ul>
+</p>
+
+<p>After creating the new supervisor role, assign that role to the user(s) who will be the processes supervisor(s) and open the process that will be supervised.</p>
+
+<p style="margin-left:25px"><font color=green><b>Note:</b></font> <font color=dimgrey>Please take note that if the PM_SUPERVISOR permission is removed from the supervisor user's role, he/she won't be able to access the Review option in the Process Supervisor menu or perform any action on the cases, even if he/she remains assigned as a supervisor user. Therefore, please remember that if any permission is changed, removed or added to a role, it is necessary to update the process design to fit the newly assigned or removed permissions.</font></p>
+
+<h3><span id="Adding_a_Supervisor">Adding a Supervisor</span></h3>
+<p>Once the process where the process supervisors will be assigned is opened, click on the <strong>Supervisors</strong> option in the main toolbox at the right side of the screen.</p>
+
+<p><img src="../sites/default/files/ProcessMaker3_ProcessSupervisor_MainToolboxOption.png"></p>
+
+<p>The following window will open:</p>
+<p><img src="../sites/default/files/3.1ProcessSupervisorsSupervisorWindow.png"></p>
+
+<p>This window contains the following sections:<br>
+<ul>
+	<li><a href="Process_Supervisors.html#Available_Users_List_and_Assigned_Supervisors_List">Available Users List and Assigned Supervisors List</a></li>
+	<li><a href="Process_Supervisors.html#Available_Objects_and_Assigned_Objects">Available Objects and Assigned objects</a></li>
+</ul>
+
+<h4><span id="Available_Users_List_and_Assigned_Supervisors_List">Available Users List and Assigned Supervisors List</span></h4>
+
+<p>In the first part of the supervisors window, a user or a group of users can be assigned as process supervisor(s). The users/groups assigned as process supervisors will be able to see all open cases in the process and any input documents in the case.</p>
+
+<p><img src="../sites/default/files/3.1SupervisorAvailableUserList.png" alt=""></p>
+<p>
+<ul>
+<li><strong>Search:</strong> Enter the name of the user or group to search. These fields have the autocomplete property, which lists all matches as  text is introduced.</li>
+<li><strong>View all:</strong> Click on this button to list the users and groups available to be assigned (in the first panel), or to list the users and groups already assigned (in the second panel). </li>
+<li><strong>View users:</strong> Click on this button to view available users in the first panel, and to only view assigned users in the second panel. </li>
+<li><strong>View groups:</strong>Click on this button to only view available groups in the first panel, and to only view assigned groups in the second panel. </li>
+<li><strong>Pagination control:</strong> Each panel lists ten items before going to another page. Click on the grey arrows to navigate through these pages. </li>
+</ul>
+</p>
+
+<p>To add a supervisor, click on the green arrow or simply drag and drop the name of the user or group from the Available Users List to the Assigned Supervisors list. To remove an assigned group or user from the supervisor list, click on the <strong>x</strong> icon at the right side of the name of the user or group, or simply drag and drop the user/group back to the Available users list.</p>
+
+<p><img style="border: #bebebe 1px outset; margin-left: auto; margin-right: auto;" src="../sites/default/files/3.1SupervisorUserAddRemove.gif" alt=""></p>
+
+<p>
+If the lists of users or groups in these panels are long, use the filters above each panel to list users or groups more quickly, or use the <strong>Search</strong> textbox to find a specific user or group.</p>
+
+<h4><span id="Available_Objects_and_Assigned_Objects">Available Objects and Assigned Objects</span></h4>
+
+<p>Scroll down the supervisors window to define the Dynaforms and input documents the process supervisors will have access to. The objects assigned to the process supervisor can be modified or reassigned if necessary. Notice that this section contains the following elements: </p>
+
+<p><img src="../sites/default/files/3.1SupervisorAvailableObjectList.png" alt=""></p>
+
+<p>
+<ul>
+<li><b>Available Objects:</b> A list of available objects. An object can be a Dynaform or an input document.
+	<ul>
+		<li><b>Text to search: </b> A search box that can be used to search a specific Dynaform. </li>
+
+		<li><b>Dynaform:</b> The list of all the Dynaforms that exist in the process. By assigning a Dynaform, process supervisors will be able to modify data stored during a case.</li>
+
+		<li><b>Input Document:</b> The list of all the input documents that exist in the process. By assigning an input document to the supervisor, they will be able to:<br>
+			<ul>
+			<li>Attach a new input document. The attached input document will be available to the user who is assigned to the case, and the user has the required <a href="Process_Permissions.html#Accessing_Input_Documents">process permissions</a> for the uploaded documents.</li>
+
+			<li>Download the input document.</li>
+
+			<li>Delete the input document. Take into account that if the supervisor deletes a document, it won't be available for the user running the case.</li>
+			</ul>
+		</li>
+	</ul>
+</li>
+
+<li><strong>Assigned Objects: </strong> A list of all the assigned Dynaforms and input documents.
+</li>
+</ul>
+
+<p>To assign an object, simply drag and drop the name of the object from the Available Objects list to the Assigned Objects panel. To remove it from the list, simply click on the red <strong>x</strong> button. The object will be erased from the <strong>Assigned objects</strong> panel and will be available in the <strong>Available Objects</strong> panel.</p>
+
+<p><img  style="border: #bebebe 1px outset; margin-left: auto; margin-right: auto;" src="../sites/default/files/3.1SupervisorObjectAddRemove.gif" alt=""></p>
+
+<h2><span id="Working_as_a_process_supervisor">Working as a Process Supervisor</span></h2>
+<p>A supervisor can take over cases by going to <strong>HOME > Process Supervisors</strong>. The Process Supervisors tab may have one or two options, depending on the <a href="Process_Supervisors.html#User_Permissions">permissions assigned</a> to the user supervisor: <a href="Process_Supervisors.html#Review">Review</a> and <a href="Process_Supervisors.html#Reassign">Reassign</a>.
+
+<p>Note that cases currently in their <i>initial task</i> cannot be reviewed under the <b>Home > Review</b> option, because these cases remain in <b>Draft</b> status. Once cases move to the second or subsequent task(s), they are included in the list.</p>
+
+<h3><span id="Review">Review</span></h3>
+
+<p>To review a case, go to <b>Home > Process Supervisor > Review</b>.</p>
+
+<p><img src="../sites/default/files/PM3_SupervisorReview.png"></p>
+
+<p>All the cases with To Do status of the supervised process will be listed in the panel at the right side. Note that cases currently in the initial task as drafts are NOT displayed. Once cases move to the second or subsequent task(s), they are included in the list.</p>
+
+<p>Under the review option, a supervisor can open and view the case summary and case notes of each case of the supervised process.</p>
+
+<p><img src="../sites/default/files/3.1PSupervisorReview.png"></p>
+<p>
+<ul>
+<li><b>Open a case:</b> When opening a case as a supervisor, the following options are available:<br>
+
+	<ul>
+		<li><b>Steps:</b> Lists all the steps, Dynaforms and input documents made in the process. Only the Dynaforms and input documents that were assigned to the supervisor are listed in the Step List.
+		<p><img src="../sites/default/files/3.1PSupervisorSteps.png"></p>
+</li>
+
+<li><b>Information:</b> Lists all the <a href="../3.1/Cases.html#Information">information</a> a supervisor has access to, like information about the process map, process, task, case history, message history, Dynaforms, change log, uploaded and generated documents. See the <a href="../3.1/Cases.html#Information">case information</a> page for more details about each option.
+		<p><img src="../sites/default/files/3.1PSupervisorInformation.png"></p>
+		</li>
+
+<li><strong>Actions:</strong> A supervisor can pause, cancel and reassign the case.
+		<p><img src="../sites/default/files/3.1PSupervisorActions.png"><br>
+			<ul>
+				<li><b>Pause</b>: <a href="../3.1/Cases.html#Pause">Pause</a> the case.</li>
+<li><b>Cancel</b>: <a hre="/3.1/Cases#Cancel">Cancel</a> the case. This option is available only if the supervisor has the <a href="../3.1/Roles.html#PM_CANCELCASE">PM_CANCELCASE</a> permission added to their role.</li>
+<li><b>Reassign</b>: <a href="../3.1/Cases.html#Reassign_2">Reassign</a> the case. This option is available only if the supervisor has the <a href="../3.1/Roles.html#PM_REASSIGNCASE_SUPERVISOR">PM_REASSIGNCASE_SUPERVISOR</a> permission added to their role.</li>
+</ul>
+</p>
+</li>
+</ul>
+</li>
+
+<li><strong>Case Notes:</strong> The case notes of the case. To access the case notes, the supervisor user must have the required <a href="../3.0/Process_Permissions.html#Accessing_Case_Notes">permissions</a> assigned. Otherwise, an error message will be displayed.
+	<p><img src="../sites/default/files/9PM3_ProcessSupervisors_CaseNotes.png"></p>
+</li>
+
+<li><b>Case Summary:</b> The <a href="../3.0/Case_Summary.html">case summary</a> of the case.</li>
+</ul>
+</p>
+<h4><span id="Editing_Dynaforms_Input_Documents_as_Supervisor">Editing Dynaforms and Input Documents as Supervisor</span></h4>
+<p>Supervisors can modify the information in Dynaforms and the files in Input Documents only if the case has <b>To Do</b> status. To do this, access the case under <b>Home > Review</b>, and then click on the <b>Steps</b> option in the menu to display a list of the available Dynaforms and Input Documents from the process that the Supervisor can edit. Remember that only <a href="Process_Supervisors.html#Available_Objects_and_Assigned_Objects">objects that were assigned to the supervisor</a> will be displayed in the "Steps" list.</p>
+
+<p>To edit the data in a Dynaform or the list of files in a Input Document, click on it to open it for editing. When done editing a Dynaform's data, click on its <a href="../3.0/Submit_and_Button_Controls.html#Submit">submit</a> button to save it and a message will be displayed green that the data has been saved. Note that no <b>Next Step</b> link is available when filling in Dynaforms as the supervisor, so add submit buttons to all Dynaforms whose data needs to be edited by a supervisor.</p>  
+<p><img src="../sites/default/files/3.2ProcessSupervisorReviewChange.png"></p>
+
+<p style="margin-left:25px"><font color=green><b>Note:</b></font> <font color="dimgray">No triggers are executed <i>before</i> and <i>after</i> Dynaforms and Input Documents when accessed by a supervisor. If needing to guarantee that a trigger is executed in the task, it is recommended to set the trigger to execute <i>before assignment</i> or use JavaScript in the Dynaform to <a href="../3.0/JavaScript_Functions_and_Methods.html#Consuming_a_REST_Endpoint_Using_jQuery">call the REST</a> endpoint <a href="../3.0/REST_API_Cases.html#Execute_Trigger:_PUT_.2Fcases.2F.7Bapp_uid.7D.2Fexecute-trigger.2F.7Btri_uid.7D">PUT /cases/{app_uid}/execute-trigger/{tri_uid}</a>. If needing to execute the trigger <i>after</i> the data has been filled in the Dynaform, then add code to the <a href="../3.0/JavaScript_Functions_and_Methods.html#form.setOnSubmit"><i>form</i>.setOnsubmit()</a> event, which first uses <a href="../3.0/REST_API_Cases.html#Set_Variables:_PUT_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">PUT /cases/{app_uid}/variables</a> to save variables from the Dynaform to the case which are needed by the trigger and then execute the trigger.</font></p>
+
+<p>If the case has "Draft", "Paused", "Cancelled", or "Completed" status, it will NOT be listed under the <b>Review</b> option. If the supervisor accesses the case using the <a href="Process_Supervisors.html">Jump to</a> option, he/she will see only the general information of the case.</p>
+
+<p><img src="../sites/default/files/3.2ProcessSupervisorReviewCompleted.png"></p>
+
+<h4><span id="Reviewing_the_Case_as_Supervisor">Reviewing the Case as Supervisor</span></h4>
+<p>In the following table there is an explanation of what a supervisor can expect when reviewing a case in different scenarios.</p>
+<table>
+    <tbody>
+        <tr>
+            <th style="width: 20%">Case</th>
+            <th style="width: 40%">Scenario</th>
+            <th style="width: 40%">The Result when Trying to Review the Case</th>
+        </tr>
+
+        <tr>
+            <td style="vertical-align: middle;"><b>Case 1:</b> No forms assigned to the supervisor</td>
+            <td>No objects have been assigned to the supervisor</td>
+            <td>An error message is displayed.
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="5" style="vertical-align: middle;"><b>Case 2:</b> The supervisor has one Dynaform assigned.</td>
+            <td>The current case task has no Dynaforms assigned in the Steps section.
+            </td>
+            <td>An error message is displayed.
+            </td>
+        </tr>
+        <tr>
+            <td>The current case task has an assigned Dynaform different from the one assigned to the supervisor.</td>
+            <td>An error message is displayed.
+            </td>
+        </tr>
+        <tr>
+            <td>The current case task has two assigned Dynaforms, Order Request Form and Delivery Order, in that order.
+            </td>
+
+            <td>Only the Dynaform that was assigned to the supervisor will be displayed. In this case, the Delivery
+                Order Dynaform.<br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>The current case task has three assigned Dynaforms, Order Request Form, Request Approval Form and Delivery
+                Order, in that order.
+            </td>
+
+            <td>Only the Dynaform that was assigned to the supervisor will be displayed. In this case, the Delivery
+                Order Dynaform.
+            </td>
+        </tr>
+
+        <tr>
+            <td>If the user assigned to the current task didn't open the case.</td>
+            <td>An error message is displayed.
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="7" style="vertical-align: middle;"><b>Case 3:</b> The supervisor has two Dynaforms assigned.</td>
+            <td>The current case task has no Dynaforms assigned in the Steps section.</td>
+            <td>An error message is displayed.
+            </td>
+        </tr>
+
+        <tr>
+            <td>The current case task has two assigned Dynaforms, Form1 and Form2, that have NOT been assigned to the
+                supervisor.
+            </td>
+            <td>An error message is displayed.
+            </td>
+        </tr>
+
+        <tr>
+            <td>The current case task has three assigned Dynaforms: Form1, Form2 and Order Request Form, in that order.</td>
+            <td>Once the assigned user has opened the case, the supervisor will be able to review the case, but only
+                the Order Request Form will be displayed.</td>
+        </tr>
+
+        <tr>
+            <td>There are two parallel tasks being executed with Dynaforms assigned to each one. For example: Task
+                1 has been assigned the Form1 and Task 2 has been assigned the Form2 and the Order Request Form.</td>
+            <td>An error message will be displayed when the supervisor reviews the Task1 case.<br> The supervisor will
+                be able to review only the Order Request Form when opening the Task2 case.
+            </td>
+        </tr>
+        <tr>
+            <td>There are two parallel tasks being executed with two Dynaforms assigned to each one. For example, Task
+                1 has been assigned Form1 and the Order Request Form Dynaforms, and Task 2 has been assigned the
+                Request Approval Form and Form3 Dynaforms.</td>
+
+            <td>Only the Order Request Form and Request Approval Form will be available to be reviewed when the supervisor
+                opens each case.
+            </td>
+        </tr>
+        <tr>
+            <td>The user assigned to the current case task didn't open the Dynaform that was assigned to the supervisor.
+                For example: if the assigned user opened the case, but only worked on the Dynaform assigned to
+                the first step of the task, and the Dynaform assigned to the supervisor is assigned to the second
+                step of the task.</td>
+
+            <td>An error message is displayed.
+            </td>
+        </tr>
+        <tr>
+            <td>The assigned user didn't open the Dynaform in the current task.</td>
+            <td>An error message is displayed.
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+<p>Note that whenever a supervisor is denied from reviewing a case, the following error message is displayed:</p>
+
+<p><img src="../sites/default/files/3.1PSupervisorMessageDisplay.png"></p>
+
+<p>Also consider the following cases for the Jump To option of the Review tray:</p>
+
+<p>
+<ul>
+	<li>When the thread of the case is open, the Jump To option will go to the opened index.</li>
+	<li>When more than one thread of a parallel case are open, the Jump To option will redirect to the opened index.</li>
+	<li>When the thread of the case is paused, the Jump To option redirects to the paused index.</li>
+</ul>
+</p>
+
+<h3><span id="Reassign">Reassign</span></h3>
+<p>As a process supervisor, it is possible to reassign cases of the supervised processes with the <a href="../3.1/Roles.html#PM_REASSIGNCASE_SUPERVISOR">PM_REASSIGNCASE_SUPERVISOR</a> permission.</p>
+
+<p>To reassign a case, go to <strong>Home > Process Supervisor > Reassign</strong>.</p>
+
+<p><img src="../sites/default/files/3.1PSupervisorReassignOption.png"></p>
+
+<p>A list of cases for supervised processes that can be reassigned displays in the right panel. Paused cases cannot be reassigned. Therefore, paused cases are not listed.</p>
+
+<p>The <b>User</b> filter is set to the <b>Current User</b> option by default. Therefore, only the cases assigned to the supervisor as a normal user display. To see all the supervised cases, choose the <b>All Users</b> option and then click <b>Search</b>.</p>
+
+<p><img src="../sites/default/files/3.2PSupervisorReassignOption2.png"></p>
+
+<p>Click the <b>User</b> suggest box and type the name of the user to reassign this case. As you type, the names of the users that match the entered text displays. Choose the name of a user and only the cases that are currently assigned to that user will be filtered.</p>
+<p><img src="../sites/default/files/3.2PSupervisorReassignOptionAllUsers.png"></p>
+
+<p>Cases can also be filtered by category or a specific process.</p>
+
+<p>Select a case from the list and click the <strong>Reassign</strong> button. To select more than one case, press the <tt>SHIFT</tt> and the <tt>UP</tt> or <tt>DOWN</tt> key to select cases that are contiguous, or hold the <tt>CTRL</tt> key and select each case to select multiple cases that are anywhere on the case list.</p>
+<p><img src="../sites/default/files/3.2PSupervisorReassignOptionCheckReassign.png"></p>
+
+<p>After selecting all cases to be reassigned, click the <b>Reassign</b> button and the <b>Reassign All Cases by Task</b> window displays.</p>
+<p><img src="../sites/default/files/3.1PSupervisorReassignOptionReassignDialog.png"></p>
+
+<p>To reassign a case, select the case from the list and double-click on the <strong>Reassign to</strong> column. A user list displays. Choose the user who will have the authority to work on the case after it is reassigned. Remember that process supervisors, users assigned to a case, or <a href="../3.0/Tasks.html#Ad_Hoc_Users">ad hoc users</a> are listed in the search option when reassigning a case.</p>
+
+<p><img src="../sites/default/files/3.1PSupervisorReassignOptionReaDialogUser.png"></p>
+
+<p>In this example, the cases will be reassigned to the user "Shepherd, Alex (alex)".</p>
+<p><img src="../sites/default/files/3.1PSupervisorReassignOptionReaDialogReason.png"></p>
+
+<p>Double-click the <b>Reason</b> column to enter the reason why the case(s) is being reassigned. It is required to enter a reason why the case(s) is being reassigned. If text is not entered into the <b>Reason</b> column, an alert message displays.</p>
+
+<p><img src="../sites/default/files/3.1PSupervisorReassignAlert.png"></p>
+
+<p>Double click the <b>Notify</b> column to display the checkbox to notify the assigned users. Note that each case has its own check box.</p>
+<p><img src="../sites/default/files/3.1PSupervisorReassignOptionReaDialogNotify.png"></p>
+
+<p>Finally, click on the <b>Reassign</b> button to finalize the reassignment process.</p>
+<p><img src="../sites/default/files/3.1PSupervisorReassignOptionReassignButton.png"></p>
+
+<p>The <b>Status Reassignment</b> window displays to show the case number, the user who has been assigned the case(s) and the total number of cases reassigned. Click <strong>OK</strong> to close this window. To verify that the case(s) were reassigned, log out as the "admin" and log in as <i>Shepherd, Alex (alex)</i>.</p>
+<p><img src="../sites/default/files/3.1PSupervisorReassignOptionReassignedok.png"></p>
+
+<p>Once logged in as "Shepherd, Alex (alex)", the reassigned cases display in the inbox.</p>
+<p><img src="../sites/default/files/3.1PSupervisorReassignHarryInbox.png"></p>
+
+<p>Double click a case to open it.</p>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Importing_and_Exporting_Process.html" />
+<link rel="shortlink" href="../../node/66.html" />
+<title>2.0 - Importing and Exporting Process | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"ZzxXZ6gbP_Z4xXXQg-ASWR-3CkQBd8M0t__22rXgcK0","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-66 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../../index.html" title="Home"><img src="../../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Importing_and_Exporting_Process.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-nbeBLvlWjXDyhS5Rm-VFjF38qBZ4r5MSl3vvZcyapsM" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.0 - Importing and Exporting Process</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../../3.1/Importing_and_Exporting_Projects.html" class="">3.8</a></li><li><a href="../../3.1/Importing_and_Exporting_Projects.html" class="">3.7</a></li><li><a href="../../3.1/Importing_and_Exporting_Projects.html" class="">3.6</a></li><li><a href="../../3.1/Importing_and_Exporting_Projects.html" class="">3.5</a></li><li><a href="../../3.1/Importing_and_Exporting_Projects.html" class="">3.4</a></li><li><a href="../../3.1/Importing_and_Exporting_Projects.html" class="">3.3</a></li><li><a href="../../3.1/Importing_and_Exporting_Projects.html" class="">3.2</a></li><li><a href="../../3.1/Importing_and_Exporting_Projects.html" class="">3.1</a></li><li><a href="../../3.0/Importing_and_Exporting_Projects.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.0 - Importing and Exporting Process" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Importing_and_Exporting_Process.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.0 - Importing and Exporting Process 1/5</option><option value="40" selected="selected">Give 2.0 - Importing and Exporting Process 2/5</option><option value="60">Give 2.0 - Importing and Exporting Process 3/5</option><option value="80">Give 2.0 - Importing and Exporting Process 4/5</option><option value="100">Give 2.0 - Importing and Exporting Process 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2</span></span> <span class="total-votes">(<span >5</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-kmRxquOeSbpkvlQMSRA1ZqgIP_2WwQPwoSDVpaHDG3Y" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Importing_and_Exporting_Process.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Overview">Overview</a></li>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Importing_a_Process_from_ProcessMaker">Importing a Process from ProcessMaker</a></li>
+<ol class="toc">
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Start_with_an_existing_Process">Start with an existing Process</a></li>
+<ol class="toc">
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Importing_an_Existing_Process_inside_ProcessMaker">Importing an Existing Process inside ProcessMaker</a></li>
+<ol class="toc">
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Update_the_current_process.2C_overwriting_all_tasks_and_steps">Update the current process, overwriting all tasks and steps</a></li>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Disable_the_current_process_and_create_a_new_version_of_the_process">Disable the current process and create a new version of the process</a></li>
+</ol>
+</ol>
+</ol>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Getting">Getting the Process UID</a></li>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Activating_The_Process">Activating the process</a></li>
+<ol class="toc">
+<ol class="toc">
+<ol class="toc">
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Managing_processes_versions_by_creating_a_complete_new_process_without_changing_the_current_process">Creating a new process without changing the current process</a></li>
+</ol>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Importing_a_Process_form_the_ProcessMaker_Library">Importing a Process form the ProcessMaker Library</a></li>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#How_to_import_a_process_from_the_library">How to import a process from the library</a></li>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#How_to_use_an_imported_process">How to use an imported process</a></li>
+</ol>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#Exporting_Processes">Exporting Processes</a></li>
+<ol class="toc">
+<li class="toc"><a href="Importing_and_Exporting_Process.html#From_version_1.6_to_2.0.40">From version 1.6 to 2.0.40</a></li>
+<li class="toc"><a href="Importing_and_Exporting_Process.html#From_version_2.0.41_and_later">From version 2.0.41 and later</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+
+<p>Processes designed in another installation of ProcessMaker can be imported or exported into your installation. This procedure will only import the process definition (including DynaForms, Input and Output Documents and triggers) and group accounts, but will not import user accounts, roles, or any cases. If you need to transfer this extra information to your installation of ProcessMaker, see <a href="Backing_up_and_Restoring_ProcessMaker.html" title="Backing up and Restoring ProcessMaker">Backing up and Restoring ProcessMaker</a>.</p>
+
+<h2><span id="Importing_a_Process_from_ProcessMaker">Importing a Process from ProcessMaker</span></h2>
+
+<h3><span id="Start_with_an_existing_Process">Start with an existing Process</span></h3>
+
+<p>The easiest way to begin working with ProcessMaker is to import an existing process and adapt it to your needs. Click on the <strong>Import</strong> link and select an existing process to import. (Process files have a <strong>.pm</strong> extension.)</p>
+<p><img alt="" height="76" src="../../sites/default/files/Import_Designer_Option.png" width="474"></p><p>By clicking on <strong>Import</strong> a new window will display where the existing process must be browse from your computer.</p><p><img alt="" height="138" src="../../sites/default/files/Import_File_Upload.png" width="427"></p>
+
+<h4><span id="Importing_an_Existing_Process_inside_ProcessMaker">Importing an Existing Process inside ProcessMaker</span></h4>
+
+<p>If an existing process listed on the Main List of ProcessMaker wants to be imported, three options will be display as follows:</p>
+<p><img alt="" height="209" src="../../sites/default/files/OptionsToImportExistingProcesses.png" width="464"></p>
+<p>Where:</p>
+
+<h5><span id="Update_the_current_process.2C_overwriting_all_tasks_and_steps">Update the current process, overwriting all tasks and steps</span></h5>
+
+<p>Import all including tasks, Dynaforms, Output and Input Documents without changing the ID of each one of them. Also users are still assigned into the tasks. This option is not recommended if you want to work with a complete new process without changing the current design, but it is useful if you want to run some tests on the update process. For example if two servers were installed, Development and Production, so every change and test must be run on the Development server, when all changes are finished Production server must be updated.</p>
+
+<h5><span id="Disable_the_current_process_and_create_a_new_version_of_the_process">Disable the current process and create a new version of the process</span></h5>
+
+<p>It is strongly <strong>RECOMMENDED</strong> to use this option, that's why it will be chosen by default. If the requirement is to disable the current process, chose this option which create a new process including the date of the creation. For example if there is a process with cases but for some reason this process won't be used due to a new version of the process, choose this option to disable the first process and all cases with weren't finished can be finished but no one can start a new case.</p>
+
+<h2><span id="Getting">Getting the Process UID</span></h2>
+
+<p>Before the process will be disabled get the Process UID of the current Process, let's work with <strong>Credit Card Application</strong> process, so use the <a href="../ProcessMaker_WSDL_Web_Services.html#Testing_ProcessMaker.27s_WSDL_Web_Services">Web Service Test</a>, once you login into it look for the ProcessList Option, and click on the <strong>ProcessList</strong> button and all the process available for the current workspace will be displayed, look for the name of the process and copy the ID of it:</p>
+<p><img alt="" height="211" src="../../sites/default/files/DiableCurrentProcessID.png" width="762"></p>
+<p>Once this is done import and select the option to disable the current process, a new process will be created as the image below:</p>
+<p><img alt="" height="341" src="../../sites/default/files/DisableCurretProcess.png" width="782"></p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> When this option is selected ProcessMaker will open the process automatically. </font></p>
+<p>By creating this process the previous one will be disabled, so it will be no longer on the Process List, the new one will be listed with the structure_:</p>
+<p><strong>New - Process Name - Current Date</strong>:</p>
+<p><img alt="" height="205" src="../../sites/default/files/DisableCurrentProcessList.png" width="348"></p>
+<p>The Process UID as well as the Output, Input documents, and Dyanforms will change for new ones, So be careful if it is required to change or query some information of one of them inside the DataBase.</p>
+
+<h2><span id="Activating_The_Process">Activating the process</span></h2>
+
+<p>To activate the process, it is required to have the <a href="Importing_and_Exporting_Process.html#Getting_the_Process_UID">Process UID</a>, go to the Database (if you have access to it), look for the name of your workspace and then go to the table <code>PROCESS</code>, it will display the information of the current process as well as the disable process:</p>
+<p><img alt="" height="458" src="../../sites/default/files/DisableDataBase.png" width="1211"></p>
+<p>Click on the link "Edit"&nbsp;and change the <code>PRO_STATUS</code> field to <strong>DISABLED<i> to </i></strong><i>ACTIVATE:</i></p>
+<p><img alt="" height="61" src="../../sites/default/files/ChangingStatus.png" width="794"></p>
+<p>The go to the Process List, and refresh the view, the process will be listed, and the copy of it will be listed also:</p>
+<p><img alt="" height="205" src="../../sites/default/files/DisableCurrentProcessListNew.png" width="348"></p>
+<p>Since both of them are listed and ID's are different, it is possible to work on both of them.</p>
+
+<h5><span id="Managing_processes_versions_by_creating_a_complete_new_process_without_changing_the_current_process">Creating a new process without changing the current process</span></h5>
+
+<p>This option will create a new complete process with different IDS for Dynaforms, Outptut, Input Documents and tasks and no users assigned to tasks. For example if a process was finished it can be reused to personalize it with the structure of the original process.</p>
+<p>The name of the process will be created with the following structure:</p>
+<p><strong>New - Process Name - Current Date</strong>:</p>
+<p><img alt="" height="229" src="../../sites/default/files/CreateCompleteNewProcess.png" width="744"></p>
+
+<h4><span id="Importing_a_Process_form_the_ProcessMaker_Library">Importing a Process form the ProcessMaker Library</span></h4>
+
+<p>The <a href="http://library.processmaker.com/">ProcessMaker Library</a> is a repository for sample process templates, where ProcessMaker users can browse, download, and import templates into their PM workspaces.</p>
+<p>ProcessMaker Library was designed as a way for the ProcessMaker community to try out ProcessMaker workflows, get ideas for workflow designs, and see first-hand some of the advanced features that ProcessMaker offers.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> From version 2.5.0, ProcessMaker Library has been removed since processes were deprecated.</font></p>
+
+<h4><span id="How_to_import_a_process_from_the_library">How to import a process from the library</span></h4>
+
+<p>Browse through the <a href="http://library.processmaker.com/">library</a> to find processes to try out. Click on a process title to read a description and see information about the process.</p><p><img alt="" height="106" src="../../sites/default/files/BrowseProcessLibraryLink.png" width="632"></p><p>And select a process from the list.</p>
+<p><img alt="" height="126" src="../../sites/default/files/BrowseProcessLibrary.png" width="500"></p>
+<p>To download one of the processes, click on the <strong>View</strong> link to the right of the process. In the dialog box which provides information about the process, click on the <strong>Download</strong> at the bottom, to automatically download and import the library.</p>
+<p><img alt="" height="423" src="../../sites/default/files/DownloadFromProcessMakerLibary.png" width="500"></p>
+<p>A brief information about the process will display:</p>
+<p><img alt="" height="218" src="../../sites/default/files/DownloadFromProcessMakerLibaryExample.png" width="511"></p>
+<p>On the other hand, to download a some processes from the library, you will need to first login. If you don't already have an account with ProcessMaker, go to the "Sign In" section on the right side of the Library web page and click "Create a New Account". Enter your personal data and create password, then click on "Save" to be automatically logged in.</p>
+<p><img alt="" height="202" src="../../sites/default/files/DownloadFromProcessMakerLibaryRegister.png" width="632"></p>
+<p>By clicking on this link the login screen will appear:</p>
+<p><img alt="" height="243" src="../../sites/default/files/DownloadFromProcessMakerLibaryAccount.png" width="453"></p>
+<p>If you have registered in the ProcessMaker library, you need to enter your credentials to enable the download link; otherwise, click on <strong>Create a new Account</strong> to be redirected into the ProcessMaker Library page to create an account:</p>
+<p><img alt="" height="593" src="../../sites/default/files/DownloadFromProcessMakerLibaryCreateAccount.png" width="765"></p>
+
+<h4><span id="How_to_use_an_imported_process">How to use an imported process</span></h4>
+
+<p>Before using an imported process, you will need to assign users to each task. User accounts are not imported or exported with a process! Create valid user accounts, and right-click on each task of the process map to assign users.</p><p>In some processes, a user group is already assigned to a task. In that case, you’ll need to assign your own users to that group. Under the users tab, create user accounts and assign them to the appropriate groups.</p>
+<p>Once you've added valid users to tasks or groups, you can then run the process. Log in as the user assigned to the first task, and you’ll be able to start a case. Logging in with the user accounts you've assigned to the subsequent tasks, you can continue to run the process from the user side.</p>
+<p>Summarizing this, as follows you will find ProcessMaker elements and configurations that are successfully exported and imported when a process is moving from one workspace/installation into another:</p><p>Elements imported/exported:</p>
+
+<ul>
+<li>Dynaforms</li>
+<li>Input Documents</li>
+<li>Output Documents</li>
+<li>Triggers</li>
+<li>Groups</li>
+<li>Groups assignment on each task</li>
+<li>Database Connections</li>
+<li>Case Scheduler configuration</li>
+<li>Events Configuration</li>
+<li>Tasks configuration</li>
+<li>email templates</li>
+</ul>
+
+<p>Elements not imported/exported</p>
+
+<ul>
+<li>Users</li>
+<li>Process Permissions</li>
+<li>Process Supervisor</li>
+<li><a href="../PM_Tables.html#Exporting_PM_Tables" title="2.0/PM Tables">PmTables</a> (they need to be exported separately)</li>
+<li>Departments structure</li><li>Users assignment on each task</li>
+</ul>
+
+<h3><span id="Exporting_Processes">Exporting Processes</span></h3>
+
+<h4><span id="From_version_1.6_to_2.0.40">From version 1.6 to 2.0.40</span></h4>
+
+<p>To export a process, go to the <strong>DESIGNER</strong> tab and select the desired process from the list and click its <strong>Edit</strong> link or double-click to open its Process Map. <i>Right click</i> on a blank area in the Process Map and select the option <strong>Export Process</strong> from the menu:</p>
+<p><img alt="" height="246" src="../../sites/default/files/ExportMenuProcessMap.png" width="208"></p>
+<p>A dialog box will display the title of the process, description of the process, the size of the export file in bytes and a link to the file. Click on the link to download the export file to your computer.</p>
+<p><img alt="" height="188" src="../../sites/default/files/Export_DialogBox.png" width="483"></p>
+<p>If wishing to export the process to a different BPM application, download the download the <strong><code>.xpdl</code></strong> file. Note that ProcessMaker's support for the <a href="http://en.wikipedia.org/wiki/XPDL">XPDL</a> format is still beta.</p>
+
+<h4><span id="From_version_2.0.41_and_later">From version 2.0.41 and later</span></h4>
+
+<ul>
+<li><strong>Export</strong> : From ProcessMaker 2.0.41 and on, the <strong>Export</strong> option was included under the Designer Menu, so it allows users to export a process directly without being inside one:</li>
+</ul>
+
+<p><img alt="" height="102" src="../../sites/default/files/ExportingAProcessDesignerMenu.png" width="385"></p>
+
+<p>Users have also the export option explained from previous versions.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> More than one process can't be exported at the same time.</font></p>
+<ul><li><strong>Removing XPDL export option</strong>: the option XPDL export was removing from this version.</li></ul></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

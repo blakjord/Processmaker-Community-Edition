@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/Upgrading_ProcessMaker.html" />
+<link rel="shortlink" href="657.html" />
+<title>3.2 - Upgrading ProcessMaker | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"wNGnPlLnn1z4Zt9ewZPCahPZzyyEpJbcYxuqq9LWka4","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-657 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="657.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="657.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-rYD-ZhVQbw-HtiNfVJqT7jvKQ0SNlK1wao8uX1WlKaI" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - Upgrading ProcessMaker</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.3/Upgrading_ProcessMaker.html" class="">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a href="../3.0/Upgrading_ProcessMaker.html" class="">3.1</a></li><li><a href="../3.0/Upgrading_ProcessMaker.html" class="">3.0</a></li><li><a href="../index.php/2.0/Upgrading_ProcessMaker.html" class="">2.x</a></li><li><a href="../index.php/Upgrading_ProcessMaker.html" class="">1.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - Upgrading ProcessMaker" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="657.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - Upgrading ProcessMaker 1/5</option><option value="40">Give 3.2 - Upgrading ProcessMaker 2/5</option><option value="60" selected="selected">Give 3.2 - Upgrading ProcessMaker 3/5</option><option value="80">Give 3.2 - Upgrading ProcessMaker 4/5</option><option value="100">Give 3.2 - Upgrading ProcessMaker 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3</span></span> <span class="total-votes">(<span >2</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-cGnClSW1My6yZ9_7RdNhpISb_UN1EebFX9AaCP419vw" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="657.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="657.html#Overview">Overview</a></li>
+<li class="toc"><a href="657.html#Requirements">Requirements</a></li>
+<li class="toc"><a href="657.html#Upgrading_ProcessMaker_Community_EnterpriseEdition">Upgrading from a Community to an Enterprise Edition</a></li>
+<li class="toc"><a href="657.html#Safety_Before_Upgrading">Safety Precautions Before Upgrading</a></li>
+<li class="toc"><a href="657.html#Upgrading_ProcessMaker">Upgrading ProcessMaker</a></li>
+<ol class="toc">
+<li class="toc"><a href="657.html#Backing_up_ProcessMaker">Step 1: Backing up ProcessMaker</a></li>
+<ol class="toc">
+<li class="toc"><a href="657.html#Linux_UNIX">Linux/UNIX</a></li>
+<li class="toc"><a href="657.html#Windows">Windows</a></li>
+</ol>
+<li class="toc"><a href="657.html#Updating_the_content_table">Step 2: Updating the Content Table</a></li>
+<li class="toc"><a href="657.html#Upgrading_the_source_code">Step 3: Upgrading the Source Code</a></li>
+<ol class="toc">
+<li class="toc"><a href="657.html#Linux.2FUNIX:">Linux/UNIX</a></li>
+<li class="toc"><a href="657.html#Windows:">Windows</a></li>
+</ol>
+<li class="toc"><a href="657.html#Modifying_MyCnf_File">Step 4: Modifying my.cnf file</a></li>
+<ol class="toc">
+<li class="toc"><a href="657.html#Modify_this_file_for_MySql_versions_5.5.x_or_greater">binlog_format in MySQL 5.5.x or Greater</a></li>
+</ol>
+<li class="toc"><a href="657.html#Upgrading_the_Workspaces">Step 5: Upgrading the Workspaces</a></li>
+<li class="toc"><a href="657.html#Changing_Apache_Configuration">Step 6: Changing the Apache Configuration</a></li>
+<ol class="toc">
+<li class="toc"><a href="657.html#VirtualHost_in_Apache_2.4">VirtualHost in Apache 2.4</a></li>
+</ol>
+<li class="toc"><a href="657.html#Upgrade_the_Databases">Step 7: Upgrade the Databases</a></li>
+<li class="toc"><a href="657.html#Migrating_the_List_of_Cases">Step 8: Migrating the List of Cases</a></li>
+</ol>
+<li class="toc"><a href="657.html#Additional_Configurations">Additional Configurations</a></li>
+<ol class="toc">
+<li class="toc"><a href="657.html#Incorrect_case_numbers">Case Number for New Cases is Incorrect</a></li>
+<li class="toc"><a href="657.html#Enabling_File_Extension">Enabling the fileinfo Extension</a></li>
+<li class="toc"><a href="657.html#Enabling_mcrypt_extension">Enabling the mcrypt Extension</a></li>
+</ol>
+<li class="toc"><a href="657.html#Recommendations_after_upgrading">After Upgrading</a></li>
+<ol class="toc">
+<li class="toc"><a href="657.html#Upgrading_ProcessMaker_translations">Deleting the Cache</a></li>
+<li class="toc"><a href="657.html#Upgrading_ProcessMaker_translations">Upgrading ProcessMaker Translations</a></li>
+</ol>
+<li class="toc"><a href="657.html#Activating_the_License">Activating the License</a></li>
+<li class="toc"><a href="657.html#Restoring_ProcessMaker_If_Problems_Arise">Restoring ProcessMaker if Problems Arise</a></li>
+</ol>
+</div></div>
+</p>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>This document is a detailed guide to upgrading to ProcessMaker 3.2. The structure of the databases and the file locations may be changed from one version of ProcessMaker to the next, so do <strong>NOT</strong> try to use data from one version of ProcessMaker in a different version of ProcessMaker without first following the upgrade procedure.</p>
+
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 65%;">
+<tbody>
+<tr>
+<td>
+<font color="green"><b>Note:</b></font> <font color=dimgrey> To follow quick steps to upgrade your Processmaker installation to ProcessMaker 3.2, please read the <a href="../ProcessMaker_Upgrade_Plan_v2.html">ProcessMaker 3.2 Upgrade Plan</a> page as the same <a href="../ProcessMaker_Upgrade_Plan_v2.html">ProcessMaker 3.2.2 Upgrade Plan</a>.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>The upgrade procedure will update the processes and data to the new version. However, take the following considerations into account once the upgrade is completed:</p>
+
+<p><strong>About old processes:</strong></p>
+<p>
+<ul>
+<li>Classic processes (created in the old designer in ProcessMaker 2) can be used in version 3.2, but they will not be converted into BPMN processes. The only way to convert a classic process to a BPMN process is to manually recreate it in the new BPMN designer from scratch.</li>
+
+<li>After upgrading to version 3.2, classic processes will automatically be opened in the old designer and they will work as expected, meaning that information related to users and cases won't be modified.</li>
+
+<li>Classic processes that have been upgraded to version 3.2 can still be edited in the classic designer and cases can be executed. However, it is not possible to create new classic processes in version 3.2. Instead, all new processes will need to be created using the BPMN Designer.</li>
+
+<li>The case list will show both cases created by classic processes and new BPMN processes, maintaining their numbering.</li>
+</ul>
+</p>
+
+<p><strong>About old Dynaforms:</strong></p>
+<p>
+<ul>
+<li>Old Dynaforms cannot be converted into the new responsive forms. Instead, they will keep their old structure from the classic designer.</li>
+</ul>
+</p>
+
+<h2><span id="Requirements">Requirements</span></h2>
+
+<ul>
+    <li>See the <a href="../3.2/ProcessMaker_Installation_Requirements.html">requirements for ProcessMaker 3.2</a>.</li>
+
+    <li>ProcessMaker version 3.2 or later requires PHP 5.6 in Linux and PHP 5.5 in Windows.</li>
+    <li>If using an older version of PHP, make sure to upgrade PHP before upgrading ProcessMaker.</li>
+</ul>
+
+<h2><span id="Upgrading_ProcessMaker_Community_EnterpriseEdition">Upgrading from a Community to an Enterprise Edition</span></h2>
+<p>This guide can also be used to upgrade ProcessMaker from a Community to an Enterprise edition. Don't forget that a license is required to use the Enterprise Edition. For more information, see <a href="657.html#Activating_the_License">activating the Enterprise license.</a></p>
+
+<h2><span id="Safety_Before_Upgrading">Safety Precautions Before Upgrading</span></h2>
+
+<p>The <a href="../Plugin_Trigger_Code_Security_Scanner.html#Creating_a_Custom_Blacklist">blacklist.ini file</a> (used by the <a href="../Plugin_Trigger_Code_Security_Scanner.html">Code Security Scanner</a>) is autogenerated during the upgrade process. If a customized blacklist is currently being used, take care to back up the file before starting the update process.</font></p>
+
+<p>If using ProcessMaker in production, before upgrading ProcessMaker it is recommended to first install the new version of ProcessMaker on a separate test server (or <a href="../index.php/Multiple_Installations_on_the_same_machine.html">in a separate port or domain</a> on the same server) and import your processes onto the test server to verify that there are no incompatibilities.</p>
+
+<h2><span id="Upgrading_ProcessMaker">Upgrading ProcessMaker</span></h2>
+
+<h3><span id="Backing_up_ProcessMaker">Step 1: Backing up ProcessMaker</span></h3>
+
+<p>Before upgrading, <strong><u>always</u></strong> make a complete backup of the directory where ProcessMaker is installed and of the <a href="../3.2/ProcessMaker_Database_Model.html"  title="ProcessMaker Database Model">database(s)</a> used by each workspace, so if an error arises, it will be possible to go back to the previous version of ProcessMaker and restore its data.</p>
+
+<p>Follow the steps below according to your operating system:</p>
+
+<h4><span id="Linux_UNIX">Linux/UNIX</span></h4>
+
+<ol>
+    <li>
+<p>Make an archive of the ProcessMaker installation directory using the <tt>tar</tt> command, which is located at <tt>/opt/processmaker</tt>:</p>
+
+<codeblock>tar -czf <font color=blue>BACKUP-FILE</font>.tar.gz /opt/processmaker</codeblock>
+</li>
+
+    <li>
+<p>Make a backup copy of the entire MySQL database using the <tt>mysqldump</tt> command:</p>
+
+<!--
+<codeblock>mysqldump -u root -p -F -x -A &gt; <font color=blue>BACKUP-FILE</font>.sql</codeblock>
+-->
+<p><b>ProcessMaker 2.5.x and earlier</b></p>
+<div style="margin-left: 25px;">
+<p>For ProcessMaker 2.5.X and earlier, it is necessary to back up the three databases used by a workspace.</p>
+
+<codeblock> mysqldump -u root -p -F -x --databases wf_workflow rb_workflow rp_workflow &gt; <font color=blue>BACKUP-FILE</font>.sql</codeblock>
+</div>
+
+<p><b>ProcessMaker 2.8 and later</b></p>
+<div style="margin-left: 25px;">
+<p>In ProcessMaker 2.8 and later, each workspace uses a single database. Use the code below to back up the single database used by a ProcessMaker 2.8+ workspace.</p>
+
+<codeblock> mysqldump -u root -p -F -x --databases wf_workflow &gt; <font color=blue>BACKUP-FILE</font>.sql</codeblock>
+</div>
+
+<p>Workspaces that have been upgraded from version 2.5.X or earlier to version 2.8.X or later will continue to use 3 databases per workspace.</p>
+
+<p>Nevertheless, the Enterprise Edition has the option to <a href="../2.8/Single_Database_per_Workspace.html">consolidate the 3 databases into 1 database per workspace</a> using the <code>processmaker unify-database</code> command.</p>
+
+<p><font color=green><strong>Note:</strong></font> <font color=dimgrey>If unsure what the MySQL databases are named, log in to MySQL and use the <strong><code>SHOW DATABASES</code></strong> command to see the available databases.</font></p>
+
+<codeblock># <b>mysql -u root -p</b>
+mysql> <b>show databases;</b>
+mysql> <b>quit;</b>
+</codeblock>
+</li></ol>
+
+<h4><span id="Windows">Windows</span></h4>
+
+<ol>
+    <li>Open a command prompt window by going to <b>Start &gt; All Programs &gt; Accessories &gt; Command Prompt</b> and navigate to the directory where the <code>mysqldump</code> command is located:</p>
+
+<p><b>Windows Vista/7/8/10/Server 2008/2012:</b></p>
+<div style="margin-left: 25px;">
+<codeblock>cd c:\Users\<font color=blue><i>USERNAME</i></font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X_X</i></font>\mysql\bin
+</codeblock>
+</div>
+
+<p><b>Windows XP/Server 2003:</b></p>
+<div style="margin-left: 25px;">
+<codeblock>cd "c:\Program Files\ProcessMaker-<font color=blue><i>X_X_X_X</i></font>\mysql\bin"
+</codeblock>
+</div>
+
+<p>Then, use the <code>mysqldump</code> command to back up the MySQL databases.</p>
+
+<p><b>ProcessMaker 2.5.X and earlier</b></p>
+<div style="margin-left:25px">
+<p>For ProcessMaker 2.5.X and earlier, it is necessary to back up the three databases used by a workspace.</p>
+
+<codeblock>mysqldump -u root -p -F -x --databases wf_workflow rb_workflow rp_workflow &gt; <font color=blue>BACKUP-FILE</font>.sql</codeblock>
+</div>
+
+<p><b>ProcessMaker 2.8 and later</b></p>
+<div style="margin-left:25px">
+<p>In ProcessMaker 2.8 and later, each workspace uses a single database. Use the code below to back up the single database used by a ProcessMaker 2.8+ workspace.</p>
+
+<codeblock>mysqldump -u root -p -F -x --databases wf_workflow &gt; <em><font color=blue>BACKUP-FILE</font></em>.sql</codeblock>
+</div>
+
+</li>
+</ol>
+
+<p>After making a backup copy of the existing installation of ProcessMaker, the old version of ProcessMaker can be replaced with a new version. The upgrade procedure overwrites all existing source code, which is why ProcessMaker can't be upgraded from the graphical interface. Note that any custom changes made to the source code will be overwritten with each upgrade.</p>
+
+
+<h3><span class="mw-headline" id="Updating_the_content_table">Step 2: Updating the Content Table</span></h3>
+
+<p>To upgrade from ProcessMaker 3.0.x to ProcessMaker 3.2, it is necessary to run the following query in the ProcessMaker database that will be upgraded:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">UPDATE CONTENT SET CON_VALUE = 'none' WHERE CON_CATEGORY = 'WEE_DESCRIPTION' AND CON_LANG = 'en' AND CON_VALUE = '';<br />
+UPDATE CONTENT<br />
+SET CON_VALUE = 'untitled'<br />
+WHERE CON_CATEGORY IN ('WEE_DESCRIPTION', 'WEE_TITLE', 'DYN_TITLE', 'OUT_DOC_TITLE', 'REP_TAB_TITLE', 'TRI_TITLE') AND CON_VALUE = '' AND CON_LANG = 'en';</div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">As of <b>ProcessMaker 3.2.2</b>, the Content upgrade above is validated with the <a href="../3.2/processmaker_command.html#upgrade-content">upgrade-content</a> command only if all labels of the corresponding tables are migrated.</font></p>
+
+<h3><span class="mw-headline" id="Upgrading_the_source_code">Step 3: Upgrading the Source Code</span></h3>
+
+<p>Follow the steps below to install the new ProcessMaker source code and overwrite the old source code.</p>
+
+<ol>
+    <li>Go to the <a  href="http://sourceforge.net/projects/processmaker/files/ProcessMaker" >ProcessMaker's SourceForge page</a> and download the <tt>processmaker-3.2.tar.gz</tt> file.
+</li>
+
+    <li>
+<p>Decompress the <tt>processmaker-3.2.x.tar.gz</tt> file, overwriting the existing <tt>processmaker</tt> directory found at:</p>
+<p><b>Linux/UNIX:</b><br>
+ &nbsp; &nbsp; <tt>/opt/processmaker</tt></p>
+
+<p><b>Windows 7/8/10/Server 2008/2012:</b><br>
+ &nbsp; &nbsp; <tt>C:\Users\<font color=blue>USERNAME</font>\AppData\Roaming\ProcessMaker-<font color=blue><i>3.2.x</i></font>\processmaker</tt></p>
+
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width:100%;">
+<tbody>
+<tr>
+<td>
+<font color="red"><b>Warning:</b></font> <font color=dimgrey> <strong> DO NOT</strong> delete the old <tt>processmaker</tt> directory and then copy the new processmaker directory into the same place, because all the essential configuration information and all the uploaded input documents and attached files from the old installation will be lost. Instead, decompress the file so it will overwrite any existing files but won't effect any other files (such as the contents of the <tt>shared</tt> and <tt>workflow/engine/config</tt> directories and the <tt>workflow/engine/test/bootstrap/gulliverConstants.php</tt> file).</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>Use the commands that are consistent with your operating system.</p>
+<ul>
+    <li><a href="657.html#Linux.2FUNIX:">Linux/UNIX</a></li>
+    <li><a href="657.html#Windows:">Windows</a></li>
+    </ul>
+
+    </li>
+</ol>
+
+<h4><span class="mw-headline" id="Linux.2FUNIX:">Linux/UNIX</span></h4>
+<ol>
+    <li>Log in as the "root" user (or use the <code>sudo</code> command). Then, use the <tt><a href="http://www.linfo.org/tar.html" >tar</a></tt> command to overwrite the existing installation of ProcessMaker. Use the <code>--overwrite</code> option to replace the existing files and the <code>-p</code> option to preserve the permissions of existing files. Use the <code>-C</code> option to specify the parent directory where the <strong><tt>processmaker</tt></strong> directory is located.</p>
+
+<p>For example, to upgrade an installation of ProcessMaker located at <tt>/opt/processmaker</tt> with the file <strong><tt>/root/processmaker-3.2.tar.gz</tt></strong>:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">tar</span> <span style="color: #660033;">--overwrite</span> <span style="color: #660033;">-p</span> <span style="color: #660033;">-C</span> <span style="color: #000000; font-weight: bold;">/</span>opt <span style="color: #660033;">-xvzf</span> <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>processmaker-<span style="color: #000000;">3.2</span>.tar.gz</div></div>
+
+<p>If the ProcessMaker directory isn't named "processmaker", then temporarily rename it "processmaker" so it will be correctly overwritten when the <tt>tar.gz</tt> file is decompressed. Then rename it back to its original name.</p>
+
+<p>For example, if ProcessMaker is installed at <tt>/usr/local/bin/pm</tt>, then rename it  <strong><tt>/usr/local/bin/processmaker</tt></strong> before overwriting the code files.</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">mv</span> <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>pm <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>processmaker<br />
+<span style="color: #c20cb9; font-weight: bold;">tar</span> <span style="color: #660033;">--overwrite</span> <span style="color: #660033;">-p</span> <span style="color: #660033;">-C</span> <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>bin <span style="color: #660033;">-xvzf</span> <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>processmaker-<span style="color: #000000;">3.2</span>.tar.gz<br />
+<span style="color: #c20cb9; font-weight: bold;">mv</span> <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>processmaker <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>pm</div></div>
+</font></p>
+</li>
+
+    <li><p>Then, issue the following commands so that ProcessMaker can access the necessary files when run by the Apache server:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<br />
+<span style="color: #c20cb9; font-weight: bold;">chmod</span> <span style="color: #660033;">-R</span> <span style="color: #000000;">770</span> shared workflow<span style="color: #000000; font-weight: bold;">/</span>public_html gulliver<span style="color: #000000; font-weight: bold;">/</span>js gulliver<span style="color: #000000; font-weight: bold;">/</span>thirdparty<span style="color: #000000; font-weight: bold;">/</span>html2ps_pdf<span style="color: #000000; font-weight: bold;">/</span>cache<br />
+<span style="color: #7a0874; font-weight: bold;">cd</span> workflow<span style="color: #000000; font-weight: bold;">/</span>engine<span style="color: #000000; font-weight: bold;">/</span><br />
+<span style="color: #c20cb9; font-weight: bold;">chmod</span> <span style="color: #660033;">-R</span> <span style="color: #000000;">770</span> config content<span style="color: #000000; font-weight: bold;">/</span>languages plugins xmlform js<span style="color: #000000; font-weight: bold;">/</span>labels</div></div>
+
+<p>As of <b>ProcessMaker 3.2.2</b>, the <tt>thirdparty</tt> folder is no longer part of the <tt>gulliver</tt> folder. Then the <tt>thirdparty</tt> folder is configured directly from <tt>/opt/processmaker</tt> as follows:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<br />
+<span style="color: #c20cb9; font-weight: bold;">chmod</span> <span style="color: #660033;">-R</span> <span style="color: #000000;">770</span> shared workflow<span style="color: #000000; font-weight: bold;">/</span>public_html gulliver<span style="color: #000000; font-weight: bold;">/</span>js thirdparty<span style="color: #000000; font-weight: bold;">/</span>html2ps_pdf<span style="color: #000000; font-weight: bold;">/</span>cache<br />
+<span style="color: #7a0874; font-weight: bold;">cd</span> workflow<span style="color: #000000; font-weight: bold;">/</span>engine<span style="color: #000000; font-weight: bold;">/</span><br />
+<span style="color: #c20cb9; font-weight: bold;">chmod</span> <span style="color: #660033;">-R</span> <span style="color: #000000;">770</span> config content<span style="color: #000000; font-weight: bold;">/</span>languages plugins xmlform js<span style="color: #000000; font-weight: bold;">/</span>labels</div></div>
+<p>Also, <b>ProcessMaker 3.2.2</b> has new files that require especial permissions as follows:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<br />
+<span style="color: #c20cb9; font-weight: bold;">chmod</span> <span style="color: #660033;">-R</span> <span style="color: #000000;">775</span> bootstrap bootstrap<span style="color: #000000; font-weight: bold;">/</span>cache config framework <br />
+<span style="color: #7a0874; font-weight: bold;">cd</span> thirdparty<span style="color: #000000; font-weight: bold;">/</span>html2ps_pdf<span style="color: #000000; font-weight: bold;">/</span><br />
+<span style="color: #c20cb9; font-weight: bold;">chmod</span> <span style="color: #660033;">-R</span> <span style="color: #000000;">775</span> cache<span style="color: #000000; font-weight: bold;">/</span> out<span style="color: #000000; font-weight: bold;">/</span> temp<span style="color: #000000; font-weight: bold;">/</span></div></div>
+</li>
+    <li><p>Finally, change the owner of the ProcessMaker files to the user who runs Apache. This user depends upon your distribution:</p>
+<p><strong>Debian/Ubuntu:</strong></p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">chown</span> <span style="color: #660033;">-R</span> www-data:www-data <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker</div></div>
+
+<p><strong>RedHat/CentOS/Fedora:</strong></p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">chown</span> <span style="color: #660033;">-R</span> apache:apache <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker</div></div>
+
+<p><strong>SUSE/OpenSUSE:</strong></p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">chown</span> <span style="color: #660033;">-R</span> wwwrun:www <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker</div></div>
+</li>
+</ol>
+
+<h4><span class="mw-headline" id="Windows:">Windows</span></h4>
+<p>Use a decompression program like <a href="http://www.rarlab.com/" >WinRAR</a>, which supports the <tt>tar.gz</tt> format, to decompress the source code and overwrite the existing <tt>processmaker</tt> directory, which by default is located at <strong><tt>c:\Users\<font color=blue>USERNAME</font>\AppData\Roaming\ProcessMaker-<font color=blue>x.x.x</font>\processmaker</tt></strong> in Windows Vista/7/8/10/Server 2008/2012.</p>
+
+<p>Right-click on the <tt>processmaker-<font color=blue>3.2.x</font>.tar.gz</tt> file that was downloaded and select the option <strong>Extract here</strong> from the dropdown menu.</p>
+<p><img src="../sites/default/files/1_2.png"></p>
+
+<p>In the window prompt, select the <strong>Yes to All</strong> option to overwrite files and begin the extraction.</p>
+<p><img alt="" src="../sites/default/files/2_3.png" ></p>
+
+<h3><span id="Modifying_MyCnf_File">Step 4: Modifying my.cnf file</span></h3>
+
+<h4><span class="mw-headline" id="Modify_this_file_for_MySql_versions_5.5.x_or_greater">binlog_format in MySQL 5.5.x or Greater</span></h4>
+<p>To avoid problems running triggers on MySQL 5.5 or greater, it should log by rows instead of by statements (which is the default).<p>
+<ol>
+<li><p>Edit the MySQL configuration file, which is named <b><tt>my.cnf</tt></b> in Linux/UNIX and <b><tt>my.ini</tt></b> in Windows. Its location <a href="../3.0/Additional_Configuration.html#Configuring_MySQL">depends on the operating system</a>.</p>
+<p>Make sure that the following line appears in the MySQL configuration file:</p>
+<codeblock>binlog_format=row</codeblock>
+<p>For more information, see the <a href="http://dev.mysql.com/doc/refman/5.6/en/replication-options-binary-log.html#sysvar_binlog_format">MySQL documentation</a>.</p>
+</li>
+</ol>
+
+<h3><span class="mw-headline" id="Upgrading_the_Workspaces">Step 5: Upgrading the Workspaces</span></h3>
+
+<p>After upgrading the ProcessMaker source code, use the <a href="../3.0/processmaker_command.html#upgrade">processmaker upgrade</a> command so that all workspaces are also upgraded to the new version.</p>
+
+<ol>
+    <li>
+<p>Go to the ProcessMaker installation directory and run the <tt>processmaker upgrade</tt> command from the command line.</p>
+
+<p><strong>Linux/UNIX:</strong></p>
+
+<div style="margin-left: 25px;">
+<p>Log in as <code>root</code> (or use the <strong><code>sudo -i</code></strong> command), then run the following command:</p>
+
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<br />
+.<span style="color: #000000; font-weight: bold;">/</span>processmaker upgrade</div></div>
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>If an error message appears, such as "<code>/usr/bin/env: php: No such file or directory</code>", then make sure that the PHP Command Line Interface is installed (whose package is named <code>php-cli</code> in Red Hat/CentOS/Fedora and <code>php5-cli</code> in Debian/Ubuntu). If PHP-CLI is already installed, then it is not installed in a location found in your <code>$PATH</code>, so use the full path when executing PHP-CLI:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<br />
+<span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>php <span style="color: #660033;">-f</span> processmaker upgrade</div></div></font>
+</div>
+
+<p><strong>Windows:</strong></p>
+<div style="margin-left: 25px;">
+<p>First, open a Command Prompt by going to <strong>Start &gt; All Programs &gt; Accessories &gt; Command Prompt</strong> and navigate to the location where ProcessMaker installed. Then, run the <code>processmaker upgrade</code> command:</p>
+<codeblock>cd <font color=blue>INSTALL-DIRECTORY</font>\processmaker
+..\php\php.exe -f processmaker upgrade</codeblock>
+<p>For example:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">cd</span> c:\Users\admin\AppData\Roaming\ProcessMaker-<span style="color: #000000;">3</span>_2\processmaker<br />
+..\php\php.exe <span style="color: #660033;">-f</span> processmaker upgrade</div></div>
+</div>
+
+</li>
+</ol>
+<h3><span id="Changing_Apache_Configuration">Step 6: Changing the Apache Configuration</span></h3>
+<p>ProcessMaker 3.2 has a different VirtualHost configuration in Apache than in version 2.8.<i>X</i> and earlier. Please take note that the upgrade process does NOT update the Virtual Host configuration automatically. If upgrading to ProcessMaker 3.2 and later, it is necessary to change the Virtual Host configuration for ProcessMaker manually.</p>
+
+<ol>
+    <li>
+<p>To change the configuration, edit the <strong><tt>pmos.conf</tt></strong> file where the ProcessMaker Virtual Host is defined. The pmos.conf location depends on your operating system:</p>
+
+<div style="margin-left:25px">
+<p><b>Red Hat/CentOS/Fedora:</b><br>
+ &nbsp; &nbsp; <code>/etc/httpd/conf.d/pmos.conf</code></p>
+<p><b>Debian/Ubuntu/Mint:</b><br>
+ &nbsp; &nbsp; <code>/etc/apache2/sites-available/pmos.conf</code></p>
+<p><b>SuSE/OpenSUSE:</b><br>
+ &nbsp; &nbsp; <code>/etc/apache2/conf.d/pmos.conf</code></p>
+<p><b>Windows XP/Server 2003:</b><br>
+ &nbsp; &nbsp; <code>c:\Program Files\ProcessMaker-<font color=blue><i>X_X_X</i></font>\apache\conf\pmos.conf</code></p>
+<p><b>Windows Vista/7/8/10/Server 2008/2012:</b><br>
+ &nbsp; &nbsp; <code>c:\Users\<font color=blue><em>USERNAME</em></font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X</i></font>\apache\conf\pmos.conf</code></p>
+</div>
+
+<p>Open the <tt>pmos.conf</tt> file with a plain text editor and make sure the configuration is set according to the following examples, depending on the Apache Version.</p>
+</li>
+
+    <h4><span id="VirtualHost_in_Apache_2.4">VirtualHost in Apache 2.4</span></h4>
+    <li><p>In the following <b><tt>pmos.conf</tt></b> file configuration, replace <strong><code>your_ip_address</code></strong> and <strong><code>your_processmaker_domain</code></strong> with the IP address or domain name used by your ProcessMaker server:</p>
+
+<codeblock><font color=dimgrey>#processmaker virtual host</font>
+&lt;VirtualHost <i><font color=blue>your_ip_address</font></i> &gt;
+   ServerName "<i><font color=blue>your_processmaker_domain</font></i>"
+   DocumentRoot <font color=blue>/opt/processmaker</font>/workflow/public_html
+   DirectoryIndex index.html index.php
+
+   &lt;Directory <font color=blue>/opt/processmaker</font>/public_html/workflow&gt;
+      Options Indexes FollowSymLinks MultiViews
+      AddDefaultCharset UTF-8
+      AllowOverride All
+      Require all granted
+      ExpiresActive On
+
+      &lt;IfModule mod_rewrite.c&gt;
+         RewriteEngine On
+         RewriteCond %{REQUEST_FILENAME} !-f
+         RewriteRule ^.*/(.*)$ app.php [QSA,L,NC]
+      &lt;/IfModule&gt;
+
+      <font color=dimgrey>#Deflate filter is optional. It reduces download size, but adds slightly more CPU processing:</font>
+      <strong>AddOutputFilterByType DEFLATE text/html</strong>
+   &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</codeblock>
+
+</li>
+
+    <li><p><a href="../3.0/Additional_Configuration.html#Restarting_Apache">Restart the Apache service</a> for the changes to take effect.</p>
+</li>
+</ol>
+
+<p>If these changes in the rewrite rules are not made, it will no longer be possible to access ProcessMaker through a web browser. Either the ProcessMaker login screen will not load or the following error will appear:</p>
+<p><img alt="" src="../sites/default/files/3_4.png"></p>
+
+<h3><span id="Upgrade_the_Databases">Step 7: Upgrade the Databases</span></h3>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">When restoring a workspace backup from a different server, make sure the <tt><b>/shared/sites/&lt;WORKSPACE&gt;/db.php</b></tt> file content is properly configured to work on the new workspace server.</font></p>
+
+<p>After upgrading the ProcessMaker source code, the MySQL database(s) used by ProcessMaker need to be upgraded as well.</p>
+
+<ol><li><p>
+ Run the <code>processmaker database-upgrade</code> command from the command line with the name of the workspace included at the end. Execute the command for each workspace in the ProcessMaker installation.</p>
+
+<p><strong>Linux/UNIX:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd /opt/processmaker
+./processmaker database-upgrade <font color="blue">workflow</font>
+</codeblock>
+</div>
+<p><strong>Windows XP/Server 2003:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd "c:\Program Files\ProcessMaker-<font color=blue>X_X_X</font>\processmaker"
+..\php\php.exe -f processmaker database-upgrade <font color="blue">workflow</font>
+</codeblock>
+</div>
+<p><strong>Windows Vista/7/8/10/Server 2008/2012:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd "c:\Users\<font color=blue>USERNAME</font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X</i></font>\processmaker"
+..\php\php.exe -f processmaker database-upgrade <font color="blue">workflow</font>
+</codeblock>
+</div>
+</li>
+
+
+    <p>The unifying process may take several minutes (or hours) depending on the amount of information in the database. It takes more time if there is a large amount of cases, users, plugins, and other additional information. A message will be shown after the unification is complete indicating that it was successful.</p>
+
+    <li><p>Run the <a href="../3.0/processmaker_command.html#flush-cache"><tt>processmaker flush-cache</tt></a> command after the unification of the databases.</p>
+
+<p><strong>Linux/UNIX:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd /opt/processmaker
+./processmaker flush-cache
+</codeblock>
+</div>
+<p><strong>Windows XP/Server 2003:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd "c:\Program Files\ProcessMaker-<font color=blue>X_X_X</font>\processmaker"
+..\php\php.exe -f processmaker flush-cache
+</codeblock>
+</div>
+<p><strong>Windows Vista/7/8/10/Server 2008/2012:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd "c:\Users\<font color=blue>USERNAME</font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X</i></font>\processmaker"
+..\php\php.exe -f processmaker flush-cache
+</codeblock>
+</div>
+
+</li>
+</ol>
+
+
+
+<h3><span id="Migrating_the_List_of_Cases">Step 8: Migrating the List of Cases</span></h3>
+<p>ProcessMaker 3.2 Enterprise Edition has improved its performance since older versions by organizing the list of cases according to their status into different tables in the database.</p>
+
+<ol><li>
+<p>To move the cases to their corresponding tables, execute the <code>processmaker migrate-new-cases-lists</code> command. Then, execute the <code>processmaker database-generate-self-service-by-value</code> command to move the unassigned cases to a separate table in the database.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">This command will <b>ONLY</b> be used if you are migrating from a <b>version 2.x</b> and <b>NOT</b> from the <b>versions 2.8, 2.5.2.4</b> to <b>versions 3.0.x, 3.1.x or 3.2.x</b>. It is not recommended to use this command for other versions as the data is already migrated and for <b>version 3.3.x</b> is deprecated.</font></p>
+<p><strong>LINUX/UNIX:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd /opt/processmaker
+./processmaker migrate-new-cases-lists
+./processmaker database-generate-self-service-by-value
+</codeblock>
+</div>
+<p><strong>Windows XP/Server 2003:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd "c:\Program Files\ProcessMaker-<font color=blue><i>X_X_X</font></i>\processmaker"
+..\php\php.exe -f processmaker migrate-new-cases-lists
+..\php\php.exe -f processmaker database-generate-self-service-by-value
+</codeblock>
+</div>
+<p><strong>Windows Vista/7/8/10/Server 2008/2012:</strong></p>
+<div style="margin-left:25px">
+<codeblock>cd "c:\Users\<font color=blue><em>USERNAME</em></font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X</i></font>\processmaker"
+..\php\php.exe -f processmaker migrate-new-cases-lists
+..\php\php.exe -f processmaker database-generate-self-service-value
+</codeblock>
+</div>
+</li></ol>
+
+<h2><span id="Additional_Configurations">Additional Configurations</span></h2>
+
+<h3><span id="Incorrect_case_numbers">Case Number for New Cases is Incorrect</span></h3>
+<p>ProcessMaker 3.2 has improved the speed of generating new cases by storing the last case number in the <tt>ID</tt> field of the <tt>wf_&lt;workspace&gt;.APP_SEQUENCE</tt> table in the database. However, this field did not exist in ProcessMaker 2.x. If upgrading from version 2.x to 3.x, the case number of the last case needs to be inserted into this field.</p>
+
+<p>If using <u>ProcessMaker Enterprise Edition</u>, use the <a href="657.html#Migrating_the_List_of_Cases">processmaker migrate-new-cases-lists</a> command above to automatically insert the last case number into this field.</p>
+
+<p>If using <u>ProcessMaker Community Edition</u>, then the last case number will have to be manually inserted in MySQL:</p>
+<p><b>Windows:</b></p>
+<div style="margin-left:25px">
+    <p>Go to <b>Start > Accessories > Command Prompt</b> and open a terminal and change to the directory where <a href="../3.0/Additional_Configuration.html#MySQL">MySQL is installed</a>. For example:
+<codeblock>cd C:\Users\<font color=blue>USERNAME</font>\AppData\Roaming\ProcessMaker-<font color=blue>3.2.x</font>\processmaker\mysql</codeblock>
+
+<p>Then, log in to MySQL:</p>
+    <codeblock><b>mysql -u root -p</b>
+Enter password: <font color=green><i>enter the root password</i></font></codeblock>
+</div>
+<p><b>Linux/UNIX:</b></p>
+<div style="margin-left:25px">
+    <codeblock><b>mysql -u root -p</b>
+Enter password: <font color=green><i>enter the root password</i></font></codeblock>
+</div>
+<p>Once logged into MySQL, change to the <b><tt>wf_<font color=blue>WORKSPACE</font></tt></b> database, which is named <b><tt>wf_workflow</tt></b> by default:</p>
+<codeblock>mysql> <b>use wf_workflow</b></codeblock>
+<div style="margin-left:25px;">
+    <font color=green><b>Note:</b></font> <font color=dimgrey> If unable to recall the name of the workspace, use the following command to find it:
+<codeblock>mysql> <b>show databases;</b></codeblock></font>
+</div>
+<p>Insert the last case number into the APP_SEQUENCE.ID field:</p>
+<codeblock>mysql> <b>UPDATE APP_SEQUENCE SET ID=(SELECT MAX(APP_NUMBER) FROM APPLICATION);</b>
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+</codeblock>
+<p>Finally, exit MySQL:</p>
+<codeblock>mysql> <b>exit;</b>
+bye
+</codeblock>
+
+<h3><span id="Enabling_File_Extension">Enabling the fileinfo Extension</span></h3>
+<p>The <a href="http://php.net/manual/en/fileinfo.installation.php">fileinfo extension</a> in PHP must be enabled to upload files as input documents. In the definition of input documents, it is now possible to specify which types of files may be uploaded in the Allowed File Extensions field. Fileinfo is used to check the file extension and content of files before adding them as input document files.</p>
+<p>The fileinfo extension is included by default in PHP 5.3.0 and later. To check whether it is enabled, issue the following command from the command line:</p>
+<codeblock>php -m</codeblock>
+<p>In Windows, it is necessary to specify the path where the php.exe file is located. For example:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">C:\Users\USERNAME\AppData\Roaming\ProcessMaker-X_X_X\php\php.exe -m<br />
+[PHP Modules]<br />
+bcmath<br />
+bz2<br />
+calendar<br />
+com_dotnet<br />
+Core<br />
+ctype<br />
+date<br />
+dom<br />
+ereg<br />
+exif<br />
+fileinfo<br />
+...</div></div>
+<p>If fileinfo doesn't appear in the list, then it needs to be enabled by editing the <a href="../3.0/Additional_Configuration.html#Configuring_PHP"><tt>php.ini</tt> file.</a></p>
+
+<p><b>Linux/UNIX:</b></p>
+<div style="margin-left:25px">
+    <p>Use a plain text editor (such as nano, vim or gedit) to edit the <a href="../3.0/Additional_Configuration.html#Configuring_PHP"><tt>php.ini</tt> file</a>, whose location depends on your distribution. Add or uncomment the following line:</p>
+    <codeblock>extension=fileinfo.so</codeblock>
+</div>
+
+<p><b>Windows:</b></p>
+<div style="margin-left:25px">
+    <p>Use a plain text editor (such as notepad, Notepad++ or the DOS edit command) to edit the <b><tt>php.ini</tt></b> file, which by default is located at
+<tt>C:\Program Files\ProcessMaker-<i>X_X_X</i>\php\php.ini</tt> in Windows XP/2003 or <tt>C:\Users\USERNAME\AppData\Roaming\ProcessMaker-<i>X_X_X</i>\php\php.ini</tt> in Windows Vista and later.</p>
+    <p>In the <b><tt>php.ini</tt></b> file, uncomment the following line by changing it from:
+<codeblock>;extension=php_fileinfo.dll</codeblock>
+<p>To:</p>
+    <codeblock>extension=php_fileinfo.dll</codeblock> After changing the <b><tt>php.ini</tt></b> file,
+    <a href="../3.0/Additional_Configuration.html#Restarting_Apache">restart the Apache server</a> for the change to take
+    effect. To verify that the fileinfo extension is enabled, issue the <b><code>php -m</code></b> command again
+    and check whether <code>fileinfo</code> appears in the list.
+    </p>
+</div>
+
+<h3><span id="Enabling_mcrypt_extension">Enabling the mcrypt Extension</span></h3>
+<p>The Enterprise Edition for ProcessMaker 2.8 and later needs to have the mcrypt extension enabled in PHP.</p>
+
+<p><b>Linux/UNIX:</b></p>
+<p>To install the mcrypt module use the package from your Linux/UNIX distribution:</p>
+
+<div style="margin-left:25px">
+    <p><b>Red Hat/CentOS/Fedora:</b></p>
+    <codeblock>yum install php5-mcrypt</codeblock>
+    <p><b>Debian/Ubuntu/Mint:</b></p>
+    <codeblock>apt-get install php5.6-mcrypt</codeblock>
+    <p><b>SuSE/OpenSUSE:</b></p>
+    <codeblock>zypper install php5-mcrypt</codeblock>
+</div>
+
+<p><b>Windows:</b></p>
+<p>For Windows, use a plain text editor to edit the <b><tt>php.ini</tt></b> file, which by default is located at:
+<div style="margin-left:25px">
+<p><b>Windows Vista/7/8/10/Server 2008/2012:</b><br>
+ &nbsp; &nbsp; <code>c:\Users\<font color=blue><em>USERNAME</em></font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X</i></font>\php\php.ini</code></p>
+<p><b>Windows Server 2012 Manual Installation:</b><br>
+ &nbsp; &nbsp; <code>c:\Users\<font color=blue><em>USERNAME</em></font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X</i></font>\php\php.ini</code></p>
+<p><b>Windows Bitnami Installation:</b><br>
+ &nbsp; &nbsp; <code>c:\Bitnami\processmaker-3.<font color=blue><em>x.x.bx-0</em></font>\php\php.ini</code></p>
+</div>
+<p>In the <b><tt>php.ini</tt></b> file, uncomment (remove the semicolon ; symbol) the following line:</p>
+<codeblock>extension=php_mcrypt.dll</codeblock>
+
+<p>Then <a href="../3.0/Additional_Configuration.html#Restarting_Apache">restart the Apache server</a> for the mycrypt extension to be enabled.</p>
+</p>
+</div>
+
+<h2><span class="mw-headline" id="Recommendations_after_upgrading">After Upgrading</span></h2>
+
+<h3><span class="mw-headline" id="Upgrading_ProcessMaker_translations">Deleting the Cache</span></h3>
+<p>It is<strong> recommended</strong> to <a href="../3.0/Clear_Cache.html"  title="Deleting ProcessMaker's Compiled Cache">Delete the ProcessMaker Compiled Cache</a> and completely clear the browser cache (or use it in an incognito window in Chrome or private browsing window in Firefox) when upgrading.</p>
+
+
+<h3><span class="mw-headline" id="Upgrading_ProcessMaker_translations">Upgrading ProcessMaker Translations</span></h3>
+<p>When ProcessMaker is upgraded, the command <strong>processmaker upgrade</strong> doesn't upgrade the translation files to the latest version. In this case, it is required to download the language (depending on the language used) from <a href="https://sourceforge.net/projects/processmaker/files/Translations/3.0.1.7">here</a> and <a href="../3.0/Languages.html#Installing_Additional_Translations">upload it into ProcessMaker</a>.</p>
+
+
+
+<h2><span id="Activating_the_License">Activating the License</span></h2>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> This step is only required when installing <strong>ProcessMaker Enterprise Edition</strong>.</font></p>
+
+<p>On the login page, click on <b>Browse</b> to upload the license.</p>
+<p><img alt="" src="../sites/default/files/PM3_ActivatingLicense.png"></p>
+
+<p>After selecting the file click on <b>Update License</b> to upload it.</p>
+<p><img alt="" src="../sites/default/files/PM3_ActivatingLicenseSelected.png"></p>
+<p>If the license is valid, the following message is shown on the login page after refreshing the page.</p>
+<p><img alt="" src="../sites/default/files/PM3_ActivatingLicenseOK.png"></p>
+
+
+
+<h2><span class="mw-headline" id="Restoring_ProcessMaker_If_Problems_Arise">Restoring ProcessMaker if Problems Arise</span></h2>
+
+<p>If problems arise due to the upgrade, use the backup files to rollback to the previous version of ProcessMaker.</p>
+<p><strong>Linux/UNIX:</strong></p>
+<div style="margin-left: 25px;">
+    <p>Log in as "root" or the user with administrative powers and remove the ProcessMaker installation directory and replace it with the backup:</p>
+    <codeblock>rm -fr /opt/processmaker
+tar -C /opt -xzf <em><font color=blue>BACKUP-FILE</font></em>.tar.gz
+</codeblock>
+    <p>Then, restore the databases:</p>
+    <codeblock>mysql -u root -p &lt; <em><font color=blue>BACKUP-FILE</font></em>.sql
+</codeblock>
+</div>
+<p><strong>Windows:</strong></p>
+<div style="margin-left: 25px;">
+    <p>Delete the current ProcessMaker installation directory, which by default is located at:</p>
+    <p><b>Windows XP/2003:</b></p>
+    <p>&nbsp; &nbsp; <tt>c:\Program Files\ProcessMaker-<font color=blue><i>X_X_X</i></font></tt></p>
+    <p><b>Windows Vista/7/8/10/Server 2008/2012:</b></p>
+    <p>&nbsp; &nbsp; <tt>c:\Users\<font color=blue><i>USERNAME</i></font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X</i></font></tt></p>
+    <p>Then, decompress the backup copy of the previous version of ProcessMaker in the same location.</p>
+
+    <p>Decompressing the backup copy should restore all the previous files, including the MySQL database, because all its files are located inside the same directory as the ProcessMaker code. However, if ProcessMaker was manually installed and uses a separate installation of MySQL, then open a command prompt window (by going to <b>Start &gt; All Programs &gt; Accessories &gt; Command Prompt</b> as the administrator user) and navigate to the directory where the <strong><code>mysql</code></strong> command is located:</p>
+    <codeblock>cd "c:\Program Files\ProcessMaker-<font color=blue><i>X_X_X</i></font>\mysql\bin"</codeblock>
+    <i>or:</i>
+    <codeblock>cd c:\Users\<font color=blue><i>USERNAME</i></font>\AppData\Roaming\ProcessMaker-<font color=blue><i>X_X_X</i></font>\mysql\bin</codeblock>
+
+    <p>Then, restore the MySQL databases:</p>
+    <codeblock>mysql -u root -p &lt; <font color=blue><em>BACKUP-FILE</em></font>.sql</codeblock>
+</div>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.1/ProcessMaker_Bitnami_Installer_v.3.1.html" />
+<link rel="shortlink" href="582.html" />
+<title>3.1 - ProcessMaker Bitnami Installer | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"njTpd4Bi9Bzu1HkhUuTWfMOdhQpOoqZ5ycrMSRBKRWE","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-582 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="582.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="582.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-HX5KM6Bxg8z3PClO0mWdLQQEKsxYT4QwWowrmbcFxSw" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - ProcessMaker Bitnami Installer</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.2/ProcessMaker_Bitnami_Installer_v.3.2.html" class="">3.2</a></li><li><a  class="active-version">3.1</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - ProcessMaker Bitnami Installer" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="582.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - ProcessMaker Bitnami Installer 1/5</option><option value="40">Give 3.1 - ProcessMaker Bitnami Installer 2/5</option><option value="60">Give 3.1 - ProcessMaker Bitnami Installer 3/5</option><option value="80" selected="selected">Give 3.1 - ProcessMaker Bitnami Installer 4/5</option><option value="100">Give 3.1 - ProcessMaker Bitnami Installer 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.8</span></span> <span class="total-votes">(<span >13</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-RaPYnCaWlkwN2toGsjuMgS2ytbgpriqZwWjSwR_44kU" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="582.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="582.html#Overview">Overview</a></li>
+<li class="toc"><a href="582.html#Recommendations">Recommendations</a></li>
+<li class="toc"><a href="582.html#Bitnami_ProcessMaker_Installer">Bitnami ProcessMaker Installer</a></li>
+<ol class="toc">
+<li class="toc"><a href="582.html#Bitnami_ProcessMaker_Installation_Wizard">Bitnami ProcessMaker Installation Wizard</a></li>
+<li class="toc"><a href="582.html#Configure_PHP">Configure PHP</a></li>
+<li class="toc"><a href="582.html#First_Login">First Login</a></li>
+<li class="toc"><a href="582.html#Bitnami_ProcessMaker_Stack_Manager_Tool">Bitnami ProcessMaker Stack Manager Tool</a></li>
+<li class="toc"><a href="582.html#Bitnami_phpMyAdmin">phpMyAdmin</a></li>
+</ol>
+</div></div>
+</p>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 60%;">
+<tbody>
+<tr>
+<td>
+<font color="red"><b>Warning:</b></font> <font color=dimgrey> As of ProcessMaker 3.2.3, the ProcessMaker Bitnami Installer is deprecated<!-- and will no longer be available in upcoming releases of ProcessMaker-->. Please use the <a href="http://sourceforge.net/projects/processmaker/files/ProcessMaker/">ProcessMaker Community Edition</a> instead.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>ProcessMaker provides a user-friendly Bitnami ProcessMaker Installer that automatically installs and configures:
+<ul>
+<li>ProcessMaker 3.1</li>
+<li>Apache </li>
+<li>MySQL</li>
+<li>PHP</li>
+<li>phpMyAdmin</li>
+</ul>
+</p>
+
+<p>Before beginning the installation, check the <a href="../3.0/ProcessMaker_Installation_Requirements.html">Installation Requirements</a> to see whether your server meets the necessary hardware and software requirements. Also, do not forget to read the following recommendations:</p>
+
+<h2><span id="Recommendations">Recommendations</span></h2>
+
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="padding: 5px;">It is strongly recommended that the Bitnami Installer be used to install Processmaker 3 for personal use only, and <b>NOT for production servers</b>, because it is not possible to upgrade a Bitnami installation to a later version of ProcessMaker and Bitnami installs separate versions of the software which consumes more system resources. Instead, it is recommended to do a <a href="../3.0/Windows_Manual_Installation.html" title="3.0/Windows Manual Installation">manual installation for production servers.</a>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<ul>
+    <li>Please check out our <a href="../3.1/Supported_Stacks.html">supported stacks</a> page and <a href="../3.1/Supported_Browsers.html">compatible browsers list</a>.</li>
+
+    <li>If using Internet Explorer 8, 9 or 10 enter the URL like so: <tt>http://localhost:8080/</tt>. <strong>Do NOT</strong> forget to add the <tt>http://</tt> protocol so that the browser redirects the page to ProcessMaker.</li>
+
+    <li>To use ProcessMaker with Internet Explorer 11, please read the <a href="../3.1/Supported_Browsers.html#InternetExplorerCompatibility">Internet Explorer Compatibility</a> page.</li>
+
+    <h2><span id="Bitnami_ProcessMaker_Installer">Bitnami ProcessMaker Installer</span></h2>
+
+    <p>Download the <code>.exe</code> installer at <a href="http://sourceforge.net/projects/processmaker/files/ProcessMaker/">ProcessMaker's SourceForge</a> page. ProcessMaker versions are labeled according to their build number. To download the latest version of ProcessMaker, look for the highest version number.</p>
+
+    <p>The Bitnami installer for ProcessMaker 3.1 is <strong><tt>bitnami-processmaker-3.1-0-windows-x64-installer.exe</tt></strong></p>
+
+    <p><img src="../sites/default/files/3.1PM31BitnamiInstalSourceforge.png"></p>
+
+    <p>This installer will automatically install:
+<ul>
+<li>ProcessMaker 3.1</li>
+<li>Apache 2.4.23</li>
+<li>MySQL 5.5.52</li>
+<li>PHP 5.5.38</li>
+<li>phpMyAdmin 4.6.4</li>
+</ul>
+</p>
+
+    <h3><span id="Bitnami_ProcessMaker_Installation_Wizard">Bitnami ProcessMaker Installation Wizard</span></h3>
+
+    <p>Once the <code>.exe</code> installer has been downloaded, double-click on it to begin the installation. Bitnami's logo will be displayed.</p>
+
+    <p><img src="../sites/default/files/3.0WindowsInstallBitname00.png"></p>
+
+    <p>The Setup Wizard will be displayed. Click on <strong>Next</strong> to continue with the installation wizard.</p>
+
+    <p><img src="../sites/default/files/3.1WindowsInstallBitname01.png"></p>
+
+    <p>On the next screen, <span id="Select_the_components">select the components</span> that will be installed. By default, ProcessMaker is marked, but the installation of <a href="https://www.phpmyadmin.net/">phpMyAdmin</a> is optional.</p>
+    <p><img src="../sites/default/files/3.1WindowsInstallBitname02.png"></p>
+
+    <p>Next, choose the destination folder where ProcessMaker, along with Apache, MySQL, PHP and phpMyAdmin (if marked in the previous step) will be installed. To install them in a different location, click on the <strong>Browse</strong> button to select a different directory.</p>
+
+    <p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<font color="red"><b>Warning:</b></font> <font color=dimgrey> For security reasons, the Bitnami stack should be installed in a folder that is NOT publicly accessible through Apache or another web server. For this reason, it is recommended to install in a location such as <b>/opt</b> in Linux/UNIX or <b>C:\opt</b> in Windows, and to NOT install in a location such as <b>/var/www/html</b> in Linux/UNIX or <b>C:\www</b> in Windows, which might be made publicly accessible by another installation of Apache.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+    <p><img src="../sites/default/files/3.1WindowsInstallBitname03.png"></p>
+
+
+
+    <p>In the next dialog, <span id="Create_Admin_Account"><b>Create Admin Account</b></span>, define the credentials for the Administrator user, whose username is "admin" by default.</p>
+
+    <p><b>Important!</b> The “admin” user will be able to access all the features and functionalities in the ProcessMaker installation, such as: system configuration, process creation and editing, user and group management, case management, and report and dashboard, oversight among others. Thus, it is strongly recommended to create a strong password for this account. Take a look at this list of <a href="https://krebsonsecurity.com/password-dos-and-donts/" rel="nofollow">password dos and don’ts</a>. Also consider using a strong password generator like <a href="https://strongpasswordgenerator.com/" rel="nofollow">this one</a>.</p>
+
+    <p><img src="../sites/default/files/3.1WindowsInstallBitname04.png"></p>
+    <p>
+<ul>
+  <li><b>Real Name: </b> The admin's name.</li>
+  <li><b>Email Address: </b>(Optional) The email address of the user, which will be used to deliver <a href="../3.0/Notifications.html">e-mail notifications</a> concerning cases.</li>
+  <li><b>Login: </b>The account name that should be provided when the user logs into the system. Usernames can contain letters, numbers and underscores. Usernames can not contain uppercase characters.<br>
+  <img src="../sites/default/files/3.1WindowsInstallBitnameWarn4.png">
+  </li>
+  <li><b>Password: </b> A string of at least <b>5 characters</b>, which can include spaces and symbols. Please note that the login username and password cannot be the same.<br>
+
+
+
+  <img src="../sites/default/files/3.1WindowsInstallBitnameWarn3.png">
+  </li>
+  <li><b>Please confirm your password: </b>If the second password doesn't match the first password, or the passwords don't meet the set requirements, then a red error message will appear.<br>
+  <img src="../sites/default/files/3.1WindowsInstallBitnameWarn2.png">
+  </li>
+  <li>
+    <p>If any of the fields are not filled in (except for the Email Address field), the following message will be displayed:</p>
+    <p><img src="../sites/default/files/3.1WindowsInstallBitnameWarn1.png"></p>
+    </li>
+</ul>
+</p>
+
+<p>The Bitnami ProcessMaker installer detects whether or not another instance of Apache is installed on the server. If so, the following screen will be displayed where another port needs to be specified.</p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname05.png"></p>
+
+<p>In the next dialog window, specify the SSL port.</p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitname06.png"></p>
+
+<p>If another instance of MySQL is detected, a different port will need to be specified on the next screen. </p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname07.png"></p>
+
+<p>An error message will be displayed if port specified is already in use.</p>
+
+<p>ProcessMaker can be configured to send out notifications by <a href="../3.0/Email_Settings.html">email</a>. In the next step, the SMTP settings can be defined. This step can be skipped by unmarking the checkbox and can be configured later inside ProcessMaker. Otherwise, select an option in the <b>Default email provider</b> field and click <b>Next</b>.</p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitname08.png"></p>
+
+<p>If your organization does not have its own email server, Gmail can be used as an external email service. Select the "Gmail" option and fill in the address and password of your Gmail account. </p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitname09.png"></p>
+
+<p>Select "Custom" to use an email server that supports the Simple Mail Transport Protocol (SMTP). The following fields must be filled in:</p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitname10.png">
+<ul>
+  <li><b>Username: </b>The name of the user account from which emails will be sent. Some email servers, such as Gmail, require that the account name include the full email address, such as: johndoe@gmail.com</li>
+  <li><b>Password: </b>The password of the user account.</li>
+  <li><b>Re-enter: </b>Re-enter the password of the user account.</li>
+  <li><b>SMTP Host: </b>The IP address or domain name of the email server. For example, "smtp.gmail.com", "smtp.mail.yahoo.com" or "smtp.example.com".</li>
+  <li><b>SMPT Port: </b>The port number used by the email server. Generally port 25 is used, or alternatively port 587. To connect to the email server using an SSL or TLS connection, generally port 465 is used. If left blank, the default port 25 will be used.</li>
+  <li><b>Secure Connection: </b> Select a secure connection to the email server:
+  <ul>
+      <li><b>None: </b>No secure connection to the email server.</li>
+      <li><b>TLS:</b> Select this option to use Transport Layer Security to connect to the email server.</li>
+      <li><b>SSL:</b> Select this option to use Secure Sockets Layer to connect to the email server.</li>
+  </ul>
+  </li>
+</ul>
+</p>
+
+<p>In the next step, Bitnami Cloud Hosting services will be mentioned. Check the checkbox if interested in the service and click on <b>Next</b> to continue with the installation.</p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitname11.png"></p>
+
+<p>The Setup Wizard is now ready to begin the installation. Click on <b>Next</b> to start it.</p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname12.png"></p>
+
+<p>The installation process will begin.</p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname13.png"></p>
+
+<p>Once completed, the following screen will display the credentials for both ProcessMaker and its database. Read the information and click on <b>Next</b>.</p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname14.png"></p>
+
+<p>Uncheck the box and click on <b>Finish</b>. Read the <a href="582.html#Configure_PHP">PHP additional configuration</a> page before using ProcessMaker.</p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname15.png"></p>
+
+<h3><span id="Configure_PHP">Configure PHP</span></h3>
+<p>Before using ProcessMaker, search for the php folder in your Bitnami installation. In this example, Bitnami was installed on disk <tt><b>C:\Bitnami</b></tt>.</p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitnamePHP.png"></p>
+
+<p>Then, inside the <b>php</b> folder, locate the <code>php.ini</code> file and edit it.</p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitnamePHPini.png"></p>
+
+<p>Search for the following line and uncomment the extension (remove the semicolon ; at the beginning of the line):</p>
+<codeblock>extension=php_fileinfo.dll
+</codeblock>
+
+<p>Save the changes and close the file. </p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">For more information, see <a href="../3.0/Additional_Configuration.html#PHP">Configuring PHP</a>.</font></p>
+
+<h3><span id="First_Login">First Login</span></h3>
+<p>Once ProcessMaker has been successfully installed, open a web browser and go to the URL <code>http://127.0.0.1:<font color="blue">port</font>/</code>, or open the <a href="582.html#Bitnami_ProcessMaker_Stack_Manager_Tool">Bitnami ProcessMaker Stack Manager Tool</a> and click on the <b>Go to application</b> button. The <strong>Get Started</strong> screen will appear:</p>
+<p><img src="../sites/default/files/WelcomeProcessMaker.png"></p>
+
+<p>To avoid seeing the <strong>Get Started</strong> screen at every subsequent login, mark the option <strong>Don't show me again</strong>.</p>
+<p>Then, enter the username and password of the Administrator user, which is "admin" by default, but a different username could have been configured in Step 4 of the installation wizard. Enter the name of the workspace that was configured in Step 4, which is named "workflow" by default, then click on <b>Login</b> to enter ProcessMaker.</p>
+<p><img src="../sites/default/files/InstallationLoginPage.png"></p>
+<p>The login page can be customized. For more information see <a href="../3.0/Login.html#Login_Settings" title="3.0/Login Settings">Login Settings</a>.</p>
+
+<p><strong><font color="green">Note:</font></strong> <font color="dimgrey">If a previous version of ProcessMaker was accessed by the web browser unintentionally, it is recommended to <a class="external text" href="../3.0/Clear_Cache.html" rel="nofollow">clear the browser cache</a> after installing ProcessMaker to clear any stored pages from previous versions of ProcessMaker.</font></p>
+
+<h3><span id="Bitnami_ProcessMaker_Stack_Manager_Tool">Bitnami ProcessMaker Stack Manager Tool</span></h3>
+<p>Once the installation process is finished, the Bitnami ProcessMaker Stack Manager Tool will become available to manage Apache and MySQL more easily. To access ProcessMaker, navigate to the <strong>Welcome</strong> tab and click on the <strong>Go to Application</strong> button. </p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname156.png"></p>
+
+<p>Select the <strong>Manage Servers</strong> tab to start, stop or restart the selected server.</p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname17.png"></p>
+
+<p>Server events can be reviewed in the <strong>Server Events</strong> tab.</p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitname18.png"></p>
+
+<p>Both services can be configured by selecting the service and clicking on the <strong>Configure</strong> button inside the <strong>Manage Servers</strong> tab. Log messages can be review by clicking on the <strong>Open [...] Log</strong> buttons.</p>
+<p><img src="../sites/default/files/3.1WindowsInstallBitname198.png"></p>
+
+<h3><span id="Bitnami_phpMyAdmin">phpMyAdmin</span></h3>
+<p>If the <b>phpMyAdmin</b> option was checked during the installation process in the <b><a href="582.html#Select_the_components">Select the components</a></b> dialog, phpMyAdmin can be accessed from the Bitnami ProcessMaker Stack Manager Tool.</p>
+
+<p><img src="../sites/default/files/3.1WindowsInstallBitnamePhpmyadmin.png"></p>
+
+<p>Or by going to the URL <b><tt>http://<font color="blue">127.0.0.1</font>/phpmyadmin/</tt></b>. A new tab will open in the default browser that will display the phpMyAdmin login screen.</p>
+<ul>
+    <li><strong>Username:</strong> By default, the username is <b>root</b>.</li>
+    <li><strong>Password:</strong> This is the same password that was entered in the <a href="582.html#Create_Admin_Account">Create Admin Account</a> dialog during the installation.</li>
+</ul>
+
+<p><img src="../sites/default/files/3.0WindowsInstallBitname12phpMyAdminlogin.png"></p>
+
+<p>Once the user is logged in, the phpMyAdmin interface will be displayed. The ProcessMaker database created by Bitnami is named <b>bitnami_pm</b> by default. Select the <b>bitname_pm</b> database to review all ProcessMaker tables.</p>
+<p><img src="../sites/default/files/3.0WindowsInstallBitname12phpMyAdminDB.png"></p>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

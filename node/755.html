@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/REST_API_Designer/Report_Tables.html" />
+<link rel="shortlink" href="755.html" />
+<title>3.2 - 3.8 - REST API Designer - Report Tables | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"2quka63OIKgyJy_bD3kdO13MVEHy8zUf4ksfgSx72Ts","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-755 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="755.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="755.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-gXtRvm_xrK-czteaXZmqo373C4ECeo6qOdKjjM0_lFk" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - REST API Designer - Report Tables</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - REST API Designer - Report Tables" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="755.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - REST API Designer - Report Tables 1/5</option><option value="40" selected="selected">Give 3.2 - 3.8 - REST API Designer - Report Tables 2/5</option><option value="60">Give 3.2 - 3.8 - REST API Designer - Report Tables 3/5</option><option value="80">Give 3.2 - 3.8 - REST API Designer - Report Tables 4/5</option><option value="100">Give 3.2 - 3.8 - REST API Designer - Report Tables 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.3</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-l4Rs70rttlFz9sHiVpoCwhHyIG4niclspmHKuyUa8ik" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><!--Report Table -->
+<h2><span id="Report_Table"> Report Table</span></h2>
+
+<p>The current methods implemented for report tables in the ProcessMaker API designer are listed below:</p>
+<div style=" background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><strong>Contents:</strong> [<a href="755.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b><div id="toc" ><ol class="toc">
+<li class="toc"><a href="755.html#Report_Table"> Report Table</a></li>
+<ol class="toc">
+<li class="toc"><a href="755.html#get_report_tables">Get Report Tables List: <code>GET project/{prj_uid}/report-tables</code></a></li>
+<li class="toc"><a href="755.html#Get_report_table">Get Report Table: <code>GET project/{prj_uid}/report-table/{rep_uid}</code></a></li>
+<li class="toc"><a href="755.html#Populate_report_table">Populate Report Table: <code>GET project/{prj_uid}/report-table/{rep_uid}/populate</code></a></li>
+<li class="toc"><a href="755.html#Get_data_report_table">Get Report Table Data: <code>GET project/{prj_uid}/report-table/{rep_uid}/data</code></a></li>
+<li class="toc"><a href="755.html#create_report_table">Create Report Table: <code>POST project/{prj_uid}/report-table</code></a></li>
+<li class="toc"><a href="755.html#Update_report_table">Update Report Table: <code>PUT project/{prj_uid}/report-table/{rep_uid}</code></a></li>
+<li class="toc"><a href="755.html#Delete_report_table">Delete a Report Table: <code>DELETE project/{prj_uid}/report-table/{rep_uid}</code></a></li>
+</ol>
+</div></div>
+
+
+<p><strong> Report Table:</strong></p>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Description</strong></th><th><strong>Type</strong></th><th><strong> Value</strong></th></tr>
+<tr><td>rep_uid</td><td>Report table UID</td><td>String</td><td>String</td></tr>
+<tr><td>rep_tab_name</td><td>Report table name</td><td>String</td><td>"name" or "pmt_NAME" (Text string)</td></tr>
+<tr><td>rep_tab_dsc</td><td>Report table description</td><td>String</td><td>"Description of Report Table" (Text String)</td></tr>
+<tr><td>rep_tab_connection</td><td>Connection of the report table, possible values are: "workflow", "rp" and Database connections</td><td>String</td><td>"workflow" or "h348fd..." (Text String)</td></tr>
+<tr><td>rep_tab_type</td><td>Report table type, possible values are: "NORMAL" or "GRID"</td><td>String</td><td>"NORMAL" ("NORMAL" and "GRID") <strong>(unique allowed values)</strong></td></tr>
+<tr><td>rep_tab_grid</td><td>Base grid UID where the report table will be generated</td><td>Integer</td><td>"tr8945m..." (String of 32 characters)</td></tr>
+<tr><td>fields</td><td>Array of the report table columns</td><td>Array</td><td>Check the next fields</td></tr>
+<tr><td style="border: 1px solid #5F9EEF; font-weight: bold; text-align: center;" colspan="4">Field Variables</td></tr>
+<tr><td>fld_dyn</td><td>Field name from a Dynaform</td><td>String</td><td>"Accepted" (Text String)</td></tr>
+<tr><td>fld_name</td><td>Field name for the table created in mysql</td><td>String</td><td>"Accepted" (Text String)</td></tr>
+<tr><td>fld_label</td><td>Label name of the field for the GUI in PM</td><td>String</td><td>"Accepted" (Text String)</td></tr>
+<tr><td>fld_type</td><td>Field type in mysql, values: "BOOLEAN", "TINYINT", "SMALLINT", "INTEGER", "BIGINT", "DOUBLE", "FLOAT","REAL", "DECIMAL", "CHAR", "VARCHAR", "LONGVARCHAR", "DATE", "TIME", "DATETIME"</td><td>String</td><td>"VARCHAR" (String type mysql field)</td></tr>
+<tr><td>fld_size</td><td>Field size in mysql</td><td>Integer</td><td>"23" (Numeric)</td></tr></tbody></table>
+
+<span id="GetReportTables"></span>
+
+<h3><span id="get_report_tables">Get Report Tables List: <code>GET project/{prj_uid}/report-tables</code></span></h3>
+<p>Gets the list of Report Tables in a project.</p>
+
+<dl><dd><code><strong>GET</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/report-tables</span></code></dd></dl>
+
+<p><strong>Parameters:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>workspace</td><td>String</td><td>Workspace name</td></tr>
+<tr><td>prj_uid</td><td>String</td><td>Project UID</td></tr></tbody></table></dd></dl>
+
+<p><strong>Result:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>array</td><td>Returns an array of report table objects</td></tr></tbody></table></dd></dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+&nbsp;Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+&nbsp;<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;12965606852f8dcf2154e21097825813&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PMT_EJEMPLO&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;My table description&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_class_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PmtExample&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_connection&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;NORMAL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_grid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_num_rows&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">2</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;64688692552f8de120c57d0031739165&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;32&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_foreign_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_foreign_key_table&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_dyn_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<span style="color: #009900;">&#93;</span></div></div>
+
+<span id="GetAReportTable"></span>
+
+<h3><span id="Get_report_table">Get Report Table: <code>GET project/{prj_uid}/report-table/{rep_uid}</code></span></h3>
+
+<p>Gets a specified Report Table.</p>
+
+<dl><dd><code><strong>GET</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/report-table/{rep_uid}</span></code></dd></dl>
+
+<p><strong>Parameters:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>workspace</td><td>String</td><td>Workspace name</td></tr>
+<tr><td>prj_uid</td><td>String</td><td>Project UID</td></tr>
+<tr><td>rep_uid</td><td>String</td><td>Report table UID</td></tr></tbody></table></dd></dl>
+
+<p><strong>Result:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>object</td><td>Returns a report table object</td></tr></tbody></table></dd></dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+&nbsp;Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+&nbsp;<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;12965606852f8dcf2154e21097825813&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PMT_EJEMPLO&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;descripcion de la tabla&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_class_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PmtEjemplo&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_connection&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;NORMAL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_grid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_num_rows&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">2</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;64688692552f8de120c57d0031739165&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;32&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_foreign_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_foreign_key_table&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_dyn_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<span style="color: #009900;">&#93;</span></div></div>
+
+<span id="PopulateAReportTable"></span>
+
+<h3><span id="Populate_report_table">Populate Report Table: <code>GET project/{prj_uid}/report-table/{rep_uid}/populate</code></span></h3>
+
+<p>Repopulates a Report Table with case data. This endpoint deletes the contents of a specified Report Table and then refills it with data from the cases. This endpoint can be called if the data in a Report Table gets out of sync with the data from the cases.</p>
+
+<dl><dd><code><strong>GET</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/report-table/{rep_uid}/populate</span></code></dd></dl>
+
+<p><strong>Parameters:</strong></p>
+
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>workspace</td><td>String</td><td>Workspace name</td></tr>
+<tr><td>prj_uid</td><td>String</td><td>Project UID</td></tr>
+<tr><td>rep_uid</td><td>String</td><td>Report table UID</td></tr>
+</tbody></table>
+</dd></dl>
+
+<p><strong>Result:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>empty</td><td>No return</td></tr></tbody></table></dd></dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+
+<span id="GetDataReportTable"></span>
+
+<h3><span id="Get_data_report_table">Get Report Table Data: <code>GET project/{prj_uid}/report-table/{rep_uid}/data</code></span></h3>
+
+<p>Gets the data from a Report Table. Returns all the rows in a Report Table and a count of the number of rows.</p>
+
+<dl><dd><code><strong>GET</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/report-table/{rep_uid}/data</span></code></dd></dl>
+
+<p><strong>Parameters:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>workspace</td><td>String</td><td>Workspace name</td></tr>
+<tr><td>prj_uid</td><td>String</td><td>Project UID</td></tr>
+<tr><td>rep_uid</td><td>String</td><td>Report table UID</td></tr></tbody></table></dd></dl>
+
+<p><strong>Result:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>object</td><td>Returns an object containing data about the report table</td></tr></tbody></table></dd></dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+&nbsp;Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;rows&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;16154487852d6e4a63e8974075801312&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_number&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;652&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_status&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DRAFT&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Jane Doe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2132 W. Oak Av.&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;__index__&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;lqaeqZWWpJyooqbFmNGZ0aOnxpqlnKSdq5aanJajnqY&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;29839101252b8a4f21dfb22075517639&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_number&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;647&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_status&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DRAFT&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Joh Roe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;955 S. Birch St.&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;__index__&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;l6mlp5qTnJaioqbDms2Z1p+lxcjOl6Kdq5aXnZymoK0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;count&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">2</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<span id="CreateReportTable"></span>
+
+<h3><span id="create_report_table">Create Report Table: <code>POST project/{prj_uid}/report-table</code></span></h3>
+<p>Creates a new Report Table.</p>
+
+<p><b>Consideration:</b></p>
+<ul>
+<li>Must send the whole new structure of the table. If the table would have field A, B, C and the update sends A, B, D then C column is removed and D column is added.</li>
+<li>Must use <span class="geshifilter"><code class="text geshifilter-text">fld_uid</code></span> to update a field, if the property is not present in the field description it will be considered as a new field. Therefore, the previous field will be deleted and a new one will be created.</li>
+<li>Must send at least one of the two options <span class="geshifilter"><code class="text geshifilter-text">pmt_tab_dsc</code></span> or <span class="geshifilter"><code class="text geshifilter-text">fields</code></span> otherwise the server will answer with status 400.</li>
+<li>The table must have at least one primary key field, if not present the server will answer with status 400.</li>
+<li>The <span class="geshifilter"><code class="text geshifilter-text">field</code></span> structure must be completed, if any field is not provided the endpoint will answer with status 400 and a message showing the field property that is missing, for example: if the <span class="geshifilter"><code class="text geshifilter-text">fld_type</code></span> is not provided the endpoint will answer <span class="geshifilter"><code class="text geshifilter-text">400 &quot;The property fld_type is not defined for field {fld_name} &quot;</code></span> or If the <span class="geshifilter"><code class="text geshifilter-text">fld_name</code></span> is not provided then the message is <span class="geshifilter"><code class="text geshifilter-text">400 &quot;The property fld_name must be provided for all fields&quot;</code></span></li>
+</ul>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl><dd><code><strong>POST</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/report-table</span></code></dd></dl>
+
+<p><strong>Parameters:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>workspace</td><td>String</td><td>Workspace name</td></tr>
+<tr><td>prj_uid</td><td>String</td><td>Project UID</td></tr></tbody></table></dd></dl>
+
+<p><strong>Required Fields:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>rep_tab_name</td>
+<td>String</td>
+<td>Report table name</td>
+</tr>
+<tr>
+<td>rep_tab_dsc</td>
+<td>String</td>
+<td>Report table description</td>
+</tr>
+<tr>
+<td>rep_tab_connection</td>
+<td>String</td>
+<td>Report table connection, possible values: "workflow", "rp" and database connection</td>
+</tr>
+<tr>
+<td>rep_tab_type</td>
+<td>String</td>
+<td>Report table type, possible values: "NORMAL" or "GRID"</td>
+<tr>
+<td>rep_tab_grid</td>
+<td>String</td>
+<td>Base grid UID where the report table was generated.</td>
+</tr>
+<tr>
+</tr>
+<td>fields</td>
+<td>Array</td>
+<td>Columns in the report table. Check their variables in the following table.</td>
+</tr>
+</tbody></table>
+<dl><dd><p>Inside "fields" parameter, these are the required variables:</p>
+<table class="codecolumn"><tbody>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>fld_name</td>
+<td>String</td>
+<td>This variable is for the name of the field.</td>
+</tr>
+<tr>
+<td>fld_label</td>
+<td>String</td>
+<td>This variable is for the label of the field.</td>
+</tr>
+<tr>
+<td>fld_description</td>
+<td>String</td>
+<td>This variable is for the description of the field.</td>
+</tr>
+<tr>
+<td>fld_type</td>
+<td>String</td>
+<td>This variable is for the type of the field, if it could be a "String", "Integer", etc.</td>
+</tr>
+<tr>
+<td>fld_size</td>
+<td>Integer</td>
+<td>This variable is for the size of the field.</td>
+</tr>
+</tbody></table>
+<p>If you send an empty array you will create a Report Table with the default columns, those are the following:</p>
+<p><em>Response</em></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp; ...<br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;4337807815b699dfe7235f9040768634&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;32&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2791806115b699dfe812da4020621359&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_NUMBER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_NUMBER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;INTEGER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;11&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2456566415b699dfe8b5820080052075&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_STATUS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_STATUS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;10&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp; ...</div></div>
+<p>These columns are <span class="geshifilter"><code class="text geshifilter-text">APP_UID</code></span>, <span class="geshifilter"><code class="text geshifilter-text">APP_NUMBER</code></span> and <span class="geshifilter"><code class="text geshifilter-text">APP_STATUS</code></span> and their purpose is the following:</p>
+<ul>
+<li><strong>APP_UID</strong>: The case's unique ID. This value is used to obteined the case information. This field can <b>NOT</b> be removed from the report table.</li>
+<li><strong>APP_NUMBER</strong>: The case number. Report tables use this value to relate the case information with an individual case. This field can <b>NOT</b> be removed from the report table.</li>
+<li><strong>APP_STATUS</strong>: The case status. This field can be removed from the report table if desired.</li>
+</ul></dd></dl>
+</dd></dl>
+
+<p><strong>Optional Fields:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>rep_tab_class_name</td><td>String</td><td>This is the name of the generated class. It is in relationship with the rep_tab_table.</td></tr></tbody></table></dd></dl>
+<dl><dd><dl><dd><p>Inside "fields" parameter, these are the optional variables:</p>
+<table class="codecolumn"><tbody>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+<tr>
+<td>fld_null</td>
+<td>String</td>
+<td>This variable define if the column accepts null values.</td>
+</tr>
+<tr>
+<td>fld_auto_increment</td>
+<td>String</td>
+<td>This variable define if the column will be auto-incrementing.</td>
+</tr>
+<tr>
+<td>fld_key</td>
+<td>String</td>
+<td>This variable define if the column will be the primary key.</td>
+</tr>
+<tr>
+<td>fld_table_index</td>
+<td>String</td>
+<td>This variable define if the column will be an index.</td>
+</tr>
+</tbody></table>
+</dl></dd></dl></dd>
+<p><strong>Result:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>object</td><td>Returns an object containing data about the new repot table.</td></tr></tbody></table></dd></dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Request</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+&nbsp;<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_name&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PMT_TABLE_TEST&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_dsc&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;test&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_connection&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_type&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;NORMAL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_grid&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Text1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Text1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Text1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">255</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_name&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Text2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Text2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Text2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_type&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;INTEGER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;fld_size&quot;</span> <span style="color: #339933;">:</span> <span style="color: #CC0000;">10</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<span style="color: #009900;">&#93;</span></div></div>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">201</span> <span style="color: #009900;">&#40;</span>Created<span style="color: #009900;">&#41;</span><br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;72024958352f8f4b5b29e68065335979&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PMT_TABLE_TEST&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;test&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_class_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PmtTableTest&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_connection&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;NORMAL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_grid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_num_rows&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">2</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;43224891252f8f4b5b3e7d5064126010&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;32&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key_table&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;88732448352f8f4b5b54e40018186789&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_NUMBER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_NUMBER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;INTEGER&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;11&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key_table&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;28542848352f8f4b5b66c73025097960&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_STATUS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_STATUS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;10&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key_table&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;46525369552f8f4b5b7ce74071402298&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;3&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Texto1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Texto1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;32&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key_table&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;85085540252f8f4b5b90f02097502798&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;4&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Texto2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Texto2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;INTEGER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;10&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_foreign_key_table&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<span id="UpdateReportTable"></span>
+
+<h3><span id="Update_report_table">Update Report Table: <code>PUT project/{prj_uid}/report-table/{rep_uid}</code></span></h3>
+<p>Updates a specified Report Table.</p>
+
+<p><b>Consideration:</b></p>
+<ul>
+<li>Must send the whole new structure of the table. If the table would have field A, B, C and the update sends A, B, D then C column is removed and D column is added.</li>
+<li>Must use fld_uid to update a field, if the property is not present in the field description it will be considered as a new field. Therefore, the previous field will be deleted and a new one will be created.</li>
+</ul>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl><dd><code><strong>PUT</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/report-table/{rep_uid}</span></code></dd></dl>
+
+<p><strong>Parameters:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>workspace</td><td>String</td><td>Workspace name</td></tr>
+<tr><td>prj_uid</td><td>String</td><td>Project UID</td></tr>
+<tr><td>rep_uid</td><td>String</td><td>Report table UID</td></tr></tbody></table></dd></dl>
+
+<p><strong>Required Fields:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>fields</td><td>Array</td><td>Columns in the report table. Check their variables in the main table.</td></tr></tbody></table></dd></dl>
+
+<p><strong>Optional Fields:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>rep_tab_dsc</td><td>String</td><td>Report table description</td></tr></tbody></table></dd></dl>
+
+<p><strong>Result:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>empty</td><td>No return</td></tr></tbody></table></dd></dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Request</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;6856971805b63262ce8a6b1070282359&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;PMT_REVIEW_LOCAL_RPT&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;rep_tab_dsc&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;local review&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;fields&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;8610454955b63262d023342039592785&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_UID&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;32&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_null&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_auto_increment&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_key&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_table_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2156049915b63262d0ceb02039858713&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_NUMBER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_NUMBER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_NUMBER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;INTEGER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;11&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2938043115b63262d191b30050387593&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_STATUS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_STATUS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;APP_STATUS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;10&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;9133753205b63262d255841082276946&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;3&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DEFINE_SELFVALUE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DEFINE_SELFVALUE_OTHER&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DEFINE_SELFVALUE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DEFINE_SELFVALUE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;255&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;9557141095b63262d319206093833203&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_index&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;4&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DEFINE_SELFVALUE_LABEL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_dyn&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DEFINE_SELFVALUE_LABELTEST&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DEFINE_SELFVALUE_LABEL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DEFINE_SELFVALUE_LABEL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;VARCHAR&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fld_size&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;255&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+
+<span id="DeleteReportTable"></span>
+
+<h3><span id="Delete_report_table">Delete a Report Table: <code>DELETE project/{prj_uid}/report-table/{rep_uid}</code></span></h3>
+<p>Deletes a Report Table.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl><dd><code><strong>DELETE</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/report-table/{rep_uid}</span></code></dd></dl>
+
+<p><strong>Parameters:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>workspace</td><td>String</td><td>Workspace name</td></tr>
+<tr><td>prj_uid</td><td>String</td><td>Project UID</td></tr>
+<tr><td>rep_uid</td><td>String</td><td>Report table UID</td></tr></tbody></table></dd></dl>
+
+<p><strong>Result:</strong></p>
+<dl><dd>
+
+<table class="codecolumn"><tbody>
+<tr><th><strong>Type</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>empty</td><td>No return</td></tr></tbody></table></dd></dl>
+
+<p><strong>Example: </strong></p>
+
+<p><em>Response</em></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

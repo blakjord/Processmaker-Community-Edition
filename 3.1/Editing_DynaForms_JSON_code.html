@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Editing_DynaForms_JSON_code.html" />
+<link rel="shortlink" href="../node/712.html" />
+<title>3.1 - 3.8 - Editing the Dynaform&#039;s JSON code | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"8kBWdgc4op5giAmHez4njmQDOd6EZ9uz7SDeMWFuzaE","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-712 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Editing_DynaForms_JSON_code.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Editing_DynaForms_JSON_code.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-cqxfgse4fOw456dMSMSdpey2y5etQxuIsdcgB1Z54wo" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - 3.8 - Editing the Dynaform&#039;s JSON code</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a href="../3.0/Editing_DynaForms_JSON_code.html" class="">3.0</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - 3.8 - Editing the Dynaform&#039;s JSON code" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Editing_DynaForms_JSON_code.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - 3.8 - Editing the Dynaform&amp;#039;s JSON code 1/5</option><option value="40">Give 3.1 - 3.8 - Editing the Dynaform&amp;#039;s JSON code 2/5</option><option value="60" selected="selected">Give 3.1 - 3.8 - Editing the Dynaform&amp;#039;s JSON code 3/5</option><option value="80">Give 3.1 - 3.8 - Editing the Dynaform&amp;#039;s JSON code 4/5</option><option value="100">Give 3.1 - 3.8 - Editing the Dynaform&amp;#039;s JSON code 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-5k96e5WAkutkgs7CHXFAhgdkwkbxFgRtSXxUiNFvhx0" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Editing_DynaForms_JSON_code.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Overview">Overview</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Exporting_and_Editing_Dynaforms">Exporting and Editing Dynaforms</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Understanding_JSON_format">Understanding JSON format</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#JSON_Code_for_Dynaforms">Format of Dynaform Files</a></li>
+<ol class="toc">
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Textboxes">Textboxes</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Textarea">Textareas</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Dropdowns">Dropdowns</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Checkbox">Checkbox</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Checkgroup">Checkgroup</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Radio">Radio</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Datetime">Datetime</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Suggest">Suggest</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Hidden">Hidden</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Title">Title</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Subtitle">Subtitle</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Label">Label</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Link">Link</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Image">Image</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#File">File</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Multiple_File_Uploader">Multiple File Uploader</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Submit">Submit</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Button">Button</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Grid">Grid</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Panel">Panel</a></li>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Subform">Subform</a></li>
+</ol>
+<li class="toc"><a href="Editing_DynaForms_JSON_code.html#Inserting_case_variables">Inserting Case and System Variables</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>Dynaforms are stored in JSON (JavaScript Object Notation), which is a text format understood by JavaScript. It is possible to edit the JSON code of a Dynaform by first exporting the Dynaform and then editing it in a plain text editor. When done editing, the JSON file can be reimported into ProcessMaker.
+
+
+<p>It is generally recommended to create Dynaforms using the graphical Dynaform Editor inside ProcessMaker, but it can be useful to edit a Dynaform's JSON code after it has been created. Editing the JSON code allows:
+<ul>
+<li>Insertion of variables into the Dynaform.</li>
+<li>Editing of specialized properties that are not available in the graphical interface.</li>
+<li>Editing with a text editor, which is faster than using the graphical interface when making changes to many different controls.</li>
+</ul>
+
+
+<h2><span id="Exporting_and_Editing_Dynaforms">Exporting and Editing Dynaforms</span></h2>
+<p>To edit a Dynaform, first export it. Open the Dynaform to edit it, and then click on the <img src="../sites/default/files/ExportDynaFormIcon.png"> button in the toolbar to export the Dynaform.</p>
+<img src="../sites/default/files/ExportDynaForm.png">
+<p>By default, the JSON file will be saved in the file <b><tt><font color=blue><i>dynaform-title</i></font>.json</tt></b>. Depending on the configuration of your web browser, it may either download the file automatically to the default download directory or allow the filename and file location to be changed by the user.</p>
+
+<p>Then, open the Dynaform's JSON file with a plain text editor. It is recommended to use a code editor, such as <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="https://eclipse.org/downloads/">Eclipse</a>, <a href="http://bluefish.openoffice.nl/index.html">Bluefish</a>, or <a href="http://www.sublimetext.com/">Sublime</a> that has code highlighting to avoid making mistakes. Code highlighting helps to catch errors, such as forgetting to end strings with a <code><b>"</b></code> (double quotation mark) or forgetting to include closing <code><b>]</b></code> (brackets) and <code><b>}</b></code> (curly braces).</p>If
+the code editor doesn't automatically recognize the JSON format, set it to use the JavaScript language.</p>
+
+<img src="../sites/default/files/EditingJsonInCodeEditor.png">
+
+<p>When done editing the JSON code, open a Dynaform for editing and click on the <img src="../sites/default/files/ImportDynaFormIcon.png"> button in the toolbar to import the edited JSON file. Importing will overwrite the contents of the Dynaform (although it will keep the Dynaform's existing title). Any variables used in the Dynaform that don't already exist will be automatically created when the Dynaform is imported.</p>
+
+<h2><span id="Understanding_JSON_format">Understanding JSON format</span></h2>
+<p>Before editing the JSON code of a Dynaform, it may be useful to understand the format.</p>
+<p>In JSON, strings are enclosed in double quotation marks:<br>
+<span class="geshifilter"><code class="javascript geshifilter-javascript"><span style="color: #3366CC;">&quot;This is a string&quot;</span></code></span><br>
+To include double quotation marks inside a string, escape them by preceding them with <code><b>\</b></code> (a backslash):<br>
+<span class="geshifilter"><code class="javascript geshifilter-javascript"><span style="color: #3366CC;">&quot;Say <span style="color: #000099; font-weight: bold;">\&quot;</span>hello<span style="color: #000099; font-weight: bold;">\&quot;</span> to your client&quot;</span></code></span><br>
+Tabs are represented in strings as <code><b>\t</b></code> and new lines are represented as <code><b>\n</b></code>:<br>
+<span class="geshifilter"><code class="javascript geshifilter-javascript"><span style="color: #3366CC;">&quot;New Client List:<span style="color: #000099; font-weight: bold;">\n</span><span style="color: #000099; font-weight: bold;">\t</span>Acme, Inc.<span style="color: #000099; font-weight: bold;">\n</span><span style="color: #000099; font-weight: bold;">\t</span>Widgets Corp.<span style="color: #000099; font-weight: bold;">\n</span><span style="color: #000099; font-weight: bold;">\t</span>Dawkins &amp; Baileys&quot;</span></code></span><br>
+Integers are numbers without a decimal point and floating-point numbers are numbers with a decimal point, which is represented with a <code><b>.</b></code> (period). Do NOT use the European practice of separating the decimal numbers with <code><b>,</b></code> (a comma).<br>
+
+A boolean is a variable that is either set to <code>true</code> or <code>false</code>. In addition, JSON supports the use of <code>null</code> (no value) and  <code>undefined</code>.<br>
+An array is a list of values separated by <code><b>,</b></code> (commas). Arrays are enclosed in <span class="geshifilter"><code class="javascript geshifilter-javascript"><span style="color: #009900;">&#91;</span> <span style="color: #009900;">&#93;</span></code></span> (square brackets). The values in an array can be any data type, such as string, integer, floating-point number, null, and even include arrays and objects embedded inside the array:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;John Doe&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">101</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">724.99</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">undefined</span><span style="color: #339933;">,</span> <span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;embedded array&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">4</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;Jane Roe&quot;</span><span style="color: #009900;">&#93;</span></div></div>
+Objects are enclosed in <span class="geshifilter"><code class="javascript geshifilter-javascript"><span style="color: #009900;">&#123;</span> <span style="color: #009900;">&#125;</span></code></span> (curly braces) and contain <i>name-value</i> pairs that are separated by <code><b>:</b></code> (colons). The values can also be of any data type, including embedded arrays and objects:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;John Doe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;salary&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">48387.50</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;NoClients&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">2</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;clients&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;Sally Smith&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;Bill Bland&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;salesArea&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;TX&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Texas&quot;</span><span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p>Note that spacing outside of strings is ignored in JSON, so the object above can also be represented as:</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;John Doe&quot;</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;salary&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">48387.50</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;NoClients&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">2</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;clients&quot;</span><span style="color: #339933;">:</span><span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;Sally Smith&quot;</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;Bill Bland&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;salesArea&quot;</span><span style="color: #339933;">:</span><span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;TX&quot;</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Texas&quot;</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="JSON_Code_for_Dynaforms">Format of Dynaform Files</span></h2>
+<p>The JSON code in a Dynaform file is organized in a topmost object that contains the <code>name</code>, <code>description</code> and <code>items</code> properties. All the information about the Dynaform is enclosed in  <code>items</code>.  The most important property is another <code>items</code> property, which holds an array of objects with information about the controls in the Dynaform. The properties for each type of control are listed below. The other important property is <code>variables</code>, which is an array of objects containing information about the variables assigned to the controls in the Dynaform.</p>
+
+<p>Here is the basic structure of a Dynaform file:</p>
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>{ </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td> "name": "Client Info", </td>
+        <td>The title of the Dynaform.</td>
+    </tr>
+    <tr>
+        <td> "description": "Enter information about a client", </td>
+        <td>The description of the Dynaform.</td>
+    </tr>
+    <tr>
+        <td> "items": [ </td>
+        <td>An array of forms. <font color=green><b>Note:</b></font> <font color=dimgrey>Future versions of ProcessMaker will support multi-part forms, but currently there can only be one form in a Dynaform.</font></td>
+    </tr>
+    <tr>
+        <td> { </td>
+        <td>An object containing the form's properties.</td>
+    </tr>
+    <tr>
+        <td> "type": "form", </td>
+        <td>The type, which for Dynaforms is <code>"form"</code>.</td>
+    </tr>
+    <tr>
+        <td> "gridStore": false, </td>
+        <td>Always set to <code>false</code>.</td>
+    </tr>
+    <tr>
+        <td> "variable": "", </td>
+        <td>Dynaforms do not have an associated variable, so always set to <code>""</code> (empty string).</td>
+    </tr>
+    <tr>
+        <td> "var_uid": "", </td>
+        <td>Dynaforms do not have an associated variable, so always set to <code>""</code> (empty string)</td>
+    </tr>
+    <tr>
+        <td> "dataType": "", </td>
+        <td>Dynaforms do not have a data type, so always set to <code>""</code> (empty string)</td>
+    </tr>
+    <tr>
+        <td> "id": "315000439561bfbb2880516004635450",</td>
+        <td>The unique ID of the Dynaform, which is automatically generated by ProcessMaker.</td>
+    </tr>
+    <tr>
+        <td> "name": "Client Info", </td>
+        <td>The title of the Dynaform.</td>
+    </tr>
+    <tr>
+        <td> "description": "Enter information about a client",</td>
+        <td>The description of the Dynaform.</td>
+    </tr>
+    <tr>
+        <td> "mode": "edit", </td>
+        <td>The Dynaform's parent display mode, which can be:<br>
+            <code>"edit"</code> (controls that have "parent" mode will be editable),<br>
+            <code>"view"</code> (controls with "parent" mode will be viewable, but not editable),<br>
+            <code>"disabled"</code> (controls with "parent" mode will be greyed out).</td>
+    </tr>
+    <tr>
+        <td> "script": { </td>
+        <td>Object holding information about any custom code added to the Dynaform</td>
+    </tr>
+    <tr>
+        <td> "type": "js", </td>
+        <td>The type of code is always <code>"js"</code> (JavaScript).</td>
+    </tr>
+    <tr>
+        <td> "code": "$(\"#amount\").setValue(99);\n" </td>
+        <td>The custom JavaScript code added to the Dynaform.</td>
+    </tr>
+    <tr>
+        <td> }, </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td> "language": "en", </td>
+        <td>The ISO code for the language of the Dynaform, such as "es" (english) or "pt_BR" (Brazilian Portuguese).
+            If set to a language that doesn't have a PO translation file, then it will use the language that the
+            form was created in.</td>
+    </tr>
+    <tr>
+        <td> "externalLibs":"http://example.com/clientCode.js",</td>
+        <td>The external JavaScript files that will be loaded with the Dynaform. To load multiple JavaScript files,
+            separate them with <code><b>,</b></code> (commas).</td>
+    </tr>
+    <tr>
+        <td> "items": [ </td>
+        <td>An array of the rows in the Dynaform.</td>
+    </tr>
+    <tr>
+        <td> [ </td>
+        <td>Starts the row array.</td>
+    </tr>
+    <tr>
+        <td> { </td>
+        <td>Starts the first control object.</td>
+    </tr>
+    <tr>
+        <td> "type": "text", </td>
+        <td>The type of control, which can be: "text", "textarea", "suggest", "dropdown", "radio", "checkbox", "checkgroup",
+            "file", "datetime", "grid", "title", "subtitle", "annotation" (label), "image", "link", "panel", "button",
+            "submit", "hidden", "form" (subform).</td>
+    </tr>
+    <tr>
+        <td> "variable": "firstName", </td>
+        <td>The name of the variable associated with the control.</td>
+    </tr>
+    <tr>
+        <td> "var_uid": "940990699561c032de52c00036095595",</td>
+        <td>The unique ID of the variable associated with the control.</td>
+    </tr>
+    <tr>
+        <td> "dataType": "string", </td>
+        <td>The type of variable associated with the control, which can be: "" (no variable), "string", "integer",
+            "float", "array", "file", "datetime", "boolean", "grid".</td>
+    </tr>
+    <tr>
+        <td> "id": "firstName", </td>
+        <td>The control's ID.</td>
+    </tr>
+    <tr>
+        <td> "name": "firstName", </td>
+        <td>The control's name, which is set to the name of its associated variable. If the control doesn't have a
+            variable, then it is set to <code>"<font color=blue><i>type</i></font>000000000<font color=blue><i>X</i></font>"</code>.</td>
+    </tr>
+    <tr>
+        <td> "label": "Client's First Name", </td>
+        <td>The label, which is the text displayed above or to the left of the control when the Dynaform is rendered.</td>
+    </tr>
+    <tr>
+        <td> "defaultValue": "Sally Rowe", </td>
+        <td>The value that is inserted in the control by default.</td>
+    </tr>
+    <tr>
+        <td> "placeholder": "Enter the client name", </td>
+        <td>The text that appears inside a field when it is empty that tells the user what to enter in the field.</td>
+    </tr>
+    <tr>
+        <td> "hint": "External clients only!", </td>
+        <td>The text that is displayed when the user hovers the mouse over the question mark icon to the right of the
+            control.
+        </td>
+    </tr>
+    <tr>
+        <td> "required": true, </td>
+        <td>If set to <code>true</code>, the field cannot be left blank when the Dynaform is submitted.</td>
+    </tr>
+    <tr>
+        <td> "textTransform": "none", </td>
+        <td>Indicates how the entered text should be modified: "none", "upper", "lower", "titleCase" or "capitalizePhrase"</td>
+    </tr>
+    <tr>
+        <td> "validate": "[a-zA-Z0-9]+", </td>
+        <td>A regular expression that checks the value in the field when the Dynaform is submitted.</td>
+    </tr>
+    <tr>
+        <td> "validateMessage": "No spaces allowed!", </td>
+        <td>A message displayed in red if the value doesn't match the regular expression in the <code>validate</code>            property.</td>
+    </tr>
+    <tr>
+        <td> "maxLength": 1000, </td>
+        <td>The maximum number of characters that can be entered into the field. Note that this attribute is only used
+            for textboxes, and always set to <code>null</code> for suggest and textareas.</td>
+    </tr>
+    <tr>
+        <td> "formula": "(price - discount) * 0.1",</td>
+        <td>The text of the formula that sets the value in a textbox, based on the values in other fields.</td>
+    </tr>
+    <tr>
+        <td> "mode": "parent", </td>
+        <td>The mode of the control, which can be:<br>
+            <code>"edit"</code> (user may change value),<br>
+            <code>"view"</code> (user may only view the value),<br>
+            <code>"disabled"</code> (control is grayed out) or<br>
+            <code>"parent"</code> (control's mode is inherited from its parent, which can be a Dynaform, subform
+            or grid).</td>
+    </tr>
+    <tr>
+        <td> "operation": "", </td>
+        <td>Always set to <code>""</code> (empty string).</td>
+    </tr>
+    <tr>
+        <td> "dbConnection": "3875963975654db81bf8ef0031093386",</td>
+        <td>The unique ID of the database connection used to populate the field with an SQL query. If not set to a
+            custom database connection, then set to <code>"workflow"</code> for the current workspace database
+            in MySQL.</td>
+    </tr>
+    <tr>
+        <td> "dbConnectionLabel":"[localhost:3306] mysql: clients",</td>
+        <td>The label of the database connection used to populate the field with an SQL query. The label contains the
+            following information: <code>"[<font color=blue><i>ip-address</i></font>:<font color=blue><i>port</i></font>] <font color=blue><i>database-type</i></font>: <font color=blue><i>database-name</i></font>"</code><br>            If not using a custom database connection, then set to "PM Database" for the default <b><tt>wf_<font color=blue><i>workspace</i></font></tt></b>            database for the current workspace.</td>
+    </tr>
+    <tr>
+        <td> "sql": "SELECT NAME FROM CLT WHERE X=@@Y",</td>
+        <td>SQL query used to populate the field. For textboxes, textareas, datetimes and hiddens the first field in
+            the first record returned by the query is inserted as the value of the field when the form loads. For
+            dropdowns, checkgroups, radio buttons, and suggest boxes, the SQL query populates the list of options
+            and the first field is the key and the second field is the label. If SQL queries for suggest boxes
+            have an optional third field, it is displayed as the description below each option. If the SQL query
+            contains a reference to another field in the Dynaform as <code>@@fieldName</code> or <code>@#fieldName</code>,
+            then the current control is a <a href="../3.0/Dependent_Fields.html">dependent field</a> and when the value
+            of the referenced field changes, the SQL query is reexecuted.</td>
+    </tr>
+    <tr>
+        <td> "var_name": "clientName", </td>
+        <td>The name of the variable associated with the control. Set to <code>""</code> if no associated variable.</td>
+    </tr>
+    <tr>
+        <td> "colSpan": 12 </td>
+        <td>Number of columns of width the control occupies in the Dynaform. <code>12</code> is the maximum and the
+            default width. If the control should occupy half the row, then set to <code>6</code>. To occupy a third,
+            set to <code>4</code>.</td>
+    </tr>
+    <tr>
+        <td> }, </td>
+        <td>Ends the object for first control in the row.</td>
+    </tr>
+    <tr>
+        <td> ... </td>
+        <td>Any additional controls in the row.</td>
+    </tr>
+    <tr>
+        <td> ], </td>
+        <td>End of row.</td>
+    </tr>
+    <tr>
+        <td> ... </td>
+        <td>Any additional rows in the Dynaform.</td>
+    </tr>
+    <tr>
+        <td> ], </td>
+        <td>End of the <code>items</code> array.</td>
+    </tr>
+    <tr>
+        <td> "variables":[ </td>
+        <td>An array of the variables that are associated with controls in the Dynaform.</td>
+    </tr>
+    <tr>
+        <td> { </td>
+        <td>Start of the first variable object.</td>
+    </tr>
+    <tr>
+        <td> "var_uid": "940990699561c032de52c00036095595",</td>
+        <td>The unique ID of the variable.</td>
+    </tr>
+    <tr>
+        <td> "prj_uid": "962481013561bf991911cb6077262632",</td>
+        <td>The unique ID of the project.</td>
+    </tr>
+    <tr>
+        <td> "var_name": "firstName", </td>
+        <td>The variable's name.</td>
+    </tr>
+    <tr>
+        <td> "var_field_type": "string", </td>
+        <td>The type of variable, which can be: "string", "integer", "float", "array", "file", "datetime", "boolean",
+            "grid"
+        </td>
+    </tr>
+    <tr>
+        <td> "var_field_size": 10, </td>
+        <td>Not used and always set to <code>10</code>.
+            <!--The maximum size of the variable. For string variables, the maximum number of bytes which can be entered in the variable. Note that some characters occupy multiple bytes with the UTF-8 character set used by ProcessMaker. For integer variables, the maximum number of digits.-->
+        </td>
+    </tr>
+    <tr>
+        <td> "var_label": "string", </td>
+        <td>Not used and always set to <code>"string"</code>.</td>
+    </tr>
+    <tr>
+        <td> "var_dbconnection": "workflow", </td>
+        <td>The unique ID of the database connection used to populate the field with an SQL query. See the description
+            of "dbConnection" above.</td>
+    </tr>
+    <tr>
+        <td> "var_dbconnection_label": "PM Database", </td>
+        <td>The label of the database connection used to populate the field with an SQL query. See the description
+            of "dbConnectionLabel" above.</td>
+    </tr>
+    <tr>
+        <td> "var_sql": "", </td>
+        <td>SQL query used to populate the field. See the description of "sql" above.</td>
+    </tr>
+    <tr>
+        <td> "var_null": 0, </td>
+        <td>If set to <code>1</code>, then the variable may be set to <code>null</code> (no value).</td>
+    </tr>
+    <tr>
+        <td> "var_default": "", </td>
+        <td>The default value of the variable at the start of a new case.</td>
+    </tr>
+    <tr>
+        <td> "var_accepted_values": "[{\"value\":\"CA\",\"label\":\"Canada\"}, {\"value\":\"MX\",\"label\":\"Mexico\"}]"
+        </td>
+        <td>A serialized array of the accepted values for the variable. Each accepted value is an object with <code>value</code>            and <code>label</code> properties. If the variable is used by a textbox, textarea, hidden or date field,
+            the <code>value</code> and the <code>label</code> should be the same.</td>
+    </tr>
+    <tr>
+        <td> }, </td>
+        <td>End of the variable object.</td>
+    </tr>
+    <tr>
+        <td> ... </td>
+        <td>Any additional variable objects.</td>
+    </tr>
+    <tr>
+        <td> ] </td>
+        <td>End of the array of variables.</td>
+    </tr>
+    <tr>
+        <td> } </td>
+        <td>End of the <code>items</code> object.</td>
+    </tr>
+    <tr>
+        <td> ] </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>} </td>
+        <td></td>
+    </tr>
+</table>
+
+<h3><span id="Textboxes">Textboxes</span></h3>
+<p>For the JSON format of textboxes, see the example listed above.</p>
+
+<h3><span id="Textarea">Textareas</span></h3>
+<p>The JSON format of textareas is similar to textboxes, but it has an additional <code>rows</code> property and does not have the <code>formula</code>, <code>maxLength</code>, <code>operation</code> and <code>textTransform</code> properties.</p>
+
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>"rows": "5"</td>
+        <td>The number of rows displayed in the textarea, which is 5 by default. Note that the vertical size of a textarea
+            can be expanded by pulling down on its lower right corner, so <code>rows</code> is only the
+            <i>initial</i> size of the textarea. The amount of text entered in a textarea is only limited by the
+            size of the <b><tt>wf_<font color=blue>&lt;WORKSPACE&gt;</font>.APPLICATION.APP_DATA</tt></b> field
+            in the MySQL database, which can hold up to 16MB.</td>
+    </tr>
+</table>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;textarea&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;clientAddress&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;460857154561c03404fad20006766130&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;clientAddress&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;clientAddress&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Address&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;placeholder&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;validate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;validateMessage&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnectionLabel&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;PM Database&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;rows&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;5&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;clientAddress&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Dropdowns">Dropdowns</span></h3>
+<p>The JSON format of dropdown boxes is similar to textboxes, but it does not have the <code>formula</code>, <code>maxLength</code>, <code>operation</code> and <code>textTransform</code> properties. When using a query in the <code>sql</code> property, make sure that it returns two fields to populate the <i>keys</i> and <i>labels</i> in the list of options.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;serviceType&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;serviceType&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;775261651561c0358b8a805027753985&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;serviceType&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;serviceType&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Type of service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;placeholder&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;3875963975654db81bf8ef0031093386&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnectionLabel&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;[localhost:3306] mysql: clients&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;select SERVICE_TYPE, SERVICE_NAME from CLIENTS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;options&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;accounting&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Accounting&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;financing&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Financial Advice&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;it&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;IT Services&quot;</span><span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;legal&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Legal Advice&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;serviceType&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+<h3><span id="Checkbox">Checkbox</span></h3>
+<p>The JSON format of checkboxes have one checkable box and are based on boolean variables.</p>
+
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>"defaultValue": "true",</td>
+        <td>Set to <code>"true"</code> or <code>"1"</code> to mark the checkbox by default. Set to <code>"false"</code>,
+            <code>"0"</code> or <code>""</code> to leave the checkbox empty by default.</td>
+    </tr>
+    <tr>
+        <td>"options": [ { "value": "1", "label": "Yes" }, { "value": "0", "label": "No" } ],
+        </td>
+        <td>The <code>options</code> property sets the labels for a marked checkbox that has a value of <code>"1"</code>,
+            or an unmarked box which has a value of <code>"0"</code>. If set to <code>[]</code>, then the labels
+            are <code>"true"</code> and <code>"false"</code> by default.</td>
+    </tr>
+</table>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;checkbox&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;has&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;657414710561c0369d4a910031306722&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;hasContract&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;hasContract&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Has contract?&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;true&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;options&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;Yes&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;No&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Checkgroup">Checkgroup</span></h3>
+<p>Checkgroups are based on array variables and allow for multiple checkable boxes. Note that more than one option can be marked by default by separating the values in the <code>defaultValue</code> property with <code>|</code> (vertical bars), such as <code>"US|MX|CA"</code>. When using a query in the <code>sql</code> property, make sure that it returns two fields to populate the <i>keys</i> and <i>labels</i> in the list of options.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;checkgroup&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;selectCountry&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;383038449561c037b230df1076919631&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;array&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;selectCountry&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;selectCountry&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Select Country&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;US|MX&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;3875963975654db81bf8ef0031093386&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnectionLabel&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;[localhost:3306] mysql: countries&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;SELECT COUNTRY_CODE, COUNTRY_NAME FROM MORE_COUNTRIES&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;options&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;CA&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Canada&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;US&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;United States&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;MX&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Mexico&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;selectCountry&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Radio">Radio</span></h3>
+<p>The JSON format of radio buttons is the same as dropdown boxes.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;radio&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;howContact&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;759977003561c03dcb8ec08070509219&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;howContact&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;howContact&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;How to contact client&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;telephone&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnectionLabel&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;PM Database&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;options&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;telephone&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Telephone&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;email&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Email&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;visit&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Home Visit&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;howContact&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Datetime">Datetime</span></h3>
+<p>Datetimes have a number of special properties that control the formatting and the appearance of the date picker.</p>
+
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>"format": "YYYY-MM-DD W gg e",</td>
+        <td>The <a href="../3.0/Datetime_Control.html#Format">format</a> of the displayed datetime.</td>
+    </tr>
+    <tr>
+        <td>"dayViewHeaderFormat":"MMMM YYYY",</td>
+        <td>The <a href="../3.0/Datetime_Control.html#Format">format</a> for date at top of date picker.</td>
+    </tr>
+    <tr>
+        <td>"stepping": 1,</td>
+        <td>Always set to 1.</td>
+    </tr>
+    <tr>
+        <td>"minDate": "2015-11-08",</td>
+        <td>The earliest date allowed in YYYY-MM-DD format.</td>
+    </tr>
+    <tr>
+        <td>"maxDate": "2015-11-24",</td>
+        <td>The latest date allowed in YYYY-MM-DD format.</td>
+    </tr>
+    <tr>
+        <td>"useCurrent": "month",</td>
+        <td>
+            The date selected by default when the date picker is first opened, which can be:<br>
+            <code>"true"</code> (the current date and time, which is the default),<br>
+            <code>"day"</code> (the current day),<br>
+            <code>"month"</code> (the first day of the current month),<br>
+            <code>"year"</code> (January 1 of the current year),<br>
+            <code>"hour"</code> (the current hour if the format includes hours),<br>
+            <code>"minute"</code> (the current minute if the format includes minutes).</td>
+    </tr>
+    <tr>
+        <td>"collapse": true,</td>
+        <td>Always set to <code>true</code>.</td>
+    </tr>
+    <tr>
+        <td>"locale": "",</td>
+        <td>Set the datepicker to use a locale, such as <code>"ru"</code> (Russian) or <code>"pt_BR"</code> (Portuguese
+            from Brazil).</td>
+    </tr>
+    <tr>
+        <td>"defaultDate": "2015-11-23",</td>
+        <td>The default date for the datetime control in <code>"YYYY-MM-DD"</code> or <code>"YYYY-MM-DD HH:MM:SS"</code>            format. If there is no default date, then set to <code>false</code>.</td>
+    </tr>
+    <tr>
+        <td>"disabledDates": false,</td>
+        <td>A list of dates disabled in the date picker.</td>
+    </tr>
+    <tr>
+        <td>"enabledDates": false,</td>
+        <td> A list of dates that are enabled in the date picker.</td>
+    </tr>
+    <tr>
+        <td>"icons": { "time": "glyphicon glyphicon-time", "date": "glyphicon glyphicon-calendar", "up": "glyphicon
+            glyphicon-chevron-up", "down": "glyphicon glyphicon-chevron-down", "previous": "glyphicon glyphicon-chevron-left",
+            "next": "glyphicon glyphicon-chevron-right", "today": "glyphicon glyphicon-screenshot", "clear": "glyphicon
+            glyphicon-trash" },
+        </td>
+        <td>The styles for the different elements in the date picker.</td>
+    </tr>
+    <tr>
+        <td>"useStrict": false,</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>"sideBySide": false,</td>
+        <td>Always set to false.</td>
+    </tr>
+    <tr>
+        <td>"daysOfWeekDisabled": [],</td>
+        <td>An array of the days of the week that are disabled in the date picker.</td>
+    </tr>
+    <tr>
+        <td>"calendarWeeks": false,</td>
+        <td>Always set to <code>false</code>.</td>
+    </tr>
+    <tr>
+        <td>"viewMode": "days"</td>
+        <td>The date picker view mode, which can be: <code>"days"</code> (default), <code>"months"</code> or <code>"years"</code>.</td>
+    </tr>
+    <tr>
+        <td>"toolbarPlacement": "default",</td>
+        <td>The placement of the toolbar in the datepicker, which is always set to <code>"default"</code>.</td>
+    </tr>
+    <tr>
+        <td>"showTodayButton": false,</td>
+        <td>If set to <code>true</code>, then a button is shown to select today's date.</td>
+    </tr>
+    <tr>
+        <td>"showClear": "true",</td>
+        <td> If set to <code>true</code>, then a trashcan icon is shown in the lower-right hand corner of the date picker
+            to clear the date.</td>
+    </tr>
+    <tr>
+        <td>"widgetPositioning": { "horizontal": "auto", "vertical": "auto" },
+        </td>
+        <td>The horizontal and vertical position of the date picker, which can be set in pixels.</td>
+    </tr>
+    <tr>
+        <td>"keepOpen": false,</td>
+        <td>Set to <code>false</code> if the date picker is automatically closed after selecting a datetime. If <code>true</code>,
+            then the date picker stays open after selecting the date.</td>
+    </tr>
+</table>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;datetime&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDue&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;538916843561c03edd91e28008570672&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;datetime&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDue&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDue&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Contract Due Date&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;placeholder&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Select date when the contract should be finished&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;format&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;YYYY-MM-DD&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dayViewHeaderFormat&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;MMMM YYYY&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;extraFormats&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;stepping&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;minDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2015-11-08&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;maxDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2015-11-24&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;useCurrent&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;month&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;collapse&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;locale&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;defaultDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2015-11-23&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;disabledDates&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;enabledDates&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;icons&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;time&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-time&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;date&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-calendar&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;up&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-chevron-up&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;down&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-chevron-down&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;previous&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-chevron-left&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;next&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-chevron-right&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;today&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;glyphicon glyphicon-screenshot&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;clear&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;glyphicon glyphicon-trash&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;useStrict&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sideBySide&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;daysOfWeekDisabled&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;calendarWeeks&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;viewMode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;days&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;toolbarPlacement&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;default&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;showTodayButton&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;showClear&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;true&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;widgetPositioning&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;horizontal&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;auto&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;vertical&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;auto&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;widgetParent&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;keepOpen&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDue&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Suggest">Suggest</span></h3>
+<p>Suggest boxes are similar to textboxes, but they lack the <code>formula</code>, <code>maxLength</code>, <code>operation</code>, <code>textTransform</code> <code>validate</code> and <code>validateMessage</code> properties.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;suggest&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;user&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;990461695561c03fa433dc4018122102&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;user&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;user&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Enter User&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;placeholder&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnectionLabel&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;PM Database&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;select USR_USERNAME, CONCAT(USR_FIRSTNAME, ' ', USR_LASTNAME) from USERS;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;options&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;user&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Hidden">Hidden</span></h3>
+<p>The JSON format of hidden fields is simpler than other types of controls since there are no visual elements to configure.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;hidden&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;approvedPurchase&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;819670620561c06d06bdce5054422350&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;approvedPurchase&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;approvedPurchase&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dbConnectionLabel&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;PM Database&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;approvedPurchase&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Title">Title</span></h3>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;title&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;formTitle&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Client Information&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Subtitle">Subtitle</span></h3>
+<p>The JSON format of subtitles is the same as titles.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;subtitle&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;addressSection&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Client Address&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Label">Label</span></h3>
+<p>The JSON format of labels is the same as titles.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;additionalInfo&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Enter the client code found on the last page of the documentation.&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Link">Link</span></h3>
+
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>"value": "Coyote Trap",</td>
+        <td>The displayed text of the hyperlink.</td>
+    </tr>
+    <tr>
+        <td>"href": "http://www.acme.com/widgets/coyoteTrap.html",</td>
+        <td>The URL (address) of the hyperlink.</td>
+    </tr>
+</table>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;link&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;productLink&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;productLink&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Product&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;value&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Coyote Trap&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;href&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;http://www.acme.com/widgets/coyoteTrap.html&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Image">Image</span></h3>
+<p>The JSON format of images have a number of unique properties related to the source, shape, and the text associated with images.</p>
+
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>"src": "http://www.acme.com/trap.gif",</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>"shape": "thumbnail",</td>
+        <td>The shape of the image, which can be:<br>
+            <code>"thumbnail"</code> (the image has a border around it, which is the default),<br>
+            <code>"rounded"</code> (the image has rounded edges),<br>
+            <code>"circle"</code> (the image is in the shape of a circle)</td>
+    </tr>
+    <tr>
+        <td>"alternateText": "Roadrunner Trap",</td>
+        <td>This property currently doesn't work</a>.</td>
+    </tr>
+    <tr>
+        <td>"comment": "Improved Trap",</td>
+        <td>The text that is displayed under the image.</td>
+    </tr>
+    <tr>
+        <td>"alt": "New Roadrunner Trap",</td>
+        <td>The text in the Title (mouseover) property, which is displayed if the image can't be loaded, but is not
+            displayed when the mouse hovers over the image.</td>
+    </tr>
+</table>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;image&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;productImage&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;productImage&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Product&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;src&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;http://www.acme.com/widgets/roadrunnerTrap.gif&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;shape&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;thumbnail&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;alternateText&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Image of the improved Roadrunner Trap&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;comment&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;The improved Roadrunner Trap&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;alt&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;See the new Roadrunner Trap&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="File">File</span></h3>
+<p></p>
+
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>"dnd": false,</td>
+        <td>Set to <code>true</code> to allow files to be uploaded by dragging-and-dropping files onto the file control.</td>
+    </tr>
+    <tr>
+        <td>"extensions": ".docx,.doc,.od*",</td>
+        <td>The list of extensions allowed for files that are uploaded to a file control. Multiple options can be separated
+            with commas (,) and asterisks (*) can be used as wild cards to represent any number of characters.</td>
+    </tr>
+    <tr>
+        <td>"size": "25",</td>
+        <td>The maximum size of files uploaded to the file control. Set to 0 to allow unlimited file sizes</a>.</td>
+    </tr>
+    <tr>
+        <td>"sizeUnity": "MB",</td>
+        <td>The unit used for the maximum file size, which can be "KB" or "MB".</td>
+    </tr>
+    <tr>
+        <td>"multiple": false,</td>
+        <td>If set to <code>true</code>, multiple files may be uploaded to a file control.</td>
+    </tr>
+    <tr>
+        <td>"inp_doc_uid":"5354113815643a15c72ad74018208129",</td>
+        <td>The 32 hexadecimal character unique ID of the Input Document that will store the file when the Dynaform
+            is submitted. This Input Document will be associated with the file control's variable.</td>
+    </tr>
+</table>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;file&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;receipt&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;903632234561c2ba8b98d63054621185&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;file&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;receipt&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;receipt&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Receipt for purchased item&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Upload a scanned copy of the receipt&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dnd&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;extensions&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;.docx,.doc,.od*&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;25&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sizeUnity&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;MB&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;multiple&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;inp_doc_uid&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;5354113815643a15c72ad74018208129&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;receipt&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Multiple_File_Uploader">Multiple File Uploader</span></h3>
+<p>The JSON structure of the <a href="Multiple_File_Uploader.html">Multiple File Uploader</a> control is similar to the <a href="Editing_DynaForms_JSON_code.html#File">File</a> control, but lacks the Hint property and has the <code>inputDocument</code> property, which displays the name of the input document related to the control.</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;multipleFile&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;multipleFileVar001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;161537645591607a08f2666020670151&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;multiplefile&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;protectedValue&quot;</span><span style="color: #339933;">:</span><span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;multipleFileVar001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;multipleFileVar001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;multipleFile_1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;inputDocument&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Order Document&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span><span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dnd&quot;</span><span style="color: #339933;">:</span><span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;extensions&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;.docx&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;size&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;5&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;sizeUnity&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;MB&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;multiple&quot;</span><span style="color: #339933;">:</span><span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;inp_doc_uid&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;47705155857057ab8e3b749055062001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;multipleFileVar001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+<h3><span id="Submit">Submit</span></h3>
+<p>For submit controls, the <code>label</code> is the text that appears in the button.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;submit&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;submitInfo&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;submitInfo&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Submit&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+
+<h3><span id="Button">Button</span></h3>
+<p>The JSON format of generic buttons is the same as submit buttons.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;button&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;showAddress&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;showAddress&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Show Address&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span><span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Grid">Grid</span></h3>
+<p>The JSON format of <a href="../3.0/Grid_Control.html">grids</a> includes not only the definition of the grid, but also an array of all the fields inside the grid.</p>
+
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>"columns": [ {...}, {...} ]
+        </td>
+        <td>An array of the control objects in the grid. The <code>variable</code>, <code>var_uid</code> and <code>dataType</code>            properties of these controls are set to <code>""</code> (empty string) because controls inside grids
+            cannot be assigned a variable. Instead, their values are stored in the variable for the grid. Otherwise,
+            the properties of controls inside grids are just like normal controls.</td>
+    </tr>
+    <tr>
+        <td>"layout": "responsive",</td>
+        <td>The type of <a href="../3.0/Grid_Control.html#Layout">layout used by the grid</a>, which can be:<br>
+            <code>"responsive"</code> (fields automatically adjust to the width of the grid),<br>
+            <code>"static"</code> (the width of the fields is fixed and a horizontal scroll bar appears if the
+            fields are wider than the grid),<br>
+            <code>"form"</code> (eliminated in version 3.0.1.5 and later)</td>
+    </tr>
+    <tr>
+        <td>"pageSize": "5",</td>
+        <td>The number of rows per page in a grid, which is the number of rows to be shown at a time. If set to <code>"0"</code>,
+            then pages will not be used and an unlimited number of rows will be shown at a time.</td>
+    </tr>
+    <tr>
+        <td>"addRow": true,</td>
+        <td>Set to <code>true</code> if the grid will contain a "+ New" button to add new rows to the grid.</td>
+    </tr>
+    <tr>
+        <td>"deleteRow": true,</td>
+        <td>Set to <code>true</code> so grid rows will have a button on the right-hand side to delete the row.</td>
+    </tr>
+</table>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;grid&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;officeSupplies&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;60145232056427c02cee508068904897&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;grid&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;officeSupplies&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;officeSupplies&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Office Supplies&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;columns&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;datetime&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dateBought&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dateBought&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Date Bought&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;placeholder&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;edit&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;format&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;YYYY-MM-DD&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dayViewHeaderFormat&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;MMMM YYYY&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;extraFormats&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;stepping&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;minDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;maxDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;useCurrent&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;true&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;collapse&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;locale&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;defaultDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;disabledDates&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;enabledDates&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;icons&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;time&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-time&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;date&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-calendar&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;up&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-chevron-up&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;down&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-chevron-down&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;previous&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-chevron-left&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;next&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;glyphicon glyphicon-chevron-right&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;today&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;glyphicon glyphicon-screenshot&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;clear&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;glyphicon glyphicon-trash&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;useStrict&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;sideBySide&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;daysOfWeekDisabled&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;calendarWeeks&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;viewMode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;days&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;toolbarPlacement&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;default&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;showTodayButton&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;showClear&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;false&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;widgetPositioning&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;horizontal&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;auto&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;vertical&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;auto&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;widgetParent&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;keepOpen&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;columnWidth&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;20&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;width&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">100</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;title&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Date Bought&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;product&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;product&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Product&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;placeholder&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;textTransform&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;none&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;validate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;validateMessage&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;maxLength&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">1000</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;formula&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;operation&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dbConnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dbConnectionLabel&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;PM Database&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;columnWidth&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;20&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;width&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">100</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;title&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Product&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;checkbox&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;hasReceipt&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;hasReceipt&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Has Receipt?&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;options&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;columnWidth&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;15&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;width&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #CC0000;">100</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;title&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Has Receipt?&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;data&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;layout&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;responsive&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;pageSize&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;5&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;addRow&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;deleteRow&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;title&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;office Supplies&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Panel">Panel</span></h3>
+
+<table class="codecolumn">
+    <tr>
+        <th>Example JSON</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>"content": "&lt;div&gt;Information&lt;/div&gt;"</td>
+        <td>The HTML code in the panel. Double quotation marks are escaped, hard returns are represented as <code>\n</code>,
+            and greater than and less than signs are represented as HTML entities.</td>
+    </tr>
+    <tr>
+        <td>"border": "1px"</td>
+        <td>The width in pixels of the border around the panel. For no border set it to <code>"0"</code>.</td>
+    </tr>
+</table>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;panel&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;confirmationDialog&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;content&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&lt;div id=<span style="color: #000099; font-weight: bold;">\&quot;</span>mydialog<span style="color: #000099; font-weight: bold;">\&quot;</span> title=<span style="color: #000099; font-weight: bold;">\&quot;</span>Confirm<span style="color: #000099; font-weight: bold;">\&quot;</span>&gt;<span style="color: #000099; font-weight: bold;">\n</span> &nbsp; &lt;p&gt;Should a new client be added?&lt;/p&gt;<span style="color: #000099; font-weight: bold;">\n</span>&lt;/div&gt;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;border&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;1px&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Subform">Subform</span></h3>
+<p>The JSON code for a subform is the same as the code for a normal form, except that it has the <code>colSpan</code> property to set the width of the subform.</p>
+
+<p><b>Example:</b></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;form&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;gridStore&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;437944507565f15d332a548016910309&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;details&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;edit&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;script&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;language&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;en&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;externalLibs&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;items&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;productName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;158861394565762e1d755c5078115321&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;productName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;productName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Product&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;placeholder&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;textTransform&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;none&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;validate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;validateMessage&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;maxLength&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">1000</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;formula&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;operation&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dbConnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dbConnectionLabel&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;PM Database&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;checkbox&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;inStock&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;897449820565c7743efdac1004444746&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;boolean&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;inStock&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;inStock&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;In stock?&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;defaultValue&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;hint&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;required&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;mode&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;parent&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;options&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">12</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variables&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;158861394565762e1d755c5078115321&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;prj_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;5452682595654d6ff324a43034919884&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;productName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">10</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_dbconnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_dbconnection_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;PM Database&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_default&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_accepted_values&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;[]&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;897449820565c7743efdac1004444746&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;prj_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;5452682595654d6ff324a43034919884&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;inStock&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;boolean&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_field_size&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">10</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_dbconnection&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_dbconnection_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;PM Database&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_sql&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_null&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_default&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;var_accepted_values&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;[{<span style="color: #000099; font-weight: bold;">\&quot;</span>value<span style="color: #000099; font-weight: bold;">\&quot;</span>:<span style="color: #000099; font-weight: bold;">\&quot;</span>1<span style="color: #000099; font-weight: bold;">\&quot;</span>,<span style="color: #000099; font-weight: bold;">\&quot;</span>label<span style="color: #000099; font-weight: bold;">\&quot;</span>:<span style="color: #000099; font-weight: bold;">\&quot;</span>Yes<span style="color: #000099; font-weight: bold;">\&quot;</span>},{<span style="color: #000099; font-weight: bold;">\&quot;</span>value<span style="color: #000099; font-weight: bold;">\&quot;</span>:<span style="color: #000099; font-weight: bold;">\&quot;</span>0<span style="color: #000099; font-weight: bold;">\&quot;</span>,<span style="color: #000099; font-weight: bold;">\&quot;</span>label<span style="color: #000099; font-weight: bold;">\&quot;</span>:<span style="color: #000099; font-weight: bold;">\&quot;</span>No<span style="color: #000099; font-weight: bold;">\&quot;</span>}]&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;colSpan&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #CC0000;">12</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="Inserting_case_variables">Inserting Case and System Variables</span></h2>
+<p>Case and system variables can be inserted into the JSON code to generate dynamic content in the Dynaform.</p>
+
+<p>To insert a variable into the JSON code, place <code>@@<font color=blue><i>variable</i></font></code> inside double quotation marks in the code. The value of the variable will be inserted into the JSON code when the Dynaform is generated.
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>Variables can only be inserted inside strings that are enclosed in double quotation marks.</font></p>
+
+<p><b>Example:</b></p>
+<div style="margin-left:25px">
+    <p>In a contracting process, a trigger sets the type of organization in the @@organizationType variable, depending on the quantity of the @%amount:</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>amount <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">500</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #339933;">@@</span>organizationType <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;NGO&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>amount <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">500</span> and <span style="color: #339933;">@%</span>amount <span style="color: #339933;">&lt;=</span> <span style="color: #cc66cc;">10000</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #339933;">@@</span>organizationType <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;Credit union&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>amount <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">10000</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #339933;">@@</span>organizationType <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;International bank&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    <p>This trigger is set to execute <i>before</i> a Dynaform containing a textbox with the ID "organizationName".</p>
+    <p>In the JSON code of this Dynaform, the "organizationName" field has the following definition:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;organizationName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;158861394565762e1d755c5078115321&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;organizationName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;organizationName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Organization name&quot;</span><span style="color: #339933;">,</span></div></div>
+    <p>To insert the type of organization into the label of the "organizationName" field, change the JSON code to:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;variable&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;organizationName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;var_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;158861394565762e1d755c5078115321&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dataType&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;organizationName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;organizationName&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;@@organizationType name&quot;</span><span style="color: #339933;">,</span></div></div>
+    <p>Then, open the Dynaform for editing and import the modified JSON file. When a case is run, it will change the label of the "organizationName" field, depending on the quantity of the @%amount variable. For example, if the @%amount is set to <code>1235</code> when running a case, then it will display "Credit union name":</p>
+    <img src="../sites/default/files/organizationNameExample.png">
+</div>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

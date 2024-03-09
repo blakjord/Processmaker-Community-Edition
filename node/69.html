@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/2.5.X/DynaForms.html" />
+<link rel="shortlink" href="69.html" />
+<title>2.5.x - DynaForms | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"0HfOrb7L65UxVzWj2e_V6QcMH0sTj3sDmhCTOeF4by4","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-69 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="69.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-RvBGEzXJXk1Ay-ScUuSgUivfQcql5lOjlZmD1g5TnPg" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.5.x - DynaForms</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+          </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.5.x - DynaForms" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="69.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.5.x - DynaForms 1/5</option><option value="40">Give 2.5.x - DynaForms 2/5</option><option value="60" selected="selected">Give 2.5.x - DynaForms 3/5</option><option value="80">Give 2.5.x - DynaForms 4/5</option><option value="100">Give 2.5.x - DynaForms 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >10</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-yxnKIZOJ8mFMVadlxaruP0UVmr77dZGJOLdYC0GfA9M" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="69.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="69.html#Overview">Overview</a></li>
+<li class="toc"><a href="69.html#Creating_DynaForms">Creating DynaForms</a></li>
+<ol class="toc">
+<li class="toc"><a href="69.html#Blank_DynaForm">Blank DynaForm</a></li>
+<li class="toc"><a href="69.html#PM_Table_DynaForm">PM Table DynaForm</a></li>
+<ol class="toc">
+<li class="toc"><a href="69.html#Example">Example</a></li>
+</ol>
+<li class="toc"><a href="69.html#Copy.2FImport_DynaForm">Copy/Import DynaForm</a></li>
+</ol>
+<li class="toc"><a href="69.html#Managing_DynaForms">Managing DynaForms</a></li>
+<li class="toc"><a href="69.html#The_DynaForm_Editor">The DynaForm Editor</a></li>
+<ol class="toc">
+<li class="toc"><a href="69.html#The_DynaForm_Editor_Toolbar">The DynaForm Editor Toolbar</a></li>
+</ol>
+<li class="toc"><a href="69.html#The_DynaForm_Editor_Tabs">The DynaForm Editor Tabs</a></li>
+<ol class="toc">
+<li class="toc"><a href="69.html#Preview_tab">Preview tab</a></li>
+<li class="toc"><a href="69.html#XML_tab">XML tab</a></li>
+<ol class="toc">
+<li class="toc"><a href="69.html#XML_syntaxis_validation">XML syntaxis validation</a></li>
+<li class="toc"><a href="69.html#XML_form_storage">XML form storage</a></li>
+</ol>
+<li class="toc"><a href="69.html#HTML_tab">HTML tab</a></li>
+<ol class="toc">
+<li class="toc"><a href="69.html#The_WYSWYG_HTML_Editor">The WYSWYG HTML Editor</a></li>
+<ol class="toc">
+<li class="toc"><a href="69.html#The_HTML_Toolbar">The HTML Toolbar</a></li>
+</ol>
+<li class="toc"><a href="69.html#Altering_the_HTML_Table_Structure">Altering the HTML Table Structure</a></li>
+<li class="toc"><a href="69.html#Editing_the_HTML_Code">Editing the HTML Code</a></li>
+<li class="toc"><a href="69.html#HTML_form_storage">HTML form storage</a></li>
+</ol>
+<li class="toc"><a href="69.html#Fields_Handler_tab">Fields Handler tab</a></li>
+<li class="toc"><a href="69.html#JavaScripts_tab">JavaScripts tab</a></li>
+<li class="toc"><a href="69.html#Properties_tab">Properties tab</a></li>
+<li class="toc"><a href="69.html#Conditions_Editor_tab">Conditions Editor tab</a></li>
+<ol class="toc">
+<li class="toc"><a href="69.html#Defining_a_Condition">Defining a Condition</a></li>
+<li class="toc"><a href="69.html#Managing_Conditions">Managing Conditions</a></li>
+<li class="toc"><a href="69.html#Example_2">Example</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="69.html#Preventing_Session_Timeout">Preventing Session Timeout</a></li>
+<li class="toc"><a href="69.html#Printing_Dynaforms">Printing Dynaforms</a></li>
+<li class="toc"><a href="69.html#Dyanforms_accessibility">Dyanforms accessibility</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p><strong>DynaForms</strong>, or "Dynamic Forms", are the custom forms which can be designed in ProcessMaker to interface with the user while running a case. DynaForms allow users to view and enter data into cases in a graphical interface which should be intuitive for even non-technical users.</p>
+<p>The DynaForm Editor is designed to be user-friendly for process designers who don't have any programming experience, yet also provide the full XML code and the HTML code for process designers who want to customize their forms to their hearts content. DynaForms allow process designers to use SQL queries to pull data from external databases or the ProcessMaker databases. With <a href="../index.php/2.0/Triggers.html#Case_Variables" title="Triggers">case variables</a>, data can also be pulled from ProcessMaker triggers and used in the fields in DynaForms. Finally, audacious process designers can add their own custom JavaScript code to dynamically control their DynaForms, error check the data and provide feedback to the user.</p>
+<p>From version 1.X, DynaForms have been improved, users can notice this by creating and customizing DynaForms, more controls were added, more intuitive options to create DynaForms, etc, a proof of this is the enhancements added from version 2.5, that ranged from the creation of a DynaForm to the automatically correction of it.</p><p>Throughout the documentation, improvements and features added form version 2.5.x will be explained.</p>
+
+<h2><span id="Creating_DynaForms">Creating DynaForms</span></h2>
+<p>To create a new DynaForm, first open the process where the DynaForm will be used. (Go to the <strong>DESIGNER</strong> menu, find a process in the list and click it's <strong>Edit</strong> link.) Then select the <strong>DYNAFORMS</strong> tab to display the list of existing DynaForms. Click the <strong>New</strong> link at the top left of the list. First, select the type of DynaForm:</p>
+<p><img alt="" height="205" src="../sites/default/files/BPMNewForm2.5.png" width="448"></p>
+<p>To create a DynaForm from scratch, select the first option <strong>Blank Dynaform</strong>. To create a DynaForm whose fields are based upon the fields in an existing <a href="../index.php/PM_Tables.html" title="2.0/PM Tables">PM Table</a>, select the second option<strong>PM Table DynaForm</strong>. In this case, when the user enters data into the fields in the DynaForm, a new record with that data will automatically be inserted in that PM Table. See <a href="../index.php/2.5.X/DynaForms.html#PM_Table_DynaForm">PM Table DynaForm</a> below.</p>
+
+<h3><span id="Blank_DynaForm">Blank DynaForm</span></h3>
+<p>Define the properties of the new Dynaform:</p>
+<p><img alt="" height="269" src="../sites/default/files/BPMNewFormWindow2.5.png" width="537"></p>
+<p>Enter a <strong>Title</strong> for the DynaForm. Production users who run cases can see the DynaForm title when they go to the INFORMATION tab and click the <strong>DynaForms</strong> button, so create a title which will make sense to users running cases.Select the <strong>Type</strong> of DynaForm. <strong>Normal</strong> or <strong>master</strong> forms are designed to display only a single record and their fields are laid out vertically by default. They are stand-alone forms and can not be embedded into other forms.</p>
+<p>In contrast, <strong>grid</strong> forms are designed to contain multiple records. Their fields are laid out horizontally in a single row, so they can be repeated to form a table consisting of columns and rows. Grid forms are also capable of using special aggregate functions, such as sum, to perform operations on all the fields in a column. Grid forms can only contain fields which are types of textboxes and dropdown boxes, because they occupy little space and are easily displayed in the format of rows. From version 1.2-2740 on, grids can also contain textareas and hidden fields.</p>
+<p>Grid forms are created separately from master forms, but they can not be used alone and must be embedded in a master form when used in a process. Embedding the grid form in a master form provides it with additional controls to add and delete records.</p>
+<p>Enter a <strong>Description</strong> for the DynaForm. The description will not be seen by ordinary production users who run cases, so geer the description for process designers who may need to edit the DynaForm later. Since the description doesn't automatically line wrap, use hard returns.</p><p>Click <strong>Save</strong> to create the new DynaForms and return to the list of available DynaForms for the process. Click <strong>Save and Edit</strong> to create the new DynaForm and immediate begin editing it in the<a href="../index.php/2.5.X/DynaForms.html#The_DynaForm_Editor">DynaForm Editor</a>.</p>
+<h3><span id="PM_Table_DynaForm">PM Table DynaForm</span></h3>
+<p>This option creates fields in a DynaForm based on the fields of an existing PM table. Moreover, when the DynaForm is submitted when running a case, the information is stored in that PM table. Select the second option <strong>"PM Table DynaForm"</strong> and the following modal window will display:</p>
+<p><img alt="" height="267" src="../sites/default/files/BPMNewPMFormWindow2.5.png" width="536"></p>
+<ol>
+<li><strong>Save:</strong> Saves the configuration made over the fields.</li>
+<li><strong>Cancel:</strong> Discards changes made in the the creation of the DynaForm and closes the current window.</li>
+<li><strong>Create from PM table:</strong> Required Field. Select the PM Table from where the DynaForm will be created.</li>
+<li><strong>Title:</strong> Required Field. Enter the name the DynaForm. The more descriptive the title is, the easier to understand what it is about.</li>
+<li><strong>Description:</strong> Enter a brief description about the DynaForm.</li>
+<li><strong>Define Process variables to use as Primary Keys</strong>. After selecting the PM table from which the DynaForm will be based, a new section will display down in the window. This section contains the fields or fields that will be defined as primary key (s) in the selected PM table.</li>
+<li><strong>ID:</strong> Required Field. All PM Tables have to be indexed on one or more primary key fields. Select a case variable or system variable whose value will auto-populate the primary key field(s). Note that the value of the primary key field (or the combined value of the primary key fields) must be unique, so only select variables which will have unique values. If needing to use a primary key field which auto-increments, see the example below.</li>
+<li><strong>@@</strong> Use the <tt>@@</tt> button to select either case or system variables.</li>
+</ol>
+<h4><span id="Example">Example</span></h4>
+<p>The following example is intended to illustrate how to create a Dynaform from a PM table:</p>
+<p><strong>Step 1:</strong> Create a <tt>Customer</tt> PM Table with the following fields:</p>
+<codeblock>
+
++------------------------------------+------------------+------+-----+
+| Field                             | Type            | Null | Key |
++------------------------------------+------------------+------+-------+
+| UID                               | varchar(32)  | NO  | PRI |
+| CUSTOMERNAME        | varchar(50)  | NO   |       |
+| CUSTOMERLASTNAME| varchar(50)  | NO   |       |
++-----------------------------------+-------------------+-------+-----+    
+</codeblock>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> Once the PM table is created, the <tt>PMT</tt> prefix will be added, so the name of the final table will be <tt>PMT_CUSTOMER</tt></font></p>
+<p><strong>Step 2:</strong> <a href="69.html#PM_Table_DynaForm" title="3.0/Dynaforms">Create the PM Table Dynaform</a> selecting the name of the PM table. Use <tt>@@APPLICATION</tt> as a primary key only if the value is not an auto-increment value. If it is an auto-increment value use the workaround below:</p>
+<p>When at the dialog box to select variable for the primary key, select any available variable. Then, edit the XML code of the DynaForm and remove the variable in <tt>keys="@@VAR"</tt> and make the primary key field not a required field, by changing <tt>required="1"</tt> to <tt>required="0"</tt></p>
+<p>For example, change from:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dynaForm</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;xmlform&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;1825308724f1ee7042a38c7057961615/1381440454f1ef1790151c8087006473&quot;</span> <span style="color: #000066;">width</span>=<span style="color: #ff0000;">&quot;500&quot;</span> <span style="color: #000066;">enabletemplate</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;CUSTOMERNAME</span> &nbsp;<span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;pmconnection&quot;</span> <span style="color: #000066;">pmtable</span>=<span style="color: #ff0000;">&quot;9847619654f1ee6ed9b5c74029502759&quot;</span> <span style="color: #000066;">keys</span>=<span style="color: #ff0000;">&quot;@@APPLICATION&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span><span style="color: #000000; font-weight: bold;">&lt;/CUSTOMERNAME<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ID</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">pmconnection</span>=<span style="color: #ff0000;">&quot;CUSTOMERNAME&quot;</span> <span style="color: #000066;">pmfield</span>=<span style="color: #ff0000;">&quot;ID&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;1&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>ID<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ID<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>To:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dynaForm</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;xmlform&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;1825308724f1ee7042a38c7057961615/1381440454f1ef1790151c8087006473&quot;</span> <span style="color: #000066;">width</span>=<span style="color: #ff0000;">&quot;500&quot;</span> <span style="color: #000066;">enabletemplate</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;CUSTOMERNAME</span> &nbsp;<span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;pmconnection&quot;</span> <span style="color: #000066;">pmtable</span>=<span style="color: #ff0000;">&quot;9847619654f1ee6ed9b5c74029502759&quot;</span> <span style="color: #000066;">keys</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span><span style="color: #000000; font-weight: bold;">&lt;/CUSTOMERNAME<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ID</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">pmconnection</span>=<span style="color: #ff0000;">&quot;CUSTOMERNAME&quot;</span> <span style="color: #000066;">pmfield</span>=<span style="color: #ff0000;">&quot;ID&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>ID<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ID<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>When the record is inserted in the PM Table, the primary key field will be auto-incremented.</p>
+<p>When done, click on <strong>Save</strong> to create a new DynaForm with fields matching the fields in the PM Table.</p>
+<p><img alt="" height="199" src="../sites/default/files/FieldsCreatedPMTable.png" width="498"></p>
+<p>Finally, when running cases all data introduced in the DynaForm will be stored inside the PMT_CUSTOMER table.<br>That way, when the record is inserted in the PM Table, the primary key field will be auto-incremented.<br>When done, click on <strong>Save</strong> to create a new DynaForm with fields matching the fields in the PM Table.</p>
+<p>The PM Table DynaForm can then be edited like a normal DynaForm. It is a good idea to edit the properties of the DynaForm fields, so they only accept input which is valid data in the PM Table field. If adding a new field to the DynaForm, note that its value will not be automatically inserted into the PM Table. To insert its value, manually add a new field to the PM Table and then edit the XML code of the DynaForm to <a href="../index.php/PM_Tables.html#Read.2FWrite_Access_to_PM_Tables_in_DynaForm_Fields" title="2.0/PM Tables">link the new DynaForm field to the new PM Table field</a>.</p>
+
+<h3><span id="Copy.2FImport_DynaForm">Copy/Import DynaForm</span></h3>
+<div class="thumb tright" style="clear: right; float: right; margin-top: 0.5em; margin-bottom: 1.3em; margin-left: 1.4em; width: auto; background-color: transparent;"><div class="thumbinner" style="border: 1px solid rgb(204, 204, 204); font-size: 12px; text-align: center; overflow: hidden; width: 400px; padding: 3px !important; background-color: rgb(249, 249, 249);"><iframe allowfullscreen="true" frameborder="0" height="300" src="http://www.youtube.com/embed/8i3WRzVyVbE?showsearch=0&amp;modestbranding=1" width="400"></iframe>
+<div class="thumbcaption" style="text-align: left; border-style: none; line-height: 1.4em; font-size: 11px; padding: 3px !important;"><div class="thumbcaption" style="border-style: none; line-height: 1.4em; padding: 3px !important;">Importing Dynaforms !</div></div></div></div>
+<p>On previous version of ProcessMaker, if a DynaForm used on a Process was required to be used in a different process, it had to copied manually from a process to another. From this version, the possibility to copy/import a Dynaform was added, giving users the possibility to reuse an existing DynaForm created <strong>ONLY</strong> in the current workspace. Moreover, if the Dynaform has a grid embedded in it, this will be also copied with its structure and fields.</p>
+<p><img alt="" height="201" src="../sites/default/files/BPMNewCopyImportFormWindow2.5.png" width="446"></p>
+<p>By selecting the option <strong>Copy/import a Dynaform</strong>, a window will open to select DynaForm to be copied:</p>
+<p><img alt="" height="321" src="../sites/default/files/BPMNewCopyImportForm2.5.png" width="539"></p>
+<p>Where:</p>
+<ul>
+<li><strong>Process:</strong> all available processes of the current workspace will be listed. Select a process from which the dynaform will be copied.</li>
+<li><strong>Showing forms of type:</strong> Select the DynaForm type to be copied, it will be <strong>Normal</strong> or <strong>Grid</strong>.</li>
+</ul>
+<p><img alt="" height="58" src="../sites/default/files/BPMNewCopyImportShowinfTypes.png" width="189"></p>
+<ul><li><strong>Dynaform to copy/import:</strong> Required Field, all available Dynaforms of the selected process, and depending on the type chosen on a previous field, will be listed:</li></ul>
+<p><br><img alt="" height="209" src="../sites/default/files/DynaFormToCopy2.5.png" width="310"></p>
+<ul>
+<li><strong>Title of the new dynaform:</strong> Required Field, Title of the Dynaform, it will be filled automatically according to what was chosen on a previous field. This title can be modified.</li>
+<li><strong>Description of the new dynaform:</strong> Description of the dynaform which will be filled automatically according to what was chosen on the Dynaform selected previously. This description can also be modified.</li>
+</ul>
+<p><img alt="" height="309" src="../sites/default/files/DynaFormToCopyConfiguration2.5.png" width="518"></p>
+<p>If the dynaform just need to be copy, click on <strong>Copy/Import</strong>, but if it needs to be modified after copying it click on <strong>Copy/Import and Open</strong>. If the first button is clicked, it will redirect to the dynaform list, on the contrary, if the second button is clicked dynaform will be opened to have it edited.</p>
+
+<h2><span id="Managing_DynaForms">Managing DynaForms</span></h2>
+<p>All the DynaForms available for the current process can be found by selecting the <strong>DYNAFORMS</strong> tab (under the <strong>PROCESSES</strong> menu).</p>
+<p><img alt="" height="378" src="../sites/default/files/ManagingDynaFormsWindow2.5.png" width="534"></p>
+<ul><li><strong>Title:</strong> The title of DynaForms.</li><li><strong>Type:</strong> The <a href="../index.php/2.5.X/DynaForms.html#DynaFormTypes">type of DynaForm</a>, which can be either "Normal" or "Grid".</li><li><strong>Edit</strong><strong>:</strong> Click to edit the DynaForm.</li><li><strong>Delete</strong><strong>:</strong> Click to delete the DynaForm.</li><li><strong>UID</strong>: Click to view the UID of the DynaForm.</li></ul>
+<h2><span id="The_DynaForm_Editor">The DynaForm Editor</span></h2>
+<p>The DynaForm Editor provides a graphical designer for DynaForms, with a toolbar to add new elements to DynaForms and tabs to switch easily between the graphical preview of the form, the code, and the definition of the fields in the form.</p>
+<p><img alt="" height="513" src="../sites/default/files/ProcessDynaFormDesigner2.5.png" width="822"></p>
+<p>Unlike the drag-and-drop interface of the Process Map, the DynaForm Editor is a click-and-define interface. Click on the toolbar to add a new object to the DynaForm, then <i>define</i> the characteristics of that object. The DynaForm Editor allows for the properties of objects to be specified to a great degree, and access to the XML code allows for a great deal of flexibility in object definition. The <strong>Preview</strong> tab allows process designers to check how fields in the form will appear and be populated with values before running a case.</p>
+<p>Objects are added to DynaForms in a specific order to DynaForms and can not be moved around freely with the mouse. Instead, objects can only be moved around by changing their order inside the <strong>Field List</strong> tab or by modifying the HTML code for the form. The WYSIWYG HTML editor allows designers to customize the appearance of DynaForms. For process designers who want maximum control over their forms, full access to the HTML code is provided.</p>
+
+<h3><span id="The_DynaForm_Editor_Toolbar">The DynaForm Editor Toolbar</span></h3>
+<p>The DynaForm Editor provides a toolbar to easily add fields and other objects to the DynaForm. The toolbar buttons function while in all the DynaForm Editor tabs, so objects can be added to DynaForms at any time, whether using the Preview mode, editing code, viewing the field list, or setting the form properties. Unlike the Process Map toolbar which uses drag-and-drop icons, the icons in the DynaForm Editor toolbar are activated by a single mouse click over the icons.</p>
+<p><img alt="" height="23" src="../sites/default/files/DynaFormToolbar2.5.png" width="823"></p>
+<ul><li><strong>Save. </strong>Click to save the DynaForm. Before version 1.2-2895, ProcessMaker did not allow for different versions of a DynaForm to be saved. If making experimental changes to a DynaForm which you might want to later undo when using an older version of ProcessMaker, it is recommended to first export your process, so you can later import the old process definition if you decide to not keep your changes.</li><li><strong>Save as. </strong>Click to save a copy of the DynaForm. A new feature in version 1.2-2895 and later which allows the content of the present DynaForm to be saved under a different DynaForm name. "Save As" is useful when making another copy of a DynaForm to make experimental changes or when creating multiple copies of the same DynaForm with slight changes to the fields.</li><li><strong>Text. </strong>Add a <a href="../index.php/2.0/Textboxes_and_Textareas.html#Textbox" title="2.0/Textboxes and Textareas">textbox</a> to the DynaForm, which is designed to input one line of text.</li><li><strong>Currency. </strong>Add a <a href="../index.php/2.0/Textboxes_and_Textareas.html#Currency" title="2.0/Textboxes and Textareas">currency</a> textbox to the DynaForm, which restricts the input to numbers.</li><li><strong>Percentage. </strong>Add a <a href="../index.php/2.0/Textboxes_and_Textareas.html#Percentage" title="2.0/Textboxes and Textareas">percentage</a> textbox to the DynaForm, which restricts the input to numbers to form percentages.</li><li><strong>Password. </strong>Add a <a href="../index.php/2.0/Textboxes_and_Textareas.html#Password" title="2.0/Textboxes and Textareas">password</a> textbox to the DynaForm. This textbox displays the input as ******, so observers can't easily glimpse passwords.</li><li><strong>Suggest. </strong>Add a <a href="../index.php/2.0/Textboxes_and_Textareas.html#Suggest_box" title="2.0/Textboxes and Textareas">suggest box</a> to the Dynaform. A new feature in version RC2_1.2-3306 and later which shows the users a list of suggestion as he types in the box, and it allows one value to be selected.</li><li><strong>Textarea. </strong>Add a <a href="../index.php/2.0/Textboxes_and_Textareas.html#Textarea" title="2.0/Textboxes and Textareas">textarea</a> to the DynaForm, which is designed to input more than one line of text into a form. The number of lines and width of the textarea can be specified, and scrollbars will automatically appear to allow for greater space if more text is entered.</li><li><strong>Title. </strong>Add a <a href="../index.php/2.0/Titles_and_Subtitles.html#Title" title="2.0/Titles and Subtitles">title</a> to the DynaForm, which are designed to label the major sections of the form.</li><li><strong>Subtitle. </strong>Add a <a href="../index.php/2.0/Titles_and_Subtitles.html#Subtitle" title="2.0/Titles and Subtitles">subtitle</a> to the DynaForm, which are designed to label the minor sections of the form and appear with a smaller font and more indentation than a title.</li><li><strong>Button. </strong>Add a <a href="../index.php/2.0/Buttons.html#Button" title="2.0/Buttons">button</a> to the DynaForm. The functionality of a button has to be added with custom JavaScript code.</li><li><strong>Submit. </strong>Add a <a href="../index.php/2.0/Buttons.html#Submit" title="2.0/Buttons">submit</a> button to the DynaForm. Submit buttons save the data entered into a Dynaform to the database and to case variables, so the data can be accessed later in the case.</li><li><strong>Reset. </strong>Add a <a href="../index.php/2.0/Buttons.html#Reset" title="2.0/Buttons">reset</a> button, which clears the entered data and resets the DynaForm to its original state.</li><li><strong>Dropdown. </strong>Add a <a href="../index.php/2.0/Dropdown_Boxes_and_Listboxes.html#Dropdown" title="2.0/Dropdown Boxes and Listboxes">dropdown</a> box to the DynaForm. Dropdown boxes allow the user to select from a list of predetermined options which <i>drop down</i>. They occupy less space than a listbox, but only allow a single value to be selected.</li><li><strong>Yesno. </strong>Add a <a href="../index.php/2.0/Dropdown_Boxes_and_Listboxes.html#YesNo" title="2.0/Dropdown Boxes and Listboxes">Yes/No</a> dropdown box, which is designed to present a binary "Yes"/"No" option to the user. Unlike checkboxes, Yes/No dropdowns can be used in grids.</li><li><strong>Listbox. </strong>Add a <a href="../index.php/2.0/Dropdown_Boxes_and_Listboxes.html#Listbox" title="2.0/Dropdown Boxes and Listboxes">listbox</a> to the DynaForm. Listboxes allow the user to select one or more predetermined options. They are more convenient to use than a dropdown box, since they do not require clicking to see the available options and they allow more than one option to be selected, but they occupy more space.</li><li><strong>Checkbox. </strong>Add a <a href="../index.php/2.0/Checkboxes_and_Radio_Buttons.html#Checkbox" title="2.0/Checkboxes and Radio Buttons">checkbox</a> to the DynaForm. Checkboxes offer a binary on/off choice and are square in appearance with a check mark when activated (on). Checkboxes are convenient for allowing a user to activate an option with a single click of the mouse and are recommended over Yes/No dropdown boxes in most cases.</li><li><strong>Checkgroup. </strong>Add a <a href="../index.php/2.0/Checkboxes_and_Radio_Buttons.html#Checkgroup" title="2.0/Checkboxes and Radio Buttons">checkgroup</a>, which is a group of checkboxes where the user can activate all, some or none of the checkboxes. The checkbox group has a title (label) and all the checkboxes in the group should be related in some way to that title.</li><li><strong>Radiogroup. </strong>Add a <a href="../index.php/2.0/Checkboxes_and_Radio_Buttons.html#Radiogroup" title="2.0/Checkboxes and Radio Buttons">radiogroup</a> to the DynaForm. Like checkboxes, radio buttons offer only a binary on/off option, but they are round and a black dot appears in the middle when activated (on). Unlike checkgroups, radiogroups only allow the user to select one option, and will deselect all other options. Like listboxes, radio groups occupy more space but are more convenient for the user since selection only requires a single click.</li><li><strong>Date. </strong>Add a <a href="../index.php/2.0/Dates.html#Date" title="2.0/Dates">date selector</a> to the DynaForm, which does not allow the user to directly enter the date like a normal textbox. Instead clicking on the box opens a calendar where the user can select the date. This helps standardize date formats and eliminates many careless errors. Date selectors also offer another button to clear the date.</li><li><strong>Hidden. </strong>Add a <a href="../index.php/2.0/Other_DynaForm_Fields.html#Hidden" title="2.0/Other DynaForm Fields">hidden</a> field to the DynaForm. Hidden fields allow for unseen variables to be added to the DynaForm. They are often used when needed to pass extra data to JavaScripts or when needing a space to store data which shouldn't be seen by the user.</li><li><strong>Link. </strong>Add a <a href="../index.php/2.0/Links.html#Link" title="2.0/Links">link</a> to the DynaForm. Links can either be hyperlinks to external web pages, or an internal link to another DynaForm.</li><li><strong>File. </strong>Add a <a href="../index.php/2.0/Files.html#File" title="2.0/Files">file</a> to the DynaForm, which provides a dialog box to upload a file. The files can either be an Input Document (since version 1.2-2467) or an undetermined file.</li><li><strong>Javascript. </strong>Add <a href="../index.php/2.0/Other_DynaForm_Fields.html#JavaScript" title="2.0/Other DynaForm Fields">JavaScript code</a> to the DynaForm, which allows the process designer to customize the behavior of the form, add data checking and perform custom calculations.</li><li><strong>Grid. </strong>Embed a grid form inside the master DynaForm. Grid forms are special forms which present data in a table format consisting of columns and rows. They offer controls to add and delete rows and aggregate functions such as summing a column.</li><li><strong>Dynaform:</strong> A dropdown was added in the toolbar to have the possibility to edit multiple dynaforms without closing the current one, this will optimize the editing time spent specially when it is required to have a numerous dynaforms edited.</li></ul>
+
+<dl><dd><img alt="" height="144" src="../sites/default/files/DynaFormOptionToolbar2.5.png" width="235"></dd></dl>
+<dl>In the dropdown will be listed all available dynaforms for the current process. If one of the dynaforms is selected to be edited, it is not necessary to close it to open another one, just edit and save it, and select a different one from the list and so forth.</dd></dl>
+<dl><dd>From version 2.8 this list is ordered alphabetically in ascending order.</dd></dl>
+<dl><img alt="" height="143" src="../sites/default/files/DynaformsListOrdered.png" width="241"></dd></dl>
+
+<h2><span id="The_DynaForm_Editor_Tabs">The DynaForm Editor Tabs</span></h2>
+<p>The DynaForm Editor offers a tab bar which allows the process designer to switch rapidly between field definitions and code editing to a graphical preview mode to check how the DynaForms will appear to the user.</p>
+<p><img alt="" height="23" src="../sites/default/files/DynaFormEditorBars2.5.png" width="865"></p>
+<h3><span id="Preview_tab">Preview tab</span></h3>
+<p>Displays a graphical preview of the DynaForm. Here the process designer can try out the form to see how the objects in form will appear and how they will be filled with values. Preview mode may have slight differences from when it is run in a case, especially if it uses fields which depend upon values entered in previous DynaForms or case variables defined in previous triggers.</p>
+<p>Nonetheless, the preview mode should allow process designer to check layout and design of the DynaForm, verify the default values and the options in listboxes, dropdown boxes, checkbox groups, etc, and verify the SQL statements used to populate fields (as long as the requisite tables already exist). Moreover, Preview mode will run JavaScripts, so it should be possible to debug code which doesn't depend upon case data. Running test cases to polish and debug DynaForms can be a laborious process, so process designers should make use of the Preview mode as much as possible to shorten development time.</p>
+<h3><span id="XML_tab">XML tab</span></h3>
+<p>ProcessMaker uses XML (Extensible Markup Language) to define the fields and other objects used in DynaForms. The flexibility of XML and its ability to add custom options to the language makes it a good match for ProcessMaker.</p>
+<p>Process designers who want complete control over the definition of objects in their DynaForms can switch to the <strong>XML</strong> tab and directly access the code. Moreover, there is some functionality, such as the use of aggregate grid functions and the use of PM tables and custom arrays to populate lists which is only possible by editing the XML code. New functions in ProcessMaker are generally added first to the XML code before they are added to the graphical field designer in the <strong>Fields Handler</strong> tab. See the documentation for each field for more information about how it is defined in the XML.</p>
+<p><img alt="" height="190" src="../sites/default/files/XMLTabDynaFormEditor2.5.png" width="720"></p>
+<p>After modifying the XML code, the <strong>Preview</strong> mode and <strong>Fields Handler</strong> will automatically update according to the changes in the XML. If altering the definition of objects in XML, it is a good idea to switch to the <strong>Preview</strong> mode or the <strong>Fields Handler</strong> tab to check the validity of your changes. Mistakes in the XML can usually be caught by checking how ProcessMaker displays the altered DynaForm in <strong>Preview</strong> mode.</p>
+<h4><span id="XML_syntaxis_validation">XML syntaxis validation</span></h4>
+<p><when code="" writing="" xml="">However, with this new validation, XML will be able to recognize syntax errors occurring during the creation of the Dynaform, open a message window with a brief description of the error; moreover, those errors will be corrected automatically.</when></p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> This validation is applied only for XML code.</font></p>
+<p>For example: <br>Modifying the following XML code:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;APPLICANT_NAME</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;35&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;35&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">defaultvalue</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">group</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">linkfield</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">strto</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Name<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/APPLICANT_NAME<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>to:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;APPLICANT_NAME</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;35&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;35&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">defaultvalue</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">group</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">linkfield</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">strto</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Name<br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/APPLICANT_NAME<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>The end tag was deleted to see the error:</p>
+<p><img alt="" height="183" src="../sites/default/files/DynaFormDesignerErrorParsing2.5.png" width="362"></p>
+<p>That message will be displayed trying to open the <i>Preview tab</i>, according to the message, the error is related to tag. By pressing <strong>Ok</strong>, error will be fixed by completing the missing tag.</p>
+
+<h4><span id="XML_form_storage">XML form storage</span></h4>
+
+<p>The XML code for DynaForms is stored in the file location:</p> 
+<code>&lt;INSTALL-DIRECTORY&gt;/shared/sites/&lt;WORKSPACE&gt;/xmlForms/&lt;PROCESS-UID&gt;/&lt;DYNAFORM-UID&gt;.xml</code>
+<p><strong>For example:</strong></p> 
+<code>/opt/processmaker/shared/sites/workflow/xmlForms/728cae447fbdF7be6aeb1276dce1f/41162480747fa4824e244a076980812.xml</code>
+<p>Windows after version 1.6-4260 or manual install:</p> 
+<code>C:\Program Files\ProcessMaker\processmaker\shared\sites\workflow\xmlForms\728cae447fbdF7be6aeb1276dce1f\41162480747fa4824e244a076980812.xml</code>
+<p>Windows before version 1.6-4260:</p>
+<p><code>C:\Program Files\ProcessMaker\apps\processmaker\shared\workflow_data\sites\workflow\xmlForms\728cae447fbdF7be6aeb1276dce1f\41162480747fa4824e244a076980812.xml</code></p>
+<p>If an XML form gets corrupted and can not be edited inside ProcessMaker, it is possible to directly edit the form with a plain text editor. While a DynaForm is being edited, it is saved as a temporary file named:</p> 
+<code>&lt;INSTALL-DIRECTORY&gt;/shared/sites/&lt;WORKSPACE&gt;/xmlForms/&lt;PROCESS-UID&gt;/&lt;DYNAFORM-UID&gt;_tmp#.xml</code>
+<p><strong>For example:</strong></p> 
+<code>/opt/processmaker/shared/sites/workflow/xmlForms/728cae447fbdF7be6aeb1276dce1f/41162480747fa4824e244a076980812_tmp0.xml</code>
+<p>If the system crashes while editing a DynaForm, it is possible to recover it by copying the XML code out of the temporary file.</p>
+
+<h3><span id="HTML_tab">HTML tab</span></h3>
+<p>Although ProcessMaker uses XML to define the objects in DynaForms, the layout and appearance of those objects is controlled by HTML (HyperText Markup Language). Editing the HTML provides a finer degree of control over the formatting of the DynaForm than using the graphical interface provided in <strong>Preview</strong> mode and the <strong>Fields Handler</strong> (formerly named <strong>Fields List</strong>). Note that only the HTML for master forms can be edited--it will not work for grid forms.</p>
+<p><img alt="" height="446" src="../sites/default/files/HTMLTabDynaFormDesigner2.5.png" width="1108"></p>
+<p>The HTML code should be edited <i><strong>after</strong></i> defining all the fields and setting the order of the fields in the DynaForm, this includes any Javascript code created. If Javascript code was added after enabling the HTML template, edit the HTML by including the Javascript code inside the following tags:</p>
+<p><code>&lt;script type="text/javascript"&gt;&lt;/script&gt;</code></p>
+<p>Add that, either at the beginning or at the of the HTML code.</p>
+<p>After changing the HTML code, ProcessMaker may not be able to add, delete, or move fields correctly, since the HTML structure of the form has changed. If unexpected problems arise after editing a form's HTML code, revert the DynaForm's HTML by clicking the button <strong>Restore Original HTML</strong>.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> From version 2.5 this tab will be only available for Master Dynaforms.</font></p>
+<h4><span id="The_WYSWYG_HTML_Editor">The WYSWYG HTML Editor</span></h4>
+<p>For people who want to alter the appearance of their DynaForms, but don't want the hassle of delving into the HTML code, the DynaForm Editor provides an <strong style="box-sizing: border-box; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-stretch: inherit;">HTML View</strong> area. A WYSIWYG (<span style="box-sizing: border-box; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit;">What You See Is What You Get</span>) HTML editor allows process designers to alter the formatting of DynaForms in a graphical design environment and add some of the more common HTML elements such as hyperlinks, images and horizontal rules. A user-friendly toolbar is provided to automatically insert HTML code into the DynaForm. In addition, users can click anywhere in the<strong style="box-sizing: border-box; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-stretch: inherit;">HTML View</strong> area to manually add text to their forms.</p>
+<p>Fields, field labels and other objects defined in the XML are inserted directly into the HTML with PHP variables, which are enclosed in curly braces {}.</p>
+
+<codeblock>
+
+<strong>{$form.field_name}</strong>                        A DynaForm field defined as a member of $form, which is the DynaForm object.
+<strong>{$field_name}</strong>                               The label for a DynaForm field.
+<strong>{$form.__DYNAFORM_OPTIONS}</strong> The DynaForm properties and general settings.
+</codeblock>
+
+<p>It is very important that no text or HTML tags be inserted inside the curly brackets or the DynaForm objects won't be inserted into the HTML correctly. When applying formatting to a PHP variable, make sure that the formatting encompasses the entire variable name, including its curly braces. Do <strong style="box-sizing: border-box; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-stretch: inherit;">NOT</strong> apply formatting like this:</p>
+<p><img alt="" src="../sites/default/files/HTMLTagInsideVariable.png"></p>
+<p>The HTML tags and are inserted into the middle of the name of the PHP variable <tt>{$Employee_Name}</tt>:</p>
+
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #009900;">&#123;</span><span style="color: #000088;">$Emplo</span><span style="color: #339933;">&lt;</span>big<span style="color: #339933;">&gt;&lt;</span>span style<span style="color: #339933;">=</span><span style="color: #0000ff;">&quot;font-weight: bold;&quot;</span><span style="color: #339933;">&gt;</span>yee_Na<span style="color: #339933;">&lt;/</span>span<span style="color: #339933;">&gt;&lt;/</span>big<span style="color: #339933;">&gt;</span>me<span style="color: #009900;">&#125;</span></code></span>
+
+<p>When switching to <strong style="box-sizing: border-box; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-stretch: inherit;">Preview</strong> mode, the following error will arise:</p>
+<p><img alt="" src="../sites/default/files/HTMLTagInsideVariableErrorMsg.png"></p>
+
+<p>Instead, HTML formatting should be applied to the entire variable name including its curly braces like this:</p>
+<p><img alt="" src="../sites/default/files/GoodHTMLFormatting.png"></p>
+<p>Here the HTML tags aren't inserted into the PHP variable name:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">&lt;</span>big<span style="color: #339933;">&gt;&lt;</span>span style<span style="color: #339933;">=</span><span style="color: #0000ff;">&quot;font-weight: bold;&quot;</span><span style="color: #339933;">&gt;</span><span style="color: #009900;">&#123;</span><span style="color: #000088;">$Employee_Name</span><span style="color: #009900;">&#125;</span><span style="color: #339933;">&lt;/</span>span<span style="color: #339933;">&gt;&lt;/</span>big<span style="color: #339933;">&gt;</span></div></div>
+
+<p>This will yield the following formatting in the DynaForm:</p>
+<p><img alt="" src="../sites/default/files/GoodHTMLFormattingInForm.png"></p>
+<p>If you accidentally insert HTML tags or text into a PHP variable name and can't figure out how to undo the problem, click on the <strong>Restore Original HTML</strong> button, which will loose any changes made to the HTML and return it to its original state.</p>
+
+<h5><span id="The_HTML_Toolbar">The HTML Toolbar</span></h5>
+<p>A great improvement added from this version is the new <i>WYSIWYG HTML Editor</i>, this editor will give the facility to create more comprehensive and advanced forms. the functioning is practically the same as the old editor, the difference is the use of controls and plugins added to this toolbar which help to create grids, tables, etc.</p>
+<p>Click on icons in the HTML toolbar to insert new HTML elements such as hyperlinks, email links, images and horizontal rules. To alter the formatting of an HTML element, first select the element in the <strong>HTML View</strong> area and then click on the appropriate icon in the toolbar. It helps to know a bit of HTML when using the toolbar, since some of the icons force the user to manually enter bits of code, as in the case of the Email link, or the RGB (Red, Green, Blue) numbers when selecting colors.</p>
+<p>Check the <a href="../index.php/New_WYSIWYG_HTML_Editor.html" title="New WYSIWYG HTML Editor">complete documentation</a> about this editor, its functions, controls and examples of how to use it.</p>
+<h4><span id="Altering_the_HTML_Table_Structure">Altering the HTML Table Structure</span></h4>
+<p>DynaForm forms are constructed with HTML tables, so each field is contained in a table row and the label and field are separated into table cells. The WYSIWYG HTML Editor provides a user-friendly tool to alter this basic table structure.</p>
+<p><strong>Resizing the form</strong><br>The form in the WYSIWYG HTML Editor will initially appear with the table resizer controls on each side and in each corner. To redimension the form, drag and drop the resizer controls. An arrow will appear in the control, indicating in which direction the table is being resized.</p>
+<p>Right click on the table structure and a submenu will display:</p>
+<p><img alt="" height="121" src="../sites/default/files/HTMLToolInsertAlterEditDynaFormDesigner2.5.png" width="211"></p>
+<ul>
+<li><strong><a href="../index.php/2.5.X/DynaForms.html#Insert.2FEdit_Tables">Insert/Edit Table</a></strong>: Insert a specific number of rows or columns. Also, if a specific row or column is select, its style can be modified.</li>
+<li><strong><a href="../index.php/2.5.X/DynaForms.html#Insert.2FEdit_Tables">Table Properties</a></strong>: Change table properties.</li>
+<li><strong>Delete Table</strong>: it delete a specific cell or the whole table.</li>
+<li><strong>Cell</strong>: Modify the properties of the cell.</li>
+<dl>
+<dd>
+<li><strong><a href="../index.php/2.5.X/DynaForms.html#Table_Cell_Properties">Table Cell Properties</a></strong>: Click on this icon to set properties for a specif cell of an inserted table. to enable it select a table which will be modified and the icon will be enabled.</li>
+</dd>
+<dd>
+<li><strong>Split Merged Table Cell</strong>: Click on this icon to split merged cells from a table. Select the row which was merged.</li>
+</dd>
+<dd>
+<li><strong>Merge Table Cells</strong>: Click on this icon to merge cells from a table. Select two cells on a table and click on this icon to merge them.</li>
+</dd>
+</dl>
+<li><tt><strong>Row</strong></tt>: Modify properties of a specific row:
+<dl>
+<dd>
+<ul><li><strong><a href="../index.php/2.5.X/DynaForms.html#Table_Row_Properties">Table Row Properties</a></strong>: Click on this icon to set properties on an inserted table.</li>
+</dd>
+<dd>
+<li><strong><a href="../index.php/2.5.X/DynaForms.html#Insert.2FEdit_Tables">Insert Row Before</a></strong>: Click on this icon to insert a row before the select one. To enable it select a the row of the table on which this new row will be inserted.</li>
+</dd>
+<dd>
+<li><strong><a href="../index.php/2.5.X/DynaForms.html#Insert.2FEdit_Tables">Insert Column After</a></strong>: Click on this icon to insert a row after the select one. To enable it select a the row of the table on which this new row will be inserted.</li>
+</dd>
+<dd>
+<li><strong><a href="../index.php/2.5.X/DynaForms.html#Insert.2FEdit_Tables">Delete Row</a></strong>: Click on this icon to delete a selected row from a table.</li>
+</dd>
+</dl>
+<li><strong>Column</strong>: Modify properties of a specific column.</li></ul>
+
+<h4><span id="Editing_the_HTML_Code">Editing the HTML Code</span></h4>
+
+<p>The <strong>HTML View</strong> area is easy enough to use, that most people can avoid having to edit the HTML code in their DynaForms. Nonetheless, the WYSIWYG HTML editor has a number of limitations. The DynaForm Editor is designed to insert fields vertically in the DynaForm and the WYSIWYG HTML editor can only make basic alterations to the form structure. For example, the HTML code must be directly edited in order to position fields in horizontal rows.</p>
+
+<p>To begin editing the HTML code, click on the <strong>Enable HTML Editing</strong> checkbox to activate it. Then edit the HTML code. To check how the changes to the HTML will effect the DynaForm, click the <strong>Refresh View</strong> button, which will update the HTML View area and the Preview mode for the DynaForm. Note that these changes will not be permanently saved until the <strong>Save</strong> icon in clicked in the main DynaForm Editor toolbar.</p>
+
+<p>Unlike when editing XML, ProcessMaker provides the option to undo the changes to the HTML. To revert the HTML to its original state, click on the <strong>Restore Original HTML</strong> button. Note that this button will <strong>NOT</strong> revert the HTML back to the last time it was saved. Instead, the HTML will be reverted back to the state defined by the field list and the default ProcessMaker layout for DynaForms. So all your customization to the code will be lost. If you might want to revert the code back to a previous version which includes your modifications, it is recommended to make copies of the code and save them in an external plain text editor.</p>
+
+<h4><span id="HTML_form_storage">HTML form storage</span></h4>
+<p>If HTML editing is enabled for a DynaForm, its HTML code is stored in the file location:</p> 
+<p><code>&lt;INSTALL-DIRECTORY&gt;/shared/sites/&lt;WORKSPACE&gt;/xmlForms/&lt;PROCESS-UID&gt;/&lt;DYNAFORM-UID&gt;.html</code></p>
+<p><strong>For example:</strong></p>
+<p>Linux/UNIX:</p> 
+<p><code>/opt/processmaker/shared/sites/workflow/xmlForms/728cae447fbdF7be6aeb1276dce1f/41162480747fa4824e244a076980812.html</code></p>
+<p>Windows after version 1.6-4260 or manual install:</p>
+<p><code>C:\Program Files\ProcessMaker\processmaker\shared\sites\workflow\xmlForms\728cae447fbdF7be6aeb1276dce1f\41162480747fa4824e244a076980812.html</code></p>
+<p>Windows before version 1.6-4260:</p> 
+<p><code>C:\Program Files\ProcessMaker\apps\processmaker\shared\workflow_data\sites\workflow\xmlForms\728cae447fbdF7be6aeb1276dce1f\41162480747fa4824e244a076980812.html</code></p>
+
+<p>If the HTML code gets corrupted and can not be edited inside ProcessMaker, it is possible to directly edit the code with a plain text editor. While a DynaForm is being edited, it is saved as a temporary file named:</p> 
+<p><code>&lt;INSTALL-DIRECTORY&gt;/shared/sites/&lt;WORKSPACE&gt;/xmlForms/&lt;PROCESS-UID&gt;/&lt;DYNAFORM-UID&gt;_tmp#.html</code></p>
+
+<p><strong>For example:</strong></p> 
+<p><code>/opt/processmaker/shared/sites/workflow/xmlForms/728cae447fbdF7be6aeb1276dce1f/41162480747fa4824e244a076980812_tmp0.html</code></p>
+<p>If the system crashes while editing a DynaForm, it is possible to recover it by copying the HTML code out of the temporary file.</p>
+
+<h3><span id="Fields_Handler_tab">Fields Handler tab</span></h3>
+<p>The <strong>Fields Handler</strong> tab allows all the fields in a DynaForm to be easily viewed at a glance and their definitions to be edited or deleted. Moreover, the Fields Handler provides the ability to easily reorder fields in DynaForms by dragging and dropping the fields in new locations with the mouse. After changes are made to the definition of fields in the Fields Handler, the DynaForm will automatically be updated in the <strong>XML</strong> and <strong>Preview</strong> tabs.</p>
+
+<p><img alt="" height="314" src="../sites/default/files/FieldsHandlerDynaFormDesigner2.5.png" width="810"></p>
+
+<ul>
+<li><strong>Visible</strong>: check this field to make a field visible or non visible.</li>
+<li><strong>Type</strong>: This column displays the type of field, such as "Title", "Text", "Dropdown" or "Grid".</li>
+<li><strong>Name</strong>: Displays the field names, which is how fields are identified in their XML definition and how they are saved as case variables.</li>
+<li><strong>Label</strong>: Displays the name of the field</li>
+<li><strong>Edit</strong>: Click this link to open a dialog box to edit the definition of the field.</li>
+<li><strong>Delete</strong>: Click this link to delete the field from the DynaForm.</li>
+</ul>
+
+<h3><span id="JavaScripts_tab">JavaScripts tab</span></h3>
+<p>ProcessMaker allows process designers to insert JavaScript into their DynaForms. As a browser-side scripting language, JavaScript is limited to accessing only the objects within the DynaForm, so it can not access case and system variables, use ProcessMaker web services or consult databases like ProcessMaker triggers. Nonetheless, within the sandboxed environment of a web browser, JavaScript can add error checking, dynamic controls and dialogs to forms which will greatly enhance the flexibility and functionality of a process.</p>
+<p><img alt="" height="310" src="../sites/default/files/JavaScriptTabDynaFormDesigner2.5.png" width="804"></p>
+<p>JavaScript can not be added to a DynaForm unless it is part of a JavaScript object in the DynaForm. All code entered into the JavaScript editor will be lost unless it is first associated with a JavaScript object. Click on the JS icon in the toolbar to add a JavaScript object and then define its name and add code.</p>
+<p><img alt="" height="323" src="../sites/default/files/JavaScriptAddDynaFormDesigner2.5.png" width="473"></p>
+<p>A DynaForm can have multiple JavaScript objects. To edit the code in one of the JavaScript objects, go to the <strong>JavaScript</strong> tab and select it from the dropdown box in the uppper left-hand corner. After editing the code, it can be checked by simply switching to the <strong>Preview</strong> tab. The new JavaScript code will immediately execute upon displaying the form in Preview mode (even if the DynaForm has not yet been saved).</p>
+<p>To make a button execute JavaScript code, enter the name of the JavaScript object which contains the code for the button.</p>
+<p><img alt="" height="214" src="../sites/default/files/JavaScriptButtonDynaFormDesigner2.5.png" width="458"></p>
+<p>The code will not execute unless it is associated with one of the button's events such as <tt>onclick</tt>, <tt>ondblclick</tt>, <tt>onfocus</tt>, or <tt>onkeypress</tt>. The way to do this is create a function with the code to execute and then assign that function to the button's event. For instance, in this example the function <tt>checkInput()</tt> will execute when the <tt>verify</tt> button is clicked:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> checkInput<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> maxVal <span style="color: #339933;">=</span> <span style="color: #CC0000;">100</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;price&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">&gt;</span> maxVal<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; G.<span style="color: #660066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Reducing price to $100&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;Value out of bounds&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;price&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="color: #CC0000;">100</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span> &nbsp; &nbsp; <br />
+<span style="color: #009900;">&#125;</span> <br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;verify&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onclick</span> <span style="color: #339933;">=</span> checkInput<span style="color: #339933;">;</span></div></div>
+
+<p>To get started programming in JavaScript, see <a href="../index.php/JavaScript_in_DynaForms.html" title="JavaScript in DynaForms">JavaScript in DynaForms</a> and <a href="../index.php/JavaScript_Functions.html" title="JavaScript Functions">JavaScript Functions</a>.</p>
+
+<h3><span id="Properties_tab">Properties tab</span></h3>
+<p>The <strong>Properties</strong> tab is where the general characteristics of the DynaForm are set.</p>
+<ul><li><strong>DynaForm:</strong> The title of the DynaForm.</li></ul>
+<ul><li><strong>Type:</strong> The <a href="../index.php/2.5.X/DynaForms.html#DynaFormTypes">type of DynaForm</a>, which can be "Master" (normal) or "Grid" forms.</li></ul>
+<dl>Be careful when switching the type of form from a master form to a grid. Grids can can only contain fields which are links, textboxes (including currency, percentage and date boxes) and dropdown boxes (including yes/no boxes). If any other type of field is included such as a title field or checkbox, errors will be generated by switching the form type. Delete all the fields which aren't allowed in grids, before converting from a master form to a grid form.</dd></dl>
+<p>See properties of Dynaform types on the following images:</p>
+<p><img alt="" height="402" src="../sites/default/files/PropertiesMainFormDynaFormDesigner2.5.png" width="400"></p>
+<p><strong>MASTER FORM PROPERTIES</strong></p>
+<p><img alt="" height="314" src="../sites/default/files/PropertiesGridDynaFormDesigner2.5.png" width="397"></p>
+<p><strong>GRID FORM PROPERTIES</strong></p>
+
+<p>It is possible to have only the specific fields depending on the Dynaform type selection. For instance, if a Grid is selected, only <strong>Mode</strong> will be enabled to choose the type of the Dynaform, removing all unnecessary fields which Grids do not support.</p>
+<ul><li><strong>Description:</strong> A description of the DynaForm, which is mainly used by the process designer, since the normal production user will not see the description.</li></ul>
+<ul><li><strong>Width:</strong> The width of the DynaForm in pixels.</li></ul>
+<dl><dd>It is generally recommended that DynaForms not be wider than 700 pixels, so that they can be displayed on older monitors with 800x600 resolution with room for a sidebar and scrollbars. Narrower DynaForms also allow for easier cutting and pasting of information between windows, which is important for processes which involve a great deal of data entry.</dd></dl>
+<ul><li><strong>Mode:</strong> Sets the <i>mode</i> of the fields in the form. In "view" mode, a field is grayed out and the user can not alter the data in the field. In "edit" mode a field has a normal appearance and the user can change its data. There are 3 options:
+<ul><li><strong>Determined by Fields</strong>: The mode of each field is determined by its individual properties. Select this option if planning to set certain fields to "view" mode.</li><li><strong>All Edit</strong>: The default option. All the fields in the DynaForm are automatically set to "edit" mode.</li><li><strong>All View</strong>: All the fields in the DynaForm are automatically set to "view" mode.</li></ul></li></ul>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> The <a href="../index.php/2.0/Common_Field_Properties.html#Read_Only" title="2.0/Common Field Properties">Read Only</a> property is independent from the mode property. Both properties can be used to prevent the user from changing the data in fields, but Read Only does not affect the appearance of the field, while Mode changes its appearance.</font></p>
+<ul><li><div id="NextStepLink"><strong>Next Step Link:</strong><span style="font-size: 13.0080003738403px; line-height: 1.538em;"> This option specifies how the data entered into a DynaForm will be handled when moving to the next step in the task.</span></div></li></ul>
+<div style="margin-left: 20px;"><ul><li><strong>No Save and Continue:</strong> any data entered into the DynaForm will be discarded.</li><li><strong>Next Step:</strong> link without clicking a Submit button on the form to save the data.</li><li><strong>Prompt:</strong> the user will be asked whether the data should be saved or not after clicking the "Next Step" link in the form. The "Save and Continue" option will automatically save any data entered into the form when the "Next Step" link is clicked.</li></ul>
+<p>If using the <strong>No Save and Continue</strong> or <strong>Prompt</strong> options for a DynaForm, it is possible that the user will choose to not save the data. If the data isn't saved, no <a href="../index.php/2.0/Triggers.html#Case_Variables" title="Triggers">case variables</a> will be created for the fields in the DynaForm. An <a href="../index.php/2.0/Processes.html#ConditionError" title="Processes">error can be caused in the process</a> if a subsequent condition or trigger tries to reference a case variable which should have been created when a DynaForm's field was saved.</p>
+<p>If users are given the option to not save their data in a DynaForm, but case variables are needed from the DynaForm fields in subsequent steps, it is a good idea to create a trigger which fires after the DynaForm to create those case variables. For instance, if your case has a checkbox named "Finished_Assignment" and a subsequent evaluation routing rule has the condition <tt><strong>@@Finished_Assignment=="On"</strong></tt>, then you will need to manually create the <tt>@@Finished_Assignment</tt> case variable if the DynaForm wasn't saved. Add the following code to a trigger which fires after the DynaForm:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>Finished_Assignment<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>Finished_Assignment <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>The variable <code>@@Finished_Assignment</code> will be created with an empty string to avoid errors, but it won't equal either "On" or "Off" in case one of the subsequent conditions tests for one of those values.</p></div>
+
+<ul><li><strong>Show print Dynaform button:</strong> Enabling this options shows a <a href="../index.php/2.5.X/DynaForms.html#Printing_Dynaforms">print button</a> in the DynaForm, allowing users to print the Dynaform.</li></ul>
+<ul><li><strong>Adjust the grid width to the width of the main form:</strong></li></ul>
+
+<div class="thumb tright" style="clear: right; float: right; margin-top: 0.5em; margin-bottom: 1.3em; margin-left: 1.4em; width: auto; background-color: transparent;"><div class="thumbinner" style="border: 1px solid rgb(204, 204, 204); font-size: 12px; text-align: center; overflow: hidden; width: 400px; padding: 3px !important; background-color: rgb(249, 249, 249);"><iframe allowfullscreen="true" frameborder="0" height="300" src="http://www.youtube.com/embed/AcBC5fCAxuU?showsearch=0&amp;modestbranding=1" width="400"></iframe>
+<div class="thumbcaption" style="text-align: left; border-style: none; line-height: 1.4em; font-size: 11px; padding: 3px !important;"><div class="thumbcaption" style="border-style: none; line-height: 1.4em; padding: 3px !important;">Adjusting The Grid Width To Fit A Dynaform</div></div></div></div>
+<p>This option allows grid width to be adjusted to the width of the Dynaform master, it means if the Grid is wider than the Dyanform master by selecting this option automatically the width will be adjusted. Click on the "Adjust the grid width of the main form" option displayed on the master form. This option is available from version 2.5.</p>
+<p><img alt="" height="158" src="../sites/default/files/AdjustGridToForm.png" width="365"></p>
+<p>Click on the <strong>Apply</strong> button to immediately apply the changes entered into the <strong>Properties</strong> tab and update the definition of the DynaForm, so the changes can be seen in the other DynaForm Editor tabs.</p>
+<p>To undo the changes entered into the <strong>Properties</strong> tab to the DynaForm definition, click the <strong>Revert</strong> button.</p>
+<h3><span id="Conditions_Editor_tab">Conditions Editor tab</span></h3>
+<p>The <strong>Conditions Editor</strong> is a user-friendly way to <i>show</i> or <i>hide</i> different elements of the DynaForm as the user interacts with the form and changes values in the fields. The Condition Editor allows for forms to be created with dynamic content without having to resort to JavaScript code. Conditions are evaluated whenever specified field(s) are either loaded and/or changed. If the condition evaluates to true, then fields will be shown or hidden depending on which function is selected.</p>
+<h4><span id="Defining_a_Condition">Defining a Condition</span></h4>
+<p>In the DynaForm Editor, go to the <strong>Condition Editor</strong> tab, to see the list of conditions. To create a new condition, click on the "<font color="blue">New"</font> link at the top. The <strong>Conditional Show/Hide Editor </strong>dialog box will appear where the condition can be defined:</p>
+<p><img alt="" height="634" src="../sites/default/files/ConditionalEditor2.5.png" width="654"></p>
+<p>First select one of the functions to either show or hide fields.</p>
+<table><tbody><tr><th>Function</th><th>Description</th></tr><tr><td>Show</td><td>Shows the selected fields, but does not affect any other fields.</td></tr><tr><td>Show Only</td><td>Shows only the selected fields, and hides all other fields in form.</td></tr><tr><td>Show All</td><td>Shows all fields in the DynaForm. (It is not necessary to select any fields.)</td></tr><tr><td>Hide</td><td>Hides the selected fields, but does not affect any other fields.</td></tr><tr><td>Hide Only</td><td>Hides only the selected fields, and shows all other fields in the form.</td></tr><tr><td>Hide All</td><td>Hides all the fields in the DynaForm. (It is not necessary to select any fields.)</td></tr></tbody></table>
+<p>The Show and Hide functions will operate on only the selected fields, but will not affect the visibility of any other fields.</p>
+<p>Next, select which field(s) the function will be applied to. In other words, which fields will be shown or hidden. Highlight one or more fields in the <strong>Applying the function fields</strong> listbox, then click on the <img alt="" height="25" src="../sites/default/files/23px-AddFieldIcon.png"> button to add those fields to the <strong>Selected Fields</strong> listbox. To remove a field from the list of <strong>Selected Fields</strong>, highlight the field and then click on the <img alt="" height="25" src="../sites/default/files/23px-RemoveFieldIcon.png" width="23"> button.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> It is not possible to select fields inside a grid. Use JavaScript to hide these fields. A <a href="http://bugs.processmaker.com/view.php?id=4656">bug</a> currently prevents radiogroups and checkgroups from being hidden.</font></p>
+<p>Next define the condition, which is a <a href="http://en.wikipedia.org/wiki/Boolean_logic#Basic_mathematics_use_of_Boolean_terms">Boolean expression</a> which can evaluate to true or false in JavaScript. If the condition is true, then the function will be executed and show or hide the selected fields. If false, then the function will not be executed, and the appearance of the DynaForm will not change.</p>
+<p>In JavaScript, any string which isn't empty or any non-zero number is considered true.<br>Therefore, the following values evaluate to true: <code>24, 3.14, -42, "HeLlO", "@#$%$%", true</code><br>In contrast, the following values all evaluate to false: <code>0, null, ""</code> (an empty string), <code>false, NaN</code> (Not a Number)</p>
+
+<p>Conditions can either be directly entered into the Condition editing box or the condition can be constructed using the button pad on the right hand side.</p>
+<p>Fields from the DynaForm can be referenced by prepending '@#' to the field name. For example, a field named 'ClientAddress', could be referenced as '@#ClientAddress'. Remember that field names are case sensitive. Rather than writing out the field names, it is easier to use the <strong>[@#]</strong> button to insert the variable names.</p>
+<p><strong>Buttons to construct conditions</strong></p>
+
+<table><tbody><tr><th>Button</th><th>Description</th><th>Example conditions</th></tr><tr><td><center>==</center></td><td>Equals</td><td>@#CurrencyType == "dollars"<br>@#Total == 100<br>@#MyCheckbox == false</td></tr><tr><td><center>!=</center></td><td>Not equals</td><td>@#CurrencyType != "euros"<br>@#Total != 0</td></tr><tr><td><center>&lt;</center></td><td>Less than</td><td>@#Total &lt; 1000<br>@#LastName &lt; "M"</td></tr><tr><td><center>&lt;=</center></td><td>Less than or equal to</td><td>@#SubTotal &lt;= @#Total</td></tr><tr><td><center>&gt;</center></td><td>Greater than</td><td>@#Balance &gt; 0</td></tr><tr><td><center>&gt;=</center></td><td>Greater than or equal to</td><td>Math.sqrt(@#Total) &gt;= 5</td></tr><tr><td><center>+</center></td><td>Addition</td><td>@#Subtotal + @#Taxes &gt; @#AccountLimit<br>@#FirstName + @#LastName != ""</td></tr><tr><td><center>–</center></td><td>Subtraction</td><td>@#Price - @#Discount &gt; 300</td></tr><tr><td><center>*</center></td><td>Multiplication</td><td>@#BasePrice + @#BasePrice * @#TaxRate != @#FinalPrice<br>@#Diameter * Math.PI &lt; 25</td></tr><tr><td><center>/</center></td><td>Division</td><td>@#Total / @#Quantity &lt; 10</td></tr><tr><td><center>(</center></td><td>Begin grouping</td><td>(@#Price - @#Discount) * @#Quantity &lt; @#MinimimOrder</td></tr><tr><td><center>)</center></td><td>End grouping</td><td>(100 + @#Percent) / 100 * @#Price &lt; 900</td></tr><tr><td><center>AND</center></td><td>Both expressions must be true to evaluate to true</td><td>@#Total &gt; 40 &amp;&amp; @#Total &lt; 400<br>@#Total &gt; 0 &amp;&amp; @#PaymentMethod != "credit card"</td></tr><tr><td><center>OR</center></td><td>Only one of the expressions need to be true to evaluate to true</td><td>@#Total &lt; 200 || @#PaymentMethod == "cash"</td></tr><tr><td><center>NOT</center></td><td>Reverse the valence, so true becomes false and false becomes true</td><td>!(@#Address == "")</td></tr><tr><td><center>@#</center></td><td>Insert field</td><td>&nbsp;</td></tr><tr><td><center><img alt="" height="15" src="../sites/default/files/23px-EnterTestValues.png" width="23"></center></td><td>Enter test values in field(s)</td><td>&nbsp;</td></tr></tbody></table>
+
+<p>String values should be enclosed inside double or single quotation marks. Dropdown boxes and listboxes, store the value of the selected option, not the label of the selected option. Checkboxes can either have a value of <tt>true</tt> or <tt>false</tt>. If advanced mathematical operations are needed, use the constants and methods of JavaScript's <a href="http://w3schools.com/jsref/jsref_obj_math.asp">Math object</a>, such as <tt>Math.E, Math.PI, Math.sqrt(), Math.round(),</tt> and <tt>Math.max()</tt>.</p>
+<p>Note that field references will always return the <strong><tt>value</tt></strong> property of the field, except for checkboxes, which return the <strong><tt>checked</tt></strong> property. It is not possible to access any other property of the fields, such as <tt>@#MyField.disabled</tt>; nor is it possible to call any string methods on the fields, such as <tt>@#MyField.toUpperCase()</tt> or <tt>@#MyField.search()</tt>. Since checkgroups and radiogroups, do not have a <strong><tt>value</tt></strong> property, it is not possible to use them inside a condition. It is also not recommended creating a condition which looks for a particular selected value in a listbox, since multiple options can be selected. If using checkgroups, radiogroups or listboxes, it is recommended to use JavaScript to hide and show fields.</p>
+
+<p>After creating a condition, click on <strong>Test Condition</strong> to check whether it is a valid condition. If there is an error in the condition, a message will be displayed in red at the bottom of the condition editing box, indicating what is the problem:</p>
+
+<p><img alt="" height="27" src="../sites/default/files/ConditionFailed.png"></p>
+
+<p>If the condition is valid, a message in green will be indicating whether the condition evaluates to true:</p>
+<p><img alt="" height="25" src="../sites/default/files/ConditionEvaluateTrue.png" width="419"></p>
+<p>or evaluates to false:</p>
+<p><img alt="" height="26" src="../sites/default/files/ConditionEvaluateFalse.png" width="415"></p>
+<p>Testing the condition at this point will be of little help, since the user hasn't entered any data yet. To test the condition with some data, click on the <img alt="" height="15" src="../sites/default/files/23px-EnterTestValues.png" width="23"> button and enter some values into the fields used in the condition. Click on <strong>Save Data</strong> to close the dialog box, then click on <strong>Test Condition</strong> again to reevaluate the condition with the saved data.</p>
+<p>After creating a condition, specify when the condition will be evaluated. If the condition should be evaluated when the selected field(s) are first loaded, i.e., when DynaForm is first displayed, then check the option <strong>On load event</strong>. If the condition should be evaluated when the user changes the value of the selected field(s), then check the option <strong>On change event</strong>.</p>
+<p>Then select which fields whose onload and/or onchange events will cause the condition to be evaluated. One or more fields need to be selected.</p>
+<p>To enable the condition, so it will be evaluated, check the option <strong>Enabled</strong>.</p>
+<h4><span id="Managing_Conditions">Managing Conditions</span></h4>
+<p>After a condition is created, it is added to the list of available conditions.</p>
+<p><img alt="" height="186" src="../sites/default/files/ConditionalEditorManagement2.5.png" width="840"></p>
+<p>To alter a function, click on its <strong>Edit</strong> link. To remove it, click on its <strong>Delete</strong> link.</p>
+<p>The conditions will be evaluated according to their number in the list, with the #1 condition executing first. This makes it possible to use multiple combinations of conditions. For example, one condition could use the Show All function to show all the fields, then a condition lower in the list could use the Hide function to hide a particular field out of all those which were shown.</p>
+<h4><span id="Example_2">Example</span></h4>
+<p>A dynaform is used to get information about users' educational history.</p>
+<p><img alt="" height="222" src="../sites/default/files/SchoolLevelDynaForm.png" width="410"></p>
+<p>If users select "Some grade school", it doesn't make sense to ask for the names of the high school or the universities they attended. Conditions can be used to only show the fields for the level of university attained. See the conditions which were defined in the list above.</p>
+<p><img alt="" height="123" src="../sites/default/files/SchoolLevelGradeSchool.png" width="408"></p>
+<p>When the users select "Bachelors", they are only asked to enter the name of their grade school, high school and the university which granted the bachelors degree.</p>
+<p><img alt="" height="170" src="../sites/default/files/SchoolLevelBachelors.png" width="408"></p>
+<h2><span id="Preventing_Session_Timeout">Preventing Session Timeout</span></h2>
+<div class="thumb tright" style="clear: right; float: right; margin-top: 0.5em; margin-bottom: 1.3em; margin-left: 1.4em; width: auto; background-color: transparent;"><div class="thumbinner" style="border: 1px solid rgb(204, 204, 204); font-size: 12px; text-align: center; overflow: hidden; width: 400px; padding: 3px !important; background-color: rgb(249, 249, 249);"><iframe allowfullscreen="true" frameborder="0" height="300" src="http://www.youtube.com/embed/gZ3MnmI3VDk?showsearch=0&amp;modestbranding=1" width="400"></iframe>
+<div class="thumbcaption" style="text-align: left; border-style: none; line-height: 1.4em; font-size: 11px; padding: 3px !important;"><div class="thumbcaption" style="border-style: none; line-height: 1.4em; padding: 3px !important;">Preventing Session Timeout</div></div></div></div>
+<p><br>It's common to have ProcessMaker session expired, specially when users spend plenty of time editing Dynaforms, and when they are trying to save it, all changes made are lost without any previous warning and usually the following message appears:</p>
+<p><img alt="" height="59" src="../sites/default/files/ErrorSesionExpired.png" width="347"></p>
+<p>When this message appears, users are not able to save the Dynaform, forcing them to lost their session and login again into ProcessMaker</p>
+<p>From version <strong>2.5</strong> when the session expired, users gets a warning, which allows them to save the Dynaform, dispalying the following message:</p>
+<p><img alt="" height="110" src="../sites/default/files/WarningSesionExpired.png" width="302"></p>
+<p>Basically, users need to introduce his password to have the Dynaform saved correctly.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> The session timeout works ONLY with DynaForms, if working with Triggers, Input and Output Documents and the session expires before saving the information, all data will lose.</font></p>
+<h2><span id="Printing_Dynaforms">Printing Dynaforms</span></h2>
+<p>From version 1.2-3862Beta and later, an option is available to print Dynaforms. To enable printing, open the form in the DynaForm Editor and to go the <a href="../index.php/2.5.X/DynaForms.html#Properties_tab">Properties tab</a>. Check the option <strong>Show print dynaform button</strong>. Then, a <img alt="" height="21" src="../sites/default/files/Dynaform_printer.png" style="box-sizing: border-box; font-family: 'Open Sans', sans-serif; font-size: 13px; font-stretch: inherit; line-height: 15.6000003814697px; max-width: 100%; height: auto; outline: 0px; color: rgb(85, 85, 85);" width="19"> icon to print the DynaForm will appear in the upper left corner of the Dynaform.</p>
+<p><img alt="" height="254" src="../sites/default/files/PrintFormOptionDynaForm.png" width="559"></p>
+<p>Clicking on the <img alt="" height="21" src="../sites/default/files/Dynaform_printer.png" width="19"> icon will open the DynaForm in a separate window to be printed. If running a case, information will be listed at the top of the DynaForm about the case number, case title, the process name, the current username, and workspace name. If in preview mode inside the DynaForm Editor, only the process name will be listed. In order to print the DynaForm, the machine running the web browser has to be <a href="../index.php/2.5.X/DynaForms.html#Configure_the_browser_to_print">configured to print</a>.</p>
+<p><img alt="" height="519" src="../sites/default/files/PrintDynaFormWindow2.5.png" width="628"></p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> Only data which is currently saved to the database will be printed. To print the form with its current data, add a <a href="../index.php/2.0/Buttons.html#Button" title="2.0/Buttons">custom button</a> to the DynaForm and use JavaScript to print the form as it currently appears:
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;myPrintButton&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onclick</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> window.<span style="color: #660066;">print</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span></div></div>
+</font></p>
+
+<p>To print the DynaForm with the data which will be saved to the database, use this JavaScript code:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">printForm <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;myPrintButton&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onclick</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> printForm <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span> <span style="color: #009900;">&#125;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;myPrintButton&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">form</span>.<span style="color: #660066;">onsubmit</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>printForm<span style="color: #009900;">&#41;</span> <br />
+&nbsp; &nbsp; &nbsp; window.<span style="color: #660066;">print</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>From version <strong>2.5.2</strong> a message will display when users click over print icon; this message asks users if they want to save current data before printing:</p>
+<p><img alt="" height="333" src="../sites/default/files/SaveDynaformInformationbeforePrinting.png" width="516"></p>
+<ul><li>If clicking in <strong>Accept</strong> button, current Dynaform information will be saved and then the print popup will open.</li><li>If clicking in <strong>Cancel</strong> button, Dynaform information will be saved with the last changes, if the data were added on the Dynaform you want to print without submitting it, information won't be saved and the Dynaform will be printed without those changes.</li></ul>
+<h2><span id="Dyanforms_accessibility">Dyanforms accessibility</span></h2>
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> 2.5 </font></p>
+<p>Improving Dynaforms accessibility, a label control was included from this version providing users an easier access when fields are being filled out. Now users will be able to click over the label of a field and automatically the cursor will be focused on the corresponding field for that label marked it with an orange line, so it won't be necessary to click inside a text field. This is a great improvement to be used also on <strong>mobile phones</strong>.</p>
+<p><img alt="" height="61" src="../sites/default/files/FocusonForm.png" width="596"></p>
+<p>To accomplish this a new tag was added while HTML is generated, this tag allows fields the accessibility mentioned before, this new tag is defined as follows:</p>
+
+<codeblock>
+<strong>&lt;label for="label_name"&gt;</strong>Field_Name<strong>&lt;/label&gt;</strong><i><strong>&lt;input type="" id="label_name"&gt;</strong></i></tt>
+</codeblock>
+
+<p>To check this label, right click on the dynaform an choose <strong>View Page Source</strong> a new window will be open with the HTML generated for that dynaform, look for the field to be checked:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&lt;tr&gt;<br />
+&nbsp; &lt;td class='FormLabel' width=&quot;40%&quot;&gt;&lt;label for=&quot;form[APPLICANT_ID]&quot;&gt;Social Security&lt;/label&gt;&lt;/td&gt;<br />
+&nbsp; &lt;td class='FormFieldContent' width='300' &gt;&lt;input &nbsp;class=&quot;module_app_input___gray&quot; id=&quot;form[APPLICANT_ID]&quot; name=&quot;form[APPLICANT_ID]&quot; type=&quot;text&quot; size=&quot;35&quot; <br />
+maxlength=&quot;64&quot; value=&quot;&quot; style=&quot;&quot; onkeypress=&quot;&quot; &nbsp; pm:fieldtype=&quot;text&quot; pm:decimal_separator=&quot;.&quot; /&gt;&lt;/td&gt;<br />
+&lt;/tr&gt;</div></div>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> Compatibility with all browsers.</font></p></div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/Plugin_Development.html" />
+<link rel="shortlink" href="155.html" />
+<title>2.x - Plugin Development | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"CREdN6auXcJKvQ3S_c6kMQgwrTm192QAyjVIhUTo04E","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-155 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="155.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-zD01r__O6pn4AMAELoF2zkUbd2mPJNgbduWPh552uBg" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.x - Plugin Development</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.x - Plugin Development" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="155.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.x - Plugin Development 1/5</option><option value="40">Give 2.x - Plugin Development 2/5</option><option value="60" selected="selected">Give 2.x - Plugin Development 3/5</option><option value="80">Give 2.x - Plugin Development 4/5</option><option value="100">Give 2.x - Plugin Development 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-lwkUtqw5gH8QRpvg2szxS1hLkNw7ixd9FsLkT1mxaX0" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="155.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="155.html#Overview">Overview</a></li>
+<li class="toc"><a href="155.html#Setting_up_the_gulliver_script">Setting up the <tt>gulliver</tt> script</a></li>
+<li class="toc"><a href="155.html#Using_the_gulliver_script">Using the <tt>gulliver</tt> script</a></li>
+<ol class="toc">
+<li class="toc"><a href="155.html#Creating_a_new_Plugin">Creating a new Plugin</a></li>
+<ol class="toc">
+<li class="toc"><a href="155.html#System_Logo">System Logo</a></li>
+<li class="toc"><a href="155.html#Example_Page">Example Page</a></li>
+<li class="toc"><a href="155.html#Permission_for_Role">Permission for Role</a></li>
+<li class="toc"><a href="155.html#Redirect_after_Login">Redirect after Login</a></li>
+<li class="toc"><a href="155.html#External_Step">External Step</a></li>
+<li class="toc"><a href="155.html#On_Transit_Page">On Transit Page</a></li>
+<li class="toc"><a href="155.html#Dashboard">Dashboard</a></li>
+<li class="toc"><a href="155.html#Report">Report</a></li>
+<li class="toc"><a href="155.html#Plugin_Classes">Plugin Classes</a></li>
+</ol>
+<li class="toc"><a href="155.html#Copying_the_Plugin_files_to_ProcessMaker">Copying the Plugin files to ProcessMaker</a></li>
+<li class="toc"><a href="155.html#Activate_the_New_Plugin">Activate the New Plugin</a></li>
+</ol>
+<li class="toc"><a href="155.html#Altering_the_Database_Structure">Altering the Database Structure</a></li>
+<ol class="toc">
+<li class="toc"><a href="155.html#Editing_Propel_XML_schema_files">Editing Propel XML schema files</a></li>
+<li class="toc"><a href="155.html#Creating_Classes_with_gulliver_propel-build-model">Creating Classes with <tt>gulliver propel-build-model</tt></a></li>
+<li class="toc"><a href="155.html#Creating_SQL_files_with_gulliver_propel-build-sql">Creating SQL files with <tt>gulliver propel-build-sql</tt></a></li>
+<li class="toc"><a href="155.html#Applying_changes_with_gulliver_propel-build-crud">Applying changes with <tt>gulliver propel-build-crud</tt></a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 2.0.36 and earlier. To know the plugin development in ProcessMaker 2.0.36, click this <a href="../index.php/2.0.36/Plugin_Development.html" rel="nofollow">link</a>.</font></p>
+<p>Although the ProcessMaker core is free/libre/open source software which allows the source code to be freely modified, it is not recommended to edit the code, because each version upgrade will overwrite any changes in the code. Instead, it is recommended to develop a plugin if needing to add additional functionality to ProcessMaker and/or customize its interface.</p><p>Plugins are developed using the <strong><tt>gulliver new-plugin</tt></strong> command in a Linux/UNIX server. Plugins cannot be developed in Windows servers, because symbolic links are needed. After the plugin has already been created, it can be exported to other installations of ProcessMaker, including Windows servers.</p><h2><span id="Setting_up_the_gulliver_script">Setting up the <tt>gulliver</tt> script</span></h2><p>ProcessMaker is programmed using a custom PHP development framework named Gulliver. To create a plugin in Gulliver, symbolic links have to first be established in the server where ProcessMaker is installed.</p><p>The <strong><tt>gulliver</tt></strong> script needs to be executed inside the <strong><tt>workflow/engine/gulliver</tt></strong> directory. Login to the ProcessMaker server as the "root" user or a user with administrative powers. Then, make a symbolic link from <strong><tt>&lt;INSTALL-DIRECTORY&gt;/gulliver/bin/gulliver</tt></strong> to <strong><tt>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/gulliver</tt></strong>. For example:</p>
+
+<codeblock># <strong>cd /opt/processmaker/workflow/engine</strong>
+# <strong>ln -s ../../gulliver/bin/gulliver gulliver</strong>
+</codeblock>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> Plugins can not be created on Windows servers, because Windows does not support symbolic links; however, there is an experimental script for Windows servers available at <strong><tt>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/gulliver-win.bat</tt></strong> which can be tested. <!--Please report any problems at: <a href="http://bugs.processmaker.com">http://bugs.processmaker.com</a>--></font></p>
+
+<h2><span id="Using_the_gulliver_script">Using the <tt>gulliver</tt> script</span></h2>
+<p>As the "root" user (or a user with administrative powers), change to the <strong><tt>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/</tt></strong> directory. Then, execute the <strong><tt>./gulliver</tt></strong> command to see a list of the available options.</p>
+<p>For example:</p>
+
+<codeblock># <strong>cd /opt/processmaker/workflow/engine</strong>
+# <strong>./gulliver</strong>
+available pake tasks:
+  <font color="LimeGreen">check-standard-code</font>       &gt; check standard code
+   args: &lt;directory&gt;
+  <font color="LimeGreen">create-poedit-file</font>        &gt; create poedit file for system labels
+   args: [&lt;lang-id&gt; [&lt;country-id&gt; [verbose]]] 
+  <font color="LimeGreen">generate-unit-test-class</font>  &gt; generate a unit test file for an existing class
+   args: &lt;class-filename&gt;
+  <font color="LimeGreen">new-plugin</font>                &gt; build new plugin 
+   args: &lt;name&gt;
+  <font color="LimeGreen">new-project</font>               &gt; build new project 
+   args: &lt;name&gt;
+  <font color="LimeGreen">pack-plugin</font>               &gt; pack plugin in .tar file 
+   args: &lt;plugin&gt;
+  <font color="LimeGreen">propel-build-crud</font>         &gt; generate basic CRUD files for an existing class
+   args: &lt;class-name&gt; &lt;table-name&gt; &lt;pluginName&gt;
+  <font color="LimeGreen">propel-build-db</font>           &gt; create database for current model
+  <font color="LimeGreen">propel-build-model</font>        &gt; create classes for current model
+  <font color="LimeGreen">propel-build-schema</font>       &gt; create schema.xml from existing database
+  <font color="LimeGreen">propel-build-sql</font>          &gt; create sql for current model
+  <font color="LimeGreen">propel-dump-data</font>          &gt; dump data to fixtures directory
+  <font color="LimeGreen">propel-insert-sql</font>         &gt; insert sql for current model
+  <font color="LimeGreen">test-all</font>                  &gt; launch all tests
+  <font color="LimeGreen">test-functional</font>           &gt; launch functional tests for an application
+  <font color="LimeGreen">test-unit</font>                 &gt; launch unit tests
+  <font color="LimeGreen">version</font>                   &gt; gulliver version
+  <font color="LimeGreen">workspace-backup</font>          &gt; backup a workspace
+   args: [-c|--compress] &lt;workspace&gt; [&lt;backup-name&gt;|&lt;backup-filename&gt;]
+  <font color="LimeGreen">workspace-restore</font>         &gt; restore a previously backed-up workspace
+   args: [-o|--overwrite] &lt;filename&gt; &lt;workspace&gt;
+</codeblock>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> The <tt>gulliver</tt> script can only be executed when the current working directory is <tt>workflow/engine/</tt>, so don't try to execute it without first changing to that directory.</font></p>
+
+<h3><span id="Creating_a_new_Plugin">Creating a new Plugin</span></h3>
+<p>To create a new plugin, issue the command:</p>
+
+<codeblock>./gulliver new-plugin <i><strong>pluginName</strong></i>
+</codeblock>
+
+<p>It is recommended that plugin names only use ASCII characters which can easily used in a web address, so no characters like "ë", "Ñ", "?", "%", or " " (space). Also, take care of <strong>NOT</strong> using hyphens in the name of the new plugin ProcessMaker will no import it later. For example, to create a plugin to delete cases:</p>
+
+<codeblock># <strong>./gulliver new-plugin deleteCases</strong>
+using DSN Connection <font color="LimeGreen">mysql://wf_workflow2033:c3s07f98zgyx@localhost:3306/wf_workflow2033?encoding=utf8</font> 
+creating plugin directory <font color="LimeGreen">/opt/plugins/deleteCases</font> 
+saved <font color="LimeGreen">3056</font> bytes in file <font color="LimeGreen">deleteCases/config/schema.xml</font> [<font color="LimeGreen">pluginSchema.xml</font>]
+saved <font color="LimeGreen">2068</font> bytes in file <font color="LimeGreen">deleteCases/config/propel.ini</font> [<font color="LimeGreen">pluginPropel.ini</font>]
+saved <font color="LimeGreen">2062</font> bytes in file <font color="LimeGreen">deleteCases/config/propel.mysql.ini</font> [<font color="LimeGreen">pluginPropel.mysql.ini</font>]
+</codeblock>
+
+<p>The new plugin will be created in a new <strong><tt>plugins/<i>pluginName</i></tt></strong> directory located in the parent directory where ProcessMaker is installed. The new plugin directory will have a minimum of the following <strong><tt>classes</tt></strong>, <strong><tt>config</tt></strong>, <strong><tt>data</tt></strong> and <strong><tt>public_html</tt></strong> subdirectories and 5 code files:</p>
+
+<codeblock>/<i><strong>dir</strong></i>/plugins/
+            /<i><strong>pluginName</strong></i>/
+                        /<i><strong>pluginName</strong></i>.php
+                        /<i><strong>pluginName</strong></i>/                      
+                                    /class.<i><strong>pluginName</strong></i>.php
+                                    /classes/                        
+                                    /config/
+                                           /schema.xml
+                                           /propel.ini
+                                           /propel.mysql.ini  
+                                    /data/
+                                    /public_html/
+</codeblock>
+
+<p>For example, if creating the "deleteCases" plugin in an installation of ProcessMaker at <strong><tt>/opt/processmaker</tt></strong>, then at least the following directories and files will be automatically created:</p>
+
+<codeblock>/opt/plugins/
+            /deleteCases/
+                        /deleteCases.php
+                        /deleteCases/                      
+                                    /class.deleteCases.php
+                                    /classes/                        
+                                    /config/
+                                           /schema.xml
+                                           /propel.ini
+                                           /propel.mysql.ini  
+                                    /data/
+                                    /public_html/
+</codeblock>
+
+<p>The <strong><tt><i>pluginName</i>.php</tt></strong> and <strong><tt>class.<i>pluginName</i>.php</tt></strong> files register the plugin and define a PHP class for the plugin. The <strong><tt>classes</tt></strong> directory holds additional code files for PHP classes defined for the plugin. For more information, see <a href="../index.php/Plugin_Development.html#Plugin_Classes">Plugin Clases</a>.</p>
+<p>The <strong><tt>data</tt></strong> directory holds any data needed to be inserted into the database. The <strong><tt>public_html</tt></strong> directory holds any images, style sheets, JavaScript, and any other files which need to be publicly accessible.</p>
+<p>The <strong><tt>config</tt></strong> directory contains 3 files which define the database tables to hold information for the new plugin. The <strong><tt>config/schema.xml</tt></strong> file defines database table(s) to store information needed by the plugin. The <strong><tt>config/propel.ini</tt></strong> file initializes the configuration variables for <a class="external text" href="http://www.propelorm.org/">Propel</a>, which is a library to map PHP objects to database tables and fields. The<strong><tt>config/propel.mysql.ini</tt></strong> file initializes the configuration variables for the MySQL database used by Propel.</p>
+<p>Then, the <strong><tt>gulliver new-plugin</tt></strong> script will ask a series of yes/no questions about the new plugin. If the response is "y" (yes), then additional files will be created in the new plugin directory and additional code will be added to the pluginName.php file. To better understand the plugin methods used in this file, see the code in <strong><tt>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/class.pluginRegistry.php</tt></strong>.</p>
+<h4><span id="System_Logo">System Logo</span></h4>
+<p>If a new logo (image in the upper, left hand corner of the interface) should be displayed in ProcessMaker, then enter "y" for the following option:</p>
+
+<codeblock>Change system logo [y/N]:
+</codeblock>
+
+<p>Entering "y" will generate the following file:</p>
+
+<codeblock>saved <font color="LimeGreen">750</font> bytes in file <font color="LimeGreen">public_html/deleteCases.png</font> [<font color="LimeGreen">deleteCases.png</font>]
+</codeblock>
+
+<p>A PNG image file will be generated in the plugin's <strong><tt>public_html</tt></strong> directory, such as:</p>
+
+<codeblock>/opt/plugins/deleteCases/deleteCases/public_html/deleteCases.png
+</codeblock>
+
+<p>The image will appear as:</p>
+<p><img alt="" height="50" src="../sites/default/files/PluginImage.png" width="162"></p>
+<p>In addition, the following code will be added to the <strong><tt>plugins/</tt></strong><tt><i>pluginName</i><strong>/</strong><i>pluginName</i><strong>.php</strong></tt> file:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setCompanyLogo</span> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'/plugin/pluginName/pluginName.png'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp;</div></div>
+
+<p>To use a different image, simply place the image file in the <strong><tt>public_html</tt></strong> directory and change the path to reference that new image. For example, if using a logo located at<strong><tt>/opt/plugins/deleteCases/deleteCases/public_html/myCompanyLogo.png</tt></strong>, then change the path to:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setCompanyLogo</span> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'/plugin/deleteCases/myCompanyLogo.png'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span></div></div>
+
+<h4><span id="Example_Page">Example Page</span></h4>
+<p>If the plugin will display a new page in ProcessMaker, then enter "y" for the following option:</p>
+
+<codeblock>Create an example Page [Y/n]:
+</codeblock>
+
+<p>Entering "y" will generate the following 3 sample files which can be used as a model for creating pages in ProcessMaker.</p>
+<p>For example:</p>
+
+<codeblock>saved <font color="LimeGreen">127</font> bytes in file <font color="LimeGreen">deleteCases/menudeleteCases.php</font> [<font color="LimeGreen">pluginMenu</font>]
+saved <font color="LimeGreen">2098</font> bytes in file <font color="LimeGreen">deleteCases/deleteCasesList.php</font> [<font color="LimeGreen">pluginWelcome.php</font>]
+saved <font color="LimeGreen">907</font> bytes in file <font color="LimeGreen">deleteCases/welcome.xml</font> [<font color="LimeGreen">welcome.xml</font>]
+</codeblock>
+
+<p>The <strong><tt><i>pluginName</i>/menu<i>pluginName</i>.php</tt></strong> file contains code to add a new menu to the ProcessMaker interface. By default, clicking on this new menu will display the page generated by the<strong><tt><i>pluginName</i>/<i>pluginName</i>List.php</tt></strong> file, which displays a list of users in a grid. The structure of the grid and its "uid", "name", "age" and "balance" fields are all defined in a sample XML named <strong><tt><i>pluginName</i>/welcome.xml</tt></strong>. Notice that the XML code in this file is very similar to the XML code used for a grid DynaForm.</p>
+<p>This option will display a users list:</p>
+<p><img alt="" height="325" src="../sites/default/files/UsersListExamplePageUsersList.png" width="652"></p>
+<p>In addition, code such as the following will be added to the <strong><tt>plugins/<i>pluginName</i>/<i>pluginName</i>.php</tt></strong> file to register the menu option:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">registerMenu</span><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'setup'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'menudeleteCases.php'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; </div></div>
+  
+<p>By default, the new menu option will be added to the submenu under the top-level <strong>ADMIN</strong> menu (which is called <tt>'setup'</tt>), however, that submenu has been deactivated in version 2.0. To add the menu as an option under the main ProcessMaker menu, change <tt>'setup'</tt> to <tt>'processmaker'</tt>:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">registerMenu</span><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'processmaker'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'menudeleteCases.php'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>For more information, see <a href="../index.php/ProcessMaker_Functions.html#Menus" title="ProcessMaker Functions">ProcessMaker Functions &gt; Menus</a>.</p>
+<p>The following code will also be added to the <strong><tt>menu<i>pluginName</i>.php</tt></strong> file add the new menu to the ProcessMaker interface:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+&nbsp; <span style="color: #000000; font-weight: bold;">global</span> <span style="color: #000088;">$G_TMP_MENU</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000088;">$G_TMP_MENU</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">AddIdRawOption</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'ID_DELETECASES'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'deleteCases/deleteCasesList'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;deleteCases&quot;</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<p>The <a href="../index.php/ProcessMaker_Functions.html#Menu::AddIdRawOption.28.29" title="ProcessMaker Functions">Menu::AddIdRawOption()</a> method is used to add a new menu option to the <tt>$G_TMP_MENU</tt> global variable, which is the default ProcessMaker menu defined in<strong><tt>gulliver/system/class.menu.php</tt></strong>. The parameters of this method can be edited to execute a different file when the user clicks on the menu option and change its text label.</p>
+<p>For example, to make the menu option execute a custom code file located at <strong><tt>/opt/plugins/deleteCases/deleteCases/manageCases.php</tt></strong> and use the text label "Manage Cases" instead of "deleteCases", change the code to:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$G_TMP_MENU</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">AddIdRawOption</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'ID_DELETECASES'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'deleteCases/manageCases'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;Manage Cases&quot;</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h4><span id="Permission_for_Role">Permission for Role</span></h4>
+<p>If the plugin will need to use ProcessMaker's <i>role based access control</i> (RBAC) so that only users with the designated permission in their role will be able to access the plugin and its functionality, then enter "y" for the following option:</p>
+
+<codeblock>Create the Role 'PROCESSMAKER_DELETECASES' and 
+       the Permission 'PM_DELETECASES' [y/N]:
+</codeblock>
+
+<p>Entering "y" will add the following code to the <strong><tt><i>pluginName</i>.php</tt></strong> file to generate a new role:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> install<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$RBAC</span> <span style="color: #339933;">=</span> RBAC<span style="color: #339933;">::</span><span style="color: #004000;">getSingleton</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$RBAC</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">initRBAC</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$roleData</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$roleData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ROL_UID'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> G<span style="color: #339933;">::</span><span style="color: #004000;">GenerateUniqueId</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$roleData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ROL_PARENT'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$roleData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ROL_SYSTEM'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'00000000000000000000000000000002'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$roleData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ROL_CODE'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'PROCESSMAKER_pluginName'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$roleData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ROL_CREATE_DATE'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-d H:i:s'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$roleData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ROL_UPDATE_DATE'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-d H:i:s'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$roleData</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ROL_STATUS'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'1'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$RBAC</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">createRole</span> <span style="color: #009900;">&#40;</span> <span style="color: #000088;">$roleData</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$RBAC</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">createPermission</span> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'PM_pluginName'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp;</div></div>
+ 
+<p>Where <tt>pluginName</tt> is replaced by the name of the plugin in upper case.</p>
+<h4><span id="Redirect_after_Login">Redirect after Login</span></h4>
+<p>To cause users with the plugin's permission in their role to be redirected to a specified page after logging into ProcessMaker, enter "y" at this option:</p>
+
+<codeblock>Create a Redirect Login for the Role 'PROCESSMAKER_<i><strong>pluginName'</strong></i> [y/N]:
+</codeblock>
+
+<p>Entering "y" will add code like the following to the <strong><tt><i>pluginName</i>.php</tt></strong> file:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">redirectLogin</span><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'PROCESSMAKER_DELETECASES'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'users/users_List'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; </div></div>
+  
+<p>By default, the plugin redirects to the user's list, but this can be changed. For example, to redirect to the <strong><tt>plugins/deleteCases/deleteCases/deleteCasesList.php</tt></strong> page on login:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">redirectLogin</span><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'PROCESSMAKER_DELETECASES'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'deleteCases/deleteCasesList.php'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h4><span id="External_Step">External Step</span></h4>
+<p>To create a custom external step for tasks, similar to steps like DynaForms, Input Documents and Output Documents, enter "y" at this option:</p>
+
+<codeblock>Create external step for Processmaker[y/N]:
+</codeblock>
+
+<p>Enter "y" will add a file like the following:</p>
+
+<codeblock>saved <font color="LimeGreen">166</font> bytes in file <font color="LimeGreen">deleteCases/stepdeleteCases.php</font> [<font color="LimeGreen">pluginStep</font>]
+</codeblock>
+
+<p>This file will need to be edited to add the code to handle the external step. In addition, code will be added to the <strong><tt><i>pluginName</i>.php</tt></strong> file, like the following:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">registerStep</span><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'2194269554e95dacc74c6d2077314289'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'stepdeleteCases'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'deleteCases external step'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span></div></div>
+  
+<h4><span id="On_Transit_Page">On Transit Page</span></h4>
+<p>To create a custom "ON_TRANSIT" page with a top-level menu option, which displays lists of cases in a paged table, enter "y" at this option:</p>
+
+<codeblock>Create an "On transit Page" [y/N]:
+</codeblock>
+
+<p>Entering "y" will add files like the following:</p>
+
+<codeblock>saved <font color="LimeGreen">145</font> bytes in file <font color="LimeGreen">deleteCases/menudeleteCasesOnTransit.php</font> [<font color="LimeGreen">pluginMenuOnTransit</font>]
+saved <font color="LimeGreen">1023</font> bytes in file <font color="LimeGreen">deleteCases/deleteCasesOnTransitList.php</font> [<font color="LimeGreen">pluginOnTransitList.php</font>]
+saved <font color="LimeGreen">3795</font> bytes in file <font color="LimeGreen">deleteCases/deleteCasesOnTransitList.xml</font> [<font color="LimeGreen">pluginOnTransitList.xml</font>]
+saved <font color="LimeGreen">3061</font> bytes in file <font color="LimeGreen">pluginPaged-table.html</font>
+</codeblock>
+
+<p>In addition, code will be added to the <strong><tt><i>pluginName</i>.php</tt></strong> file, like the following to add a new menu option to display the custom page when clicked:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">registerMenu</span><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'processmaker'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'menudeleteCasesOnTransit.php'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; </div></div>
+  
+<p>When the plugin is activated, this option will create a top level menu option named "ON_TRANSIT":</p>
+<p><img alt="" height="311" src="../sites/default/files/OnTransitPluginSample.png" width="939"></p>
+<h4><span id="Dashboard">Dashboard</span></h4>
+<p>If the plugin should display a dashboard with information generated by the plugin, then enter "y" at the following option:</p>
+
+<codeblock>Create an element for the Processmaker Dashboard [y/N]:
+</codeblock>
+
+<p>If entering "y", then the following information is created.</p>
+
+<codeblock>saved <font color="LimeGreen">340</font> bytes in file <font color="LimeGreen">deleteCases/drawChart.php</font> [<font color="LimeGreen">pluginDrawChart.php</font>]
+</codeblock>
+
+<p>The <strong><tt>drawChart.php</tt></strong> file code contains sample code to create a table of data that can be used in the dashboard. Note that ProcessMaker version 2.0 no longer has the dashboard feature, so the plugin designer will have to manually create the page to display the dashboard.</p>
+<p>In addition, the following code is added to the <strong><tt><i>pluginName</i>.php</tt></strong> file:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">registerDashboard</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; </div></div>
+  
+<p>This option also adds the <tt>getAvailableCharts()</tt>, <tt>getChart()</tt>, <tt>getdeleteCasesChart()</tt>, <tt>deleteCasesChart()</tt> methods to the <tt><i>pluginName</i>Class</tt> class defined in the <strong><tt>class.<i>pluginName</i>.php</tt></strong> file.</p>
+
+<h4><span id="Report">Report</span></h4>
+<p>To add a custom DynaForm to display a report about the plugin in the dashboard, enter "y" at this option:</p>
+
+<codeblock>Create a Report for Processmaker [y/N]:
+</codeblock>
+
+<p>Entering "y" will create a file like:</p>
+
+<codeblock>saved <font color="LimeGreen">564</font> bytes in file <font color="LimeGreen">deleteCases/report.xml</font> [<font color="LimeGreen">pluginReport.xml</font>]
+</codeblock>
+
+<p>The <strong><tt><i>pluginName</i>/report.xml</tt></strong> file contains sample XML code to display a report about the plugin. By default, it contains fields to display information about a user.</p>
+<p>In addition, the following code is added to the <strong><tt><i>pluginName</i>.php</tt></strong> file:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">registerReport</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; </div></div>
+  
+<p>This option also adds the <tt>getAvailableReports()</tt>, <tt>getReport()</tt> and <tt><i>pluginName</i>Report_1()</tt> methods to the <tt><i>pluginName</i>Class</tt> class defined in the <strong><tt>class.<i>pluginName</i>.php</tt></strong> file.</p>
+<h4><span id="Plugin_Classes">Plugin Classes</span></h4>
+<p>The last option sets the configuration, classes, and additional functions for the plugin:</p>
+
+<codeblock>Create a PmFunction Class for extend Processmaker [y/N]:
+</codeblock>
+
+<p>Regardless of whether entering "y" or "n", files like the following will be created:</p>
+
+<codeblock>saved <font color="LimeGreen">1760</font> bytes in file <font color="LimeGreen">deleteCases.php</font> [<font color="LimeGreen">pluginMainFile</font>]
+saved <font color="LimeGreen">5263</font> bytes in file <font color="LimeGreen">deleteCases/class.deleteCases.php</font> [<font color="LimeGreen">pluginClass</font>]
+</codeblock>
+
+<p>The <strong><tt><i>pluginName</i>.php</tt></strong> file defines a class for the plugin named <tt><i>pluginName</i>Plugin</tt>, which is based upon the <tt>PMPlugin</tt> class, which is defined in<strong><tt>workflow/engine/classes/class.plugin.php</tt></strong>. This class sets up the plugin and registers it in ProcessMaker. The contents of the <tt>setup()</tt> and <tt>install()</tt> methods depend on which of the previous options were selected, but at a minimum this file contains code like:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+G<span style="color: #339933;">::</span><span style="color: #004000;">LoadClass</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'plugin'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #000000; font-weight: bold;">class</span> deleteCasesPlugin <span style="color: #000000; font-weight: bold;">extends</span> PMPlugin<br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000000; font-weight: bold;">function</span> deleteCasesPlugin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$sNamespace</span><span style="color: #339933;">,</span> <span style="color: #000088;">$sFilename</span> <span style="color: #339933;">=</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$res</span> <span style="color: #339933;">=</span> parent<span style="color: #339933;">::</span><span style="color: #004000;">PMPlugin</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$sNamespace</span><span style="color: #339933;">,</span> <span style="color: #000088;">$sFilename</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">sFriendlyName</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'deleteCases Plugin'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">sDescription</span> &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">'Autogenerated plugin for class deleteCases'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">sPluginFolder</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'deleteCases'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">sSetupPage</span> &nbsp; &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">'deleteCases'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">iVersion</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=</span> <span style="color:#800080;">0.78</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//$this-&gt;iPMVersion &nbsp; &nbsp;= 2425;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">aWorkspaces</span> &nbsp; <span style="color: #339933;">=</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//$this-&gt;aWorkspaces = array('os');</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">return</span> <span style="color: #000088;">$res</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+&nbsp; <span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+&nbsp; <span style="color: #000000; font-weight: bold;">function</span> install<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$oPluginRegistry</span> <span style="color: #339933;">=&amp;</span> PMPluginRegistry<span style="color: #339933;">::</span><span style="color: #004000;">getSingleton</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oPluginRegistry</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">registerPlugin</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'deleteCases'</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">__FILE__</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>The <strong><tt><i>pluginName</i>/class.<i>pluginName</i>.php</tt></strong> file defines the <tt><i>pluginName</i>Class</tt> class, which is also based upon the <tt>PMPlugin</tt> class. Its define methods also depend upon the previous selected options, but at a minimum it contains:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #009933; font-style: italic;">/**<br />
+&nbsp;* class.deleteCases.php<br />
+&nbsp;* &nbsp;<br />
+&nbsp;*/</span><br />
+&nbsp; <span style="color: #000000; font-weight: bold;">class</span> deleteCasesClass <span style="color: #000000; font-weight: bold;">extends</span> PMPlugin &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; <span style="color: #000000; font-weight: bold;">function</span> __construct <span style="color: #009900;">&#40;</span> &nbsp;<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/set_include_path"><span style="color: #990000;">set_include_path</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; PATH_PLUGINS <span style="color: #339933;">.</span> <span style="color: #0000ff;">'noOptions'</span> <span style="color: #339933;">.</span> PATH_SEPARATOR <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://php.net/get_include_path"><span style="color: #990000;">get_include_path</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; <span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+&nbsp; <span style="color: #009900;">&#125;</span></div></div>
+  
+<p>If "y" was entered, then in addition to the above files, the following file will also be created:</p>
+
+<codeblock>saved <font color="LimeGreen">484</font> bytes in file <font color="LimeGreen">deleteCases/classes/class.pmFunctions.php</font> [<font color="LimeGreen">class.pmFunctions.php</font>]
+</codeblock>
+
+<p>The <strong><tt><i>pluginName</i>/classes/class.pmFunctions.php</tt></strong> file is used to define any special functions for the plugin, which can be called from inside a trigger like a normal <a href="../index.php/ProcessMaker_Functions.html" title="ProcessMaker Functions">ProcessMaker Functions</a>. These custom functions can be given any name, but the convention is use names like <tt><i>pluginName</i>_<i>function-name</i>()</tt>, so they can easily be distinguished from the standard ProcessMaker and PHP functions used in triggers.</p>
+<p>The following code is also added to the <strong><tt><i>pluginName</i>.php</tt></strong> file to incorporate the plugin's custom functions into ProcessMaker:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000000; font-weight: bold;">function</span> setup<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">registerPmFunction</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; </div></div>
+  
+<h3><span id="Copying_the_Plugin_files_to_ProcessMaker">Copying the Plugin files to ProcessMaker</span></h3>
+<p>After using the <strong><tt>gulliver new-plugin</tt></strong> script to create the new plugin, copy its directory and its <strong><tt><i>pluginName</i>.php</tt></strong> file into the <strong><tt>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/plugins/</tt></strong>directory. For example:</tt></p>
+
+<codeblock>cp -r /opt/plugins/deleteCases/* /opt/processmaker/workflow/engine/plugins  
+</codeblock>
+
+<p>If not wishing to copy the files, another alternative is to create symbolic links to the <strong><tt>workflow/engine/plugins</tt></strong> directory.</tt></p>
+<h3><span id="Activate_the_New_Plugin">Activate the New Plugin</span></h3>
+<p>After linking or copying the plugin's files into the ProcessMaker file system, then login to ProcessMaker as the "admin" user (or another user with the PM_SETUPADVANCED permission in his/her role). Go to <strong>ADMIN &gt; Plugins &gt; Plugin Manager</strong> and select the new plugin which should appear in the list. Then, click on the "Enable" button to activate the plugin.</tt></p>
+<p><img alt="" height="119" src="../sites/default/files/EnablingPlugin.png" width="806"></tt></p>
+<p>The new plugin should now be ready to be used. To see any new changes to the interface (such as new menus), refresh the web browser.</tt></p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> Each time that the menu is changed in the plugin's files, the plugin will need to be deactivated and then reactivated for those changes to appear in the ProcessMaker interface.</font></tt></p>
+
+<h2><span id="Altering_the_Database_Structure">Altering the Database Structure</span></h2>
+<p>Plugins can be used to alter the structure of the database(s) used by ProcessMaker. To add tables and/or tables to a database, complete these steps in order:</tt></p>
+<ol><li>Edit the Propel XML schema file to define the additional tables and/or fields</li><li>Run the gulliver propel-build-model script to construct Propel Cases for the data objects.</li><li>Run the gulliver propel-build-sql script to generate the SQL files to alter the database.</li><li>Run the gulliver propel-build-crud for each table to update the database.</li></ol>
+
+<h3><span id="Editing_Propel_XML_schema_files">Editing Propel XML schema files</span></h3>
+<p>Changes are made to the ProcessMaker database(s) through the XML schema file located at <strong><tt>plugins/<i>pluginName</i>/<i>pluginName</i>/config/schema.xml</tt></strong>, which is generated by the<strong><tt>gulliver new-plugin</tt></strong> script.</tt></p>
+
+<p>Edit the <strong><tt>schema.xml</tt></strong> file to add the tables and fields used by the plugin. By default, it contains:</tt></p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;utf-8&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span><br />
+<span style="color: #808080; font-style: italic;">&lt;!--Autogenerated by CreoleToXMLSchema!--&gt;</span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;DATABASE</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;workflow&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;TABLE</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PLUGIN_DEMO&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;vendor</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;mysql&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Name&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;PLUGIN_DEMO&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Engine&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;MyISAM&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Version&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;10&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Row_format&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;Dynamic&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Auto_increment&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Collation&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;utf8_general_ci&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Create_options&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Comment&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;The plugin demo table for deleteCases&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/vendor<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;COLUMN</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PLG_UID&quot;</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;VARCHAR&quot;</span> <span style="color: #000066;">SIZE</span>=<span style="color: #ff0000;">&quot;32&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">primaryKey</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">DEFAULT</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;vendor</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;mysql&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Field&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;PLG_UID&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Type&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;varchar(32)&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Null&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;NO&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Key&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;PRI&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Default&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Extra&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/vendor<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/column<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;COLUMN</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PLG_PARENT_ID&quot;</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;INTEGER&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">DEFAULT</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;vendor</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;mysql&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Field&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;PLG_PARENT_ID&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Type&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;int(11)&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Null&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;NO&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Key&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Default&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Extra&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/vendor<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/column<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;COLUMN</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PLG_NAME&quot;</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;VARCHAR&quot;</span> <span style="color: #000066;">SIZE</span>=<span style="color: #ff0000;">&quot;100&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">DEFAULT</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;vendor</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;mysql&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Field&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;PLG_FOLDER_NAME&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Type&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;varchar(100)&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Null&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;NO&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Key&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Default&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Extra&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/vendor<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/column<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;COLUMN</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PLG_FULL_PATH&quot;</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;VARCHAR&quot;</span> <span style="color: #000066;">SIZE</span>=<span style="color: #ff0000;">&quot;255&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">DEFAULT</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;vendor</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;mysql&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Field&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;PLG_FULL_PATH&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Type&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;varchar(255)&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Null&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;NO&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Key&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Default&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Extra&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/vendor<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/column<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;INDEX</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;indexApp&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;index-COLUMN</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PLG_UID&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;vendor</span> <span style="color: #000066;">TYPE</span>=<span style="color: #ff0000;">&quot;mysql&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Table&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;PLUGU&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Non_unique&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;1&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Key_name&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;indexApp&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Seq_in_index&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;1&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Column_name&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;PLUGIN_DEMO&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Collation&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;A&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Cardinality&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;6&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Sub_part&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Packed&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Null&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Index_type&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;BTREE&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Comment&quot;</span> <span style="color: #000066;">VALUE</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/vendor<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/index<span style="color: #000000; font-weight: bold;">&gt;</span></span></span> &nbsp; &nbsp;<br />
+&nbsp; <span style="color: #009900;">&lt; &nbsp;able<span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/database<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>To add tables and/or fields to a database, first indicate which database they should be added to in the <tt>&lt;database name="<i><strong>db-name</strong></i>"&gt;</tt> tag. The <i><strong>db-name</strong></i> is one of the databases for the current workspace:</p>
+<ul><li>"workflow" : <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database</li><li>"rbac" : <strong><tt>rb_&lt;WORKSPACE&gt;</tt></strong> database</li><li>"report" : <strong><tt>rp_&lt;WORKSPACE&gt;</tt></strong> database</li></ul>
+
+<p>The <tt>&lt;table name="<i><strong>table-name</strong></i>"&gt;</tt> tag is used to indicate the name of the table to modify. The <tt>"<i><strong>table-name</strong></i>"</tt> can either be a new table or an existing table in the database. Remember that MySQL table names are case sensitive in Linux/UNIX, but not in Windows. Make sure that the same <tt><i><strong>table-name</strong></i></tt> is used in the tag: <tt>&lt;parameter name="Name" value="<i><strong>table-name</strong></i>"/&gt; </tt></p>
+<p>Fields in each table are defined with the <tt>&lt;column name="<i><strong>field-name</strong></i>"&gt;</tt> tag. The properties for each field can be defined inside the <tt>&lt;column name="<i><strong>field-name</strong></i>" '<i><strong>properties'</strong></i>/&gt;</tt> or through separate <tt>&lt;parameter name="<i><strong>property-name</strong></i>" value="<i><strong>property-value</strong></i>"/&gt;</tt> tags. For example, this XML: </p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;column</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PLG_UID&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;VARCHAR&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;32&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">primaryKey</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">default</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span></div></div>
+
+<p> Creates the same "PLG_UID" field as this XML: </p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;column</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PLG_UID&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Field&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;PLG_UID&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Type&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;varchar(32)&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Null&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;NO&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Key&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;PRI&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Default&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;parameter</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Extra&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/column<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p> The sample <strong><tt>schema.xml</tt></strong> file created by the <strong><tt>gulliver new-plugin</tt></strong> script duplicates the definition of each field property, but that duplication is unnecessary and is not recommended. For more information about Propel XML schema files, see the <a class="external text" href="http://www.propelorm.org/reference/schema.html">Propel Manual</a>. For more examples of XML schema files, see the following files which define the <strong><tt>&lt;wf_&lt;WORKSPACE&gt;</tt></strong> and<strong><tt>rp_&lt;WORKSPACE&gt;</tt></strong> databases for ProcessMaker: </p>
+<ul><li> <tt>&lt;INSTALL-DIRECTORY&gt;/rbac/engine/config/schema.xml </tt></li><li> <tt>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/config/schema.xml </tt></li></ul>
+<h3> <span id="Creating_Classes_with_gulliver_propel-build-model">Creating Classes with <tt>gulliver propel-build-model</tt></span> </h3>
+<p> After editing the <strong><tt>config/schema.xml</tt></strong> file, the run the following script to generate the Propel classes for the tables defined in the schema file: </p>
+
+<codeblock> ./gulliver propel-build-model &lt;pluginName&gt;
+ </codeblock>
+
+<p> For example: </p>
+
+<codeblock> # ./gulliver propel-build-model deleteCases
+&gt;&gt; propel.ini using the file : plugins/deleteCases/config/propel.ini 
+Buildfile: /opt/processmaker/gulliver/thirdparty/propel-generator/build.xml
+[resolvepath] Resolved /opt/processmaker/workflow/engine/plugins/deleteCases/config to /opt/pm2033/workflow/engine/plugins/deleteCases/config
+
+propel-project-builder &gt; check-project-or-dir-set:
+propel-project-builder &gt; check-project-set:
+propel-project-builder &gt; set-project-dir:
+propel-project-builder &gt; check-buildprops-exists:
+propel-project-builder &gt; check-buildprops-for-propel-gen:
+propel-project-builder &gt; check-buildprops:
+propel-project-builder &gt; configure:
+     [echo] Loading project-specific props from /opt/processmaker/workflow/engine/plugins/deleteCases/config/propel.ini
+ [property] Loading /opt/processmaker/workflow/engine/plugins/deleteCases/config/propel.ini
+
+propel-project-builder &gt; om:
+    [phing] Calling Buildfile '/opt/processmaker/gulliver/thirdparty/propel-generator/build-propel.xml' with target 'om'
+ [property] Loading /opt/processmaker/gulliver/thirdparty/propel-generator/./default.properties
+
+propel &gt; check-run-only-on-schema-change:
+propel &gt; om-check:
+propel &gt; om:
+     [echo] +------------------------------------------+
+     [echo] |                                          |
+     [echo] | Generating Peer-based Object Model for   |
+     [echo] | YOUR Propel project! (NEW OM BUILDERS)!  |
+     [echo] |                                          |
+     [echo] +------------------------------------------+
+[phingcall] Calling Buildfile '/opt/processmaker/gulliver/thirdparty/propel-generator/build-propel.xml' with target 'om-template'
+ [property] Loading /opt/processmaker/gulliver/thirdparty/propel-generator/./default.properties
+
+propel &gt; om-template:
+[propel-om] Target database type: mysql
+[propel-om] Target package: classes.model
+[propel-om] Using template path: /opt/processmaker/gulliver/thirdparty/propel-generator/templates
+[propel-om] Output directory: /opt/processmaker/workflow/engine/plugins/deleteCases
+[propel-om] Processing: schema.xml
+[propel-om] Processing Datamodel : JoinedDataModel
+[propel-om]   - processing database : workflow
+[propel-om] 	+ PLUGIN_DEMO
+[propel-om] 		-&gt; BasePluginDemoPeer [builder: PHP5ComplexPeerBuilder]
+[propel-om] 		-&gt; BasePluginDemo [builder: PHP5ComplexObjectBuilder]
+[propel-om] 		-&gt; PluginDemoMapBuilder [builder: PHP5MapBuilderBuilder]
+[propel-om] 		-&gt; (exists) PluginDemoPeer
+[propel-om] 		-&gt; (exists) PluginDemo
+
+BUILD FINISHED
+
+Total time: 0.2184 seconds
+ </codeblock>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> The <tt>gulliver propel-build-model</tt> script needs to have the XSL module installed in PHP for XSLT parsing. To install it: </font></p>
+<div style="font-family: sans-serif; font-size: 12.6999998092651px; line-height: 19.0499992370605px; margin-left: 20px;"><p> In Debian/Ubuntu: </p>
+
+<codeblock> apt-get install php5-xls
+ </codeblock>
+
+<p> In Red Hat/CentOS/Fedora: </p>
+
+<codeblock> yum install php-xml
+ </codeblock>
+</div>
+
+<h3> <span id="Creating_SQL_files_with_gulliver_propel-build-sql">Creating SQL files with <tt>gulliver propel-build-sql</tt></span> </h3>
+<p> After generating the Propel classes, then create the SQL files which will insert new tables/files in the database: </p>
+
+<codeblock> ./gulliver propel-build-sql &lt;db-type&gt; &lt;pluginName&gt;
+ </codeblock>
+
+<h3> <span id="Applying_changes_with_gulliver_propel-build-crud">Applying changes with <tt>gulliver propel-build-crud</tt></span> </h3>
+<p> After generating the SQL files, apply the database changes for each new or altered table: </p>
+
+<codeblock> ./gulliver propel-build-crud &lt;class&gt; &lt;table&gt; &lt;pluginName&gt; </codeblock>
+
+<p> <tt><pluginName> </pluginName> </p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../../index.php/ProcessMaker_PowerUp.html" />
+<link rel="shortlink" href="../2.html" />
+<title>2.x - PowerUp Plugin | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"usPIPkHy0_2n7_FdHQO7-IazwMxwlnhNX3Kg0c9UBHM","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-20 page-node-managing-users node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../../index.html" title="Home"><img src="../../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Managing_Users.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-ZGqtoh2YJvg_Pi_A3h-ZyTmonTFZmzn0lzzwMrG2JbU" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.x - PowerUp Plugin</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../../3.0/PowerUp.html" class="">3.8</a></li><li><a href="../../3.0/PowerUp.html" class="">3.7</a></li><li><a href="../../3.0/PowerUp.html" class="">3.6</a></li><li><a href="../../3.0/PowerUp.html" class="">3.5</a></li><li><a href="../../3.0/PowerUp.html" class="">3.4</a></li><li><a href="../../3.0/PowerUp.html" class="">3.3</a></li><li><a href="../../3.0/PowerUp.html" class="">3.2</a></li><li><a href="../../3.0/PowerUp.html" class="">3.1</a></li><li><a href="../../3.0/PowerUp.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.x - PowerUp Plugin" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Managing_Users.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.x - PowerUp Plugin 1/5</option><option value="40" selected="selected">Give 2.x - PowerUp Plugin 2/5</option><option value="60">Give 2.x - PowerUp Plugin 3/5</option><option value="80">Give 2.x - PowerUp Plugin 4/5</option><option value="100">Give 2.x - PowerUp Plugin 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-F6l3DZTxbMqlGXmmXsyF3308AGV3f4UwZ_-hoHDU9Vw" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Managing_Users.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Overview">Overview</a></li>
+<li class="toc"><a href="Managing_Users.html#Requirements">Requirements</a></li>
+<li class="toc"><a href="Managing_Users.html#Browser_Compatibility">Browser Compatibility</a></li>
+<li class="toc"><a href="Managing_Users.html#Advanced_Triggers">Advanced Triggers</a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#PMFCloneAndRestartCase.28.29">PMFCloneAndRestartCase()</a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example">Example</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFCrudTable.28.29"><tt>PMFCrudTable()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_2">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_1:_Inserting_a_record_in_a_table">Example 1: Inserting a record in a table</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_2:_Updating_a_record_in_a_table">Example 2: Updating a record in a table</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_3:_Deleting_a_record_in_a_table">Example 3: Deleting a record in a table</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFGeneratePdf.28.29"><tt>PMFGeneratePdf()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_3">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_2">Example</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFGetCaseNumber.28.29"><tt>PMFGetCaseNumber()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_4">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_3">Example</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFGetFieldsOfDynaform.28.29"><tt>PMFGetFieldsOfDynaform()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_5">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_4">Example</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFGetGroupsOfUser.28.29"><tt>PMFGetGroupsOfUser()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_6">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_5">Example</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFGetInputsDocumentsOfCase.28.29"><tt>PMFGetInputsDocumentsOfCase()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_7">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_6">Example</a></li>
+<li class="toc"><a href="Managing_Users.html#Create_a_download_link">Create a download link</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFGetRolUser.28.29"><tt>PMFGetRolUser()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_8">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_7">Example</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFGetUserReportsTo.28.29"><tt>PMFGetUserReportsTo()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_9">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_8">Example</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFGetUsersOfTask.28.29"><tt>PMFGetUsersOfTask()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_10">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_9">Example</a></li>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFLoadGrid.28.29"><tt>PMFLoadGrid()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_11">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Examples">Examples</a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Using_a_table_name">Using a table name</a></li>
+<li class="toc"><a href="Managing_Users.html#Using_a_query">Using a query</a></li>
+<li class="toc"><a href="Managing_Users.html#Different_field_names_in_grids_.26_tables">Different field names in grids &amp; tables</a></li>
+<li class="toc"><a href="Managing_Users.html#Ordering_data_by_a_specific_field">Ordering data by a specific field</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="Managing_Users.html#PMFSetOnVacation.28.29"><tt>PMFSetOnVacation()</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="Managing_Users.html#Function_Definition_12">Function Definition</a></li>
+<li class="toc"><a href="Managing_Users.html#Example_10">Example</a></li>
+</ol>
+</div></div>
+
+
+<p><img alt="" height="16" src="../../sites/default/files/faviconpm_18.png" style="font-size: 13.0080003738403px; line-height: 20.0063037872314px;" width="16">&nbsp;<span style="color: green; font-size: 10pt"><strong>Plugin Version:</strong></span> <strong>2.5.0</strong> | <a href="../../index.php/ReleaseNotes_PowerUp_Plugin2.5.0.html" title="ReleaseNotes PowerUp Plugin2.5.0"><font color="#0B57AF">Release Notes</font></a> | <a  href="https://docs.google.com/document/d/1tPrznV-ZAARXtIp5d2cptcQkLJdLJyH1U2qusCNaQxI/edit?usp=sharing">Downloadable version</a></p>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>The PowerUp plugin includes 12 extra functions, which improve the generation of PDF documents, load the data inside a grid, reassign the cases of a user who is on vacation, among others. These extra functions making coding triggers easier and simpler, since they allow process designers to avoid using complicated internal classes and complex database queries.</p>
+<p>In addition, the PowerUp plugin includes <a href="../../index.php/ProcessMaker_PowerUp_Extended_Fields.html" title="ProcessMaker PowerUp Extended Fields">3 new fields</a>, which can be used to improve existing DynaForms.</p>
+
+<h2><span id="Requirements">Requirements</span></h2><ul><li>ProcessMaker v2.5.x or higher (stable version + available <a href="../../index.php/ProcessMaker_Hotfixes.html" title="ProcessMaker Hotfixes">hotfix</a>)</li></ul><ul><li>Enterprise Plugin v2.0.17 or higher (stable version + available <a href="../../index.php/ProcessMaker_Hotfixes.html" title="ProcessMaker Hotfixes">hotfix</a>)</li></ul>
+
+<h2><span id="Browser_Compatibility">Browser Compatibility</span></h2>
+<p>This plugin has been tested on:</p><ul><li>Firefox v.26</li><li>Chrome V.31</li><li>Internet Explorer v. 8 and 9</li></ul>
+
+<h2><span id="Advanced_Triggers">Advanced Triggers</span></h2>
+<h3><span id="PMFCloneAndRestartCase.28.29">PMFCloneAndRestartCase()</span></h3><p><tt><strong>PMFCloneAndRestartCase()</strong></tt> makes an identical copy of a specified case, including all the data generated in the case. The copy of the case will be stored in the <strong>DRAFT</strong> folder. The status of the original case can changed to <tt>CANCELLED</tt> or <tt>PAUSED</tt>.</p><p><font color="green"><strong>Note:</strong></font> <font color="dimgrey"><a href="../../index.php/2.0/Triggers.html#System_Variables_in_Triggers" title="2.0/Triggers">System Variables</a>, <a href="../../index.php/2.0/Input_Documents.html" title="2.0/Input Documents">Input Documents</a>, <a href="../../index.php/Output_Documents.html" title="2.0/Output Documents">Output Documents</a> and <a href="../../index.php/2.0/Case_Notes.html" title="2.0/Case Notes">Case Notes</a> won't be copied when the case is cloned. <tt>PMFCloneAndRestartCase()</tt> only clones the case variables stored in the <tt>&lt;WORKSPACE&gt;.APPLICATION.APP_DATA</tt> field.</font></p>
+
+<h4><span id="Function_Definition">Function Definition</span></h4>
+<codeblock><i>int</i> <strong>PMFCloneAndRestartCase</strong> string appUid, string statusCurrentCase='', string unPauseDate='')
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string</i> <strong>appUid:</strong> The unique ID of the case to be cloned. To clone the current case, use the system variable <tt>@@APPLICATION</tt>.</li><li><tt><i>string</i> <strong>statusCurrentCase</strong></tt>: <i>Optional parameter.</i> Set the status of the original case, which can be <tt>'PAUSED'</tt> or <tt>'CANCELLED'</tt>. If not included or set to <tt>''</tt> (empty string), then the status of the original case will not change.</li><li><tt><i>string</i> <strong>unPauseDate</strong></tt>: <i>Optional parameter</i>. If the status of the original case is set to 'PAUSED', then the date when it will be unpaused on the specified date. Use the <tt>YYYY-MM-DD</tt> format, so July 1, 2015, would be <tt>'2015-07-01'</tt> If this parameter isn't included or set to <tt>''</tt> (empty string), then the original case will be paused indefinitely until it is manually unpaused.</li></ul>
+<p><strong>Return value:</strong></p>
+<ul><li><tt><i>int</i></tt>. It returns the case number for the new case which was created.</li></ul>
+<p>If <tt>appUid</tt> is empty, <tt>PMFCloneAndRestartCase()</tt> returns <tt>false</tt>. If <tt>appUid</tt> isn't a valid case ID, then the function is caught by an exception and <tt>@@__ERROR__</tt> will contain the message "The Application row '&lt;CASE-UID&gt;' doesn't exist!". To <a href="../../index.php/2.0/Triggers.html#Preventing_Halts_in_Trigger_Execution" title="2.0/Triggers">handle the exception</a>, the function should be enclosed in a <tt>try{...} catch{...}</tt> clause.</p>
+<h4><span id="Example">Example</span></h4>
+<p>Create a trigger which clones the current case. Open a process for editing and go to the <strong>TRIGGERS</strong> tab. Click on <strong>"New"</strong> and expand <strong>ProcessMaker Advanced Triggers</strong>, then select <i>"Create a new case based on the data of an already existing case (PMFCloneAndRestartCase)"</i>.</p>
+<p><img alt="" height="90" src="../../sites/default/files/PowerUPPMFCloneAndRestartCaseOption.png" width="551"></p>
+<p>Fill in the following parameters for the function:</p>
+<p><img alt="" height="547" src="../../sites/default/files/PowerUpCopyandCloneCreationExample.png" width="592"></p>
+<p>The function definition will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span><span style="color: #b1b100;">return</span> <span style="color: #339933;">=</span> PMFCloneAndRestartCase <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>This example uses the system variable <tt>@@APPLICATION</tt>, so the current case which is #202 will be cloned:</p>
+<p><img alt="" height="324" src="../../sites/default/files/StartingaCaseClone.png" width="578"></p>
+<p>When checked in the the ProcessMaker debugger, a new case, whose case number is <tt>203</tt> was created:</p>
+<p><img alt="" height="282" src="../../sites/default/files/ClonCaseDebugPowerUp.png" width="312"></p>
+<p>Both the original and the cloned cases are now found in the <a href="../../index.php/2.0/Cases.html#Draft" title="2.0/Cases">Draft folder</a></p>
+<p><img alt="" height="108" src="../../sites/default/files/ClonCaseCreated.png" width="754"></p>
+
+<h3><span id="PMFCrudTable.28.29"><tt>PMFCrudTable()</tt></span></h3>
+<p><tt>PMFCrudTable()</tt> inserts, updates or deletes a single record in a MySQL table. This function can be used with any MySQL table, including <a href="../../index.php/PM_Tables.html" title="2.0/PM Tables">PMtables</a> and Report Tables, but it will not work with any other type of database.</p>
+<h4><span id="Function_Definition_2">Function Definition</span></h4>
+
+<codeblock><i>int</i> <strong>PMFCrudTable</strong>(<i>string</i> option, <i>string</i> table, <i>string</i> data=null, <i>string</i> idtable='', <i>string</i> dbConectionUid='workflow')
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>option</strong></tt>. Define the type of SQL operation to execute. Possible values: <tt>'insert'</tt>, <tt>'update'</tt> or <tt>'delete'</tt></li><li><tt><i>string</i> <strong>table</strong></tt>. Name of the table where the operation will take place. Note that MySQL table names are case sensitive by default in Linux/UNIX, but not case sensitive in Windows.</li><li><tt><i>array</i> <strong>data</strong></tt>. <i>Optional parameter</i>. Leave this parameter blank for delete operations. For insert and update operations, define an array of values which will be inserted or updated:</li></ul>
+<dl><dd><dl><dd><tt>array('value1', 'value2', ...)</tt></dd></dl></dd><dd>Do not include values for fields which are auto-incremented and make sure that the values are listed in the same order as they are defined in the table. If the value is input by the user or it might contain single quotation marks, use <a class="external text" href="http://php.net/manual/en/function.mysql-real-escape-string.php" rel="nofollow">mysql_real_escape_string()</a> to escape single quotation marks and prevent SQL injection attacks. See the example below.</dd></dl>
+<ul><li><tt><i>string</i> <strong>idTable</strong></tt>. <i>Optional parameter</i>. The unique identifier of the record to be affected. This must be the value found in the <i>primary key</i> field of the table. This value must be specified for delete and update operations. For insert operations, this value may be left blank if the <i>primary key</i> field is auto-incremented by the database.</li><li><tt><i>string</i> <strong>dbConectionUid</strong></tt>. <i>Optional parameter</i>. The UID of the database connection where the operation will be executed, or one of the <a href="../../index.php/ProcessMaker_Database_Model.html" title="ProcessMaker Database Model">databases for the current workspace</a>: <tt>'workflow'</tt>, <tt>'rbac'</tt> or <tt>'rp'</tt>. If not included, then it will be the current <tt>workflow</tt> database by default. See <a href="../../index.php/ProcessMaker_Functions.html#executeQuery.28.29" title="ProcessMaker Functions">executeQuery()</a> for more information.</li></ul>
+<p>&nbsp;</p>
+<p><br><strong>Return value:</strong></p>
+<ul><li><tt><i>int</i></tt>. Returns <tt>1</tt> if the operation was successful, or <tt>0</tt> if unsuccessful. If the database is not MySQL or an exception was thrown, then returns <tt>null</tt>. To check whether an exception was thrown while executing <tt>PMFCrudTable()</tt>, see <a href="../../index.php/2.0/Triggers.html#Error_Management" title="2.0/Triggers">Error Management</a>.</li></ul>
+<h4><span id="Example_1:_Inserting_a_record_in_a_table">Example 1: Inserting a record in a table</span></h4>
+<p>The example below explains how to insert information filled in a DynaForm into a table.</p>
+<p><tt><strong>1.</strong></tt> Create a simple table named <tt>USER_INFORMATION</tt> with the following fields:</p>
+
+<codeblock>+--------------------+
+| USER_INFORMATION   |
++--------------------+
+| Code (primary key )|
+| Name               |
+| LastName           |
+| JobTitle           |   
+| Area               | 
+| email              | 
+| Phone              |
+| ext                |   
++--------------------+
+</codeblock>
+
+<p><tt><strong>2.</strong></tt> Create a DynaForm with the same field names as were defined in the <tt>USER_INFORMATION</tt> table:</p>
+<p><img alt="" height="366" src="../../sites/default/files/DynaformInsertCrudPowerUp.png" width="506"></p>
+<p><tt><strong>3.</strong></tt> Now, create a trigger which will be set to fire <i>after</i> the DynaForm. Open a process for editing and go to <strong>"TRIGGERS"</strong>. Expand <strong>"ProcessMaker Advanced Triggers"</strong> and click on the <strong><tt>PMFCrudTable()</tt></strong> function. Fill in the form with the following information:</p>
+<p><img alt="" height="821" src="../../sites/default/files/PMCRUDTableInsertTrigger_.png" width="568"></p>
+<p>Edit the source code of the trigger in order to place the values from the DynaForm fields in the <tt>$data</tt> array, so those values can be used by <tt>PMFCrudTable()</tt> to insert a new record in the <tt>USER_INFORMATION</tt> table:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$data</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>Code<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>Name<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>LastName<span style="color: #339933;">,</span> JobTitle<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>Area<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>email<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>Phone<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>ext<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$res</span> <span style="color: #339933;">=</span> PMFCrudTable<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'insert'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'USER_INFORMATION'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$data</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'workflow'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Note that the primary key field <tt>Code</tt> is not auto incrementing, so a value for the <tt>Code</tt> field has to be included in the <tt>$data</tt> array. Set the trigger to fire <i>after</i> the DynaForm.</p>
+<p><tt><strong>4.</strong></tt> Finally, execute a case and fill in the DynaForm with user's information:</p>
+<p><img alt="" height="402" src="../../sites/default/files/FillingDynaformInsertPowerUp.png" width="520"></p>
+<p>Click on the <strong>Submit</strong> button and check whether a new record was added to the <tt>USER_INFORMATION</tt> table:</p>
+<p><img alt="" height="160" src="../../sites/default/files/StoredInformationInsertPowerUp.png" width="907"></p>
+<h4><span id="Example_2:_Updating_a_record_in_a_table">Example 2: Updating a record in a table</span></h4>
+<p>The example below explains how to update information stored in a table. For this example, a record will be updated in the table created in the <a href="Managing_Users.html#Example_1:_Inserting_a_record_in_a_table">Example 1</a> from information filled in a DynaForm.</p>
+<p><tt><strong>1.</strong></tt> Create a simple process with the same field names defined in the table. The Dynaform should look something like:</p>
+<p><img alt="" height="375" src="../../sites/default/files/PMCRUDTableUpdateDyanform.png" width="498"></p>
+<p><tt><strong>2.</strong></tt>Create the trigger with the corresponding function. Go to <strong>"TRIGGERS"</strong>, expand <strong>ProcessMaker Advanced Triggers</strong>, click on the <tt>PMFCrudTable()</tt> function, and fill in the following information:</p>
+<p><img alt="" height="809" src="../../sites/default/files/PMCRUDTableUpdateTrigger.png" width="564"></p>
+<p>Enter the field for the primary key, which is <tt>@@Code</tt> in this example, in the <strong>Record table identifier</strong> parameter.</p>
+<p>Then, edit the source code of the trigger to populate the <tt>$data</tt> variable with the values entered in the DynaForm fields. Then, pass <tt>$data</tt> as a parameter in the <tt>PMFCrudTable()</tt> function:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$data</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Code&quot;</span> <span style="color: #339933;">=&gt;@@</span>Code<span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;Name&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@@</span>Name<span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;LastName&quot;</span> <span style="color: #339933;">=&gt;@@</span>LastName<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$res</span> <span style="color: #339933;">=</span> PMFCrudTable<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'update'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'USER_INFORMATION'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$data</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>Code<span style="color: #339933;">,</span> <span style="color: #0000ff;">'workflow'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Set the trigger to fire <i>after</i> the DynaForm is executed.</p>
+<p><tt><strong>3.</strong></tt> When executing a case, change the information in the DynaForm by changing the name of the user from "John Smith" to "John Meyer":</p>
+<p><img alt="" height="401" src="../../sites/default/files/DynaformUpdatePowerUp.png" width="536"></p>
+<p>Click on <i>Submit</i> and then check whether the record in the <tt>USER_INFORMATION</tt> table has been updated:</p>
+<p><img alt="" height="109" src="../../sites/default/files/DyanformUpdatedInformationPowerUp.png" width="853"></p>
+<h4><span id="Example_3:_Deleting_a_record_in_a_table">Example 3: Deleting a record in a table</span></h4>
+<p>This example shows how to delete a record stored in the USER_INFORMATION table, which was created in <a href="Managing_Users.html#Example_1:_Inserting_a_record_in_a_table">Example 1</a>.</p>
+<p><tt><strong>1.</strong></tt> Create a DynaForm to enter the code of a user who will be deleted from the USER_INFORMATION table:</p>
+<p><img alt="" height="136" src="../../sites/default/files/PowerUpDynaformDelete_0.png" width="508"></p>
+<p><tt><strong>2.</strong></tt> Now, create a trigger. Go to <strong>"TRIGGERS"</strong>, expand <strong>ProcessMaker Advanced Triggers</strong>, click on the <strong><tt>PMFCrudTable()</tt></strong> function, and fill in the following information:</p>
+<p><img alt="" height="824" src="../../sites/default/files/PMCRUDTableDeleteTrigger_0.png" width="568"></p>
+<p>Only the primary key is needed to identify which record to delete in the USER_INFORMATION table, which in this example is <tt>@@code</tt>. Set the above trigger to fire <i>after</i> the DynaForm.</p>
+<p><tt><strong>3.</strong></tt> Execute a case and enter the code of the user to be deleted, which in this example is <tt>1</tt> to delete the user "John Meyer":</p>
+<p><img alt="" height="167" src="../../sites/default/files/ExecutingCaseDeletePowerUp_0.png" width="518"></p>
+<h3><span id="PMFGeneratePdf.28.29"><tt>PMFGeneratePdf()</tt></span></h3>
+<p><tt>PMFGeneratePdf()</tt> generates a PDF document with pagination and a footer. This only works with Output Documents using the <a href="../../index.php/Output_Documents.html#Creating_Output_Documents_using_TCPDF_generator" title="2.0/Output Documents">TCPDF library</a>.</p>
+<h4><span id="Function_Definition_3">Function Definition</span></h4>
+
+<codeblock><strong>PMFGeneratePdf</strong>(<i>string</i> outputID, <i>string</i> footerContent, <i>string</i> sApplication = null, <i>string</i> iDelegation = null, <i>string</i> sUserLogged = null)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>outputID</strong></tt>: The unique ID of the Output Document, which can be found by opening the process for editing, going to the <strong>OUTPUT DOCUMENTS</strong> and clicking on the <strong>UID</strong> button for an Output Documnt. It can also found by following <a href="../../index.php/Output_Documents.html#Accessing_Output_Documents_through_Triggers" title="2.0/Output Documents">these instructions</a>.</li><li><tt><i>string</i> <strong>footerContent</strong></tt> The content of the footer which will be placed at the end of the document. It must be enclosed in <i>single quotes</i>, i.e.: <tt>'ProcessMaker Documentation'</tt></li><li><tt><i>string</i> <strong>sApplication</strong></tt>: <i>Optional parameter.</i> The unique ID of the case where the Output Document will be generated. If omitted or set to NULL, then will create an Output Document file for the current case.</li><li><tt><i>int</i> <strong>iDelegation</strong></tt>: <i>Optional parameter.</i> The delegation index of the current task in the case. If omitted or set to NULL, then it will use the current task for the current case.</li><li><tt><i>string</i> <strong>sUserLogged</strong></tt>: <i>Optional parameter.</i> The unique ID of the user who will generate the PDF. This should be set to the user who is currently designated to work on the case. If omitted or set to <tt>NULL</tt>, then the currently logged-in user will be used.</li></ul>
+<p><strong>Return value:</strong><br>There is no return value.</p>
+<h4><span id="Example_2">Example</span></h4>
+<p>This example generates an Output Document in the current case with pagination and a footer.</p>
+<p><tt><strong>1.</strong></tt> Create an <i>Invoice document</i> using the TCPDF engine. Add some content in the document. Then, get the Output Document's unique ID.</p>
+<p><img alt="" height="223" src="../../sites/default/files/PowerUpOutputDocumentID_0.png" width="606"></p>
+<p><tt><strong>2.</strong></tt>Create the trigger. Go to <strong>"TRIGGERS"</strong>, expand <strong>ProcessMaker Advanced Triggers</strong>, click on the <strong><tt>PMFGeneratePdf()</tt></strong> function, and fill in the following information:</p>
+<p><img alt="" height="787" src="../../sites/default/files/PowerUPPMFGeneratePdfTrigger_0.png" width="570"></p>
+<p>The trigger's source code will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PMFGeneratePdf<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;120056152559b0862029126086826927&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;Invoice Document&quot;</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Then, assign the trigger to fire at some point during the process. Run a case and generate an Output Document:</p>
+<p><img alt="" height="295" src="../../sites/default/files/PowerUpDocumentGenerated_0.png" width="902"></p>
+<h3><span id="PMFGetCaseNumber.28.29"><tt>PMFGetCaseNumber()</tt></span></h3>
+<p><tt>PMFGetCaseNumber()</tt> returns the case number for a specified case. The case number is an integer, which increments by 1 for each new case in a workspace, so the case number for the first case is 1, the fifth case is 5, and the 623rd case is 623.</p>
+<h4><span id="Function_Definition_4">Function Definition</span></h4>
+
+<codeblock><i>int</i> <strong>PMFGetCaseNumber</strong>(<i>string</i> appUid) 
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>appUid</strong></tt>: The unique ID of the case. To get the case number for current case, use the system variable <tt>@@APPLICATION</tt>.</li></ul>
+<p><strong>Return Value:</strong></p>
+<ul><li><tt><i>int</i></tt>: Returns the number of the case.</li></ul>
+<h4><span id="Example_3">Example</span></h4>
+<p>Let's create a simple process where you will obtain the case number and send it to the next person who will continue the case, this will help next assigned user to know which case number needs to be opened.</p>
+<p>Now, let's create the trigger with the corresponding function, so go to <strong>TRIGGERS</strong> tab, inside the process you are working on, select <strong>ProcessMaker Advanced Triggers</strong> and then look for the <tt>PMFGetCaseNumber()</tt> function and fill it with the following information:</p>
+<p><img alt="" height="463" src="../../sites/default/files/PowerUpGetCaseNumber_0.png" width="565"></p>
+<p>Its definition will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>UseCaseNumber <span style="color: #339933;">=</span> PMFGetCaseNumber<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Then create an email <a href="../../index.php/Notifications.html#Create_the_HTML_Email_Template" title="Notifications">template</a> named <tt>template.html</tt> which uses the <tt>@@caseNumber</tt> variable:</p>
+<p><img alt="" height="270" src="../../sites/default/files/CreatingTemplateGetCaseNumberPowerUp_0.png" width="791"></p>
+<p>Then use the <a href="../../index.php/ProcessMaker_Functions.html#PMFSendMessage.28.29" title="ProcessMaker Functions">PMFSendMessage()</a> function in order to send out an email in a subsequent trigger:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span><span style="color: #b1b100;">return</span> <span style="color: #339933;">=</span> PMFSendMessage <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span><span style="color: #0000ff;">'liliana@colosa.com'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'liliana@colosa.com'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">''</span><span style="color: #339933;">,</span><span style="color: #0000ff;">''</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'Credit Card Application'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'template.html'</span><span style="color: #339933;">,</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><span style="color: #009900; font-weight: bold;">true</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Inside the process, assign the trigger where the case number is obtained before the DynaForm you've created, and the trigger to send mails after that Dynaform. Executing case <tt>#205</tt>:</p>
+<p><img alt="" height="333" src="../../sites/default/files/ExecutingcaseobtainCaseNum_0.png" width="617"></p>
+<p>The email will be:</p>
+<p><img alt="" height="215" src="../../sites/default/files/MailReceivedPowerUp_0.png" width="701"></p>
+<h3><span id="PMFGetFieldsOfDynaform.28.29"><tt>PMFGetFieldsOfDynaform()</tt></span></h3>
+<p><tt>PMFGetFieldsOfDynaform()</tt> returns information about the fields in a DynaForm fields, such as the field name, field type, and field label.</p>
+<h4><span id="Function_Definition_5">Function Definition</span></h4>
+
+<codeblock><i>array</i> <strong>PMFGetFieldsOfDynaform</strong>(<i>string</i> proUid, <i>string</i> dynUid) 
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>proUid</strong></tt>: The unique ID of the process. For the current process, use the <tt>@@PROCESS</tt> system variable.</li><li><tt><i>string</i> <strong>dynUid</strong></tt>: The unique ID of the DynaForm whose list of fields will be retrieved.</li></ul>
+<p><strong>Return Value:</strong></p>
+<p>An array, with the following structure:</p>
+
+<codeblock>[0] <i>array</i>
+(
+   <i>associative array</i>
+   (
+      [<i>string</i> FIELD_NAME]
+      [<i>string</i> FIELD_LABEL]
+      [<i>string</i> FIELD_TYPE]
+   )
+)
+...
+</codeblock>
+
+<p><strong>Where:</strong></p>
+<ul><li><tt><i>string</i> <strong>FIELD_NAME</strong></tt>: The field name, which is unique and identifies the field.</li><li><tt><i>string</i> <strong>FIELD_LABEL</strong></tt>: The field label, which is the text displayed on the DynaForm. Note that the value for hidden, javascript, image, documentviewer and inputdocview fields will be an empty string, because these fields do not have labels.</li><li><tt><i>string</i> <strong>FIELD_TYPE</strong></tt>: The field type: currency. percentage, password, suggest, textarea, title, subtitle, button, submit, reset, dropdown, yesno, listbox, checkbox, checkgroup, radiogroup, date, hidden, link, file, javascript, documentviewer, inputdocview or image.</li></ul>
+<h4><span id="Example_4">Example</span></h4>
+<p>This example obtain a list of all the textbox fields in a DynaForm. First, get the unique ID for the DynaForm. Open the process which contains the DynaForm and go to the <strong>DYNAFORMS</strong> tab. In the list of DynaForms, click on the <tt>UID</tt> button for the DynaForm.</p>
+<p><img alt="" height="230" src="../../sites/default/files/GettingUIDDynaform__0.png" width="601"></p>
+<p>Now, create the trigger. Go to the <strong>TRIGGERS</strong> tab, select <strong>ProcessMaker Advanced Triggers</strong> and then look for the <tt>PMFGetFieldsOfDynaform()</tt> function and fill in the following information:</p>
+<p><img alt="" height="537" src="../../sites/default/files/PowerUpGetDynaformFields_0.png" width="567"></p>
+<p>Then edit the trigger's source code, to add code which can look through the list of returned fields and copy those fields which are textboxes to the &lt;/code&gt;@?TextboxList&lt;/code&gt;:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@</span>?result <span style="color: #339933;">=</span> PMFGetFieldsOfDynaform <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span><span style="color: #0000ff;">'6526353fc829394bc92038b447cf990'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@</span>?TextboxList <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@</span>?result<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@</span>?result<span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FIELD_TYPE'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">'textbox'</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@</span>?FieldList<span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@</span>?result<span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//copy textbox info to @?FieldList</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>This trigger can be set to fire at any point in a process, since the fields in a DynaForm will not change. If the <a href="../../index.php/2.0/Triggers.html#Debugging_Triggers" title="2.0/Triggers">debugger</a> is enabled, then the contents of the <tt>@?result</tt> can be seen when running a case:</p>
+<p><img alt="" height="456" src="../../sites/default/files/DynaformFieldsDebuggerPowerUp_0.png" width="1000"></p>
+<h3><span id="PMFGetGroupsOfUser.28.29"><tt>PMFGetGroupsOfUser()</tt></span></h3>
+<p><tt>PMFGetGroupsOfUser()</tt> obtains a list of groups to which a user is assigned.</p>
+<h4><span id="Function_Definition_6">Function Definition</span></h4>
+
+<codeblock><i>array</i> <strong>PMFGetGroupsOfUser</strong>(<i>string</i> userUid, <i>string</i> statusGroup = 'ACTIVE') 
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>userUid</strong></tt>: The user's unique ID, which can be found in the following ways:
+<ul><li>Get the UID of the currently logged-in user with the <tt>@@USER_LOGGED</tt> system variable or <tt>$_SESSION['USER_LOGGED']</tt>.</li><li>Use the <a href="../../index.php/ProcessMaker_Functions.html#PMFUserList.28.29">PMFUserList()</a> or <a href="../../index.php/Simple_Trigger_Web_Services.html#WSUserList" title="Simple Trigger Web Services">WSUserList()</a> functions, or the <a href="../../index.php/ProcessMaker_WSDL_Web_Services.html#userList.28.29" title="ProcessMaker WSDL Web Services">userList()</a> web service.</li><li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.USERS.USR_UID</tt></strong> field in the database with <a href="../../index.php/ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a>.</li></ul></li><li><tt><i>string</i> <strong>statusGroup</strong></tt>: <i>Optional parameter</i>. Group status. It can be <strong>ACTIVE</strong>, <strong>INACTIVE</strong> or <strong>ALL</strong>.</li></ul>
+<p><strong>Return value:</strong></p>
+<p><tt><i>array</i></tt>. If $userUid is not assigned a value, this function returns <tt>false</tt>. If the user doesn't exist or the user isn't assigned to any groups, then it returns an empty array. If the user is assigned to one or more groups, then it returns the following associative array:</p>
+
+<codeblock><i>array</i> ( 
+  <i>string</i> <strong>['&lt;GROUP1-UID&gt;']</strong>: The name of the first group. 
+  <i>string</i> <strong>['&lt;GROUP2-UID&gt;']</strong>: The name of the second group.
+  ...
+)
+</codeblock>
+
+<h4><span id="Example_5">Example</span></h4>
+<p>Create three groups and assign a user to them. Create a grid DynaForm with two fields: <i>IDgroup</i> and <i>GroupName</i>, both of them in view mode. Add the grid inside a Dynaform with a field name of "gridGroups".</p>
+<p>Now, create a trigger which uses the <tt>PMFGetGroupsOfUser()</tt> function. Go to the <strong>"TRIGGERS"</strong> tab, expand <strong>ProcessMaker Advanced Triggers</strong>, click on the <strong><tt>PMFGetGroupsOfUser()</tt></strong> function and fill in the following information:</p>
+<p><img alt="" height="531" src="../../sites/default/files/PowerUpReturnGroupsExample_0.png" width="568"></p>
+<p>The following trigger code creates an array with the same structure as a grid. The trigger will set the contents of a grid which is named "gridGroups". Make sure to use the same name for the case variable and the field name of the grid object embedded in a master DynaForm. In this example, the function will return all <i>ACTIVE</i> groups.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$newGrid</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$res</span> <span style="color: #339933;">=</span> PMFGetGroupsOfUser<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #0000ff;">'ACTIVE'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$res</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$c</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$array1</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$res</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$key</span><span style="color: #339933;">=&gt;</span><span style="color: #000088;">$value</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$array1</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$c</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'IDgroup'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$key</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'GroupName'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$value</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$c</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$c</span> <span style="color: #339933;">+</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>gridGroups <span style="color: #339933;">=</span> <span style="color: #000088;">$array1</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>In this example, one more trigger was created in order to know in which groups the user, who are executing the case, is assigned to. <a href="../../index.php/2.0/Triggers.html#Examples" title="2.0/Triggers">This example</a> was used in order to get the corresponding information.</p>
+<p>Assign both triggers before the DynaForm. When a case is executed, the list of groups will be displayed in the grid:</p>
+<p><img alt="" height="384" src="../../sites/default/files/ListGroupsPowerUp_0.png" width="523"></p>
+<p>Knowing a user's groups can be useful when doing <a href="../../index.php/2.0/Tasks.html#Value_Based_Assignment" title="2.0/Tasks">value based assignment</a> in a case.</p>
+<h3><span id="PMFGetInputsDocumentsOfCase.28.29"><tt>PMFGetInputsDocumentsOfCase()</tt></span></h3>
+<p><tt>PMFGetInputsDocumentsOfCase()</tt> obtains the list of files uploaded for a case or for a particular Input Document in a case.</p>
+<h4><span id="Function_Definition_7">Function Definition</span></h4>
+
+<codeblock><i>array</i> <strong>PMFGetInputsDocumentsOfCase</strong>(<i>string</i> appUid, <i>string</i> $inputDocUid = '') 
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>appUid</strong></tt>: The unique ID of the case. For the current case, set to the <tt>@@APPLICATION</tt> system variable.</li><li><tt><i>string</i> <strong>inputDocUid</strong></tt>: <i>Optional parameter</i>. The unique ID of an Input Document. If not included, then all the files uploaded during the case will be returned, including both Input Document files and any files uploaded to a <a href="../../index.php/2.0/Files.html" title="2.0/Files">file</a> field in a DynaForm.</li></ul>
+<p><strong>Return value:</strong></p>
+<p>If no files are found, then returns an empty array. If files are found, then returns an array with the following structure:</p>
+<dl><dd><tt>[0] <i>array</i></tt></dd><dd><tt>( <i>associative array</i></tt>
+<dl><dd><tt><i>string</i> <strong>['APP_DOC_UID']</strong></tt>: The unique ID for the uploaded file.</dd><dd><tt><i>int</i> <strong>['DOC_VERSION']</strong></tt>: The version number of the file. The first version is <tt>1</tt>, the second is <tt>2</tt>, etc.</dd><dd><tt><i>string</i> <strong>['DOC_UID']</strong></tt>: The unique ID for the Input Document.</dd><dd><tt><i>string</i> <strong>['APP_DOC_COMMENT']</strong></tt>: Comment entered by user when file uploaded.</dd><dd><tt><i>string</i> <strong>['APP_DOC_FILENAME']</strong></tt>: The original filename of the uploaded file.</dd><dd><tt><i>int</i> <strong>['APP_DOC_INDEX']</strong></tt>: The index of the uploaded file. The first file for an Input Document is <tt>1</tt>, the second is <tt>2</tt>, etc.</dd><dd><tt><i>string</i> <strong>['TITLE']</strong></tt>: The original filename, which is same as as <tt>['APP_DOC_FILENAME']</tt>.</dd><dd><tt><i>int</i> <strong>['POSITION']</strong></tt>: The number of the step when the file was uploaded. The first step in a task is <tt>1</tt>, the second is <tt>2</tt>, etc.</dd><dd><tt><i>string</i> <strong>['CONFIRM']</strong></tt>: Message to confirm the deletion of the file in the current system language.</dd><dd><tt><i>string</i> <strong>['REPLACE_LABEL']</strong></tt>: Label for the "replace" button, which is no longer used.</dd><dd><tt><i>string</i> <strong>['NEWVERSION_LABEL']</strong></tt>: Label shown on button to add "New Version" in current system language.</dd><dd><tt><i>string</i> <strong>['VERSIONHISTORY_LABEL']</strong></tt>: Label shown on button to see the "Version History" in current system language.</dd><dd><tt><i>string</i> <strong>['CREATOR']</strong></tt>: The full name (first name and last name) of the user who uploaded the file.</dd><dd><tt><i>string</i> <strong>['APP_DOC_CREATE_DATE']</strong></tt>: The datetime in the format <tt>YYYY-MM-DD HH:MM:SS</tt> when the file was uploaded. Ex: <tt>2014-09-26 11:07:09</tt></dd><dd><tt><i>string</i> <strong>['DOC_VERSION_LABEL']</strong></tt>: The label shown for the version of the file, so the first version is <tt>'1'</tt>, the second is <tt>'2'</tt>, etc.</dd><dd><tt><i>string</i> <strong>['DOWNLOAD_LABEL']</strong></tt>: The label for the "Download" button in the current system language.</dd><dd><tt><i>string</i> <strong>['DOWNLOAD_LINK']</strong></tt>: The partial URL to download the file, using its APP_DOC_UID and DOC_VERSION numbers.
+<dl><dd>Ex: <tt>'cases_ShowDocument?a=106235827542580dfcfa708029871391&amp;v=2'</tt></dd></dl></dd><dd><tt><i>string</i> <strong>['COMMENT']</strong></tt>: The file's comment, which is the same as <tt>['APP_DOC_COMMENT']</tt>.</dd></dl></dd><dd><tt>) </tt></dd><dd><tt>...</tt></dd></dl>
+<p>An Input Document is identified by its DOC_UID and can have multiple files uploaded to it. Each new file which is uploaded to an Input Document has a different APP_DOC_UID. If a file has a new version, it will have the same APP_DOC_UID, but its APP_DOC_INDEX will be incremented by 1. In addition, all files regardless of whether they are new files or another version of an existing file are numbered in the order which they were uploaded in the APP_DOC_INDEX.</p>
+<p>For example, a user uploads two files to an Input Document with the DOC_UID '747284426542478ef3e1a97070179701'. The first file is "Expense Report Part1.doc" and the second file is "Expense Report Part2.doc". Then the user revises the first file and uploads a new version with the filename "Expense Report Part1-revised.doc". These 3 files would be listed as:</p>
+<div style="margin-left:25px"><ul><li>First file: "Expense Report Part1.doc"</li></ul>
+
+<codeblock>APP_DOC_UID:   106235827542580dfcfa708029871391 
+DOC_VERSION:   1                                
+DOC_UID:       747284426542478ef3e1a97070179701 
+APP_DOC_INDEX: 1                                
+</codeblock>
+
+<ul><li>Second file: "Expense Report Part2.doc"</li></ul>
+
+<codeblock>APP_DOC_UID:   257039549542580f9e28723099832078   
+DOC_VERSION:   1                                
+DOC_UID:       747284426542478ef3e1a97070179701 
+APP_DOC_INDEX: 2                                
+</codeblock>
+
+<ul><li>New version of first file: "Expense Report Part1-revised.doc"</li></ul>
+
+<codeblock>APP_DOC_UID:   106235827542580dfcfa708029871391  
+DOC_VERSION:   2                                
+DOC_UID:       747284426542478ef3e1a97070179701 
+APP_DOC_INDEX: 3
+</codeblock>
+</div>
+
+<h4><span id="Example_6">Example</span></h4>
+<p>This example obtains files uploaded during the execution of a case.</p>
+<p>Create an input document and assign it to a task. Then, create a trigger. Go to <strong>TRIGGERS</strong>, expand <strong>ProcessMaker Advanced Triggers</strong>, click on the <strong><tt>PMFGetInputsDocumentsOfCase()</tt></strong> function and fill in the following information:</p>
+<p><img alt="" height="543" src="../../sites/default/files/PowerUpGetInputDocuments_0.png" width="566"></p>
+<p>Its definition will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@</span>?res <span style="color: #339933;">=</span> PMFGetInputsDocumentsOfCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>When the above trigger is executed, the list of Input Document files will be placed in an array in the <tt>@@res</tt> variable.</p>
+<p>Set the trigger to fire <i>after</i> an Input Document. Note that if using version 2.5.1, the trigger must be assigned <i>before</i> the next step, otherwise the trigger won't be executed properly. In version 2.5.2 and later, it can be assigned after the Input Document. Enable ProcessMaker debugger in order to see the value of the @?res, while executing a case. In this example, two files are uploaded to the Input Document:</p>
+<p><img alt="" height="377" src="../../sites/default/files/AttachingDocumentsPowerUp_0.png" width="725"></p>
+<p>Click on next step, and look for the <tt>res</tt> variable in the debugger, which shows that two files were uploaded:</p>
+<p><img alt="" height="416" src="../../sites/default/files/ListUploadedDocumentsDebugPowerUp_0.png" width="300"></p>
+<h4><span id="Create_a_download_link">Create a download link</span></h4>
+<p>If the second parameter of the PMFGetInputsDocumentsOfCase() function isn't specified, then the function returns all the files uploaded to the case. To only get the files uploaded to a specific Input Document, set the second parameter to the Input Document UID. To get that ID, open a process for editing and go to the <strong>Input Documents</strong> tab. In the list of Input Documents, click on the <strong>UID</strong> button for a specific Input Document:</p>
+<p><img alt="" height="291" src="../../sites/default/files/InputDocumentUIDPowerp_0.png" width="502"></p>
+<p>Then use that ID in the second parameter of the PMFGetInputsDocumentsOfCase() function.</p>
+<p>In order to construct the complete URL to download a file, prepend <code>http://&lt;IP-ADDRESS&gt;/sys&lt;WORKSPACE&gt;/&lt;LANG&gt;/&lt;SKIN&gt;/case</code> to the DOwNLOAD_LINK. For example, if the DOWNLOAD_LINK is "cases_ShowDocument?a=106235827542580dfcfa708029871391&amp;v=2", then prepend <code>http://www.myserver.com/sysworkflow/en/neoclassic/cases/</code> to create the complete URL.</p>
+<p>In this example, the trigger searches for the last file uploaded to the Input Document with the ID '7007662035317836e8a7283024867658'. It cycles through all the files and looks for the one with the largest APP_DOC_INDEX. Then creates a complete URL to download that file, which is stored in the variable <tt>@@FileLink</tt>:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aFiles</span> <span style="color: #339933;">=</span> PMFGetInputsDocumentsOfCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'7007662035317836e8a7283024867658'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #666666; font-style: italic;">//search for last uploaded file:</span><br />
+<span style="color: #339933;">@@</span>FileLink <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$lastIndex</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aFiles</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$lastIndex</span> <span style="color: #339933;">&lt;</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_DOC_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$lastIndex</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_DOC_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@@</span>FileLink <span style="color: #339933;">=</span> <span style="color: #0000ff;">'http://www.myserver.com/sysworkflow/en/neoclassic/cases/'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$aFile</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DOWNLOAD_LINK'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>If a subsequent DynaForm has a link field named "FileLink", then it will use the URL set in the above trigger.</p>
+<h3><span id="PMFGetRolUser.28.29"><tt>PMFGetRolUser()</tt></span></h3>
+<p><tt>PMFGetRolUser()</tt> obtains the role of a specified user.</p>
+<h4><span id="Function_Definition_8">Function Definition</span></h4>
+
+<codeblock><i>string</i> <strong>PMFGetRolUser</strong>(<i>string</i> userUid) 
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>userUid</strong></tt>: The user's unique ID, which can be found in the following ways:
+<ul><li>Get the UID of the currently logged-in user with the <tt>@@USER_LOGGED</tt> system variable or <tt>$_SESSION['USER_LOGGED']</tt>.</li><li>Use the <a href="../../index.php/ProcessMaker_Functions.html#PMFUserList.28.29">PMFUserList()</a> or <a href="../../index.php/Simple_Trigger_Web_Services.html#WSUserList" title="Simple Trigger Web Services">WSUserList()</a> functions, or the <a href="../../index.php/ProcessMaker_WSDL_Web_Services.html#userList.28.29" title="ProcessMaker WSDL Web Services">userList()</a> web service.</li><li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.USERS.USR_UID</tt></strong> field in the database with <a href="../../index.php/ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a>.</li></ul></li></ul>
+<p><strong>Return value:</strong></p>
+<p><tt><i>string</i></tt>. It returns the name of the role.</p>
+<h4><span id="Example_7">Example</span></h4>
+<p>This example obtains the role a user belongs to. Create a Dynaform with text field named "Usr_Role". Then, create the trigger with the corresponding function, so go to the <strong>"TRIGGERS"</strong> tab, expand <strong>"ProcessMaker Advanced Triggers"</strong>, click on the <strong><tt>PMFGetRolUser()</tt></strong> function and fill in the following information:</p>
+<p><img alt="" height="461" src="../../sites/default/files/PowerUpGetRoleExample_0.png" width="571"></p>
+<p>Its definition will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>Usr_Role <span style="color: #339933;">=</span> PMFGetRolUser <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Assign the trigger to fire <strong>before</strong> the DynaForm. When a case is executed, the user's role can be obtained:</p>
+<p><img alt="" height="119" src="../../sites/default/files/UserRoleInformationPowerUp_0.png" width="554"></p>
+<p>This information may be used as a part of the user information displayed in a DynaForm. It can also be used in a condition to determine which tasks or steps are executed in the process.</p>
+<h3><span id="PMFGetUserReportsTo.28.29"><tt>PMFGetUserReportsTo()</tt></span></h3>
+<p><tt>PMFGetUserReportsTo()</tt> returns the unique ID of the supervisor for a specified user.</p>
+<h4><span id="Function_Definition_9">Function Definition</span></h4>
+
+<codeblock><i>string</i> <strong>PMFGetUserReportsTo</strong>(<i>string</i> userUid) 
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>userUid</strong></tt>: The user's unique ID, which can be found in the following ways:
+<ul><li>Get the UID of the currently logged-in user with the <tt>@@USER_LOGGED</tt> system variable or <tt>$_SESSION['USER_LOGGED']</tt>.</li><li>Use the <a href="../../index.php/ProcessMaker_Functions.html#PMFUserList.28.29">PMFUserList()</a> or <a href="../../index.php/Simple_Trigger_Web_Services.html#WSUserList" title="Simple Trigger Web Services">WSUserList()</a> functions, or the <a href="../../index.php/ProcessMaker_WSDL_Web_Services.html#userList.28.29" title="ProcessMaker WSDL Web Services">userList()</a> web service.</li><li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.USERS.USR_UID</tt></strong> field in the database with <a href="../../index.php/ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a>.</li></ul></li></ul>
+<p><strong>Return value:</strong></p>
+<p><tt><i>string</i></tt>. It returns the unique ID of the supervisor.</p>
+<h4><span id="Example_8">Example</span></h4>
+<p>This example uses the sample "Expense Report" process, to obtain the supervisor ID of the user who is executing the current case. That ID is used to send an email to the supervisor, to get the Cash Advance Approved.</p>
+<p>First create two users and assign them to a <a href="../../index.php/Managing_Users.html#Departments_and_Sub-Departments" title="2.0/Managing Users">department</a> and make one of them a Supervisor:</p>
+<p><img alt="" height="190" src="../../sites/default/files/SupervisorPoweUp_0.png" width="273"></p>
+<p>Then, inside the dynaform (in the case of the example the corresponding dynaform for the Expense report will be Cash Travel Advanced), create a hidden variable named <tt>IdSupervisor</tt>, there we will save the Supervisor ID which will be used in the trigger. In the following example, we will obtain the role a user belongs to, so, just create a Dynaform with a field name <tt>Usr_Role</tt>.</p>
+<p>Then, create the trigger with the corresponding function, go to <strong>"TRIGGERS"</strong> inside the process you are working on, select <strong>"ProcessMaker Advanced Triggers"</strong>, look for the <tt>PMFGetUserReportsTo()</tt> function and fill it with the following information:</p>
+<p><img alt="" height="462" src="../../sites/default/files/PowerUpGetSupervisorExample_0.png" width="567"></p>
+<p>In the following trigger, the supervisor's ID is saved to the variable <tt>@@IdSupervisor</tt>. This variable is then used in the <a href="../../index.php/ProcessMaker_Functions.html#PMFInformationUser.28.29" title="ProcessMaker Functions">PMFInformationUser()</a> function to look up the email address of the supervisor and send him/her an email.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #0000ff;">&quot;@@IdSupervisor = PMFGetUserReportsTo (@@USER_LOGGED);<br />
+<span style="color: #006699; font-weight: bold;">$aUser</span> = PMFInformationUser(@@IdSupervisor);<br />
+@@mail = <span style="color: #006699; font-weight: bold;">$aUser</span>['mail'];<br />
+@@return=PMFSendMessage(@@APPLICATION, 'liliana@colosa.com', @@mail, '', '', 'Approve Advance Cash', 'template.html');</span></div></div>
+
+<p>Assign this trigger to fire <i>before</i> the Dynaform. Then, create another trigger using the <a href="../../index.php/ProcessMaker_Functions.html#PMFSendMessage.28.29" title="ProcessMaker Functions">PMFSendMessage() function</a> to send the email with the <tt>@@email</tt> variable where you will get the supervisor's email:</p>
+<p>Finally, assign this trigger after the Dynaform, in order to send the email as soon as the information is filled. Then start the case, the following Dynaform will be used in order to send information for the corresponding approval:</p>
+<p><img alt="" height="358" src="../../sites/default/files/DynaformPowerUpGetSupervisorInfo_0.png" width="540"></p>
+<p>If you <a href="../../index.php/2.0/Triggers.html#Debugging_Triggers" title="2.0/Triggers">enable your debug</a>, it will be possible to view the supervisor ID and his/her email information:</p>
+<p><img alt="" height="297" src="../../sites/default/files/PowerUpDebugSupervisorInform_0.png" width="308"></p>
+<p>This will help us to know if the values are being used properly.</p>
+<p>Click on <strong>"Submit"</strong> and the Supervisor will receive the following email:</p>
+<p><img alt="" height="351" src="../../sites/default/files/EmailSentReportsToTriggerPowerup_0.png" width="761"></p>
+<h3><span id="PMFGetUsersOfTask.28.29"><tt>PMFGetUsersOfTask()</tt></span></h3>
+<p><tt>PMFGetUsersOfTask()</tt> obtains a list of users assigned to a task, no matter what type of assignment rule the task has. This function also includes the users which are assigned to the task as members of groups.</p>
+<h4><span id="Function_Definition_10">Function Definition</span></h4>
+
+<codeblock><i>array</i> <strong>PMFGetUsersOfTask</strong>(<i>string</i> taskUid, <i>string</i> $statusGroup = 'ACTIVE', <i>string</i> $statusUser = 'ACTIVE') 
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>taskUid</strong></tt>. The unique ID of the task, which can be found in the following ways:
+<ul><li>Use the <tt>@@TASK</tt> system variable for the unique ID of the current task.</li><li>Use the <a href="../../index.php/ProcessMaker_Functions.html#PMFTaskList.28.29">PMFTaskList()</a> function or <a href="../../index.php/ProcessMaker_WSDL_Web_Services.html#taskList.28.29" title="2.0/ProcessMaker WSDL Web Services">taskList()</a> web service.</li><li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.TASK.TAS_UID</tt></strong> field in the database or get the starting task of the current process with the following query:</li></ul></li></ul>
+<dl><dd><dl><dd><tt>"SELECT TAS_UID FROM TASK WHERE PRO_UID='" . @@PROCESS . "' AND TAS_START='TRUE'"</tt></dd></dl></dd></dl>
+<ul><li><tt><i>string</i> <strong>statusGroup</strong></tt>. <i>Optional parameter</i>. Obtains groups with the specified status, which can be: <tt>'ACTIVE'</tt>, <tt>'INACTIVE'</tt> or <tt>'ALL'</tt></li><li><tt><i>string</i> <strong>statusUser</strong></tt>. <i>Optional parameter</i>. Obtains users with the specified status, which can be: <tt>'ACTIVE'</tt>, <tt>'INACTIVE'</tt> or <tt>'ALL'</tt></li></ul>
+<p><strong>Return value:</strong></p>
+<p>The list of users is returned in an array of associative arrays:</p>
+
+<codeblock>[0]: <i>array</i> (
+   <i>string</i> ["USR_UID"]:       The user's unique ID.
+   <i>string</i> ["USR_FIRSTNAME"]: The user's first name.
+   <i>string</i> ["USR_LASTNAME"]:  The user's last name.
+   <i>string</i> ["USR_USERNAME"]:  The username.
+   <i>string</i> ["USR_EMAIL"]:     The user's email address.
+   <i>string</i> ["USR_STATUS"]:    The user's status which can be 'ACTIVE', 'INACTIVE' or 'VACATION'.
+   <i>string</i> ["DEP_UID"]:       The unique ID of the user's department. 
+                             If not a member of a department, then set to '' (empty string).
+   <i>string</i> ["USR_ROLE"]:      The user's role, such as 'PROCESSMAKER_ADMIN', 'PROCESSMAKER_MANAGER' or 'PROCESSMAKER_OPERATOR'.
+   <i>string</i> ["USR_REPORTS_TO"]:The unique ID of the supervisor to whom the user reports. 
+                             If not a member of a department or are a top-level supervisor, then set to '' (empty string).
+)
+...
+</codeblock>
+
+<h4><span id="Example_9">Example</span></h4>
+<p>Let's display users who are assigned in a task. First, create the trigger with the corresponding function, go to <strong>"TRIGGERS"</strong>, inside the process you are working on, exapnd <strong>"ProcessMaker Advanced Triggers"</strong>, look for the <tt>PMFGetUsersOfTask()</tt> function and fill it with the following information:</p>
+<p><img alt="" height="524" src="../../sites/default/files/PowerUpGetUsersOfTaskExample_0.png" width="555"></p>
+<p>Then, edit its source code, and modify the trigger as follows:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$taskUid</span><span style="color: #339933;">=</span><span style="color: #0000ff;">'31516480052e92657951a29090172137'</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>res <span style="color: #339933;">=</span> PMFGetUsersOfTask <span style="color: #009900;">&#40;</span><span style="color: #000088;">$taskUid</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>In the case of the example, the task ID will be defined inside the trigger and we will get the information in the <tt>@@res</tt> variable. In order to get the result you need to enable your <a href="../../index.php/2.0/Triggers.html#Debugging_Triggers" title="2.0/Triggers">debug</a>.</p>
+<p>Assign the trigger at any place of the process, it will depend on how it has been designed. What is important here, is the result obtained, so for example, there are three users assigned in the task so when the process is executed, as well as the trigger, the following information will be obtained:</p>
+<p><img alt="" height="531" src="../../sites/default/files/GetUsersTaskTriggerResult_0.png" width="303"></p>
+<p>As it can be seen, the information of all users assigned to a task is displayed. This information can help to use the <a href="../../index.php/2.0/Tasks.html#Value_Based_Assignment" title="2.0/Tasks">value based assignment</a>, in order to decide which user will get the next task.</p>
+<h3><span id="PMFLoadGrid.28.29"><tt>PMFLoadGrid()</tt></span></h3>
+<p><tt>PMFLoadGrid()</tt> populates a grid with data stored in a <a href="../../index.php/PM_Tables.html" title="2.0/PM Tables">PM Table</a> or other MySQL table in the <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database for the current ProcessMaker workspace.</p>
+<h4><span id="Function_Definition_11">Function Definition</span></h4>
+
+<codeblock><i>array</i> <strong>PMFLoadGrid</strong>(<i>string</i> sourceData, <i>array</i> gridFields=array(), <i>string</i> gridName='', <i>string</i> proUid='',
+                  <i>string</i> dynUid='', <i>string</i> sortField='', <i>string</i> ord='ASC') 
+</codeblock>
+
+<p>There are two ways to call the PMFLoadGrid() function. The grid can be populated by <i>either</i> defining the <tt>gridFields</tt> parameter <i>or</i> by defining the <tt>gridName</tt>, <tt>proUid</tt> and <tt>dynUid</tt> parameters. If <tt>gridFields</tt> is an associative array of field names, then the first method will be used and the <tt>gridName</tt>, <tt>proUid</tt> and <tt>dynUid</tt> will be ignored.</p>
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>sourceData</strong></tt>: The name of the table to query or an SQL SELECT statement. Remember that PM Table names are in uppercase by default and PM Tables have 'PMT_' prepended, so a PM Table named "CLIENTS_INFO" will be <tt>'PMT_CLIENTS_INFO'</tt>.</li><li><tt><i>array</i> <strong>gridFields</strong></tt>: <i>Optional parameter.</i> An associative array which maps the grid fields to their corresponding table fields. The keys in the array contain the names of the fields in a grid and their values are the corresponding names of the fields in the database table:</li></ul>
+<dl><dd><dl><dd><tt>array("<i>grid-field1</i>"=&gt;"<i>table-field1</i>", "<i>grid-field2</i>"=&gt;"<i>table-field2</i>", ...)</tt></dd></dl></dd><dd>Note that it is necessary to list all the fields to be retrieved, even if the field names in the grid are the same as the field names in the database table. If the <tt>gridName</tt>, <tt>proUid</tt> and <tt>dynUid</tt> parameters will be defined, then set this parameter to <strong><tt>array()</tt></strong>, which is an empty array.</dd></dl>
+<ul><li><tt><i>string</i> <strong>gridName</strong></tt>: <i>Optional parameter.</i> The field name of the grid in a master DynaForm. Do NOT use the name of the separate grid form.</li><li><tt><i>string</i> <strong>proUid</strong></tt>: <i>Optional parameter.</i> The unique ID of the process. To get the unique ID of the current process, use the <tt>@@PROCESS</tt> system variable.</li><li><tt><i>string</i> <strong>dynUid</strong></tt>: <i>Optional parameter.</i> The unique ID of the master DynaForm which contains the grid. To get this ID, open the process for editing, click on <strong>DYNAFORMS</strong> in the top bar and in the list click on the <strong>UID</strong> button for the DynaForm.</li><li><tt><i>string</i> <strong>sortField</strong></tt>: <i>Optional parameter</i>. The name of the field by which the grid will be sorted. If omitted or set to <tt>''</tt> (empty string), then the rows will be left in the order retrieved from the database.</li><li><tt><i>string</i> <strong>ord</strong></tt>: <i>Optional parameter</i>. The order by which the grid will be sorted, which is <tt>'ASC'</tt> (ascending order) by default. It can be either <tt>'ASC'</tt> or <tt>'DESC'</tt>.</li></ul>
+<p><strong>Return value:</strong></p>
+<p><tt><i>array</i></tt>. It returns data as a numbered array of associative arrays, where the keys in the associative arrays are the names of the fields in the grid. This is the same way that grids are represented in ProcessMaker:</p>
+
+<codeblock>[1]: array (
+   [field1]: Value1
+   [field2]: Value2
+   ...
+)
+...
+</codeblock>
+
+<p>Note that the array starts counting from <strong>1</strong>, not <strong>0</strong> like a normal array. If the return value PMFLoadGrid() is assigned to a case variable which has the same name as the field name of a grid in a master DynaForm, then the grid will display the data returned by PMFLoadGrid().</p>
+<h4><span id="Examples">Examples</span></h4>
+<p>Below are different examples to populate a grid by:</p>
+<ul><li><a href="../../index.php/ProcessMaker_PowerUp.html#Using_a_table_name">Using a table name</a>.</li><li><a href="../../index.php/ProcessMaker_PowerUp.html#Using_a_query">Using an SQL query</a>.</li><li><a href="../../index.php/ProcessMaker_PowerUp.html#Different_field_names_in_grids_.26_tables">Different field names in grids &amp; tables</a></li><li><a href="../../index.php/ProcessMaker_PowerUp.html#Ordering_data_by_a_specific_field">Ordering data by a specific field</a></li></ul>
+<h5><span id="Using_a_table_name">Using a table name</span></h5>
+<p>A grid can be populated from a table by specifying the name of the table. In this example, a company has table named "CLIENTS" (so it is stored in the MySQL database as the table "PMT_CLIENTS").</p>
+<p><tt><strong>Step 1:</strong></tt> Create the "CLIENTS" table with the following fields:</p>
+
+<codeblock>+--------------------+
+| PMT_CLIENTS        |
++--------------------+
+| Code               |
+| Name               |
+| LastName           |
+| JobTitle           |
+| Area               |
+| email              |
+| Phone              | 
+| ext                |
++--------------------+
+</codeblock>
+
+<p>This table has the following data:</p>
+<p><img alt="" height="144" src="../../sites/default/files/GridTableExample_0.png" width="937"></p>
+<p><tt><strong>Step 2:</strong></tt> Then create a grid using the same field names:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Code</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Code<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Code<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Name</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Name<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Name<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;LastName</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Last Name<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/LastName<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;JobTitle</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Title<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/JobTitle<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Area</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Area<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Area<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;email</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Email<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/email<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Phone</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Phone<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Phone<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ext</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Ext.<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ext<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>Then, add the grid form to a master DynaForm in a field which is named "clientsGrid".</p>
+<p><tt><strong>Step 3:</strong></tt> Create the trigger with the PMFLoadGrid() function. go to <strong>"TRIGGERS"</strong>, expand <strong>"ProcessMaker Advanced Triggers"</strong> and select the <strong><tt>PMFLoadGrid()</tt></strong> function and fill in the following information:</p>
+<p><img alt="" height="923" src="../../sites/default/files/PowerUpLoadGridTableNameExamp1_0.png" width="573"></p>
+<p>Its source code will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@</span>?clientsGrid <span style="color: #339933;">=</span> PMFLoadGrid<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'PMT_CLIENTS'</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'clientsGrid'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #0000ff;">'9803196375296378d07b954095748012'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>The return value of the PMFLoadGrid() function is assigned to a case variable which has the same name as the field in the master DynaForm which holds the grid. In this case, the list of field names don't need to be defined, since they will be retrieving from the definition of the grid.</p>
+<p>Note that this example will only work if the names of the fields in the table are exactly the same as the fields in the grid. Also remember that table and field names are case sensitive by default if MySQL is installed in a Linux or UNIX server.</p>
+<p><tt><strong>Step 4:</strong></tt> Assign the trigger to fire before the DynaForm which contains the grid. When a case is run, the grid will contain the data queried from the PM Table:</p>
+<p><img alt="" height="282" src="../../sites/default/files/LoadGridFunctionPowerUp_0.png" width="1000"></p>
+<h5><span id="Using_a_query">Using a query</span></h5>
+<p>Grids can also be populated by using an SQL SELECT statement to query the database. In this example, the PMT_CLIENTS table from <a href="Managing_Users.html#Example_1:_Inserting_a_record_in_a_table"><i>Example 1</i></a> is queried.</p>
+<p><tt><strong>Step 1:</strong></tt> Create the trigger. Its source code will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@</span>?clientsGrid <span style="color: #339933;">=</span> PMFLoadGrid<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT * FROM PMT_CLIENTS WHERE Name LIKE '%h_' OR LastName LIKE '%a%' ORDER BY LastName&quot;</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'clientsGrid'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #0000ff;">'20940371452963d0d0a3080077882469'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>The first parameter of the PMFLoadGrid is a SELECT statement which searches for records where the first name contains "h" as the second to last letter, such as "Jo<strong>h</strong>n", or the last name which contains the letter "a", such as "Iri<strong>a</strong>rte". In LIKE searches, "<strong>%</strong>" (percent sign) is a wildcard meaning any number of characters including zero characters and "<strong>_</strong>" (underscore) is a wildcard meaning any single character. Notice that literal strings such as <strong><tt>'%a%'</tt></strong> are enclosed in single quotes and the entire SELECT statement is enclosed in double quotes. Remember that names of tables and fields is case sensitive by default if MySQL is installed in a Linux or UNIX server.</p>
+<p><tt><strong>Step 2:</strong></tt> Assign the trigger to fire before the DynaForm and execute a case. The result will be:</p>
+<p><img alt="" height="340" src="../../sites/default/files/Example2LoadGridPowerUp_0.png" width="1017"></p>
+<p>The query <strong><tt>SELECT *</tt></strong> will return all the fields in the table. To return only specific fields, such as first name, last name and title, then specify the fields in the SELECT statement:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@</span>?clientsGrid <span style="color: #339933;">=</span> PMFLoadGrid<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT Name, LastName, JobTitle FROM PMT_CLIENTS WHERE LastName like '%a%' OR LastName LIKE '%a%' ORDER BY LastName&quot;</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'clientsGrid'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #0000ff;">'20940371452963d0d0a3080077882469'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+							
+<p>Result will be:</p>
+<p><img alt="" height="309" src="../../sites/default/files/Example2LoadGridPowerUpquery_0.png" width="1000"></p>
+<p>The grid can be modified in order to display only fields that were retrieved in the query.</p>
+<h5><span id="Different_field_names_in_grids_.26_tables">Different field names in grids &amp; tables</span></h5>
+<p>If the field names in the grid are different than the field names in the table, then use an associative array which is passed to the <tt>gridFields</tt> parameter to map the grid fields to the table fields.</p>
+<p><tt><strong>Step 1:</strong></tt> In the table created in <a href="Managing_Users.html#Example_1:_Inserting_a_record_in_a_table">Example 1</a> change the name of the following fields:</p>
+
+<codeblock> code =&gt; Code_area
+ Name =&gt; Name_employee
+</codeblock>
+
+<p><tt><strong>Step 2:</strong></tt> Keep the following fields inside the DynaForm:</p>
+<p><img alt="" height="208" src="../../sites/default/files/KeepingFieldsLoadGrid_0.png" width="512"></p>
+<p>Notice that the fields are in "view" mode.</p>
+<p><tt><strong>Step 3:</strong></tt> Then create the trigger as follows:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$fields</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; <span style="color: #0000ff;">'Code'</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Code_area'</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #0000ff;">'Name'</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Name_employee'</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #0000ff;">'LastName'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'LastName'</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #0000ff;">'JobTitle'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'JobTitle'</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>clientsGrid <span style="color: #339933;">=</span> PMFLoadGrid<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'PMT_CLIENTS'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$fields</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>The keys in the array are the field names of the grid and their values are the field names in the database table, so the "Code" field in the grid maps to the "Code_area" field in the table.</p>
+<p><tt><strong>Step 4:</strong></tt> Assign the trigger to fire <i>before</i> the DynaForm containing the grid named "clientsGrid". When a case is executed the result will be:</p>
+<p><img alt="" height="298" src="../../sites/default/files/RelatedFieldsExamplePowerUp_0.png" width="522"></p>
+<p><strong>Using queries with different field names in grids &amp; tables</strong></p>
+<p>Another way to populate a grid when there are different field names in the grid and the table is to use <strong><tt>AS</tt></strong> to rename the field names in the SELECT statement.</p>
+<p>For example, in the previous example, the <strong><tt>Code_area</tt></strong> field was renamed as <strong><tt>Code</tt></strong> and <strong><tt>Name_employee</tt></strong> field was renamed as <strong><tt>Name</tt></strong>. The following trigger would do the same thing:</p>
+
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">@</span>?clientsGrid <span style="color: #339933;">=</span> PMFLoadGrid<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'SELECT Code_area AS code, Name_employee AS NAME, LastName, JobTitle FROM PMT_CLIENTS'</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'clientsGrid'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span>1405066075296508150b1d3042967436<span style="color: #0000ff;">');</span></code></span>
+
+<h5><span id="Ordering_data_by_a_specific_field">Ordering data by a specific field</span></h5>
+<p>The rows in a grid can be sorted by a specific field in the grid. In this example, the data created in <a href="Managing_Users.html#Example_1:_Inserting_a_record_in_a_table"><i>Example 1</i></a> will be sorted by the <strong><tt>Code</tt></strong> field.</p>
+<p><tt><strong>Step 1:</strong></tt>Create the following trigger:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>clientsGrid <span style="color: #339933;">=</span> PMFLoadGrid<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;PMT_TABLE&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;clientsGrid&quot;</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #0000ff;">'1405066075296508150b1d3042967436'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Code'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ASC'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p><tt><strong>Step 2:</strong></tt>Assign the trigger to fire before the DynaForm and execute a case. Now the grid will be sorted according to the <strong><tt>Code</tt></strong> field:</p>
+<p><img alt="" height="329" src="../../sites/default/files/OrderingDataPowerUpDynaform_0.png" width="928"></p>
+<h3><span id="PMFSetOnVacation.28.29"><tt>PMFSetOnVacation()</tt></span></h3>
+<p><tt>PMFSetOnVacation()</tt> set a user's status to <strong>VACATION</strong> and reassigns that user's cases to another user. Note that the user will not be able to run any more cases, until his/her status is set back to <strong>ACTIVE</strong>.</p>
+<p>Note that only cases which have "TO_DO" status are reassigned. Cases with "DRAFT" status are not reassigned.</p>
+<h4><span id="Function_Definition_12">Function Definition</span></h4>
+
+<codeblock><i>array</i> <strong>PMFSetOnVacation</strong>(<i>string</i> userUid, <i>string</i> userReplacer = '') 
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><tt><i>string</i> <strong>userUid</strong></tt>. The unique ID of the user whose status will be changed to <strong>VACATION</strong>. The ID can be found in the following ways:
+<ul><li>Get the UID of the currently logged-in user with the <tt>@@USER_LOGGED</tt> system variable or <tt>$_SESSION['USER_LOGGED']</tt>.</li><li>Use the <a href="../../index.php/ProcessMaker_Functions.html#PMFUserList.28.29">PMFUserList()</a> or <a href="../../index.php/Simple_Trigger_Web_Services.html#WSUserList" title="Simple Trigger Web Services">WSUserList()</a> functions, or the <a href="../../index.php/ProcessMaker_WSDL_Web_Services.html#userList.28.29" title="ProcessMaker WSDL Web Services">userList()</a> web service.</li><li>Query the <strong><tt>wf_&lt;WORKSPACE&gt;.USERS.USR_UID</tt></strong> field in the database with <a href="../../index.php/ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a>.</li></ul></li><li><tt><i>string</i> <strong>userReplacer </strong></tt>. <i>Optional parameter</i>. The unique ID of the user who will replace the user who is on vacation and be reassigned to his/her cases. Make sure that this replacement user either has normal or ad hoc assignment to the tasks, so he/she is available to be reassigned. If this parameter is not defined, then the user selected in the <strong>Replace by</strong> field of the <a href="../../index.php/Managing_Users.html#Creating_New_Users" title="2.0/Managing Users">user's profile</a> will be reassigned to the cases.</li></ul>
+<p><strong>Return value:</strong></p>
+<p>If the user to set on vacation or the replacement user do not currently have ACTIVE status, then returns a string with an error message. Otherwise, returns the following associative array:</p>
+
+<codeblock>array ( 
+   <i>int</i>   <strong>['TOTAL']</strong>:           The number of cases reassigned.
+   <i>array</i> <strong>['CASES_REASSIGNED']</strong>: (  
+      [0] array (
+         <i>string</i> <strong>[APP_UID]</strong>:    The unique ID for the case.
+         <i>string</i> <strong>[APP_TITLE]</strong>:  The case title, which is #&lt;CASE-NUMBER&gt; if there is no case label set.
+         <i>int</i>    <strong>[APP_NUMBER]</strong>: The case number.
+      )
+      ...
+   )
+)
+</codeblock>
+
+<h4><span id="Example_10">Example</span></h4>
+<p>In the example below, we will create a Dynaform, where you will be able to decide the person that will replace the user who will be on vacation.</p>
+<p><tt><strong>Step 1:</strong></tt> Let's create a Dynaform with two <a href="../../index.php/2.0/Dropdown_Boxes_and_Listboxes.html#Dropdown" title="2.0/Dropdown Boxes and Listboxes">dropdown fields</a>, each one of them will have queries which will obtain the user list.</p>
+<p>The XML definition will be:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;">ChangeStatusOnVacation type=&quot;dropdown&quot; required=&quot;0&quot; readonly=&quot;0&quot; optgroup=&quot;0&quot; mode=&quot;edit&quot;&gt;<br />
+&nbsp; <span style="color: #339933;">&lt;![CDATA[Select USR_UID, USR_FIRSTNAME from USERS]]&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>User to be on vacation<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ChangeStatusOnVacation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;UserList</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;dropdown&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">optgroup</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; <span style="color: #339933;">&lt;![CDATA[Select USR_UID, USR_FIRSTNAME from USERS]]&gt;</span><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Replace by<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/UserList<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p><tt><strong>Step 2:</strong></tt> Create the trigger with the corresponding function, go to <strong>"TRIGGERS"</strong> inside the process you are working on, expand <strong>"ProcessMaker Advanced Triggers"</strong>, look for the <tt>PMFSetOnVacation()</tt> function and fill it with the following information:</p>
+<p><img alt="" height="923" src="../../sites/default/files/PowerUpLoadGridTableNameExamp1_1.png" width="573"></p>
+<p>As you can see we are using Dynaform variables in both parameters.</p>
+<p>Its definition will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span><span style="color: #b1b100;">return</span> <span style="color: #339933;">=</span> PMFSetOnVacation <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>ChangeStatusOnVacation<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>UserList<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p><tt><strong>Step 3:</strong></tt> Make sure you have pending cases for the users you are going to use. We will use two users, Mary Walker and Liliana Iriarte. Logging with Mary Walker user and go to her inbox we will see 10 cases:</p>
+<p><img alt="" height="378" src="../../sites/default/files/LoggingMaryWalkerUser_0.png" width="1156"></p>
+<p>Then, execute a case, in the first field choose Mary Walker, since she will be the person to be on vacation and she will be replaced by Liliana Iriarte, user to have chosen on the second field:</p>
+<p><img alt="" height="181" src="../../sites/default/files/ExecutingACaseOnVacation_0.png" width="532"></p>
+<p>Click on <strong>Submit</strong> button, and if you have the <a href="../../index.php/2.0/Triggers.html#Debugging_Triggers" title="2.0/Triggers">debugger enabled</a>, inside the <tt><i>return</i></tt> variable, you will see the number of reassigned cases and their corresponding information:</p>
+<p><img alt="" height="504" src="../../sites/default/files/ReassignedCasesDebugPowerUp_0.png" width="300"></p>
+<p>Logging with 'Mary Walker' user, we will see her inbox folder empty:</p>
+<p><img alt="" height="157" src="../../sites/default/files/ReassignedCasesInboxEmpty_.png" width="1000"></p>
+<p>Finally, logging in as 'Liliana Iriarte' user, we will see all reassigned cases inside her inbox folder:</p>
+<p><img alt="" height="306" src="../../sites/default/files/ReassignedCasesReplacedByUser.png" width="1100"></p></div></div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

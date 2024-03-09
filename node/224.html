@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/Changing_the_ProcessMaker_Configuration.html" />
+<link rel="shortlink" href="224.html" />
+<title>Changing the ProcessMaker Configuration | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"iAW2Y8jjUTChnAUXu1UMTumkVp7ch7sJIqgM2jalo44","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-224 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="224.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-4DrMwgBPxuPE4WRwMNBnoKxy4PM9OY4ufDu1UeOE_4E" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">Changing the ProcessMaker Configuration</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.8</a></li><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.7</a></li><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.6</a></li><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.5</a></li><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.4</a></li><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.3</a></li><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.2</a></li><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.1</a></li><li><a href="../3.0/Changing_the_ProcessMaker_Configuration.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="Changing the ProcessMaker Configuration" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="224.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Changing the ProcessMaker Configuration 1/5</option><option value="40">Give Changing the ProcessMaker Configuration 2/5</option><option value="60" selected="selected">Give Changing the ProcessMaker Configuration 3/5</option><option value="80">Give Changing the ProcessMaker Configuration 4/5</option><option value="100">Give Changing the ProcessMaker Configuration 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-9fzjRtTZoTOmIMvDP9uenLFriCOBip3k70e4fiBOnHE" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="224.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="224.html#Overview">Overview</a></li>
+<li class="toc"><a href="224.html#Changing_the_installation_directory">Changing the installation directory</a></li>
+<ol class="toc">
+<li class="toc"><a href="224.html#Editing_the_ProcessMaker_configuration_file_for_Apache">Editing the ProcessMaker configuration file for Apache</a></li>
+<li class="toc"><a href="224.html#Editing_the_Apache_configuration_file">Editing the Apache configuration file</a></li>
+<li class="toc"><a href="224.html#Restarting_Apache">Restarting Apache</a></li>
+</ol>
+<li class="toc"><a href="224.html#Changing_the_IP_Address_or_Port_Number">Changing the IP Address or Port Number</a></li>
+<li class="toc"><a href="224.html#Editing_the_PHP_configuration">Editing the PHP configuration</a></li>
+<ol class="toc">
+<li class="toc"><a href="224.html#Increasing_the_maximum_size_of_uploaded_files">Increasing the maximum size of uploaded files</a></li>
+</ol>
+<li class="toc"><a href="224.html#Increasing_the_maximum_execution_time">Increasing the maximum execution time</a></li>
+<ol class="toc">
+<li class="toc"><a href="224.html#Increasing_the_maximum_memory_per_session">Increasing the maximum memory per session</a></li>
+<li class="toc"><a href="224.html#Moving_the_ProcessMaker_databases">Moving the ProcessMaker databases</a></li>
+</ol>
+<li class="toc"><a href="224.html#Transferring_the_MySQL_databases">Transferring the MySQL databases</a></li>
+<ol class="toc">
+<li class="toc"><a href="224.html#Configuring_ProcessMaker_for_a_Different_Database_Location">Configuring ProcessMaker for a Different Database Location</a></li>
+<ol class="toc">
+<li class="toc"><a href="224.html#For_ProcessMaker_2.0_and_above">For ProcessMaker 2.0 and above</a></li>
+<li class="toc"><a href="224.html#For_versions_older_then_2.0">For versions older then 2.0</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="224.html#Moving_ProcessMaker_to_another_server">Moving ProcessMaker to another server</a></li>
+<ol class="toc">
+<li class="toc"><a href="224.html#Using_the_Workspace_Backup_and_Restore_utility">Using the Workspace Backup and Restore utility</a></li>
+<li class="toc"><a href="224.html#Manually_Transferring_to_a_New_Server">Manually Transferring to a New Server</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>ProcessMaker sets its configuration settings at installation and does not provide a easy way to alter those settings from the graphical interface. Nonetheless, the IP address, port number, installation directory and MySQL databases can be altered after installation by editing the configuration files on the system. Use a bare text editor, such as <a href="https://www.microsoft.com/en-us/p/notepad-for-windows-10/9nblggh4w20k?activetab=pivot:overviewtab">Notepad</a> or <a href="http://notepad-plus-plus.org/">Notepad++</a> in Windows, <a href="http://www.vim.org/">vim</a> or <a href="http://projects.gnome.org/gedit/">gedit</a> in Linux/UNIX, to edit the configuration files and always make a backup of the files before editing them.</p>
+
+<h2><span id="Changing_the_installation_directory">Changing the installation directory</span></h2><p>If moving the ProcessMaker code to a new location on the server, configuration files will need to be changed for Apache and in the ProcessMaker code.</p><p>First, move the ProcessMaker code to a new location on the server. For instance, if moving the code from<strong><tt>/opt/processmaker</tt></strong> to <strong><tt>/usr/bin/processmaker</tt></strong> in Linux/UNIX:</p>
+
+<codeblock>mv /opt/processmaker /usr/bin/processmaker 
+</codeblock>
+
+<p>Then, open the file <strong><tt><install-directory>/workflow/engine/test/bootstrap/gulliverConstants.php</tt></strong> with a bare text editor. For example:</p>
+
+<codeblock>vim /usr/bin/processmaker/workflow/engine/test/bootstrap/gulliverConstants.php 
+</codeblock>
+
+<p>Change the paths to the new location. For example, change the following lines from:</p>
+
+<codeblock>define( 'PATH_DATA', '<strong>/opt/processmaker</strong>/shared/' );
+define( 'PATH_C',    '<strong>/opt/processmaker</strong>/compiled/' );
+</codeblock>
+
+<p>To:</p>
+
+<codeblock>define( 'PATH_DATA', '<strong>/usr/bin/processmaker</strong>/shared/' );
+define( 'PATH_C',    '<strong>/usr/bin/processmaker</strong>/compiled/' );
+</codeblock>
+
+<p>Next, open the file <strong><tt><install-directory>/workflow/engine/config/paths_installed.php</tt></strong> with a bare text editor. For example:</p>
+
+<codeblock>vim /usr/bin/processmaker/workflow/engine/config/paths_installed.php  
+</codeblock>
+
+<p>Under the <strong><tt>***System Directories &amp; Paths***</tt></strong> section, change the paths to the new location. For example, change from:</p>
+
+<codeblock>define( 'PATH_HOME', '<strong>/opt/processmaker</strong>/trunk/workflow/' );
+define( 'PATH_GULLIVER_HOME', '<strong>/opt/processmaker</strong>/trunk/gulliver'  . PATH_SEP );
+</codeblock>
+
+<p>To:</p>
+
+<codeblock>define( 'PATH_HOME', '<strong>/usr/bin/processmaker</strong>/trunk/workflow/' );
+define( 'PATH_GULLIVER_HOME', '<strong>/usr/bin/processmaker</strong>/trunk/gulliver'  . PATH_SEP );
+</codeblock>
+
+<p>After changing the path, then delete the binary file <strong><tt><install-directory>/shared/srvConf.singleton</tt></strong> which contains data pointing to the old path. For example:</p>
+
+<codeblock>rm /usr/bin/processmaker/shared/srvConf.singleton
+</codeblock>
+
+<p>The <tt>srvConf.singleton</tt> file will be automatically recreated at the next login to ProcessMaker.</p>
+<p>Then <a href="../index.php/Deleting_ProcessMaker%2527s_Compiled_Cache.html" title="Deleting ProcessMaker's Compiled Cache">delete ProcessMaker's compiled cache</a>, which contains data also pointing to the old path. For example:</p>
+
+<codeblock>rm -rf /usr/bin/processmaker/compiled/*
+</codeblock>
+
+<p>The contents of the compiled directory will automatically be recreated the next time that DynaForms are displayed in ProcessMaker.</p>
+<h3><span id="Editing_the_ProcessMaker_configuration_file_for_Apache">Editing the ProcessMaker configuration file for Apache</span></h3>
+<p>Finally, change the location of the ProcessMaker code in the Apache configuration file. Open the file <strong><tt>pmos.conf</tt></strong>, whose location depends upon your system:</p>
+<dl><dd><strong>Red Hat/CentOS/Fedora:</strong>
+<dl><dd><tt>/etc/httpd/conf.d/pmos.conf</tt></dd></dl></dd><dd><strong>Debian/Ubuntu:</strong>
+<dl><dd><tt>/etc/apache2/sites-available/pmos.conf</tt></dd></dl></dd><dd><strong>Windows:</strong>
+<dl><dd>If Apache was manually installed, the ProcessMaker configuration file can probably be found at:<dl><dd><tt>C:/Program Files/Apache Software Foundation/Apache2.2/conf/pmos.conf</tt></dd></dl></dd><dd>If Apache was installed with the ProcessMaker Windows Installer, then look for it at:<dl><dd><tt>C:/Program Files/ProcessMaker/apache2/conf/pmos.conf</tt></dd></dl></dd></dl></dd></dl>
+<p>In the <strong><tt>pmos.conf</tt></strong> file, change the path to the ProcessMaker code. For example, change the lines from:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">DocumentRoot /opt/processmaker/workflow/public_html<br />
+DirectoryIndex index.html index.php<br />
+&lt;Directory &nbsp;&quot;/opt/processmaker/workflow/public_html&quot;&gt;<br />
+&lt;/directory&gt;</div></div>
+
+<p>To:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">DocumentRoot /usr/bin/processmaker/workflow/public_html<br />
+DirectoryIndex index.html index.php<br />
+&lt;Directory &nbsp;&quot;/usr/bin/processmaker/workflow/public_html&quot;&gt;</div></div>
+
+<h3><span id="Editing_the_Apache_configuration_file">Editing the Apache configuration file</span></h3>
+<p>If the location of the <strong><tt>pmos.conf</tt></strong> file has been changed on your system, then it is necessary to modify the <tt><strong>Include</strong></tt> directive in the Apache configuration file to point to the new location. Edit the <strong><tt>httpd.conf</tt></strong> file and change the following line:</p>
+
+<codeblock>Include "<strong><path></path></strong>/pmos.conf"
+</codeblock>
+
+<p><strong>Windows:</strong></p>
+<div style="margin-left: 25px;"><p>Edit the file <strong><tt>C:\Archivos de programa\ProcessMaker\apache2\conf\httpd.conf</tt></strong> to change the following line to point to the new location of <strong><tt>pmos.conf</tt></strong>:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Include &quot;C:/Program Files/ProcessMaker/apps/processmaker/conf/pmos.conf&quot;</div></div>
+</div>
+
+<p><strong>Red Hat/Cent OS/Fedora:</strong></p>
+<div style="margin-left: 25px;"><p>Probably no change is necessary in the file <strong><tt>/etc/httpd/httpd.conf</tt></strong>, since all web site configuration files including <strong><tt>pmos.conf</tt></strong> should be found in the directory <strong><tt>/etc/httpd/conf.d/</tt></strong></p></div>
+<p><strong>Debian/Ubuntu:</strong></p>
+<div style="margin-left: 25px;"><p>Probably no change is necessary in the file <strong><tt>/etc/apache2/apache2.conf</tt></strong>, since all web site configuration files including <strong><tt>pmos.conf</tt></strong> should be found in the directory<strong><tt>/etc/apache2/sites-available/</tt></strong></p></div>
+<h3><span id="Restarting_Apache">Restarting Apache</span></h3>
+<p>After saving the changes to the configuration files, then restart the Apache web server for the new ProcessMaker configuration to take effect.</p>
+<p><strong>Red Hat/CentOS/Fedora:</strong></p>
+
+<div style="margin-left: 25px;">
+<codeblock>service httpd restart   <i><strong>or</strong></i>   /etc/init.d/httpd restart
+</codeblock>
+</div>
+
+<p><strong>Debian:</strong></p>
+<div style="margin-left: 25px;">
+<codeblock>/etc/init.d/apache2 restart
+</codeblock>
+</div>
+
+<p><strong>Ubuntu:</strong></p>
+<div style="margin-left: 25px;">
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">sudo /etc/init.d/apache2 restart</div></div>
+</div>
+<p><strong>SUSE/openSUSE:</strong></p>
+<div style="margin-left: 25px;">
+<codeblock>rcapache2 restart    <i><strong>or</strong></i>   /etc/init.d/apache2 restart
+</codeblock>
+</div>
+<p><strong>FreeBSD:</strong></p>
+<div style="margin-left: 25px;">
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">apachectl restart</div></div>
+</div>
+<p><strong>Windows:</strong></p>
+<div style="margin-left: 25px;"><p>If Apache was installed with the ProcessMaker Windows Installer, then issue the following commands from DOS:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">NET STOP ProcessMakerApache<br />
+NET START ProcessMakerApache</div></div>
+
+<p>If using Windows XP Professional or Windows 2003 Server, Apache can also be restarted by going to <strong>Control Panel &gt; Administrative Tools &gt; Services</strong>. <i>Right click</i> on the "ProcessMakerApache" service, and select <strong>Restart</strong> from the dropdown menu.</p>
+<p>If Apache was manually <a href="https://httpd.apache.org/docs/current/platform/windows.html">installed as a Windows service</a>, then use the following commands:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">NET STOP Apache2.2<br />
+NET START Apache2.2</div></div>
+
+<p>If unsure whether Apache has been installed as a Windows service, look for it in the list of Windows services by going to <strong>Start &gt; All Programs &gt; Accessories &gt; System Tools &gt; System Information</strong> or by issuing the following DOS command:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">winmsd</div></div>
+
+<p>In the left-hand panel of the <strong>System Information</strong> window, go to <strong>Software Environment &gt; Services</strong> to see a list of available services. If not in the list, then Apache will have to be manually restarted by issuing the following DOS command:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">httpd -k restart </div></div>
+</div>
+
+<p>Once Apache has been restarted, then ProcessMaker can be used in the new location on the server.</p>
+<h2><span id="Changing_the_IP_Address_or_Port_Number">Changing the IP Address or Port Number</span></h2>
+<p>To change the IP address or port number for an existing ProcessMaker installation, use a plain text editor to modify the <strong><tt>pmos.conf</tt></strong>, and <strong><tt>db.php</tt></strong> files on your system.</p>
+<p><strong>1.</strong> If Apache isn't already configured to use a new IP address for the server or to listen on a new port number, then edit the Apache configuration file. Its location depends upon your system:</p>
+<dl><dd><strong>Red Hat/CentOS/Fedora:</strong>
+
+<dl><dd><tt>/etc/httpd/conf/httpd.conf</tt></dd></dl></dd><dd><strong>Debian/Ubuntu:</strong>
+<dl><dd><tt>/etc/apache2/apache.conf</tt></dd></dl></dd><dd><strong>FreeBSD:</strong>
+<dl><dd><tt>/usr/local/etc/apache/httpd.conf</tt></dd></dl></dd><dd><strong>Windows:</strong>,
+<dl><dd>If Apache was installed by the ProcessMaker Windows Installer:<dl><dd><tt><drive>:\<install-directory>\apache2\conf\httpd.conf</drive></tt></dd></dl></dd><dd><i>For example:</i>
+<dl><dd><tt>C:\Program Files\ProcessMaker\apache2\conf\httpd.conf</tt></dd></dl></dd><dd>If Apache was manually installed:<dl><dd><tt><drive>:\<install-directory>\Apache Software Foundation\Apache2.2\conf\httpd.conf</drive></tt></dd></dl></dd><dd><i>For example:</i>
+<dl><dd><tt>C:\Program Files\Apache Software Foundation\Apache2.2\conf\httpd.conf</tt></dd></dl></dd></dl></dd></dl>
+<p>Set the IP address for the <strong><tt>ServerName</tt></strong> directive. For example, if changing from the IP address <strong><tt>192.168.0.100</tt></strong> to the address <strong><tt>10.1.2.3</tt></strong>, then change the line from:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">ServerName 192.168.0.100</div></div>
+
+<p>To:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">ServerName 10.1.2.3</div></div>
+
+<p>If your DNS or <a href="http://en.wikipedia.org/wiki/Hosts_%28file%29">hosts</a> file has defined a domain name for ProcessMaker, it can be used instead of an IP number. For example:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">ServerName processmaker.mycompany.com</div></div>
+
+<p>If changing ProcessMaker to a different port number, then change <tt><strong>Listen</strong></tt> in the Apache configuration file. For instance, if changing from port 85 to port 8080, then change from:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Listen 192.168.0.100:85</div></div>
+
+<p>To:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Listen 10.1.2.3:8080</div></div>
+
+<p>The IP address doesn't have to be specified if you want Apache to listen on the same port for all incoming IP addresses:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Listen 8080</div></div>
+
+<p><strong>2.</strong> Then, <a href="224.html#Editing_the_ProcessMaker_configuration_file_for_Apache">edit the <strong><tt>pmos.conf</tt></strong> file</a>, which is the Apache configuration file for ProcessMaker. Replace the old IP address or port number with the new IP address or port number. The port number is defined after the IP address and is separated by ":" (a colon). If no port number is included in the address, ProcessMaker will use port 80 by default, which is the port generally used by the web.</p>
+<p>For example, if changing from the address <strong><tt>192.168.0.100:85</tt></strong> (where <strong><tt>85</tt></strong> is the port number) to the address <strong><tt>10.1.2.3:8080</tt></strong> (where the <strong>8080</strong> is the port number), then change the lines from:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">NameVirtualHost 192.168.0.100:85<br />
+#processmaker virtual host <br />
+&lt;VirtualHost 192.168.0.100:85 &gt;<br />
+&nbsp; &nbsp;ServerName &quot;192.168.0.100:85&quot;</div></div>
+
+<p>To:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">NameVirtualHost 10.1.2.3:8080<br />
+#processmaker virtual host <br />
+&lt;VirtualHost 10.1.2.3:8080 &gt;<br />
+&nbsp; &nbsp;ServerName &quot;10.1.2.3:8080&quot;</div></div>
+
+<p><strong>3.</strong> Then, edit the <strong><tt>db.php</tt></strong> file, which indicates how to access ProcessMaker's databases in MySQL. If ProcessMaker was manually installed, it can be found at:<br><code><INSTALL-DIRECTORY>/shared/sites/<WORKSPACE>/db.php</code><br>
+
+If ProcessMaker was installed using the ProcessMaker Windows Installer before version 1.6-4260, then look for it at:<br><code><INSTALL-DIRECTORY>\ProcessMaker\apps\processmaker\shared\<WORKSPACE>_data\sites\<WORKSPACE>\db.php</code><br>
+If in Windows, ProcessMaker version 1.6-4260 or later, then look for it at:<br>
+
+<code><INSTALL-DIRECTORY>\ProcessMaker\processmaker\shared\<WORKSPACE>\db.php</code></p>
+<p>Replace the old IP address with the new one, but do not change the port number, since it is the port for the MySQL database, which in most cases will be the default port <strong><tt>3306</tt></strong>. For example, if changing from IP address <strong><tt>192.168.0.100</tt></strong> to <strong><tt>10.1.2.3</tt></strong>, then change the file from:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">// Processmaker configuration</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_ADAPTER'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'mysql'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_HOST'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'192.168.0.100:3306'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_NAME'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'wf_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_USER'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'wf_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_PASS'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'1tyv2zm5wxks'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_RBAC_HOST'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'192.168.0.100:3306'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_RBAC_NAME'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rb_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_RBAC_USER'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rb_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_RBAC_PASS'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'1tyv2zm5wxks'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_REPORT_HOST'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'192.168.0.100:3306'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_REPORT_NAME'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rp_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_REPORT_USER'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rp_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_REPORT_PASS'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'1tyv2zm5wxks'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<p>To:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">// Processmaker configuration</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_ADAPTER'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'mysql'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_HOST'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'10.1.2.3:3306'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_NAME'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'wf_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_USER'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'wf_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_PASS'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'1tyv2zm5wxks'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_RBAC_HOST'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'10.1.2.3:3306'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_RBAC_NAME'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rb_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_RBAC_USER'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rb_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_RBAC_PASS'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'1tyv2zm5wxks'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_REPORT_HOST'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'10.1.2.3:3306'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_REPORT_NAME'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rp_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_REPORT_USER'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rp_workflow'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'DB_REPORT_PASS'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'1tyv2zm5wxks'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<p>The <strong><tt>db.php</tt></strong> file has to be edited for each ProcessMaker workspace, including the default "workflow" workspace.</p>
+<p><strong>4.</strong> Finally, <a href="224.html#Restarting_Apache">restart the Apache web server</a> for the new IP address or port number to take effect.</p>
+<h2><span id="Editing_the_PHP_configuration">Editing the PHP configuration</span></h2>
+<p>The configuration of PHP controls a number of aspects of ProcessMaker's behavior, such as the maximum amount of memory per session and the maximum size of uploaded files. To change the configuration of PHP, edit the <strong><tt>php.ini</tt></strong> file, whose location depends on your system:</p>
+<dl><dd><strong>Red Hat/CentOS/Fedora:</strong>
+<dl><dd><tt>/etc/php.ini</tt></dd></dl></dd><dd><strong>Debian/Ubuntu/SUSE/openSUSE:</strong>
+<dl><dd><tt>/etc/php5/apache2/php.ini</tt></dd></dl></dd><dd>In Debian/Ubuntu systems with multiple web servers:<dl><dd><tt>/etc/php5/cgi/php.ini</tt></dd></dl></dd><dd><strong>FreeBSD:</strong>
+<dl><dd><tt>/usr/local/etc/php.ini</tt></dd></dl></dd><dd><strong>Windows:</strong>
+<dl><dd>If PHP was installed by the ProcessMaker Windows Installer:<dl><dd><tt>C:\Program Files\ProcessMaker\php\php.ini</tt></dd></dl></dd><dd>If PHP was manually installed:<dl><dd><tt>C:\Program Files\PHP\php.ini</tt></dd></dl></dd></dl></dd></dl>
+<p>After saving your changes, <a href="224.html#Restarting_Apache">restart Apache</a> for the new PHP configuration to go into effect.</p>
+<h3><span id="Increasing_the_maximum_size_of_uploaded_files">Increasing the maximum size of uploaded files</span></h3>
+<p>Since uploaded files are stored as files in the hard drive, their size can be as large as allowed by the operating system and harddrive format. Nonetheless, PHP by default is configured to allow the upload of files no larger than 2MB. To increase the maximum size of uploaded files, change the <strong><tt>upload_max_filesize</tt></strong> and <strong><tt>post_max_size</tt></strong> settings in the <strong><tt>php.ini</tt></strong> file.</p>
+<p>Look for the "File Uploads" section and set <strong><tt>file_uploads = On</tt></strong> and increase the size of <strong><tt>upload_max_filesize</tt></strong>:</p>
+
+<codeblock>;;;;;;;;;;;;;;;;
+; File Uploads ;
+;;;;;;;;;;;;;;;;
+; Whether to allow HTTP file uploads.
+<strong>file_uploads = On</strong>
+; Temporary directory for HTTP uploaded files (will use system default if not specified).
+;upload_tmp_dir =
+; Maximum allowed size for uploaded files.
+<strong>upload_max_filesize = 2M</strong>
+</codeblock>
+
+<p>Uploaded files are passed to the ProcessMaker server as POST data, whose maximum size by default is 8MB. If larger files need to be uploaded, also increase the size of <strong><tt>post_max_size</tt></strong>:</p>
+
+<codeblock>; Maximum size of POST data that PHP will accept.
+<strong>post_max_size = 8M</strong>
+</codeblock>
+
+<h2><span id="Increasing_the_maximum_execution_time">Increasing the maximum execution time</span></h2>
+<p>By default, the maximum time that a command can be executed in PHP is set to 30 seconds. If you see an error message such as:</p>
+
+<codeblock>Fatal Error: Maximum execution time of 30 seconds exceeded in <i><strong><path></path></strong></i>/<i><strong><file></file></strong></i>.php on line <i><strong>XXX</strong></i>.
+</codeblock>
+
+<p>Then increase the value of the <strong><tt>max_execution_time</tt></strong> in <strong><tt>php.ini</tt></strong>:</p>
+
+<codeblock>;;;;;;;;;;;;;;;;;;;
+; Resource Limits ;
+;;;;;;;;;;;;;;;;;;;
+
+<strong>max_execution_time = 30</strong>     ; Maximum execution time of each script, in seconds
+</codeblock>
+
+<h3><span id="Increasing_the_maximum_memory_per_session">Increasing the maximum memory per session</span></h3>
+<p>The memory for each session of ProcessMaker is generally set to 80MB, but this may not be enough memory to generate large Output Documents or do other memory-hogging actions. To change the <tt>memory_limit</tt> in version 2.0.29 and later, set it in the <a href="../index.php/Configuration_File_env.ini.html" title="Configuration File env.ini"><strong><tt>env.ini</tt></strong> configuration file</a>.</p>
+<p>If more memory per session is needed before version 2.0.29, increase the value of the <strong><tt>memory_limit</tt></strong> setting in the <strong><tt>php.ini</tt></strong> file:</p>
+
+<codeblock>;;;;;;;;;;;;;;;;;;;
+; Resource Limits ;
+;;;;;;;;;;;;;;;;;;;
+
+max_execution_time = 30     ; Maximum execution time of each script, in seconds
+max_input_time = 60 ; Maximum amount of time each script may spend parsing request data
+;max_input_nesting_level = 64 ; Maximum input variable nesting level
+<strong>memory_limit = 80M</strong>      ; Maximum amount of memory a script may consume (16MB)
+</codeblock>
+
+<p>In addition, edit the <strong><tt>sysGeneric.php</tt></strong> file, which is generally located at:</p>
+<dl><dd><strong>Linux/UNIX</strong>:
+<dl><dd><tt>/opt/processmaker/workflow/public_html/sysGeneric.php</tt></dd></dl></dd><dd><strong>Windows</strong>, before ProcessMaker version 1.6-4260:
+<dl><dd><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>\htdocs\workflow\public_html\sysGeneric.php</tt></dd></dl></dd><dd><strong>Windows</strong>, ProcessMaker version 1.6-4260 and later:
+<dl><dd><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>\workflow\public_html\sysGeneric.php</tt></dd></dl></dd></dl>
+<p>In the <strong><tt>sysGeneric.php</tt></strong> file, edit line 7 to increase the value of <strong><tt>'80M'</tt></strong>:</p>
+
+<codeblock>ini_set('memory_limit', '<strong>80M'</strong>);
+</codeblock>
+
+<h3><span id="Moving_the_ProcessMaker_databases">Moving the ProcessMaker databases</span></h3>
+<p>For large scale usage of ProcessMaker, it is recommended to store the ProcessMaker databases on a separate server, since it will reduce some of the load on the web server running ProcessMaker. Moving the ProcessMaker databases to a new location, is a two step process. First, transfer the databases to a different installation of MySQL, then configure ProcessMaker to use those databases in a new location.</p>
+<h2><span id="Transferring_the_MySQL_databases">Transferring the MySQL databases</span></h2>
+<p>The best way to move the ProcessMaker databases from one installation of ProcessMaker to another is to use the <a href="../index.php/2.0/Backing_up_and_Restoring_ProcessMaker.html#Backing_up_Workspaces" title="2.0/Backing up and Restoring ProcessMaker"><code>processmaker workspace-backup</code></a> and <a href="../index.php/2.0/Backing_up_and_Restoring_ProcessMaker.html#Restoring_Workspaces" title="2.0/Backing up and Restoring ProcessMaker"><code>processmaker workspace-restore</code></a> commands.</p>
+<p>However, if needing to move the MySQL databases to a new location without changing the ProcessMaker installation (or moving an older version of ProcessMaker which doesn't support workspace backup and restore), then use MySQL's utilities. Use the <tt><a href="http://dev.mysql.com/doc/refman/5.1/en/mysqldump.html">mysqldump</a></tt> command to make a copy of each database, and then use the <tt><a href="http://dev.mysql.com/doc/refman/5.1/en/mysql.html">mysql</a></tt> command to restore the database in a different installation of MySQL.</p>
+<p>Each ProcessMaker workspace uses <a href="../index.php/ProcessMaker_Database_Model.html" title="ProcessMaker Database Model">3 MySQL databases</a>. These 3 databases can use any name that was specified during installation, but they are generally named <strong><tt>wf_<workspace></workspace></tt></strong>,<strong><tt>rb_<workspace></workspace></tt></strong> and <strong><tt>rp_<workspace></workspace></tt></strong> (or <strong><tt>rp<workspace></workspace></tt></strong> if installed by the ProcessMaker Windows Installer before version 1.6-4260). For the default "workflow" workspace, they would be named <tt>"wf_workflow"</tt>, <tt>"rb_workflow"</tt>, and <tt>"rp_workflow"</tt>.</p>
+<p>To check the names of these databases on your system, open a command line terminal on the server where the ProcessMaker databases are currently located and login to MySQL as the "root" user:</p>
+
+<codeblock><strong>mysql -u root -p</strong>
+   <i>Enter the root password</i>
+</codeblock>
+
+<p>If using MS Windows, first add the directory where <tt>mysql.exe</tt> is installed to your <tt>PATH</tt> environment variable:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">PATH=%PATH%;C:\Program Files\ProcessMaker\mysql\bin</div></div>
+
+<p>Now you can login to MySQL without first changing to the <tt>mysql\bin</tt> directory.</p>
+<p>Once inside MySQL, issue the <code>show databases</code> command to see the list of databases. For instance, these would be the databases on a system with "workflow" and "sales" workspaces:</p>
+
+<codeblock>mysql&gt; <strong>show databases;</strong>
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| phpmyadmin         |
+| rb_sales           |
+| rb_workflow        |
+| rp_sales           |
+| rp_workflow        |
+| wf_sales           |
+| wf_workflow        |
++--------------------+
+mysql&gt; <strong>exit;</strong>
+</codeblock>
+
+<p>After verifying the database names, then logout of MySQL and use the <tt>mysqldump</tt> command to make a backup of the three databases for each workspace:</p>
+
+<codeblock>mysqldump --user=XXXXXXXX --password=XXXXXXX DB_NAME &gt; DBNAME.SQL 
+</codeblock>
+
+<p>For example, to make a backup of the default "workflow" workspace using the "root" user whose password is "P@sSw0rD":</p>
+
+<codeblock>mysqldump --user=root --password=P@sSw0rD wf_workflow &gt; wf_workflow.sql 
+mysqldump --user=root --password=P@sSw0rD rb_workflow &gt; rb_workflow.sql
+mysqldump --user=root --password=P@sSw0rD rp_workflow &gt; rp_workflow.sql
+</codeblock>
+
+<p>Then, go to the other server where the databases will be installed. In the command line terminal, use the <tt>mysql</tt> command to import each of the databases:</p>
+
+<codeblock>mysql --verbose --user=XXXXXXXX --password=XXXXXXX DB_NAME &lt; DBNAME.SQL
+</codeblock>
+
+<p>For example, if importing the "workflow" workspace with a "root" user whose password is "Dr0wSs@P":</p>
+
+<codeblock>mysql --verbose --user=root --password=Dr0wSs@P wf_workflow &lt; wf_workflow.sql 
+mysql --verbose --user=root --password=Dr0wSs@P rb_workflow &lt; rb_workflow.sql
+mysql --verbose --user=root --password=Dr0wSs@P rp_workflow &lt; rp_workflow.sql
+</codeblock>
+
+<p>Then login to MySQL and configure a user to have full privileges to control the MySQL databases:</p>
+
+<codeblock>mysql -u root -p 
+  <i>Enter the root password</i>
+</codeblock>
+
+<p>Once in MySQL, give the user which will be running ProcessMaker superuser privileges to create create and modifiy MySQL tables:</p>
+
+<codeblock>mysql&gt; grant all on *.* to '<i><strong>USER'</strong></i>@'<i><strong>IP-ADDRESS'</strong></i> identified by '<i><strong>PASSWORD'</strong></i> with grant option;
+</codeblock>
+
+<p>Replace <i><strong><tt>USER</tt></strong></i> with the name of your MySQL user and <i><strong><tt>PASSWORD</tt></strong></i> with the password for that user. (If you haven't created any additional MySQL users, use <tt>'root'</tt> as the user and the root's password.) Also replace '<i><strong><tt>IP-ADDRESS</tt>'</strong></i> with the domain name or IP address of the web server where ProcessMaker is installed. For example, if ProcessMaker is installed at 192.168.1.101, then:</p>
+
+<codeblock>mysql&gt; grant all on *.* to 'root'@'192.168.1.101' identified by 'Dr0wSs@P' with grant option;
+</codeblock>
+
+<p>Finally, exit MySQL:</p>
+
+<codeblock>mysql&gt; exit;
+</codeblock>
+
+<p>Also make sure that no firewall is blocking the port used by MySQL, which by default is port 3306.</p>
+<h3><span id="Configuring_ProcessMaker_for_a_Different_Database_Location">Configuring ProcessMaker for a Different Database Location</span></h3>
+<h4><span id="For_ProcessMaker_2.0_and_above">For ProcessMaker 2.0 and above</span></h4>
+<p>ProcessMaker 2.0 provides a way to change the database location and credentials inside the interface. See <a href="../index.php/Clearing_the_Case_List_Cache.html#Changing_the_MySQL_Location_or_its_.22root.22_user" title="Clearing the Case List Cache">Changing the MySQL Location or its "root" user</a>.</p>
+<h4><span id="For_versions_older_then_2.0">For versions older then 2.0</span></h4>
+<p>ProcessMaker uses an encrypted hash to store the information about how to access each database. After moving the MySQL databases, this hash will have to be regenerated with new information.</p>
+<p>With a plain text editor edit the <strong><tt>r.php</tt></strong> file, which is generally located at:</p>
+<dl><dd><strong>Linux/UNIX</strong>:
+<dl><dd><tt>/opt/processmaker/workflow/engine/methods/install/r.php</tt></dd></dl></dd><dd><strong>Windows</strong>, before ProcessMaker version 1.6-4260:
+<dl><dd><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>\htdocs\workflow\engine\methods\install\r.php</tt></dd></dl></dd><dd><strong>Windows</strong>, ProcessMaker version 1.6-4260 and later:
+<dl><dd><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>\workflow\engine\methods\install\r.php</tt></dd></dl></dd></dl>
+<p>In <strong><tt>r.php</tt></strong>, edit the third line:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$h</span><span style="color: #339933;">=</span>G<span style="color: #339933;">::</span><span style="color: #004000;">encrypt</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;localhost&quot;</span><span style="color: #339933;">.</span><span style="color: #000088;">$sh</span><span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;mysql-root&quot;</span><span style="color: #339933;">.</span><span style="color: #000088;">$sh</span><span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;mysql-root-password&quot;</span><span style="color: #339933;">.</span><span style="color: #000088;">$sh</span><span style="color: #339933;">.</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><span style="color: #000088;">$sh</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Replace "localhost" with the IP address of the new location of the ProcessMaker databases. Replace "mysql-root" and "mysql-root-password" with the username and password of the MySQL user who can create the databases. (In most cases, this will be the "root" user.)</p>
+<p>For instance, if the ProcessMaker databases are being moved to a server located at 192.169.1.100, which will be accessed by the "root" user with the password "Dr0WsS@P":</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$h</span><span style="color: #339933;">=</span>G<span style="color: #339933;">::</span><span style="color: #004000;">encrypt</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;192.168.1.100&quot;</span><span style="color: #339933;">.</span><span style="color: #000088;">$sh</span><span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;root&quot;</span><span style="color: #339933;">.</span><span style="color: #000088;">$sh</span><span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;Dr0WsS@P&quot;</span><span style="color: #339933;">.</span><span style="color: #000088;">$sh</span><span style="color: #339933;">.</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><span style="color: #000088;">$sh</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>After changing <strong><tt>r.php</tt></strong>, open a web browser and login to ProcessMaker as the "admin" user in the "workflow" workspace. Then, execute the <strong><tt>r.php</tt></strong> script by entering the following address your web browser:</p>
+<dl><dd><tt>http://<ip-address>/sysworkflow/en/green/install/r.php</ip-address></tt></dd></dl>
+<p>A hash will be generated for the installation and for the system:</p>
+<p><img alt="" height="194" src="../sites/default/files/3_0.png" width="718"></p>
+<p>Copy the values of the <tt>HASH_INSTALLATION</tt> and <tt>SYSTEM_HASH</tt>. Then, edit the <strong><tt>paths_installed.php</tt></strong> file, which is generally located at:</p>
+<dl><dd><strong>Linux/UNIX</strong>:
+<dl><dd><tt>/opt/processmaker/workflow/engine/config/paths_installed.php</tt></dd></dl></dd><dd><strong>Windows</strong>, before ProcessMaker version 1.6-4260:
+<dl><dd><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>\htdocs\workflow\engine\config\paths_installed.php</tt></dd></dl></dd><dd><strong>Windows</strong>, ProcessMaker version 1.6-4260 and later (or manual install):
+<dl><dd><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>\workflow\engine\config\paths_installed.php</tt></dd></dl></dd></dl>
+<p>Replace the values of <tt>HASH_INSTALLATION</tt> and <tt>SYSTEM_HASH</tt> with the new hashes generated by <strong><tt>r.php</tt></strong>:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">&lt;!--</span>?php<br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'PATH_DATA'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'/opt/processmaker/shared/'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'PATH_C'</span><span style="color: #339933;">,</span> &nbsp; &nbsp;<span style="color: #0000ff;">'/opt/processmaker/compiled/'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'HASH_INSTALLATION'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'&lt;b--&gt;Z51jY2SYamBoYGhgY8dobGvGapealm9iZcZvmpmUa52ZyGlnZcVqlZhiamhp1aamrMhpmpbGamRplW+TlJNqb27IaZqWxmpkaZVvk5STam9uyGjXuteLcoLHaZiUkmVqbZZoZWbFaWlvlm+VlsdvaWrHcMjElGtqaJQ'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/define"><span style="color: #990000;">define</span></a><span style="color: #009900;">&#40;</span> <span style="color: #0000ff;">'SYSTEM_HASH'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'&lt;strong&gt;d153b2272703c778d8ecd822c8ca0386'</span><span style="color: #339933;">&lt;/</span>strong<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<p>Now, it should be possible to use the ProcessMaker databases in the new location.</p>
+<h2><span id="Moving_ProcessMaker_to_another_server">Moving ProcessMaker to another server</span></h2>
+<p>ProcessMaker can be moved to another server along with all the existing processes, users and cases, either by using the new <a href="../index.php/2.0/Backing_up_and_Restoring_ProcessMaker.html#Backup_and_Restore_Utility_for_Linux.2FUNIX" title="Backing up and Restoring ProcessMaker">Backup and Restore utility</a> (available in version 1.6-4184 or later in Linux/UNIX) or by manually transferring the database and the files in the <strong><tt>shared</tt></strong> directory.</p>
+<p>It is extremely important to only transfer data between the <i><strong>same versions</strong></i> of ProcessMaker. Do <strong>NOT</strong> try to use data from one version of ProcessMaker in another version of ProcessMaker.</p>
+<h3><span id="Using_the_Workspace_Backup_and_Restore_utility">Using the Workspace Backup and Restore utility</span></h3>
+<p>If using ProcessMaker 1.6-4184 or later on Linux/UNIX, then Gulliver's <strong><tt>workspace-backup</tt></strong> command can be used to make a <a href="../index.php/2.0/Backing_up_and_Restoring_ProcessMaker.html#Backing_up_workspaces_from_the_command_line" title="Backing up and Restoring ProcessMaker">backup of the ProcessMaker workspaces</a> in the old server:</p>
+
+<codeblock>./gulliver workspace-backup <i><strong>workspace</strong></i> 
+</codeblock>
+
+<p>Then, go to the new server and follow the <a href="../index.php/Main_Page.html#installation" title="Main Page">standard procedure</a> to install the <i><strong>same version</strong></i> of ProcessMaker as is being used on the old server. After installing ProcessMaker in the new server, then copy the <tt><strong>backups/<i>workspace</i>.tar</strong></tt> file from the old server to the new server. For example, if using scp to transfer the "workflow" workspace from the old server at 192.168.1.100 to the new server at 1.2.3.4:</p>
+
+<codeblock>spc root@192.169.1.100:/opt/backups/workflow.tar root@1.2.3.4:/opt/backups/workflow.tar
+</codeblock>
+
+<p>Then, use Gulliver's <strong><tt>workspace-restore</tt></strong> command to import the workspace into the new server:</p>
+
+<codeblock>./gulliver workspace-restore <i><strong>backup</strong></i>.tar <i><strong>workspace</strong></i>
+</codeblock>
+
+<p>If importing a workspace which already exists on the new server, such as the default "workflow" workspace, then use the <strong><tt>overwrite</tt></strong> option when doing the restore:</p>
+
+<codeblock>./gulliver workspace-restore <i><strong>backup</strong></i>.tar <i><strong>workspace</strong></i> overwrite 
+</codeblock>
+
+<p>Now all the data from the old ProcessMaker server should be available on the new server.</p>
+<h3><span id="Manually_Transferring_to_a_New_Server">Manually Transferring to a New Server</span></h3>
+<p>If using a version before 1.6-4184 or using Windows, then the ProcessMaker databases and the contents of the <strong><tt>shared</tt></strong> directory will have to be manually transferred to the new server.</p>
+<p>First, follow the <a href="../index.php/Main_Page.html#installation" title="Main Page">standard procedure</a> to install the <i><strong>same version</strong></i> of ProcessMaker on the new server as is being used on the old server.</p>
+<p>Then, follow the instructions above to <a href="224.html#Moving_the_ProcessMaker_databases">copy the ProcessMaker databases</a> from the old server to the new server.</p>
+<p>Finally, copy the contents of the <strong><tt>shared</tt></strong> directory from the old server to the new server. It can generally be found at:</p>
+<dl><dd><strong>Linux/UNIX</strong>:
+<dl><dd><tt>/opt/processmaker/shared</tt></dd></dl></dd><dd><strong>Windows</strong>:
+<dl><dd><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>\shared</tt></dd></dl></dd></dl>
+<p>Now all the data from the old ProcessMaker server should be available on the new server.</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

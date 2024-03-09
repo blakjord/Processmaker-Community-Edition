@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/REST_API_Designer/Activities.html" />
+<link rel="shortlink" href="770.html" />
+<title>3.2 - 3.8 - REST API Designer - Activities | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"eik1KgHeXYq_2yiQG_HF8Qsa-JoOL_ZJscJfMDjqrvA","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-770 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="770.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="770.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-XpA1t84jTDtqP3ZqMRWyhKiw-zNSgzINvmuNB40zPvU" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - REST API Designer - Activities</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - REST API Designer - Activities" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="770.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - REST API Designer - Activities 1/5</option><option value="40" selected="selected">Give 3.2 - 3.8 - REST API Designer - Activities 2/5</option><option value="60">Give 3.2 - 3.8 - REST API Designer - Activities 3/5</option><option value="80">Give 3.2 - 3.8 - REST API Designer - Activities 4/5</option><option value="100">Give 3.2 - 3.8 - REST API Designer - Activities 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.7</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-Ee4AZDWBp778dyMZBNYPFjZAv7IjMQ2w6xm6_YYVPvU" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2><span id="Activities_endpoints">Activities Endpoints</span></h2>
+
+<p>The following REST endpoints are available to manage activities. Note that "activities" are either tasks or subprocesses.</p>
+<div style=" background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><strong>Contents:</strong> [<a href="770.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b><div id="toc" ><ol class="toc">
+<li class="toc"><a href="770.html#Activities_endpoints">Activities Endpoints</a></li>
+<ol class="toc">
+<li class="toc"><a href="770.html#Get_Activity">Get Activity: <code>GET project/{prj_uid}/activity/{act_uid}</code></a></li>
+<li class="toc"><a href="770.html#Update_Activity">Update Activity: <code>PUT project/{prj_uid}/activity/{act_uid}</code></a></li>
+<li class="toc"><a href="770.html#Delete_Activity">Delete Activity: <code>DELETE project/{prj_uid}/activity/{act_uid}</code></a></li>
+<li class="toc"><a href="770.html#Get_starting_tasks">Get Starting Tasks: <code>GET project/{prj_uid}/starting-tasks</code></a></li>
+</ol>
+</div></div>
+
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>There is no endpoint to create a new activity.</font></p>
+
+<h3><span id="Get_Activity">Get Activity: <code>GET project/{prj_uid}/activity/{act_uid}</code></span></h3>
+
+<p>Gets the properties of a specified activity (task or subprocess).</p>
+<dl><dd><code><strong>GET</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/activity/{act_uid}</span></code></dd></dl>
+
+<p><strong>URL Parameters:</strong></p>
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr><th>Name</th><th>Description</th><th>Example</th></tr>
+<tr><td>workspace</td><td>Workspace name</td>
+<td>/api/1.0/<b>workflow</b>/project/84233230756cbb13a780d37064601378/activity/27487747556cbb168597107027360480</td></tr>
+<tr><td>prj_uid</td><td>Unique ID (UID) of the project.</td>
+<td>/api/1.0/workflow/project/<b>84233230756cbb13a780d37064601378</b>/activity/27487747556cbb168597107027360480</td></tr>
+<tr><td>act_uid</td><td>Unique ID of the activity (step or subprocess)</td>
+<td>/api/1.0/workflow/project/84233230756cbb13a780d37064601378/activity/<b>27487747556cbb168597107027360480</b></td></tr>
+</tbody></table>
+</dd></dl>
+
+<p><strong>Result:</strong></p>
+<p>If executed with success, the HTTP status code is set to <code>200</code> and the following object is returned with information about the activity:</p>
+
+<table class="codecolumn"><tbody>
+<tr><th>Element</th><th>Description</th></tr>
+<tr><td>{                                   </td><td> </td></tr>
+<tr><td>  "definition": [],                 </td><td>The definition of the task, which is always an empty array.</td></tr>
+<tr><td>  "properties": {                   </td><td>An object containing the task properties.</td></tr>
+
+<tr><td>    "tas_title": "Define Client",  </td><td>The title of the task or subprocess.</td></tr>
+
+<tr>
+<td>    "tas_description": "Company client",</td>
+<td>The description of the task or subprocess. The task/subprocess description is displayed when the user views the <a href="../3.0/Case_Summary.html">Case Summary</a>.</td>
+</tr>
+
+<tr><td>    "tas_def_title": "Client @#name",   </td><td>The title of the case, which can contain variables and is set when the case arrives at the task. It is displayed at the top of the screen next to the case number when a case is opened. If set to <code>""</code> (empty string), then the title of the case displays the case number preceded by <code>#</code>.</td></tr>
+
+<tr><td>    "tas_def_subject_message":
+      "Your case @#caseNo", </td><td>The subject line of the email notification to be sent to the assigned user(s) of the next task. </td></tr>
+
+<tr><td>    "tas_def_message":
+      "New case @#caseNo.\nRegards, @#mngr",</td><td>The text (body) of the email notification to be sent to the assigned user(s) if the <code>tas_def_message_type</code> is set to "text".</td></tr>
+
+<tr><td>    "tas_def_description":
+      "Info about client '@#name'", </td><td>The description of the case, which can contain variables and is set when the case arrives at the task. The description is displayed when the user views the <a href="../3.0/Case_Summary.html">Case Summary</a>. If set to <code>""</code> (empty string), then there is no case description.</td></tr>
+
+<tr><td>    "tas_type": "NORMAL",           </td><td>The type of activity, which can be:<br>
+<code>"NORMAL"</code>: A task that only has normal assigned users.<br>
+<code>"ADHOC"</code>: A task that has ad hoc assigned users (and can also have normal assigned users).<br>
+<code>"SUBPROCESS"</code>: A subprocess. Most of the other properties can be ignored, except <code>tas_title</code> and <code>tas_description</code>.</td></tr>
+
+<tr><td>    "tas_duration": 4,              </td><td>The number of time units before the task becomes overdue. The default is <code>1</code>.</td></tr>
+
+<tr><td>    "tas_type_day": "2",             </td><td>If set to <code>"1"</code>, then the task duration is counted by "Work Days", which is Monday through Friday (the default setting). If set to <code>"2"</code>, then the time is counted by "Calendar Days", and the calendar being used is set in <code>tas_calendar</code>.</td></tr>
+
+<tr><td>    "tas_timeunit": "DAYS",         </td><td>The time unit for the task duration, which can be: "DAYS", "HOURS" or "MINUTES".</td></tr>
+
+<tr><td>    "tas_priority_variable": "@@priority",</td><td>A variable that determines the priority of the task. If the variable contains <code>1</code>, then the case is the highest priority. If it contains 3, then the case has normal priority, which is the default. If 5, then the case has lowest priority. If set to <code>""</code> (empty string), then the case will have normal priority. Note that this property can only contain variables and not literal values so it will not work correctly if set to "4".</td></tr>
+
+<tr><td>    "tas_assign_type": "BALANCED"   </td><td>The type of <a href="../3.0/Tasks.html#Assignment_Rules">assignment rule</a>, which can be: "BALANCED" (Cyclical Assignment), "MANUAL", "EVALUATE" (Value Based Assignment), "REPORT_TO", "SELF_SERVICE", "SELF_SERVICE_EVALUATE" (Self Service Value Based Assignment), "MULTIPLE_INSTANCE" (Parallel), "MULTIPLE_INSTANCE_VALUE_BASED" (Parallel Value Based Assignment).</td></tr>
+
+<tr><td>    "tas_assign_variable":
+      "@@SYS_NEXT_USER_TO_BE_ASSIGNED", </td><td>The variable that holds the unique ID of the user to be assigned to the <a href="../3.0/Tasks.html#Value_Based_Assignment">Value Based Assignment</a> task. Remember that this user must also be in the list of  users assigned to the task.</td></tr>
+
+<tr><td>    "tas_group_variable":
+      "@@SYS_GROUP_TO_BE_ASSIGNED", </td><td>The variable that contains the unique IDs of the groups and users which can claim a <a href="../3.0/Tasks.html#Self_Service_Value_Based_Assignment">Self Service Value Based Assignment</a> task. Remember that these users/groups must also be in the list of users/groups assigned to the task.</td></tr>
+
+<tr><td>    "tas_transfer_fly": "FALSE",      </td><td>If set to "TRUE", then users are allowed to change the task duration during runtime; whereas if set to "FALSE", the task duration is a fixed amount of predetermined time.</td></tr>
+
+<tr><td>    "tas_send_last_email": "TRUE",    </td><td>If set to "TRUE", then an email notification is sent to the next assigned user(s), meaning the users assigned to the next task will receive a custom email message when the case is routed. If set to "FALSE", then there will be no email notification sent.</td></tr>
+
+<tr><td>    "tas_derivation_screen_tpl":
+      "routingScreen.html",   </td><td>The file name of the template file displayed after routing the task. If none, then set to <code>""</code> (empty screen).</td></tr>
+
+<tr><td>    "tas_selfservice_timeout": 1,      </td><td>If set to <code>1</code>, then there is a self service timeout, meaning that a trigger will be executed if no one claims a case with a self-service task within the configured amount of time. If there is no timeout, then set to <code>0</code>.</td></tr>
+
+<tr><td>    "tas_selfservice_time": "5",       </td><td>The amount of time before a self service task times out. If none, then set to <code>""</code> (empty string).</td></tr>
+
+<tr><td>    "tas_selfservice_time_unit": "DAYS",</td><td>The time units for calculating the timeout of a self service task, which can be "MINUTES", "HOURS" or "DAYS". If none selected, then set to <code>""</code> (empty string).</td></tr>
+
+<tr><td>    "tas_selfservice_trigger_uid":
+      "2840568655706c023962945046408021", </td><td>The unique ID of the trigger executed after the timeout of a self service task. If no trigger, then set to <code>""</code> (empty string).</td></tr>
+
+<tr><td>    "tas_selfservice_execution":
+      "EVERY_TIME",  </td><td>If set to "ONCE", then the trigger of the self service timeout is executed once. If set to "EVERY_TIME", then the trigger is executed every time the <a href="../3.0/Executing_cron.php.html"><tt>cron.php</tt> script</a> is run after the timeout.</td></tr>
+
+<!-- Offline property HOR-2051-->
+<tr><td>    "tas_offline":
+      "TRUE",  </td><td>"Enable this task for offline use" option value. If the option was checked, the value will be "TRUE", otherwise it will be "FALSE".</td></tr>-->
+
+<tr><td>    "tas_email_server_uid":
+      "6270141605851bf3cb71eb2041564369",  </td><td>The unique ID of the email server selected to send the task notifications.</td></tr>
+
+<!--Offline property HOR-2051-->
+<tr><td>    "tas_auto_root":
+      "TRUE",  </td><td>"Route case when back online" option value. If the option was checked, the value will be "TRUE", otherwise it will be "FALSE".</td></tr>
+
+<tr><td>    "tas_receive_server_uid": "6270141605851bf3cb71eb2041564369", </td><td>The unique ID of the email server selected to send the task notifications.</td></tr>
+
+<tr><td>     "tas_receive_last_email": "TRUE", </td>
+<td>If set to "TRUE", the "Notify the assigned user to this task" option was checked and a notification will be sent to the current assigned user(s), meaning the user(s) assigned to this task will receive a custom email message when the case arrives to this task. If set to "FALSE", no email notification is sent.</td></tr>
+
+<tr><td>     "tas_receive_email_from_format": 0, </td>
+<td>If the "Assigned User" option was selected in the notification configuration, the value will be <b>0</b>. If the "Email Server Settings" option was selected, the value will be <b>1</b>. </td></tr>
+
+<tr><td>     "tas_receive_message_type": "text", </td><td>The content type of the notification, that can be "text" or "template".</td></tr>
+
+<tr><td>     "tas_receive_message_template": "alert_message.html", </td><td>The template set in the notification configuration.</td></tr>
+
+<tr><td>     "tas_receive_subject_message": "New Case for @#USR_USERNAME", </td><td>Subject of the message. </td></tr>
+
+<tr><td>     "tas_receive_message": "New case assigned!", </td><td>Content of the message. </td></tr>
+
+
+<tr><td>    "tas_average": NULL,               </td><td>The average amount of time to complete the task, if using the <a href="../3.0/StrategicDashboards.html">Strategic Dashboards</a> plugin in the Enterprise Edition; otherwise, it is set to <code>NULL</code>.</td></tr>
+
+<tr><td>    "tas_sdv": NULL,                   </td><td>The standard deviation of the time to complete the task, if using the <a href="../3.0/StrategicDashboards.html">Strategic Dashboards</a> plugin in the Enterprise Edition; otherwise, it is set to <code>NULL</code>.</td></tr>
+
+<tr><td>    "tas_calendar":
+      "1720244195706d204dbfde6080740114",  </td><td>The unique ID of the calendar used to calculate the duration of the task. If set to "00000000000000000000000000000001", then the "Default Calendar" is used. If set to "" (empty string), then no calendar is used, so the time is calculated 24 hours of every day.</td></tr>
+
+<tr><td>    "tas_def_message_type": "text",    </td><td>If set to "text", then use plain text for the email notification sent to the next assigned user(s). This text is entered directly in the "Activity Properties" dialog box and is available in the <code>tas_def_message</code> property. If set to "html", then the body of the email notification is defined by a template file set in the <code>tas_def_message_template</code> property.</td></tr>
+
+<tr><td>    "tas_def_message_template":
+      "alert_message.html"    </td><td>The filename of the template file that defines the body of the email notification sent to the next assigned user(s) if the <code>tas_def_message_type</code> property is set to "html".</td></tr>
+<tr><td>  }                                    </td><td> </td></tr>
+<tr><td>}                                      </td><td> </td></tr>
+</tbody></table>
+
+
+<p><b>Example:</b></p>
+<i>Response</i>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;definition&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;properties&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_title&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Task 1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_def_title&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_def_subject_message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Case assigned for @#USR_USERNAME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_def_message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;New case assigned!&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_def_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;NORMAL&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_duration&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_type_day&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_timeunit&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;DAYS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_priority_variable&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_assign_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;BALANCED&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_assign_variable&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;@@SYS_NEXT_USER_TO_BE_ASSIGNED&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_group_variable&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_transfer_fly&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;FALSE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_send_last_email&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;TRUE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_derivation_screen_tpl&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_selfservice_timeout&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_selfservice_time&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_selfservice_time_unit&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_selfservice_trigger_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_selfservice_execution&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;EVERY_TIME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_not_email_from_format&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_email_server_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;634735107585935512ea0c4064203094&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_receive_server_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;328704833585934b0e53468018164403&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_receive_last_email&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;TRUE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_receive_email_from_format&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_receive_message_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_receive_message_template&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;actionsByEmail.html&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_receive_subject_message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;New Case for @#USR_USERNAME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_receive_message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;New case assigned!&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_average&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_sdv&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_calendar&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_def_message_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;text&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;tas_def_message_template&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;alert_message.html&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>If an error occurred, the status code is set to 400 or higher and an error object is returned, such as:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The activity with act_uid: '67732074357069b874ae219031485148', does not exist.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><strong>PHP Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$pmWorkspace</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'workflow'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$clientId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'YOXQRMHAMMMKSOENEDENDFQDTJTGTUUS'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$clientSecret</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'32667560556abe5142235e0090500305'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$username</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'admin'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$password</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'p4sSw0rd'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$clientId</span><span style="color: #339933;">,</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">,</span> <span style="color: #000088;">$username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$password</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: Can't access ProcessMaker REST&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #000088;">$projectId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'67183605756a7ddf5b86c47017319951'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$taskId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'51532843656a7de25d98900065683932'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;/api/1.0/<span style="color: #006699; font-weight: bold;">$pmWorkspace</span>/project/<span style="color: #006699; font-weight: bold;">$projectId</span>/activity/<span style="color: #006699; font-weight: bold;">$taskId</span>&quot;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">echo</span> <span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">properties</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">tas_title</span> <span style="color: #339933;">.</span><span style="color: #0000ff;">&quot; Task is type &quot;</span><span style="color: #339933;">.</span> <span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">properties</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">tas_assign_type</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">400</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">echo</span> <span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp;<a href="http://php.net/print_r"><span style="color: #990000;">print_r</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Update_Activity">Update Activity: <code>PUT project/{prj_uid}/activity/{act_uid}</code></span></h3>
+
+<p>Updates the properties of a specified activity (task or subprocess).</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl><dd><code><strong>PUT</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/activity/{act_uid}</span></code></dd></dl>
+
+<p><strong>URL Parameters:</strong></p>
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr><th>Name</th><th>Description</th><th>Example</th></tr>
+<tr><td>workspace</td><td>Workspace name</td>
+<td>/api/1.0/<b>workflow</b>/project/84233230756cbb13a780d37064601378/activity/27487747556cbb168597107027360480</td></tr>
+<tr><td>prj_uid</td><td>Unique ID (UID) of the project.</td>
+<td>/api/1.0/workflow/project/<b>84233230756cbb13a780d37064601378</b>/activity/27487747556cbb168597107027360480</td></tr>
+<tr><td>act_uid</td><td>Unique ID of the activity (step or subprocess)</td>
+<td>/api/1.0/workflow/project/84233230756cbb13a780d37064601378/activity/<b>27487747556cbb168597107027360480</b></td></tr>
+</tbody></table>
+</dd></dl>
+
+<p><strong>PUT Parameters:</strong></p>
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr><th>Element</th><th>Description</th></tr>
+<tr><td>{</td><td>Start object.</td></tr>
+<tr><td>  "properties": {  </td><td>Start properties object.</td></tr>
+<tr><td>    "tas_title": "Define Client",</td><td>The title of the task or subprocess.</td></tr>
+
+<tr><td>    "tas_description":
+      "Enter info about client",</td>
+<td>The description of the task or subprocess. The task/subprocess description is displayed when the user views the <a href="../3.0/Case_Summary.html">Case Summary</a>.</td>
+</tr>
+
+<tr><td>    "tas_priority_variable": "@@priority",</td>
+<td>A variable that determines the priority of the task. If the variable contains <code>1</code>, then the case is the highest priority. If it contains 3, then the case is normal priority, which is the default. If 5, then the case is lowest priority. If set to <code>""</code> (empty string), then the case will have normal priority. Note that this property can <i>only</i> contain variables and not literal values, so it will not work correctly if set to <code>"4"</code>.</td></tr>
+
+<tr><td>    "tas_derivation_screen_tpl":
+      "routingScreen.html",</td>
+<td>The filename of the template file  displayed after routing the task. If none, then set to <code>""</code> (empty screen).</td></tr>
+
+<tr><td>    "tas_assign_type": "BALANCED",</td>
+<td>The type of <a href="../3.0/Tasks.html#Assignment_Rules">assignment rule</a>, which can be: <code>"BALANCED"</code> (Cyclical Assignment), <code>"MANUAL"</code>, <code>"EVALUATE"</code> (Value Based Assignment), <code>"REPORT_TO"</code>, <code>"SELF_SERVICE"</code>, <code>"SELF_SERVICE_EVALUATE"</code> (Self Service Value Based Assignment), <code>"MULTIPLE_INSTANCE"</code> (Parallel Assignment in <a href="../ProcessMaker_Enterprise_Editionv.3.0.html">Enterprise E.</a>), "MULTIPLE_INSTANCE_VALUE_BASED" (Parallel Value Based Assignment in <a href="../ProcessMaker_Enterprise_Editionv.3.0.html">Enterprise E.</a>). </td>
+</tr>
+
+<tr><td>    "tas_assign_variable": "@@nextAssigned"</td>
+<td>The variable that holds the unique ID of the user to be assigned to a <a href="../3.0/Tasks.html#Value_Based_Assignment">Value Based Assignment</a> task. The default is "@@SYS_NEXT_USER_TO_BE_ASSIGNED". Remember that this user must also be in the list of users assigned to the task.</td>
+</tr>
+
+<tr><td>    "tas_group_variable": "@@canClaimGroup",</td><td>The variable that contains the unique IDs of the groups and users which can claim a <a href="../3.0/Tasks.html#Self_Service_Value_Based_Assignment">Self Service Value Based Assignment</a> task. The default is <code>"@@SYS_GROUP_TO_BE_ASSIGNED"</code>. Remember that these users/groups must also be in the list of users/groups assigned to the task.</td>
+</tr>
+
+<tr><td>    "tas_selfservice_time": "5",</td><td>The amount of time of the timeout in a self service task. If none, then set to <code>""</code> (empty string).</td></tr>
+
+<tr><td>    "tas_selfservice_timeout": 1,</td><td>Set to <code>1</code> for a self service timeout, meaning that a trigger will be executed if no one claims a case with a self-service task within the configured amount of time. If there is no timeout, then set to <code>0</code>.</td></tr>
+
+<tr><td>    "tas_selfservice_time_unit": "DAYS",</td><td>The time units for calculating the timeout of a self service task, which can be <code>""</code> (none), <code>"MINUTES"</code>, <code>"HOURS"</code> or <code>"DAYS"</code>.</td></tr>
+
+<tr><td>    "tas_selfservice_trigger_uid":
+      "2840568655706c023962945046408021",</td><td>The unique ID of the trigger executed after the timeout of a self service task. If no trigger, then set to <code>""</code> (empty string).</td></tr>
+
+<tr><td>    "tas_selfservice_execution": "ONCE",</td><td>If set to "ONCE", then the trigger of the self service timeout is executed once. If set to "EVERY_TIME", then the trigger is executed every time the <a href="../3.0/Executing_cron.php.html"><tt>cron.php</tt> script</a> is run after the timeout.</td></tr>
+
+<tr><td>    "tas_transfer_fly": "FALSE",</td><td>If set to "TRUE", then users are allowed to change the task duration during runtime; whereas if set to "FALSE", the task duration is a fixed amount of predetermined time.</td></tr>
+
+<!-- Offline property HOR-2051-->
+<tr><td>    "tas_offline": "TRUE", </td><td>If set to "TRUE" the task will be enable for offline use in ProcessMaker Mobile.</td></tr>
+
+<tr><td>    "tas_auto_root": "TRUE", </td><td>If set to "TRUE" the task will be enable to be routed automatically as soon as the ProcessMaker Mobile app is back online.</td></tr>
+
+<tr><td>    "tas_duration": 14,</td><td>The number of time units before the task becomes overdue. The default is <code>1</code>.</td></tr>
+
+<tr><td>    "tas_timeunit": "DAYS",</td><td>The time unit of the task duration, which can be: <code>"DAYS"</code>, <code>"HOURS"</code> or <code>"MINUTES"</code>.</td></tr>
+
+<tr><td>    "tas_type_day": "2",</td>
+<td>If set to <code>"1"</code>, then the task duration is counted by "Work Days", which is Monday through Friday, which is the default. If set to <code>"2"</code>, then the time is counted by "Calendar Days" and the calendar being used is set in <code>tas_calendar</code>.</td></tr>
+
+<tr><td>    "tas_calendar":
+      "1720244195706d204dbfde6080740114",</td><td>The unique ID of the calendar used to calculate the duration of the task. If set to <code>"00000000000000000000000000000001"</code>, then the "Default Calendar" is used. If set to <code>""</code> (empty string), then no calendar is used, so task time is calculated 24 hours of every day.</td></tr>
+
+<tr><td>    "tas_def_title": "Client @#name",</td><td>The title of the case, which can contain variables and is set when the case arrives at the task. It is displayed at the top of the screen next to the case number when a case is opened. If set to <code>""</code> (empty string), then the title of the case displays the case number preceded by <code>#</code>.</td></tr>
+
+<tr><td>    "tas_def_description":
+      "Info about client '@#name'",</td><td>The description of the case, which can contain variables and is set when the case arrives at the task. The description is displayed when the user views the <a href="../3.0/Case_Summary.html">Case Summary</a>. If set to <code>""</code> (empty string), then there is no case description.</td></tr>
+
+<tr><td>    "tas_send_last_email": "TRUE",</td><td>If set to <code>"TRUE"</code>, then an email notification is sent to the next assigned user(s), meaning the users assigned to this task will receive a custom email message when the case arrives at this task. If set to <code>"FALSE"</code>, then no  email notification is sent for this task.</td></tr>
+
+<tr><td>    "tas_def_subject_message":
+     "Your case @#caseNo", </td><td>The subject line of the email notification to be sent to the assigned user(s) of the task. It may contain variables.</td></tr>
+
+<tr><td>    "tas_def_message_type": "text",</td><td>If set to <code>"text"</code>, then use plain text for the email notification sent to the assigned user(s). This text is entered directly in the "Activity Properties" dialog box and is available in the <code>tas_def_message</code> property. If set to <code>"html"</code>, then the body of the email notification is defined by a template file set in the <code>tas_def_message_template</code> property.</td></tr>
+
+<tr><td>    "tas_def_message":
+      "New case @#caseNo.\nRegards, @#mngr",</td><td>The text (body) of the email notification to  sent to the assigned user(s) if the <code>tas_def_message_type</code> is set to "text". The text can contain variables.</td></tr>
+
+<tr><td>    "tas_def_message_template":
+      "alert_message.html"</td><td>The filename of the template file that defines the body the email notification sent to the assigned user(s) of the task if the <code>tas_def_message_type</code>property is set to "html".</td></tr>
+
+
+<tr><td>    "tas_email_server_uid":
+      ""</td>
+      <td>The unique ID of the email server selected to send the task notifications.</td></tr>
+
+
+<tr><td>    "tas_receive_server_uid":
+      "6270141605851bf3cb71eb2041564369", </td><td>The unique ID of the email server configured to send task notifications.</td></tr>
+
+<tr><td>     "tas_receive_last_email": "TRUE", </td>
+<td>If set to "TRUE", the "Notify the assigned user to this task" option was checked and a notification will be sent to the current assigned user(s), meaning the user(s) assigned to this task will receive a custom email message when the case arrives to this task. If set to "FALSE", no email notification is sent.</td></tr>
+
+<tr><td>     "tas_receive_email_from_format": 0, </td>
+<td>If the "Assigned User" option was selected in the notification configuration, the value will be <b>0</b>. If the "Email Server Settings" option was selected, the value will be <b>1</b>. </td></tr>
+
+<tr><td>     "tas_receive_message_type": "text", </td><td>The content type of the notification, that can be "text" or "template".</td></tr>
+
+<tr><td>     "tas_receive_message_template":
+"alert_message.html", </td><td>The template set in the notification configuration.</td></tr>
+
+<tr><td>     "tas_receive_subject_message":
+"New Case for @#USR_USERNAME", </td><td>Subject of the message. </td></tr>
+
+<tr><td>     "tas_receive_message": "New case assigned!", </td><td>Content of the notification. </td></tr>
+
+
+
+
+<tr><td>  }   </td><td>End properties object.</td></tr>
+<tr><td>}     </td><td> </td></tr>
+</tbody></table>
+</dd></dl>
+
+<p>All properties are <i>optional</i>, but certain properties have dependent properties, which must be set. For example, if <code>tas_transfer_fly</code> is set to "FALSE", then it is not necessary to set <code>tas_duration</code>, but if set to "TRUE", then <code>tas_duration</code> <i>must</i> be set. The easiest way to avoid problems is to first call <a href="770.html#Get_Activity">GET project/{prj_uid}/activity/{act_uid}</a> to get the list of properties for an activity and then set the properties that need to be changed.</p>
+
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>It is recommended to <a href="https://processmaker.atlassian.net/browse/TRI-1196">not include the <code>tas_type</code> property</a>, because it will cause an error if set to "SUBPROCESS", and changing it from "NORMAL" to "ADHOC or vice versa will set inaccurate information.</font></p>
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>If the activity is a subprocess, only <code>tas_title</code> and <code>tas_description</code> are used. Currently there are no <a href="https://processmaker.atlassian.net/browse/TRI-1194">endpoints for getting and updating the other properties of subprocesses</a>.</font></p>
+
+<p><strong>Result:</strong></p>
+<p>If the activity was successfully updated, then the HTTP status code is set to <code>200</code> and there is no response. If an error occurred, the status code is set to <code>400</code> or higher and an error object is returned, such as:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The activity with act_uid: '67732074357069b874ae219031485148', does not exist.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><strong>PHP Example:</strong></p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$pmWorkspace</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'workflow'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$clientId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'YOXQRMHAMMMKSOENEDENDFQDTJTGTUUS'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$clientSecret</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'32667560556abe5142235e0090500305'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$username</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'admin'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$password</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'p4sSw0rd'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$clientId</span><span style="color: #339933;">,</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">,</span> <span style="color: #000088;">$username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$password</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: Can't access ProcessMaker REST&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #000088;">$projectId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'67183605756a7ddf5b86c47017319951'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$taskId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'51532843656a7de25d98900065683932'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aData</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;properties&quot;</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_title&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Define client&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_description&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Enter client Info&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_type_day&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_timeunit&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;HOURS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_duration&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">3</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_priority_variable&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;@@priority&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_assign_type&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;BALANCED&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_assign_variable&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_group_variable&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_transfer_fly&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;FALSE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_send_last_email&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;TRUE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_derivation_screen_tpl&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;routingScreen.html&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_selfservice_timeout&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_selfservice_time&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;34&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_selfservice_time_unit&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;HOURS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_selfservice_trigger_uid&quot;</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;2840568655706c023962945046408021&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_selfservice_execution&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;ONCE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_def_title&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Client @#clientType&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_def_description&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_def_message&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Your new case @#caseNo,<span style="color: #000099; font-weight: bold;">\n</span>Regards, @#manager&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_def_subject_message&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Assigned to case @#caseNo&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_average&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">23</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_sdv&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color:#800080;">0.5</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_calendar&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;00000000000000000000000000000001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_def_message_type&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;text&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_def_message_template&quot;</span> &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_email_server_uid&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_receive_server_uid&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;328704833585934b0e53468018164403&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_receive_last_email&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;TRUE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_receive_email_from_format&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_receive_message_type&quot;</span> &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;text&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_receive_message_template&quot;</span> &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;actionsByEmail.html&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_receive_subject_message&quot;</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;New Case for @#USR_USERNAME&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;tas_receive_message&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;New case assigned!&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;/api/1.0/<span style="color: #006699; font-weight: bold;">$pmWorkspace</span>/project/<span style="color: #006699; font-weight: bold;">$projectId</span>/activity/<span style="color: #006699; font-weight: bold;">$taskId</span>&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aData</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">400</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">echo</span> <span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp;<a href="http://php.net/print_r"><span style="color: #990000;">print_r</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+
+<h3><span id="Delete_Activity">Delete Activity: <code>DELETE project/{prj_uid}/activity/{act_uid}</code></span></h3>
+
+<p>Deletes a specified activity (task or subprocess).</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>Users must have the <a href="../3.2/Roles.html#PM_FACTORY">PM_FACTORY</a> permission assigned to their role to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl><dd><code><strong>DELETE</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/activity/{act_uid}</span></code></dd></dl>
+
+<p><strong>URL Parameters:</strong></p>
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr><th>Name</th><th>Description</th><th>Example</th></tr>
+<tr><td>workspace</td><td>Workspace name</td>
+<td>/api/1.0/<b>workflow</b>/project/84233230756cbb13a780d37064601378/activity/27487747556cbb168597107027360480</td></tr>
+<tr><td>prj_uid</td><td>Unique ID (UID) of the project.</td>
+<td>/api/1.0/workflow/project/<b>84233230756cbb13a780d37064601378</b>/activity/27487747556cbb168597107027360480</td></tr>
+<tr><td>act_uid</td><td>Unique ID of the activity (step or subprocess)</td>
+<td>/api/1.0/workflow/project/84233230756cbb13a780d37064601378/activity/<b>27487747556cbb168597107027360480</b></td></tr>
+</tbody></table>
+</dd></dl>
+
+<p><strong>Result:</strong></p>
+<p>If the activity was successfully deleted, then the HTTP status code is set to <code>200</code> and there is no response. If an error occurred, the status code is set to <code>400</code> or higher and an error object is returned, such as:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The activity with act_uid: '67732074357069b874ae219031485148', does not exist.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><font color=red><b>Warning:</b></font> <font color=dimgrey>This endpoint deletes the activity from the <b><tt>TASK</tt></b> or <b><tt>SUB_PROCESS</tt></b> table in the database, but it does <a href="https://processmaker.atlassian.net/browse/TRI-1198">NOT remove it from the <b><tt>BPMN_ACTIVITY</tt></b> table</a> if the activity is from a BPMN process. The activity will still appear in the BPMN process map after being deleted.</font></p>
+
+<p><strong>PHP Example:</strong></p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$pmWorkspace</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'workflow'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$clientId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'YOXQRMHAMMMKSOENEDENDFQDTJTGTUUS'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$clientSecret</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'32667560556abe5142235e0090500305'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$username</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'admin'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$password</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'p4sSw0rd'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$clientId</span><span style="color: #339933;">,</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">,</span> <span style="color: #000088;">$username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$password</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: Can't access ProcessMaker REST&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #000088;">$projectId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'67183605756a7ddf5b86c47017319951'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$taskId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'51532843656a7de25d98900065683932'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;DELETE&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;/api/1.0/<span style="color: #006699; font-weight: bold;">$pmWorkspace</span>/project/<span style="color: #006699; font-weight: bold;">$projectId</span>/activity/<span style="color: #006699; font-weight: bold;">$taskId</span>&quot;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">400</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">echo</span> <span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp;<a href="http://php.net/print_r"><span style="color: #990000;">print_r</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+
+<h3><span id="Get_starting_tasks">Get Starting Tasks: <code>GET project/{prj_uid}/starting-tasks</code></span></h3>
+
+<p>Returns a list of the starting task(s) to which the logged-in user is assigned in a specified project (or process).</p>
+<dl><dd><code><strong>GET</strong> <span style="color: blue;">/api/1.0/{workspace}/project/{prj_uid}/starting-tasks</span></code></dd></dl>
+
+<p><strong>URL Parameters:</strong></p>
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr><th>Name</th><th>Description</th><th>Example</th></tr>
+<tr><td>workspace</td><td>Workspace name</td>
+<td>/api/1.0/<b>workflow</b>/project/84233230756cbb13a780d37064601378/starting-tasks</td></tr>
+<tr><td>prj_uid</td><td>Unique ID of the project (or process), which can be found by looking at the <code>@@PROCESS</code> system variable in the <a href="../3.0/Triggers.html#Enabling_Debug_Mode">Debugger</a>.</td>
+<td>/api/1.0/workflow/project/<b>84233230756cbb13a780d37064601378</b>/starting-tasks</td></tr>
+</tbody></table>
+</dd></dl>
+
+<p><strong>Result:</strong></p>
+<p>If successful, then the HTTP status code is set to <code>200</code> and an array of task objects is returned. If an error occurred, the status code is set to <code>400</code> or higher and an error object is returned, such as:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The report table '$prj_uid' is related to a process not present in the workspace, import the related process first. To relate the report table to other process, open the process in the designer and import from there. The report table can't be imported.&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><font  color=green><b>Note:</b></font> <font color=dimgrey>This REST endpoint only returns tasks connected to a normal Start Event. It does not return sub-processes connected to Start Events or tasks connected to Start Timer Events.</font></p>
+
+<p><b>Example:</b></p>
+<p><i>Response:</i></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;act_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Engineering Request&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;act_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;7845618785751f9cc81ed78079255303&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;act_name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Purchase &nbsp;Request&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;act_uid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2622157305751e15d62bd28044177072&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+
+<p><strong>PHP Example:</strong></p>
+<p>Search for the unique ID of the "Purchase  Request" task:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$pmWorkspace</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'workflow'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$clientId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'YOXQRMHAMMMKSOENEDENDFQDTJTGTUUS'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$clientSecret</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'32667560556abe5142235e0090500305'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$username</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'admin'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$password</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'p4sSw0rd'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$clientId</span><span style="color: #339933;">,</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">,</span> <span style="color: #000088;">$username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$password</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: Can't access ProcessMaker REST&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #000088;">$projectId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'67183605756a7ddf5b86c47017319951'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;DELETE&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;/api/1.0/<span style="color: #006699; font-weight: bold;">$pmWorkspace</span>/project/<span style="color: #006699; font-weight: bold;">$projectId</span>/starting-task&quot;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$taskId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oTask</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oTask</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">act_name</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;Purchase &nbsp;Request&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000088;">$taskId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$oTask</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">act_uid</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

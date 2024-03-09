@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Using_Conditions.html" />
+<link rel="shortlink" href="../node/120.html" />
+<title>2.0 - Using Conditions | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"OpaTxsOYX1XCdNf65mHdES7XiuphwdS5H2f47F_tCXE","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-120 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Using_Conditions.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-FT_YOH5XbJ2HLSH_8V3xEzqpuaTKAmJA1WbTuV3nDgg" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.0 - Using Conditions</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.1/Using_Conditions.html" class="">3.8</a></li><li><a href="../3.1/Using_Conditions.html" class="">3.7</a></li><li><a href="../3.1/Using_Conditions.html" class="">3.6</a></li><li><a href="../3.1/Using_Conditions.html" class="">3.5</a></li><li><a href="../3.1/Using_Conditions.html" class="">3.4</a></li><li><a href="../3.1/Using_Conditions.html" class="">3.3</a></li><li><a href="../3.1/Using_Conditions.html" class="">3.2</a></li><li><a href="../3.1/Using_Conditions.html" class="">3.1</a></li><li><a href="../3.0/Using_Conditions.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.0 - Using Conditions" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Using_Conditions.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.0 - Using Conditions 1/5</option><option value="40">Give 2.0 - Using Conditions 2/5</option><option value="60" selected="selected">Give 2.0 - Using Conditions 3/5</option><option value="80">Give 2.0 - Using Conditions 4/5</option><option value="100">Give 2.0 - Using Conditions 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.5</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-nZJwkagMBprzf2afdN85P6L-a171XPmcN_gKGhw5P_M" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Using_Conditions.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">show</span></a>]</b></center><div id="toc" style="display: none;"><ol class="toc">
+<li class="toc"><a href="Using_Conditions.html#Overview">Overview</a></li>
+<li class="toc"><a href="Using_Conditions.html#Understanding_Conditions">Understanding Conditions</a></li>
+<ol class="toc">
+<li class="toc"><a href="Using_Conditions.html#Variables_in_Conditions">Variables in Conditions</a></li>
+<li class="toc"><a href="Using_Conditions.html#Comparison_operators_in_Conditions">Comparison operators in Conditions</a></li>
+<li class="toc"><a href="Using_Conditions.html#Type_Conversion">Type Conversion</a></li>
+<li class="toc"><a href="Using_Conditions.html#Math_in_Conditions">Math in Conditions</a></li>
+<li class="toc"><a href="Using_Conditions.html#Logical_Operators_in_Conditions">Logical Operators in Conditions</a></li>
+<li class="toc"><a href="Using_Conditions.html#Strings_in_conditions">Strings in conditions</a></li>
+<li class="toc"><a href="Using_Conditions.html#Operator_Precedence_in_Conditions">Operator Precedence in Conditions</a></li>
+</ol>
+<li class="toc"><a href="Using_Conditions.html#Conditions_with_DynaForm_Fields">Conditions with DynaForm Fields</a></li>
+<ol class="toc">
+<li class="toc"><a href="Using_Conditions.html#Currency_boxes">Currency boxes</a></li>
+<li class="toc"><a href="Using_Conditions.html#Percentage_boxes">Percentage boxes</a></li>
+<li class="toc"><a href="Using_Conditions.html#Dropdown_boxes_and_Radiogroups">Dropdown boxes and Radiogroups</a></li>
+<li class="toc"><a href="Using_Conditions.html#Listboxes_and_checkgroups">Listboxes and checkgroups</a></li>
+<li class="toc"><a href="Using_Conditions.html#Yes.2FNo_boxes">Yes/No boxes</a></li>
+<li class="toc"><a href="Using_Conditions.html#Grids">Grids</a></li>
+</ol>
+<li class="toc"><a href="Using_Conditions.html#Setting_Conditions">Setting Conditions</a></li>
+<ol class="toc">
+<li class="toc"><a href="Using_Conditions.html#Conditions_for_Steps">Conditions for Steps</a></li>
+<li class="toc"><a href="Using_Conditions.html#Conditions_for_Triggers">Conditions for Triggers</a></li>
+<li class="toc"><a href="Using_Conditions.html#Conditions_in_Evaluation_Routing_Rules">Conditions in Evaluation Routing Rules</a></li>
+</ol>
+<li class="toc"><a href="Using_Conditions.html#Errors_in_Conditions">Errors in Conditions</a></li>
+<ol class="toc">
+<li class="toc"><a href="Using_Conditions.html#Common_Condition_Problems">Common Condition Problems</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p>ProcessMaker uses <i><strong>conditions</strong></i> in a number of different situations to determine whether execution happens or not. Conditions evaluate to either <strong>true</strong> or <strong>false</strong>, based upon the <a class="external text" href="https://en.wikipedia.org/wiki/Boolean_algebra#Basic_operations">Boolean logic</a> found in PHP. Conditions can be defined for <a href="2.0/Tasks.html#Assigning_Steps_to_Tasks">Steps</a> (<a href="https://wiki.processmaker.com/index.php/2.0/DynaForms">DynaForms</a>, <a href="2.0/Input_Documents.html">Input Documents</a>, <a href="Output_Documents.html">Output Documents</a>, and <a href="2.0/Triggers.html">Triggers</a>), <a href="2.0/Routing_Rules.html#Evaluation_Routing_Rule">Evaluation</a> and <a href="2.0/Routing_Rules.html#Parallel_.28Fork.29_Routing_Rule">Parallel by Evaluation</a> routing rules, and <a href="2.0/Events.html">Events</a>.</p>
+<p>In addition, conditions can be created to show or hide elements in a DynaForm using JavaScript's Boolean logic.</p> 
+<!-- <p>See the <a /index.php/DynaForms#Conditions_Editor_tab" title="DynaForms">DynaForm Conditions Editor</a> for more information.</p>-->
+
+<h2><span id="Understanding_Conditions">Understanding Conditions</span></h2>
+<p>Conditions in ProcessMaker are based upon Boolean Logic, which is the idea that any expression can be evaluated to either a value of <i>True</i> or <i>False</i>. If the expression is <i>True</i>, then the execution will occur. If it is <i>False</i>, no execution will occur. In ProcessMaker, a condition can take many forms. These are all valid types of conditions:</p>
+<table>
+<tbody>
+<tr><th><strong>Condition</strong></th><th><strong>Description</strong></th></tr>
+<tr><td>3124.5</td><td>A floating point number which evaluates to true</td></tr>
+<tr><td>"hello world"</td><td>A string which evaluates to true</td></tr>
+<tr><td>False</td><td>A boolean value of false</td></tr>
+<tr><td>@@ContactType</td><td>A case variable</td></tr>
+<tr><td>@%Total == 400</td><td>Equality comparison with an integer</td></tr>
+<tr><td>"check" == @@PaymentType</td><td>Equality comparison with a string</td></tr>
+<tr><td>@@USR_USERNAME != 'admin'</td><td>Non-equality comparison with a string</td></tr>
+<tr><td>@#InvoiceAmount &gt; 100.00</td><td>Greater than comparison with a floating point number</td></tr>
+<tr><td>max(@#Invoice, @#TotalBill) &lt; 1000</td><td>Less than comparison with the return value from a function</td></tr>
+<tr><td>(@#Price - @#Discount) * @%Quantity &lt;= 3000</td><td>Less than comparison to a mathematical operation with () to prioritize elements</td></tr>
+<tr><td>(@#Amount &gt;= 5000.00 and @@priority == "high")</td><td>Two comparisons joined by a Boolean AND</td></tr>
+<tr><td>((@@contact=="sales" or @@contact=="lead")<br>and !(@@priority=="high"))</td><td style="vertical-align: top;">Logical OR, AND, NOT with () to prioritize elements</td></tr>
+</tbody>
+</table>
+
+<h3><span id="Variables_in_Conditions">Variables in Conditions</span></h3>
+<p>Conditions can contain system or case variables, which are preceded by an <strong>@</strong> sign and then another symbol which indicates how the variable is parsed:</p>
+<table cellpadding="3">
+<tbody>
+<tr><td><strong>Variable Type</strong></td><td><strong>Description</strong></td></tr>
+<tr><td style="vertical-align: top;"><strong>@@<i>variable_name</i></strong></td><td>The variable will be parsed as <strong>string</strong> type. If originally another type, it will be converted to a string. So -1, 0 and 12.45 become "-1", "0" and "12.45", respectively.</td></tr>
+<tr><td style="vertical-align: top;"><strong>@%<i>variable_name</i></strong></td><td>The variable will be parsed as <strong>integer</strong> type (a whole number). If originally another type, it will be converted to an integer. A real number will be converted to a whole number, so 12.45 becomes 12. A string which contains numbers will be converted to a whole number, so "655" and "34.19" become 655 and 34, respectively.</td></tr>
+<tr><td style="vertical-align: top;"><strong>@#<i>variable_name</i></strong></td><td>The variable will be parsed as <strong>float</strong> type (a real number with decimals).</td></tr>
+<tr><td style="vertical-align: top;"><strong>@?<i>variable_name</i></strong></td><td>The variable will be parsed as a string used in a URL. The string is transformed with PHP's <a class="external text" href="http://www.php.net/urlencode">encodeurl()</a>, so all spaces become pluses (+) and all characters which aren't letters, except underscores (_), are replaced by a % followed by a 2 hexadecimal digits, so that the string can be used in posted data to/from WWW forms.</td></tr>
+<tr><td style="vertical-align: top;"><strong>@$<i>variable_name</i></strong></td><td>The variable will be parsed as a string for use in an SQL query. Any single quotation marks (') will be preceded by a backslash. So "I'm telling you it's a boy!" becomes "I\'m telling you it\'s a boy!".</td></tr>
+<tr><td style="vertical-align: top;"><strong>@=<i>variable_name</i></strong></td><td>The variable will not be changed and is parsed as its original type.</td></tr>
+</tbody>
+</table> &nbsp;
+<p>Case variables are variables which hold information about a case and they are created either when a field in a DynaForm is submitted or when defined in a trigger. Variables names must start with either a letter or underscore and they are case sensitive, so @@_myvar, @@myvar, @@MyVar, @@MYVAR, and @@myvar2 are five different variables. Make sure to spell case variables exactly like their field name in DynaForms or how they were defined in a trigger.</p>
+<p>Conditions can <strong>NOT</strong> contain local or global PHP variables which were defined in triggers, but they can use PHP's <a class="external text" href="http://www.php.net/manual/en/language.variables.superglobals.php">superglobal variables</a>, such as <tt>$_SERVER['SERVER_ADDR']</tt> and <tt>$_ENV['PATH']</tt>.</p>
+<p>If a condition only contains a variable (and nothing else), then the value of the variable will be examined and evaluated to <strong>true</strong> or <strong>false</strong>. In PHP, a value is only considered <strong>false</strong> when it is one of the following values:</p>
+<table cellpadding="3">
+<tbody>
+<tr><td><strong>Value</strong></td><td><strong>Description</strong></td></tr>
+<tr><td>FALSE</td><td>A boolean value of false</td></tr>
+<tr><td>0</td><td>An integer zero</td></tr>
+<tr><td>0.0</td><td>A float zero</td></tr>
+<tr><td>""</td><td>An empty string</td></tr>
+<tr><td>"0"</td><td>A string with a value of zero</td></tr>
+<tr><td>array()</td><td>An array with zero elements</td></tr>
+<tr><td>new StdClass()</td><td>An object with zero member variables</td></tr>
+<tr><td>NULL</td><td>A special value meaning "no value"</td></tr>
+</tbody>
+</table>
+<p>All other values in PHP are considered <strong>true</strong>. For example, all of these values are considered <strong>true</strong>:</p>
+<table cellpadding="3"><tbody><tr><td><strong>Value</strong></td><td><strong>Description</strong></td></tr><tr><td>TRUE</td><td>A boolean value of true</td></tr><tr><td>97</td><td>A positive integer</td></tr><tr><td>-4</td><td>A negative integer</td></tr><tr><td>100.99</td><td>A positive float</td></tr><tr><td>-4.23</td><td>A negative float</td></tr><tr><td>"a nice string"</td><td>A non-empty string</td></tr><tr><td>array("jack", "jill", "hill")</td><td>A non-empty array</td></tr></tbody></table>
+
+<h3><span id="Comparison_operators_in_Conditions">Comparison operators in Conditions</span></h3>
+<p>If a condition contains a <a class="external text" href="http://php.net/manual/en/language.operators.comparison.php">comparison operator</a>, such as equals, greater than or less than, then the values to the right and left of the operator will be compared and evaluated to <strong>true</strong> or <strong>false</strong>. The following comparison operators are available in PHP:</p>
+<table>
+<tbody>
+<tr><td><strong>Operator</strong></td><td><strong>Description</strong></td><td><strong>Example</strong></td></tr>
+<tr><td style="vertical-align: top;">==</td><td>Equals</td><td>@@CurrencyType == "dollars"</td></tr>
+<tr><td style="vertical-align: top;">===</td><td>Equals to same variable type</td><td>@%Total === 100</td></tr>
+<tr><td style="vertical-align: top;">&lt;&gt;</td><td>Not equals</td><td>@@CurrencyType &lt;&gt; "euros"</td></tr>
+<tr><td style="vertical-align: top;">!=</td><td>Not equals</td><td>@%Total != 0</td></tr>
+<tr><td style="vertical-align: top;">!==</td><td>Not equals to same variable type</td><td>@=RunTest !== false</td></tr>
+<tr><td style="vertical-align: top;">&lt;</td><td>Less than</td><td>@%Total &lt; 1000</td></tr>
+<tr><td style="vertical-align: top;">&lt;=</td><td>Less than or equal to</td><td>@#SubTotal &lt;= @#Total</td></tr>
+<tr><td style="vertical-align: top;">&gt;</td><td>Greater than</td><td>@#Balance &gt; 0</td></tr>
+<tr><td style="vertical-align: top;">&gt;=</td><td>Greater than or equal to</td><td>pow(@#Total, 3) &gt;= @#Limit</td></tr>
+</tbody>
+</table>
+
+<h3><span id="Type_Conversion">Type Conversion</span></h3>
+<p>It is generally a good idea to use the correct type of variable when doing comparisons, so if comparing to a string, use <strong>@@<i>variable_name</i></strong>. If comparing to an integer, use <strong>@%<i>variable_name</i></strong>. If comparing to a floating point number, use <strong>@#<i>variable_name</i></strong>. If comparing to a boolean value, an array or an object, use <strong>@=<i>variable_name</i></strong>. Nonetheless, if the types don't match, PHP will try to convert both values to the same type before doing the comparison. Due to type conversion, the following conditions are all considered <strong>true</strong>:</p>
+<table cellspacing="3">
+<tbody>
+<tr><td style="width: 140px;"><strong>True Condition</strong></td><td><strong>Description</strong></td></tr>
+<tr><td>"42" == 42</td><td>The string "42" is converted into the integer 42, then compared.</td></tr>
+<tr><td>" 42 " == 42</td><td>The string " 42 " is converted into the integer 42 (spaces are ignored), then compared.</td></tr>
+<tr><td>"42 frogs" == 42</td><td>The string "42 frogs" is converted into the integer 42, then compared. Only strings starting with numbers can be converted into integers or floats.</td></tr>
+<tr><td>42 == 42.0</td><td>The integer 42 is converted into the float 42.0, then compared.</td></tr>
+<tr><td>0 == false</td><td>The integer 0 is converted into the boolean FALSE, then compared.</td></tr>
+<tr><td>42 == true</td><td>The integer 42 is converted into the boolean TRUE, then compared.</td></tr>
+<tr><td>"" == false</td><td>The empty string "" is converted into the boolean FALSE, then compared</td></tr>
+<tr><td>"hello" == true</td><td>The string "hello" is converted into the boolean TRUE, then compared.</td></tr>
+</tbody>
+</table> &nbsp;
+<p>To prevent the comparison from converting value types, then use the <strong>===</strong> and <strong>!==</strong> operators which will only be evaluate to <strong>true</strong> if comparing the same types of values, so <strong><tt>"42"==42</tt></strong> is <strong>true</strong>, but <strong><tt>"42"===42</tt></strong> is <strong>false</strong>.</p>
+<p>While automatic type conversion can be useful, remember that conversion will not round numbers, nor will it truncate strings. Here are a number of solutions to common problems in conditions:</p>
+<table>
+<tbody>
+<tr><td style="width: 140px;"><strong>False Condition</strong></td><td><strong>Problem</strong></td><td><strong>Solution</strong></td><td style="width: 300px;"><strong>Examples</strong></td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td style="vertical-align: top;">42 == 42.1</td><td style="vertical-align: top;">The integer 42 is converted to the float 42.0 which doesn't equal 42.1, so condition evaluates to <strong>false</strong>.</td><td style="vertical-align: top;">Use the (int) <a class="external text" href="http://www.php.net/manual/en/language.types.type-juggling.php#language.types.typecasting">type cast</a> or the @% variable parsing to convert a float into an integer.</td><td style="vertical-align: top;">42 == (int) 42.1<br>42 == @%Total</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td style="vertical-align: top;">42 == (int) 41.999</td><td style="vertical-align: top;">When the float 41.999 is converted to an integer, all decimal numbers are simply dropped and there is no rounding up, so the comparison is 42 == 41.</td><td style="vertical-align: top;">Use PHP's <a class="external text" href="http://www.php.net/manual/en/function.round.php">round()</a> function to round to the nearest integer. Also use the <a class="external text" href="http://www.php.net/manual/en/function.ceil.php">ceil()</a> and <a class="external text" href="http://www.php.net/manual/en/function.floor.php">floor()</a> functions to round a number up or down.</td><td style="vertical-align: top;">42 == round(41.999)<br>42 == round(@#Total)</td></tr>
+<tr><td style="vertical-align: top;">5 / 2 == 2.5</td><td style="vertical-align: top;">This is <strong>false</strong>, because the integer 5 is divided by the integer 2. Since both are integers, the result is the integer 2 (the remainder is dropped). Then, the integer 2 is converted to the float 2.0 to compare with 2.5.</td><td style="vertical-align: top;">Use the <a class="external text" href="http://www.php.net/manual/en/language.types.type-juggling.php#language.types.typecasting">type cast</a> (float) or reference the variable as @# to convert one of the numbers to a float before dividing. This will cause the a floating point division, so the remainder won't be lost.</td><td style="vertical-align: top;">5 / (float) 2 == 2.5<br>5 / @#var == 2.5</td></tr>
+<tr><td style="vertical-align: top;">42.12 == 42.123</td><td style="vertical-align: top;">In order for two floats to be equal, their decimal numbers must also be equal.</td><td style="vertical-align: top;">Specify the number of decimal points to round to before comparing.</td><td style="vertical-align: top;">42.12 == round(42.123, 2)<br>42.12 == round(@#Total, 2)</td></tr>
+<tr><td style="vertical-align: top;">"hel" == "hello"</td><td style="vertical-align: top;">The condition is <strong>false</strong>, because strings have to have the same number of characters to be equal.</td><td style="vertical-align: top;">Use PHP's <a class="external text" href="http://php.net/manual/en/function.substr.php">substr()</a> function to cut the string to a set number of characters before comparing. To compare a variable number of characters use the <a class="external text" href="http://php.net/manual/en/function.strlen.php">strlen()</a> function. To look for a string inside another string, use the <a class="external text" href="http://www.php.net/manual/en/function.strstr.php">strstr()</a> function.</td><td style="vertical-align: top;">"hel" == substr("hello", 0, 3)<br>"hel" == substr(@@s, 0, 3)<br>@@s1 == substr(@@s2, 0, strlen(@@s1))<br>strstr(@@s, "hel")</td></tr>
+<tr><td style="vertical-align: top;">"hello" == " hello "</td><td style="vertical-align: top;">The condition is <strong>false</strong>, because PHP doesn't eliminate spaces when comparing strings.</td><td style="vertical-align: top;">Use PHP's <a class="external text" href="http://php.net/manual/en/function.trim.php">trim()</a> function to eliminate any whitespace (including tabs and returns) from the beginning or end of a string. Also use <a class="external text" href="http://www.php.net/manual/en/function.ltrim.php">ltrim()</a> or <a class="external text" href="http://www.php.net/manual/en/function.rtrim.php">rtrim()</a> to only eliminate from the beginning or end of a string.</td><td style="vertical-align: top;">"hello" == trim(" hello ")<br>"hello" == trim(@@Greet)</td></tr>
+<tr><td style="vertical-align: top;">"HeLlO" == "hello"</td><td style="vertical-align: top;">The condition is <strong>false</strong>, because the comparison of strings is case sensitive.</td><td style="vertical-align: top;">Use <a class="external text" href="http://php.net/manual/en/function.strtoupper.php">strtoupper()</a> or <a class="external text" href="http://php.net/manual/en/function.strtolower.php">strtolower()</a> to convert the strings to the same case or use <a class="external text" href="http://php.net/manual/en/function.strcasecmp.php">strcasecmp()</a> or <a class="external text" href="http://php.net/manual/en/function.strncasecmp.php">strncasecmp()</a> to do case insensitive comparisons.</td><td style="vertical-align: top;">strtolower("HeLlo") == "hello"<br>strtoupper(@@s1) == strtoupper(@@s2)<br>!strcasecmp(@@s1, @@s2)</td></tr>
+</tbody>
+</table>
+
+<h3><span id="Math_in_Conditions">Math in Conditions</span></h3>
+<p>Conditions can use PHP's <a class="external text" href="http://php.net/manual/en/language.operators.arithmetic.php">mathematical operators</a>, such as <strong>-</strong> (negation), <strong>+</strong> (addition), <strong>-</strong> (subtraction), <strong>*</strong> (multiplication), <strong>/</strong> (division), <strong>%</strong> (modulus, i.e., division remainder). When using mathematical operators, keep in mind the <a href="Using_Conditions.html#Operator_Precedence_in_Conditions">rules of operator precedence</a> and remember to use parentheses to evaluate certain elements before other elements in the expression.</p>
+<p>If needing to do more advanced mathematical operations, use PHP <a class="external text" href="http://php.net/manual/en/ref.math.php">math functions</a> such as <a class="external text" href="http://php.net/manual/en/function.pow.php">pow()</a>, <a class="external text" href="http://php.net/manual/en/function.max.php">max()</a>, <a class="external text" href="http://php.net/manual/en/function.min.php">min()</a>, <a class="external text" href="http://php.net/manual/en/function.sin.php">sin()</a>, <a class="external text" href="http://php.net/manual/en/function.cos.php">cos()</a>, <a class="external text" href="http://php.net/manual/en/function.log.php">log()</a>, <a class="external text" href="http://php.net/manual/en/function.abs.php">abs()</a>, etc.</p>
+
+<h3><span id="Logical_Operators_in_Conditions">Logical Operators in Conditions</span></h3>
+<p>Conditions can also use <a class="external text" href="http://www.php.net/manual/en/language.operators.logical.php">logical operators</a> to join together multiple expressions and construct complex conditions.</p> &nbsp;
+<table>
+<tbody>
+<tr><td style="width: 80px;"><strong>Operator</strong></td><td style="width: 125px;"><strong>Example</strong></td><td><strong>Description</strong></td></tr>
+<tr><td>and</td><td><tt>(@@a and @@b)</tt></td><td><strong>True</strong> if both @@a and @@b are <strong>true</strong>.</td></tr>
+<tr><td>&amp;&amp;</td><td><tt>(@@a &amp;&amp; @@b)</tt></td><td><strong>True</strong> if both @@a and @@b are <strong>true</strong>. &amp;&amp; is like the <strong>and</strong> operator, but has a higher operator precedence.</td></tr>
+<tr><td>or</td><td><tt>(@@a or @@b)</tt></td><td><strong>True</strong> if either @@a or @@b is <strong>true</strong>.</td></tr>
+<tr><td>||</td><td><tt>(@@a || @@b)</tt></td><td><strong>True</strong> if either @@a or @@b is <strong>true</strong>. || is like the <strong>or</strong> operator, but has a higher operator precedence.</td></tr>
+<tr><td>xor</td><td><tt>(@@a xor @@b)</tt></td><td><strong>True</strong> if either @@a or @@b is <strong>true</strong>, but not <i>both</i>.</td></tr>
+<tr><td>!</td><td><tt>!@@a</tt></td><td>Reverses the valence so <strong>true</strong> becomes <strong>false</strong> and <strong>false</strong> becomes <strong>true</strong>.</td></tr>
+</tbody>
+</table>
+<p>Like <strong>true</strong> and <strong>false</strong>, the spelling of the <strong>and</strong>, <strong>or</strong>, <strong>xor</strong> operators is case insensitive, so <strong>and</strong> can also be spelled as <strong>And</strong>, <strong>AnD</strong>, <strong>AND</strong>, etc.</p>
+<dl><dd><strong><font color="red">Warning:</font></strong> <font color="dimgrey">If using the logical operators AND, OR, XOR, &amp;&amp;, || in a condition, it is recommended to enclose the statement inside parentheses <strong>()</strong> to ensure that the entire statement is evaluated and not just the first part of the statement. However it is recommended to use <tt>&amp;&amp;</tt> and <tt>||</tt> instead of <tt>AND</tt>, <tt>OR</tt>, <tt>XOR</tt>. In recent versions of ProcessMaker, the following condition: </font><dl><dd><font color="dimgrey"><tt>@@myvar != "X" AND @@myvar != "Y"</tt> </font></dd></dl><font color="dimgrey"> </font></dd><dd><font color="dimgrey">is evaluated as: </font><dl><dd><font color="dimgrey"><tt>@@myvar != "X"</tt> </font></dd></dl><font color="dimgrey"> </font></dd><dd><font color="dimgrey">To ensure that the entire statement is evaluated, enclose it in parentheses: </font><dl><dd><font color="dimgrey"><tt>(@@myvar != "X" AND @@myvar != "Y")</tt></font></dd></dl></dd></dl>
+
+<h3><span id="Strings_in_conditions">Strings in conditions</span></h3>
+<p>Most data entered into DynaForm fields is stored as strings, so it is useful to know how to handle strings in ProcessMaker. All strings must be enclosed in either single quotes <strong><tt>'...'</tt></strong> or double quotes <strong><tt>"..."</tt></strong>. Strings enclosed in single quotes have their characters treated as literal values, whereas PHP interprets escaped characters in double quoted strings. For instance, <strong><tt>\t</tt></strong> is interpreted as a tab and <strong><tt>\n</tt></strong> is interpreted as a hard return.</p>
+<dl><dd><span style="color: green;"><strong>Note:</strong></span> <span style="color: dimgrey;">Unlike normal PHP variables which can be inserted inside double quoted strings, such as <strong><tt>"I say $greeting to you"</tt></strong> or <strong><tt>"Give {$arrayNames['manager']} the letter"</tt></strong>, ProcessMaker case variables can not be inserted inside double quoted strings, so <strong><tt>"I say @@Greeting to you"</tt></strong> will not work.</span></dd></dl>
+<p>PHP uses the dot operator "." to concatenate strings. For example, <strong><tt>"Hello" . " " . "World!"</tt></strong> evaluates to <strong><tt>"Hello World!"</tt></strong>. People coming from other languages commonly try to do <strong><tt>"Hello" + " " + "World!"</tt></strong>, but PHP only uses the + operator for adding integers and floats, so it will try to convert each string into an integer or float and then add them together. If the string starts with a number (such as <strong><tt>'42 is the answer'</tt></strong> or <strong><tt>" 3.5 duckies"</tt></strong>), then it will successfully convert, otherwise it will become zero, so <strong><tt>"Hello" + " " + "World!"</tt></strong> becomes <strong><tt>0 + 0 + 0</tt></strong></p>
+<p>ProcessMaker system and case variables can be concatenated. Remember to reference them as <strong>@@<i>variable_name</i></strong>, so they will be parsed as strings:</p>
+<ul><li><tt>"Hello " . @@USR_USERNAME</tt></li><li><tt>@@FirstName . ' ' . @@LastName</tt></li></ul>
+
+<h3><span id="Operator_Precedence_in_Conditions">Operator Precedence in Conditions</span></h3>
+<p>A condition is evaluated according to the <a class="external text" href="http://php.net/manual/en/language.operators.precedence.php">rules of operator precedence</a>, so certain operators will be executed before other operators.</p>
+<p>For example, how does ProcessMaker know whether <strong><tt>2 + 3 * 4</tt></strong> equals <strong><tt>20</tt></strong> or <strong><tt>14</tt></strong>? If addition has precedence over multiplication, then first <strong><tt>2 + 3 = 5</tt></strong>, then <strong><tt>5 * 4 = 20</tt></strong>. If multiplication has precedence, then first <strong><tt>3 * 4 = 12</tt></strong>, then <strong><tt>2 + 12 = 14</tt></strong>. Since ProcessMaker uses the PHP rules of operator precedence, multiplication has higher precedence than addition, so the result is <strong><tt>14</tt></strong>.</p>
+<p>In the following table, the operators are ordered according to their precedence, with the highest precedence at the top. So parentheses "()" have the highest precedence and commas "," have the lowest.</p>
+<table><tbody><tr><td><strong>Operators</strong></td><td><strong>Description</strong></td></tr><tr><td>( )</td><td>Group elements to have highest precedence.</td></tr><tr><td>[ ]</td><td>Access an element in an array or a character in a string</td></tr><tr><td>++ --</td><td>Increment or decrement operator</td></tr><tr><td>- (<i>type</i>)</td><td>Negation, Type casting such as (int), (float), (string), (boolean), etc.</td></tr><tr><td>!</td><td>Logical NOT (inverse of <strong>true</strong> or <strong>false</strong>)</td></tr><tr><td>* / %</td><td>Multiplication, division, modulus</td></tr><tr><td>+ - .</td><td>Addition, subtraction, string concatenation</td></tr><tr><td>&lt; &lt;= &gt; &gt;= &lt;&gt;</td><td>Greater than, less than, not equal to</td></tr><tr><td>== != === !==</td><td>Equal, not equal, equal same type, not equal same type</td></tr><tr><td>&amp;&amp;</td><td>Logical AND</td></tr><tr><td>||</td><td>Logical OR</td></tr><tr><td>? :</td><td>Ternary operator for constructing if-then-else statements</td></tr><tr><td>= ^= &lt;&lt;= &gt;&gt;= =&gt;</td><td>Assignment operators</td></tr><tr><td>and</td><td>Logical AND</td></tr><tr><td>xor</td><td>Logical XOR</td></tr><tr><td>or</td><td>Logical OR</td></tr><tr><td>,</td><td>Commas separate parameters in function calls and elements in arrays</td></tr></tbody></table> &nbsp;
+<p>If operators are in the same precedence level, then they are parsed from left to right. For example, in the expression <strong><tt>5 - 6 / 2 . " for you!"</tt></strong>, division has the highest precedence so 6 / 2 will happen first. Subtraction and string concatenation (which is the "." operator) have the same precedence, therefore the leftmost operator, which is subtraction will happen first, followed by concatenation. Here is the order of the operations:</p>
+<ul><li><strong><tt>6 / 2 = 3</tt></strong></li><li><strong><tt>5 - 3 = 2</tt></strong></li><li>Integer 2 converted into the string "2", then: <strong><tt>"2" . " for you!" = "2 for you!"</tt></strong></li></ul>
+<p>In order to change the order of operations, place parenthesis around elements to give them the highest precedence. For example, the expression <strong><tt>@#Price - @#Discount * @%Quantity</tt></strong> can not be used to calculate the total price, because the discount needs to be subtracted before multiplying by the quantity. Therefore parentheses can be used to first subtract, then multiply: <strong><tt>(@#Price - @#Discount) * @%Quantity</tt></strong></p>
+<p>Parentheses can be nested as many times as necessary. For example: <strong><tt>((@#Price - @#Discount) * @%Quantity) * @#TaxRate</tt></strong></p>
+<p>Parentheses can be useful when combined with "!" (logical NOT) to take the inverse of a comparison. For example, in the expression <strong><tt>!(@%Amount &gt; 1000)</tt></strong>, if the amount is greater than 1000, then <strong>true</strong> would be inverted to <strong>false</strong> by the ! operator.</p>
+<p>When in doubt about the precedence, it is a good idea to use parentheses, because it makes the precedence explicit and the code is easier to understand.</p>
+
+<h2><span id="Conditions_with_DynaForm_Fields">Conditions with DynaForm Fields</span></h2>
+<p>When a DynaForm is submitted, a case variable is created for each of the fields in the DynaForm. These case variables can then be used later in the process and added in the conditions.</p>
+
+<h3><span id="Currency_boxes">Currency boxes</span></h3>
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> 2.0.x </font></p>
+<p>If the currency box accepts decimal numbers, reference it as <strong>@#<i>field_name</i></strong> in the condition. If it doesn't accept decimal numbers, then is can be referenced as an integer <strong>@%<i>field_name</i></strong>, but it is a good idea to reference it as a float if doing any division where the remainder might be dropped. Example:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">@</span><span style="color: #666666; font-style: italic;">#Amount + @#Shipping &gt;= 1000.0 or @#Total &gt; @#CreditLimit</span></code></span>
+
+<h3><span id="Percentage_boxes">Percentage boxes</span></h3>
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> 2.0.x </font></p>
+<p>If the percentage box accepts decimal numbers, reference it as <strong>@#<i>field_name</i></strong> in the condition. If it doesn't accept decimal numbers, then is can be referenced as an integer <strong>@%<i>field_name</i></strong>, but it is a good idea to reference it as a float if doing any division where the remainder might be dropped. Example:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">@</span><span style="color: #666666; font-style: italic;">#Price + @#Price * @#TaxRate &gt; 0</span></code></span>
+
+ 
+<h3><span id="Dropdown_boxes_and_Radiogroups">Dropdown boxes and Radiogroups</span></h3>
+<p>Dropdown boxes and radiogroups store the <i>value</i> (not the <i>label</i>) of the selected option. Generally dropdown boxes and radiogroups are accessed as <strong>@@<i>field_name</i></strong>, but if the values for the options are integers, they can be accessed as either <strong>@@<i>field_name</i></strong> or <strong>@%<i>field_name</i></strong>. Due to automatic type conversion, <tt>@%var == 2</tt> or <tt>@@var == 2</tt> mean the same thing and both would work. Examples:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp; <span style="color: #339933;">@@</span>ContactMethod <span style="color: #339933;">==</span> <span style="color: #0000ff;">'telephone'</span><br />
+&nbsp;<span style="color: #339933;">@@</span>ContactMethod <span style="color: #339933;">!=</span> <span style="color: #0000ff;">'fax'</span><br />
+&nbsp;<span style="color: #339933;">@%</span>ExpenseType <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">2</span></div></div>
+<p>To check for the <i>label</i> (not the <i>value</i>) of the selected option in a dropdown box, then check the option <strong>Save label of selected value in variable</strong> when defining the dropdown box. Then reference it as <strong>@@<i>field_name</i>_label</strong>. Example:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">@@</span>ExpenseType_label <span style="color: #339933;">!=</span> <span style="color: #0000ff;">&quot;Taxes&quot;</span></code></span>
+
+<h3><span id="Listboxes_and_checkgroups">Listboxes and checkgroups</span></h3>
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> Listboxes 2.0.x </font></p>
+<p>Like dropdown boxes, listboxes and checkgroups store the <i>value</i> (not the <i>label</i>) of the selected option as a string. Unlike dropdown boxes which require <i>one</i> selected option, listboxes and checkgroups allow zero, one, or multiple options to be selected. If more than one option is selected, then each value is separated by a “|” (vertical bar) in a string, such as “blue|yellow|pink” or “0|4|5”.</p>
+<p>To deal with situations where more than two options might be selected, it is recommended to break the selected values into an array using the <a class="external text" href="http://php.net/manual/en/function.explode.php">explode()</a> function and then search for a value in the array using the <a class="external text" href="http://php.net/manual/en/function.in-array.php">in_array()</a> function.</p>
+<p>For instance, to search whether the option "telephone" was selected in the "ContactMethods" listbox:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/in_array"><span style="color: #990000;">in_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;telephone&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/explode"><span style="color: #990000;">explode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'|'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>ContactMethods<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></code></span>
+<p>To search whether the option "telephone" was NOT selected, then use ! (Logical NOT):</p>
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">!</span><a href="http://php.net/in_array"><span style="color: #990000;">in_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;telephone&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/explode"><span style="color: #990000;">explode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'|'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>ContactMethods<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></code></span>
+<p>If the values in a listbox or checkgroup are numbers, use the same method to search for the values as strings:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/in_array"><span style="color: #990000;">in_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;3&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/explode"><span style="color: #990000;">explode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'|'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>ExpenseTypes<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></code></span>
+<p>To search for multiple values, then the first parameter of <a class="external text" href="http://php.net/manual/en/function.in-array.php">in_array()</a> should be an array of the values to be found:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/in_array"><span style="color: #990000;">in_array</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;telephone&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;fax&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;email&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <a href="http://php.net/explode"><span style="color: #990000;">explode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'|'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>ContactMethods<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></code></span>
+<p>?Use <a class="external text" href="http://php.net/manual/en/function.count.php">count()</a> to count the number of selected options. For example, to check whether more than one option was selected:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/explode"><span style="color: #990000;">explode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'|'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>ContactMethods<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">1</span></code></span>
+
+<h3><span id="Yes.2FNo_boxes">Yes/No boxes</span></h3>
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> 2.0.x</font></p>
+<p>Yes/No boxes store <tt>"1"</tt> for Yes and <tt>"0"</tt> for No. Because <tt>1</tt> means true in PHP and <tt>0</tt> means false, Yes/No boxes can be referenced as just the case variable (without checking for a particular value). All of these conditions would mean exactly the same thing:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@%</span>mycheckbox<br />
+&nbsp;<span style="color: #339933;">@%</span>mycheckbox <span style="color: #339933;">==</span> <span style="color: #cc66cc;">1</span><br />
+&nbsp;<span style="color: #339933;">@@</span>mycheckbox <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;1&quot;</span></div></div>
+<p>However, do <strong>NOT</strong> try to use Yes/No boxes in these ways:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@@</span>mycheckbox<br />
+&nbsp;<span style="color: #339933;">@=</span>mycheckbox</div></div>
+<p>Yes/No are stored as the strings <tt>"0"</tt> or <tt>"1"</tt>, so they will always evaluate to <tt>true</tt> if parsed as strings.</p>
+
+<h3><span id="Grids">Grids</span></h3>
+<p>A grid is stored in a case variable as an array of associative arrays, so it has to be referenced as <strong>@=<i>field_name</i></strong>, where it is the field name for the grid object in a master form. The counting of the array starts from the number 1 (not 0 like a normal array). Each row is stored as an associative array where the grid field names are the keys and the entered data are the values. For more information, see <a /index.php/"DynaForm_Fields#Accessing_with_PHP_6" title="DynaForm Fields">Accesing Grids with PHP</a>.</p>
+<p>To check how many rows are in a grid, use the <a href="http://php.net/manual/en/function.count.php">count()</a> function. For example, to checking whether the "Products" grid has more than 3 rows:</p>
+<span class="geshifilter"><code class="php geshifilter-php">&nbsp;<a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>Products<span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">3</span></code></span>
+<p>It is not a good idea to reference a particular grid row in a condition, because an error will be generated if the row doesn't exist. Instead, wrap the condition inside a <a class="external text" href="http://www.php.net/manual/en/language.operators.comparison.php#language.operators.comparison.ternary">ternary operator</a>, which first checks whether the row exists.</p>
+<p>For example, if checking whether the "Price" field in the first row in the "Products" grid is greater than 100, first check if the row exists with the count() function. Only if it does exist, then check the value of the first "Price" field, otherwise return <tt>false</tt>.</p>
+<span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>Products<span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">1</span> ? <span style="color: #339933;">@=</span>Products<span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'Price'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">100</span> <span style="color: #339933;">:</span> <span style="color: #009900; font-weight: bold;">false</span></code></span>
+<p>If unsure whether the grid form was submitted, it is a good idea to first check whether the grid case variable exists with isset(). For example, to check whether the "imported" Yes/No box in the first row of the "Products" grid has selected "Yes" (which has a value of 1):</p>
+<span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>Products<span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>Products<span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">1</span> and <span style="color: #339933;">@=</span>Products<span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span>imported<span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">1</span></code></span>
+<p>The condition first checks whether the grid exists, then it checks whether there is at least one row in the grid and finally checks whether the "Yes" option was selected in the Yes/No box (Yes is 1, No is 0).</p>
+<p>To check whether any of the "Price" fields in any of the rows is greater than 100, it is recommended to fire a trigger before the condition which would pass through all the rows in the grid and assign a value to a case variable which could be checked in the condition. For example, use the following trigger:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@=</span>Over100 <span style="color: #339933;">=</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>Products <span style="color: #b1b100;">as</span> row<span style="color: #009900;">&#41;</span><br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>row<span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'Price'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">100</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">@=</span>Over100 <span style="color: #339933;">=</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+<p>Then use the following condition:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">@=</span>Over100</code></span>
+
+<h2><span id="Setting_Conditions">Setting Conditions</span></h2>
+<p>Conditions can be set for a number of different elements in ProcessMaker.</p>
+
+<h3><span id="Conditions_for_Steps">Conditions for Steps</span></h3>
+<p><strong>For Version 2.0.x</strong></p>
+<p>Conditions can be set for steps, which are activities which happen in order inside a task. To set a condition for a DynaForm, Input Document or Output Document, first assign the activity as a step to a task in a process. Then <i>right click</i> on the task in the process map and select the option <strong>Steps</strong> from the dropdown menu. In the <strong>Steps of: <i>task-name</i></strong> dialog box which appears, click on the <strong>Conditions</strong> tab to see a list of steps and their conditions.</p>
+<p><img alt="" src="../sites/default/files/ConditionsForSteps.png" height="225" width="676"></p>
+<p>If a step doesn't have a condition, then it will always be executed when running a case. To add a condition to a step, click on its "Edit" link. Enter the condition in the editing box.</p>
+<p><img alt="" src="../sites/default/files/EditingConditionForStep.png" height="303" width="575"></p>
+<p>To insert a case or system variable, click on the <strong>[@@]</strong> button and click on a variable from the list to automatically insert it in the condition. Note that only system variables and case variables from fields used inside master DynaForms will appear in the list to be inserted. Case variables defined in triggers will not appear in the list to be inserted, although they can also be used in conditions.</p>
+<p>When done defining the condition, click on the "Save" button.</p>
+
+
+<h3><span id="Conditions_for_Triggers">Conditions for Triggers</span></h3>
+<p>Setting a condition for a <a href= "2.0/Triggers.html">Trigger</a> is similar to setting one for other types of steps. First, assign the trigger to fire at a particular point in a task. Then <i>right click</i> on the task in the process map and select the "Steps" option from the dropdown menu. </p>
+<p>In the <strong>Steps of: <i>task-name</i></strong> dialog box which appears, click on the <strong>Triggers</strong> tab to see a list of points where triggers can be fired. Click on the <strong>[+]</strong> icons to expand the steps and find the trigger.</p>
+<p>If a Trigger doesn't have a condition, then it will always be executed when running a case. To add a condition or edit an existing condition, click on the trigger's <strong>Condition</strong> link.</p>
+<p><img alt="" src="../sites/default/files/EditingTriggerConditions.png" height="439" width="724"></p>
+<p>When done defining the condition, click on the "Save" button.</p>
+
+<h3><span id="Conditions_in_Evaluation_Routing_Rules">Conditions in Evaluation Routing Rules</span></h3>
+<p>Evaluation routing rules can use conditions to decide whether to decide the execution of a particular paths in a process.</p>
+<p>A condition can be set for each path. If the condition evaluates to <i>True</i> then the next task will be executed. If <i>False</i> then the next task (and any subsequent tasks on the same path) will not be executed. If the condition on a routing rule is left blank, then the condition will be considered <i>True</i> and the next task in the path will be executed.</p>
+<p>To add a condition, first join two tasks with an Evaluation or Parallel by Evaluation routing rule. Then, click on the <img alt="" src="../sites/default/files/ParallelByEvaluationFork.gif"> icon for Evaluations or <img alt="" src="../sites/default/files/Evaluation.gif"> icon for Parallel by Evaluations. In the dialog box that appears, enter the condition for each path.</p>
+<p><img alt="" src="../sites/default/files/DefineRoutingRulesConditions.png" height="275" width="701"></p>
+<p>Make sure that at least one of the conditions will be true, otherwise an error will be thrown and the process will stop at that point.</p>
+
+<h2><span id="Errors_in_Conditions">Errors in Conditions</span></h2>
+<p>It can be difficult to debug problems in conditions, so it is recommended to run cases with the <a href= "2.0/Triggers.html#Debugging_Triggers">Debugger</a> activated. As a case progresses, examine the values of the case and system variables used in the conditions and verify that the conditions are testing for the right values in the variables.</p>
+<p>If an error occurs in the syntax of a condition, then an error message will appear to indicate the problem while running cases.</p>
+<p><img alt="" src="../sites/default/files/ErrorInCondition.png" height="98" width="497"></p>
+<p>If ProcessMaker encounters a case variable when evaluating a condition, which doesn't exist or hasn't yet been defined in the process, then it gives no indication of the problem. Instead, it inserts a value of "" (an empty string) in place of the variable and evaluates the expression. This kind of problem can be very hard to debug, because the case continues to run without giving any indication of a problem.</p>
+<p>If all of the conditions for an Evaluation or Parallel by Evaluation routing rule evaluate to false and there is no available path, then the process stops and the following error message appears:</p>
+<p><img alt="" src="../sites/default/files/ErrorConditions3.png" height="115" width="527"></p>
+<p>Fix the conditions so at least one of them will always evaluate to true.</p>
+
+<h3><span id="Common_Condition_Problems">Common Condition Problems</span></h3>
+<p>These are some common problems when designing conditions:</p>
+<ul><li>Misspelled variable names. Remember that variable names are case sensitive and must be spelled exactly as defined (either in the field names in DynaForms or as case variables in Triggers).</li></ul>
+<ul><li>Using a case variable in a condition before it has been created in the process. Do not use a case variable in a condition, if it is created in a later DynaForm field or defined in a later trigger.</li></ul>
+<ul><li>Using a case variable in a condition from a DynaForm field whose data may not have been submitted. By default, clicking on the <strong>Next Step</strong> link in a DynaForm will not save the data, so no case variables will be created for each DynaForm field. To fix this problem, set the <strong>Next Step Link</strong> property for DynaForms to the "Save &amp; Continue" option, so the data will automatically be saved when the user clicks on the <strong>Next Step</strong> link. If the user should have the choice to whether to save the DynaForm data or not, then fire a trigger <i>after</i> the DynaForm which will create case variables for each of the fields that are used in subsequent conditions. The trigger code would be:</li></ul>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>Field1<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>Field1 <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>Field2<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>Field2 <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; </div></div>
+<ul><li>When comparing strings, remember to use the same case and the same spacing. <strong><tt>"HeLlO"</tt></strong> does not equal <strong><tt>"hello"</tt></strong> and <strong><tt>" hello "</tt></strong> does not equal <strong><tt>"hello"</tt></strong> If comparing text entered by the user, it is a good idea to eliminate surrounding spaces with the <a class="external text" href="http://php.net/manual/en/function.trim.php">trim()</a> command and convert all input to either upper or lowercase with <a class="external text" href="http://php.net/manual/en/function.strtoupper.php">strtoupper()</a> or <a class="external text" href="http://php.net/manual/en/function.strtolower.php">strtolower()</a>. For example:</li></ul>
+<span class="geshifilter"><code class="php geshifilter-php">&nbsp;<a href="http://php.net/trim"><span style="color: #990000;">trim</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/strtoupper"><span style="color: #990000;">strtoupper</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>Department<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;FINANCE&quot;</span></code></span>
+<p>If searching within text entered by the user, consider using <a class="external text" href="http://php.net/manual/en/function.preg-match.php">preg_match()</a>. For example:</p>
+<span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/preg_match"><span style="color: #990000;">preg_match</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;/finance/i&quot;</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>Department<span style="color: #009900;">&#41;</span></code></span>
+<ul><li>In PHP, <strong>=</strong> is used for <i>assignment</i>, whereas <strong>==</strong> or <strong>===</strong> is used for <i>equality</i>. The condition <tt>@%ExpenseType = 3</tt> will always evaluate to <tt>true</tt>, because the integer 3 can be assigned correctly to the variable. Instead, use the condition <tt>@%ExpenseType == 3</tt> to check if <tt>@%ExpenseType</tt> is equal to the integer 3.</li></ul></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

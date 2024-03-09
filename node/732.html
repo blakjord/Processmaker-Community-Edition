@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/Executing_cron.php.html" />
+<link rel="shortlink" href="732.html" />
+<title>3.2 - 3.8 - Executing Cron Scripts | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"2HFk_tBU1SkK4lx0NEa139-yQ2pLtnABtTlJFu62bbw","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-732 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="732.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="732.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-80kgGAzeNANvkkNhRCbCla71C4YS0m_7gBsuhTaESJM" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - Executing Cron Scripts</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a href="../3.1/Executing_cron.php.html" class="">3.1</a></li><li><a href="../3.0/Executing_cron.php.html" class="">3.0</a></li><li><a href="../index.php/Executing_cron.php.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - Executing Cron Scripts" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="732.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - Executing Cron Scripts 1/5</option><option value="40">Give 3.2 - 3.8 - Executing Cron Scripts 2/5</option><option value="60">Give 3.2 - 3.8 - Executing Cron Scripts 3/5</option><option value="80" selected="selected">Give 3.2 - 3.8 - Executing Cron Scripts 4/5</option><option value="100">Give 3.2 - 3.8 - Executing Cron Scripts 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.4</span></span> <span class="total-votes">(<span >11</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-U41Ed_6TKGzEt4ShajCSzh5-qQ_OxSS52v9Bp8zVGKo" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="732.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="732.html#Overview">Overview</a></li>
+<li class="toc"><a href="732.html#Setting_Time_Zone">Setting Time Zone</a></li>
+<li class="toc"><a href="732.html#Manually_executing_cron.php">Manually Executing Cron Scripts</a></li>
+<ol class="toc">
+<li class="toc"><a href="732.html#In_Windows">Windows</a></li>
+<li class="toc"><a href="732.html#In_Linux">Linux</a></li>
+</ol>
+<li class="toc"><a href="732.html#Syntax_of_cron.php_Options">Syntax of Cron Options</a></li>
+<li class="toc"><a href="732.html#Cancelling_the_Cron_Script_Execution">Cancelling the Cron Script Execution</a></li>
+<li class="toc"><a href="732.html#Cron_Log_Files">Cron Log Files</a></li>
+<ol class="toc">
+<li class="toc"><a href="732.html#Checking if Cron is running">Checking if a Cron Script is Running</a></li>
+</ol>
+<li class="toc"><a href="732.html#executing_timereventcron.php">Executing timereventcron.php</a></li>
+<li class="toc"><a href="732.html#executing_sendnotificationscron.php">Executing sendnotificationscron.php</a></li>
+<li class="toc"><a href="732.html#Configuring_crontab_in_Linux.2FUNIX">Configuring Crontab in Linux/UNIX</a></li>
+<li class="toc"><a href="732.html#Scheduling_a_task_in_Windows">Scheduling a Task in Windows</a></li>
+<ol class="toc">
+<li class="toc"><a href="732.html#SCHTASKS_command">SCHTASKS Command</a></li>
+<li class="toc"><a href="732.html#Scheduled_Task_in_Windows_7">Scheduled Task in Windows 7</a></li>
+</ol>
+<li class="toc"><a href="732.html#Restart_cron_when_it_is_stopped_abruptly">Restart Cron When it is Stopped Abruptly</a></li>
+<li class="toc"><a href="732.html#Checking_the_Cron_Log_in_ProcessMaker">Checking the Cron Log in ProcessMaker</a></li>
+<ol class="toc">
+<li class="toc"><a href="732.html#Location_of_the_Cron_Log_File">Location of the Cron Log File</a></li>
+<li class="toc"><a href="732.html#Cron_log_options">Cron Log Options</a></li>
+<li class="toc"><a href="732.html#Search_Options">Search Options</a></li>
+<li class="toc"><a href="732.html#Menu_options">Menu Options</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>ProcessMaker is a web application that normally executes actions in response to users' actions. Nonetheless, actions that aren't initiated by the user, such as timer events and sending email notifications, are only executed when the following cron scripts are run:</p>
+<ul>
+    <li><b><tt>cron.php</tt></b>: This is the principal cron script, which:
+    <ul>
+    <li>Sends out any emails in the notification queue,</li>
+    <li>Unpauses any case whose pause time has expired,</li>
+    <li>Calculates the elapsed time (according to the configured calendar) of all open tasks in active cases,</li>
+    <li>Executes any events for classic (ProcessMaker 2) processes,</li>
+    <li>Starts any scheduled cases for classic (ProcessMaker 2) processes,</li>
+    <li>Updates the labels in active cases,</li>
+    <li>Executes the trigger for self service cases that have a configured <a href="../3.0/Tasks.html#Setting_time_limit_to_claim_a_case">timeout setting</a>,</li>
+    <li>Calculates the behavior of the users,</li>
+    <li>Calculates the behavior of a process.</li>
+</ul>
+</li>
+
+<li><b><tt>messageeventcron.php</tt></b>: This script executes the <a href="../3.0/Events.html#Send_Message_Intermediate_Event">send</a> and <a href="../3.0/Events.html#Receive_Message">receive message</a> events and the <a href ="../3.0/Events.html#EmailMessage">email intermediate throwing</a> and <a href="../3.0/Events.html#EndEmailMessage">email end</a> events in BPMN processes.</li>
+
+<li><b><tt>timereventcron.php</tt></b>: This script executes <a href="../3.0/Events.html#Timer_Start_Event">timer start</a> and <a href="../3.0/Events.html#IntermediateTimerEvent">intermediate timer</a> events in BPMN processes.</li>
+
+<li><b><tt>ldapcron.php</tt></b>: This script executes LDAP and Active Directory synchronization, which is an option available in <a href="../3.0/Advanced_LDAP.html">Advanced LDAP/AD</a> in the <a href="../ProcessMaker_Enterprise_Editionv.3.0.html">Enterprise Edition</a>.</li>
+
+<li><b><tt>sendnotificationscron.php</tt></b>: This script sends notifications, including to mobile devices, when cases are created and when cases are routed to new tasks.</li>
+
+<li><b><tt><a href="../Email_Response.html#Cron_configuration">actionsByEmailEmailResponse.php</a></tt></b>: This script reads the Action by Email receiver account inbox looking for new messages. <strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.4.0.</font></li>
+</ul>
+
+<p>For testing purposes, these cron scripts can be executed <a href="732.html#Manually_executing_cron.php">manually</a> from the command line of the server where ProcessMaker is installed.</p>
+
+<p>For production use, it is best to <a href="732.html">automate</a> the execution of the cron scripts by following the instructions below to either configure a cron job in Linux/UNIX or set up a scheduled task in Windows. Note that it is not recommended to execute these scripts more than once every five minutes due to the heavy processing that they incur.</p>
+
+<h2><span id="Setting_Time_Zone">Setting Time Zone</span></h2>
+<p>In order for the cron scripts to execute correctly, it is recommended that the same <a href="http://php.net/manual/en/timezones.php">time zone</a> be set in both the
+servers' <a href="../3.0/Changing_the_ProcessMaker_Configuration.html#Editing_the_PHP_configuration">php.ini</a> file and in ProcessMaker's <a href="../3.2/Configuration_File_env.ini.html#Available_Settings:">env.ini</a> file.
+
+<p>For example, a ProcessMaker server located in New York should have the
+following line in its <tt><b>workflow/engine/config/env.ini</b></tt> file:
+<codeblock>time_zone = "America/New_York"</codeblock>
+
+<p>Likewise, its <tt><b>php.ini</b></tt> file should contain the following line:
+<codeblock>date.timezone = America/New_York</codeblock>
+<a href="../3.0/Changing_the_ProcessMaker_Configuration.html#Restarting_Apache">Restart Apache</a>
+or reboot the server for any changes in the <tt><b>php.ini</b></tt> file to take effect.
+
+<p>It is also recommended to set the server's clock to use same time zone in
+<a href="http://www.thegeekstuff.com/2010/09/change-timezone-in-linux">Linux</a> or
+<a href="http://woshub.com/how-to-set-timezone-from-command-prompt-in-windows">Windows</a>.
+
+<h2><span id="Manually_executing_cron.php">Manually Executing Cron Scripts</span></h2>
+<h3><span id="In_Windows">Windows</span></h3>
+<p>The cron scripts can be executed from the command line on the server where ProcessMaker is installed, which means that <a href="http://php.net/manual/en/features.commandline.php">PHP-CLI</a> should be installed on the server running ProcessMaker. The ProcessMaker Windows Installer automatically installs PHP-CLI, but it may not have been installed if ProcessMaker was <a href="../3.0/Windows_Manual_Installation.html">manually installed.</a></p>
+
+<p>It is recommended to add the location of the <b><tt>php.exe</tt></b> file to the system's <code>Path</code> variable, so that PHP can executed without specifying the full path.</p> 
+
+<p><i>Right click</i> on <b>My PC</b> (or <b>This PC</b>) in the Windows File Explorer and select <b>Properties</b> from the context menu. 
+
+<p><img src="../sites/default/files/3.3executingcron_openwindowssystemproperties.png" width="300px"></p>
+ 
+<p>In the "System Properties" dialog box that opens, go to the <b>Advanced</b> tab and click on the <b>Environment Variables</b> button. Under the "System Variables" section of the next dialog box, click on the <code>Path</code> variable in the list to select it, and then click on <b>Edit</b>.</p>
+
+<p><img src="../sites/default/files/3.3cronscripts_changewindowspathvariable.png" width="1000px"></p>
+
+<p>Then, add the directory where <b><tt>php.exe</tt></b> is located  to the end of the existing paths, such as <code>C:\Bitnami\processmaker-3.<b><i>X.X-X</i></b>\php\</code> for a Bitnami install or  <code>C:\php\</code> for a manual install. Then save the changes.
+
+<p>To test a feature executed by a cron script, open a terminal by going to <b>Start > All Programs > Accessories > Command Prompt</b> on the server where ProcessMaker is installed. Enter the command to execute the <b><tt>workflow/engine/bin/cron.php</tt></b> file. The location of the file depends on the ProcessMaker installer that was used. For example:</p>
+
+<div style="margin-left:25px;">
+    <p>Manual Installation:</p>
+<codeblock>php.exe <font color=blue><i>C:</i></font>\opt\processmaker\workflow\engine\bin\cron.php</codeblock>
+ 
+    <p>Bitnami Installer for ProcessMaker between versions 3.0.1.8 and 3.3.X.</p>
+<codeblock>php.exe <font color=blue><i>C:</i></font>\Bitnami\processmaker-3.<font color=blue><i>X</i></font>.<font color=blue><i>X</i></font>-<font color=blue><i>X</i></font>\apps\processmaker\htdocs\workflow\engine\bin\cron.php</codeblock>
+    
+    <p>Automatic Installer in ProcessMaker 3.0.1.7 or earlier in Windows Vista/7/8/10/2008/2012:
+<codeblock><font color=blue><i>C:</i></font>\Users\<font color=blue><i>USERNAME</i></font>\AppData\Roaming\ProcessMaker-3_X_X_X\php\php.exe <font color=blue><i>C:</i></font>\Users\<font color=blue><i>USERNAME</i></font>\AppData\Roaming\ProcessMaker-3_<font color=blue><i>X</i></font>_<font color=blue><i>X</i></font>_<font color=blue><i>X</i></font>\processmaker\workflow\engine\bin\cron.php
+</div></codeblock></p>
+
+<p><b><tt>messageeventcron.php</tt></b>, <b><tt>timereventcron.php</tt></b>, <b><tt>ldapcron.php</tt></b> and <b><tt>sendnotificationscron.php</tt></b> are files that are found in the same directory and are executed in the same way as the <b><tt>cron.php</tt></b> file.</p>
+
+<p>If the cron script is executed without being configured, all pending activities will be automatically executed for all workspaces. To limit processing in the <b><tt>cron.php</tt></b> script, it may be useful to specify only certain workspaces, or to specify that only certain types of activities (events, scheduled cases, notifications, etc.) be executed. Read about the cron script options in the <a href="732.html#Syntax_of_cron.php_Options">Syntax of Cron Options</a> section.</p>
+
+<h3><span id="In_Linux">Linux</span></h3>
+<p>In ProcessMaker version 3.1.3 and later, the ProcessMaker cron scripts in Linux must be executed by the <b>Apache</b> or <b>Nginx</b> user to avoid file permission problems with <a href="../3.2/ProcessMaker_Standard_Logging.html">ProcessMaker's new logging</a> feature. The Apache or Nginx user varies according to the distribution of Linux/UNIX.</p>
+<p>
+<table style="width:800px";>
+<tbody>
+<tr><th>Operating System</th><th>Apache User Name</th><th>Nginx User Name</th></tr>
+<tr><td>Red Hat/CentOS</td><td>apache</td><td>nginx</td></tr>
+<tr><td>Debian/Ubuntu</td><td>www-data</td><td>www-data</td></tr>
+<tr><td>SUSE/openSUSE</td><td>wwwrun</td><td>nginx</td></tr>
+<tr>
+    <td colspan="3">
+        If ProcessMaker was installed using the Bitnami Installer, then the Apache user is "daemon" in all distributions.
+        <p style="margin-left:25px">
+            <strong><font color="green">Note: </font></strong>
+            <font color="dimgray">Bitnami is no longer used in ProcessMaker as of version 3.4.0.</font>
+        </p>
+    </td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>If unsure of which user to use with your distribution, find out who the owner of the ProcessMaker files in the <b>shared</b> directory is with the <code>ls -l</code> command. For example if ProcessMaker is installed in the <tt>/opt</tt> folder, run the following command and read the name of the owner (marked in green):</p>
+<codeblock># ls -l /opt/processmaker/shared
+total 20
+drwxrwxrwx 7 <font color="green">www-data www-data</font> 4096 jul 28 17:04 compiled
+drwxrwxrwx 2 <font color="green">www-data www-data</font> 4096 jul 20 16:01 log
+drwxrwx--- 2 <font color="green">www-data www-data</font> 4096 jul 31 11:57 META-INF
+drwxr-xr-x 3 <font color="green">www-data www-data</font> 4096 jul 20 16:02 sites
+-rw-rw-rw- 1 <font color="green">www-data www-data</font> 2757 ago  1 18:24 srvConf.singleton
+</codeblock>
+
+<p>The location of the cron scripts depends on the installer that was used to install ProcessMaker.</p>
+<div style="margin-left:25px;">
+    <p>Manual installation:</p>
+    <codeblock><font color=blue><i>/opt</i></font>/processmaker/workflow/engine/bin/cron.php</codeblock>
+    <p>Bitnami installation in ProcessMaker between versions 3.0.1.8 and 3.3.X.</p>
+    <codeblock><font color=blue><i>/opt</i></font>/processmaker-3.<font color=blue><i>X</i></font>.<font color=blue><i>X</i></font>b1-0/apps/processmaker/htdocs/workflow/engine/bin/cron.php</codeblock>
+</div>
+
+<p>The Apache/Nginx user doesn't have configuration files, so it not possible to log in as this user. To manually execute a cron script in Linux as the Apache/Nginx user, the path to the shell must be specified. First, change to the root user using <b><code>su</code></b> or <b><code>sudo su -</code></b>, then execute  the cron script: </p>
+
+<p>For example, to manually execute the <b><tt>cron.php</tt></b> file:</p>
+<codeblock>su &nbsp; <font color=green><i>or</i></font> &nbsp; sudo su -
+su -s /bin/sh <font color=blue><i>apache</i></font> -c "php <font color=blue><i>/opt</i></font>/processmaker/workflow/engine/bin/cron.php"</codeblock>
+
+<p>Where <font color=blue><i><code>apache</code></i></font> is the name of the Apache or Nginx user and <font color=blue><i><code>/opt</code></i></font> is the ProcessMaker installation directory. </p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">If an error appears such as:</font>
+<codeblock>The stream or file "/opt/processmaker/shared/sites/workflow/log/processmaker-2018-03-05.log" could not be opened: chmod(): Operation not permitted</codeblock>
+<font color="dimgray">Then, the owner of the files in the <b><tt><i>/opt</i>/processmaker/shared</tt></b> directory need to be changed to the Apache or Nginx user:</font>
+<codeblock>su &nbsp; <font color=green><i>or</i></font> &nbsp; sudo su 
+chown -R <font color=blue><i>apache:apache</i></font> <font color=blue><i>/opt</i></font>/processmaker/shared</codeblock>
+<font color="dimgray">Where <code><font color=blue><i>apache:apache</i></font></code> is <code>apache:apache</code> or <code>nginx:nginx</code> in Red Hat/Cent OS, <code>www-data:www-data</code> in Debian/Ubuntu, <code>wwwrun:www</code> or <code>nginx:nginx</code> in SUSE/OpenSUSE, or <code>daemon:daemon</code> for a Bitnami install in all distributions.
+</font></p>
+
+<p><b><tt>messageeventcron.php</tt></b>, <b><tt>timereventcron.php</tt></b>, <b><tt>ldapcron.php</tt></b> and <b><tt>sendnotificationscron.php</tt></b> are files that are found in the same directory and are executed in the same way as the <b><tt>cron.php</tt></b> file.</p>
+
+<p>If the cron script is executed without being configured, all pending activities will be automatically executed for all workspaces. To limit processing in the <b><tt>cron.php</tt></b> script, it may be useful to specify only certain workspaces, or to specify that only certain types of activities (events, scheduled cases, notifications, etc.) be executed. Read about the cron script options in the <a href="732.html#Syntax_of_cron.php_Options">Syntax of Cron Options</a> section.</p>
+
+<h2><span id="Syntax_of_cron.php_Options">Syntax of Cron Options</span></h2>
+
+<codeblock>cron.php [<font color=blue><i>ACTIVITIES</i></font>] [+d"<font color=blue><i>YYYY-MM-DD HH:MM:SS</i></font>"] [+w<font color=blue><i>WORKSPACE</i></font>] [+force] </codeblock>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code><font color=blue><i>ACTIVITIES</i></font></code> define which activities should be executed by the <tt><b>cron.php</b></tt> script:
+<p>
+<ul>
+    <li><code>events</code> : Execute any pending events.</li>
+    <li><code>scheduler</code> : Execute any pending scheduled cases.</li>
+    <li><code>unpause</code> : Unpause cases (which are scheduled to be unpaused).</li>
+    <li><code>emails</code> : Send any pending emails.</li>
+    <li><code>plugins</code> : Activate any pending plugins.</li>
+    <li><code>calculate</code> : Calculate the elapsed time (according to the configured calendar) of all open tasks in active cases.</li>
+    <li><code>calculateapp</code> : Calculate the app data of all cases in all processes.</li>
+    <li><code>unassigned-case</code> : Run the trigger for self service cases that have a <a href="../3.2/Tasks.html#Setting_time_limit_to_claim_a_case">configured timeout setting</a>.</li>
+    <li><code>clean-self-service-tables</code> : <strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.3.9.</font><br>
+    Clean unused records for Self-Service Value Based feature. It is a maintenance command.</li>
+    <li><code>report_by_user</code> : Calculate the behavior of the users.</li>
+    <li><code>report_by_process</code> : Calculate the behavior of a process.</li>
+</ul>
+</p>
+<p>Multiple activities can be specified by separating each one with spaces:<br>
+<strong>Ex:</strong> <code>cron.php events emails plugins</code></p>
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>The activities should be listed before the other options. For example: <code>cron.php emails calculate +d"2015-01-01 01:00:00" +force</code></font></p>
+</li>
+
+    <li><b><code>+d</b>"<font color=blue><i>YYYY-MM-DD HH:MM:SS</i></font>"</code> Specify an alternative date and time for the script.<br>
+By default, the script will execute using the server's current system time. It may be useful to specify an alternative date and time when testing for past or future events or scheduled cases. Remember to use 4 digits for specifying the year and 2 digits for specifying the month, day, hour, minute and seconds. The time is on a 24 hour clock.<br>
+<b>Ex:</b> <code>cron.php +d"2016-03-30 10:30:59"</code><br>
+If manually executing the <b><tt>cron.php</tt></b> script on a Linux server, then the whole command will be enclosed in double quotation marks and the date in single quotation marks.<br>
+<b>Ex:</b> <code>su -s /bin/sh apache -c "php ./cron.php +d'2018-12-01 01:00:00' +force"</code><br> 
+If the date is not specified, then any pending emails from the last 7 days will be sent. The date can be specified to send out pending emails from an earlier date. For example, the following command sends out all pending emails which were scheduled to be sent since January 8, 2015:<br>
+<b>Ex:</b> <code>cron.php emails +d"2015-01-08 00:00:00"</code>
+
+<li><strong><code>+w</code></strong> Specify a workspace whose pending activities will executed.<br>
+By default, the pending activities in all workspaces are executed. To save processing, it can be useful to only execute the pending activities in a single workspace. Remember the workspace names are case sensitive and the default workspace is named <code>workflow</code>.<br>
+<p>It is possible to use the workspace +w<workspace> configuration in timereventcron, messageeventcron and sendnotificationscron, as is shown in the following examples:</p>
+<codeblock>- cron.php +wworkflow
+- timereventcron.php +wworkflow +force
+- messageeventcron.php +wworkflow +force
+- sendnotificationscron.php +wworkflow +force</codeblock></li>
+<li><strong><code>+force</code></strong> This option ensures that the cron script is executed by stopping the execution of any existing cron script and deleting its temporary files, so the current cron script can be executed. Remember that only one instance of a cron script can be executed at a time, so without the <code>+force</code> option, the cron script will not be executed if another instance is already being executed.</li>
+</ul>
+<p>When a cron script executes, it will report which activities were executed and how many workspaces were processed:</p>
+<codeblock>Processing workspace: workflow
+
+* Resending emails........................................[DONE]
+* Unpausing applications..................................[DONE]
+* Calculating Duration....................................[DONE]
+* Calculating Duration by Application.....................[DONE]
+* Executing events..................................[PROCESSING]
+* |- End Execution events...........................[Processed 0]
+* Executing the scheduled starting cases............[PROCESSING]
+[DONE]
+* Update case labels......................................[DONE]
+* Unassigned case.........................................[DONE]
+* Executing cron files in bin/plugins directory in Workspace: workflow
+Finished 1 workspaces processed
+Done!
+</codeblock>
+
+<h2><span id="Cancelling_the_Cron_Script_Execution">Cancelling the Cron Script Execution</span></h2>
+
+<p>To cancel the execution of a cron script, press <b>CTRL+C</b> in the command line or use the <a href="https://www.digitalocean.com/community/tutorials/how-to-use-ps-kill-and-nice-to-manage-processes-in-linux">kill</a> command in Linux or the Task Manager in Windows to kill the process. The next time a cron script is run, an error message will be displayed. To avoid this problem, either delete the cron temporary file <b><tt>shared/cron</tt></b> or use the <code>+force</code> option. </p>
+
+<p><strong>Example:</strong><br>
+Start executing a cron script and before it ends, press Ctrl+C to terminate it. Then try to execute it again, and the following message will be displayed:</p></font>
+
+<codeblock>C:\opt\processmaker\workflow\engine\bin><b>php -f cron.php</b>
+The CRON is running, please wait for it to finish
+Started in 2016-03-31 16:54:37
+If do you want force the execution use the option "+force", example: php -f cron.php +wworkflow +force
+Done!
+</codeblock>
+
+<p><font color="dimgray">To be able to execute the cron script without errors, add the <code>+force</code> option.</font></p>
+
+<codeblock>C:\opt\processmaker\workflow\engine\bin <b>php -f cron.php +force</b>
+
+* Executing cron files in bin/plugins directory in Workspace: workflow
+Finished 1 workspaces processed
+Done!
+</codeblock>
+
+<h2><span id="Cron_Log_Files">Cron Log Files</span></h2>
+<p>To keep track of what actions have been taken by a cron script, check the file <b><tt>shared/log/cron.log</tt></b>, which keeps a record of all the cron actions. Each line in the log file has the following format:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">date | time | workspace| action | type | description</div></div>
+
+<p>If the action is "executeEvents", then the log file will list both the starting time and the ending time.</p>
+
+<codeblock>$ <b>cat /opt/processmaker/shared/log/cron.log</b>
+2016-03-31 16:26:53 | workflow | main | action | checking folder C:/opt/processmaker/shared/sites\workflow
+2016-03-31 16:26:54 | workflow | resendEmails | action | Resending Emails
+2016-03-31 16:26:54 | workflow | unpauseApplications | action | Unpausing Applications
+2016-03-31 16:26:56 | workflow | calculateDuration | action | Calculating Duration
+2016-03-31 16:26:56 | workflow | calculateDurationByApp | action | Calculating Duration by Application
+2016-03-31 16:26:56 | workflow | executeEvents | action | Executing Events , 2016-03-31 16:26:49
+2016-03-31 16:27:02 | workflow | updateCaseLabels | action | Update case labels
+2016-03-31 16:27:03 | workflow | unassignedCase | action | Unassigned case
+</codeblock>
+
+<p>If an error occurs in a cron script, the file <b><tt>shared/log/cronError.log</tt></b> will be created if it doesn't already exist and it will contain a line like the following:</p>
+
+<codeblock>$ <b>cat /opt/processmaker/shared/log/cronError.log</b>
+2016-03-31 16:26:56 | workflow | resendEmails | error | Error Resending Emails: The row 'Emails, , , , ' in table Configuration doesn't exist!
+</codeblock>
+
+<p>For example, this error message indicates that the email settings in ProcessMaker haven't been configured.</p>
+
+<h3><span id="Checking if Cron is running">Checking if a Cron Script is Running</span></h3>
+<p>To figure out whether a cron script is currently running or the last time it was executed, check the <a href="http://php.net/manual/en/function.serialize.php">serialized</a> contents of the <b><tt>/opt/processmaker/shared/cron</tt></b> file. If the value of <code>flagIsRunning</code> is <code>"1"</code>, then the script is currently running.</p>
+
+<codeblock>a:3:{s:13:<b>"flagIsRunning";s:1:"1"</b>;s:13:"lastExecution";s:19:"2016-04-01 09:34:39";s:17:"processcTimeStart";i:1459517680;}
+</codeblock>
+
+<p>If it is <code>"0"</code>, then the script is not currently running.</p>
+
+<codeblock>a:2:{s:13:<b>"flagIsRunning";s:1:"0"</b>;s:13:"lastExecution";s:19:"2016-04-01 09:34:41";}
+</codeblock>
+
+<p>Alternatively, open the file with a PHP script and <a href="http://php.net/manual/en/function.unserialize.php">unserialize</a> it:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/file_exists"><span style="color: #990000;">file_exists</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;/opt/processmaker/shared/cron&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aCron</span> <span style="color: #339933;">=</span> <a href="http://php.net/unserialize"><span style="color: #990000;">unserialize</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/file_get_contents"><span style="color: #990000;">file_get_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;/opt/processmaker/shared/cron&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">// if cron.php is NOT currently running:</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aCron</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'bCronIsRunning'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//add code here </span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<h2><span id="executing_timereventcron.php">Executing timereventcron.php</span></h2>
+<p>When the <b><tt>timeeventcron.php</tt></b> script is executed, it will print out which timer events were executed.
+
+<p>For example, in a manual installation in Linux:</p>
+<codeblock>$ <b>su</b> &nbsp; <font color=green><i>or</i></font> &nbsp; <b>sudo su -</b>
+# <b>su -s /bin/sh <font color=blue><i>apache</i></font> -c "php <font color=blue><i>/opt</i></font>/processmaker/workflow/engine/bin/timereventcron.php"</b>
+<font color=green>Processing workspace: workflow</font>
++--------------------------------------------------------------------------------------------------+
+| > Creating the new case...
+|     - OK case #254 was created
+| > Routing the case #254...
+|     - OK
++--------------------------------------------------------------------------------------------------+
+| No existing records to continue a case, on date "2016-03-31 19:17:39 (UTC + 00:00)"
++--------------------------------------------------------------------------------------------------+
+
+Finished 1 workspaces processed
+Done!
+</codeblock>
+<p>Where <code><font color=blue><i>apache</i></font></code> is the Apache or Nginx user or <code>daemon</code> if a Bitnami installation.</p>
+<p style="margin-left:25px">
+    <strong><font color="green">Note: </font></strong>
+    <font color="dimgray">Bitnami is no longer used in ProcessMaker as of version 3.4.0.</font>
+</p>
+
+<p>For example, in a Bitnami installation in Windows:</p>
+<codeblock><b><font color=blue><i>C:</i></font>\processmaker-3.<font color=blue><i>X</i></font>.<font color=blue><i>X</i></font>\php\bin\php <font color=blue><i>C:</i></font>\processmaker-3.<font color=blue><i>X</i></font>.<font color=blue><i>X</i></font>\apps\processmaker\htdocs\workflow\engine\bin\timereventcron.php</b>
+<font color=green>Processing workspace: workflow</font>
++--------------------------------------------------------------------------------------------------+
+| > Creating the new case...
+|     - OK case #254 was created
+| > Routing the case #254...
+|     - OK
++--------------------------------------------------------------------------------------------------+
+| No existing records to continue a case, on date "2016-03-31 19:17:39 (UTC + 00:00)"
++--------------------------------------------------------------------------------------------------+
+
+Finished 1 workspaces processed
+Done!
+</codeblock>
+
+<p>In this example, the <b><tt>timereventcron.php </tt></b> script finds one start timer event to initiate a new case and routes it to the second task in the process. It doesn't find any intermediate timer events to execute.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> The (UTC + 00:00) does not represent the time of the cronjob when the trigger will be executed, but is only a referential time zone for internal calculation.</font></p>
+
+<p>In addition, the following lines will be added to the <b><tt>shared/log/cron</tt></b> file:
+<codeblock>2016-03-31 19:17:39 |  | main | action | checking folder /opt/processmaker/shared/sites/workflow
+2016-03-31 19:17:39 |workflow||timereventcron|timereventcron|START-NEW-CASES|Date "2016-03-31 19:17:39": Start new cases
+2016-03-31 19:17:42 |workflow||timereventcron|timereventcron|CREATED-NEW-CASE|Case #254 created, APP_UID: 47973318956fdb013b2c178000124391, PRO_UID: 96010725556eb05fd893a42072130232
+2016-03-31 19:17:45 |workflow||timereventcron|timereventcron|ROUTED-NEW-CASE|Case #254 routed, APP_UID: 47973318956fdb013b2c178000124391, PRO_UID: 96010725556eb05fd893a42072130232
+2016-03-31 19:17:45 |workflow||timereventcron|timereventcron|END-NEW-CASES|Date "2016-03-31 19:17:39": End new cases
+2016-03-31 19:17:45 |workflow||timereventcron|timereventcron|START-CONTINUE-CASES|Date "2016-03-31 19:17:39": Start continue the cases
+2016-03-31 19:17:45 |workflow||timereventcron|timereventcron|NO-RECORDS|No existing records to continue a case
+2016-03-31 19:17:45 |workflow||timereventcron|timereventcron|END-CONTINUE-CASES|Date "2016-03-31 19:17:39": End continue the cases
+</codeblock>
+
+<h2><span id="executing_sendnotificationscron.php">Executing sendnotificationscron.php</span></h2>
+
+<p>The <b>sendnotificationscron.php</b> script sends notifications to the mobile device when cases are created and when cases are routed to new tasks.</p>
+
+<p>Information about the notifications is stored in the <tt><b>wf_&lt;workspace&gt;.NOTIFICATION_QUEUE</b></tt> table.</p>
+
+<p><img src="../sites/default/files/3.1CronSendNotificationsTableQUEUE.png"></p>
+
+<p>The NOT_STATUS column details the notification status: "Pending", "Sending" or "Sent".</p>
+
+<p>Note that notifications will be recorded only if the <code>mobileNotifications</code> flag is set to <b>True</b> in the <a href="../3.0/Configuration_File_env.ini.html#mobileNotifications">env.ini</a> configuration file. Otherwise, no notification will be stored in the table or sent to the mobile device.</p>
+
+<p>To send the notifications execute the following command:</p>
+<codeblock>php <font color=blue><i>/opt</i></font>/processmaker/workflow/engine/bin/sendnotificationscron.php</codeblock>
+
+<p>For example, in a manual installation in Linux:</p>
+<codeblock>$ <b>su</b> &nbsp; <font color=green><i>or</i></font> &nbsp; <b>sudo su </b>
+# <b>su -s /bin/sh <font color=blue><i>apache</i></font> -c "php <font color=blue><i>/opt</i></font>/processmaker/workflow/engine/bin/sendnotificationscron.php"</b>
+<font color=green>Processing workspace: workflow</font>
+* Resending Notifications....................................[PROCESSING]
+* |- Send Android's Notifications............................[Processed 4]</codeblock>
+
+<p>Where <code><font color=blue><i>apache</i></font></code> is the Apache or Nignx user or <code>daemon</code> if a Bitnami installation.</p>
+<p style="margin-left:25px">
+    <strong><font color="green">Note: </font></strong>
+    <font color="dimgray">Bitnami is no longer used in ProcessMaker as of version 3.4.0.</font>
+</p>
+
+<p>For example, in a Bitnami installation in Windows:</p>
+<codeblock><b><font color=blue><i>C:</i></font>\processmaker-3.<font color=blue><i>X</i></font>.<font color=blue><i>X</i></font>\php\bin\php <font color=blue><i>C:</i></font>\processmaker-3.<font color=blue><i>X</i></font>.<font color=blue><i>X</i></font>\apps\processmaker\htdocs\workflow\engine\bin\sendnotificationscron.php</b>
+<font color=green>Processing workspace: workflow</font>
+* Resending Notifications....................................[PROCESSING]
+* |- Send Android's Notifications............................[Processed 4]</codeblock>
+
+<p>Notifications will be sent first to Android devices and then to iOS devices.</p>
+
+<p><img src="../sites/default/files/3.1CronSendNotificationsNotificationSend.png"></p>
+
+<h2><span id="Configuring_crontab_in_Linux.2FUNIX">Configuring Crontab in Linux/UNIX</span></h2>
+
+<p>The crontab command can be used to configure the server to periodically execute the ProcessMaker cron scripts at scheduled times as the Apache/NGINX user. This command should be used instead of editing the <tt><b>/etc/crontab</b></tt> file or a file in the <b><tt>/etc/cron.d</tt></b> directory (and the <tt><b>/etc/cron.hourly</b></tt>, <tt><b>/etc/cron.daily</b></tt>, <tt><b>/etc/cron.weekly</b></tt> and <tt><b>/etc/cron.monthly</b></tt> directories in Debian).</p>
+
+<p>To set up the cron scheduler on the server where ProcessMaker is installed, issue the following command (as the root or using <b><code>sudo</code></b>):</p>
+<codeblock>crontab -u <font color="blue"><i>web-server-user</i></font> -e
+</codeblock>
+
+<p>Change <code><font color="blue"><i>web-server-user</i></font></code> to the name of the Apache or NGINX user in your Linux distribution which is usually <code>apache</code> or <code>ngnix</code> in Red Hat/CentOS, <code>www-data</code> in Debian/Ubuntu, <code>wwwrun</code> or <code>nginx</code> in SUSE/OpenSUSE, or <code>daemon</code> if using a Bitnami installation in any Linux distribution.</p>
+<p style="margin-left:25px">
+    <strong><font color="green">Note: </font></strong>
+    <font color="dimgray">Bitnami is no longer used in ProcessMaker as of version 3.4.0.</font>
+</p>
+<p>The cron file is opened in the default editor of your Linux distribution. Then, add lines to execute the different ProcessMaker cron scripts at different times in the following format:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">minute hour day-of-month month day-of-week command</div></div>
+
+<p>Where:</p>
+<p>
+<table style="width: 100%">
+    <tbody>
+        <tr>
+            <th style="width: 20%">Field</th>
+            <th style="width: 80%">Description</th>
+        </tr>
+        <tr>
+            <td>minute</td>
+            <td>The minute of the hour when the command is executed. Can be between 0 and 59.</td>
+        </tr>
+        <tr>
+            <td>hour</td>
+            <td>The hour when the command is executed. Can be between 0 and 23. 0 is midnight.</td>
+        </tr>
+        <tr>
+            <td>day-of-month</td>
+            <td>Day of the month when the command is executed. For example 20 would be the 20th day of each month.</td>
+        </tr>
+        <tr>
+            <td>month</td>
+            <td>Month when the command is executed. Can be a number between 1 and 12 or the first three letters of
+                the month in English, such as jan, feb, etc.</td>
+        </tr>
+        <tr>
+            <td>day-of-week</td>
+            <td>Day of the week when the command is executed. Can be a number between 0 and 7, where 0 and 7 are both
+                Sunday, 1 is Monday, 2 is Tuesday, etc. Alternatively, can be the first three letters of the day
+                in English such as sun, mon, etc.</td>
+        </tr>
+        <tr>
+            <td>Command</td>
+            <td>Command, script or program to execute.</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
+<p>An <code>*</code> (asterisk) in the first five columns indicates all possible values. For instance, an asterisk in the minutes column indicates all the minutes in the hour. If an asterisk is divided by a number <code>*/<font color=blue>#</font></code>, then it stands for any time unit that can be cleanly divided without any remainder. For instance, in a day with 0-23 hours, <code>*/5</code> would execute on hours 0, 5, 10, 15 and 20.</p>
+
+<p>The following example executes <b><tt>cron.php</tt></b> every 15 minutes and <b><tt>messageeventcron.php</tt></b> every 20 minutes of every even hour in an installation of ProcessMaker Community Edition:</p>
+<codeblock>*/15 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/cron.php +force
+*/20 */2 * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/messageeventcron.php +force
+</codeblock>
+
+<p>Replace <code><font color=blue><i>web-server-user</i></font></code> with <code>apache</code> or <code>nginx</code> in Red Hat/CentOS, <code>www-data</code> in Debian/Ubuntu, <code>wwwrun</code> or <code>nginx</code> in SUSE/OpenSUSE, or <code>daemon</code> if using a Bitnami installation in any Linux distribution. (Using NGINX to run ProcessMaker is an option available in version <b>3.2.2</b> and later).</p>
+
+<p>In this example, <b>*/15</b> in the first line means execute <b><tt>cron.php</tt></b> at  0, 15, 30, 45 minutes of every hour. Likewise, <b>*/20 */2</b> in the second line means execute <b><tt>messageeventcron.php</tt></b> at the minutes 0, 20 and 40 of the hours 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 and 22.</p>
+
+<p>To execute all the cron scripts, it is recommended to vary the time when they execute so that each script has time to finish processing before the next script starts. In this example, each of the cron scripts are executed twice each hour, but the <b><tt>cron.php</tt></b> script is given 10 minutes to finish processing before starting the next script, whereas the rest of the cron scripts are given 5 minutes to finish processing.</p>
+
+<codeblock>0  * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/cron.php +force
+10 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/messageeventcron.php +force
+15 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/timereventcron.php +force
+20 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/ldapcron.php +force
+25 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/sendnotificationscron.php +force
+30 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/cron.php +force
+40 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/messageeventcron.php +force
+45 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/timereventcron.php +force
+50 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/ldapcron.php +force
+55 * * * * <font color=blue><i>web-server-user</i></font> php -f /opt/processmaker/workflow/engine/bin/sendnotificationscron.php +force
+</codeblock>
+
+<p>In a Bitnami installation, the path needs to be adjusted to use the Bitnami installation of PHP:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">0 * * * * /opt/bitnami/php/bin/php -f /opt/bitnami/apps/processmaker/htdocs/workflow/engine/bin/cron.php +force</div></div>
+
+<p>When done editing the cron file, the contents will be stored in the location <tt><b>/var/spool/cron/crontabs/<font color=blue><i>user</i></font></b></tt>, such as <b><tt>/var/spool/cron/crontabs/apache</tt></b> in Red Hat/CentOS or <b><tt>/var/spool/cron/crontabs/www-data</tt></b> in Debian. If the cron daemon is running on the server, then the ProcessMaker cron scripts should be periodically executed at the scheduled times.</p>
+
+<p>Remember to add the <code>+force</code> option to ensure that a cron script will be processed at a specified time. This option will cut the processing of an existing cron script short, so it is better to space out the cron scripts so they don't overlap. The <b><tt>cron.php</tt></b> script can take a long time to process if there are a large number of active cases or a large number of workspaces to process. The <b><tt>ldapcron.php</tt></b> script can also be slow if synchronizing thousands of LDAP/AD users. For a large scale deployment, it is recommended to test the cron scripts from the command line to see how long it takes to execute each one.<p>
+
+<p>For example, if using a large scale deployment with thousands of active cases, it might be better to plan 20 minutes to process the <b><tt>cron.php</tt></b> script. Likewise, it might be better to only run the <b><tt>ldapcron.php</tt></b> script at midnight to synchronize the accounts of thousands of LDAP/Active Directory users.</p>
+
+<p>For more information on how to configure the crontab, see <a href="http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples#more-534">this tutorial</a> (or this tutorial in <a href="http://www.linuxtotal.com.mx/index.php?cont=info_admon_006">Spanish</a>).</p>
+
+<h2><span id="Scheduling_a_task_in_Windows">Scheduling a Task in Windows</span></h2>
+<p>The cron scripts can be periodically executed as a Windows Scheduled Task. To configure its execution, either use the <code>SCHTASKS</code> command in DOS or create a Scheduled Task in the graphical interface.</p>
+
+<h3><span id="SCHTASKS_command">SCHTASKS Command</span></h3>
+<p>The <a href="https://technet.microsoft.com/en-us/library/cc772785(WS.10).aspx">SCHTASKS</a> command is used to create, delete, query, change, run and end Windows Scheduled Tasks. Log in to Windows as an administrator and open the system command prompt. Then, create a scheduled task to periodically execute the cron script:</p>
+
+<codeblock>SCHTASKS /Create /U <font color=blue><i>username</i></font> /P <font color=blue><i>password</i></font> /SC <font color=blue><i>ScheduleType</i></font> /TN <font color=blue><i>TaskName</i></font> /TR "<font color=blue><i>Command</i></font>"</codeblock>
+
+<p>Where:</p>
+<ul>
+    <li><b>ScheduleType</b>: Is how often the cron script will be executed. The available options are:
+
+<table><tbody>
+<tr><th>Schedule type</th>
+<th>Description</th></tr>
+<tr><td>MINUTE, HOURLY, DAILY, WEEKLY, MONTHLY</td><td>Specifies the time unit for the schedule.</td></tr>
+<tr><td>ONCE</td><td>The task runs once at a specified date and time.</td></tr>
+<tr><td>ONSTART</td><td>The task runs every time the system starts. You can specify a start date, or run the task the next time the system starts.</td></tr>
+<tr><td>ONLOGON</td><td>The task runs whenever a user (any user) logs on. You can specify a date, or run the task the next time the user logs on.</td></tr>
+<tr><td>ONIDLE</td><td>The task runs whenever the system is idle for a specified period of time. You can specify a date, or run the task the next time the system is idle.</td></tr>
+</tbody></table>
+</li>
+    <li><b>TaskName</b>: The name of the task. The task name should be enclosed in double quotations.
+</li>
+    <li><b>Command</b>: The command to execute the cron script. The command should be enclosed in double quotation marks. If it contains any paths or options that contain spaces, then they should be enclosed in single quotations marks or escaped double quotation marks. Escaping of quotation marks is done with backslashes: <code>\"</code>.</li>
+</ul>
+</p>
+
+<p>For example, to execute the <b><tt>cron.php</tt></b> script every hour starting at 11:25 for a ProcessMaker server installed with WampServer at <tt>c:\opt\ProcessMaker\</tt>:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">SCHTASKS /create /sc HOURLY /st 11:25 /tn &quot;ProcessMaker Cron Job&quot; /tr &quot;C:\wamp\php\php.exe -f C:\processmaker\workflow\engine\bin\cron.php&quot;</div></div>
+
+<p>Or to execute the <b><tt>cron.php</tt></b> script only on the "sales" workspace every 2 minutes</tt>:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">SCHTASKS /Create /sc MINUTE /mo 2 /tn &quot;ProcessMaker Cron every 2 minutes&quot; /TR &quot;C:\wamp\php\php.exe -f C:\processmaker\workflow\engine\bin\cron.php +wsales&quot;</div></div>
+
+<p>After scheduling the periodic execution of cron.php, verify that it is in the list of Scheduled Tasks with the  <code>SCHTASKS</code> command.</p>
+<codeblock>C:\opt\processmaker\workflow\engine\bin><b>SCHTASKS</b>
+
+Folder: \
+TaskName                           Next Run  Time           Status
+================================== =======================  ==============
+AutoKMS                            4/2/2016  8:41:00 AM     Ready
+PM                                 4/1/2016  10:30:00 AM    Ready
+ProcessMaker Cron every 2 Minutes  4/1/2016  10:29:00 AM    Ready
+ProcessMaker Cron Job              4/1/2016  11:25:00 AM    Ready
+</codeblock>
+
+<p>To delete a task command, use the <code>SCHTASKS /Delete TaskName</code> command.</p>
+
+<codeblock>C:\opt\processmaker\workflow\engine\bin><b>SCHTASKS /delete /tn "ProcessMaker Cron every 2 minutes"</b>
+
+WARNING: Are you sure you want to remove the task "ProcessMaker Cron every 2 minutes" (Y/N)? <b>Y</b>
+SUCCESS: The scheduled task "ProcessMaker Cron every 2 minutes" was successfully deleted.
+</codeblock>
+
+<p>For more information about the SCHTASKS command, run the following:</p>
+<codeblock>SCHTASKS /?</codeblock>
+
+<h3><span id="Scheduled_Task_in_Windows_7">Scheduled Task in Windows 7</span></h3>
+<p>On the server running ProcessMaker, open the Task Scheduler by going to <b>Start &gt; Programs &gt; Accessories &gt; System Tools &gt; Task Scheduler</b> and select the "Create Basic Task" option.</tt></p>
+<p><img alt="" src="../sites/default/files/PM3.0_ExecutingCron_TaskScheduler.png"></p>
+
+<p>The Scheduled Task Wizard will appear. Give the task a name, such as "ProcessMaker Cron Job" and click <b>Next</b>.
+<p><img alt="" src="../sites/default/files/PM3.0_ExecutingCron_TaskSchedulerName.png"></p>
+
+<p>Choose the frequency with which to perform the task. For this example, the task will be executed one unique time, so select <b>One Time</b> and click <b>Next</b>.</p>
+<p><img alt="" src="../sites/default/files/PM3.0_ExecutingCron_TaskSchedulerType.png"></p>
+
+<p>Choose specific date and time options (this step will vary, depending on the option selected in the previous step).</p>
+<p><img alt="" src="../sites/default/files/PM3.0_ExecutingCron_TaskSchedulerTypeTime.png"></p>
+
+<p>Select the <b>Start a program</b> option and click <b>Next</b>.</p>
+<p><img alt="" src="../sites/default/files/PM3.0_ExecutingCron_TaskSchedulerTypeTask.png"></p>
+
+<p>On the next window, enter a command to execute <b><tt>cron.php</tt></b>.</li></ul>
+<p>For example:</p>
+<codeblock>php.exe -f C:\opt\processmaker\workflow\engine\bin\cron.php</codeblock>
+<p><img alt="" src="../sites/default/files/PM3.0_ExecutingCron_TaskSchedulerScript.png"></p>
+<p>In the next window, confirm the command by clicking on <b>Yes</b>.</p>
+<p><img alt="" src="../sites/default/files/PM3.0_ExecutingCron_TaskSchedulerArguments.png"></p>
+<p>Finally, review the information of the summary, and click on <strong>Finish</strong>.</p>
+<p><img alt="" src="../sites/default/files/PM3.0_ExecutingCron_TaskSchedulerFinish.png"></p>
+
+<h2><span id="Restart_cron_when_it_is_stopped_abruptly">Restart Cron When it is Stopped Abruptly</span></h2>
+<p>When a cron script is executed, it checks to see whether another instance of the cron script is already running by checking whether a temporary cron file already exists. If for some reason cron is stopped abruptly, the temporary cron file needs to be manually deleted in order to be able to execute the cron script. If the temporary cron file exists, the following message will display when executing the cron script:</p>
+
+<codeblock>The CRON is running, please wait for it to finish
+Started in 2016-03-31 16:54:37
+If do you want force the execution use the option "+force", example: php -f cron.php +wworkflow +force
+Done!
+</codeblock>
+
+<p>To solve this problem, delete the temporary file named <b><tt>shared/cron</tt></b></p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> To avoid this issue, it is recommended to wait until the cron script finishes its execution, or use the <code>+force</code> option.</font></p>
+
+<h2><span id="Checking_the_Cron_Log_in_ProcessMaker">Checking the Cron Log in ProcessMaker</span></h2>
+<p>The contents of the cron log are available under the <b>Admin</b> menu. The cron log can be checked after cron is executed to see the results for a specific workspace or for all workspaces. Only users such as the "admin" who have the <a href="../3.1/Roles.html#PM_SETUP_ADVANCE">PM_SETUP_ADVANCE</a> permission in their roles have access to the cron log.</p>
+<p>After the cron is executed, the contents of the log can be viewed at <b>Admin &gt; Settings &gt; Logs &gt; Cron</b>.</p>
+<p><img alt="" src="../sites/default/files/3.1CronLog_Interface.png"></p>
+
+<h3><span id="Location_of_the_Cron_Log_File">Location of the Cron Log File</span></h3>
+<p>When a cron script is executed, output from the script is stored in the <b>shared</b>/<b>log</b>/<b>cron.log</b> file on the ProcessMaker server. For example:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">2018-01-02 23:42:19 | workflow | main | action | checking folder /opt/pm3.2.1/shared/sites/workflow<br />
+2018-01-02 23:42:19 | workflow | resendEmails | action | Resending Emails<br />
+2018-01-02 23:42:21 | workflow | unpauseApplications | action | Unpausing Applications<br />
+2018-01-02 23:42:49 | workflow | calculateDuration | action | Calculating Duration<br />
+2018-01-02 23:42:49 | workflow | executeEvents | action | Executing Events , 2018-01-02 23:42:17 <br />
+2018-01-02 23:42:50 | workflow | updateCaseLabels | action | Update case labels<br />
+2018-01-02 23:42:50 | workflow | unassignedCase | action | Unassigned case<br />
+2018-01-02 23:44:15 | workflow | main | action | checking folder /opt/pm3.2.1/shared/sites/workflow</div></div>
+<p>If a non-fatal error occurred while executing a cron script, it may be stored in the <b>shared</b>/<b>log</b>/<b>cronError.log</b> file. Some types of errors, however, will not be recorded in the log file, so it recommended to manually execute the cron scripts from the command line to check whether any error messages are printed out on screen if the cron scripts do not appear to be executing correctly.</p>
+
+<h3><span id="Cron_log_options">Cron Log Options</span></h3>
+<p><img alt="" height="26" src="../sites/default/files/CronLogOptions.png" width="316"></p>
+<ul><li><strong>Cron Status:</strong> Displays Active when cron is currently being executed. It displays Inactive when cron is not currently being executed.</li><li><strong>View information:</strong> Shows the following information about cron: Status, Last Execution and Log Information, which specifies the folder where the cron.log file is located.</li></ul>
+
+<p><img alt="" src="../sites/default/files/3.1CronInformation.png"></p>
+
+<ul><li><strong>Clear log:</strong> Click to clear the log of all workspaces where the cron is executed or just a specific one. This log is deleted in the location <b><tt>shared/log/cron.log</tt></b>.</li></ul>
+
+<h3><span id="Search_Options">Search Options</span></h3>
+<p><img alt="" src="../sites/default/files/3.1CronSearch.png" ></p>
+
+<ul><li><strong>Status:</strong> Search by cron status: Failed, Completed or All.</li></ul>
+<p><img alt="" src="../sites/default/files/3.1CronStatus.png"></p>
+<ul><li><strong>From and To:</strong> Specify the days when the cron was executed.</li></ul>
+
+<h3><span id="Menu_options">Menu Options</span></h3>
+<p><img alt="" height="36" src="../sites/default/files/MenuOptions.png" width="445"></p>
+<ul>
+    <li><strong>Date:</strong> Date when the cron was executed.</li>
+    <li><strong>Action:</strong> Name of the action that was executed.</li>
+    <li><strong>Status:</strong> Cron status.</li>
+    <li><strong>Description:</strong> A brief description of what the cron execution was about.</li>
+</ul>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

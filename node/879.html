@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/Adobe_Sign_Services_and_Enterprise_Connectors.html" />
+<link rel="shortlink" href="879.html" />
+<title>3.2 - 3.8 - Adobe Sign Services and Enterprise Connectors | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"NNRrN2o86clssNJsUk440Ld-HJEbXRkosmOAXESOUbM","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-879 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="879.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="879.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-lZMxosFbrKNxSW5JG6_77fBqdl4r4-hQOaqEyK6t7GM" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - Adobe Sign Services and Enterprise Connectors</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - Adobe Sign Services and Enterprise Connectors" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="879.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - Adobe Sign Services and Enterprise Connectors 1/5</option><option value="40" selected="selected">Give 3.2 - 3.8 - Adobe Sign Services and Enterprise Connectors 2/5</option><option value="60">Give 3.2 - 3.8 - Adobe Sign Services and Enterprise Connectors 3/5</option><option value="80">Give 3.2 - 3.8 - Adobe Sign Services and Enterprise Connectors 4/5</option><option value="100">Give 3.2 - 3.8 - Adobe Sign Services and Enterprise Connectors 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.5</span></span> <span class="total-votes">(<span >2</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-C6GlMPoe9HQeORWar58gQCAj6x67uMIfDRIe3O1vD8c" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div class="getting-started-index">
+    <ul>
+        <li><a href="../3.2/Enterprise_Connectors.html">1. Enterprise Connectors</a></li>
+        <li><a href="../3.2/Enterprise_Connectors/Connector_Wizard.html">2. Connector Wizard</a></li>
+        <li><a href="../3.2/Enterprise_Connectors/Connector_Library.html">3. Connector Library</a></li>
+        <li><a href="../3.2/Enterprise_Connectors/executeRestConnector.html">4. executeRestConnector()</a></li>
+        <li><a href="../3.2/Enterprise_Connectors/Service_Task.html">5. Service Task</a></li>
+        <ul>
+            <li><a href="../3.2/Enterprise_Connectors/Service_Task/Google_Calendar.html">5.1. Service Task Example - Google Calendar</a></li>
+            <li><a href="../3.2/Enterprise_Connectors/Service_Task/Adobe_Sign.html">5.2. Service Task Example - Adobe Sign</a></li>
+        </ul>
+		<li><a href="../3.2/Enterprise_Connectors/Using_ProcessMaker_Endpoints.html">6. ProcessMaker Endpoints</a></li>
+		<li><a href="../3.2/Google_Services_and_Enterprise_Connectors.html">7. Google Connectors</a></li>
+		<li><a class="getting-started-index-active">8. Adobe Sign Connectors</a></li>
+		<li><a href="../3.2/Docusign_Services_and_Enterprise_Connectors.html">9. DocuSign Connectors</a></li>
+		<li><a href="../3.2/Alfresco_Services_and_Enterprise_Connectors.html">10. Alfresco Connectors</a></li>
+		<!--li><a href="/3.2/Zimbra_Services_and_Enterprise_Connectors">11. Zimbra Connectors</a></li-->
+		<!--li><a href="/3.2/SugarCRM_Services_and_Enterprise_Connectors">12. SugarCRM Connectors</a></li-->
+    </ul>
+</div>
+
+<div class="getting-started-content">
+
+<div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="879.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="879.html#Adobe_Sign_Services_and_Enterprise_Connectors">Adobe Sign Services and Enterprise Connectors</a></li>
+<ol class="toc">
+<li class="toc"><a href="879.html#Adobe_Sign_Services">Adobe Sign Services</a></li>
+</ol>
+<li class="toc"><a href="879.html#Adobe_Sign_Example">Adobe Sign Configuration Example</a></li>
+<ol class="toc">
+<li class="toc"><a href="879.html#Configuring_Adobe_Sign_Account">Configuring Adobe Sign Account</a></li>
+<li class="toc"><a href="879.html#Adobe_Sign_Connectors_Configuration">Configuring Adobe Sign Connectors</a></li>
+<ol class="toc">
+<li class="toc"><a href="879.html#Authentication_Configuration">Authentication Configuration</a></li>
+<li class="toc"><a href="879.html#Connectors">Connectors</a></li>
+<li class="toc"><a href="879.html#Service">Service</a></li>
+</ol>
+</div></div>
+
+
+<!-- Adobe Sign Connectors -->
+
+<h2><span id="Adobe_Sign_Services_and_Enterprise_Connectors">Adobe Sign Services and Enterprise Connectors</span></h2>
+
+<p>Adobe Sign is an e-signature solution that allows people to send a document for e-signature, create and manage agreements, retrieve signed documents, archive signed documents, embed a signing UI in your app, send reminders, download audit trails, and <a href="https://acrobat.adobe.com/in/en/sign/capabilities.html">more</a>. </p>
+
+<p>ProcessMaker enterprise connectors are available for download through the connector public library to work with Adobe Sign services.</p>
+
+<h3><span id="Adobe_Sign_Services">Adobe Sign Services</span></h3>
+
+<p>Each one of these connectors has their own configuration and their own parameters to be defined. Therefore, it is recommended to read the <a  href="https://www.adobe.io/apis/documentcloud/sign/docs/overview.html" rel="nofollow">Adobe Sign API</a> documentation.</p>
+
+<p>
+<ul>
+	<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/libraryDocuments/getLibraryDocuments">Get Library Documents</a>: Retrieves library documents for a user.</li>
+
+	<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/reminders/createReminder">Send Reminders</a>: Sends a reminder for an agreement.</li>
+	
+	<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/base_uris/getBaseUris">Base URIs</a>: Gets the base URI to access other APIs. In case other APIs are accessed from a different endpoint, it will be considered an invalid request.</li>
+
+	<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/agreements/getAgreementInfo">Get Agreement</a>: Retrieves the latest status of an agreement.</li>
+
+	<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/agreements/createAgreement">Send Agreement</a>: Creates an agreement. Sends it out for signatures, and returns the agreement ID in the response to the client.</li>
+
+</ul>
+</p>
+
+<h2><span id="Adobe_Sign_Example">Adobe Sign Configuration Example</span></h2>
+
+<p>This example shows us how to configure:<!--This example show the user how to create a document from a DocuSign template and send it to one or more users to be signed and be approved. DocuSign automatically verifies that the document is signed by all the users and sends an email to the user when the process is complete.--></p>
+<ul>
+	<li><a href="879.html#Configuring_Adobe_Sign_Account">The Adobe Sign account</a></li>
+	<li><a href="879.html#Adobe_Sign_Connectors_Configuration">The Adobe Sign connectors in ProcessMaker</a></li>
+</ul>
+
+<h3><span id="Configuring_Adobe_Sign_Account">Configuring Adobe Sign Account</span></h3>
+<p>Before you configure your Adobe Sign account, you must fulfill the following requirements:</p>
+<ul>
+	<li>Create an Adobe developer account filling out the form <a href="https://acrobat.adobe.com/us/en/sign/developer-form.html">here</a>. The developer account is needed because we will create OAuth 2.0 client credentials.</li>
+	<li>Your ProcessMaker server should be configured to use HTTPS. Adobe Sign doesn’t work with insecure connections.</li>
+	<li>Install in ProcessMaker the <a href="../3.2/Enterprise_Connectors.html#Installation">Enterprise Connectors v.1.2 plugin</a> or a recent version.</li>
+</ul>
+<p>To manage Adobe Sign endpoints, it is necessary to configure your Adobe Sign account first. Please, follow these steps:</p>
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">Log in to your <a href="https://secure.echosign.com/public/login">Adobe Sign account</a>.</p></li>
+    <li><p style="font-weight:normal;">Click the <b>Account</b> option in the top bar.</p></li>
+    <li><p style="font-weight:normal;">Go to <b>Adobe Sign API</b> > <b>API Applications</b> menu in the left side bar.</p></li>
+    <li><p style="font-weight:normal;">The <b>API Applications</b> screen displays. Click the plus icon <b>+</b>.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_ApiApplication.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">The <b>Create</b> screen displays. Fill the required fields, set the domain as <b>PARTNER</b> and then click <b>Save</b>.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_CreateApiApplication.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">The new API client lists in the <b>API Applications</b> screen. Click the row containing the new API client ID.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_SelectAPIApplication.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">The API client options display. Click the <b>Configure OAuth for Application</b> link.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_APIApplicationOptions.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">The <b>Configure OAuth</b> screen displays. Enter the following information.</p>
+    <ul style="font-weight:normal;">
+    	<li><b>Redirect URI:</b> The URL where the authorization code sent by Adobe is received. The URL format is:
+		<codeblock>https://<font color="blue">{PROCESS_MAKER_SERVER}</font>/plugin/pmConnectors/oauth/callback.php</codeblock></li>
+    	<li><b>Enabled Scopes:</b> Select the list of scopes that are enabled for the API’s endpoints. For testing purposes, select all the scopes and then click <b>Save</b>.</li>
+    </ul>
+	<p><img src="../sites/default/files/3.3AdobeSign_ConfigureOAuth.png" alt=""></p>
+    </li>
+    <li><p style="font-weight:normal;">The <b>API Applications</b> screen displays. Double click in the recent API client row.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_SelectAPIApplication.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">The <b>View</b> screen displays. Copy the <b>Application ID</b> and the <b>Client Secret</b> values to use in the <a href="879.html#Authentication_Configuration">Authentication Configuration</a>.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_ViewAPIApplication.png" alt=""></p></li>
+</ol>
+
+<h3><span id="Adobe_Sign_Connectors_Configuration">Configuring Adobe Sign Connectors</span></h3>
+<p>Configure Enterprise Connectors in your ProcessMaker instance to correctly run Adobe Sign.</p>
+<ul>
+	<li><a href="879.html#Authentication_Configuration">Authentication Configuration</a></li>
+	<li><a href="879.html#Connectors">Connectors</a></li>
+	<li><a href="879.html#Services">Services</a></li>
+</ul>
+
+<h4><span id="Authentication_Configuration">Authentication Configuration</span></h4>
+<p>Follow these steps to configure <b>Authentication Configuration</b> of Adobe Sign connectors.</p>
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;"><a href="../3.3/login.html#Login">Log in to ProcessMaker</a> as an <a href="../3.3/Roles.html#PROCESSMAKER_ADMIN">Administrator</a>.</p></li>
+    <li><p style="font-weight:normal;">Go to <b>Admin > PM Connectors > Authentication Configuration</b> menu.</p></li>
+    <li><p style="font-weight:normal;">At the top right of the screen, click the <b>Create</b> button.</p></li>
+    <li><p style="font-weight:normal;">The <b>Authentication Configuration</b> screen displays. Enter the following values:</p>
+    <ul style="font-weight:normal;">
+    	<li>In the <b>Name</b> field, enter "Adobe Sign Test Account".</li>
+    	<li>In the <b>Protocol</b> dropdown, select <b>OAuth2</b>.</li>
+    	<li>In the <b>Sub-protocol</b> dropdown, select <b>Authorization Code</b>.</li>
+    	<li>Edit the following parameters. The blue words must be replaced by your customized values.
+    	<codeblock style="font-weight:normal;"><b>grant_type:</b> authorization_code 
+<b>authorizationUri:</b> https://secure.na2.echosign.com/public/oauth
+<b>tokenCredentialUri:</b> https://api.na2.echosign.com/oauth/token
+<b>refreshTokenUri:</b> https://api.na2.echosign.com/oauth/refresh
+<b>redirectUri:</b> <font color="blue">{SERVER_NAME}</font>/plugin/pmConnectors/oauth/callback.php
+<b>clientId:</b> <font color="blue">{CREATED APPLICATION ID}</font>
+<b>clientSecret:</b> <font color="blue">{CREATED CLIENT SECRET}</font>
+<b>scope:</b> agreement_write agreement_read agreement_send library_read library_write
+<b>response_type:</b> code
+<b>masterCredentials:</b> true
+<b>authorizationPrefix:</b> 
+<b>headerAuthorization:</b> Access-Token
+<b>audience:</b></codeblock></li>
+		<li>Click the <b>Get Access Token</b> button.</li>
+    </ul>
+    <p><img src="../sites/default/files/3.3AdobeSign_AuthenticationConfiguration.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">If everything has been configured correctly, the <b>Adobe Sign</b> screen displays requesting your Adobe Sign credentials.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_SignInAdobeSign.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">After entering the Adobe Sign Credentials, confirm access to your Adobe Sign account in the ProcessMaker server. Click <b>Allow Access</b>.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_AdobeAllowAccess.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">A token generates. The <b>Authorization Granted</b> message displays at the end of the <b>Authentication Configuration</b> screen. Click <b>Save</b>.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_AuthorizationGranted.png" alt=""></p></li>
+</ol>
+
+<h4><span id="Connectors">Connectors</span></h4>
+<p>To configure Enterprise Connectors of Adobe Sign, follow these steps:</p>
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;"><a href="../3.3/login.html#Login">Log in to ProcessMaker</a> as an <a href="../3.3/Roles.html#PROCESSMAKER_ADMIN">Administrator</a>.</p></li>
+    <li><p style="font-weight:normal;">Go to <b>Admin > PM Connectors > Connectors</b> menu.</p></li>
+    <li><p style="font-weight:normal;">The <b>Connectors</b> screen displays. At the top right of the screen, click the <b>Download</b> button to download the necessary connectors from the connectors library.</p></li>
+    <li><p style="font-weight:normal;">The <b>Download Connectors from the Library</b> screen displays. In the <b>Services</b> drop-down, select <b>Adobe Sign</b>.</p>
+    <p><img src="../sites/default/files/3.2.2Connectors1.2.1ServicesWindow.png" alt=""></p></li>
+    <li><p style="font-weight:normal;"> All the available connectors for the Adobe Sign service display in the same screen.</p>
+	<ul style="font-weight:normal;">
+		<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/libraryDocuments/getLibraryDocuments">Get Library Documents</a></li>
+		<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/reminders/createReminder">Send Reminders</a></li>
+		<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/base_uris/getBaseUris">Base URIs</a></li>
+		<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/agreements/getAgreementInfo">Get Agreement</a></li>
+		<li><a href="https://secure.na1.echosign.com/public/docs/restapi/v4#!/agreements/createAgreement">Send Agreement</a></li>
+	</ul>
+    <p style="font-weight:normal;">Download all the connectors by clicking the <b>Download All</b> button located at the bottom right of the screen.</p>
+    <p><img alt="" src="../sites/default/files/3.2.2Connectors1.2.1AdobeServices.png" ></p></li>
+    <li><p style="font-weight:normal;">The connector status changes to <b>Downloaded</b>. Next to the <b>Status</b> column, the <b>Replace</b> button displays for each connector. Click <b>Close</b>.</p>
+    <p><img alt="" src="../sites/default/files/3.3AdobeSign_ServicesDownloaded.png" ></p>
+    <p style="font-weight:normal; margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">After downloading all the connectors, the <a href="879.html#Service"><b>Adobe Sign</b> service</a>, and the <b>Adobe Sign Partner Account</b> authentication configuration automatically download. However you must use the <a href="879.html#Authentication_Configuration">Authentication Configuration</a> in this page.</font></p></li>
+    <li><p style="font-weight:normal;">The connectors are listed. Click <b>Edit</b> for each connector to change its settings.</p>
+    <p><img alt="" src="../sites/default/files/3.3AdobeSign_ServicesConnectorsListed.png" ></p></li>
+    <li><p style="font-weight:normal;">The <b>Connectors</b> screen displays. In the <b>Authentication Configuration</b> drop-down, select <b>Adobe Sign Test Account</b> previously created in the <a href="879.html#Authentication_Configuration">Authentication Configuration</a> section. Click <b>Test</b>.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_TestConnector.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">The <b>Test Connector</b> screen displays. Modify parameters if necessary, and then click <b>Test</b>.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_TestConnectorWindow.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">The <b>Response</b> screen with the <tt>200</tt> response displays if all previous configurations are correct. Click <b>Close</b> twice, one for this screen and the other for the <b>Test Connector</b> screen.</p>
+    <p><img src="../sites/default/files/3.3AdobeSign_ResponseConnector.png" alt=""></p><p style="font-weight:normal;">Repeat the last four steps for each connector.</p></li>
+    <li><p style="font-weight:normal;">Finally, click <b>Save</b> in the <b>Connectors</b> screen.</p></li>
+</ol>
+
+<h4><span id="Service">Service</span></h4>
+<p>The service is automatically downloaded as <b>Adobe Sign</b>.</p>
+<p><img alt="" src="../sites/default/files/3.2.2Connectors1.2.1AdobeSignServiceListed.png" ></p>
+<p>Click <b>Edit</b> to see the service details and the Adobe Sign version with which the connector was tested.</p>
+<p><img alt="" src="../sites/default/files/3.2.2Connectors1.2.1AdobeSignService.png" ></p>
+
+<!--h3<span id="Designing_the_Process">Designing the Process</span>h3
+
+<p>To see a working example, download and import the process <a href="/sites/default/files/Employee_Onboarding_[Adobe_Sign_Demo]-2.pmx">Employee_Onboarding_[Adobe_Sign_Demo]</a> (right click the link and select "Save Link As").</p>
+<p><img alt="" src="/sites/default/files/3.2.2Connectors1.2.1AdobeSignExProcess.png" ></p>
+<p><font color="red">COMPLETE! assignment rules, email server, execute timercronevent.php and other considerations after obtaining Adobe Sign configurations.</font></p>
+
+h3<span id="Running_a_Case_and_Explaining_the_Process">Running a Case and Explaining the Process</span>h3
+<p>Follow the next steps to run a new case.</p>
+<p><b>1. Starting a New Case:</b> Go to New case and select "Employee Onboarding[Adobe Sign Demo](Fill Out Application)". Click the <b>Start Case</b> button, or double click on the name of the process in the list.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign1.png" alt=""></p>
+<p><b>2. Filling Out the Application (User Task):</b> A form is displayed where the employee's information should be filled out by the HR user. After all of the required information is filled out, click <b>Submit</b>.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign2.png" alt=""></p>
+<p><b>3. 30 days (Intermediate Timer Event):</b> At this point the "30 days" timer event should which waits for 30 days to continue the case for demonstration purposes it is set to 1 min.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign3.png" alt=""></p>
+<p><b>4. Approving Employee Contract (User Task):</b> Navigate to <b>Home > Inbox</b>. After one minute has passed, the case appears in the Inbox tray. Check the information entered into the form by the Human Resource user, then select between “Approved” or “Rejected”. To continue the process, select "Approved", then click <b>Submit</b>.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign4.png" alt=""></p>
+<p><b>5. The Approved gateway:</b> In this gateway the process validates if the information is approved then it is redirected to the "Prepare Contract" task. If the information is rejected the process ends.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign5.png" alt=""></p>
+<p><b>6. Preparing the Contract (User Task):</b> After approving and submitting the form, the case is routed to the "Prepare Contract" task and appears in the Human Resource user’s Inbox. In this task, the HR user is directed to the “Sign Request” Dynaform where the HR user can:
+<ul>
+	<li>Select a template. In this example, the user must select the “[DEMO USE ONLY]Contract-ProcessMaker” template.</li>
+	<li>Fill in the Subject field.</li>
+	<li>Fill in the Message field.</li>
+</ul>
+<p>The employee’s and HR user’s email appears automatically in the list of signers. Add any number of additional signers or approvers as required, which can be selected from the list of participants configured previously in the Adobe template.</p>
+<p>If required, the HR user can add additional signers or approvers by selecting them from the list of participants configured previously in the Adobe template.</p>
+<p>After the sign request information is set, click <b>Send</b>. The task is routed to the "Send Agreement" task, which is a service task.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign6.png" alt=""></p>
+<p><b>7. The "Sending Agreement" Service Task:</b> In this service task, the agreement sends with all the information previously configured.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign7.png" alt=""></p>
+<p><b>8. The "Error?" Gateway:</b> If any of the provided information is invalid or the token has expired, the case goes to the "Response Validation" task, which displays the response code and the error message.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign8.png" alt=""></p>
+<p><b>9. The "30 mins" Intermediate Timer Event:</b> At this point, the Employment Agreement Contract has been sent to the emails of the signers and approvers configured previously. Next, the employee’s signature is required. If additional emails were configured as signers or approvers, the agreement sends to signers first and then approvers. Signers can choose either to sign or refuse the agreement.</p>
+<p>In this example, the timer event waits for one minute to continue</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign9.png" alt=""></p>
+<p><b>10. Checking the Agreement Status (Service Task):</b> In this service task the "GET Adobe Sign agreement" connector is executed, which returns the status internally.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign10.png" alt=""></p>
+<p><b>11. Status (Gateway):</b> This gateway validates the status of the agreement among:
+<ul>
+	<li>SIGNED redirects to the "Signed" end email event.</li>
+	<li>OUT_OF_SIGNATURE, which means that the agreement is not signed. It is redirected to the "Send Adobe Sign Reminder" service task.</li>
+	<li>ABORTED, which means the signer refuse to sign, and the case is redirected to the "Refused" end email event.</li>
+	<li>Code >= 400. This is only for an administrator, and means that the endpoint execution retrieved an error.</li>
+</ul></p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign11.png" alt=""></p>
+<p><b>12. Sending Adobe Sign Reminder (Service Task):</b> This service task sends Adobe Sign reminders to the signers that did not sign yet.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign12.png" alt=""></p>
+<p><b>13. The "Signed" End Email Event:</b> The case finishes, and a confirmation message sends to the employee email.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign13.png" alt=""></p>
+<p><b>14. The "Refused" End Email Event:</b> The case finishes and a message sends to the HR user, which start to say that the employee rejected the agreement.</p>
+<p><img src="/sites/default/files/3.2.2Connectors1.2.1ExAdobeSign14.png" alt=""></p>--></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

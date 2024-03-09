@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/Windows_Single_Sign-on_in_Linux.html" />
+<link rel="shortlink" href="735.html" />
+<title>3.2 - Windows Single Sign-On in Linux | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"s8f1ORYlpgKgD-OPz4GeAJiz2yeWrd4EA7jJWeEFgcw","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-735 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="735.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="735.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-QhH6GThm49KSQNC6lAH_2sXM2NIFR21oqdu6exH_qyY" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - Windows Single Sign-On in Linux</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.2</a></li><li><a href="../ProcessMaker_-_Windows_Single_SignOn_V_2.0.x.html" class="">3.1</a></li><li><a href="../ProcessMaker_-_Windows_Single_SignOn_V_2.0.x.html" class="">3.0</a></li><li><a href="../ProcessMaker_-_Windows_Single_SignOn_V_2.0.x.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - Windows Single Sign-On in Linux" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="735.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - Windows Single Sign-On in Linux 1/5</option><option value="40">Give 3.2 - Windows Single Sign-On in Linux 2/5</option><option value="60" selected="selected">Give 3.2 - Windows Single Sign-On in Linux 3/5</option><option value="80">Give 3.2 - Windows Single Sign-On in Linux 4/5</option><option value="100">Give 3.2 - Windows Single Sign-On in Linux 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3</span></span> <span class="total-votes">(<span >2</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-UNkiFQ7VkpJGWEo3Tj4eRWS6cF6CWKn4gJUjjx1Dtck" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="735.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="735.html#Introduction">Introduction</a></li>
+<li class="toc"><a href="735.html#How_the_Plugin_Works">How the Plugin Works</a></li>
+<li class="toc"><a href="735.html#Requirements">Requirements</a></li>
+<li class="toc"><a href="735.html#Configuring_the_Active_Director_Server">Configuring the Active Directory Server</a></li>
+<li class="toc"><a href="735.html#Configuring_the_Linux_Server">Configuring the Linux Server</a></li>
+<li class="toc"><a href="735.html#Single_Sign_On_Configuration">Single Sign-On Configuration</a></li>
+<li class="toc"><a href="735.html#Upgrading_From_Plexcel_to_mod_auth_kerb">Upgrading From Plexcel to mod_auth_kerb</a></li>
+</ol>
+</div></div>
+
+<hr>
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 70%;">
+<tbody>
+<tr>
+<td>
+<font color="green"><b>Note:</b></font> <font color=dimgrey> Available as of ProcessMaker v.3.2.2. Customers with previous versions should <a href="mailto:support@processmaker.com">contact support</a> for further instructions.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+
+<h2><span id="Introduction">Introduction</span></h2>
+<p>The Windows Single Sign-On Plugin is an extension that can be installed on a ProcessMaker server to allow users to use Active Directory accounts like normal ProcessMaker accounts. This means that users will be able to automatically log in to ProcessMaker without going through the login screen using their Active Directory accounts. For ProcessMaker installations in Linux environments, now Processmaker can use an Apache module named <b>mod_auth_ker</b>.</p>
+
+<h2><span id="How_the_Plugin_Works">How the Plugin Works</span></h2>
+<p>As part of the plugin configuration, a dummy user will be created in Active Directory.  This user will link ProcessMaker and the Active Directory service. The first time that the user logs in to ProcessMaker, ProcessMaker will log in to Active Directory (using the dummy user) and verify that the user exists within the Active Directory.</p>
+
+<p>Below is a brief summary of the procedure described above:</p>
+<p>
+<ul>
+    <li>The Windows Single Sign-On plugin works for Microsoft Active Directory and uses the user's account credentials to log in to ProcessMaker. The Active Directory account list will be automatically synched with the ProcessMaker account list. </li>
+    <li>New accounts created in Active Directory will be also created in ProcessMaker.</li>
+    <li>For employees that no longer work at the company, but whose accounts are still maintained in Active Directory, move their accounts to the "Terminated" OU so ProcessMaker will consider them disabled.</li>
+    <li>The current version of this plugin also synchronizes groups.</li>
+    <li>For accounts created using the Windows Single Sign-On plugin, the authentication is replicated on your Active Directory server. Remember that ProcessMaker does NOT save the user password, it just verifies the password when logging in via a trusted connection with the Active Directory server.
+	</li>
+</ul>
+
+<h2><span id="Requirements">Requirements</span></h2>
+
+<ul>
+    <li>A running Active Directory server. </li>
+    <li>Credentials for a valid account with administrator permissions on the Active Directory server.</li>
+    <li>DNS Domain entries, in the case your network requires them.</li>
+    <li>It is recommended that the user doing the installation has access to the Active Directory server to check the logs for Windows Single Sign-On.</li>
+    <li>The Active Directory server and the server where ProcessMaker is installed must be on the same domain.</li>
+    <li>The devices of the users that will have access to ProcessMaker must be on the same domain too.</li>
+</ul>
+
+<h2><span id="Configuring_the_Active_Director_Server">Configuring the Active Directory Server</span></h2>
+<p>Read the following instructions:</p>
+
+<ol><li>Create a dummy user, who will be used to connect the Apache service with the Active Directory server using Kerberos. The dummy user can be a regular user (known as a "service account") without special permissions.</li>
+
+    <li>An SPN must be granted for this user. This can be done using a command prompt or the graphical interface. The SPN must follow the format:
+<p>
+<dl><dd><code>HTTP/<font color="blue">&lt;ProcessMaker-hostname&gt</font>;@<font color="blue">domain</font></code></dd></dl>
+</p>
+
+For example:
+<p>
+<dl><dd><code>HTTP/<font color="blue">stack205</font>;@<font color="blue">PROCESSMAKER.NET</font></code></dd></dl>
+</p>
+</li>
+
+    <li><p>The <b>Other encryption options → AES 256 bit encryption</b> option must be checked in the dummy user's configuration, as shown in the image below:</p>
+<p><img src="../sites/default/files/3.2WSSOLinuxADReq.png"></p>
+</li>
+</ol>
+
+<h2><span id="Configuring_the_Linux_Server">Configuring the Linux Server</span></h2>
+<p>Follow the instructions below to configure the Linux server where ProcessMaker is installed.</p>
+
+<ol>
+    <li>The Linux server must have Kerberos installed and configured according to <a href="http://www.microhowto.info/howto/configure_apache_to_use_kerberos_authentication.html#idp5888" target="_blank">this guide</a> to exchange tickets with the Active Directory server.
+<p>If the Linux server doesn't have Kerberos, install Kerberos and its tools running the following commands:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">yum install krb5<br />
+yum -y install krb5-server krb5-libs</div></div>
+
+<p>Verify the dummy user can request tickets to the Active Directory server by running the following commands:</p>
+
+<codeblock><b>kinit pmsso@PROCESSMAKER.NET</b>
+Password:
+<b>list</b>
+Ticket cache: FILE:/tmp/krb5cc_0
+Default principal: pmsso@PROCESSMAKER.NET
+Valid starting       Expires              Service principal
+07/11/2017 16:46:34  07/12/2017 02:46:34  krbtgt/PROCESSMAKER.NET@PROCESSMAKER.NET
+renew until 07/12/2017 16:46:17
+</codeblock>
+</li>
+    <li>
+<p>Generate the <b><tt>.keytab</tt></b> file by following the instructions in <a href="http://www.microhowto.info/howto/configure_apache_to_use_kerberos_authentication.html#idp35936" target="_blank">this guide</a>.</p>
+
+<p>For example:</p>
+<codeblock>ktpass -princ HTTP/<font color="green">stack205.processmaker.net</font>@<font color="green">PROCESSMAKER.NET</font> -mapuser <font color="green">pmsso</font>@<font color="green">PROCESSMAKER.NET</font> -crypto AES256-SHA1 -ptype KRB5_NT_PRINCIPAL -pass <font color="green">&lt;USER_PASSWORD&gt;</font> -out <font color="green">C:\Users\Administrator\Desktop\</font>auth_kerb.keytab
+</codeblock>
+<p>Where &lt;USER_PASSWORD&gt; is the password of the dummy user.</p>
+
+<p>Verify that the <tt>.keytab</tt> file was generated correctly by running the following command:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">klist -e -k -t /etc/httpd/auth_kerb.keytab</div></div>
+<p>A result similar to the one below will be displayed.</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Keytab name: FILE:/etc/httpd/auth_kerb.keytab<br />
+KVNO Timestamp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Principal<br />
+---- ------------------- ------------------------------------------------------<br />
+3 01/01/1970 00:00:00 HTTP/stack205@PROCESSMAKER.NET (aes256-cts-hmac-sha1-96)</div></div>
+</li>
+
+    <li><p>
+Copy the <tt>.keytab</tt> file to the folder <tt>/etc/httpd/</tt> on the Linux server and grant it the following permissions:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">chown root.apache /etc/httpd/auth_kerb.keytab<br />
+chmod 0640 /etc/httpd/auth_kerb.keytab</div></div>
+</li>
+    <li>The <tt>.keytab</tt> file will be used to exchange tickets. To verify that the dummy user that was created on the domain can exchange tickets, run:
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">kvno HTTP/stack205@PROCESSMAKER.NET<br />
+HTTP/stack205@PROCESSMAKER.NET: kvno = 3</div></div>
+</li>
+
+    <li>Make sure ProcessMaker has the <a href="../3.0/Advanced_LDAP.html">ldapAdvanced</a> feature enabled.</li>
+    <li><p>Create and configure a connection to the Active Directory server to import users, departments and groups to ProcessMaker. This connection must have the <b>Enable Automatic Register</b> option set to "Yes".</p>
+<p><img src="../sites/default/files/3.2WSSOLinuxLinuxADEnableRegister.png"></p>
+</li>
+    <li>Finally, to remove the tickets created in these tests, run:
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">kdestroy</div></div>
+</li>
+</ol>
+
+<h2><span id="Single_Sign_On_Configuration">Single Sign-On Configuration</span></h2>
+<p>Read the following instructions to configure Windows Single Sign-On:</p>
+<ol>
+    <li><p>Install the <b>mod_auth_kerb</b> module on the Linux Server. If using CentOS, run following command:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">yum install mod_auth_kerb</div></div>
+<p>For Amazon Linux servers, use the following command:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">yum install mod24_auth_kerb-5.4</div></div>
+</li>
+    <li><p>Open the Apache configuration file found at <tt>/etc/httpd/conf/httpd.conf</tt> and enable the module by removing the semicolon ; at the beginning of this line.</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">LoadModule auth_kerb_module modules/mod_auth_kerb.so</div></div>
+</li>
+    <li><p>Open the <b>pmos.conf</b> file that was configured when ProcessMaker was installed and add the front-end lines in bold to your ProcessMaker configuration, plus the Single Sign-On virtual host configuration after the ProcessMaker configuration, as shown below:</p>
+<p>
+<codeblock><font color=#168508>--------------------------------------------------
+# ProcessMaker Configuration</font>
+Listen <font color="blue">portNumber</font>
+&lt;VirtualHost *:<font color=blue>portNumber</font> &gt;
+
+    ServerName <font color=blue>your_processmaker_domain:portNumber</font>
+
+    DocumentRoot <font color=blue>INSTALLATION-DIRECTORY/opt/processmaker/workflow/public_html</font>
+    DirectoryIndex index.html index.php
+
+     &lt;Directory <font color=blue>INSTALLATION-DIRECTORY/opt/processmaker/workflow/public_html</font>&gt;
+        Options Indexes FollowSymLinks MultiViews
+        AddDefaultCharset UTF-8
+        AllowOverride None
+        Require all granted
+<b>
+        &lt;IfModule mod_headers.c&gt;
+        Header set Access-Control-Allow-Origin  "*"
+        Header set Access-Control-Allow-Headers "Content-Type,Depth,User-Agent,X-File-Size,X-Requested-With,If-Modified-Since,X-File-Name,Cache-Control,Authorization"
+        Header set Access-Control-Allow-Methods "OPTIONS,GET,POST,PUT,DELETE"
+        &lt;/IfModule&gt;
+</b>
+    &lt;IfModule mod_rewrite.c&gt;
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^.*/(.*)$ app.php [QSA,L,NC]
+    &lt;/IfModule&gt;
+
+        ExpiresActive On
+        ExpiresDefault "access plus 1 day"
+        ExpiresByType image/gif "access plus 1 day"
+        ExpiresByType image/png "access plus 1 day"
+        ExpiresByType image/jpg "access plus 1 day"
+        ExpiresByType text/css "access plus 1 day"
+        ExpiresByType text/javascript "access plus 1 day"
+
+    #Deflate filter is optional. It reduces download size, but adds slightly more CPU processing:
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/x-component text/javascript application/x-javascript application/javascript application/json appl
+
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+
+
+<font color=#168508>--------------------------------------------------
+# Single Sign-On Configuration</font>
+Listen <font color="blue">portNumber</font>
+&lt;VirtualHost *:<font color=blue>portNumber</font>&gt;
+    ServerName <font color=blue>your_processmaker_domain:portNumber</font>
+
+    DocumentRoot <font color=blue>INSTALLATION-DIRECTORY/opt/processmaker/workflow/public_html</font>
+    DirectoryIndex index.html index.php
+
+     &lt;Directory <font color=blue>INSTALLATION-DIRECTORY/opt/processmaker/workflow/public_html</font>&gt;
+        Options Indexes FollowSymLinks MultiViews
+        AddDefaultCharset UTF-8
+        AllowOverride All
+        Allow from all
+        Require all granted
+<b>
+        &lt;Location /&gt;
+        AuthName "ProcessMaker SSO"
+        AuthType Kerberos
+        Krb5Keytab /etc/httpd/auth_kerb.keytab
+        KrbAuthRealms PROCESSMAKER.NET
+        KrbLocalUserMapping on
+        KrbMethodNegotiate on
+        KrbMethodK5Passwd off
+        KrbServiceName HTTP/stack205@PROCESSMAKER.NET
+        require valid-user
+        &lt;/Location&gt;
+</b>
+        ExpiresActive On
+        ExpiresDefault "access plus 1 day"
+        ExpiresByType image/gif "access plus 1 day"
+        ExpiresByType image/png "access plus 1 day"
+        ExpiresByType image/jpg "access plus 1 day"
+        ExpiresByType text/css "access plus 1 day"
+        ExpiresByType text/javascript "access plus 1 day"
+
+        &lt;IfModule mod_rewrite.c&gt;
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^.*/(.*)$ app.php [QSA,L,NC]
+        &lt;/IfModule&gt;
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</codeblock>
+
+<p>Where:</p>
+<ul>
+    <li><b>AuthName</b>: (Optional) The name assigned to the authentication.</li>
+    <li><b>AuthType</b>: The type of authentication, which in this case is Kerberos.</li>
+    <li><b>Krb5Keytab</b>: The location of the Kerberos <tt>.keytab</tt> file that was generated on the Active Directory server and copied to the Linux server.</li>
+    <li><b>KrbAuthRealms</b>: The domain of the Linux server, which must be the same domain of the user's devices.</li>
+    <li><b>KrbLocalUserMapping</b>: Set this setting to <b>on</b> so the domain won't be added to the usernames obtained from the clients.</li>
+    <li><b>KrbMethodNegotiate</b>: Enables (on) or disables (off) the use of the Negotiate method.</li>
+    <li><b>KrbMethodK5Passwd</b>: Enables (on) or disables (off) the use of password-based authentication for Kerberos v5.</li>
+    <li><b>KrbServiceName</b>:  The service name that was registered on the Active Directory server and was also used to generate the <tt>.keytab</tt> file. This name will be used by Apache for authentication.</li>
+    <li><b>require valid-user</b>: Set this paramater, so all this configuration only applies if the request is made by an authenticated user to the domain.</li>
+    </ul>
+
+    <p>For example:</p>
+    <codeblock># ProcessMaker Configuration
+&lt;VirtualHost *:80&gt;
+    ServerName 127.0.0.1:80
+
+    DocumentRoot /opt/processmaker/workflow/public_html
+    DirectoryIndex index.html index.php
+
+    &lt;Directory /opt/processmaker/workflow/public_html&gt;
+        Options Indexes FollowSymLinks MultiViews
+        AddDefaultCharset UTF-8
+        AllowOverride None
+        Require all granted
+
+        &lt;IfModule mod_headers.c&gt;
+        Header set Access-Control-Allow-Origin  "*"
+        Header set Access-Control-Allow-Headers "Content-Type,Depth,User-Agent,X-File-Size,X-Requested-With,If-Modified-Since,X-File-Name,Cache-Control,Authorization"
+        Header set Access-Control-Allow-Methods "OPTIONS,GET,POST,PUT,DELETE"
+        &lt;/IfModule>
+
+        &lt;IfModule mod_rewrite.c&gt;
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^.*/(.*)$ app.php [QSA,L,NC]
+        &lt;/IfModule&gt;
+
+        ExpiresActive On
+        ExpiresDefault "access plus 1 day"
+        ExpiresByType image/gif "access plus 1 day"
+        ExpiresByType image/png "access plus 1 day"
+        ExpiresByType image/jpg "access plus 1 day"
+        ExpiresByType text/css "access plus 1 day"
+        ExpiresByType text/javascript "access plus 1 day"
+
+
+    #Deflate filter is optional. It reduces download size, but adds slightly more CPU processing:
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/x-component text/javascript application/x-javascript application/javascript application/json appl
+
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+
+# Single Sign-On Configuration
+Listen 8080
+&lt;VirtualHost *:8080&gt;
+    ServerName 127.0.0.1:8080
+
+    DocumentRoot /opt/processmaker/workflow/public_html
+    DirectoryIndex index.html index.php
+
+    &lt;Directory /opt/processmaker/workflow/public_html&gt;
+        Options Indexes FollowSymLinks MultiViews
+        AddDefaultCharset UTF-8
+        AllowOverride All
+        Allow from all
+        Require all granted
+
+        &lt;Location /&gt;
+        AuthName "ProcessMaker SSO"
+        AuthType Kerberos
+        Krb5Keytab /etc/httpd/auth_kerb.keytab
+        KrbAuthRealms PROCESSMAKER.NET
+        KrbLocalUserMapping on
+        KrbMethodNegotiate on
+        KrbMethodK5Passwd off
+        KrbServiceName HTTP/stack205@PROCESSMAKER.NET
+        require valid-user
+        &lt;/Location&gt;
+
+        ExpiresActive On
+        ExpiresDefault "access plus 1 day"
+        ExpiresByType image/gif "access plus 1 day"
+        ExpiresByType image/png "access plus 1 day"
+        ExpiresByType image/jpg "access plus 1 day"
+        ExpiresByType text/css "access plus 1 day"
+        ExpiresByType text/javascript "access plus 1 day"
+
+        &lt;IfModule mod_rewrite.c&gt;
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^.*/(.*)$ app.php [QSA,L,NC]
+        &lt;/IfModule&gt;
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</codeblock>
+    </p>
+    </li>
+    <li>Save all the changes and restart the Apache service.</li>
+</ol>
+
+<h2><span id="Upgrading_From_Plexcel_to_mod_auth_kerb">Upgrading From Plexcel to mod_auth_kerb</span></h2>
+
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<font color="red"><b>Warning:</b></font> <font color=dimgrey> The information in this section may change.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+
+<p>ProcessMaker installations that have the Single Sign-on feature working with Plexcel can be reconfigured to use mod_auth_kerb without major complications.</p>
+<p>To do this, read the following instructions:</p>
+
+<ol>
+    <li>Identify the user that was created to connect Active Directory with Plexcel (Plexcel user) and use it to generate the <tt>.keytab</tt> file following <a href="http://www.microhowto.info/howto/configure_apache_to_use_kerberos_authentication.html#idp35936" target="_blank">this guide</a>.</li>
+
+    <li><p>On the Linux server, disable the plexcel extension, add or comment (add the ; symbol) to the following line in the <tt>php.ini</tt> file:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">;extension=plexcel.so</div></div>
+</li>
+    <li>Log in to MySQL and change the type of the provider to <b>"ldapAdvanced"</b> in the register that was created for the Single Sign-On plugin in the <tt>RBAC_AUTHENTICATION_SOURCE</tt> table using the following query:
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">UPDATE 'RBAC_AUTHENTICATION_SOURCE' SET 'AUTH_SOURCE_PROVIDER' = 'ldapAdvanced' WHERE 'AUTH_SOURCE_PROVIDER' = 'windowsSSO';</div></div>
+</li>
+
+    <li>Also update the register in the <tt>RBAC_USERS</tt> table to change the value of the <tt>USR_AUTH_TYPE</tt> field to <b>"ldapAdvanced"</b>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">UPDATE 'RBAC_USERS' SET 'USR_AUTH_TYPE' = 'ldapAdvanced' WHERE 'USR_AUTH_TYPE' = 'windowsSSO';</div></div>
+</li>
+
+    <li>Once the database is updated, log in to ProcessMaker and verify that the configured authentication source can search users with no problems. If not, verify that the <b>Enable automatic register</b> option is enabled.</li>
+</ol>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

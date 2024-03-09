@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.1/Variables.html" />
+<link rel="shortlink" href="592.html" />
+<title>3.1 - Variables | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"F2KO9M4ZecwVdPMtAndt5FtGw_Nii-28dG9qtRZfAp0","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-592 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="592.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="592.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-dOF2ShNZ3AsuG-ZFt9utuhh1EEa-RDxF_3cQCrnJg2U" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - Variables</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.2/Variables.html" class="">3.8</a></li><li><a href="../3.2/Variables.html" class="">3.7</a></li><li><a href="../3.2/Variables.html" class="">3.6</a></li><li><a href="../3.2/Variables.html" class="">3.5</a></li><li><a href="../3.2/Variables.html" class="">3.4</a></li><li><a href="../3.2/Variables.html" class="">3.3</a></li><li><a href="../3.2/Variables.html" class="">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a href="../3.0/Variables.html" class="">3.0</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - Variables" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="592.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - Variables 1/5</option><option value="40">Give 3.1 - Variables 2/5</option><option value="60" selected="selected">Give 3.1 - Variables 3/5</option><option value="80">Give 3.1 - Variables 4/5</option><option value="100">Give 3.1 - Variables 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.7</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-QLCQzGwEMtvC7PNxpT-aUqh11lD40U75En-6FcZL6BQ" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="592.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="592.html#Overview">Overview</a></li>
+<li class="toc"><a href="592.html#Defining_Variables">Defining Variables</a></li>
+<ol class="toc">
+<li class="toc"><a href="592.html#_label_Variables"><b><tt>_label</tt></b> Variables</a></li>
+</ol>
+<li class="toc"><a href="592.html#Managing_Variables">Managing Variables</a></li>
+<li class="toc"><a href="592.html#AddingVariablesDynaForm">Adding Variables in a DynaForm</a></li>
+<li class="toc"><a href="592.html#CreatingVariablesDynaForm">Creating Variables inside the DynaForm Designer</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p><span>Case variables are variables which are created inside a project and stored exclusively for each case. They are automatically created when a new case is initiated and can be used in any of the objects in a process. Case variables can be defined in the process designer, and can then be used to populate fields in DynaForms and throughout the process in Output Documents, triggers and email templates.</span></p>
+
+<h2><span id="Defining_Variables">Defining Variables</span></h2>
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 70%;">
+<tbody>
+<tr>
+<td>
+<font color="red"><b>Warning:</b></font> <font color=dimgrey> Before creating a variable, read the rules in the <a href="../Best_Practices/Process_Development.html#Naming_Variables">Naming Variables</a> section to name it properly.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>To define case variables, open the project in which they will be used. In the main toolbox, click on the + icon next to the "Variable" option.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_Variables_MainToolboxCreateOption.png"></p>
+
+<p>Fill out information about the new variable in the modal window that opens:</p>
+<p><img alt="" src="../sites/default/files/BPMProjectVariableCreationInterfaceVersion3.png"></p>
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+<tbody>
+<tr>
+<td>
+<font color="red"><b>Warning:</b></font> <font color=dimgrey> ProcessMaker does NOT support variables created with characters from Arabic, Hindi, Japanese or other languages that do not use the Latin alphabet.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<ol>
+<li><strong>Variable Name:</strong> <i>Required.</i> Variables have a unique name without spaces between 3 and 64 characters long, which ProcessMaker uses to identify the variable. ProcessMaker designers can use the variable name in DynaForm fields, email and Output Documents templates, trigger code, etc. Normal PHP variable naming rules apply, so the name is case sensitive and it must start with a letter or underscore and can only contain characters which are letters, numbers and underscores. Symbols and spaces are not allowed.<br><br>If trying to add a variable that doesn't have a valid name, the following error message will appear: 
+<p><img src="../sites/default/files/PM3_Variables_AllowedVariables.png"></p>
+<p style="margin-left:25px"><font color=green><b>Note:</b></font> <font color=dimgrey>A variable name must match the regular expression: <code>^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*</code></font></p>
+</li>
+<li><strong>Variable Type:</strong> <i>Required.</i> Select the data type of the new variable. The data types supported by ProcessMaker version 3 are:
+<ul>
+<li><strong>String</strong> Accepts characters of any type, including letters, numbers, symbols and spaces. String variables can be used to populate textboxes, textareas, suggest boxes, dropdown boxes, radio buttons and hidden fields. For example, a string variable can be used to store a description: <p><img src="../sites/default/files/1va.png"></p></li>
+
+<li><strong>Integer:</strong> Accepts only whole numbers between -2147483648 and 2147483647. This whole number can be positive, negative, or zero. It does not accept fractions. Integers are mainly used to populate textboxes, but they can also be used for other types of fields such as dropdowns, checkboxes, and radiogroups which store the selected key as an integer. 
+
+<li><strong>Float:</strong> A floating-point variable accepts real numbers with a decimal point, so it can accept fractions.  It is a 4 byte floating-point number between -3.402823466E+38 and 3.402823466E+38. Numbers with 9 or more decimals will be rounded to the nearest integer. For instance, if the number 0.999999999 is entered, it will be rounded to 1.0000000. It is recommended to only use floats with textbox fields in DynaForms.
+<p><img src="../sites/default/files/3va.png"></p></li>
+
+<li><strong>Boolean:</strong> Accepts only values of TRUE or FALSE to represent boolean logic. Any other values will be converted to TRUE or FALSE. All numbers except 0 (zero) and all strings except empty strings are considered TRUE. It is recommended to use these variables with checkboxes, dropdowns or radio buttons which only allow a binary choice (such as Yes/No, On/Off or Approve/Disapprove). 
+<p><img src="../sites/default/files/4va.png"></p></li>
+
+<li><strong>Datetime:</strong> Stores a date or datetime in the format "<code>YYYY-MM-DD</code>" or "<code>YYYY-MM-DD HH:MM:SS</code>". For example, the last second of the year 2015 is: "<code>2015-12-31 23:59:59</code>".
+<p><img src="../sites/default/files/5va.png"></p>
+</li>
+
+<li><strong>Grid:</strong> This type of variable is used to store <a href="../3.0/Grid_Control.html">Grid</a> controls in DynaForms. ProcessMaker stores grids as a numbered array of associative arrays, which is the same format used when storing the results of database queries, so that grids can be populated with a database query.
+<p><img src="../sites/default/files/6va.png"></p>
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>This type of variable can also be related to the <a href="../3.0/SubForm_Control.html">Subform</a>'s "Grid Store" property.</font></p>
+</li>
+
+<li><strong>Array:</strong> This type of variable stores a collection of values. The values can be of different data types. In ProcessMaker, array variables can only be used by <a href="../3.0/Checkbox_and_Checkbox_Group.html#Checkgroup">checkgroup</a> controls.</p>
+<p><img src="../sites/default/files/7va.png"></p>
+
+</li>
+<li><strong>File:</strong> Variable to store the file(s) selected in a <a href="../3.0/File_control.html">file control</a>. An Input Document can also be associated with a file variable. When defining an Input Document, a file variable can be selected to hold its contents, so that the Input Document can be accessed through a file control in a DynaForm or as a variable in a Trigger. Define the maximum file size, the destination path and allowed file extensions of the uploaded files in the Input Document. The file variable can then be associated with an existing Input Document.<br><br> 
+To use a file variable, first create an Input Document. Then, create the file variable and associate it with the existing Input Document. Finally, create a DynaForm with a file control and associate the file variable with that file control. When a file variable which is associated with an Input Document is used in a file control, then the properties in the control will be disabled, because those properties have already been set in the Input Document properties.</p>
+<p><img src="../sites/default/files/PM3_Variables_VariableFile.png"></p>
+</li>
+<li><strong>Multiple File:</strong> Variable to store multiple files selected in a <a href="../3.1/Multiple_File_Uploader.html">Multiple File Uploader control</a>. This variable can be used only with this control.<br>
+
+<p><img src="../sites/default/files/3.1MultipleFileVariable.png"></p>
+
+</li>
+</ul>
+<li><strong>Database Connection:</strong> By default, this field is set to "PM Database", which is the <b><tt>wf_<font color=blue><i>WORKSPACE</i></font></tt></b> database for the current workspace, which by default is named <b><tt>wf_workflow</tt></b>. If there are other Database Connections in the project, they can be selected in the dropdown menu.</li>
+
+<li><strong>SQL:</strong> A database query can be used to set the initial value of a variable associated with a textbox, textarea or hidden field or to populate the list of options in dropdown boxes, suggest boxes, radio buttons or checkgroups. Enter an SQL <code>SELECT</code> statement to populate the variable. Note that this statement is the default for controls which are associated with the variable, but this statement can be modified in the definition of each control. Do NOT include the name of the database in the query, since the query will be executed in the selected <b>Database Connection</b> (3). The SQL query is executed when a DynaForm is displayed which contains a control associated with the variable. If the SQL query contains a reference to an <a href="../3.0/Dependent_Fields.html">independent field</a> (<code>@@<font color=blue><i>fieldId</i></font></code> or <code>@#<font color=blue><i>fieldId</i></font></code>), then it will be executed every time the value of the independent field is changed by the user.<br><br>
+If populating a textbox, textarea or hidden field, then the control will be set to the value in the first field in the first record returned by the database query. If populating the list of options in a dropdown box, suggest box, radio button, checkgroup, then the first field will be the <i>key</i> and the second field will be the <i>label</i> of each option. These options from the SQL query will be added in the list <i>after</i> the fixed options.<br><br>
+<font color=green><b>Note:</b></font> <font color=dimgrey>If querying a MySQL database, remember that table and field names are case sensitive by default in Linux/UNIX systems, but case insensitive in Windows systems (although this can be changed with the <a href="http://dev.mysql.com/doc/refman/5.0/en/server-system-variables.html#sysvar_lower_case_table_names">lower_case_table_names</a> system setting). For portability of processes between Windows and Linux/UNIX servers, it is recommended to use table and field names in UPPERCASE when querying ProcessMaker databases.</font></li>
+
+<li><strong>Define Accepted Variable Values.</strong> A list of accepted options can be added to string, integer, float, boolean and array variables. These options will be displayed to the user when the variable is associated with a dropdown box, radio button, suggest box, checkgroup in a DynaForm. Check this option and a new section will be displayed below where options can be added with <i>key</i> (value) and <i>label</i> pairs. These options will be added <i>first</i> to the list, before any options which are added by the SQL query. Note that this is the default list of options and it can be modified in the definition of each control which is associated with the variable.<p>
+<img alt="" src="../sites/default/files/PM3.0.1_VariableCreationWindow_DefineAcceptedVariableValues.png"></p>
+<ul>
+<li><strong>a. Key.</strong> <i>Required.</i> The key (value) must be unique for each option since it acts as a unique identifier, so that no other option can have the same key. It may not contain any spaces. Note that the keys are stored as strings, so "3.10" is not the same key as "3.1".</li>
+<li><strong>b. Label.</strong> The label is the text which to displayed to users when the option is shown in a DynaForm.</li>
+<li><strong>c. Create.</strong> Click on this button to add a new option to the list.</li>
+<li><strong>d.</strong> List of the options already added to the variable. In this list the key (value) of the option and its label are shown.<br>
+
+<p>The variable values of this list can be drag and drop to modify the order. </p> 
+<p><img alt="" src="../sites/default/files/PM3_Variables_ListSort.png"></p></li>
+<li><strong>e. Edit.</strong> Click on this button to edit the key or the value of the variable option.</li>
+<li><strong>f. Delete.</strong> Click on this button to delete the option of the variable.</li>
+<li><strong>g. Pagination Control.</strong> Use this control to navigate through the pages of options. Each page lists up to 5 options.</li>
+</ul>
+</li>
+</ol>
+<p>Boolean variables have options for the <strong>TRUE</strong> and <strong>FALSE</strong> keys. The label for each of these keys can be configured. Boolean variables can only be used with dropdown box, radio button and checkbox controls in DynaForms.</p>
+
+<p><span>After filling out the information about the new variable, click on "</span>Save"<span> to add it to the list of available variables or "</span>Cancel"<span> to discard any changes.</span></p>
+
+<strong><font color="green">Note:</font></strong> <font color="dimgrey">All variables for a case are stored in the MEDIUMTEXT field <strong> <code>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_DATA</code></strong> in the database, which holds a <a href="http://dev.mysql.com/doc/refman/5.0/en/storage-requirements.html#idm139695134411008">maximum of 16,777,213 bytes</a>, so that the maximum number of characters in a string is determined by the size of that field, but can also be limited by the <strong>Size</strong> property of textboxes in DynaForms and by the <a href="../3.0/Additional_Configuration.html#Uploading_large_Input_Documents" title="Additional Server Configuration"> post_max_size setting</a> in the <strong><code>php.ini</code></strong> configuration file.</font>
+</ul>
+
+<h3><span id="_label_Variables"><b><tt>_label</tt></b> Variables</span></h3>
+<p>When a case variable is created, a second variable with a name based on the name of the case variable and the suffix <b>_label</b> is automatically created. For instance, if the new variable is named "phone", the second variable will be named "phone_label".</p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray"> Avoid creating variables with a "_label" suffix in their name, it may lead to possible conflicts with variables created by the ProcessMaker application.</font></p>
+
+<p>A _label variable is used to store the label of the variable stored in the @@variable related to a <a href="../3.1/JavaScript_in_DynaForms.html#DynaForm_Structure">Dynaform control</a>. For example: for a dropdown, the label of the selected option is saved as a variable with the same name as the case variable assigned to the dropdown, but with a "_label" suffix. If a dropdown box is named "MyDropdown", then the value of the selected option would be stored in the case variable <code>@@MyDropdown</code>, and the label of the selected option would be stored in the <code>@@MyDropdown_label</code> variable.</p>
+
+
+<p>In the case of textboxes, textareas or suggest boxes, the same value typed in by the user is stored in the case variable, as well as in the _label variable.</p>
+
+<p>The _label variable values are stored in the <tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_DATA</tt> field in the ProcessMaker database.</WORKSPACE>
+
+<h2><span id="Managing_Variables">Managing Variables</span></h2>
+<p><span>To manage the list of variables and create new ones, click on the "</span>Variables"<span> option in the main toolbox.</span></p>
+<p><img alt="" src="../sites/default/files/PM3.0.1_MainToolbox_MainToolboxVariableOption.png"></p>
+<p><span>A list of variables will appear along with options to add new variables and edit or delete the existing variables.</span></p>
+<p><img alt="" src="../sites/default/files/VariableListDialog.png"></p><ul>
+<li><strong>Name:</strong> This column lists the name of the variable. By default the variables are listed by their names in ascending alphabetical order. Click on the down triangle icon in the column header to switch to descending alphabetical order.</li>
+<li><strong>Type:</strong> This column lists the data type of the variable.</li>
+<li><strong>Edit:</strong> Click on this button to edit the variable's name or its type.</li>
+<li><strong>Delete:</strong> Click on this button to delete the variable. When the confirmation message appears, click on "Yes" to delete the variable. Variables which are already being used to populate a DynaForm field can not be deleted. First, they have to be removed from the DynaForm, before deleting them. Note that ProcessMaker doesn't check whether a variable is used in trigger code before deleting it.</li></ul>
+<p>The variables are listed 10 at a time. To see the next page click on &gt;, and to see the previous page click on &lt;. To see other pages of variables, click on the page's number in the pagination control below the list.</p>
+<p>To filter the list of variables, enter text in the search box in the upper left-hand corner. The search is case insensitive any where in the variable names or in their types.</p>
+
+<h2><span id="AddingVariablesDynaForm">Adding Variables in a DynaForm</span></h2>
+
+<p>After creating variables, they can to be associated with a <a href="../3.0/DynaForm_Controls.html">control field</a> in a DynaForm. To associate variables with fields in a DynaForm, check this <a href="../3.0/DynaForm_Field_Properties.html#Variable">documentation</a> to learn how to do it.
+
+<div style="margin-left:25px">
+<p><strong><font color="red">Warning:</font></strong> <font color="dimgray"> 
+Assigning the same variable to different controls in different Dynaforms may result in unexpected behaviors. For example, if a variable was first assigned to a dropdown and then to a textbox the label might change, as shown in the image below.</p>
+<p><img src="../sites/default/files/3.0VariablesWarning.png"></p>
+
+<p>The variable value is "US" and its _label variable is "United States" in the dropdown of a first Dynaform. Once the case is routed to a second Dynaform, when the variable is assigned to a textbox, only the variable value ("US") will be displayed in the textbox. Once this textbox is submitted, the _label variable will change from "United States" to "US", because a textbox stores the same value in the variable value and its _label.</p>
+
+<p>Even though some combinations might seem safe, it is not recommended to use the same variable with multiple control types.</font></p>
+</div>
+
+<h2><span id="CreatingVariablesDynaForm">Creating Variables inside the DynaForm Designer</span></h2>
+
+<p>Variables can also be created inside the DynaForm Designer, when dragging and dropping a control a new window will automatically appear.This window will be the "Create/Select" window and it has been added to aggregate functionality and behavior to the variables.</p>
+<p><img src="../sites/default/files/1Gateways_CreatingVariablesInsideDynaform_AddControl.png"></p>
+<p>This new window will have two radio buttons offering two options which are: "Create variable" (creates a variable directly from this window) or "Select variable" (selects an existing process variable).</p>
+<p><img src="../sites/default/files/2Gateways_CreatingVariablesInsideDynaform_CreateVariable.png"></p>
+<p>The "Create variable" option will allow the immediate creation of a variable by firstly adding a "Variable Name", for this example the variable will be "name".</p>
+<p><img src="../sites/default/files/3Gateways_CreatingVariablesInsideDynaform_VariableName.png"></p>
+<p>Click the options "Settings" which is underlined and more options will be displayed.</p>
+<p><img src="../sites/default/files/4Gateways_CreatingVariablesInsideDynaform_Settings.png"></p>
+<p>The "Settings" available for the creation of variables are the following:</p>
+<p><img src="../sites/default/files/5Gateways_CreatingVariablesInsideDynaform_SettingsDisplayed.png"></p>
+<p>The "Type" setting is a dropdown which allows to choose the type of variable that will be used.This depends solely on the control chosen so the type of variable will change. In case is a "Textbox" control (like in the example below) the type of variable available will be "String", "Float" and "Integer". Try adding a "Datetime" control and the type of variable available will be only "datetime".</p>
+<p><img src="../sites/default/files/6Gateways_CreatingVariablesInsideDynaform_Settings_Type.png"></p>
+<p>The "Database Connection" setting displays a connections already established with a Database or if empty create a new one. Read more about Database Connection on <a href="../3.0/Database_Connections.html">this section</a> </p>
+<p><img src="../sites/default/files/7Gateways_CreatingVariablesInsideDynaform_Settings_DatabaseConnection.png"></p>
+<p>The "Sql" setting adds a query to give more functionality to the control by clicking on the underlined ellipsis as seen in the image. For more information read <a href="../3.0/DynaForm_Field_Properties.html#SQL">this section </a></p>
+<p><img src="../sites/default/files/8Gateways_CreatingVariablesInsideDynaform_Settings_Sql.png"></p>
+<p>An "SQL Editor" will open where queries can be added.</p>
+<p><img src="../sites/default/files/9Gateways_CreatingVariablesInsideDynaform_Settings_SqlEditor.png"></p>
+<p>Finally, the "Options" setting shows, edits and/or adds options set of the control that may be related to a variable or not. Check <a href ="../3.0/DynaForm_Field_Properties.html#Options">this section</a> for more information. </p>
+<p><img src="../sites/default/files/10Gateways_CreatingVariablesInsideDynaform_Settings_Options.png"></p>
+<p><img src="../sites/default/files/11Gateways_CreatingVariablesInsideDynaform_Settings_OptionsWindow.png"></p>
+<p>If an existing variable wants to be added to the control simply click on the "Select variable" radio button.</p>
+<p><img src="../sites/default/files/12Gateways_CreatingVariablesInsideDynaform_SelectVariable.png"></p>
+<p>All process variables will be displayed and one of them can be chosen for the control.</p>
+<p><img src="../sites/default/files/13Gateways_CreatingVariablesInsideDynaform_SelectExistantVariable.png"></p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

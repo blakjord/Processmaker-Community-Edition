@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/REST_API_Cases/Case_Notes.html" />
+<link rel="shortlink" href="772.html" />
+<title>3.2 - 3.8 - REST API Cases - Case Notes | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"73m7sxc13udXQO2XkYT3oJJqnrgLazIfLiCJnG6PYNU","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-772 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="772.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="772.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-rkkFwQ8t5DIOsLB7Mz-8hRA7dI3AObbLd9jDx8mCClI" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - REST API Cases - Case Notes</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - REST API Cases - Case Notes" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="772.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - REST API Cases - Case Notes 1/5</option><option value="40">Give 3.2 - 3.8 - REST API Cases - Case Notes 2/5</option><option value="60" selected="selected">Give 3.2 - 3.8 - REST API Cases - Case Notes 3/5</option><option value="80">Give 3.2 - 3.8 - REST API Cases - Case Notes 4/5</option><option value="100">Give 3.2 - 3.8 - REST API Cases - Case Notes 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-BFKFqgOWYRL552WrGixi_KG1rIeyhHqzVZy90-v94PY" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2><span class="mw-headline" id="Cases_Notes">Cases Notes </span></h2>
+    <p>The following endpoints are used to manipulate <a href="../3.0/Case_Notes.html">case notes</a>:</p>
+<div style=" background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><strong>Contents:</strong> [<a href="772.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b><div id="toc" ><ol class="toc">
+<li class="toc"><a href="772.html#Cases_Notes">Cases Notes </a></li>
+<ol class="toc">
+<li class="toc"><a href="772.html#Get_Case_Notes:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fnotes">Get Case Notes: <code>GET /cases/{app_uid}/notes</code></a></li>
+<li class="toc"><a href="772.html#Get_Page_of_Case_Notes:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fnotes.2Fpaged">Get Page of Case Notes: <code>GET /cases/{app_uid}/notes/paged</code></a></li>
+<li class="toc"><a href="772.html#Create_Case_Note:_POST_.2Fcases.2F.7Bapp_uid.7D.2Fnote">Create Case Note: <code>POST /cases/{app_uid}/note</code></a></li>
+</ol>
+</div></div>
+
+
+    <h3><span class="mw-headline" id="Get_Case_Notes:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fnotes">Get Case Notes: <code>GET /cases/{app_uid}/notes</code></span></h3>
+    <p><span id="GetListCaseNotes">Get a list of the <a href="../3.0/Case_Notes.html">case notes</a> for a specified case.</span></p>
+
+    <dl>
+        <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/cases/{app_uid}/notes</font></dd>
+    </dl>
+    <p><b>Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th><b>Name</b></th>
+                        <th><b>Description</b></th>
+                        <th><b>Default</b></th>
+                        <th><b>Example</b></th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name</td>
+                        <td></td>
+                        <td>/api/1.0/<b>workflow</b>/cases/57793680455e7a4326b71f5064060314/notes</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Unique ID of the case where the notes are attached.</td>
+                        <td></td>
+                        <td>/api/1.0/workflow/cases/<b>57793680455e7a4326b71f5064060314</b>/notes</td>
+                    </tr>
+                    <tr id="case_notes_filter">
+                        <td colspan="4"><i>Filters for case notes</i></td>
+                    </tr>
+                    <tr>
+                        <td>start={num}</td>
+                        <td><i>Optional.</i> Number where the list of notes starts.</td>
+                        <td>0</td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes?<b>start=30</b></td>
+                    </tr>
+                    <tr>
+                        <td>limit={num}</td>
+                        <td><i>Optional.</i> The number of notes to list.</td>
+                        <td>25</td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes?<b>limit=10</b></td>
+                    </tr>
+                    <tr>
+                        <td>sort={field}</td>
+                        <td><i>Optional.</i> Field used to order the list, which is one of the <tt>APP_NOTES</tt> fields)</td>
+                        <td>APP_NOTES.NOTE _DATE</td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes?<b>sort=APP_NOTES.USR_UID</b></td>
+                    </tr>
+                    <tr>
+                        <td>dir={dir}</td>
+                        <td><i>Optional.</i> Order which notes are listed: <code>asc</code>, <code>desc</code></td>
+                        <td>desc</td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes?<b>dir=asc</b></td>
+                    </tr>
+                    <tr>
+                        <td>usr_uid={uid}</td>
+                        <td><i>Optional.</i> Unique ID of the user who posted the case note.</td>
+                        <td></td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes?<b>usr_uid=86994841555ce4e51406a80055794876</b></td>
+                    </tr>
+                    <tr>
+                        <td>date_from={date}</td>
+                        <td><i>Optional.</i> Notes which were created from this date on, in "YYYY-MM-DD" format.</td>
+                        <td>
+                        </td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes?<b>date_from=2015-01-31</b></td>
+                    </tr>
+                    <tr>
+                        <td>date_to={data}</td>
+                        <td><i>Optional.</i> Notes which were created up to (but not including) this date in "YYYY-MM-DD"
+                            format.</td>
+                        <td> </td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes?<b>date_to=2015-12-31</b></td>
+                    </tr>
+                    <tr>
+                        <td>search={text}</td>
+                        <td><i>Optional.</i> Search for notes with the specified text in the note's content. Make sure
+                            to <a href="http://www.w3schools.com/tags/ref_urlencode.asp">URL encode in UTF-8</a>                            the searched text, with a function like <a href="http://php.net/manual/en/function.urlencode.php">urlencode()</a>                            in PHP or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encodeURIComponent()</a>                            in JavaScript, so that characters like "<code> </code>" (space) becomes <code>%20</code>                            and "<code>?</code>" becomes <code>%F3</code>.</td>
+                        <td> </td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes?<b>search=contract%20details</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>Result:</b></p>
+    <p>If successful, the HTTP status code is set to 200 and the response is a array of case note objects:
+<dl><dd><table class="codecolumn"><tbody>
+<tr><td>[</td><td>Start array.</td></tr>
+<tr><td>  {</td><td>Start first case note object.</td></tr>
+<tr><td>    "app_uid", </td><td>The unique ID of the case where the note is attached.</td></tr>
+<tr><td>    "usr_uid", </td><td>The unique ID of the user who added the note.</td></tr>
+<tr><td>    "note_date",</td><td>The date when the note was added in "YYYY-MM-DD HH:MM:SS" format. The date displays in the UTC time zone.</td></tr>
+<tr><td>    "note_content"</td><td>The content of the case note.</td></tr>
+<tr><td>  },</td><td>The date when the note was added in "YYYY-MM-DD HH:MM:SS" format.</td></tr>
+<tr><td>  ...</td><td>Any additional case notes.</td></tr>
+<tr><td>]</td><td>End array.</td></tr>
+</tbody></table></dd></dl>
+<p>For example:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;17969179752e27c4b3027c3006962937&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;usr_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;00000000000000000000000000000001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;note_date&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2015-06-01 12:12:12&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;note_content&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;This case needs more review before approval is given.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;app_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;17969179752e27c4b3027c3006962937&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;usr_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;39558947555df747738bc05034476159&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;note_date&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2015-06-01 16:12:12&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;note_content&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Please check the services rendered in this contract.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+    <p><font color=green><b>Note:</b></font> <font color=dimgrey>Only users who have been assigned <a href="../3.0/Process_Permissions.html#Accessing_Case_Notes">Process Permissions</a> to case notes may access them. Even the user who is currently assigned to work on the case may not see the case notes without Process Permission for case notes. If the logged-in user doesn't have proper permissions to access case notes, the following error object is returned:</font></p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: You do not have permission to access the cases notes&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><b>PHP Example:</b></p>
+    <p>Prints out the notes for a case. Looks up information about users to add the full name and username to notes.</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;BDBSKDWPZCMDZPSXPOHAXCMZQZLMLCQV&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;25253873955e0e542943e80035324554&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;mary&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;p4sSw0rD&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'78014942855e4a66cb0f531062309584'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/cases/<span style="color: #006699; font-weight: bold;">$caseId</span>/notes&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//get users to display their full names for each note:</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/users&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aUsers</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #000088;">$aUserInfo</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//empty array to hold info about users.</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oUser</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aUserInfo</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$oUser</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">usr_uid</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;<span style="color: #006699; font-weight: bold;">{$oUser-&gt;usr_firstname}</span> <span style="color: #006699; font-weight: bold;">{$oUser-&gt;usr_lastname}</span> (<span style="color: #006699; font-weight: bold;">{$oUser-&gt;usr_username}</span>)&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oNote</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$sUser</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$oNote</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">usr_uid</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;p&gt;<span style="color: #006699; font-weight: bold;">{$oNote-&gt;note_content}</span>&lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;</span><span style="color: #339933;">&lt;</span>small<span style="color: #339933;">&gt;</span>Posted by <span style="color: #000088;">$sUser</span> on <span style="color: #009900;">&#123;</span><span style="color: #000088;">$oNote</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">note_date</span><span style="color: #009900;">&#125;</span><span style="color: #339933;">&lt;/</span>small<span style="color: #339933;">&gt;&lt;/</span>p<span style="color: #339933;">&gt;</span><span style="color: #0000ff;">&quot;;<br />
+&nbsp; &nbsp;}<br />
+}</span></div></div>
+
+    <h3><span class="mw-headline" id="Get_Page_of_Case_Notes:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fnotes.2Fpaged">Get Page of Case Notes: <code>GET /cases/{app_uid}/notes/paged</code></span></h3>
+    <p>Get a page of the cases notes for a specified case.</p>
+    <dl>
+        <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/cases/{app_uid}/notes/paged</font></dd>
+    </dl>
+
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th><b>Name</b></th>
+                        <th><b>Description</b></th>
+                        <th><b>Example</b></th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name</td>
+                        <td>/api/1.0/<b>workflow</b>/cases/57793680455e7a4326b71f5064060314/notes/paged</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Unique ID of case</td>
+                        <td>/api/1.0/workflow/cases/<b>57793680455e7a4326b71f5064060314</b>/notes/paged</td>
+                    </tr>
+                    <tr>
+                        <td><i>filters</i></td>
+                        <td><i>Optional.</i> Any of the filters listed <a href="772.html#case_notes_filter">above</a>.</td>
+                        <td>/api/1.0/workflow/cases/57793680455e7a4326b71f5064060314/notes/paged?<b>search=contract</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>Result:</b></p>
+    <p>If successful, the HTTP status code is set to <code>200</code> (OK) and the response is a page object with information about the results and an array of case note objects in the <code>data</code> member, such as:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;total&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #CC0000;">2</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;start&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;limit&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #CC0000;">25</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;sort&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;APP_NOTES.NOTE_DATE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;dir&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;DESC&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;usr_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;date_to&quot;</span><span style="color: #339933;">:</span> &nbsp; <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;date_from&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;search&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;data&quot;</span><span style="color: #339933;">:</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;app_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;115968518533473068ad299078535175&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;usr_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;39558947555df747738bc05034476159&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;note_date&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2015-03-28 11:10:51&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;note_content&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Is the purchase price too high for office furniture?&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;app_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;115968518533473068ad299078535175&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;usr_uid&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;00000000000000000000000000000001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;note_date&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2015-03-28 17:19:45&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;note_content&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;I have approved the purchase request, despite the high price.&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#93;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    <p><font color=green><b>Note:</b></font> <font color=dimgrey>Only users who have been assigned <a href="../3.0/Process_Permissions.html#Accessing_Case_Notes">Process Permissions</a> to case notes may access them. Even the user who is currently assigned to work on the case may not see the case notes without Process Permission for case notes. If the logged-in user doesn't have proper permissions to access case notes, the following error object is returned:</font></p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: You do not have permission to access the cases notes&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <h3><span class="mw-headline" id="Create_Case_Note:_POST_.2Fcases.2F.7Bapp_uid.7D.2Fnote">Create Case Note: <code>POST /cases/{app_uid}/note</code></span></h3>
+    <p>Create a new case note for a given case. Note that only users who are currently assigned to work on the case or have <a href="../3.0/Process_Permissions.html#Accessing_Case_Notes">Process Permissions to access case notes</a> may create a case note.</p>
+    
+    <p><b>Permission:</b></p>
+    <dl><dd>Users must have the <a href="../3.2/Roles.html#PM_CASES">PM_CASES</a> permission assigned to their role to perform this action.</dd></dl>
+
+    <p><b>Structure:</b></p>
+    <dl>
+        <dd><b>POST</b> <font color="blue">/api/1.0/{workspace}/cases/{app_uid}/note</font></dd>
+    </dl>
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th><b>Name</b></th>
+                        <th><b>Description</b></th>
+                        <th><b>Example</b></th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name</td>
+                        <td>/api/1.0/<b>workflow</b>/cases/115968518533473068ad299078535175/note</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Unique ID of the case.</td>
+                        <td>/api/1.0/workflow/cases/<b>115968518533473068ad299078535175</b>/note</td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+    <p><b>POST Fields:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th><b>Name</b></th>
+                        <th><b>Description</b></th>
+                    </tr>
+                    <tr>
+                        <td>note_content</td>
+                        <td>Content of the case note in plain text. Use <code>\n</code> to insert a new line in the
+                            text.</td>
+                    </tr>
+                    <tr>
+                        <td>send_mail</td>
+                        <td><b>Optional.</b> Set to <code>1</code> to send an email with the content of the case note
+                            in its body to all the participants in the case. The default is <code>0</code>, which
+                            doesn't send an email. Note that this endpoint adds the emails to the queue, but they
+                            only sent out when the <a href="../3.0/Executing_cron.php.html">cron.php file executes</a>.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>Result:</b></p>
+    <p>If the case note was created, then the HTTP status code is set to <code>200</code> (OK) and there is no return value. If the status code is <code>300</code> or higher then an error occurred, and an error object will usually be returned, such as:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: You do not have permission to access the cases notes&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><b>PHP Example:</b><br>
+<p>The following example creates a new case note, which is sent out in an email to all the participants in the case:</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;BDBSKDWPZCMDZPSXPOHAXCMZQZLMLCQV&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;25253873955e0e542943e80035324554&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;mary&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;p4sSw0rD&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'57793680455e7a4326b71f5064060314'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aVars</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'note_content'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Please review the Invoice totals.<span style="color: #000099; font-weight: bold;">\n</span>They look too low to cover the costs&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'send_mail'</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #cc66cc;">1</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/cases/<span style="color: #006699; font-weight: bold;">$caseId</span>/note&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;POST&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aVars</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Case note added.&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    </div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

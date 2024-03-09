@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/JavaScript_in_DynaForms.html" />
+<link rel="shortlink" href="147.html" />
+<title>2.5 - JavaScript in DynaForms | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"5oxNlbQiWui4SazRZxCzjwvMUU7OWyAIpVZW4u-21u0","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-147 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="147.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-LCJxSWV8aynE9IPzneYRgwgq5-HF6jGu4ob5_L4KyNI" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.5 - JavaScript in DynaForms</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.1/JavaScript_in_DynaForms.html" class="">3.8</a></li><li><a href="../3.1/JavaScript_in_DynaForms.html" class="">3.7</a></li><li><a href="../3.1/JavaScript_in_DynaForms.html" class="">3.6</a></li><li><a href="../3.1/JavaScript_in_DynaForms.html" class="">3.5</a></li><li><a href="../3.1/JavaScript_in_DynaForms.html" class="">3.4</a></li><li><a href="../3.1/JavaScript_in_DynaForms.html" class="">3.3</a></li><li><a href="../3.1/JavaScript_in_DynaForms.html" class="">3.2</a></li><li><a href="../3.1/JavaScript_in_DynaForms.html" class="">3.1</a></li><li><a href="../3.0/JavaScript_in_DynaForms.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.5 - JavaScript in DynaForms" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="147.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.5 - JavaScript in DynaForms 1/5</option><option value="40">Give 2.5 - JavaScript in DynaForms 2/5</option><option value="60" selected="selected">Give 2.5 - JavaScript in DynaForms 3/5</option><option value="80">Give 2.5 - JavaScript in DynaForms 4/5</option><option value="100">Give 2.5 - JavaScript in DynaForms 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.6</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-tUhl3B0lpqUrdjqXGhCMS7tLvnFVb3G_9QI3HcaTVmY" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="147.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="147.html#Overview">Overview</a></li>
+<li class="toc"><a href="147.html#What_JavaScript_can_do">What JavaScript can do</a></li>
+<li class="toc"><a href="147.html#What_JavaScript_can.27t_do">What JavaScript can't do</a></li>
+<li class="toc"><a href="147.html#Adding_JavaScript_to_a_DynaForm">Adding JavaScript to a DynaForm</a></li>
+<li class="toc"><a href="147.html#Accessing_fields_with_JavaScript">Accessing fields with JavaScript</a></li>
+<ol class="toc">
+<li class="toc"><a href="147.html#Field_properties">Field properties</a></li>
+<ol class="toc">
+<li class="toc"><a href="147.html#Accessing_a_field.27s_value">Accessing a field's <tt>value</tt></a></li>
+<ol class="toc">
+<li class="toc"><a href="147.html#Setting_values">Setting values</a></li>
+<li class="toc"><a href="147.html#Values_of_dropdown_boxes">Values of dropdown boxes</a></li>
+<li class="toc"><a href="147.html#Working_with_Numbers">Working with Numbers</a></li>
+<li class="toc"><a href="147.html#Converting_Masked_Values">Converting Masked Values</a></li>
+<li class="toc"><a href="147.html#Converting_numbers_to_strings">Converting numbers to strings</a></li>
+<li class="toc"><a href="147.html#Converting_Dates">Converting Dates</a></li>
+</ol>
+<li class="toc"><a href="147.html#Accessing_checked_fields">Accessing checked fields</a></li>
+<li class="toc"><a href="147.html#Accessing_Fields.27_Styles">Accessing Fields' Styles</a></li>
+</ol>
+<li class="toc"><a href="147.html#Checkgroups_and_Radiogroups">Checkgroups and Radiogroups</a></li>
+<li class="toc"><a href="147.html#Grids">Grids</a></li>
+<li class="toc"><a href="147.html#Different_Types_of_Fields">Different Types of Fields</a></li>
+</ol>
+<li class="toc"><a href="147.html#Tying_Code_to_Events">Tying Code to Events</a></li>
+<li class="toc"><a href="147.html#Importing_external_JavaScript_files">Importing external JavaScript files</a></li>
+<li class="toc"><a href="147.html#Debugging_JavaScript">Debugging JavaScript</a></li>
+<ol class="toc">
+<li class="toc"><a href="147.html#Examining_Variables_with_Alerts">Examining Variables with Alerts</a></li>
+<li class="toc"><a href="147.html#Internet_Explorer">Internet Explorer</a></li>
+<li class="toc"><a href="147.html#Mozilla_Firefox">Mozilla Firefox</a></li>
+<ol class="toc">
+<li class="toc"><a href="147.html#Firebug">Firebug</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="147.html#JavaScript_Examples">JavaScript Examples</a></li>
+<ol class="toc">
+<li class="toc"><a href="147.html#Insert_a_Value_in_a_Field">Insert a Value in a Field</a></li>
+<li class="toc"><a href="147.html#Showing.2FHiding_Rows_when_another_Field_Changes">Showing/Hiding Rows when another Field Changes</a></li>
+<li class="toc"><a href="147.html#Rounding_a_Number">Rounding a Number</a></li>
+<li class="toc"><a href="147.html#Enable.2FDisable_Fields_when_a_Checkbox_is_marked">Enable/Disable Fields when a Checkbox is marked</a></li>
+<li class="toc"><a href="147.html#Loop_through_a_Grid">Loop through a Grid</a></li>
+<li class="toc"><a href="147.html#Adding_an_Event_Handler_to_New_Grid_Rows">Adding an Event Handler to New Grid Rows</a></li>
+<li class="toc"><a href="147.html#Copying_Selected_Options_in_a_Listbox_to_a_Dropdown">Copying Selected Options in a Listbox to a Dropdown</a></li>
+<li class="toc"><a href="147.html#Displaying_Alerts">Displaying Alerts</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+
+<p>JavaScript is custom code which runs inside the web browser to customize the behavior of DynaForms. ProcessMaker provides a number of <a href="../index.php/JavaScript_Functions.html" title="JavaScript Functions">custom functions</a> for controlling elements in DynaForms.</p>
+
+<h2><span id="What_JavaScript_can_do">What JavaScript can do</span></h2>
+
+<p>JavaScript is very useful for improving usability and increasing functionality of DynaForms.</p>
+<p>JavaScript can used for tasks such as:</p>
+<ul>
+<li>Dynamically hiding and showing fields based on users' actions.</li>
+<li>Changing the text and the style properties of fields.</li>
+<li>Offering help and guiding users with messages and alerts.</li>
+<li>Validating and standardizing the data entered into fields.</li>
+<li>Automatically inserting values into fields.</li>
+<li>Making calculations between fields.</li>
+<li>Managing grid field operations.</li>
+<li>Checking the data and forcing the user to change values before submitting a DynaForm.</li>
+<li>Opening and closing other browser windows.</li>
+</ul>
+
+<h2><span id="What_JavaScript_can.27t_do">What JavaScript can't do</span></h2>
+
+<p>JavaScript is only a <i>browser side</i> language. For security reasons, the language is limited to the data available in DynaForms (and in other browser windows). JavaScript is not designed to:</p><ul><li>Access data which is not in the DynaForm or one of the web browser windows.</li><li>Access databases on the server (unless using <a href="http://en.wikipedia.org/wiki/XMLHttpRequest">XMLHttpRequest</a>).</li><li>Execute operations in the server (unless using <a href="http://en.wikipedia.org/wiki/XMLHttpRequest">XMLHttpRequest</a>).</li><li>Execute external programs (unless providing a link to a file which the web browser is configured to open with an external application).</li></ul><h2><span id="Adding_JavaScript_to_a_DynaForm">Adding JavaScript to a DynaForm</span></h2><p>JavaScript code cannot be added to a ProcessMaker DynaForm unless it is defined inside of a <strong><tt>javascript</tt></strong> field for that DynaForm. The code is saved inside of the XML definition for the DynaForm. The JavaScript is enclosed inside a character data structure <strong><tt>&lt;![CDATA[...]]&gt;</tt></strong> so it will not be parsed as normal XML code.</p><p>For example:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;UTF-8&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dynaForm</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;xmlform&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;12565951048b858ca883c57091712352/40681270548d66e46554829029416532&quot;</span> </span><br />
+<span style="color: #009900;"> &nbsp; <span style="color: #000066;">width</span>=<span style="color: #ff0000;">&quot;850&quot;</span> <span style="color: #000066;">enabletemplate</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">nextstepsave</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">printdynaform</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ContactTitle</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;title&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Enter Contact Details<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ContactTitle<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ContactName</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;64&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Contact Name<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ContactName<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ValidateCode</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;javascript&quot;</span> <span style="color: #000066;">btn_cancel</span>=<span style="color: #ff0000;">&quot;Cancel&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; <span style="color: #339933;">&lt;![CDATA[function checkEmpty() {</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; &nbsp;if (getField(&quot;ContactName&quot;).value == &quot;&quot;) {</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; &nbsp; &nbsp; getField(&quot;ContactName&quot;).style.borderColor=&quot;RED&quot;;</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; &nbsp; &nbsp; return false;</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; &nbsp;else</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; &nbsp; &nbsp; return true;</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; &nbsp;}</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; &nbsp;document.onsubmit = checkEmpty;]]&gt;</span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ValidateCode<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/dynaForm<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>To add JavaScript code to a DynaForm, first open it in the DynaForm Editor. Click on the JS icon in the toolbar to add a JavaScript object and then define its name and add code:</p>
+
+<p><img alt="" src="../sites/default/files/NewJavaScript.png"></p>
+
+<p>A DynaForm can have multiple JavaScript objects. To edit the code in one of the JavaScript objects, go to the <a href="../index.php/2.5.X/DynaForms.html#JavaScripts_tab" title="DynaForms">Javascript </a>tab and select it from the dropdown box in the upper left-hand corner.</p>
+
+<p><img alt="" src="../sites/default/files/JavaScriptTab.png"></p>
+
+<p>After editing the code, it can be checked by simply switching to the <strong>Preview</strong> tab. The new JavaScript code will immediately execute upon displaying the form in Preview mode (even if the DynaForm has not yet been saved).</p>
+
+<h2><span id="Accessing_fields_with_JavaScript">Accessing fields with JavaScript</span></h2>
+<p>Most fields in a DynaForm are defined with an <strong><tt>id</tt></strong> of <tt>"form[<i><strong>field-name</strong></i>]"</tt>. To access these fields, either use JavaScript's standard <a href="http://developer.mozilla.org/en/dom/document.getelementbyid">getElementById()</a> function:</p>
+
+<codeblock>document.getElementById("form[<i><strong>field-name</strong></i>]")
+</codeblock>
+
+<p>or ProcessMaker's custom <tt>getField()</tt> function:</p>
+
+<codeblock>getField("<i><strong>field-name</strong></i>")
+</codeblock>
+
+<p>The <tt>getField()</tt> function simply encloses the <tt><i><strong>field-name</strong></i></tt> inside <tt>"form["</tt> and <tt>"]"</tt> and then passes that ID to the <tt>getElementById()</tt> function. For example, to access a textbox named "ContactName", these two ways of accessing the field are equivalent:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;form[ContactName]&quot;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ContactName&quot;</span><span style="color: #009900;">&#41;</span></div></div>
+
+<h3><span id="Field_properties">Field properties</span></h3>
+<p>After referencing the field, then specify which <i>property</i> of the field to access:</p>
+
+<codeblock>getField("<i><strong>field-name</strong></i>").<i><strong>property-name</strong></i>
+</codeblock>
+
+<p>To see the list of properties for a particular field, use the <a href="../index.php/JavaScript_Functions.html#var_dump.28.29"><tt>var_dump</tt>()</a> function inside of an <a href="http://msdn.microsoft.com/en-us/library/ms535933%28VS.85%29.aspx"><tt>alert</tt>()</a>:</p>
+
+<codeblock>alert(var_dump(getField("<i><strong>field-name</strong></i>")));
+</codeblock>
+
+<p>To find information about each property, see the <a href="http://www.w3.org/TR/html401/interact/forms.html">HTML reference for forms</a> for <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms">Mozilla</a> and <a href="https://docs.microsoft.com/en-us/openspecs/ie_standards/ms-iestandlp/8aea05e3-8c1e-4a9a-9614-31f71e679457" target="_blank">Internet Explorer</a>, the <a href="http://www.w3.org/DOM/">Document Object Model</a> documentation for <a href="http://developer.mozilla.org/en/DOM">Mozilla</a> and <a href="http://msdn.microsoft.com/en-us/library/ms533043%28VS.85%29.aspx">Internet Explorer</a> and the <a href="http://www.ecmascript.org/docs.php">JavaScript</a> documentation for <a href="http://developer.mozilla.org/en/javascript">Mozilla</a> and <a href="http://msdn.microsoft.com/en-us/library/yek4tbz0%28VS.85%29.aspx">Internet Explorer</a>.</p>
+
+<h4><span id="Accessing_a_field.27s_value">Accessing a field's <tt>value</tt></span></h4>
+<p>Most types of fields store their input in the <strong><tt>value</tt></strong> property, so their stored text can be referenced as:</p>
+
+<codeblock>getField("<i><strong>field-name</strong></i>").value
+</codeblock>
+
+<p>For example, to get the contents of a field named "ClientName" and assign it to a JavaScript variable named "client":</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> client <span style="color: #339933;">=</span> getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #339933;">;</span></div></div>
+
+<p>Alternatively, the <a href="../index.php/JavaScript_Functions.html#getValueById.28.29">getValueById()</a> function can be used to obtain a field's value:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> client <span style="color: #339933;">=</span> getValueById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>The <strong><tt>value</tt></strong> property can be referenced when making comparisons:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">&quot;Bob Smith&quot;</span><span style="color: #009900;">&#41;</span> <br />
+&nbsp; &nbsp; ...</div></div>
+
+<h5><span id="Setting_values">Setting values</span></h5>
+<p>To set the contents of a field, assign to its <strong><tt>value</tt></strong> property. For example to set "Jane Doe" as the value of the "ClientName" field:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;Jane Doe&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Alternatively, use the <a href="../index.php/JavaScript_Functions.html#changeValue.28.29">changeValue()</a> function:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;changeValue<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #339933;">,</span><span style="color: #3366CC;">&quot;Jane Doe&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>To clear a field, set its <tt>value</tt> to an empty string:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Alternatively, use the <a href="../index.php/JavaScript_Functions.html#removeValue.28.29">removeValue()</a> function:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;removeValue<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h5><span id="Values_of_dropdown_boxes">Values of dropdown boxes</span></h5>
+
+<p>The <strong><tt>value</tt></strong> property of <a href="../index.php/2.5.X/DynaForms.html#Dropdown_boxes" title="DynaForm Fields">dropdown boxes</a> stores the <i>value</i> (not the <i>label</i>) of the selected option. For <a href="../index.php/2.5.X/DynaForms.html#Listboxes" title="DynaForm Fields">listboxes</a> which can have multiple selected options, the <tt>value</tt> property only contains the<i>value</i> of the <i><strong>first</strong></i> selected option. For more information, see <a href="../index.php/2.5.X/DynaForms.html#Accessing_Dropdowns_with_JavaScript" title="DynaForm Fields">Accessing Dropdowns with JavaScript</a> and <a href="../index.php/2.5.X/DynaForms.html#Accessing_Listboxes_with_JavaScript" title="DynaForm Fields">Accessing Listboxes with JavaScript</a>.</p>
+
+<h5><span id="Working_with_Numbers">Working with Numbers</span></h5>
+<p>All fields store the contents of their <strong><tt>value</tt></strong> property as a string, which can create problems if needing to do mathematical operations or comparison of numbers. In JavaScript operators such as + (plus sign) and comparison operators such as &gt; (greater than) and &lt; (less than) operate differently depending on whether working with string or numbers.</p>
+<p>The + operator adds numbers, but concatenates strings:</p>
+<table><tbody><tr><td>    <tt>23.4 + 9.7</tt>  </td><td><i>equals</i>   <tt>33.1</tt></td></tr><tr><td>    <tt>"23.4" + "9.7"</tt>  </td><td><i>equals</i>   <tt>"23.49.7"</tt></td></tr></tbody></table>
+
+<p>If one of the operands is a string, then + will convert the other operand to a string and concatenate them:</p>
+<table><tbody><tr><td>    <tt>"23.4" + 9.7</tt>  </td><td><i>equals</i>   <tt>"23.49.7"</tt></td></tr></tbody></table>
+<p>If using the - (subtraction), * (multiplication) and / (division) operators, JavaScript will automatically convert any strings to numbers if possible before executing the mathematical operations.</p>
+<p>The comparison operators == (equals to), &gt; (greater than), &gt;= (greater than and equal to), &lt; (less than) and &lt;= (less than and equal to) compare strings differently from numbers:</p>
+<table><tbody><tr><td>    <tt>3 &gt; 2</tt>  </td><td><i>equals</i>   <tt>true</tt></td></tr><tr><td>    <tt>"3" &gt; "2"</tt>  </td><td><i>equals</i>   <tt>true</tt></td></tr><tr><td>    <tt>"03" &gt; "2"</tt>  </td><td><i>equals</i>   <tt>false</tt></td></tr><tr><td>    <tt>" 3" &gt; "2"</tt>  </td><td><i>equals</i>   <tt>false</tt></td></tr></tbody></table>
+<p>When comparing strings, JavaScript compares each character in the two strings, one by one until it encounters a two characters which are different. It then converts the characters into their ASCII values in order to compare them, so "0" is less than "2" and " " is less than "2", which is why both <tt>"03" &gt; "2"</tt> and <tt>" 3" &gt; "2"</tt> are <tt>false</tt>.</p>
+<p>If one of the operands is a number, then JavaScript will attempt to convert the other to a number before doing the comparison:</p>
+<table><tbody><tr><td>    <tt>"03" == 3</tt>  </td><td><i>equals</i>   <tt>true</tt></td></tr><tr><td>    <tt>" 3" == "3"</tt>  </td><td><i>equals</i>   <tt>false</tt></td></tr></tbody></table>
+<p>To avoid these problems, it is recommended to convert field values to numbers before when doing mathematical operations and comparisons. Use the <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/parseInt">parseInt()</a> function to convert strings to integers and <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/parseFloat">parseFloat()</a> function to convert strings to floating point numbers, which are real numbers which can have decimal points. If the field can accept both integers and floating point numbers, then create a new <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number">Number</a> object to convert the string.</p>
+<p>For example, if JavaScript is used to add together two fields and insert the sum into a third field:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field3&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> parseInt<span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field1&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> parseInt<span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field2&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>or:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field3&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> parseFloat<span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field1&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> parseFloat<span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field2&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>or:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field3&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="">Number</span><span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field1&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="">Number</span><span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field2&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>JavaScript will ignore leading or trailing spaces, when converting strings into numbers, but other characters, such as "," (commas), "$" (dollar signs), "%" (percent signs), can cause the conversion to fail, which results in a <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/NaN">NaN</a> (Not-a-Number). To test whether a value is not a valid number, use the <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/isNaN">isNaN()</a> function. For example:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> f3 <span style="color: #339933;">=</span> <span style="">Number</span><span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field1&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="">Number</span><span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field2&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>isNaN<span style="color: #009900;">&#40;</span>f3<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field3&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000066; font-weight: bold;">else</span><br />
+&nbsp; &nbsp; getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field3&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> f3<span style="color: #339933;">;</span></div></div>
+
+<h5><span id="Converting_Masked_Values">Converting Masked Values</span></h5>
+<p>Masks for percentage and currency boxes can insert characters which aren't recognized as valid numbers, so it recommended to strip out the non-numeric characters before performing mathematical operations:</p>
+<p>The <a href="../index.php/JavaScript_Functions.html#toUnmaskNumber.28.29">toUnmaskNumber()</a> function can be used to strip out commas and convert a string to a number. The <a href="../index.php/JavaScript_Functions.html#removeCurrencySign.28.29" title="JavaScript Functions">removeCurrencySign()</a> function can be used to remove the "$" (dollar sign) from a string. The <a href="../index.php/JavaScript_Functions.html#removePercentageSign.28.29" title="JavaScript Functions">removePercentageSign()</a> function can be used remove the "%" (percentage sign) from a string.</p>
+<p>To strip out all possible non-numeric characters, it is recommended to use the following <tt>stripNonNumeric()</tt> function, before calling <tt>parseInt()</tt>, <tt>parseFloat()</tt> or <tt>Number()</tt>:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">function</span> stripNonNumeric<span style="color: #009900;">&#40;</span>str<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; str <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//force str to be a string</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> rgx <span style="color: #339933;">=</span> <span style="color: #009966; font-style: italic;">/^\d|\.|-$/</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> out <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">var</span> i <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> str.<span style="color: #660066;">length</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>rgx.<span style="color: #660066;">test</span><span style="color: #009900;">&#40;</span>str.<span style="color: #660066;">charAt</span><span style="color: #009900;">&#40;</span>i<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#40;</span>str.<span style="color: #660066;">charAt</span><span style="color: #009900;">&#40;</span>i<span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">'.'</span> <span style="color: #339933;">&amp;</span>amp<span style="color: #339933;">;&amp;</span>amp<span style="color: #339933;">;</span> out.<span style="color: #660066;">indexOf</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'.'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">!=</span> <span style="color: #339933;">-</span><span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">||</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#40;</span>str.<span style="color: #660066;">charAt</span><span style="color: #009900;">&#40;</span>i<span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">'-'</span> <span style="color: #339933;">&amp;</span>amp<span style="color: #339933;">;&amp;</span>amp<span style="color: #339933;">;</span> out.<span style="color: #660066;">length</span> <span style="color: #339933;">!=</span> <span style="color: #CC0000;">0</span> <span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;out <span style="color: #339933;">+=</span> str.<span style="color: #660066;">charAt</span><span style="color: #009900;">&#40;</span>i<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">return</span> out<span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<h5><span id="Converting_numbers_to_strings">Converting numbers to strings</span></h5>
+<p>All DynaForm fields store their <tt>value</tt> as a string. A number which is assigned to the <tt>value</tt> of a DynaForm field will be automatically converted to a string:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;totalCost&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="color: #CC0000;">32.8</span><span style="color: #339933;">;</span></div></div>
+
+<p>To convert a number to a string, use the <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/toString">toString()</a> method:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> num <span style="color: #339933;">=</span> <span style="color: #CC0000;">32.8</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000066; font-weight: bold;">var</span> str <span style="color: #339933;">=</span> n.<span style="color: #660066;">toString</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> </div></div>
+
+<p>Alternatively, concatenate an empty string to a number to convert it to a string:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> str <span style="color: #339933;">=</span> <span style="color: #CC0000;">32.8</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>In most cases it is not necessary to explicitly convert numbers to string, since numbers will automatically be converted when concatenated with other strings:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> num <span style="color: #339933;">=</span> <span style="color: #339933;">-</span><span style="color: #CC0000;">404.35</span><span style="color: #339933;">;</span><br />
+&nbsp;G.<span style="color: #660066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;The answer is &quot;</span> <span style="color: #339933;">+</span> num<span style="color: #3366CC;">&quot;, &quot;</span>Info<span style="color: #3366CC;">&quot;);</span></div></div>
+
+<p>The conversion from numbers to strings depends upon the browser. To ensure proper rounding to a particular number of decimal places on all browsers, use the <a href="../index.php/JavaScript_Functions.html#roundNumber.28.29" title="JavaScript Functions">roundNumber()</a> function to round the number to a specified number of decimal places, then convert the number to a string with a specified number of decimal places with the <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toFixed">toFixed()</a> method. For example:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> num <span style="color: #339933;">=</span> <span style="color: #CC0000;">12.456789</span><span style="color: #339933;">;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field1&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> roundNumber<span style="color: #009900;">&#40;</span>num<span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">toFixed</span><span style="color: #009900;">&#40;</span><span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp;<span style="color: #006600; font-style: italic;">//converts to &quot;12.46&quot;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field2&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> roundNumber<span style="color: #009900;">&#40;</span>num<span style="color: #339933;">,</span> <span style="color: #CC0000;">4</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">toFixed</span><span style="color: #009900;">&#40;</span><span style="color: #CC0000;">4</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp;<span style="color: #006600; font-style: italic;">//converts to &quot;12.4568&quot;</span></div></div>
+
+<p>To round to the nearest whole number use the <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/round">Math.round()</a> method:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> num <span style="color: #339933;">=</span> <span style="color: #CC0000;">12.789</span><span style="color: #339933;">;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field3&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="">Math</span>.<span style="color: #660066;">round</span><span style="color: #009900;">&#40;</span>num<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//returns 13</span></div></div>
+
+<p>The conversion to a string will use English-style numbers with a "." (dot) as the decimal separator. To use "," (comma) as the decimal separator, first convert the number to a string by concatenating a empty string (<tt>+""</tt>) to the number, then use the <a href="http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/replace">replace()</a> method to replace the dot with a comma:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> num <span style="color: #339933;">=</span> <span style="color: #CC0000;">12.456789</span><span style="color: #339933;">;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;field1&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>num <span style="color: #339933;">+</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">replace</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'.'</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">','</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> </div></div>
+
+<h5><span id="Converting_Dates">Converting Dates</span></h5>
+<p>Dates are stored in ProcessMaker as strings, which allows for simple comparisons if they use the default "YYYY-MM-DD" format, but they will have to be converted into <tt><a href="http://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Date">Date</a></tt> objects if they use a different mask or need to do any advanced comparisons or mathematical operations. See <a href="../index.php/2.5.X/DynaForms.html#Accessing_Dates_with_JavaScript" title="DynaForm Fields">Accessing Dates with JavaScript</a>.</p>
+<p>A <tt>Date</tt> object will be converted automatically to a string when assigned to the <tt>value</tt> of a DynaForm field, but if a certain format is needed, then the date should be reformatted using the<tt>Date</tt> methods. See: <a href="../index.php/2.5.X/DynaForms.html#Extracting_Date_Information" title="DynaForm Fields">Extracting <tt>Date</tt> Information</a>.</p>
+<h4><span id="Accessing_checked_fields">Accessing checked fields</span></h4>
+<p>Fields which have a binary option of marked or unmarked, such as <a href="../index.php/2.5.X/DynaForms.html#Checkboxes" title="DynaForm Fields">checkboxes</a> and options in <a href="../index.php/2.5.X/DynaForms.html#Checkgroups" title="DynaForm Fields">checkgroups</a> and <a href="../index.php/2.5.X/DynaForms.html#Radiogroups" title="DynaForm Fields">radiogroups</a>, do not use the <strong><tt>value</tt></strong> property to store their current state. Instead, use their <strong><tt>checked</tt></strong> property, which can either be <tt>true</tt> or <tt>false</tt>. For example to check whether a checkbox named "ContactClient" has been marked:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ContactClient&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">checked</span> <span style="color: #339933;">==</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; ...</div></div>
+
+<p>To mark or unmark a checkbox, set its <strong><tt>checked</tt></strong> property to <tt>true</tt> or <tt>false</tt>:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">getField(&quot;field-name&quot;).checked = true;<br />
+getField(&quot;field-name&quot;).checked = false;</div></div>
+
+<p>Similarly, to mark an option in a checkgroup or radiogroup:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">getField(&quot;field-name][option-value&quot;).checked = true;<br />
+getField(&quot;field-name][option-value&quot;).checked = false;</div></div>
+
+<h4><span id="Accessing_Fields.27_Styles">Accessing Fields' Styles</span></h4>
+<p>The appearance of DynaForm fields can be accessed through the properties of their <strong><tt>style</tt></strong> object:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">getField(&quot;field-name&quot;).style.style-property</div></div>
+
+<p>For example, to check wither the border color of a textbox named "ClientName" is red:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">style</span>.<span style="color: #660066;">borderColor</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">&quot;RED&quot;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; ...</div></div>
+
+<p>To set the border color to red:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ClientName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">style</span>.<span style="color: #660066;">borderColor</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;RED&quot;</span><span style="color: #339933;">;</span> </div></div>
+
+<p>Use the <a href="../index.php/JavaScript_Functions.html#var_dump.28.29" title="JavaScript Functions">var_dump()</a> function to see a list of properties for a field's <strong><tt>style</tt></strong> object:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">alert(var_dump(getField(&quot;field-name&quot;).style));</div></div>
+
+<p>To find information about each style property, see the <a href="http://www.w3.org/Style/CSS/">Cascading Style Sheets</a> documentation for <a href="http://developer.mozilla.org/en/CSS">Mozilla</a> and <a href="http://msdn.microsoft.com/en-us/library/cc351024%28VS.85%29.aspx">Internet Explorer</a>.</p>
+
+<h3><span id="Checkgroups_and_Radiogroups">Checkgroups and Radiogroups</span></h3>
+<p>Fields which have multiple elements such <a href="../index.php/2.5.X/DynaForms.html#Checkgroups" title="DynaForm Fields">checkgroups</a> and <a href="../index.php/2.5.X/DynaForms.html#Radiogroups" title="DynaForm Fields">radiogroups</a> do not have an ID for the entire object. Instead, there are IDs for each option, which are based upon the field name for the checkgroup or radiogroup plus the <i>value</i> of the option (not the <i>label</i> for the option). Options in checkgroups and radiogroups can be accessed as:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">document.getElementById(&quot;form[field-name][option-value]&quot;)</div></div>
+
+<p>or more simply:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">getField(&quot;field-name][option-value&quot;)</div></div>
+
+<p>Like checkboxes, checkgroups and radiogroups use the <strong><tt>checked</tt></strong> property to select (mark) an option. For example, to select or deselect the options in a checkgroup named "ContactType" which has options with the values "telephone", "fax" and "email":</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;document.<span style="color: #660066;">getField</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ContactType][telephone&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">checked</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span><br />
+&nbsp;document.<span style="color: #660066;">getField</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ContactType][fax&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">checked</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span><br />
+&nbsp;document.<span style="color: #660066;">getField</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ContactType][email&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">checked</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span></div></div>
+
+<p>While each option in checkgroups and radiogroups has a different <strong><tt>id</tt></strong>, all the options in the group have the same <strong><tt>name</tt></strong>, which allows them to accessed as a group with the<a href="http://developer.mozilla.org/en/DOM/document.getElementsByName">getElementsByName()</a> function. All options in checkgroups have the <strong><tt>name</tt></strong> "<tt>form[<i><strong>field-name</strong></i>][]</tt>", while all options in radiogroups have the <strong><tt>name</tt></strong> "<tt>form[<i><strong>field-name</strong></i>]</tt>". For more information, see <a href="../index.php/2.5.X/DynaForms.html#Accessing_Checkgroups_with_JavaScript" title="DynaForm Fields">Accessing Checkgroups with JavaScript</a> and <a href="../index.php/2.5.X/DynaForms.html#Accessing_Radiogroups_with_JavaScript" title="DynaForm Fields">Accessing Radiogroups with JavaScript</a>.</p>
+
+<h3><span id="Grids">Grids</span></h3>
+<p>Fields inside <a href="../index.php/2.5.X/DynaForms.html#Grids" title="DynaForm Fields">grids</a> have IDs which contain the name of the grid, the row number, and the field name--each enclosed in square brackets: <tt>form[<i><strong>grid-name</strong></i>][<i><strong>row-number</strong></i>][<i><strong>field-name</strong></i>]</tt>. For example, a grid named "Contacts" with three rows of three fields named "FirstName", "LastName", "Address" would have the following elements:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">form[Contacts][1][FirstName] form[Contacts][1][LastName] form[Contacts][1][Address]<br />
+form[Contacts][2][FirstName] form[Contacts][2][LastName] form[Contacts][2][Address]<br />
+form[Contacts][3][FirstName] form[Contacts][3][LastName] form[Contacts][3][Address]</div></div>
+
+<p>To reference a grid field use any of the following three forms:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;form[grid-name][row-number][field-name]&quot;</span><span style="color: #009900;">&#41;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;grid-name][row-number][field-name&quot;</span><span style="color: #009900;">&#41;</span><br />
+getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;grid-name&quot;</span><span style="color: #339933;">,</span> row<span style="color: #339933;">-</span>number<span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;field-name&quot;</span><span style="color: #009900;">&#41;</span></div></div>
+
+<p>For example, to access the "LastName" field in the second row of the "Contacts" grid, use any of the following three forms:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;form[Contacts][2][LastName]&quot;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Contacts][2][LastName&quot;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp;getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Contacts&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;LastName&quot;</span><span style="color: #009900;">&#41;</span></div></div>
+
+<p>Similar to the <tt><a href="../index.php/JavaScript_Functions.html#getField.28.29" title="JavaScript Functions">getField()</a></tt> function, the <tt><a href="../index.php/JavaScript_Functions.html#getGridField.28.29" title="JavaScript Functions">getGridField()</a></tt> function is a wrapper which encloses <tt><i><strong>grid-name</strong></i></tt>, <tt><i><strong>row-number</strong></i></tt> and <tt><i><strong>field-name</strong></i></tt> inside <tt>"form["</tt> and <tt>"]"</tt> and then passes that ID to the <tt>getElementById()</tt> function.</p>
+<p>To obtain the <tt>value</tt> of this grid field, use any of the following four forms:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> x <span style="color: #339933;">=</span> document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;form[Contacts][2][LastName]&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000066; font-weight: bold;">var</span> x <span style="color: #339933;">=</span> getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Contacts][2][LastName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000066; font-weight: bold;">var</span> x <span style="color: #339933;">=</span> getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Contacts&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;LastName&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000066; font-weight: bold;">var</span> x <span style="color: #339933;">=</span> getGridValueById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Contacts&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;LastName&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Different_Types_of_Fields">Different Types of Fields</span></h3>
+<p>For more information on accessing different types of DynaForm fields and their properties with JavaScript, see the documentation for:</p>
+<ul><li><a href="../index.php/2.5.X/DynaForms.html#Dynamic_labels" title="DynaForm Fields">Field Labels</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Changing_Hints_with_JavaScript" title="DynaForm Fields">Field Hints</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Javascript_for_Validate" title="2.0/DynaForm Fields">Validate</a></li><li><a href="../index.php/2.5.X/DynaForms.html#JavaScript_for_Required_Fields" title="2.0/DynaForm Fields">Required</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Set_Read_Only_with_JavaScript" title="2.0/DynaForm Fields">Read Only</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Converting_Masked_Numbers" title="2.0/DynaForm Fields">Masks</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Dynamic_Titles_with_JavaScript" title="DynaForm Fields">Titles &amp; Subtitles</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Currency_with_JavaScript" title="2.0/DynaForm Fields">Currency boxes</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Percentages_with_JavaScript" title="2.0/DynaForm Fields">Percentage boxes</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Dropdowns_with_JavaScript" title="DynaForm Fields">Dropdown boxes</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Yes.2FNo_Boxes_with_JavaScript" title="2.0/DynaForm Fields">Yes/No boxes</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Listboxes_with_JavaScript" title="DynaForm Fields">Listboxes</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Checkboxes_with_JavaScript" title="DynaForm Fields">Checkboxes</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Checkgroups_with_JavaScript" title="DynaForm Fields">Checkgroups</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Radiogroups_with_JavaScript" title="DynaForm Fields">Radiogroups</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Hidden" title="DynaForm Fields">Hidden Fields</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Dates_with_JavaScript" title="DynaForm Fields">Dates</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Links_with_JavaScript" title="DynaForm Fields">Links</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Files_with_JavaScript" title="DynaForm Fields">Files</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Accessing_Grids_with_JavaScript" title="DynaForm Fields">Grids</a></li><li>Button <a href="../index.php/2.5.X/DynaForms.html#Adding_JavaScript_code" title="DynaForm Fields">code</a> and <a href="../index.php/2.5.X/DynaForms.html#Dynamic_Buttons" title="DynaForm Fields">labels</a></li><li><a href="../index.php/2.5.X/DynaForms.html#Submit" title="DynaForm Fields">Submit Buttons</a></li></ul>
+<h2><span id="Tying_Code_to_Events">Tying Code to Events</span></h2>
+<p>By default all JavaScript code is executed the moment the JavaScript object(s) in the XML code are loaded. This means that it will be executed when the DynaForm first appears, which may not be what is desired. For example, code may need be executed when a button is clicked or when the value of a textbox changes.</p>
+<p>To make JavaScript code execute in response to particular actions, <i>event handlers</i> will have to be assigned to JavaScript <i>events</i>. An <i>event</i> is an action by the user to a particular field or the entire DynaForm.</p>
+<p>An <i>event handler</i> is custom code which is set to execute when an event takes place. The event handler can be a named function or an anonymous function which is defined on the spot. With some types of events, if the event handler returns a value of <tt>true</tt>, then the default action associated with that event will then take place. However, if the event handler returns a value of<tt>false</tt>, then the event will stop and the default action associated with the event will not happen.</p>
+<p><strong>Some common JavaScript events include:</strong></p>
+<ul><li><tt><strong>focus</strong>:</tt> The field receives the focus, meaning that the field is selected to interact with the user. A field can receive focus automatically when a DynaForm is first loaded, or it can receive the focus when a user click on the field is a mouse button or uses the TAB or SHIFT TAB keys to move to the field. If it is a text field, then the cursor will be placed inside the field for editing. If a button, then the button will be highlighted and it can be clicked by simply pressing ENTER.</li><li><tt><strong>blur</strong>:</tt> The field looses focus.</li><li><tt><strong>click</strong>:</tt> Any mouse button (which can be the right, left or center button) is clicked over the field, meaning that the button was pressed and released while the mouse cursor is over the field.</li><li><tt><strong>dblclick</strong>:</tt> Any mouse button (which can be the right, left or center button) is double clicked over the field, meaning that the button was pressed and released twice while the mouse cursor is over the field.</li><li><tt><strong>mousedown</strong>:</tt> Any mouse button (which can be the right, left or center button) is depressed while the mouse cursor is over the field.</li><li><tt><strong>mouseup</strong>:</tt> Any mouse button (which can be the right, left or center button) is released while the mouse cursor is over the field.</li><li><tt><strong>mouseover</strong>:</tt> The mouse cursor moves into a field (its buttons do not have to be clicked).</li><li><tt><strong>mouseout</strong>:</tt> The mouse cursor moves out of a field (its buttons do not have to be clicked).</li><li><tt><strong>keypress</strong>:</tt> Any key is depressed and released while a field has focus.</li><li><tt><strong>keydown</strong>:</tt> Any key is depressed while a field has focus.</li><li><tt><strong>keyup</strong>:</tt> Any key is released while a field has focus.</li><li><tt><strong>change</strong>:</tt> The value or selected option(s) of a field changes. This is probably the most commonly used event.</li><li><tt><strong>load</strong>:</tt> An object is loaded, which happens when a DynaForm is displayed to the user.</li><li><tt><strong>unload</strong>:</tt> An object is unloaded when the user closes a DynaForm (which can happen when clicking on a submit button or the Next Step link in a DynaForm or by closing or going backward or forward in the web browser window).</li></ul>
+<p><strong>Form Events:</strong></p>
+<ul><li><tt><strong>submit</strong>:</tt> The form is submitted (which happens when the submit button in the DynaForm is clicked), so the DynaForm's data is saved to the database.</li><li><tt><strong>reset</strong>:</tt> The form is reset (which happens when the reset button is clicked), so the DynaForm fields are reset to their original values.</li></ul>
+<p>To assign an event handler to an event, first reference the object where the event will occur and assign a function its event handler. Event handler properties are the name of the event with "on" prepended. For example: <tt>"onload"</tt>, <tt>"onchange"</tt>, and <tt>"onkeypress"</tt>.</p>
+<p>When assigning event handlers, either to use a named function:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">function function-name() {<br />
+&nbsp; &nbsp;...<br />
+}<br />
+getField(&quot;field-name&quot;).onevent = function-name;</div></div>
+
+<p>or use an anonymous function which is defined on the spot and has no name:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">getField(&quot;field-name&quot;).onevent = function-name() {...}; </div></div>
+
+<p><strong>Example:</strong><br>A <tt>displayClients()</tt> function is defined which displays a series of fields. It is assigned as the event handler for the "click" event for the "display" button:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">function</span> displayClients<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; expandSubtitle<span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;clientSection&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; visibleById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;selectClientType&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//return true to continue any default actions for the click event</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span> <br />
+&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;display&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onclick</span> <span style="color: #339933;">=</span> displayClients<span style="color: #339933;">;</span></div></div>
+
+<p>Note that function references should <i>not</i> include parentheses, because that would cause the function to be executed when assigning the event handler, which would return a value of <tt>true</tt>and assign that value as the event handler.</p>
+<p>To use a form event, reference the <code>.form</code> property for the field. For example:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;submitButton&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">form</span>.<span style="color: #660066;">onsubmit</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;totalCost&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">300</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;G.<span style="color: #660066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Total Cost is too high. Please reduce it.&quot;</span> <span style="color: #3366CC;">&quot;Cost Error&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//return false to stop submit action</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//return true to continue submit action</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="Importing_external_JavaScript_files">Importing external JavaScript files</span></h2>
+<p>External JavaScript files can be imported into DynaForms, so that functions and variables defined in an external file can be used in a DynaForm. External JavaScript files allow code to be reused, so that it doesn't have to repeatedly cut and pasted into DynaForms and allows only one version of the code to be maintained over time.</p>
+<p>First, create an external file which only contains JavaScript code. Do not include the <tt>&lt;script&gt;</tt> tag or any other HTML code in the file. Store the file in a publicly accessible location on the internet (or your local network or at <tt>localhost</tt>).</p>
+<p>For example, the code could be placed in the file system of the ProcessMaker server at the location:</p>
+<dl><dd><tt>&lt;INSTALL-DIRECTORY&gt;/workflow/public_html/<i><strong>filename</strong></i>.js</tt></dd></dl>
+<p>Then, the JavaScript file would be available at the URL:</p>
+<dl><dd><tt>http://<i><strong>ip-address</strong></i>/<i><strong>filename</strong></i>.js</tt></dd></dl>
+<p>Make sure that the code file has permissions to be publicly readable. For greater security on a Linux/UNIX server, set the file to only be readable by the apache user and group ("<tt>apache:apache</tt>" on Red Hat/CentOS/Fedora, "<tt>www-data:www-data</tt>" on Debian/Ubuntu, "<tt>wwwrun:www</tt>" on SUSE/OpenSUSE):</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">chown apache-user:apache-group filename.js<br />
+chmod 550 filename.js</div></div>
+
+<p>Then, add code to a DynaForm to import the JavaScript. The code dynamically adds a  <tt>script</tt> element to the head of the document, which should be parsed when the DynaForm is loaded.</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> dynaformOnload <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> newScript <span style="color: #339933;">=</span> document.<span style="color: #660066;">createElement</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'script'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;newScript.<span style="color: #660066;">type</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">'text/javascript'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;newScript.<span style="color: #660066;">src</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;&lt;i&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/i&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;document.<span style="color: #660066;">getElementsByTagName</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;head&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#91;</span><span style="color: #CC0000;">0</span><span style="color: #009900;">&#93;</span>.<span style="color: #660066;">appendChild</span><span style="color: #009900;">&#40;</span>newScript<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+... <span style="color: #006600; font-style: italic;">//call functions and variables defined in the external JavaScript file</span></div></div>
+
+<p>For example, if using the following external JavaScript file, stored at <strong><tt>/opt/processmaker/workflow/public_html/validate.js</tt></strong> on a server with an IP address of 192.168.1.100:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> td <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000066; font-weight: bold;">var</span> DueDate <span style="color: #339933;">=</span> td.<span style="color: #660066;">getFullYear</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;-&quot;</span> <span style="color: #339933;">+</span> td.<span style="color: #660066;">getMonth</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;-&quot;</span> <span style="color: #339933;">+</span> td.<span style="color: #660066;">getDate</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp;<span style="color: #000066; font-weight: bold;">function</span> checkDate<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; <span style="color: #339933;">&lt;</span>font color<span style="color: #339933;">=</span>green<span style="color: #339933;">&gt;</span><span style="color: #006600; font-style: italic;">//&quot;this&quot; references the field which calls the function&lt;/font&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">==</span> <span style="color: #3366CC;">&quot;&quot;</span> <span style="color: #339933;">||</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">&lt;=</span> DueDate<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">style</span>.<span style="color: #660066;">border</span><span style="color: #339933;">=</span><span style="color: #3366CC;">&quot;1px solid green&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">style</span>.<span style="color: #660066;">border</span><span style="color: #339933;">=</span><span style="color: #3366CC;">&quot;1px solid red&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<p>Then, the following code could be inserted in a DynaForm to access the <tt>DueDate</tt> variable and the <tt>checkDate()</tt> function, which is defined in <strong><tt>validate.js</tt></strong>:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">var</span> dynaformOnload <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> newScript <span style="color: #339933;">=</span> document.<span style="color: #660066;">createElement</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'script'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; newScript.<span style="color: #660066;">type</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">'text/javascript'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; newScript.<span style="color: #660066;">src</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;http://192.168.1.100/validate.js&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; document.<span style="color: #660066;">getElementsByTagName</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;head&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#91;</span><span style="color: #CC0000;">0</span><span style="color: #009900;">&#93;</span>.<span style="color: #660066;">appendChild</span><span style="color: #009900;">&#40;</span>newScript<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//set default date defined in the external JavaScript file</span><br />
+&nbsp; &nbsp; getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;DeliveryDate&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> DueDate<span style="color: #339933;">;</span> <br />
+&nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<span style="color: #006600; font-style: italic;">//check if entered date is greater than DueDate with an imported function</span><br />
+&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;DeliveryDate&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> checkDate<span style="color: #339933;">;</span></div></div>
+
+<h2><span id="Debugging_JavaScript">Debugging JavaScript</span></h2>
+<p>Whenever adding new JavaScript code to a DynaForm, always check to see whether the code generates errors or warnings. A few ProcessMaker functions such as <a href="../index.php/JavaScript_Functions.html#var_dump.28.29" title="JavaScript Functions">var_dump()</a> will detect whether a variable does not exist and display an alert message box.</p>
+
+<p><img alt="" src="../sites/default/files/VariableNotExistError.png"></p>
+
+<p>In most cases, however, no message box will be automatically displayed. If your browser detects an error in the code, it will simply <strong>not execute</strong> the code, so it will appear that nothing happened. By default most web browsers are configured to not display error messages, so it won't be obvious that an error has occurred until you check the JavaScript error messages.</p>
+<p>Remember that JavaScript is implemented differently in different web browsers, so you will need to test your JavaScript code on every web browser which your organization uses. Internet Explorer tends to not adhere to the standards for <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript</a>, <a href="http://www.w3.org/DOM/">DOM</a>, and <a href="http://www.w3.org/Style/CSS/">CSS</a> and Mozilla Firefox often adds non-standard functions, so it is a good idea to use <a href="http://www.jibbering.com/faq/notes/detect-browser/#bdFD">object/feature detection</a> in your code to ensure that it will be cross-browser compatible.</p>
+<p>Note that ProcessMaker only officially supports a <a href="../index.php/2.0/ProcessMaker_Installation_Requirements.html#Browser_Compatibilty" title="2.0/ProcessMaker Installation Requirements">few web browsers</a>, so don't be surprised if JavaScript doesn't work correctly on other web browsers.</p>
+
+<h3><span id="Examining_Variables_with_Alerts">Examining Variables with Alerts</span></h3>
+<p>If unsure of the value of variables in your code, the <a href="http://developer.mozilla.org/en/window.alert">alert()</a> or <a href="../index.php/JavaScript_Functions.html#G.alert.28.29" title="JavaScript Functions">G.alert()</a> functions can be used to display the value of about variables either in the <strong>Preview</strong> tab of the DynaForm Editor or when a DynaForm is displayed while running a case.</p>
+<p>To see the value of a variable, insert the code: <code style="font-family: monospace, Courier; background-color: rgb(249, 249, 249);">alert(<i><strong>variable-name</strong></i>);</code><br>The <a href="../index.php/JavaScript_Functions.html#var_dump.28.29" title="JavaScript Functions">var_dump()</a> function can be used to see the elements inside of an object or array: <code>alert(var_dump(<i><strong>object-name</strong></i>));</code><br>To see the properties of a DynaForm field, use the <a href="../index.php/JavaScript_Functions.html#getField.28.29" title="JavaScript Functions">getField()</a> or <a href="../index.php/JavaScript_Functions.html#getGridField.28.29" title="JavaScript Functions">getGridField()</a> functions to obtain its object: <code>alert(var_dump(getField('<i><strong>field-name'</strong></i>)));</code></p>
+
+<p>The <a href="http://developer.mozilla.org/en/window.alert">alert()</a> function can also be used to see the source code for a function. Use the function name without parentheses inside an <tt>alert()</tt>: <code style="font-family: monospace, Courier; background-color: rgb(249, 249, 249);">alert(<i><strong>function-name</strong></i>)</code></p>
+
+<h3><span id="Internet_Explorer">Internet Explorer</span></h3>
+<p>If Internet Explorer detects an error, a yellow warning icon will be displayed in the status bar. Double-click on the warning icon to open a dialog box; then click on <strong>Show Details</strong> to see the JavaScript error message.</p>
+<p><br>When debugging code, it is a good idea to adjust Internet Explorer's settings so that the dialog box will always open up when an error occurs. In the menu, go to Tools &gt; Internet Options. In the "Internet Options" dialog box, go to the <strong>Advanced</strong> tab and check the option <strong>Display a notification about every script error</strong>.</p>
+<p>In general, the error messages for Internet Explorer are not very informative, so it is recommended to debug JavaScript code with Mozilla Firefox.</p>
+
+<h3><span id="Mozilla_Firefox">Mozilla Firefox</span></h3>
+<p>By default, Firefox hides JavaScript errors. To see any error or warning messages, go to <strong>Tools &gt; Error Console</strong> or press <strong>CTL</strong>+<strong>SHIFT</strong>+<strong>J</strong>.</p>
+
+<p><img alt="" src="../sites/default/files/FireFoxErrorConsoleWindow.png"></p>
+
+<p>DynaForms currently generate many warning messages</a> when displayed, but these warnings can be safely ignored. To only see the warnings and errors caused by your custom code, view the DynaForm by clicking on the <strong>Preview</strong> tab in the DynaForm Editor. Then, open the Error Console and clear the warnings by clicking on the "Clear" button. Then, click on the<strong>JavaScript</strong> tab and then click back on the <strong>Preview</strong> tab to get the JavaScript to only execute only your custom code (but not reload the DynaForm again).</p>
+
+<h4><span id="Firebug">Firebug</span></h4>
+<p>For advanced debugging, install the <a href="http://getfirebug.com/">Firebug</a> extension. Make sure to install the right version of Firebug for your version of Firefox. For example, Firefox 3.5 requires Firebug 1.5. After installing Firebug, <i>right click</i> on the Firebug icon in the right hand corner of the Firefox status bar and select the option <strong>Enable All Panels</strong> from the menu.</p>
+
+<p><img alt="" src="../sites/default/files/FirebugEnableAllPanels.png"></p>
+
+<p>If an error occurs in JavaScript, Firebug will display a message like <img alt="" src="../sites/default/files/FirebugErrorMsg.png"> in the status bar. Click on it to see the error messages.</p>
+
+<div style="line-height: 19.0499992370605px;"><strong>Examining Variables and Functions</strong></div>
+<p>The Firebug console is very handy for examining variables and functions. Code can be dynamically executed by entering a line of code in the console and pressing return. To see the value of a variable, enter: <code><i><strong>variable-name</strong></i></code><br>The <a href="../index.php/JavaScript_Functions.html#var_dump.28.29" title="JavaScript Functions">var_dump()</a> function can be used to see the elements inside of an object or array: <code>var_dump(<i><strong>object-name</strong></i>)</code><br>To see the properties of a DynaForm field, enter the full path to reference from its frame: <code>var_dump(top.oCasesFrame.contentWindow.document.getElementById('form[<i><strong>field-name</strong></i>]'))</code><br>To see the parameters to pass to a function enter the function name without parenthesis: <code><i><strong>function-name</strong></i></code><br>The <a href="http://developer.mozilla.org/en/window.alert">alert()</a> function can also be used to see the source code for a function: <code>alert(<i><strong>function-name</strong></i>)</code></p>
+
+<p><img alt="" src="../sites/default/files/AlertWithFunctionCode.png"></p>
+
+<div style="line-height: 19.0499992370605px;"><strong>Examining the HTML Code</strong></div>
+<p>Firebug can also be used to discover the structure and elements of a DynaForm. For example, to find the ID or class name of a field in a DynaForm, turn on Firebox by pressing <strong>F12</strong> or by clicking on the Firebug icon in the status bar and then pressing <strong>CTL</strong>+<strong>SHIFT</strong>+<strong>C</strong> or by clicking on the "Inspect Element" button in Firebug's toolbar. Then position the mouse over the element in the DynaForm to see its HTML code.</p>
+
+<p><img alt="" src="../sites/default/files/SeeHTMLCodeWithFirebug.png"></p>
+
+<h2><span id="JavaScript_Examples">JavaScript Examples</span></h2>
+<h3><span id="Insert_a_Value_in_a_Field">Insert a Value in a Field</span></h3>
+<p>Insert a value in a texbox named "myTextField" when the DynaForm loads:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'myTextField'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">'some value'</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Showing.2FHiding_Rows_when_another_Field_Changes">Showing/Hiding Rows when another Field Changes</span></h3>
+<p>When a dropdown box named "master" selects the "Show" option with a value of "1", then show a second field named "junior" is shown with the <a href="../index.php/JavaScript_Functions.html#showRowById.28.29" title="JavaScript Functions">showRowById()</a> function. When the "Hide" option is selected with a value of "0", then the "junior" field is hidden with the <a href="../index.php/JavaScript_Functions.html#hideRowById.28.29" title="JavaScript Functions">hideRowById()</a> function. This code is placed in an anonymous function which is executed with the onchange event for the "master" field.</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> hideShowJunior<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>getValueById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'master'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />
+&nbsp; &nbsp; &nbsp; showRowById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'junior'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span><br />
+&nbsp; &nbsp; &nbsp; hideRowById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'junior'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>&nbsp; &nbsp; <br />
+<span style="color: #009900;">&#125;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;master&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> hideShowJunior<span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//execute when &quot;master&quot; changes</span><br />
+hideShowJunior<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//execute when DynaForm loads </span></div></div>
+
+<h3><span id="Rounding_a_Number">Rounding a Number</span></h3>
+<p>When the value of the "price" field changes, its value is converted to a floating point number and a 5% tax is added to get the total. That value is then rounded and inserted into the "total field:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> evaluateNo<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> tot <span style="color: #339933;">=</span> getFloat<span style="color: #009900;">&#40;</span>getValueById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'price'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'total'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> roundNumber<span style="color: #009900;">&#40;</span>tot <span style="color: #339933;">+</span> tot <span style="color: #339933;">*</span> <span style="color: #CC0000;">0.05</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;price&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> evaluateNo<span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Enable.2FDisable_Fields_when_a_Checkbox_is_marked">Enable/Disable Fields when a Checkbox is marked</span></h3>
+<p>When the checkbox named "includeShipping" is marked (checked), it enables the fields "shippingCost" and "handlingCost". When not marked (unchecked), these fields are disabled.</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> setFields<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'includeShipping'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">checked</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; enableById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'shippingCost'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; enableById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'handlingCost'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span> &nbsp; &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; disableById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'shippingCost'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; disableById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'handlingCost'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'includeShipping'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> setFields<span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//execute when the checkbox changes</span><br />
+setFields<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//execute when the DynaForm loads </span></div></div>
+
+<h3><span id="Loop_through_a_Grid">Loop through a Grid</span></h3>
+<p>When the DynaForm loads, loop through a prepopulated grid named "orderGrid" and calculate the "price" times the "quantity" and insert it into the "total" field for each row. Use the Number_Rows_Grid() function to get the number of rows in a grid. Then, pass through that grid using a for loop. Remember that the counting of grid rows starts with 1 (not 0), since the first row contains the labels for each column.</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">totalRows <span style="color: #339933;">=</span> Number_Rows_Grid<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'price'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">var</span> i <span style="color: #339933;">=</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> totalRows<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp;getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> i<span style="color: #339933;">,</span> <span style="color: #3366CC;">'total'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">=</span> getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> i<span style="color: #339933;">,</span> <span style="color: #3366CC;">'price'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">*</span> <br />
+&nbsp; &nbsp; &nbsp; getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> i<span style="color: #339933;">,</span> <span style="color: #3366CC;">'quantity'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Adding_an_Event_Handler_to_New_Grid_Rows">Adding an Event Handler to New Grid Rows</span></h3>
+<p>Just like the previous example, in the "orderGrid", multiple the "price" times the "quantity" and insert it into the "total" field for each row, but have the code execute whenever the value of the "price" or "quantity" fields changes. Empty grids have one blank row when the DynaForm loads, so set a onchange event handler for the "price" and "quantity" fields in the first row of the grid when the DynaForm loads. After that, use the <a href="../index.php/2.5.X/DynaForms.html#Executing_Code_When_Adding_a_Row" title="2.0/DynaForm Fields">onaddrow()</a> event to set these event handlers each time a new row is added to the grid.</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #006600; font-style: italic;">//event handlers for the first row:</span><br />
+<span style="color: #000066; font-weight: bold;">function</span> calcFirstTotal<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'total'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">=</span> getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'price'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">*</span> <br />
+&nbsp; &nbsp; &nbsp; getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'quantity'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'price'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> calcFirstTotal<span style="color: #339933;">;</span> <br />
+getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'quantity'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> calcFirstTotal<span style="color: #339933;">;</span><br />
+<span style="color: #006600; font-style: italic;">//event handlers when new rows are added: </span><br />
+grid_orderGrid.<span style="color: #660066;">onaddrow</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>iRow<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> &nbsp;<br />
+&nbsp; &nbsp;getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> iRow<span style="color: #339933;">,</span> <span style="color: #3366CC;">'price'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>iRow<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> iRow<span style="color: #339933;">,</span> <span style="color: #3366CC;">'total'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">=</span> getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> iRow<span style="color: #339933;">,</span> <span style="color: #3366CC;">'price'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">*</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> iRow<span style="color: #339933;">,</span> <span style="color: #3366CC;">'quantity'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> iRow<span style="color: #339933;">,</span> <span style="color: #3366CC;">'quantity'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>iRow<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> iRow<span style="color: #339933;">,</span> <span style="color: #3366CC;">'total'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">=</span> getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> iRow<span style="color: #339933;">,</span> <span style="color: #3366CC;">'price'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">*</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;getGridField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'orderGrid'</span><span style="color: #339933;">,</span> iRow<span style="color: #339933;">,</span> <span style="color: #3366CC;">'quantity'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Copying_Selected_Options_in_a_Listbox_to_a_Dropdown">Copying Selected Options in a Listbox to a Dropdown</span></h3>
+<p>Make all the selected options in a ListBox named "MyListbox" appear as options in a dropdown box named "MyDropdown".</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<span style="color: #000066; font-weight: bold;">function</span> updateDropdownOptions<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//Save the currently selected option in the dropdown box</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> selectedValue <span style="color: #339933;">=</span> getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'MyDropdown'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//Clear all the existing options for the dropdown box</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> nOpts <span style="color: #339933;">=</span> getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'MyDropdown'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">length</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">var</span> i <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> nOpts<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'MyDropdown'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">options</span>.<span style="color: #660066;">remove</span><span style="color: #009900;">&#40;</span>i<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//Then add all the selected options from the listbox:</span><br />
+&nbsp; &nbsp; nOpts <span style="color: #339933;">=</span> getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'MyListbox'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">length</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> opt <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//create opt variable so it can be used in the for loop</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">var</span> i <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> nOpts<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; opt <span style="color: #339933;">=</span> document.<span style="color: #660066;">createElement</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;OPTION&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; opt.<span style="color: #660066;">text</span> <span style="color: #339933;">=</span> getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'MyListbox'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">options</span><span style="color: #009900;">&#91;</span>i<span style="color: #009900;">&#93;</span>.<span style="color: #660066;">text</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; opt.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'MyListbox'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">options</span><span style="color: #009900;">&#91;</span>i<span style="color: #009900;">&#93;</span>.<span style="color: #660066;">value</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;MyDropdown&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">options</span>.<span style="color: #660066;">add</span><span style="color: #009900;">&#40;</span>opt<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//if the previously selected option still exists in the new dropdown list, then reselect it</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>opt.<span style="color: #660066;">value</span> <span style="color: #339933;">==</span> selectedValue<span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;MyDropdown&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">options</span><span style="color: #009900;">&#91;</span>i<span style="color: #009900;">&#93;</span>.<span style="color: #660066;">selected</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">true</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span> &nbsp; <br />
+&nbsp;<span style="color: #009900;">&#125;</span> <br />
+&nbsp;<span style="color: #006600; font-style: italic;">//Update the MyDropdown list of options when the DynaForm is first displayed: </span><br />
+&nbsp;updateDropdownList<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #006600; font-style: italic;">//and when the selected options in MyListbox change:</span><br />
+&nbsp;getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;MyListbox&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> updateDropdownList<span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Displaying_Alerts">Displaying Alerts</span></h3>
+<p>ProcessMaker's <a href="../index.php/JavaScript_Functions.html#G.alert.28.29" title="JavaScript Functions">G.alert()</a> function can be used to display a custom alert message with a title. When the value of the "ListPrice" or "Discount" fields changes, then the value of the "SalesPrice" is recalculated. If either the "ListPrice" or "Discount" price is blank, then a warning message is displayed with <tt>G.alert()</tt>:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> calcSalesPrice<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//since the values are strings, use parseFloat to convert to real numbers</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> listPrice <span style="color: #339933;">=</span> parseFloat<span style="color: #009900;">&#40;</span>getValueById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ListPrice&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> discount &nbsp;<span style="color: #339933;">=</span> parseFloat<span style="color: #009900;">&#40;</span>getValueById<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Discount&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>listPrice <span style="color: #339933;">!=</span> <span style="color: #CC0000;">0</span> <span style="color: #339933;">&amp;</span>amp<span style="color: #339933;">;&amp;</span>amp<span style="color: #339933;">;</span> discount <span style="color: #339933;">!=</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Total&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">value</span> <span style="color: #339933;">=</span> listPrice <span style="color: #339933;">-</span> discount<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span><br />
+&nbsp; &nbsp; &nbsp; G.<span style="color: #660066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Please enter values for the List Price and Discount&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;Missing Values&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;ListPrice&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> calcSalesPrice<span style="color: #339933;">;</span><br />
+getField<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Discount&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">onchange</span> <span style="color: #339933;">=</span> calcSalesPrice<span style="color: #339933;">;</span></div></div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

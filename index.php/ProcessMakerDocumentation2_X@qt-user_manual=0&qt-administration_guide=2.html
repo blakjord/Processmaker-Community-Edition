@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="width=device-width" />
+<meta name="keywords" content="description" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="ProcessMakerDocumentation2_X.html" />
+<link rel="shortlink" href="../node/27.html" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<title>ProcessMaker 2.x Workflow &amp; BPM Documentation | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.tabs.min.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/quicktabs/quicktabs_tabstyles/tabstyles/zen/zen.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/quicktabs/css/quicktabs.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/ui/minified/jquery.ui.core.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/ui/minified/jquery.ui.widget.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/ui/minified/jquery.ui.tabs.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/1.9/jquery.ba-bbq.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/quicktabs/js/quicktabs.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/quicktabs/js/qt_ui_tabs.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"yHfxheVMXzGmWXZ5_SjJ5cmB1FTbgqXznrLAr4wZttg","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"modules\/jquery_update\/replace\/misc\/1.9\/jquery.ba-bbq.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"misc\/progress.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"modules\/quicktabs\/js\/quicktabs.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"modules\/quicktabs\/js\/qt_ui_tabs.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.tabs.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/quicktabs\/quicktabs_tabstyles\/tabstyles\/zen\/zen.css":1,"modules\/fivestar\/css\/fivestar.css":1,"modules\/quicktabs\/css\/quicktabs.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--4":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--6":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--8":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--10":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--12":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--14":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--16":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--18":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--20":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--22":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-vote--24":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}},"quicktabs":{"qt_user_manual":{"name":"user_manual","tabs":[{"nid":"277","view_mode":"full","hide_title":1},{"nid":"118","view_mode":"full","hide_title":1}],"toc_filter_smooth_scroll_duration":""},"qt_administration_guide":{"name":"administration_guide","tabs":[{"nid":"116","view_mode":"full","hide_title":1},{"nid":"140","view_mode":"full","hide_title":1},{"nid":"322","view_mode":"full","hide_title":1}],"toc_filter_smooth_scroll_duration":""},"qt_processmaker_community_edition_v":{"name":"processmaker_community_edition_v","active_tab":"0","history":0}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-27 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-Xl1qFxG4CuYXFNDR1MgEuVwRWzlp6mheLHDbBD0Ssxk" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">ProcessMaker 2.x Workflow &amp; BPM Documentation</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.1/index.html" class="">3.8</a></li><li><a href="../3.1/index.html" class="">3.7</a></li><li><a href="../3.1/index.html" class="">3.6</a></li><li><a href="../3.1/index.html" class="">3.5</a></li><li><a href="../3.1/index.html" class="">3.4</a></li><li><a href="../3.1/index.html" class="">3.3</a></li><li><a href="../3.1/index.html" class="">3.2</a></li><li><a href="../3.1/index.html" class="">3.1</a></li><li><a href="ProcessMakerDocumentation3_0.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="ProcessMaker 2.x Workflow &amp; BPM Documentation" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give ProcessMaker 2.x Workflow &amp;amp; BPM Documentation 1/5</option><option value="40">Give ProcessMaker 2.x Workflow &amp;amp; BPM Documentation 2/5</option><option value="60" selected="selected">Give ProcessMaker 2.x Workflow &amp;amp; BPM Documentation 3/5</option><option value="80">Give ProcessMaker 2.x Workflow &amp;amp; BPM Documentation 4/5</option><option value="100">Give ProcessMaker 2.x Workflow &amp;amp; BPM Documentation 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.7</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-9zvk0o9-U2kki78PmoYiXBPAS47ZKu6woVHF0bvSRjI" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+<div id="block-quicktabs-processmaker-community-edition-v" class="block block-quicktabs">
+
+      
+  <div class="content">
+    <div  id="quicktabs-processmaker_community_edition_v" class="quicktabs-ui-wrapper"><ul><li><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html#qt-processmaker_community_edition_v-ui-tabs1">Getting Started</a></li><li><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html#qt-processmaker_community_edition_v-ui-tabs2">User Manual</a></li><li><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html#qt-processmaker_community_edition_v-ui-tabs3">Administration Guide</a></li><li><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html#qt-processmaker_community_edition_v-ui-tabs4">API</a></li><li><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html#qt-processmaker_community_edition_v-ui-tabs5">PM Programming</a></li><li><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html#qt-processmaker_community_edition_v-ui-tabs6">Resources</a></li><li><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html#qt-processmaker_community_edition_v-ui-tabs7">Enterprise Plugins</a></li></ul><div  id="qt-processmaker_community_edition_v-ui-tabs1">  <article id="node-59" class="node node-community-edition clearfix" about="/node/59" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/node/59"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--2" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--4" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Getting Started v. 2.x 1/5</option><option value="40">Give Getting Started v. 2.x 2/5</option><option value="60" selected="selected">Give Getting Started v. 2.x 3/5</option><option value="80">Give Getting Started v. 2.x 4/5</option><option value="100">Give Getting Started v. 2.x 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.8</span></span> <span class="total-votes">(<span >8</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--2" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-ELFOmJgEkgQm5dmel7kxzucO2oferlof68T0hztVfuc" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>In the following sections you will be guided through the basic resources you need to know in order to start using ProcessMaker.</p><ol><li><a href="ProcessMaker_Basic_Concepts.html">ProcessMaker Basic Concepts</a></li><li><a href="2.0/ProcessMaker_Installation_Requirements.html">Installation Requirements</a></li><li><a href="Supported_Browsers.html">Supported Browsers</a></li><li><a href="Supported_Stacks.html">Supported Stacks</a></li><li><a href="../faq-page.html">Frequently Asked Questions (FAQ)</a></li><li><a href="Glossary.html">Glossary</a></li><li><a href="../ProcessMaker_Roadmap.html">Roadmap</a></li></ol><div><div id="installation" style="font-weight: bold; text-align: left; font-size: 130%; color: #404040;"><hr></div><p>Choose the plataform that best suits for you in order to have ProcessMaker properly installed.</p><ol><li><strong>ProcessMaker Generic Installation</strong>: <a href="2.0/ProcessMaker_Generic_Installation.html">2.X.X,</a> <a href="2.8/ProcessMaker_Generic_Installation.html">2.8.0</a></li><li><strong>Linux</strong><ul><li><a href="2.0/ProcessMaker_CentOS/RHEL_Installation.html">CentOS/Red Hat Installation</a></li><li><a href="2.0/ProcessMaker_Debian_Installation.html">Debian Installation</a></li><li><a href="2.0/ProcessMaker_Ubuntu_Installation.html">Ubuntu Installation</a></li><li><a href="2.0/ProcessMaker_OpenSUSE_Installation.html">OpenSUSE Installation</a></li></ul></li><li><strong>ProcessMaker Windows Installation</strong><ul><li><strong>Automatic Installer:</strong> <a href="2.0/ProcessMaker_Windows_Installation.html">v. 2.0</a>, <a href="2.5/ProcessMaker_Windows_Installation.html">v. 2.5.x</a></li>
+<li><a href="2.0/ProcessMaker_Windows_Manual_Installation.html">Manual Installation</a></li>
+</ul></li><li><strong>Other Installations</strong><ul><li><a href="ProcessMaker_Installation_in_Hosted_Environment.html">Hosted Installation</a></li><li><a href="Multiple_Installations_on_the_same_machine.html">Multiple Installations on the Same Machine</a></li><li><a href="Webmatrix_(IIS_Express),_version_2.0.html" title="Webmatrix (IIS Express), version 2.0">Installation in Microsoft IIS</a></li></ul></li><li><strong>Experimental Section:</strong><ul><li><a href="WAMP_Installation.html">Manual Installation in WAMP</a></li>
+<!--<li><a href="/index.php/ProcessMaker_Zend_Server_Installation">Installation in Zend Server</a></li>
+<li><a href="/index.php/ProcessMaker_Zend_Server_CE_Installation%2C_Windows_64_bit">Installation in Zend Server, Windows 64bit </a></li>
+<li><a href="/index.php/Nginx_and_PHP-FPM_Installation">Installation in Nginx</a></li>-->
+<li><a href="MacOSX_Installation.html">MacOSX Installation </a></li>
+<li><a href="CPanel_Installation.html">cPanel Installation </a></li><li><a href="Slackware_Installation.html">Slackware Installation</a></li><li><a href="../3.0/Installation_in_IIS.html">3.0 - Internet Information Server</a></li></ul></li></ol></div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div><div  id="qt-processmaker_community_edition_v-ui-tabs2"><div  id="quicktabs-user_manual" class="quicktabs-wrapper quicktabs-style-zen"><div class="item-list"><ul class="quicktabs-tabs quicktabs-style-zen"><li class="active first"><a href="ProcessMakerDocumentation2_X@qt-administration_guide=2&amp;qt-user_manual=0.html#qt-user_manual" id="quicktabs-tab-user_manual-0" class="active">Basic Design</a></li>
+<li class="last"><a href="ProcessMakerDocumentation2_X@qt-administration_guide=2&amp;qt-user_manual=1.html#qt-user_manual" id="quicktabs-tab-user_manual-1" class="active">Advanced Design</a></li>
+</ul></div><div id="quicktabs-container-user_manual" class="quicktabs_main quicktabs-style-zen"><div  id="quicktabs-tabpage-user_manual-0" class="quicktabs-tabpage ">  <article id="node-277" class="node node-community-edition clearfix" about="/2.5.x/Basic_Design" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/2.5.x/Basic_Design"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--3" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--6" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Basic Design 2.0 1/5</option><option value="40" selected="selected">Give Basic Design 2.0 2/5</option><option value="60">Give Basic Design 2.0 3/5</option><option value="80">Give Basic Design 2.0 4/5</option><option value="100">Give Basic Design 2.0 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.9</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--3" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-8A4N_BTKv35fzF3kiXTdit1PXoUH3-ADTurNi31j4eY" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><ol>
+<li><a href="Managing_Users.html">Managing Users</a></li>
+<li><a href="2.0/Roles.html">Roles</a></li>
+<li><a href="2.0/Processes.html">Processes</a></li>
+<li><a href="2.0/Cases.html">Cases</a></li>
+<li><a href="2.0/Tasks.html">Tasks</a></li>
+<li><a href="2.0/Routing_Rules.html">Routing Rules</a></li>
+<li><a href="2.0/Importing_and_Exporting_Process.html">Importing and Exporting Process</a></li>
+<li>DynaForms: <a href="https://wiki.processmaker.com/index.php/2.0/DynaForms">2.0</a>, <a href="2.5.X/DynaForms.html">2.5.X</a></li>
+<li><a href="New_WYSIWYG_HTML_Editor.html">WYSIWYG HTML Editor</a></li>
+<li>DynaForm Fields:<span id="cke_bm_73E" style="display: none;">&nbsp;</span>
+<ul>
+<li><a href="2.0/Common_Field_Properties.html">Common Field Properties</a></li>
+<li><a href="2.0/Titles_and_Subtitles.html">Titles and Subtitles</a></li>
+<li><a href="2.0/Textboxes_and_Textareas.html">Textboxes and Textareas</a></li>
+<li><a href="2.0/Buttons.html">Buttons</a></li>
+<li><a href="2.0/Dropdown_Boxes_and_Listboxes.html">Dropdown Boxes and Listboxes</a></li>
+<li><a href="2.0/Checkboxes_and_Radio_Buttons.html">Checkboxes and Radio Buttons</a></li>
+<li><a href="2.0/Dates.html">Dates</a></li>
+<li><a href="2.0/Links.html">Links</a></li>
+<li><a href="2.0/Files.html">Files</a></li>
+<li><a href="2.0/Grids.html">Grids</a></li>
+<li><a href="2.0/Image.html">Image</a></li>
+<li><a href="2.0/Other_DynaForm_Fields.html">Other DynaForm Fields</a></li>
+</ul>
+</li>
+<li><a href="2.0/Input_Documents.html">Input Documents</a></li>
+<li><a href="Output_Documents.html">Output Documents</a></li>
+</ol>
+<dl></dl>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div><div  id="quicktabs-tabpage-user_manual-1" class="quicktabs-tabpage quicktabs-hide">  <article id="node-118" class="node node-community-edition clearfix" about="/2.5.x/Advanced_Design" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/2.5.x/Advanced_Design"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--4" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--8" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Advanced Design v. 2.5.x 1/5</option><option value="40">Give Advanced Design v. 2.5.x 2/5</option><option value="60" selected="selected">Give Advanced Design v. 2.5.x 3/5</option><option value="80">Give Advanced Design v. 2.5.x 4/5</option><option value="100">Give Advanced Design v. 2.5.x 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.6</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--4" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-_oyE4JoT_46LPLWxUJDO4mH5f3ivhs7QpAI_CYr0Cas" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div id="administration" style="font-weight: bold; text-align: left; font-size: 130%; color: #404040;">
+<p>Configuration</p>
+<hr></div>
+<ol>
+<li><a href="Using_Conditions.html">Using Conditions</a></li>
+<li><a href="Notifications.html">Notifications</a></li>
+<li><a href="2.0/Process_Permissions.html">Process Permissions</a></li>
+<li><a href="Process_Supervisors.html">Process Supervisors</a></li>
+<li><a href="Dependent_Fields.html">Dependent Fields</a></li>
+<li><a href="2.0/Web_Entry.html">Web Entry</a></li>
+<li><a href="Case_Tracker.html">Case Tracker</a></li>
+<li><a href="2.0/Events.html">Events</a></li>
+<li><a href="Case_Scheduler.html">Case Scheduler</a></li>
+<li><a href="Sub-Processes.html">Sub-Processes</a></li>
+<li><a href="Process_Files_Manager.html">Process Files Manager</a></li>
+<li><a href="2.0/Case_Summary.html">Case Summary</a></li>
+<li><a href="2.0/Case_Notes.html">Case Notes</a></li>
+<li><a href="2.0.X/Dashboards.html">Dashboards</a></li>
+</ol>
+<div id="designers_manual" style="font-weight: bold; text-align: left; font-size: 130%; color: #404040;">Data Integration<br />
+<hr></div>
+<ol>
+<li><a href="PM_Tables.html">PM Tables</a></li>
+<li><a href="Database_Connections.html">External Databases</a></li>
+<li><a href="2.0/Report_Tables.html">Report Tables</a></li>
+<li><a href="Consulting_the_ProcessMaker_databases.html">Consulting ProcessMaker databases</a></li>
+</ol>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div></div></div></div><div  id="qt-processmaker_community_edition_v-ui-tabs3"><div  id="quicktabs-administration_guide" class="quicktabs-wrapper quicktabs-style-zen"><div class="item-list"><ul class="quicktabs-tabs quicktabs-style-zen"><li class="first"><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=0.html#qt-administration_guide" id="quicktabs-tab-administration_guide-0" class="active">Administration</a></li>
+<li><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=1.html#qt-administration_guide" id="quicktabs-tab-administration_guide-1" class="active">System Maintenance</a></li>
+<li class="active last"><a href="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html#qt-administration_guide" id="quicktabs-tab-administration_guide-2" class="active">Configuration</a></li>
+</ul></div><div id="quicktabs-container-administration_guide" class="quicktabs_main quicktabs-style-zen"><div  id="quicktabs-tabpage-administration_guide-0" class="quicktabs-tabpage quicktabs-hide">  <article id="node-116" class="node node-page clearfix" about="/2.5.x/Administration" typeof="foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/2.5.x/Administration"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-page">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><ol>
+<li><a href="Workspaces.html">Workspaces</a></li>
+<li><a href="2.0/Translations.html">Languages</a></li>
+<li><a href="ProcessMaker_skins.html">Skins</a></li>
+<li><a href="2.0/Plugins.html">Plugins</a></li>
+<li><a href="Logo.html">Logo</a></li>
+<li><a href="2.0/Email_-_Settings.html">Email Settings</a></li>
+<li><a href="2.0/Calendars.html">Calendars</a></li>
+<li><a href="Process_Categories.html">Process Categories</a></li>
+<li><a href="Heartbeat.html">Heartbeat</a></li>
+<li><a href="Environment_Settings.html">Environment Settings</a></li>
+<li><a href="Clear_Cache.html">Clear Cache</a></li>
+<li><a href="2.0/Login_Settings.html">Login Settings</a></li>
+<li><a href="System.html">System</a></li>
+</ol>
+</div></div></div><div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--5" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--10" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Administration 2.5.x 1/5</option><option value="40">Give Administration 2.5.x 2/5</option><option value="60">Give Administration 2.5.x 3/5</option><option value="80">Give Administration 2.5.x 4/5</option><option value="100" selected="selected">Give Administration 2.5.x 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >4.6</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--5" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-i_jKLWmaTdADuE91lvYxQ37YgxJjzadbw8XXiJ18U8I" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-inline clearfix"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--6" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--12" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Administration 2.5.x 1/5</option><option value="40">Give Administration 2.5.x 2/5</option><option value="60">Give Administration 2.5.x 3/5</option><option value="80">Give Administration 2.5.x 4/5</option><option value="100" selected="selected">Give Administration 2.5.x 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >4.6</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--6" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-Zt0GuA6oAn2KmdyIRZ3o4yW3ZqrZG-lVuJk7K-BNFVg" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div><div  id="quicktabs-tabpage-administration_guide-1" class="quicktabs-tabpage quicktabs-hide">  <article id="node-140" class="node node-community-edition clearfix" about="/2.0/System_Maintenance" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/2.0/System_Maintenance"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--7" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--14" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give System Maintenance 1/5</option><option value="40">Give System Maintenance 2/5</option><option value="60" selected="selected">Give System Maintenance 3/5</option><option value="80">Give System Maintenance 4/5</option><option value="100">Give System Maintenance 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.5</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--7" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-zfd6-2gHaoutm866sMcSPNNl21x6nOzbT1MieLboP7A" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><ol>
+<li>Upgrading ProcessMaker: <a href="Upgrading_ProcessMaker.html">1.X</a>, <a href="2.0/Upgrading_ProcessMaker.html" title="2.0/Upgrading ProcessMaker">2.X</a></li>
+<li>Backing up and Restoring Workspaces: <a href="2.0/Backing_up_and_Restoring_ProcessMaker.html" title="2.0/Backing up and Restoring ProcessMaker">2.0</a></li>
+<li><a href="Managing_32K_Folders.html">Managing 32K Folders</a></li>
+<li><a href="Deleting_Workspaces.html" title="Deleting Workspaces">Deleting Workspaces</a></li>
+<li><a href="Resetting_Lost_ProcessMaker_Passwords.html" title="Resetting Lost ProcessMaker Passwords">Resetting Lost Passwords</a></li>
+<li><a href="Deleting_ProcessMaker%2527s_Compiled_Cache.html" title="Deleting ProcessMaker's Compiled Cache">Clearing the Compiled Cache</a></li>
+<li><a href="Clearing_the_Case_List_Cache.html" title="Clearing the Case List Cache">Clearing the Case List Cache</a></li>
+<li><a href="Deleting_all_ProcessMaker_Cases.html" title="Deleting all ProcessMaker Cases">Removing All Cases</a></li>
+<li><a href="Changing_the_ProcessMaker_Configuration.html" title="Changing the ProcessMaker Configuration">Changing the ProcessMaker Configuration</a></li>
+<li><a href="Migrating_from_Windows_to_Linux/UNIX.html" title="Migrating from Windows to Linux/UNIX">Migrating from Windows to Linux</a></li>
+</ol>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div><div  id="quicktabs-tabpage-administration_guide-2" class="quicktabs-tabpage ">  <article id="node-322" class="node node-community-edition clearfix" about="/2.5.x/Configuration" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/2.5.x/Configuration"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--8" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--16" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Configuration 1/5</option><option value="40" selected="selected">Give Configuration 2/5</option><option value="60">Give Configuration 3/5</option><option value="80">Give Configuration 4/5</option><option value="100">Give Configuration 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.3</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--8" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-3QxsxmzUw1KjfpfHa0I0kT_HCvKi2UOBlfQpbrJ9Iiw" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><ol><li><a href="2.0/Additional_Configuration.html">Additional Server Configuration</a></li><li><a href="Customizing_Authentication.html">Authentication Customization</a></li><li><a href="2.0/External_Authentication.html">External User Authentication</a></li><li><a href="Database_Connections.html">Database Connections</a></li><li><a href="Adding_Fonts_for_the_UTF-8_International_Character_Set.html">Fonts for non-Western languages</a></li><li><a href="WebDAV.html">WebDAV</a></li><li><a href="2.0/Default_Time_Zone.html">Default Time Zone</a></li><li><a href="File_Locations.html">File Locations</a></li><li><a href="Customizing_Interface_Strings.html">Customizing Interface Strings</a></li><li><a href="Executing_cron.php.html">Executing cron.php</a></li><li>Configuration File env.ini: <a href="Configuration_File_env.ini.html">before 2.0.39</a>, <a href="2.0.39+/Configuration_File_env.ini.html">2.0.39+</a></li></ol></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div></div></div></div><div  id="qt-processmaker_community_edition_v-ui-tabs4">  <article id="node-144" class="node node-community-edition clearfix" about="/2.x/Development" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/2.x/Development"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--9" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--18" name="vote" class="form-select"><option value="-">Select rating</option><option value="20" selected="selected">Give 2.x - REST API 1/5</option><option value="40">Give 2.x - REST API 2/5</option><option value="60">Give 2.x - REST API 3/5</option><option value="80">Give 2.x - REST API 4/5</option><option value="100">Give 2.x - REST API 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--9" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-DroBdLolGW-fjAyVAhrlccn2dHUE-q6wlcAycoW2pBo" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2>Overview</h2>
+<p>ProcessMaker's API uses REST (Representational State Transfer) to allow external scripts to remotely access and control ProcessMaker. It provides a large number of endpoints so that almost any action that can be done within the ProcessMaker interface can also be done remotely using REST. ProcessMaker functionality can be reimplemented in external web pages, desktop applications and remote scripts. Using ProcessMaker's REST API, custom interfaces can be created to access ProcessMaker. The REST endpoints can also be accessed within ProcessMaker through PHP code in <a href="2.0/Triggers.html">triggers</a> or <a href="JavaScript_in_DynaForms.html">JavaScript</a> code in Dynaforms.</p>
+<p>In order to use ProcessMaker's REST API, follow these steps:</p>
+<ol>
+<li><a href="../2.0/OAuth_2.0.html#Registering_an_external_application_to_use_REST">Register the REST Application</a></li>
+<li><a href="../2.0/OAuth_2.0.html">Obtain an access token from OAuth 2.0</a></li>
+<li><a href="Calling_REST_Endpoints.html">Calling ProcessMaker endpoints</a> for:
+<ul>
+<li><a href="REST_API_Administration.html">Administration</a></li>
+<li><a href="../3.0/REST_API_Designer.html">Designer</a></li>
+<li><a href="../REST_API_Cases.html">Cases </a></li>
+</ul>
+</li>
+</ol>
+<p>Additional resources:</p>
+<ul>
+<li><a href="../REST_Error_Messages.html">REST Error Messages</a></li>
+<li><a href="Get_the_ProcessMaker_Cases_List_in_an_external_application.html">REST example: Get the ProcessMaker Cases List in an external application</a></li>
+</ul>
+<h2>Understanding REST</h2>
+<p>REST (Representational State Transfer) is a term introduced by Roy Fielding in his doctoral dissertation that strictly refers to a collection of principles for the design of network architectures. The term is frequently used to describe the direction of any interface transmitting specific data on a HTTP domain.</p>
+<p>REST uses normal HTTP requests and responses, just like normal HTML, so it doesn't require any special protocols to function over the web. Each REST endpoint is a web address that provides access to a specific ProcessMaker service, such as getting a list of cases or creating a user. The REST endpoints are accessed using the following four HTTP methods:</p>
+<table class="wikitable" style="text-align: center; width: 700px; border-color: #B7B7B7;" border="1" cellspacing="0" cellpadding="5">
+<tbody>
+<tr>
+<th style="width: 70px; background: #098ed9; color: white; border-color: #CACACA;"><strong>Method</strong></th>
+<th style="width: 70px; background: #098ed9; color: white; border-color: #CACACA;"><strong>Meaning</strong></th>
+</tr>
+<tr>
+<td>GET</td>
+<td>Retrieves a resource.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Inserts, updates, or extends a resource; may change the state of other resources.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Creates, updates, or replaces a resource.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Deletes a resource.</td>
+</tr>
+</tbody>
+</table>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div><div  id="qt-processmaker_community_edition_v-ui-tabs5">  <article id="node-142" class="node node-community-edition clearfix" about="/2.x/Programming" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/2.x/Programming"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--10" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--20" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.x - PM Programming Tab 1/5</option><option value="40" selected="selected">Give 2.x - PM Programming Tab 2/5</option><option value="60">Give 2.x - PM Programming Tab 3/5</option><option value="80">Give 2.x - PM Programming Tab 4/5</option><option value="100">Give 2.x - PM Programming Tab 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.7</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--10" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-5_FJp1iMhVWcqnuct_Ubk5QcULSozArbOfWFXojhHl8" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><ol>
+<li><a href="2.0/Triggers.html">PHP in Triggers</a>
+<ul>
+<li><a href="ProcessMaker_Functions.html">ProcessMaker Functions</a></li>
+<li><a href="Simple_Trigger_Web_Services.html">Simple Trigger Web Services</a></li>
+<li><a href="Trigger_Examples.html">Trigger Examples</a></li>
+<!--<li><a href="/index.php/Internal_Functions_and_Classes">Internal Functions and Classes</a></li>--></ul>
+</li>
+<li><a href="JavaScript_in_DynaForms.html">JavaScript in DynaForms</a>
+<ul>
+<li><a href="JavaScript_Functions.html">JavaScript Functions</a></li>
+<li><a href="AJAX_in_DynaForms.html">AJAX in DynaForms</a></li>
+</ul>
+</li>
+<li>WSDL Web Services: <a href="ProcessMaker_WSDL_Web_Services.html">2.0</a></li>
+<li>Third Party Triggers
+<ul>
+<li><a href="Sharepoint_DWS_Triggers_v._0.1.html">Sharepoint DWS Triggers v. 0.1</a></li>
+<li><a href="SugarCRM_Triggers.html">SugarCRM</a> (customer relations management)</li>
+<li><a href="Alfresco_V_4.0.html">Alfresco</a></li>
+<li><a href="Zimbra_Triggers.html">Zimbra</a></li>
+</ul>
+</li>
+<li>Integration with Third Party Software
+<ul>
+<li><a href="OpenBravo_ERP.html">OpenBravo ERP</a> (Enterprise Resource Planning)</li>
+<li><a href="Zimbra.html">Zimbra </a>(email and collaboration)</li>
+</ul>
+</li>
+<li>Plugin Development
+<ul>
+<li><a href="Object_Model_for_Process_definition.html">Process Object Model</a></li>
+<li><a href="ProcessMaker_Architecture_Diagrams.html">ProcessMaker Architecture</a></li>
+<li><a href="ProcessMaker_Database_Model.html">Database Model</a></li>
+<li><a href="Gulliver%253A_Programmer%2527s_Reference_Guide.html">Gulliver Web Development Framework</a>
+<ul>
+<li>Plugin Development: <a href="Plugin_Development.html">before 2.0.36</a>, <a href="2.0.36/Plugin_Development.html">After 2.0.36</a></li>
+</ul>
+</li>
+<!--<li><a href="/index.php/Internal_Functions_and_Classes">Internal Functions and Classes</a></li>--><li><a href="Contribute_code_to_improve_and_enhance_ProcessMaker.html">Contribute code to improve and enhance ProcessMaker!</a></li>
+</ul>
+</li>
+</ol>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div><div  id="qt-processmaker_community_edition_v-ui-tabs6">  <article id="node-240" class="node node-community-edition clearfix" about="/2.5.x/Resources" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/2.5.x/Resources"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--11" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--22" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give ProcessMaker Community Edition v.2.5.x Resources 1/5</option><option value="40" selected="selected">Give ProcessMaker Community Edition v.2.5.x Resources 2/5</option><option value="60">Give ProcessMaker Community Edition v.2.5.x Resources 3/5</option><option value="80">Give ProcessMaker Community Edition v.2.5.x Resources 4/5</option><option value="100">Give ProcessMaker Community Edition v.2.5.x Resources 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.7</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--11" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-CceMOXsJE_INyU6zLhvWhXp8HBX7TPV2ebhgEhpMxPs" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><ol><li><a href="../2.5.x/ProcessMaker_Release_Notes.html">Release Notes</a></li>
+<li><a href="../2.5.x/What's_new.html">What is new?</a></li>
+<li><a href="../ProcessMaker_Roadmap.html">RoadMap</a></li>
+<li><a href="Old_Versions.html">Old Versions</a></li>
+</ol></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div><div  id="qt-processmaker_community_edition_v-ui-tabs7">  <article id="node-29" class="node node-community-edition clearfix" about="/index.php/ProcessMaker_Enterprise_Editions" typeof="sioc:Item foaf:Document">
+          <header>
+	                 <!-- <h2 class="title" ><a href="/index.php/ProcessMaker_Enterprise_Editions"></a></h2> -->
+            <span property="dc:title" content="" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+  
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="ProcessMakerDocumentation2_X@qt-user_manual=0&amp;qt-administration_guide=2.html" method="post" id="fivestar-custom-widget--12" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--24" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give ProcessMaker 2.x Enterprise Plugins 1/5</option><option value="40">Give ProcessMaker 2.x Enterprise Plugins 2/5</option><option value="60" selected="selected">Give ProcessMaker 2.x Enterprise Plugins 3/5</option><option value="80">Give ProcessMaker 2.x Enterprise Plugins 4/5</option><option value="100">Give ProcessMaker 2.x Enterprise Plugins 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.5</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit--12" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-i5byYp_5DG_Vfz8vL-uid9v58DCWiwoXcnIOLWjh_0U" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><img alt="" src="../sites/default/files/faviconpm.png" style="font-size: 13.0080003738403px; line-height: 20.0063037872314px;" height="16" width="16"><span style="font-size: 13.0080003738403px; line-height: 20.0063037872314px;">&nbsp;</span><span style="line-height: 20.0063037872314px; color: green; font-size: 8pt;"><b>Current GA Version:</b></span><span style="font-size: 13.0080003738403px; line-height: 20.0063037872314px;"> The list of plugins below belong to ProcessMaker version 2.5.x and 2.8. To learn more about the Enterprise features of ProcessMaker version 2.8, please visit <a href="../2.8/ProcessMaker_Enterprise_Edition_v.2.8.0.html">this page</a>.</span></p>
+<table class="wikitable" style="text-align: center;width:700px;border-color:#B7B7B7;" border="1" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<th style="width:70px; background:#098ed9; color:White;border-color: #CACACA;"><strong>Productivity Tools</strong></th>
+<th style="width:50px; background:#098ed9; color:White;boMrder-color: #CACACA;"><strong>Silver</strong></th>
+<th style="width:50px; background:#098ed9; color:White;border-color: #CACACA;"><strong>Gold</strong></th>
+<th style="width:50px; background:#098ed9; color:White;border-color: #CACACA;"><strong>Platinum</strong></th>
+</tr><tr><td><a href="Cases_List_Builder.html">Custom Case List Builder</a></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="Simple_Report_Plugin.html">Simple Reporting</a></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td style="border:1px;valign:center;border-color:#CACACA;"><a href="Advanced_Dashboard.html">Advanced Dashboards</a></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="2.8/Enterprise_Manager_Tool.html">Version Upgrade Manager</a></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="Batch_Routing.html">Batch Routing from Inbox</a></td><td style="border:1px;valign:center;border-color:#CACACA;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="FTP_Monitor.html">Case Scheduler FTP Monitor</a></td><td style="text-align:center;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="ProcessMaker_-_Actions_by_email.html">Workflow Actions via Emails Wizard</a></td><td style="text-align:center;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="ProcessMaker_-_External_Registration.html">External User Registration Wizard</a></td><td style="border:1px;valign:center;border-color:#CACACA;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="ProcessMaker_Service_Level_Agreement_(pmSLA).html">Service Level Agreements Manager</a></td><td style="text-align:center;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="Business_Rules.html">Business Rules Engine</a></td><td>&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr>
+
+<tr>
+<td><a href="Enterprise_Search.html">Enterprise Data Search</a></td>
+<td></td>
+<td style="text-align:center;"></td>
+<td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td>
+</tr>
+
+<tr><td><a href="Advanced_Performance_Monitor_Dashboards.html">Advanced Performance Monitor Dashboards (*)</a></td><td>&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="Case_Archive_and_Restore.html">Case Archive/Restore</a></td><td>&nbsp;</td><td>&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="https://wiki.processmaker.com/index.php/PM_Monitor">Multi-Tenancy Management (**)</a></td><td>&nbsp;</td><td>&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="ProcessMaker_Multiple_Input_Document_Uploader.html">Multiple Input Document Uploader</a></td><td>&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr>
+
+<tr>
+<td><a href="ProcessMaker_PowerUp.html">PowerUp</a></td>
+<td style="text-align:center;">&nbsp;</td>
+<td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td>
+<td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td>
+</tr>
+
+<tr>
+<td><a href="ProcessMaker_PowerUp_Extended_Fields.html">PowerUp Extended Fields</a></td>
+<td style="text-align:center;">&nbsp;</td>
+<td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td>
+<td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td>
+</tr>
+
+<tr><th style="width:70px; background:#098ed9; color:White"><strong>Integration Tools &amp; 3rd Party Integrations</strong></th><th style="width:50px; background:#098ed9; color:White"><strong>Silver</strong></th><th style="width:50px; background:#098ed9; color:White"><strong>Gold</strong></th><th style="width:50px; background:#098ed9; color:White"><strong>Platinum</strong></th></tr><tr><td><a href="ProcessMaker_-_AdvancedLDAP.html">Advanced LDAP/AD sync</a></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="2.0/ProcessMaker_2.X_-_KnowledgeTree_Integration.html">Knowledgetree DMS Connector</a></td><td style="text-align:center;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="ProcessMaker_-_SigPlus_V_1.0.html">SigPlus Signature Pads for Electronic Signatures</a></td><td>&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="../ProcessMaker_-_Windows_Single_SignOn_V_2.0.x.html">Single Sign-On with Active Directory</a></td><td style="text-align:center;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="../Plugins/Outlook_Connector.html">Microsoft Outlook Connector</a></td><td style="text-align:center;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr><tr><td><a href="https://wiki.processmaker.com/index.php/Pentaho_BI_Suite_Connector">Pentaho Business Intelligence Connector</a></td><td style="text-align:center;">&nbsp;</td><td style="text-align:center;">&nbsp;</td><td style="text-align:center;"><img alt="" src="../sites/default/files/url.png" height="15" width="15"></td></tr></tbody></table><ul><li>(*) Advanced Performance Monitor Dashboards are included in Cloud Only for Gold and in Cloud &amp; On-Site for Platinum plans.</li><li>(**) Not available in Cloud.</li></ul><p><strong>Additional Resources</strong></p><p>Looking for a ProcessMaker's Enterprise Edition for a 30 day period on the cloud?. Read the guides below:</p><ul><li><a href="../3.0/Enterprise_Trial_Guide.html">Enterprise Trial</a></li></ul><ul><li><a href="../3.0/Enterprise_Trial_Guide.html">Enterprise Trial Guide</a></li><li><a href="Enterprise_Edition_2.0.html">Enterprise Edition v. 2.0</a></li></ul></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </article> <!-- /.node -->
+</div></div>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

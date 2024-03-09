@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/2.0/Triggers.html" />
+<link rel="shortlink" href="278.html" />
+<title>2.0 - Triggers | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"nVPyeEl9dluXROv5Ywz5aOzwW2TbGM5gTzLKz9c4qNk","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-278 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="278.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-BpapySaNzQC069_dkIPDJpsqCE-Ju447V4lEoe9wpqs" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.0 - Triggers</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.2/Triggers.html" class="">3.8</a></li><li><a href="../3.2/Triggers.html" class="">3.7</a></li><li><a href="../3.2/Triggers.html" class="">3.6</a></li><li><a href="../3.2/Triggers.html" class="">3.5</a></li><li><a href="../3.2/Triggers.html" class="">3.4</a></li><li><a href="../3.2/Triggers.html" class="">3.3</a></li><li><a href="../3.2/Triggers.html" class="">3.2</a></li><li><a href="../3.1/Triggers.html" class="">3.1</a></li><li><a href="../3.0/Triggers.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.0 - Triggers" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="278.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.0 - Triggers 1/5</option><option value="40" selected="selected">Give 2.0 - Triggers 2/5</option><option value="60">Give 2.0 - Triggers 3/5</option><option value="80">Give 2.0 - Triggers 4/5</option><option value="100">Give 2.0 - Triggers 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-gG44Ph87xZavzjunVfyUMk0w4hwoPhRMyOWJVIIbKh0" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="278.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="278.html#Overview">Overview</a></li>
+<li class="toc"><a href="278.html#Trigger_Timing">Trigger Timing</a></li>
+<ol class="toc">
+<li class="toc"><a href="278.html#When_to_set_Triggers_to_Fire">When to set Triggers to Fire</a></li>
+</ol>
+<li class="toc"><a href="278.html#Case_Variables">Case Variables</a></li>
+<ol class="toc">
+<li class="toc"><a href="278.html#Typing_rules_for_Case_Variables">Typing rules for Case Variables </a></li>
+</ol>
+<li class="toc"><a href="278.html#System_Variables_in_Triggers">System Variables in Triggers </a></li>
+<li class="toc"><a href="278.html#Operators">Operators </a></li>
+<li class="toc"><a href="278.html#Terminating_Statements">Terminating Statements </a></li>
+<li class="toc"><a href="278.html#Examples">Examples </a></li>
+<li class="toc"><a href="278.html#Creating_Custom_Triggers">Creating Custom Triggers</a></li>
+<ol class="toc">
+<li class="toc"><a href="278.html#Getting_the_function_list">Getting the function list</a></li>
+<li class="toc"><a href="278.html#Syntax_Highlighting">Syntax Highlighting</a></li>
+</ol>
+<li class="toc"><a href="278.html#Trigger_Wizard">Trigger Wizard </a></li>
+<ol class="toc">
+<li class="toc"><a href="278.html#Creating_a_Trigger_with_the_Wizard">Creating a Trigger with the Wizard</a></li>
+<li class="toc"><a href="278.html#Editing_Triggers_Created_by_the_Wizard">Editing Triggers Created by the Wizard</a></li>
+</ol>
+<li class="toc"><a href="278.html#Copy.2FImport_Triggers_From_a_Process">Copy/Import Triggers From a Process </a></li>
+<li class="toc"><a href="278.html#Inserting_a_Trigger_in_a_Process">Inserting a Trigger in a Process </a></li>
+<ol class="toc">
+<li class="toc"><a href="278.html#Firing_Triggers_Based_on_Conditions">Firing Triggers Based on Conditions</a></li>
+</ol>
+<li class="toc"><a href="278.html#Debugging_Triggers">Debugging Triggers </a></li>
+<ol class="toc">
+<li class="toc"><a href="278.html#Enabling_Debug_Mode">Enabling Debug Mode</a></li>
+<li class="toc"><a href="278.html#Using_the_ProcessMaker_Debugger">Using the ProcessMaker Debugger</a></li>
+<li class="toc"><a href="278.html#Viewing_Error_Messages">Viewing Error Messages</a></li>
+<li class="toc"><a href="278.html#Examining_Normal_PHP_Variables">Examining Normal PHP Variables</a></li>
+</ol>
+<li class="toc"><a href="278.html#Error_Management">Error Management</a></li>
+<ol class="toc">
+<li class="toc"><a href="278.html#Error_Management_for_Processes_in_Production">Error Management for Processes in Production</a></li>
+<li class="toc"><a href="278.html#Preventing_Halts_in_Trigger_Execution">Preventing Halts in Trigger Execution</a></li>
+<li class="toc"><a href="278.html#Exiting_from_the_Middle_of_Trigger_Code">Exiting from the Middle of Trigger Code</a></li>
+</ol>
+<li class="toc"><a href="278.html#Variable_Storage">Variable Storage</a></li>
+<li class="toc"><a href="278.html#Browser_Redirection">Browser Redirection</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview</span></h2>
+
+<p>A trigger is a piece of PHP code that can be inserted into a process. Triggers provide the appropriate framework to perform complex calculations and add additional functionality to processes.</p>
+
+<p>A ProcessMaker trigger is parsed like a PHP script, so normal PHP variables and functions can used inside triggers, as well as ProcessMaker's <a href="278.html#Case_Variables">case variables</a>, <a href="278.html#System_Variables_in_Triggers">system variables</a> and its <a href="../index.php/ProcessMaker_Functions.html" title="ProcessMaker Functions">custom functions</a>. PHP libraries can also be imported into ProcessMaker triggers with the <a  href="http://us.php.net/manual/en/function.require-once.php" >require_once()</a> function. With access to the PHP language and its libraries, a great deal of functionality can be added to a trigger.</p>
+
+<h2><span id="Trigger_Timing">Trigger Timing</span></h2>
+
+<p>Triggers can be fired at many points during the process:</p>
+<ol>
+<li><i><strong>Before</strong></i> a step is executed (i.e., DynaForms, Input Documents and Output Documents).</li>
+<li><i><strong>After</strong></i> a step is executed.</li>
+<li><i><strong>Before</strong></i> a user is assigned (designated) to work on the next task is the process.</li>
+<li><i><strong>Before</strong></i> a case is derived (routed) to the next task in the process.</li>
+<li><i><strong>After</strong></i> a case is derived (routed) to the next task in the process.</li>
+</ol>
+
+<p>For example, a process whose first task contains a DynaForm step and an Input Document step would have triggers fired in the following order:</p>
+<dl>
+<dd><strong>DynaForm step</strong></dd>
+<dd><dd><i>After step trigger</i></dd></dd>
+<br>
+<dd><dd><i>Before step trigger</i></dd></dd>
+<dd><strong>Input Document step</strong></dd>
+<dd><dd><i>After step trigger</i></dd></dd>
+<br>
+<dd><dd><i>Before assignment trigger</i></dd></dd>
+<dd><strong>Assignment of user for next task</strong></dd>
+<br>
+<dd><dd><i>Before derivation trigger</i></dd></dd>
+<dd><strong>Derivation to next task</strong></dd>
+<dd><dd><i>After derivation trigger</i></dd></dd>
+</dl>
+
+<h3><span id="When_to_set_Triggers_to_Fire">When to set Triggers to Fire</span></h3>
+<table border="1" cellpadding="2" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 150px"><center><strong>Before a step</strong></center></td>
+<td>If the step is a DynaForm, this is a good point to set any case variables which will be displayed in the DynaForm's fields. If the step is an Output Document, then case variables can be set which are used in the Output Document's template.</td>
+</tr>
+<tr>
+<td><center><strong>After a step</strong></center></td>
+<td>After a DynaForm step, the data from the DynaForm's fields exists as case variables, but it hasn't yet been submitted to the database and any files uploaded to <a href="../index.php/2.0/Files.html" title="2.0/Files">File</a> fields have not yet been saved to the file system. This a good point to alter the data before it gets submitted.
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong><font color="dimgray"> Due to this bug</a>, if the trigger's execution is halted due to an error, warning or the <a  href="http://www.php.net/manual/en/function.die.php" >die()</a> function, then the DynaForm data won't be saved.</span> <i>Solved in version 2.0.45</i> </font></p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong><font color="dimgray"> Due to this change</a>, triggers are not executed after DynaForm steps, if the DynaForm's data isn't saved (i.e., either a <a href="../index.php/2.0/Buttons.html#Submit" title="2.0/Buttons">submit</a> button was clicked or the <strong>Save and Continue</strong> option is selected for the <a href="https://wiki.processmaker.com/index.php/2.0/DynaForms#Next_Step_Link" title="2.0/DynaForms"><strong>Next Step Link</strong></a> property). To work around this problem, set the trigger to fire before the next step (or <i>before assignment</i> if the last step in the task).</font></p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong><font color="dimgray"> When a trigger is assigned to be executed after an <a href="../index.php/2.0/Input_Documents.html" title="Input Documents"><strong>Input Document</strong></a> step, the trigger is executed before the file is save and processed. <i>This problem is solved in version <strong>2.5.2</strong> and later.</i></span></p></td></tr><tr><td><center><strong>Before Assignment</strong></center></td><td>If the next task in the process uses <a href="../index.php/2.0/Tasks.html#Value_Based_Assignment" title="Tasks">Value Based Assignment</a>, this is a good point to set the variable used to determine the next user. Note that before assignment triggers will <i>always</i> fire, even in final tasks when there is no user assignment for the next task.</font></p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong><font color="dimgray"><a href="../index.php/ProcessMaker_Functions.html#PMFDerivateCase.28.29" title="ProcessMaker Functions"> PMFDerivateCase()</a> function is not executed before assignment. To work around this problem, set the trigger after the last step.</font></p></td>
+</tr>
+<tr>
+<td><center><strong>Before Derivation</strong></center></td>
+<td>This is a good point to set any variables used by <a href="../index.php/Using_Conditions.html" title="Using Conditions">conditions</a> in the next <a href="../index.php/2.0/Routing_Rules.html#Defining_Routing_Rules" title="2.0/Processes">routing rule</a>.</td>
+</tr>
+<tr>
+<td><center><strong>After Derivation</strong></center></td>
+<td>At this point, the record for the <i>next</i> task has already been written to the database in the <strong><tt>wf_&lt;WORKSPACE&gt;.APP_DELEGATION</tt></strong> table, so it can be consulted with database queries. Before this point, the next task and the next user can not be known for sure.</td>
+</tr>
+</tbody>
+</table>
+
+<h2><span id="Case_Variables">Case Variables</span></h2>
+
+<p>In addition to normal PHP variables, triggers can use <i><strong>case variables</strong></i>, which are special variables which hold information about a ProcessMaker case and are only valid while that case is running. Every field in a DynaForm which holds data, such as textboxes, checkboxes, dropdown boxes and grid objects, have an associated case variable with the same name to hold the values entered into that field. When a user clicks a "Submit" button in a DynaForm (or when a user clicks the <strong>Next Step</strong> link if the "Save and Continue" option is selected for the DynaForm), a case variable is automatically created for each field with the entered data as its value.</p>
+
+<p>Not only can triggers access case variables defined by DynaForms, they can also define additional case variables. If a subsequent DynaForm in the case has a field of the same name as the case variable, it will automatically use the value stored in the case variable.</p>
+
+<p>For instance, a trigger could define the case variable <code>@@ApplicationDate</code> and store the current date in it. A subsequent DynaForm containing the field "ApplicationDate" would display that date. The user could alter the date in the DynaForm, which would then change the value stored in the case variable <code>@@ApplicationDate</code>. A subsequent trigger could examine <code>@@ApplicationDate</code> and make calculations based on that date.</p>
+
+<p>Case variables are defined like normal PHP variables, except they use <strong>@@</strong>, <strong>@%</strong>, <strong>@#</strong>, <strong>@?</strong>, <strong>@$</strong> and <strong>@=</strong> instead of <strong>$</strong> to identify them. For example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>myVariable <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;Hello world!&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Where:</p>
+
+<codeblock><strong>@@myVariable</strong>  A case variable which is assigned a value. 
+<strong>=</strong>             The equals symbol means that the entire right side of the 
+              expression will be assigned to a variable.
+<strong>"Hello word!"</strong> A string.
+<strong>;</strong>             A semicolon indicates the end of a trigger statement. 
+              Each trigger statement should be finished with a semicolon.
+</codeblock>
+
+<p>Note that case variables only have scope when their case is open. To create global variables which can be accessed by any case, use this <a href="../index.php/Trigger_Examples.html#Workaround_for_Global_Variables" title="Trigger Examples">workaround</a>.</p>
+
+<h3><span id="Typing_rules_for_Case_Variables">Typing rules for Case Variables </span></h3>
+
+<p>When referencing a <a href="../index.php/Object_Model_for_Process_definition.html#Case_Variable" title="Object Model for Process definition">case variable</a> within a trigger, take into account the following rules:</p>
+<ul>
+<li><strong><tt>@@variable_name</tt></strong><br>The variable will be parsed as <strong>string</strong> type. If originally another type, it will be converted to a string. So -1, 0 and 12.45 become "-1", "0" and "12.45", respectively.</li>
+<li><strong><tt>@%variable_name</tt></strong><br>The variable will be parsed as <strong>integer</strong> type (a whole number). If originally another type, it will be converted to an integer. A real number will be converted to a whole number, so <code>12.45</code> becomes <code>12</code>. A string which contains numbers will be converted to a whole number, so <code>"655"</code> and <code>"34.19"</code> become <code>655</code> and <code>34</code>, respectively.</li>
+<li><strong><tt>@#variable_name</tt></strong><br>The variable will be parsed as <strong>float</strong> type (a real number with decimals).</li>
+<li><strong><tt>@?variable_name</tt></strong><br>The variable will be parsed as a string used in a URL. The string is transformed with PHP's <a  href="http://www.php.net/urlencode" >encodeurl()</a>, so all spaces become pluses (+) and all characters which aren't letters, except underscores (_), are replaced by a <code>%</code> followed by a 2 hexadecimal digits, so that the string can be used in posted data to/from WWW forms.</li>
+<li><strong><tt>@$variable_name</tt></strong><br>The variable will be parsed as a string for use in an SQL query. Any single quotation marks (') will be preceded by a backslash. So <tt>"I'm telling you it's a boy!"</tt> becomes <tt>"I\'m telling you it\'s a boy!"</tt>.</li>
+<li><strong><tt>@=variable_name</tt></strong><br>The variable will not be changed and is parsed as its original type. Always use this when referencing objects and arrays.</li>
+</ul>
+
+<p><br>For example, this statement uses 3 case variables which are parsed as an integer, its original type and a string, respectively.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$answer</span> <span style="color: #339933;">=</span> &nbsp;<span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>any_number <span style="color: #339933;">+</span> <span style="color: #339933;">@=</span>age<span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>some_string<span style="color: #339933;">;</span></div></div>
+
+<p>Where:</p>
+<ul>
+<li><strong><tt>any_number</tt></strong> could be a number from a text field in a DynaForm; this will be parsed like an integer value.</li>
+<li><strong><tt>age</tt></strong> could be a field in any DynaForm, but it's type will not be transformed.</li>
+</ul>
+
+<p>Type transformation of case variables only happens when the variable is an R-value, which means that it is what is on the right-hand side of an assignment statement and is what is <i><strong>assigned from</strong></i>:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">L-value (assigned to) = R-value (assigned from);</div></div>
+
+<p>If a case variable is a L-value or is what is <i><strong>assigned to</strong></i>, no type transformation happens. For example:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$x</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@</span><span style="color: #666666; font-style: italic;">#y; &nbsp; &nbsp; //R-value, so transformed to float before assignment<br />
+</span><span style="color: #000088;">$a</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>b<span style="color: #339933;">;</span> &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//R-value, so transformed to string before assignment</span><br />
+<span style="color: #339933;">@</span><span style="color: #666666; font-style: italic;">#c = &quot;40.0&quot;; //@#c is a L-value, so assigned a string and no type transformation <br />
+</span><span style="color: #339933;">@@</span>d <span style="color: #339933;">=</span> <span style="color:#800080;">40.0</span><span style="color: #339933;">;</span> &nbsp; <span style="color: #666666; font-style: italic;">//@#d is a L-value, so assigned a float and no type transformation</span></div></div>
+
+<p>It is important to note that <strong><tt>variable_name</tt></strong> follows the PHP rules for variable names definition. That means a valid case variable name in ProcessMaker starts with a letter or underscore, followed by any number of letters, numbers, or underscores. Case variables are case sensitive, so <strong><tt>@@myvar</tt></strong>, <strong><tt>@@MyVar</tt></strong> and <strong><tt>@@MYVAR</tt></strong> are three different variables. If passing values between triggers and DynaForms, make sure that the case variable name in the trigger is spelled the same as the field name in the DynaForm. ProcessMaker case variables are stored separately from normal PHP variables, so a trigger with <strong><tt>$myVar</tt></strong> and <strong><tt>@@myVar</tt></strong> would have two different variables.</p>
+
+<p>ProcessMaker retains the original value of case variables as normal PHP variables, so they not altered by using the different transformation rules. For instance:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@=</span>MyVar <span style="color: #339933;">=</span> <span style="color:#800080;">22.345</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$sum</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">5</span> <span style="color: #339933;">+</span> <span style="color: #339933;">@%</span>MyVar<span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;"># Use MyVar as the integer 22<br />
+</span><span style="color: #000088;">$str</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;Sum: &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>MyVar<span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;"># Use MyVar as the string &quot;22.345&quot;<br />
+</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;"># @=MyVar still equals its original value of 22.345 <br />
+</span><span style="color: #000088;">$total</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@=</span>MyVar <span style="color: #339933;">+</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> &nbsp; &nbsp; <span style="color: #666666; font-style: italic;"># $total equals 23.345 </span></div></div>
+
+<p>ProcessMaker case variables can not be inserted into strings like normal PHP variables. The following statement will <strong>NOT</strong> work:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$str</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;My name is @@MyName and my age is @%MyAge.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>To insert case variables in a string, either reassign them to normal PHP variables and insert them:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$my_name</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>MyName<span style="color: #339933;">;</span> <br />
+<span style="color: #000088;">$my_age</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@%</span>MyAge<span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$str</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;My name is <span style="color: #006699; font-weight: bold;">$my_name</span> and my age is <span style="color: #006699; font-weight: bold;">$my_age</span>.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Or use the dot operator (.) to concatenate strings with case variables:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$str</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;My name is &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>MyName <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot; and my age is &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@%</span>MyAge <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> ProcessMaker does <strong>NOT</strong> support the following assignment:</font></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>a <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>b <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="System_Variables_in_Triggers">System Variables in Triggers </span></h2>
+
+<p>In addition to case variables, triggers can also use <i><strong>system variables</strong></i>, which are predefined variables which have the same syntax as case variables and hold information about the current ProcessMaker system.</p>
+
+<p>ProcessMaker has the following system variables:</p>
+<table border="1" cellpadding="1" cellspacing="0">
+<tbody>
+<tr>
+<th>Variable Name</th>
+<th>Variable Description</th>
+</tr>
+<tr>
+<td><tt>@@SYS_LANG</tt></td>
+<td>Current system <a href="../index.php/2.0/Translations.html" title="Translations">language</a> in two letter [<a  href="http://en.wikipedia.org/wiki/ISO_639-1" >http://en.wikipedia.org/wiki/ISO_639-1</a> ISO 639-code, which by default is "en" (English).</td>
+</tr>
+<tr>
+<td><tt>@@SYS_SKIN</tt></td>
+<td>Current system <a href="../index.php/ProcessMaker_Skins.html" title="ProcessMaker Skins">skin</a>, which by default is "green" in ProcessMaker 1.X and "classic" in ProcessMaker 2.0.</td>
+</tr>
+<tr>
+<td><tt>@@SYS_SYS</tt></td>
+<td>Current <a href="../index.php/Workspaces.html" title="Workspaces">workspace</a> name, which by default is "workflow".</td>
+</tr>
+<tr>
+<td><tt>@@PROCESS</tt></td>
+<td>Current <a href="../index.php/2.0/Processes.html" title="Processes">process</a> UID.</td>
+</tr>
+<tr>
+<td><tt>@@TASK</tt></td>
+<td>Current task UID.</td>
+</tr>
+<tr>
+<td><tt>@@APPLICATION</tt></td>
+<td>Current case UID.</td>
+</tr>
+<tr>
+<td><tt>@@APP_NUMBER</tt></td><td>Current case number. </td>
+</tr>
+<tr>
+<td><tt>@@USER_LOGGED</tt></td>
+<td>UID of the current <a href="../index.php/Managing_Users.html" title="Managing Users">user</a>.</td>
+</tr>
+<tr>
+<td><tt>@@USR_USERNAME</tt></td>
+<td>Username of the current <a href="../index.php/Managing_Users.html" title="Managing Users">user</a>.</td>
+</tr>
+<tr>
+<td><tt>@%INDEX</tt></td>
+<td>The delegation index number, which is a positive integer which counts tasks in a process, starting from 1. If multiple tasks are operating in parallel, then each task will have a different index number.</td>
+</tr>
+<tr>
+<td><tt>@@PIN</tt></td>
+<td>The 4 character <a href="../index.php/Case_Tracker.html" title="Case Tracker">PIN</a>, which can be used to access information about the case without being a registered user at:<br>
+
+<span class="geshifilter"><code class="text geshifilter-text">http://{IP-ADDRESS}:{PORT}/sys{WORKSPACE}/{LANG}/{SKIN}/tracker/login</code></span></td>
+</tr>
+<tr>
+<td><tt>@@__ERROR__</tt></td>
+<td>If a ProcessMaker error occurs, this system variable will be created, containing the error message. Note that this system variable only exists after a ProcessMaker exception occurs. It will <strong>not</strong> be created by syntax errors in PHP or JavaScript or by errors which ProcessMaker doesn't know how to handle.</td>
+</tr>
+</tbody>
+</table>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> UID stands for "unique identification" which is a string of 32 hexadecimal characters to identify objects in ProcessMaker. To find the UIDs for processes, tasks, cases, users, groups, etc., see <a href="../index.php/Consulting_the_ProcessMaker_databases.html" title="Consulting the ProcessMaker databases">Consulting the ProcessMaker databases</a>.</font></p>
+
+<h2><span id="Operators">Operators </span></h2>
+
+<p>Operators in ProcessMaker triggers are handled like the PHP language.</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">@#a + @#b &nbsp; &nbsp;Addition <br />
+@#a - @#b &nbsp; &nbsp;Subtraction<br />
+@#a * @#b &nbsp; &nbsp;Multiplication<br />
+@#a / @#b &nbsp; &nbsp;Division<br />
+@#a % @#b &nbsp; &nbsp;Modulus (Remainder)<br />
+@@a . @@b &nbsp; &nbsp;String concatenation</div></div>
+
+<h2><span id="Terminating_Statements">Terminating Statements </span></h2>
+
+<p>A statement in a ProcessMaker trigger can extend for multiple lines. All statements should terminate with a ";" (semicolon) to indicate where the statement ends.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@%</span>Field2 <span style="color: #339933;">=</span> <span style="color: #cc66cc;">10</span> <span style="color: #339933;">+</span> <span style="color: #339933;">@%</span>Field3<span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>query <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT CLIENT_NAME, CLIENT_ID, CLIENT_STATUS &quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; <span style="color: #0000ff;">&quot;FROM CLIENTS_TABLE WHERE CLIENT_MAX_CREDIT &gt; &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@</span><span style="color: #666666; font-style: italic;">#CreditLimit;</span></div></div>
+
+<h2><span id="Examples">Examples </span></h2>
+<ul>
+<li><strong>Trigger 1</strong>: Get the information of the logged user and assign these values to the <strong><tt>@@issueOwner</tt></strong> case variable.</li></ul>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>Data <span style="color: #339933;">=</span> userInfo<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>issueOwner <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>Data<span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'firstname'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">' '</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>Data<span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'lastname'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span></div></div>
+
+<ul>
+<li><strong>Trigger 2</strong>: Get the current date and time and assign the values to the <strong><tt>@@issueDate</tt></strong> case variable.</li></ul>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>aDate <span style="color: #339933;">=</span> getCurrentDate<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>aTime <span style="color: #339933;">=</span> getCurrentTime<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>issueDate <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>aDate <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot; &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>aTime<span style="color: #339933;">;</span></div></div>
+
+<ul>
+<li><strong>Trigger 3</strong>: Execute a SQL and assign the values to cases variables <strong><tt>@@issueDesc1</tt></strong> and <strong><tt>@@issueDesc1</tt></strong>.</li></ul>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>Data <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'SELECT DESC, DESC2 FROM DESCRIPTION'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'DataSource1'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>issueDesc1 <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>Data<span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DESC'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>issueDesc2 <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>Data<span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DESC2'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="Creating_Custom_Triggers">Creating Custom Triggers</span></h2>
+
+<p>To create a custom PHP trigger, open the list of triggers, by going to <strong>PROCESS > TRIGGER</strong> and click on the <strong>New</strong> link, to create a new trigger. Select <strong>Custom Trigger</strong> as the image below:</p>
+
+<p><img alt="CreatingCustomTrigger.png" src="../sites/default/files/CreatingCustomTrigger.png"></p>
+
+<p>Then, the following editor will open:</p>
+
+<p><img alt="CreatingCustomTriggersEditor.png" src="../sites/default/files/CreatingCustomTriggersEditor.png"></p>
+
+<p>Where:</p>
+<ul>
+<li><code><strong>Title:</strong></code> Add a descriptive title for the trigger.</li></ul>
+<ul>
+<li><code><strong>Description:</strong></code> Enter a description about the Trigger, which should inform the user what is the general content or purpose of the trigger.</li></ul>
+
+<p>On the text area field add the trigger code, it is possible to insert <a href="../index.php/2.0/Triggers.html#System_Variables_in_Triggers" title="2.0/Triggers"> system</a> or <a href="278.html#Case_Variables" title="Case_Variables">case variables</a> by clicking on the <tt>@@</tt> variable picker.</p>
+
+<p>On the following example, the trigger created will obtain the user and date, and they will display in the Dynaform, in a field called <i>TASK_DATE</i> and <i>USER_NAME</i> respectively.</p>
+
+<p><img alt="ExampleCustomTrigger.png" src="../sites/default/files/ExampleCustomTrigger.png"></p>
+
+<p>If you're running version <strong>2.5.2</strong>, when creating triggers, you will only need to fill out the name and description, and not the code anymore, this because a new enhancement was incorporated in the edition of triggers.</p>
+
+<p><img alt="NewTriggerOptions.png" src="../sites/default/files/NewTriggerOptions.png"></p>
+
+<p>When editing it, this new editor, releases in an earlier version (<strong>2.5.1</strong>), will open in a new popup window.</p>
+
+<p><img alt="NewTriggerEditorPopupWindow.png" src="../sites/default/files/NewTriggerEditorPopupWindow.png"></p>
+
+<p>As follows you will see its improvements:</p>
+<ul>
+<li><strong>A re-sizable window</strong>, which means you can adjust it the size you need. Just place the mouse in any corner of the window and a double arrow will display.</li></ul>
+<ul>
+<li><strong>Horizontal and Vertical scrolls</strong> don't disappear when long code is introduced. (Issue found in version 2.5.1 in IE v 8 and 9)</li></ul>
+<ul>
+<li><strong>Indentation</strong> added in the first column.</li></ul>
+<ul>
+<li><strong>More space</strong> to create long triggers.</li></ul>
+
+<h3><span id="Getting_the_function_list">Getting the function list</span></h3>
+
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> 2.5.1</font></p>
+
+<p>Usually, it is difficult to remember functions and sentences to be used in ProcessMaker. The trigger editor in version 2.5.1 and later has added a list of ProcessMaker functions and standard PHP elements to be inserted while a trigger is being edited. Press <strong>Ctrl + Space</strong> in the trigger editor, see function list and select one to insert:</p>
+
+<p><img alt="TriggerFunctionList.png" src="../sites/default/files/TriggerFunctionList.png"></p>
+
+<p>Double click on one of the functions in the list to have it inserted in the trigger editor.</p>
+
+<p>Moreover, if you remember the PM function you want to use, but not its parameters, look for it in the editor. For example, the parameters of the <code>PMFSendMessage()</code> function can be shown:</p>
+
+<p><img alt="ListFunctionsParameters.png" src="../sites/default/files/ListFunctionsParameters.png"></p>
+
+<p>Press <strong>Ctrl + Space</strong> once more to list all parameters (required and not required) available for this specific function:</p>
+
+<p><img alt="ListParameters.png" src="../sites/default/files/ListParameters.png"></p>
+
+<p>Double click on the parameters you will use to have the function added in the editor:</p>
+
+<p><img alt="ParametersAdded.png" src="../sites/default/files/ParametersAdded.png"></p>
+
+<h3><span id="Syntax_Highlighting">Syntax Highlighting</span></h3>
+
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> 2.5.1</font></p>
+
+<p>Version 2.5.1 and later includes the <a  href="http://codemirror.net/">CodeMirror text editor</a> which shows syntax highlighting when editing trigger code. Case and process Variables as well as conditions have their own color, which helps to identify any errors in the code.</p>
+
+<p><img alt="SyntaxisHighligt.png" src="../sites/default/files/SyntaxisHighligt.png"></p>
+
+<p>CodeMirror text editor also shows the line numbers. In addition, it has automatic indentation to make code easier to read. Those improvements will help programmers to make their code understandable and easier to debug.</p>
+
+<p><img alt="TriggerEditorLineNumberIndentation.png" src="../sites/default/files/TriggerEditorLineNumberIndentation.png"></p>
+
+<h2><span id="Trigger_Wizard">Trigger Wizard </span></h2>
+
+<p>ProcessMaker provides a <i>user-friendly</i> Trigger Wizard to easily create triggers using <a href="../index.php/ProcessMaker_Functions.html" title="ProcessMaker Functions">ProcessMaker functions</a> (or functions provided by plugins) without doing any PHP programming. The Trigger Wizard is designed to help process designers who don't know the PHP syntax, but still want to be create triggers which call a single ProcessMaker function. For each function, the Wizard displays a dialog box to input each parameter for the function and enter a variable to store the return value from the function.</p>
+
+<h3><span id="Creating_a_Trigger_with_the_Wizard">Creating a Trigger with the Wizard</span></h3>
+
+<p>Open the list of triggers, by going to <strong>DESIGNER > TRIGGER</strong> and click on the <strong>New</strong> link, to create a new trigger. Find the type of function that will be called by the new trigger, such as <strong>ProcessMaker Functions</strong> or <strong>Sugar CRM Functions</strong> and click on <strong>[+]</strong> to expand its list. Then, select the specific function to use from the list.</p>
+
+<p><img alt="TriggerList.png" src="../sites/default/files/TriggerList.png"></p>
+
+<p>After selecting the function, a dialog box will appear to define the properties of the trigger and the parameters of the function to be called by the trigger.</p>
+
+<p><img alt="Triggerfunction.png" src="../sites/default/files/Triggerfunction.png"></p>
+
+<p>A header describes the general purpose of the specific ProcessMaker function and provides a <strong>(More info)</strong> link where the function is described in the ProcessMaker wiki.</p>
+
+<p><strong>Details</strong><br>In this section, define the properties of the new trigger:</p>
+<ul>
+<li><strong>Title:</strong> Enter a label to identify the Trigger.</li>
+<li><strong>Description:</strong> Enter a description about the Trigger, which should inform the user what is the general content or purpose of the trigger.</li>
+</ul>
+
+<p><strong>Parameters</strong><br>Enter the parameters for the specific function that will be called. For each parameter, enter a value which can be:</p>
+<ol>
+<li>A <a href="278.html#Case_Variables">case variable</a>, such as <strong><tt>@#AccountTotal</tt></strong> or <strong><tt>@@departmentName</tt></strong>. Use the <strong>[@@]</strong> button to select a case variable. Although PHP should automatically convert to the correct variable type, it is a good idea to use the correct variable type (<strong><tt>@@</tt></strong>, <strong><tt>@#</tt></strong>, <strong><tt>@%</tt></strong>, <strong><tt>@?</tt></strong>, <strong><tt>@$</tt></strong> or <strong><tt>@=</tt></strong>) called for by the function. For arrays and objects, use <strong><tt>@=<i>variable-name</i></tt></strong>.</li>
+<li>A <a href="278.html#System_Variables_in_Triggers">system variable</a>, such as <strong><tt>@@APPLICATION</tt></strong>, or <strong><tt>@%INDEX</tt></strong>. Use the <strong>[@@]</strong> button to select a system variable.</li>
+<li>A literal value, such as <strong><tt>644</tt></strong> (an integer), <strong><tt>-2999.85</tt></strong> (a floating-point number), <strong><tt>Finance Department</tt></strong> (a string), or <strong><tt>447CEAF7BE6AEB747CEB6EB5526B</tt></strong> (a ProcessMaker unique ID). If the parameter type is a string, ProcessMaker will automatically enclose it in single quotation marks. If the string contains a single quotation mark ('), escape it with a backslash. For example: <strong><tt>Don\'t say \'hello\'</tt></strong></li></ol>
+
+<p>A new <a href="../index.php/New_WYSIWYG_HTML_Editor.html#Plugin_tinyMCE_Variable_Picker" title="New WYSIWYG HTML Editor">variable picker</a> was added from version <strong>2.5</strong>, since a new WYSIWYG HTML Editor was also included.</p>
+
+<p>If a string parameter needs to use a PHP variable such as <strong><tt>$myVar</tt></strong>, reference a PHP <a  href="http://www.php.net/manual/en/language.variables.superglobals.php" >superglobal array</a> such as <strong><tt>$_SERVER['SERVER_ADDR']</tt></strong>, do operations with multiple variables such as <strong><tt>@@FirstName . @@LastName</tt></strong>, or make a function call such as <strong><tt>getCurrentDate()</tt></strong>, then edit the trigger's source code after using the Trigger Wizard.</p>
+
+<p><strong>Return value</strong></p>
+<ul>
+<li><strong>Variable to hold return value:</strong> Optional. Enter the name of the variable which will store the return value of the function. This can be a normal PHP variable such as <strong><tt>$result</tt></strong> or a case variable such as <strong><tt>@#result</tt></strong>. If the variable does not already exist, it will be automatically created when the trigger fires. In general, it is a good idea to use a case variable which has persistent storage, because it's value can be checked in the trigger debugger, it can be referenced in a subsequent trigger, and it can be displayed in a subsequent DynaForm field which has the same name.</li>
+</ul>
+
+<p>After defining the properties the trigger, click on <strong>Save</strong>. Then, <a href="../index.php/New_WYSIWYG_HTML_Editor.html#Plugin_tinyMCE_Variable_Picker" title="New WYSIWYG HTML Editor">insert the new trigger into the process</a> where it will be fired when running cases.</p>
+
+<h3><span id="Editing_Triggers_Created_by_the_Wizard">Editing Triggers Created by the Wizard</span></h3>
+
+<p>After a trigger has been created by the Trigger Wizard, it can be edited by going to <strong>PROCESS > TRIGGERS</strong> and clicking on the <strong>Edit</strong> link for the particular trigger. A dialog box will appear to redefine the properties of the trigger.</p>
+
+<p><img alt="EditingTriggerCreateByWizard.png" src="../sites/default/files/EditingTriggerCreateByWizard.png"></p>
+
+<p>Enter new properties or parameters for the trigger and click on <strong>Save</strong>. To directly edit the source code for the trigger, click on the <strong>Edit Source Code</strong> link at the top, which will open the source code in a plain text editor.</p>
+
+<p><img alt="EditTriggerSourceCodeDialog.png" src="../sites/default/files/EditTriggerSourceCodeDialog.png"></p>
+
+<p>After editing the source code, the trigger can no longer be edited with the graphical wizard interface in the future, so only use this option if necessary.</p>
+
+<h2><span id="Copy.2FImport_Triggers_From_a_Process">Copy/Import Triggers From a Process </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width: 400px;"><div class="thumbcaption"><div class="thumbcaption">Importing Triggers</div></div></div></div>
+
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> 2.5 </font></p>
+
+<p>Often sub-processes need the same triggers as the main process, or reuse a trigger used on a different process located at the same workspace, to avoid doing this manually. To reuse a trigger from a different process located in the same workspace, select the option to Copy/import Triggers from a process, then go to the Trigger Wizard, click on <strong>New</strong> &lt; <strong>Import/Copy Trigger from a Process</strong>:</p>
+
+<p><img alt="TriggerWizardCopyImportTrigger.png" src="../sites/default/files/TriggerWizardCopyImportTrigger.png"></p>
+
+<p>By clicking on this option, a new window will display with the following Trigger Information to be filled:</p>
+
+<p><img alt="CopyTriggerWindow.png" src="../sites/default/files/CopyTriggerWindow.png"></p>
+
+<p>Where:</p>
+<ul>
+<li><strong>Process:</strong> Available processes created on the current workspace will be listed.</li>
+<li><strong>Trigger:</strong> Available triggers created on the process selected before will be listed. The trigger which code will be copied must be selected.</li>
+<li><strong>Title of the trigger:</strong> Give the trigger a title for the current process.</li>
+<li><strong>Description of the new trigger:</strong> Give a brief description of what the trigger is about.</li>
+<li><strong>Script</strong>: Once the trigger is imported, its code will be included in this section. Edit it if necessary.</li>
+</ul>
+
+<p>For example:</p>
+<p>Copying a trigger from a Sub-process:</p>
+<p><img alt="ExampleCopyTrigger.png" src="../sites/default/files/ExampleCopyTrigger.png"></p>
+<p>Click on <strong>Copy/Import and Save</strong> to have the trigger copied and added on the trigger list:</p>
+<p><img alt="TriggerCopiedAdded.png" src="../sites/default/files/TriggerCopiedAdded.png"></p>
+
+<h2><span id="Inserting_a_Trigger_in_a_Process">Inserting a Trigger in a Process </span></h2>
+
+<p>After creating a trigger, it can be inserted at various points in a process. Login to ProcessMaker as a user such as "admin" who has the <a href="../index.php/2.0/Roles.html#PM_FACTORY" title="2.0/Roles">PM_FACTORY</a> permission in his/her <a href="../index.php/2.0/Roles.html" title="Roles">role</a>. Then, open a process for editing.</p>
+
+<ul>
+<li>In the process map, <i>right click</i> on the task where the trigger will be fired and select the <strong>Steps</strong> option from the dropdown menu.</li></ul>
+<dl><dd><img alt="SelectStepPropertiesFromMenu.png" src="../sites/default/files/SelectStepPropertiesFromMenu.png"></dd></dl>
+<ul>
+<li>Select the <strong>Triggers</strong> tab in the "Steps of:" dialog box which appears.</li></ul>
+<dl><dd><img alt="TriggersTabInStepsOfDialog.png" src="../sites/default/files/TriggersTabInStepsOfDialog.png"></dd></dl>
+<ul>
+<li>Click on <strong>[+]</strong> to expand the structure and find the timing where the trigger will be inserted.</li></ul>
+<dl><dd><img alt="ExpandTriggerView.png" src="../sites/default/files/ExpandTriggerView.png"></dd></dl>
+<ul>
+<li>Click the <strong>Add</strong> link.</li></ul>
+<dl><dd><img alt="ClickTriggerAddLink.png" src="../sites/default/files/ClickTriggerAddLink.png"></dd></dl>
+
+<h3><span id="Firing_Triggers_Based_on_Conditions">Firing Triggers Based on Conditions</span></h3>
+
+<p>Select a Trigger from the dropdown box of available Triggers. If only wanting the trigger to fire in certain situations, enter a <a href="../index.php/Using_Conditions.html" title="Using Conditions">condition</a> that must evaluate to <code>true</code> in order for the trigger to be fired. Use the <strong>[@@]</strong> button to insert system and case variables in the condition. If left blank, the trigger will always fire. Then, click the <strong>Assign</strong> link to add the trigger.</p>
+
+<dl><dd><img alt="AssignTriggerToStep.png" src="../sites/default/files/AssignTriggerToStep.png"></dd></dl>
+
+<p>Now the trigger should appear in the list of triggers to fire. Multiple triggers can be added to the list. The order which they fire can be changed by clicking on the <strong>Up</strong> and <strong>Down</strong> buttons.</p>
+<dl><dd><img alt="TriggerInListToFire.png" src="../sites/default/files/TriggerInListToFire.png"></dd></dl>
+
+<p>In version <i><strong><font color="grey">2.8.0 and later</font></strong></i>, a green check mark will appear for triggers which have defined conditions. This visual clue reminds process designers which triggers have defined conditions, which is helpful when trying to figure out why a trigger did not fire:</p>
+
+<p><img alt="GreenTickConditionsTriggerV2 8.png" src="../sites/default/files/GreenTickConditionsTriggerV2_8.png"></p>
+
+<h2><span id="Debugging_Triggers">Debugging Triggers </span></h2>
+
+<p>When running cases, it is possible to see when triggers are executed and the value of system and case variables by turning on the ProcessMaker Debugger.</p>
+
+<h3><span id="Enabling_Debug_Mode">Enabling Debug Mode</span></h3>
+
+<p>There are two ways to enable Debug Mode, so the ProcessMaker Debugger will be displayed in a left sidebar while running cases for a particular process.</p>
+
+<p>Login to ProcessMaker with a user such as "admin" who has the <a href="../index.php/2.0/Roles.html#PM_FACTORY" title="2.0/Roles">PM_FACTORY</a> permission in his/her <a href="../index.php/2.0/Roles.html" title="2.0/Roles">role</a>. Then, go to the <strong>DESIGN</strong> menu. <i>Right click</i> on a process in the list and select the <strong>Énable Debug Mode</strong> option from the dropdown menu.</p>
+
+<p><img alt="EnableDebugModeInProcessList.png" src="../sites/default/files/EnableDebugModeInProcessList.png"></p>
+
+<p>Debug Mode can also be enabled while editing a process. <i>Right click</i> on a blank area in the Process Map and select the option <strong>Edit Process</strong> from the menu.</p>
+
+<p><img alt="SelectPropertiesFromProcessMapMenu.png" src="../sites/default/files/SelectPropertiesFromProcessMapMenu.png"></p>
+
+<p>In the Properties dialog box, mark the <strong>Debug</strong> checkbox:</p>
+
+<p><img alt="MarkDebugCheckboxInProcessProperties.png" src="../sites/default/files/MarkDebugCheckboxInProcessProperties.png"></p>
+
+<h3><span id="Using_the_ProcessMaker_Debugger">Using the ProcessMaker Debugger</span></h3>
+
+<p>To use the ProcessMaker Debugger, run a case for a process which has enabled Debug Mode. The ProcessMaker Debugger will appear in a left-hand sidebar to view the system and case variables and see the code of the triggers that have just been executed.</p>
+
+<p>The <strong>Variables</strong> tab shows the values of the system variables and the case variables for the currently open case. Each variable is displayed, along with its value. To see the content of long strings and arrays, click on a variable to see its value displayed in the box below.</p>
+
+<p><img alt="DebuggerVariablesTab.png" src="../sites/default/files/DebuggerVariablesTab.png"></p>
+
+<p>The list of variables can be filtered by clicking on the buttons at the top:</p>
+<ul>
+<li><strong>All</strong>: Displays all system and case variables for the current case.</li>
+<li><strong>DynaForm</strong>: Displays the case variables for the current case.</li>
+<li><strong>System</strong>: Displays the system variables.</li>
+</ul>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> The box below to display variable contents doesn't automatically refresh its contents</a>, so click on the variable again to refresh the contents of the box. </font></p>
+
+<p>The <strong>Triggers</strong> tab shows which triggers have just executed and whether they executed before or after the last step or routing. To see a particular trigger's code, click on the trigger and its code will be displayed in the box below.</p>
+
+<p><img alt="DebuggerTriggersTab.png" src="../sites/default/files/DebuggerTriggersTab.png"></p>
+
+<p>To see a trigger's code in a separate window, click on the <strong>Open in a New Window</strong>.</p>
+
+<p><img alt="DebuggerTriggerCodeWindow.png" src="../sites/default/files/DebuggerTriggerCodeWindow.png"></p>
+
+<p>After each step, the Debugger will pause the case, so the variables and triggers can be examined in the Debugger. To continue running the case, click on the <strong>Continue</strong> button.</p>
+
+<p><img alt="DebuggerContinueButton.png" src="../sites/default/files/DebuggerContinueButton.png"></p>
+
+<p>The Debugger will also pause after the task has been routed (derived), so the results of the triggers from before assignment, before derivation and after derivation can be examined.</p>
+
+<h3><span id="Viewing_Error_Messages">Viewing Error Messages</span></h3>
+
+<p>If a fatal PHP error occurs in the trigger code when running a case, the case will stop and a PHP error message will be displayed in the cases frame:</p>
+
+<p><img alt="PHPFatalError.png" src="../sites/default/files/PHPFatalError.png"></p>
+
+<p>If a PHP warning or non-fatal error (such as a syntax error) occurs while executing a trigger, the execution of the trigger will stop and a message will be displayed at the top of the cases frame. Nonetheless, the execution of the case will continue, so the use can work on the next step in the task. These are the only types of error messages whose line numbers correspond to the line numbers of the trigger code.</p>
+
+<p><img alt="PHPSyntaxError2.png" src="../sites/default/files/PHPSyntaxError2.png"></p>
+
+<p>If <a  href="http://www.sencha.com/products/extjs" >Ext JS</a> (which is a JavaScript framework used by ProcessMaker) detects an error, it will also display error messages in a dialog box:</p>
+
+<p><img alt="ExtJSErrorMessageXML.png" src="../sites/default/files/ExtJSErrorMessageXML.png"></p>
+
+<p>All of these types of errors are immediately obvious to the user running the case, however, ProcessMaker exceptions will not be displayed to the user when running a case. When a ProcessMaker exception occurs, the system variable <code>@@__ERROR__</code> is created to store its error message.</p>
+
+<p>The easiest way to detect these types of errors is to turn on the <strong>ProcessMaker Debugger</strong> and check if <code>__ERROR__</code> appears in the sidebar when running cases. If it appears, click on the <code>__ERROR__</code> variable to see its content in the box below:</p>
+
+<p><img alt="DebuggerMessageIn ERROR .png" src="../sites/default/files/DebuggerMessageIn_ERROR_.png"></p>
+
+<h3><span id="Examining_Normal_PHP_Variables">Examining Normal PHP Variables</span></h3>
+
+<p>It is often difficult to figure out what is the problem with trigger code, because the values of normal PHP variables can't be seen when running a case. If debugging code, it is recommended to assign normal PHP variables to case variables, so they can be seen with the ProcessMaker Debugger.</p>
+
+<p>For example, if unable to figure out why a database query is failing, assign the result to a case variable so it can be seen in the Debugger:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>result <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>If needing even more detailed information about a variable, the contents of variables can be displayed with <a  href="http://www.php.net/manual/en/function.ini-set.php" >var_dump()</a> wrapped in <code>&lt;pre&gt;</code> tags:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;pre&gt;&quot;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/var_dump"><span style="color: #990000;">var_dump</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;/pre&gt;&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>If needing to force trigger execution to stop at a certain point, so variables can be displayed, then call <a  href="http://www.php.net/manual/en/function.die.php" >die()</a>. Be aware, however, that <code>die()</code> will stop the execution of the case from continuing onto the next step and will stop DynaForm data from being saved if called after a DynaForm step.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;pre&gt;&quot;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/var_dump"><span style="color: #990000;">var_dump</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;&lt;/pre&gt;&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="Error_Management">Error Management</span></h2>
+
+<h3><span id="Error_Management_for_Processes_in_Production">Error Management for Processes in Production</span></h3>
+
+<p>Activating the ProcessMaker Debugger is a good way to detect errors when designing processes, however, it is not recommended when running cases in production. Not only is the debugger distracting for normal users, it also creates a potential security hole if users can see data entered by other users in the case.</p>
+
+<p>Most of the time, bugs will be detected when designing the process, but some types of bugs are caused by unexpected user input or unanticipated circumstances such as a condition which contains a variable which didn't get defined because a step gets skipped. The most common source of these errors is unexpected user input which causes problems when querying the database in a dependent field or when a trigger calls <a href="../index.php/ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a>.</p> 
+
+If needing to detect errors when a process is in production, it is recommended to add Triggers which check for the existence of the <code>@@__ERROR__</code> variable, in order to display its message to users. Use the <a  href="http://php.net/manual/en/function.isset.php" >isset()</a> function to detect whether the <code>@@__ERROR__</code> variable exists and display the message to the user with <code>die()</code> or the <a href="../index.php/Internal_Functions_and_Classes.html#G::SendMessageText.28.29" title="Internal Functions and Classes">G::SendMessageText()</a> method. Then, remove the <code>@@__ERROR__</code> variable with the <a  href="http://php.net/manual/en/function.unset.php" >unset()</a> function, so it can be set again when the next ProcessMaker exception occurs. </p>
+
+<p>For example:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>__ERROR__<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">SendMessageText</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>__ERROR__<span style="color: #339933;">,</span> <span style="color: #0000ff;">'ERROR'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/unset"><span style="color: #990000;">unset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>__ERROR__<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p>The <code>@@__ERROR__</code> variable will be stored as a case variable, so it will stay in the case if it isn't unset. Because it is persistent, it can be checked for several tasks later or at the end of a case.</p>
+
+<p>It might also be a good idea to mail the exception's message to an administrator, so he/she knows that something is going wrong with the process.</p>
+
+<p>For example, if using the following email template named "errorForm.html":</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Date: @#date<br />
+Time: @#time<br />
+Case: @#APPLICATION<br />
+Username: @#USR_USERNAME<br />
+Process ID: @#PROCESS<br />
+Task ID: @#TASK<br />
+Error Message: @#errorMessage </div></div>
+
+<p>Then, the following trigger could mail this form to the system administrator with the <a href="../index.php/ProcessMaker_Functions.html#PMFSendMessage.28.29" title="ProcessMaker Functions">PMFSendMessage()</a> function when an exception occurs:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>__ERROR__<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$vars</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'date'</span> <span style="color: #339933;">=&gt;</span> getCurrentDate<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'time'</span> <span style="color: #339933;">=&gt;</span> getCurrentTime<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'errorMessage'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@@</span>__ERROR__<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'admin@example.com'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'admin@example.com'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'ProcessMaker exception occurred'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'errorForm.html'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$vars</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/unset"><span style="color: #990000;">unset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>__ERROR__<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>Alternatively, the error messages could be appended to a log file at <strong><tt>shared/log/exceptions_log.txt</tt></strong> with the <a  href="http://php.net/manual/en/function.file-put-contents.php" >file_put_contents()</a> function:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>__ERROR__<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$logFilePath</span> <span style="color: #339933;">=</span> PATH_DATA <span style="color: #339933;">.</span> <span style="color: #0000ff;">'log'</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">'exceptions_log.txt'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$content</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;Datetime: &quot;</span> <span style="color: #339933;">.</span> getCurrentDate<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">' '</span> <span style="color: #339933;">.</span> getCurrentTime<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>Case: &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>APPLICATION <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>Username: &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>USR_USERNAME <span style="color: #339933;">.</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>Process: &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>PROCESS <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>Task: &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>TASK <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>Error: &quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>__ERROR__ <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/file_put_contents"><span style="color: #990000;">file_put_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$logFilePath</span><span style="color: #339933;">,</span> <span style="color: #000088;">$content</span><span style="color: #339933;">,</span> FILE_APPEND<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp;<a href="http://php.net/unset"><span style="color: #990000;">unset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>__ERROR__<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Preventing_Halts_in_Trigger_Execution">Preventing Halts in Trigger Execution</span></h3>
+
+<p>In order to help process designers avoid problems in their code, the execution of trigger code will stop if a PHP warning or error occurs. If the trigger is fired after a DynaForm, a stop in trigger execution will also prevent the DynaForm's <a  href="http://bugs.processmaker.com/view.php?id=7000" >data from being saved</a>. To prevent trigger execution from suddenly stopping, wrap the trigger code in a <code>try</code> block and then catch any <a  href="http://php.net/manual/en/language.exceptions.php" >exceptions</a> in order to gracefully handle these situations.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">try <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #666666; font-style: italic;">//your trigger code here</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #666666; font-style: italic;">//catch any exceptions:</span><br />
+catch<span style="color: #009900;">&#40;</span>Exception <span style="color: #000088;">$e</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">SendMessageText</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$e</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getMessage</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ERROR'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> ProcessMaker contains a code which throws warnings</a> because it is deprecated in PHP 5.3. If using PHP 5.3 and calling a ProcessMaker function which contains deprecated code, turn off the reporting of warnings with the <a  href="http://www.php.net/manual/en/function.error-reporting.php" >error_reporting()</a> function:
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$origSetting</span> <span style="color: #339933;">=</span> <a href="http://php.net/ini_get"><span style="color: #990000;">ini_get</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'error_reporting'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//get original setting</span><br />
+<a href="http://php.net/error_reporting"><span style="color: #990000;">error_reporting</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">E_ERROR</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #666666; font-style: italic;">//your trigger code here</span><br />
+<br />
+<a href="http://php.net/error_reporting"><span style="color: #990000;">error_reporting</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$origSetting</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//return to original setting</span></div></div>
+</font></p>
+<h3><span id="Exiting_from_the_Middle_of_Trigger_Code">Exiting from the Middle of Trigger Code</span></h3>
+
+<p>ProcessMaker does not provide a good way to exit a trigger, except to come to the end of the code. The only way to exit the middle of a trigger is to provoke an error or call the <a  href="http://www.php.net/manual/en/function.die.php" >die()</a> function, which would prevent the execution of the next step in the process.</p>
+
+<p>In order to write reliable code, it is a good idea to check for unexpected errors and provide a way to exit the trigger. Generally this involves writing long <code>if</code> then <code>else</code> blocks, which quickly become unwieldy if there are very many of them.</p>
+
+<p>For example, a trigger which contains three database queries becomes quite difficult to manage:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$result1</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result1</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result1</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//some code for query1</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #000088;">$result2</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result2</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result2</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//some code for query2</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$result3</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result3</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result3</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//some code for query3 </span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error in query3&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error in query2&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error in query1&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>Breaking up the code into functions doesn't help, because calling a function will only temporarily leave the middle of the code. Eventually the function has to return and there is still no easy way to exit. The best way to handle these situations is to use a programming anachronism, the [<a  href="http://php.net/manual/en/control-structures.goto.php" >http://php.net/manual/en/control-structures.goto.php</a> gotstatement. It is ugly, but it works.</p>
+
+<p>For example:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$result1</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result1</span><span style="color: #009900;">&#41;</span> or <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result1</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$msg</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;Error ...&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;goto errorMsg<span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #666666; font-style: italic;">//some code here</span><br />
+<span style="color: #000088;">$result2</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result2</span><span style="color: #009900;">&#41;</span> or <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result2</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$msg</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;Error ...&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;goto errorMsg<span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #666666; font-style: italic;">//some more code here</span><br />
+<span style="color: #000088;">$result3</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT ...&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result3</span><span style="color: #009900;">&#41;</span> or <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result3</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$msg</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;Error ...&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;goto errorMsg<span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #666666; font-style: italic;">//some more code here</span><br />
+goto endScript<span style="color: #339933;">:</span><br />
+<br />
+errorMsg<span style="color: #339933;">:</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$msg</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+endScript<span style="color: #339933;">:</span></div></div>
+
+<h2><span id="Variable_Storage">Variable Storage</span></h2>
+
+<p>Case and system variables for each case are stored in the <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_DATA</tt></strong> field in the <a href="../index.php/ProcessMaker_Database_Model.html" title="ProcessMaker Database Model">database</a>, which is a MySQL mediumtext field that can hold up to 16MB (2<sup>24</sup> bytes) of data.</p>
+
+<p>The variables are stored in the <strong><tt>APP_DATA</tt></strong> field as an associative array which has been converted to a string by PHP's <a  href="http://php.net/manual/en/function.serialize.php">serialize()</a> function. It has the following format:</p>
+
+<codeblock>a:<i>NUMBER-OF-VARIABLES</i>:{
+<i>NAME-TYPE1</i>:<i>NUMBER-CHARS-IN-NAME1</i>:<i>VARIABLE-NAME1</i>;<i>VALUE-TYPE1</i>:<i>NUMBER-CHARS-IN-VALUE1</i>:<i>VARIABLE-NAME1</i>;
+<i>NAME-TYPE2</i>:<i>NUMBER-CHARS-IN-NAME2</i>:<i>VARIABLE-NAME2</i>;<i>VALUE-TYPE2</i>:<i>NUMBER-CHARS-IN-VALUE2</i>:<i>VARIABLE-NAME2</i>;
+...}
+</codeblock>
+
+<p>The <i><tt>NAME-TYPE</tt></i> and <i><tt>VARIABLE-TYPE</tt></i> are almost always listed as type "s", which stands for <i>string</i>. For example:</p>
+
+<codeblock>a:4:{s:7:"repDate";s:10:"2009-09-15";s:7:"repTime";s:8:"10:56:00";
+"repUserName";s:9:"Amy Wyron";s:12:"repUserEmail";s:14:"amy@colosa.com";}
+</codeblock>
+
+<p>If a DynaForm has a <a href="../index.php/2.0/Files.html">file</a> field, the actual file is stored separately and only the filename (without its path) is stored as a case variable.</p>
+
+<p>The data in the <strong><tt>APP_DATA</tt></strong> field is also stored as an associative array within the superglobal <strong><tt>$_SESSION</tt></strong> variable. In addition to the normal way of accessing case and system variables as <strong><tt>@@<i>variable</i></tt></strong>, then can also be accessed as <strong><tt>$_SESSION["APP_DATA"]["<i>variable</i>"]</tt></strong> for the current case.</p>
+
+<p>To get the system and case variables for any case, the <strong><tt>APP_DATA</tt></strong> field can be <a  href="http://php.net/manual/en/function.unserialize.php">unserialized</a> into an associative array of variable name and variable value pairs. For example, the following script looks up the current case's variables and outputs them into a string which can be displayed in a DynaForm field named "MyTextArea":</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$caseNo</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'46'</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//lookup the case number for the case in the Case list </span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT APP_DATA FROM APPLICATION WHERE APP_NUMBER='<span style="color: #006699; font-weight: bold;">$caseNo</span>'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$sVars</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_DATA'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aVars</span> <span style="color: #339933;">=</span> <a href="http://php.net/unserialize"><span style="color: #990000;">unserialize</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$sVars</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>MyTextArea <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aVars</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$varName</span><span style="color: #339933;">=&gt;</span><span style="color: #000088;">$varValue</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@@</span>MyTextArea <span style="color: #339933;">.=</span> <span style="color: #0000ff;">&quot;<span style="color: #006699; font-weight: bold;">$varName</span>: <span style="color: #006699; font-weight: bold;">$varValue</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>The following script does the same thing, using ProcessMaker's <a href="../index.php/Gulliver%253A_Programmer%2527s_Reference_Guide.html" title="Gulliver: Programmer's Reference Guide">Gulliver framework</a> classes:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$CaseNo</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'46'</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//lookup the case number for the case in the Case list</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT APP_UID FROM APPLICATION WHERE APP_NUMBER='<span style="color: #006699; font-weight: bold;">$caseNo</span>'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseUID</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<br />
+G<span style="color: #339933;">::</span><span style="color: #004000;">LoadClass</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'case'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oCase</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Cases<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//Create a Cases object</span><br />
+<span style="color: #000088;">$aCase</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$oCase</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">loadCase</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$caseUID</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Load a particular case</span><br />
+<span style="color: #000088;">$aVariables</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_DATA'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span> &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//Get the variables for that case </span><br />
+<span style="color: #339933;">@@</span>MyTextArea <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #666666; font-style: italic;">//Loop through the associative array, examining each variable</span><br />
+<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aVariables</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$varName</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$varValue</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>MyTextArea <span style="color: #339933;">.=</span> <span style="color: #0000ff;">&quot;<span style="color: #006699; font-weight: bold;">$varName</span>: <span style="color: #006699; font-weight: bold;">$varValue</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>If working with large values in triggers, it is recommended to use normal PHP variables rather than case variables due to their limited storage space. If persistent storage is needed, create a separate database to store the large values and manage the database with <a href="../index.php/ProcessMaker_Functions.html#executeQuery.28.29" title="ProcessMaker Functions">executeQuery()</a>. Remember to <a  href="http://www.php.net/serialize">serialize</a> the variable before saving it to the database, especially if it isn't a string. 
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> The PHP language doesn't provide a reliable way to check the memory usage of a variable, but <code>strlen(serialize(@=variable))</code> can also provide a rough idea of the memory size of a variable in bytes. If worried about exceeding the available memory limit of 16MB, see <a  href="http://forum.processmaker.com/viewtopic.php?f=7&amp;t=1300&amp;p=3930&amp;hilit=16MB#p3930">this example</a> for how to check for memory usage of the <strong><tt>APPLICATION.APP_DATA</tt></strong> field. </font></p>
+
+<h2><span id="Browser_Redirection">Browser Redirection</span></h2>
+
+<p>Triggers can be used to redirect the web browser to a new page. Use the <a href="../index.php/Internal_Functions_and_Classes.html#G::header.28.29" title="Internal Functions and Classes">G::header()</a> function to redirect the web browser to specified address. It is a wrapper for the standard <a  href="http://php.net/manual/en/function.header.php" >header()</a> function. Set its parameter to "location:" concatenated with the URL where the web browser should be redirected. For example:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">G<span style="color: #339933;">::</span><a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;location: http://www.google.com&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>To stop any normal processing after the trigger from occurring, it is a good idea to call the <a  href="http://php.net/manual/en/function.die.php" >die()</a> function after redirection to immediately kill the trigger.</p>
+
+<p>If redirecting to an address inside ProcessMaker, it not necessary to include the full address. For example, to redirect back to ProcessMaker's cases list for the currently logged-in user, set the location to "cases_List".</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">G<span style="color: #339933;">::</span><a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;location: cases_List&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>In version 2.0, the new ExtJS interface can be used to display the cases list:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">G<span style="color: #339933;">::</span><a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;location: casesListExtJS&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Version 2.0 uses multiple frames to display the ProcessMaker interface and cases are run within a child frame. To redirect to the cases list inside the parent frame use:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">G<span style="color: #339933;">::</span><a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;location: casesListExtJsRedirector&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>The G::header() function only redirects to a new address for the current frame. To redirect to the parent frame for any address, direct JavaScript code to the browser to redirect the parent frame. For example to redirect the parent frame to the login screen:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&quot;&lt;script&gt; parent.location='login'; &lt;/script&gt;&quot;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>
