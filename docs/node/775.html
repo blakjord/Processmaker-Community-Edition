@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/REST_API_Cases/Case_Variables.html" />
+<link rel="shortlink" href="775.html" />
+<title>3.2 - 3.8 - REST API Cases - Case Variables | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"Ml27jX-CGLYpsPSqv3LWu-lwpI0EKMMdSTHk-HGRwOE","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-775 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="775.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="775.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-Avd07XFBmMCwyTSsu5XqTY9cbjaWXuyLXJwdYhfPbMQ" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - REST API Cases - Case Variables</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - REST API Cases - Case Variables" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="775.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - REST API Cases - Case Variables 1/5</option><option value="40">Give 3.2 - 3.8 - REST API Cases - Case Variables 2/5</option><option value="60" selected="selected">Give 3.2 - 3.8 - REST API Cases - Case Variables 3/5</option><option value="80">Give 3.2 - 3.8 - REST API Cases - Case Variables 4/5</option><option value="100">Give 3.2 - 3.8 - REST API Cases - Case Variables 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.1</span></span> <span class="total-votes">(<span >8</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-vgbPTJRFXIKEa-EWeiHpFET6FN_iKX7EhJgaKtuilgU" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2><span class="mw-headline" id="Case_Variables">Case Variables</span></h2>
+    <p>These endpoints get or set the variables for a given case. Use the <code>GET</code> method to <a href="775.html#GetVariablesCase">obtain the variables</a> from a case and the <code>PUT</code> method to <a href="775.html#PutVariablesCase">set variables</a> in a case.</p>
+<div style=" background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><strong>Contents:</strong> [<a href="775.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b><div id="toc" ><ol class="toc">
+<li class="toc"><a href="775.html#Case_Variables">Case Variables</a></li>
+<ol class="toc">
+<li class="toc"><a href="775.html#Get_Variables:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">Get Variables: <code>GET /cases/{app_uid}/variables</code></a></li>
+<li class="toc"><a href="775.html#Set_Variables:_PUT_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">Set Variables: <code>PUT /cases/{app_uid}/variable?del_index={del_index}
+</code></a></li>
+<li class="toc"><a href="775.html#GetCaseVariable">Get Case Variable: <code>GET /case/{app_uid}/{del_index}/variable/{var_name}</code></a></li>
+<li class="toc"><a href="775.html#GetGridVariablePaged">Get Page of Grid Variable: <code>GET /case/{app_uid}/{del_index}/variable/{var_name}/paged</code></a></li>
+<li class="toc"><a href="775.html#CreateVariable">Create Variable: <code>POST /variable/{app_uid}/{del_index}/variable/{var_name}</code></a></li>
+<li class="toc"><a href="775.html#UpdateVariable">Update Variable: <code>PUT /variable/{app_uid}/{del_index}/variable/{var_name}</code></a></li>
+<li class="toc"><a href="775.html#DeleteVariable">Delete Variable: <code>DELETE /cases/{app_uid}/{del_index}/variable/{var_name}</code></a></li>
+</ol>
+</div></div>
+
+
+    <h3><span class="mw-headline" id="Get_Variables:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">Get Variables: <code>GET /cases/{app_uid}/variables</code></span></h3>
+    <p><span id="GetVariablesCase">Get variables from a case. Note that this endpoint can return the variables from any case, regardless of its status, so it can get the variables for paused, completed or even canceled cases. The only cases for which it can't get the variables are deleted cases, because their records has been removed from the <tt>APPLICATION</tt> table in the database.</span></p>
+    <dl>
+        <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/cases/{app_uid}/variables</font></dd>
+    </dl>
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name which by default is "workflow".</td>
+                        <td>/api/1.0/<b>workflow</b>/cases/37213410154d375de3e3620044382558/variables</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Case's unique ID.</td>
+                        <td>/api/1.0/workflow/cases/<b>37213410154d375de3e3620044382558</b>/variables</td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+    <p><b>Result:</b><br>
+If successful, then returns HTTP status code of <code>200</code> (OK) and returns an object of variables, such as:
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;SYS_LANG&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;en&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;SYS_SKIN&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;neoclassic&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;SYS_SYS&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;APPLICATION&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;78484118955bbd5fc39e5c5072875367&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;PROCESS&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;189248173559579a84bf665046423742&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;TASK&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;37438452555b10cffda9428064171274&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;INDEX&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;USER_LOGGED&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;00000000000000000000000000000001&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;USR_USERNAME&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;admin&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;PIN&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;JQN&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;contractor&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Reliant Parts&quot;</span><span style="color: #339933;">,</span> <span style="color: #006600; font-style: italic;">//textbox with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;contractor_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Reliant Parts&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;sendContract&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//dropdown with boolean variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;sendContract_label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Yes&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;contractReview&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//checkbox with boolean variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;contractReview_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;Rejected&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;amount&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;45323.50&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//textbox with float variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;amount_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;45323.50&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;dueDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-03-19&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//datetime</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;dueDate_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;03/19/2016&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;markToReview&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;contract&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;credit&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;comments&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #006600; font-style: italic;">//checkbox group with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;markToReview_label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">'[&quot;Contract&quot;, &quot;Credit History&quot;, &quot;Past Comments&quot;]'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;reviewerList&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#123;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//grid with textbox and checkbox fields</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Betty Blue&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Betty Blue&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;approved&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;approved_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Yes&quot;</span><span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bill Houck&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bill Houck&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;approved&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;approved_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;No&quot;</span><span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;3&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Mae Sander&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Mae Sander&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;approved&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;approved_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Yes&quot;</span><span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p><b><font color=green>Note:</font></b> <font color=dimgrey>DynaForm fields which have integer or float variables have their values stored as strings, so it may be necessary to convert their values to numbers if doing mathematical operations. Grids and the results of database queries are stored as an associative array of associative arrays in ProcessMaker, but they are converted into an object of objects, because JSON doesn't support associative arrays.<p>
+<p>When reading this object of objects in PHP, it is recommended to either use <span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$json</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span></code></span> to convert the return object into an associative array or <a href="http://php.net/manual/en/function.get-object-vars.php">get_object_vars()</a> to convert the rows in a grid to an associative array. See the example below.</font></p>
+
+    <p><b>PHP Example:</b></p>
+    <p>This example, using the case variables returned in the example, converts the "reviewersList" grid from an object to an associative array and then loops through that array to print out the names of the reviewers and their decision to approve or disapprove the contract.</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'78484118955bbd5fc39e5c5072875367'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/cases/<span style="color: #006699; font-weight: bold;">$caseId</span>/variables&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$method</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oVars</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//convert grid from object to associative array:</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oVars</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">reviewerList</span> <span style="color: #339933;">=</span> <a href="http://php.net/get_object_vars"><span style="color: #990000;">get_object_vars</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oVars</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">reviewerList</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&quot;Contractor: <span style="color: #006699; font-weight: bold;">{$oVars-&gt;contractor}</span><span style="color: #000099; font-weight: bold;">\n</span>Amount: <span style="color: #006699; font-weight: bold;">{$oVars-&gt;amount}</span><span style="color: #000099; font-weight: bold;">\n</span>Reviewers:<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;=</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oVars</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">reviewerList</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&quot;<span style="color: #006699; font-weight: bold;">$i</span>. {<span style="color: #006699; font-weight: bold;">$oVars-&gt;reviewerList</span>[<span style="color: #006699; font-weight: bold;">$i</span>]-&gt;name}: {<span style="color: #006699; font-weight: bold;">$oVars-&gt;reviewerList</span>[<span style="color: #006699; font-weight: bold;">$i</span>]-&gt;approved_label}<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+    <h3><span class="mw-headline" id="Set_Variables:_PUT_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">Set Variables: <code>PUT /cases/{app_uid}/variable?del_index={del_index}
+</code></span></h3>
+    <p><span id="PutVariablesCase">Set variable(s) in a case.</span></p>
+    
+    <p><b>Permission:</b></p>
+    <dl><dd>Users must have the <a href="../3.2/Roles.html#PM_CASES">PM_CASES</a> permission assigned to their role to perform this action.</dd></dl>
+
+    <p><b>Structure:</b></p>
+    <dl>
+        <dd><b>PUT</b> <font color="blue">/api/1.0/{workspace}/cases/{app_uid}/variable?del_index={del_index}</font></dd>
+    </dl>
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name which by default is "workflow".</td>
+                        <td>/api/1.0/<b>workflow</b>/cases/37213410154d375de3e3620044382558/variable</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Case's unique ID.</td>
+                        <td>/api/1.0/workflow/cases/<b>37213410154d375de3e3620044382558</b>/variable</td>
+                    </tr>
+                    <tr>
+                        <td>del_index</td>
+                        <td>Case's delegation index to get the thread information, which can be obtained from the <a href="../3.2/Triggers.html#System_Variables_in_Triggers">@%INDEX system variable</a>.</td>
+                        <td>/api/1.0/workflow/cases/37213410154d375de3e3620044382558/variable<b>?del_index=1</b></td>
+                    </tr> 
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+    <p><b>PUT Parameters:</b></p>
+    <p>A object where the name of each element is the variable name and its value will be the new value of the case variable in the specified case. If the variable doesn't already exist, it will be automatically created. See <a href="775.html#New_Case:_POST_.2Fcases">New Case: <code>POST /cases</code></a> for more information on how to set the values of different types of fields.</p>
+
+    <p><b>Result:</b><br>
+If successful, sets the HTTP status code to <code>200</code> (OK) and there is no return object. If an error occurred, then the HTTP status code is set to 300 or greater and an error object is returned, such as:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The application with $app_uid: '78484118955bbd5fc39e5c5072875368' does not exist.&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <div style="margin-left:25px;">
+        <p><b><font color=green>Note:</font></b> <font color=dimgrey>It is not possible to remove an existing variable using this endpoint, so it is recommended to instead set the variable to <code>""</code> (an empty string). If needing to completely remove an variable, the only way to do that is to execute a trigger which unsets the variable: <span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/unset"><span style="color: #990000;">unset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>my_var<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></code></span><br>
+Another way to unset the variable is to remove the variable from the serialized string of variables stored in the <b><tt>wf_{WORKSPACE}.APPLICATION.APP_DATA</tt></b> field in the database. The following PHP code can unset the @@my_var outside a trigger:</font></p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;37213410154d375de3e3620044382558&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #666666; font-style: italic;">//set to server address, mysql user and mysql password:</span><br />
+<span style="color: #000088;">$link</span> <span style="color: #339933;">=</span> <a href="http://php.net/mysql_connect"><span style="color: #990000;">mysql_connect</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'localhost'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'root'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'p4sSw0rd'</span><span style="color: #009900;">&#41;</span> or <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/mysql_error"><span style="color: #990000;">mysql_error</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #666666; font-style: italic;">//set to workspace database:</span><br />
+<a href="http://php.net/mysql_select_db"><span style="color: #990000;">mysql_select_db</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'wf_workflow'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$link</span><span style="color: #009900;">&#41;</span> or <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/mysql_error"><span style="color: #990000;">mysql_error</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <a href="http://php.net/mysql_query"><span style="color: #990000;">mysql_query</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;select APP_DATA from APPLICATION where APP_UID = '<span style="color: #006699; font-weight: bold;">$caseId</span>'&quot;</span><span style="color: #009900;">&#41;</span> or<br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/mysql_error"><span style="color: #990000;">mysql_error</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$row</span> <span style="color: #339933;">=</span> <a href="http://php.net/mysql_fetch_array"><span style="color: #990000;">mysql_fetch_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> or <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Unable to fetch data for case <span style="color: #006699; font-weight: bold;">$caseId</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aVars</span> <span style="color: #339933;">=</span> <a href="http://php.net/unserialize"><span style="color: #990000;">unserialize</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$row</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_DATA'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/unset"><span style="color: #990000;">unset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aVars</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'my_var'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$sVars</span> <span style="color: #339933;">=</span> <a href="http://php.net/mysql_real_escape_string"><span style="color: #990000;">mysql_real_escape_string</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/serialize"><span style="color: #990000;">serialize</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aVars</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <a href="http://php.net/mysql_query"><span style="color: #990000;">mysql_query</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;update APPLICATION set APP_DATA = '<span style="color: #006699; font-weight: bold;">$sVars</span>' where APP_UID = '<span style="color: #006699; font-weight: bold;">$caseId</span>'&quot;</span><span style="color: #009900;">&#41;</span> or<br />
+&nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/mysql_error"><span style="color: #990000;">mysql_error</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/mysql_close"><span style="color: #990000;">mysql_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$link</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+        <!--<p><font color=red><b>Warning:</b></font> <font color=dimgrey>This endpoint currently has a <a href="http://bugs.processmaker.com/view.php?id=17920">bug</a> which allows any user to change the variables on any case. This endpoint also <a href="http://bugs.processmaker.com/view.php?id=18281">does not check the status of the case</a> before changing its variables, so it is possible to change the variables in completed and cancelled cases.</font></p>-->
+    </div>
+
+    <p><b>JavaScript example:</b></p>
+    <p></p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">var</span> oVars <span style="color: #339933;">=</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;clientName&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Kelly Cline&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//textbox with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;quantity&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #CC0000;">56789</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//textbox with integer variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;amount&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #CC0000;">12249.99</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//textbox with floating point variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;makeContact&quot;</span> &nbsp; &nbsp; <span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//checkbox with boolean variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;howContact&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;email&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;fax&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #006600; font-style: italic;">//checkbox group with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;howContact_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">'[&quot;E-mail&quot;, &quot;Fax&quot;]'</span><span style="color: #339933;">,</span><span style="color: #006600; font-style: italic;">//labels of selected options in JSON string</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;payNow&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//dropdown with boolean variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;howPay&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;credit_card&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//dropdown with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;howPay_label&quot;</span> &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Credit Card&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//label of selected option in dropdown</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;serviceDue&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2015-12-31&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//datetime</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;subcontractors&quot;</span> &nbsp;<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//grid</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Smith &amp; Wright&quot;</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #3366CC;">&quot;hasContract&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;A+ Lawn Services&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;hasContract&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066; font-weight: bold;">var</span> caseId <span style="color: #339933;">=</span> <span style="color: #3366CC;">'78484118955bbd5fc39e5c5072875367'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066; font-weight: bold;">var</span> del_index <span style="color: #339933;">=</span> <span style="color: #CC0000;">1</span> <span style="color: #006600; font-style: italic;">//the case is in Draft status;</span><br />
+<span style="color: #000066; font-weight: bold;">var</span> url <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;/api/1.0/workflow/cases/&quot;</span> <span style="color: #339933;">+</span> caseId <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;/variable?del_index = &quot;</span><span style="color: #339933;">+</span> del_index<span style="color: #339933;">;;</span><br />
+pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;PUT&quot;</span><span style="color: #339933;">,</span> url<span style="color: #339933;">,</span> oVars<span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p><b>PHP example:</b></p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aVars</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;client&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Acme Inc.'</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//textbox with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;amount&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color:#800080;">23456.99</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//textbox with float variable</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;address&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;245 Stars Av.<span style="color: #000099; font-weight: bold;">\n</span>Hollywood CA 12345&quot;</span><span style="color: #339933;">,</span><span style="color: #666666; font-style: italic;">//textarea with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;dateDue&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'2015-12-31'</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//datetime</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;dateDue_label&quot;</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'12/31/2015'</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//datetime label in MM/DD/YYYY format</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;deliveryTime&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'2015-11-25 17:55:38'</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//datetime</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;serviceType&quot;</span> &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'accounting'</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//dropdown with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;serviceType_label&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Accounting Review'</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//dropdown label</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;hasContract&quot;</span> &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'1'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//checkbox with boolean variable</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;hasContract_label&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'yes'</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//checkbox label</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;howContact&quot;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'fax'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'email'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'telephone'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #666666; font-style: italic;">//checkbox group with string variable</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;howContact_label&quot;</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'[&quot;Fax&quot;,&quot;Send Email&quot;,&quot;Telephone&quot;]'</span><span style="color: #339933;">,</span> <span style="color: #666666; font-style: italic;">//checkbox group label in JSON string</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;contactsGrid&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'1'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'fullName'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Jane Doe'</span><span style="color: #339933;">,</span> &nbsp; <span style="color: #0000ff;">'canCall'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'1'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'canCall_label'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Yes'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'2'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'fullName'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Bill Hill'</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #0000ff;">'canCall'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'0'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'canCall_label'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'No'</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'3'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'fullName'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Sally Slim'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'canCall'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'1'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'canCall_label'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Yes'</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'78484118955bbd5fc39e5c5072875367'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$del_index</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span> <span style="color: #666666; font-style: italic;">//the case is in Draft status;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/cases/<span style="color: #006699; font-weight: bold;">$caseId</span>/variable?del_index=<span style="color: #006699; font-weight: bold;">$del_index</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;PUT&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aVars</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Case variables sent.&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+
+    <h3><span id="GetCaseVariable">Get Case Variable: <code>GET /case/{app_uid}/{del_index}/variable/{var_name}</code></span></h3>
+
+    <p>Get a specified variable from a case. Note that the variable must be one of the variables found in the <a href="../3.0/Variables.html">variables list</a>, and can't be defined in a trigger or by submitting a DynaForm control which is not associated with a variable. If needing to get the value of one of these other types of variables, then use the <a href="775.html#Get_Variables:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">GET /cases/{app_uid}/variables</a> endpoint.</p>
+
+    <dl>
+        <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/case/{app_uid}/{del_index}/variable/{var_name}</font></dd>
+    </dl>
+
+    <p><font color=green><b>Note:</b></font> <font color=dimgrey>This endpoint can return the variable from any case, regardless of its status, so it can get the variables for paused, completed or even canceled cases. The only cases for which it can't get the variables are deleted cases, because their records has been removed from the <tt>APPLICATION</tt> table in the database.</font></p>
+
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name which by default is "workflow".</td>
+                        <td>/api/1.0/<b>workflow</b>/case/37213410154d375de3e3620044382558/2/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Case's unique ID.</td>
+                        <td>/api/1.0/workflow/case/<b>37213410154d375de3e3620044382558</b>/2/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>del_index</td>
+                        <td>Case's delegation index, which can be obtained from the @%INDEX system variable.</td>
+                        <td>/api/1.0/workflow/case/37213410154d375de3e3620044382558/<b>2</b>/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>var_name</td>
+                        <td>Name of the case variable.</td>
+                        <td>/api/1.0/workflow/case/37213410154d375de3e3620044382558/2/variable/<b>clientName</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>Result:</b><br>
+<div style="margin-left:25px;">
+<p>If successful, then returns a HTTP status code of <code>200</code> (OK) and returns a object which contains the value of the variable and its label. The format depends on type of variable and its associated control.
+
+<p><b>Textboxes and textareas:</b><br>
+The value of the variable and its label are the same. Textareas may contain <code>\\n</code> (new lines).</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;clientName&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Mary Rowe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;clientName_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Mary Rowe&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    <p><font color=green><b>Note:</font></b> <font color=dimgrey>Textboxes which have integer or float values are stored as strings, so it may be necessary to convert their values to numbers if doing mathematical operations.</font></p>
+
+    <p><b>Datetimes:</b><br>
+The value of the datetime will be in the format <code>"<font color=blue>YYYY</font>-<font color=blue>MM</font>-<font color=blue>DD</font> <font color=blue>HH</font>:<font color=blue>MM</font>:<font color=blue>SS</font>"</code> format. The label of the datetime will be in the format specified by the control's <a href="../3.0/Datetime_Control.html#Format">format</a> property. Note that the time is the value that was entered by the user and doesn't adjust for time zones.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-22 04:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;05/22/2016&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><b>Datetimes in version 3.0.1.7+ Enterprise Edition:</b><br>
+The Enterprise Edition in version 3.0.1.7 and later has <a href="../3.0/Multi_Time_Zone_Support.html">Multi Time Zone Support</a>, so datetime variables store their values in UTC time, so they aren't in the user's time zone, however, the label will be in the time zone of the user who originally entered the datetime (which may be different from the time zone of the REST user). The value of datetimes are in the <code><font color=blue>YYYY</font>-<font color=blue>MM</font>-<font color=blue>DD</font>T<font color=blue>HH</font>:<font color=blue>MM</font>:<font color=blue>SS</font>+<font color=blue>HH</font>:<font color=blue>MM</font></code> format, where <code>+<font color=blue>HH</font>:<font color=blue>MM</font></code> is always set to <code>+00:00</code> and can be ignored.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-22T04:00:00+00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;05/22/2016 07:00&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><b>Dropdown boxes, Suggest boxes and Radio buttons:</b><br>
+The variable holds the value of the selected option and its label holds the displayed text of the selected option.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;selectCountry&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;AD&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;selectCountry_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Andorra&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><b>Checkboxes:</b><br>
+Marked checkboxes have a value of <code>["1"]</code>, which is the string <code>"1"</code> inside an array, and a default label of <code>"true"</code>, but the label can be customized in its <a href="../3.0/DynaForm_Field_Properties.html#Options">options</a> property. Unmarked checkboxes have a value of <code>["0"]</code>, and a default label of <code>"false"</code>.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;hasContract&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;hasContract_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;true&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><b>Checkgroups:</b><br>
+The variable for checkgroups holds an array of the values of the selected options in the checkgroup. The label variable holds a JSON string of an array of the displayed text of the selected options. Functions such as <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse()</a> in JavaScript or <a href="http://php.net/manual/en/function.json-decode.php">json_decode()</a> in PHP can be used convert the JSON string into an array.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;services&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&quot;accounting&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;cleaning&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;catering&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;services_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;[<span style="color: #000099; font-weight: bold;">\&quot;</span>Accounting<span style="color: #000099; font-weight: bold;">\&quot;</span>,<span style="color: #000099; font-weight: bold;">\&quot;</span>Cleaning<span style="color: #000099; font-weight: bold;">\&quot;</span>,<span style="color: #000099; font-weight: bold;">\&quot;</span>Catering<span style="color: #000099; font-weight: bold;">\&quot;</span>]&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><b>Files:</b><br>
+The variable for file controls is a JSON string which holds an array of the unique IDs for the case files (AppDocuments). The label is a JSON which holds an array of the filenames of the case files. Users can only select one file at a time to upload in a File control, but if that file control is found in multiple DynaForms or the same DynaForm is opened and submitted multiple times or files are uploaded to an Input Document step, then there may be multiple files in the array.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;receiptFile&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;[<span style="color: #000099; font-weight: bold;">\&quot;</span>32030312057351f4d3ae361014376815<span style="color: #000099; font-weight: bold;">\&quot;</span>]&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;receiptFile_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;[<span style="color: #000099; font-weight: bold;">\&quot;</span>Fixed_precision_grid_math-1.pmx<span style="color: #000099; font-weight: bold;">\&quot;</span>]&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+    <p><b>Grids:</b><br>
+The variable for grids is an object of objects, where the first row is named <code>"1"</code>, the second row is named <code>"2"</code>, etc. Each row object holds the values and the labels of the fields inside the row. These are named according to the IDs of the fields. Their values and labels are similar to normal variables, but checkboxes inside grids have a value of <code>"1"</code> or <code>"0"</code>, not <code>["1"]</code> or <code>["0"]</code> like a normal checkbox outside a grid.</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;clientList&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;E-Z Accounting&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;E-Z Accounting&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;8473 W. 11th St.<span style="color: #000099; font-weight: bold;">\\</span>nHaverford, CT 284745&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;8473 W. 11th St.<span style="color: #000099; font-weight: bold;">\\</span>nHaverford, CT 284745&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;hasContract&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;true&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;2016-05-23&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2016-05-23 04:00:00&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Cater-Rite Food Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;Cater-Rite Food Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;284 E. Seminary St.<span style="color: #000099; font-weight: bold;">\\</span>nSilverado, CO 28471&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;284 E. Seminary St.<span style="color: #000099; font-weight: bold;">\\</span>nSilverado, CO 28471&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;hasContract&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;false&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;2015-12-31&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;2015-12-31 21:00:00&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    <p><b><font color=green>Note:</font></b> <font color=dimgrey>Grids and the results of database queries are stored as an associative array of associative arrays in ProcessMaker, but they are converted into an object of objects, because JSON doesn't support associative arrays.<p>
+<p>When reading this object of objects in PHP, it is recommended to either use <span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$json</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span></code></span> to convert the return object into an associative array or <a href="http://php.net/manual/en/function.get-object-vars.php">get_object_vars()</a> to convert the rows in a grid to an associative array. See the example at <a href="775.html#Get_Variables:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">GET /cases/{app_uid}/variables</a>.</font></p>
+    </div>
+    <p>If an error occurs, the HTTP status code will be 300 or greater and an error object like the following might be returned:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: var_name: clientName does not exist&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p><b>PHP Example:</b></p>
+    <p>This example gets the "receiptFile" file variable and uses json_decode() to convert from JSON strings to arrays. Then, it prints out the unique IDs and filenames in the variable.</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$varName</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'receiptFile'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'40297019257350533ba5d20087799226'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$delIndex</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/case/<span style="color: #006699; font-weight: bold;">$caseId</span>/<span style="color: #006699; font-weight: bold;">$delIndex</span>/variable/<span style="color: #006699; font-weight: bold;">$varName</span>&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;pre&gt;&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//if in a web page</span><br />
+<a href="http://php.net/var_dump"><span style="color: #990000;">var_dump</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aResponse</span> <span style="color: #339933;">=</span> <a href="http://php.net/get_object_vars"><span style="color: #990000;">get_object_vars</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aFiles</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aResponse</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$varName</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aFilenames</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aResponse</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$varName</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'_label'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Files in <span style="color: #006699; font-weight: bold;">$varName</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aFiles</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot; &nbsp;{<span style="color: #006699; font-weight: bold;">$aFilenames</span>[<span style="color: #006699; font-weight: bold;">$i</span>]} ({<span style="color: #006699; font-weight: bold;">$aFiles</span>[<span style="color: #006699; font-weight: bold;">$i</span>]})<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+
+    <h3><span id="GetGridVariablePaged">Get Page of Grid Variable: <code>GET /case/{app_uid}/{del_index}/variable/{var_name}/paged</code></span></h3>
+
+    <p>Get a page of a grid variable from a case. Note that the variable must be one of the variables found in the <a href="../3.0/Variables.html">variables list</a>, and can't be defined in a trigger or by submitting a DynaForm control which is not associated with a variable. If needing to get the value of one of these other types of variables, then use the <a href="775.html#Get_Variables:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">GET /cases/{app_uid}/variables</a> endpoint.</p>
+
+    <dl>
+        <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/case/{app_uid}/{del_index}/variable/{var_name}/paged</font></dd>
+    </dl>
+
+    <p><font color=green><b>Note:</b></font> <font color=dimgrey>This endpoint can return the variable from any case, regardless of its status, so it can get the variables for paused, completed or even canceled cases. The only cases for which it can't get the variables are deleted cases, because their records has been removed from the <tt>APPLICATION</tt> table in the database.</font></p>
+
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name which by default is "workflow".</td>
+                        <td>/api/1.0/<b>workflow</b>/case/37213410154d375de3e3620044382558/2/variable/clientList/paged</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Case's unique ID.</td>
+                        <td>/api/1.0/workflow/case/<b>37213410154d375de3e3620044382558</b>/2/variable/clientList/paged</td>
+                    </tr>
+                    <tr>
+                        <td>del_index</td>
+                        <td>Case's delegation index, which can be obtained from the @%INDEX system variable.</td>
+                        <td>/api/1.0/workflow/case/37213410154d375de3e3620044382558/<b>2</b>/variable/clientList/paged</td>
+                    </tr>
+                    <tr>
+                        <td>var_name</td>
+                        <td>Name of the case variable.</td>
+                        <td>/api/1.0/workflow/case/37213410154d375de3e3620044382558/2/variable/<b>clientList</b>/paged</td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>Optional URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>filter</td>
+                        <td>A case-insensitive search in grid fields. Only rows whose fields contain the filter string
+                            are returned.</td>
+                        <td>.../paged?filter=<b>catering</b></td>
+                    </tr>
+                    <tr>
+                        <td>lfilter</td>
+                        <td>A case-insensitive search in the beginning of grid fields. Only rows whose fields start
+                            with the filter string are returned.</td>
+                        <td>.../paged?lfilter=<b>e-z</b></td>
+                    </tr>
+                    <tr>
+                        <td>rfilter</td>
+                        <td>A case-insensitive search in the end of grid fields. Only rows whose fields end with the
+                            filter string are returned.</td>
+                        <td>.../paged?rfilter=<b>23484</b></td>
+                    </tr>
+                    <tr>
+                        <td>start</td>
+                        <td>The number of row in the grid where the list begins. 0 is the first row, 1 begins with
+                            the second row, etc. If combined with a filter, then only rows whose fields contain
+                            the filter string are returned.</td>
+                        <td>.../paged?start=<b>10</b>&limit=5</td>
+                    </tr>
+                    <tr>
+                        <td>limit</td>
+                        <td>The number of rows in the grid which are returned.</td>
+                        <td>.../paged?start=10&limit=<b>5</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+
+    <p><b>Result:</b></p>
+    <div style="margin-left:25px;">
+        <p>If successful, then returns a HTTP status code of <code>200</code> (OK) and returns a page object. Remember that checkboxes inside grids have a value of <code>"1"</code> or <code>"0"</code>, not <code>["1"]</code> or <code>["0"]</code> like a normal checkbox outside a grid.</p>
+
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;total&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">2</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;start&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;limit&quot;</span><span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">0</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;filter&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;data&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2016-05-31&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-31 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;true&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2016-05-08&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-08 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;false&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+        <p><b><font color=green>Note:</font></b> <font color=dimgrey>Grids and the results of database queries are stored as an associative array of associative arrays in ProcessMaker, but they are converted into an object of objects, because JSON doesn't support associative arrays.<p>
+<p>When reading this object of objects in PHP, it is recommended to either use <span class="geshifilter"><code class="php geshifilter-php"><a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$json</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span></code></span> to convert the return object into an associative array or <a href="http://php.net/manual/en/function.get-object-vars.php">get_object_vars()</a> to convert the rows in a grid to an associative array. See the example at <a href="775.html#Get_Variables:_GET_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">GET /cases/{app_uid}/variables</a>.</font></p>
+
+        <p>If an error occurs, the HTTP status code will be 300 or greater and an error object like the following is returned for 400 and 404 errors:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: var_name: clientName does not exist&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+
+    <p><b>PHP Example:</b></p>
+    <p>This example prints out the contents of the "clientList" grid in an HTML table.</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$varName</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'clientList'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> &nbsp;<span style="color: #0000ff;">'40297019257350533ba5d20087799226'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$delIndex</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/case/<span style="color: #006699; font-weight: bold;">$caseId</span>/<span style="color: #006699; font-weight: bold;">$delIndex</span>/variable/<span style="color: #006699; font-weight: bold;">$varName</span>/paged&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span> and <span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">total</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aRows</span> <span style="color: #339933;">=</span> <a href="http://php.net/get_object_vars"><span style="color: #990000;">get_object_vars</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">response</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">data</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">'&lt;style type=&quot;text/css&quot;&gt;'</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'table.myTable {border-collapse: collapse;}'</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'table.myTable td, table.myTable th '</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'{border: 1px solid green; padding: 5px;}&lt;/style&gt; '</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'&lt;table class=&quot;myTable&quot;&gt;'</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>&lt;tr&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aRows</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&quot;1&quot;</span><span style="color: #009900;">&#93;</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$fieldId</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$val</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;th&gt;<span style="color: #006699; font-weight: bold;">$fieldId</span>&lt;/th&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;/tr&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aRows</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oRow</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aRow</span> <span style="color: #339933;">=</span> <a href="http://php.net/get_object_vars"><span style="color: #990000;">get_object_vars</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRow</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;tr&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aRow</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$fieldId</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$val</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;td&gt;<span style="color: #006699; font-weight: bold;">$val</span>&lt;/td&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;/tr&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;/table&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    <p>The above code produces the following web page:</p>
+    <style type="text/css">
+        table.myTable {
+            border-collapse: collapse;
+        }
+
+        table.myTable td,
+        table.myTable th {
+            border: 1px solid green;
+            padding: 5px;
+        }
+    </style>
+    <table class="myTable">
+        <tr>
+            <th>name</th>
+            <th>name_label</th>
+            <th>address</th>
+            <th>address_label</th>
+            <th>contractDate_label</th>
+            <th>contractDate</th>
+            <th>currentClient</th>
+            <th>currentClient_label</th>
+        </tr>
+        <tr>
+            <td>EZ-Catering</td>
+            <td>EZ-Catering</td>
+            <td>234 W. 11th St. Bloomington IN 23484</td>
+            <td>234 W. 11th St. Bloomington IN 23484</td>
+            <td>2016-05-31</td>
+            <td>2016-05-31 00:00:00</td>
+            <td>1</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>Smithee Lawn Service</td>
+            <td>Smithee Lawn Service</td>
+            <td>555 Main St. Evansville IN 46234</td>
+            <td>555 Main St. Evansville IN 46234</td>
+            <td>2016-05-08</td>
+            <td>2016-05-08 00:00:00</td>
+            <td>0</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>Best Accounting Services</td>
+            <td>Best Accounting Services</td>
+            <td>4332 Oak St. Putnamville, IN 46234</td>
+            <td>4332 Oak St. Putnamville, IN 46234</td>
+            <td>2016-05-16</td>
+            <td>2016-05-16 00:00:00</td>
+            <td>1</td>
+            <td>true</td>
+        </tr>
+    </table>
+
+    <h3><span id="CreateVariable">Create Variable: <code>POST /variable/{app_uid}/{del_index}/variable/{var_name}</code></span></h3>
+
+    <p>Create a variable in a case, meaning the variable is <i>instantiated</i> in the case.</p>
+
+    <p><b>Permission:</b></p>
+    <dl><dd>Users must have the <a href="../3.2/Roles.html#PM_CASES">PM_CASES</a> permission assigned to their role to perform this action.</dd></dl>
+
+    <p><b>Structure:</b></p>
+    <dl>
+        <dd><b>POST</b> <font color="blue">/api/1.0/{workspace}/variable/{app_uid}/{del_index}/variable/{var_name}</font></dd>
+    </dl>
+
+    <p style="margin-left:25px"><font color=green><b>Note:</b></font> <font color=dimgrey>The variable must be one of the existing variables found in the <a href="../3.0/Variables.html">variables list</a>, but cannot yet be instantiated in the case. A variable is normally instantiated in a case when a DynaForm control associated with that variable is submitted or when variables are passed to a new case created with the <a href="775.html#New_Case:_POST_.2Fcases">POST /cases</a> or <a href="775.html#New_Case_Impersonate_User:_POST_.2Fcases.2Fimpersonate">POST /cases/impersonate</a> endpoints. If needing to create a variable which isn't in the variable list, see the <a href="775.html#Set_Variables:_PUT_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">PUT /cases/{app_uid}/variables</a> endpoint.</font></p>
+    
+    <p style="margin-left:25px"><font color=red><b>Warning:</b></font> <font color=dimgrey>This endpoint currently has a <!--<a href="https://processmaker.atlassian.net/browse/TRI-1338">-->bug<!--</a>-->, which allows it to create variables in cases which have COMPLETED, PAUSED or CANCELLED status.</font></p>
+
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name which by default is "workflow".</td>
+                        <td>http://example.com/api/1.0/<b>workflow</b>/variable/37213410154d375de3e3620044382558/2/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Case's unique ID.</td>
+                        <td>http://example.com/api/1.0/workflow/variable/<b>37213410154d375de3e3620044382558</b>/2/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>del_index</td>
+                        <td>Case's delegation index, which can be obtained from the @%INDEX system variable.</td>
+                        <td>http://example.com/api/1.0/workflow/variable/37213410154d375de3e3620044382558/<b>2</b>/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>var_name</td>
+                        <td>Name of the case variable.</td>
+                        <td>http://example.com/api/1.0/workflow/variable/37213410154d375de3e3620044382558/2/variable/<b>clientName</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>POST Parameters:</b></p>
+    <div style="margin-left:25px">
+        <p>All variables except for grid variables are set in the following manner:</p>
+        <codeblock>{
+   "<font color=blue><i>variable</i></font>":       <font color=blue><i>value</i></font>,
+   "<font color=blue><i>variable</i></font>_label": <font color=blue><i>label</i></font>
+}
+</codeblock>
+        <p>For the format of variables associated with different types of DynaForm controls, see <a href="775.html#GetCaseVariable">Get Case Variable</a> above. The <code><font color=blue><i>value</i></font></code> can be any data type, except  <code>NULL</code> which will cause an error. If the value is a number, it will be converted to a string. Values of <code>true</code> will be converted to <code>"1"</code> and <code>false</code> will be converted to <code>"0"</code>. Objects will be converted into associative arrays when stored in ProcessMaker. <code><font color=blue><i>variable</i></font>_label</code> must be included to avoid an error, even if setting a variable which isn't associated with a DynaForm control.</p>
+        <p><font color=green><b>Note:</b></font> <font color=dimgrey>It is possible to create File variables, but they will only be used by ProcessMaker if they have corresponding records in the <tt><b>APP_DOCUMENT</b></tt> table in the database. See: <a href="775.html#Upload_Input_Document:_POST_.2Fcases.2F.7Bapp_uid.7D.2Finput-document">Upload Input Document: <code>POST /cases/{app_uid}/input-document</code></a></font></p>
+
+        <p>Grids variables are instantiated with the following format:</p>
+        <codeblock>{
+   "1": {
+      "<font color=blue><i>field1Id</i></font>":       <font color=blue><i>value</i></font>,
+      "<font color=blue><i>field1Id</i></font>_label": <font color=blue><i>label</i></font>,
+      "<font color=blue><i>field2Id</i></font>":       <font color=blue><i>value</i></font>,
+      "<font color=blue><i>field2Id</i></font>_label": <font color=blue><i>label</i></font>,
+      <font color=blue>...</font>
+   },
+   "2": {
+      "<font color=blue><i>field1Id</i></font>":       <font color=blue><i>value</i></font>,
+      "<font color=blue><i>field1Id</i></font>_label": <font color=blue><i>label</i></font>,
+      "<font color=blue><i>field2Id</i></font>":       <font color=blue><i>value</i></font>,
+      "<font color=blue><i>field2Id</i></font>_label": <font color=blue><i>label</i></font>,
+      <font color=blue>...</font>
+   },
+   <font color=blue>...</font>
+}
+</codeblock>
+        <p>The rows of the grid start their numbering from <code>"1"</code>. The IDs of fields are case sensitive and must be spelled exactly as defined in the DynaForm Designer. Each row must have at least one field in it, or the row will not be added. If a field is included in a row, it must also include its <i>label</i> or an error will occur. It is not possible to include additional fields which aren't defined in the grid in the DynaForm designer.</p>
+
+        <p>Checkboxes inside grids have a value of <code>"1"</code> or <code>"0"</code>, not <code>["1"]</code> or <code>["0"]</code> like a normal checkboxes outside a grid.</p>
+
+        <p>The grid variable <i>must</i> be associated with grid control in a DynaForm. If needing to pass the contents of a grid to an unassociated variable, then pass it to an array variable.</p>
+    </div>
+
+    <p><b>Result:</b></p>
+    <div style="margin-left:25px;">
+        <p>If the variable was instantiated, then the endpoint returns a HTTP status code of <code>201</code> (Created) and returns an object with the value and label of the variable. If a grid variable, then the contents of the grid are returned in an object, but there is no label.</p>
+        <p>If the variable has already been instantiated in the case, then the endpoint returns the following error object:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The Variable with var_name: <span style="color: #000099; font-weight: bold;">\&quot;</span>clientName<span style="color: #000099; font-weight: bold;">\&quot;</span> already exists in Case&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+        <p>If the variable doesn't exist in the process' variable list, then the endpoint returns the following error object:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: var_name: clientName does not exist&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+        <p>If the field ID is misspelled or doesn't exist in the second row in a grid, then the endpoint returns the following error object:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: 2: Field Invalid (clientName)&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+
+    <p><b>Examples:</b></p>
+    <div style="margin-left:25px;">
+        <p><b>1.</b> Instantiate a string variable associated with a textbox.</p>
+        <p><i>Request:</i></p>
+        <p><tt>POST http://example.com/api/1.0/workflow/variable/37213410154d375de3e3620044382558/2/variable/clientName</tt></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;clientName&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Brooklyn Brickworks, Inc.&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;clientName_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Brooklyn Brickworks, Inc.&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+        <p><i>Response:</i></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">201</span> <span style="color: #009900;">&#40;</span>Created<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;clientName&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Brooklyn Brickworks, Inc.&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;clientName_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Brooklyn Brickworks, Inc.&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+        <p><b>2.</b> Instantiate a grid variable.</p>
+        <p><i>Request:</i></p>
+        <p><tt>POST http://example.com/api/1.0/workflow/variable/37213410154d375de3e3620044382558/2/variable/clientName</tt></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2016-05-31&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-31 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;true&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2016-05-08&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-08 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;false&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+        <p><i>Response:</i></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">201</span> <span style="color: #009900;">&#40;</span>Created<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2016-05-31&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-31 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;true&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2016-05-08&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-08 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;false&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+
+    <p><b>PHP Examples:</b></p>
+    <div style="margin-left:25px;">
+        <p><b>1.</b>This example instantiates a dropdown box associated with string variable named "documentType".</p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$varName</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'documentType'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> &nbsp;<span style="color: #0000ff;">'40297019257350533ba5d20087799226'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$delIndex</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/variable/<span style="color: #006699; font-weight: bold;">$caseId</span>/<span style="color: #006699; font-weight: bold;">$delIndex</span>/variable/<span style="color: #006699; font-weight: bold;">$varName</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$varName</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'copy'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$varName</span><span style="color: #339933;">.</span><span style="color: #0000ff;">'_label'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'Printed Copy'</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;POST&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aParams</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">201</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Variable <span style="color: #006699; font-weight: bold;">$varName</span> created.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+        <p><b>2.</b> This example instantiates a grid variable. Notice how <code>\r\n</code> is used to create line breaks in the "address" textarea.</p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$varName</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'clientList'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> &nbsp;<span style="color: #0000ff;">'40297019257350533ba5d20087799226'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$delIndex</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/variable/<span style="color: #006699; font-weight: bold;">$caseId</span>/<span style="color: #006699; font-weight: bold;">$delIndex</span>/variable/<span style="color: #006699; font-weight: bold;">$varName</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; <span style="color: #0000ff;">&quot;1&quot;</span><span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;name&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;name_label&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;address&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;address_label&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;contractDate_label&quot;</span><span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;2016-05-31&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;contractDate&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;2016-05-31 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;currentClient&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;currentClient_label&quot;</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">&quot;true&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #0000ff;">&quot;2&quot;</span><span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;name&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;name_label&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;address&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;address_label&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;contractDate_label&quot;</span><span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;2016-05-08&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;contractDate&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;2016-05-08 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;currentClient&quot;</span><span style="color: #339933;">=&gt;</span> &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;currentClient_label&quot;</span><span style="color: #339933;">=&gt;</span><span style="color: #0000ff;">&quot;false&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;POST&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aParams</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">201</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Grid <span style="color: #006699; font-weight: bold;">$varName</span> created.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+
+
+    <h3><span id="UpdateVariable">Update Variable: <code>PUT /variable/{app_uid}/{del_index}/variable/{var_name}</code></span></h3>
+    <p>Update the value of a variable in a case. The variable must already be <i>instantiated</i> in the case in order to update its value.</p>
+
+    <p><b>Permission:</b></p>
+    <dl><dd>Users must have the <a href="../3.2/Roles.html#PM_CASES">PM_CASES</a> permission assigned to their role to perform this action.</dd></dl>
+
+    <p><b>Structure:</b></p>
+    <dl>
+        <dd><b>PUT</b> <font color="blue">/api/1.0/{workspace}/variable/{app_uid}/{del_index}/variable/{var_name}</font></dd>
+    </dl>
+
+    <p style="margin-left:25px"><font color=green><b>Note:</b></font> <font color=dimgrey>The variable must be one of the existing variables found in the process' <a href="../3.0/Variables.html">variables list</a> and it has to already be instantiated in the case. A variable is normally instantiated in a case when a DynaForm control associated with that variable is submitted or when variables are passed to a new case created with the <a href="775.html#New_Case:_POST_.2Fcases">POST /cases</a> or <a href="775.html#New_Case_Impersonate_User:_POST_.2Fcases.2Fimpersonate">POST /cases/impersonate</a> endpoints. If needing to create a variable which isn't in the variable list, see the <a href="775.html#Set_Variables:_PUT_.2Fcases.2F.7Bapp_uid.7D.2Fvariables">PUT /cases/{app_uid}/variables</a> endpoint.</font></p>
+    
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name which by default is "workflow".</td>
+                        <td>http://example.com/api/1.0/<b>workflow</b>/variable/37213410154d375de3e3620044382558/2/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Case's unique ID.</td>
+                        <td>http://example.com/api/1.0/workflow/variable/<b>37213410154d375de3e3620044382558</b>/2/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>del_index</td>
+                        <td>Case's delegation index, which can be obtained from the @%INDEX system variable.</td>
+                        <td>http://example.com/api/1.0/workflow/variable/37213410154d375de3e3620044382558/<b>2</b>/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>var_name</td>
+                        <td>Name of the case variable.</td>
+                        <td>http://example.com/api/1.0/workflow/variable/37213410154d375de3e3620044382558/2/variable/<b>clientName</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>POST Parameters:</b></p>
+    <div style="margin-left:25px">
+        <p>The format to update variables is the same as creating them. See: <a href="775.html#CreateVariable">Create Variable: <code>POST /variable/{app_uid}/{del_index}/variable/{var_name}</code></a></p>
+    </div>
+
+    <p><b>Result:</b></p>
+    <div style="margin-left:25px;">
+        <p>If the variable was updated, then the endpoint returns an HTTP status code of <code>204</code> (No content), which indicates that the request was processed correctly and there is no response.</p>
+        <p>If the variable has not been instantiated in the case, then the endpoint returns the following error object:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The Variable with var_name: <span style="color: #000099; font-weight: bold;">\&quot;</span>clientName<span style="color: #000099; font-weight: bold;">\&quot;</span> does not exist in Case&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+
+    <p><b>Examples:</b></p>
+    <div style="margin-left:25px;">
+        <p><b>1.</b> Update a datetime variable which uses the format <code>MM/DD/YYYY hA</code> in its label.</p>
+        <p><i>Request:</i></p>
+        <p><code>PUT http://example.com/api/1.0/workflow/variable/37213410154d375de3e3620044382558/2/variable/dueDate</code></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dueDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-03-25 18:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;dueDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;03/25/2006 6PM&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+        <p><i>Response:</i></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">204</span> <span style="color: #009900;">&#40;</span>No content<span style="color: #009900;">&#41;</span></div></div>
+
+        <p><b>2.</b> Update a grid variable.</p>
+        <p><i>Request:</i></p>
+        <p><code>PUT http://example.com/api/1.0/workflow/variable/37213410154d375de3e3620044382558/2/variable/clientName</code></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;EZ-Catering&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;234 W. 11th St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Bloomington IN 23484&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2016-05-31&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-31 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;true&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;2&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;Smithee Lawn Service&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address_label&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;555 Main St.<span style="color: #000099; font-weight: bold;">\r</span><span style="color: #000099; font-weight: bold;">\n</span>Evansville IN 46234&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate_label&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2016-05-08&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;contractDate&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;2016-05-08 00:00:00&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;currentClient_label&quot;</span><span style="color: #339933;">:</span><span style="color: #3366CC;">&quot;false&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+        <p><i>Response:</i></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">204</span> <span style="color: #009900;">&#40;</span>No content<span style="color: #009900;">&#41;</span></div></div>
+    </div>
+
+    <p><b>PHP Example:</b></p>
+    <div style="margin-left:25px;">
+        <p>This example instantiates a variable for a checkgroup.</p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$varName</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'services'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> &nbsp;<span style="color: #0000ff;">'40297019257350533ba5d20087799226'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$delIndex</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/variable/<span style="color: #006699; font-weight: bold;">$caseId</span>/<span style="color: #006699; font-weight: bold;">$delIndex</span>/variable/<span style="color: #006699; font-weight: bold;">$varName</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$varName</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;legal&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;consulting&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;marketing&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$varName</span><span style="color: #339933;">.</span><span style="color: #0000ff;">'_label'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/json_encode"><span style="color: #990000;">json_encode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Legal Services&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;Consulting&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;Marketing&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;PUT&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aParams</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">204</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Variable <span style="color: #006699; font-weight: bold;">$varName</span> updated.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+
+    <h3><span id="DeleteVariable">Delete Variable: <code>DELETE /cases/{app_uid}/{del_index}/variable/{var_name}</code></span></h3>   
+    <p>Delete a variable in a case.</p>
+
+    <p><b>Permission:</b></p>
+    <dl><dd>Users must have the <a href="../3.2/Roles.html#PM_CASES">PM_CASES</a> permission assigned to their role to perform this action.</dd></dl>
+
+    <p><b>Structure:</b></p>
+    <dl>
+        <dd><b>DELETE</b> <font color="blue">/api/1.0/{workspace}/cases/{app_uid}/{del_index}/variable/{var_name}</font></dd>
+    </dl>
+
+    <p style="margin-left:25px"><font color=green><b>Note:</b></font> <font color=dimgrey>The variable must be one of the existing variables found in the process' <a href="../3.0/Variables.html">variables list</a> and it has to already be instantiated in the case.</font></p>
+
+    <p><b>URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>workspace</td>
+                        <td>Workspace name which by default is "workflow".</td>
+                        <td>http://example.com/api/1.0/<b>workflow</b>/cases/37213410154d375de3e3620044382558/2/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>app_uid</td>
+                        <td>Case's unique ID.</td>
+                        <td>http://example.com/api/1.0/workflow/cases/<b>37213410154d375de3e3620044382558</b>/2/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>del_index</td>
+                        <td>Case's delegation index, which can be obtained from the @%INDEX system variable.</td>
+                        <td>http://example.com/api/1.0/workflow/cases/37213410154d375de3e3620044382558/<b>2</b>/variable/clientName</td>
+                    </tr>
+                    <tr>
+                        <td>var_name</td>
+                        <td>Name of the case variable.</td>
+                        <td>http://example.com/api/1.0/workflow/cases/37213410154d375de3e3620044382558/2/variable/<b>clientName</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>Optional URL Parameters:</b></p>
+    <dl>
+        <dd>
+            <table class="codecolumn">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>?keys=<font color=blue><i>X</i></font></td>
+                        <td>Delete a specified row in a grid, where the first row is <code>1</code>, the second is
+                            <code>2</code>, etc.</td>
+                        <td>http://example.com/api/1.0/workflow/cases/37213410154d375de3e3620044382558/2/variable/clientList?<b>keys=2</b></td>
+                    </tr>
+                    <tr>
+                        <td>?keys=<font color=blue><i>X,Y,...</i></font></td>
+                        <td>Delete specified rows in a grid, where <code><font color=blue><i>X,Y,...</i></font></code>                            are the row index numbers. The first row is <code>1</code>, the second is <code>2</code>,
+                            etc.</td>
+                        <td>http://example.com/api/1.0/workflow/cases/37213410154d375de3e3620044382558/2/variable/clientList?<b>keys=2,5,11</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+
+    <p><b>Result:</b></p>
+    <div style="margin-left:25px;">
+        <p>If the variable was deleted, then the HTTP status code is <code>200</code> (OK), and there is no response.</p>
+        <p>If the variable has not been instantiated in the case or it doesn't exist in its process' variable list, then the HTTP status code is set to <code>404</code> (Not found) and the response is following error object:</p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">404</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Not Found&quot;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+        <p>This same error object is returned when trying to delete a row index number which doesn't exist.</p>
+    </div>
+
+    <p><b>Examples:</b></p>
+    <div style="margin-left:25px;">
+        <p><b>1.</b> Update a variable.</p>
+        <p><i>Request:</i></p>
+        <p><code>DELETE http://example.com/api/1.0/workflow/cases/37213410154d375de3e3620044382558/2/variable/dueDate</code></p>
+        <p><i>Response:</i></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+
+        <p><b>2.</b> Delete the first and third rows in a grid variable.</p>
+        <p><i>Request:</i></p>
+        <p><code>DELETE http://example.com/api/1.0/workflow/cases/37213410154d375de3e3620044382558/2/variable/clientList?keys=1,3</code></p>
+        <p><i>Response:</i></p>
+        <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span> <span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span></div></div>
+    </div>
+
+    <p><b>PHP Example:</b></p>
+    <div style="margin-left:25px;">
+        <p>This example deletes a variable.</p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$varName</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'services'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> &nbsp;<span style="color: #0000ff;">'40297019257350533ba5d20087799226'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$delIndex</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/case/<span style="color: #006699; font-weight: bold;">$caseId</span>/<span style="color: #006699; font-weight: bold;">$delIndex</span>/variable/<span style="color: #006699; font-weight: bold;">$varName</span>&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;DELETE&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oRet</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Variable <span style="color: #006699; font-weight: bold;">$varName</span> deleted.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.3/ProcessMaker_Ubuntu_Installation.html" />
+<link rel="shortlink" href="919.html" />
+<title>3.3 - Install ProcessMaker in Ubuntu 18.04 | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"mYjvEcK5O-ps0nlmbhebri_EeHZ_TPzQH-kSIx5D3vg","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-919 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="919.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="919.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-GHr5rBxMcFfzsp3ZG9qqr-Z8z-sDh6L6PB2OzR8YDtY" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.3 - Install ProcessMaker in Ubuntu 18.04</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.3</a></li><li><a href="../3.0/ProcessMaker_Ubuntu_Installation.html" class="">3.0</a></li><li><a href="../index.php/2.0/ProcessMaker_Ubuntu_Installation.html" class="">2.0</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.3 - Install ProcessMaker in Ubuntu 18.04" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="919.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.3 - Install ProcessMaker in Ubuntu 18.04 1/5</option><option value="40">Give 3.3 - Install ProcessMaker in Ubuntu 18.04 2/5</option><option value="60" selected="selected">Give 3.3 - Install ProcessMaker in Ubuntu 18.04 3/5</option><option value="80">Give 3.3 - Install ProcessMaker in Ubuntu 18.04 4/5</option><option value="100">Give 3.3 - Install ProcessMaker in Ubuntu 18.04 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.8</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-H6pIZ5O7lqPeJsC2du4-gmPlMD-EyGw5mtJPAtKwaJo" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="919.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="919.html#Overview">Overview</a></li>
+<li class="toc"><a href="919.html#Install_MySQL"><b>Step 1:</b> Install MySQL</a></li>
+<li class="toc"><a href="919.html#Install_PHP_and_Apache"><b>Step 2:</b> Install PHP and Apache</a></li>
+<ol class="toc">
+<li class="toc"><a href="919.html#Install_PhpMyAdmin">Install PhpMyAdmin </a></li>
+</ol>
+<li class="toc"><a href="919.html#Configuring_PHP_Settings"><b>Step 3:</b> Configuring PHP Settings </a></li>
+<li class="toc"><a href="919.html#Download_.26_Extract_ProcessMaker"><b>Step 4:</b> Download &amp; Extract ProcessMaker</a></li>
+<ol class="toc">
+<li class="toc"><a href="919.html#Set_file_permissions">Set file permissions </a></li>
+</ol>
+<li class="toc"><a href="919.html#MySQL_Configuration"><b>Step 5:</b> MySQL Configuration </a></li>
+<ol class="toc">
+<li class="toc"><a href="919.html#Set_user_other_than_root">Set a user other than root</a></li>
+<li class="toc"><a href="919.html#MySQL_Configuration_Issues">MySQL Configuration Issues</a></li>
+<ol class="toc">
+<li class="toc"><a href="919.html#Setting_the_root_Password">Setting the root Password</a></li>
+<li class="toc"><a href="919.html#Starting_as_a_Service">Starting as a Service</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="919.html#Configure_Apache"><strong>Step 6:</strong> Configure Apache </a></li>
+<ol class="toc">
+<li class="toc"><a href="919.html#Enable_site_and_modules">Enable site and modules</a></li>
+<li class="toc"><a href="919.html#Apache_Possible_Configuration_Issues">Apache Possible Configuration Issues</a></li>
+<ol class="toc">
+<li class="toc"><a href="919.html#No_ServerName">No ServerName</a></li>
+<li class="toc"><a href="919.html#Non-standard_Port">Non-standard Port</a></li>
+<li class="toc"><a href="919.html#Disable_the_default_Apache_site">Disable the default Apache site</a></li>
+<li class="toc"><a href="919.html#No_VirtualHosts_Warning">No VirtualHosts Warning</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="919.html#Setting_up_ProcessMaker"><b>Step 7:</b> Setting up ProcessMaker </a></li>
+<li class="toc"><a href="919.html#Additional_Configuration"><b>Step 8:</b> Additional Configuration</a></li>
+<ol class="toc">
+<li class="toc"><a href="919.html#Setting_the_Time_Zone">Setting the Time Zone</a></li>
+<li class="toc"><a href="919.html#Configuring_Email">Configuring Email </a></li>
+<li class="toc"><a href="919.html#Execution_of_cron.php">Execution of <tt>cron.php</tt></a></li>
+<li class="toc"><a href="919.html#Configuring_the_mycrypt.ini">Configuring the mycrypt.ini</a></li>
+</ol>
+<li class="toc"><a href="919.html#Errors_during_Installation">Errors during Installation</a></li>
+</ol>
+</div></div>
+
+<h2><strong><span class="mw-headline" id="Overview">Overview</span></strong></h2>
+
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 60%;">
+   <tbody>
+      <tr>
+      <td>
+      <font color="green"><b>Note:</b></font> <font color="dimgrey"> This platform is not officially supported by ProcessMaker and has NOT been tested by ProcessMaker QA department. 
+      </font>
+      </td>
+      </tr>
+   </tbody>
+</table>
+</p>
+
+<p>Follow these instructions to install ProcessMaker 3.3.X on top of a LAMP (Linux, Apache, MySQL, PHP) stack in Ubuntu 18.04 LTS (Bionic Beaver). 
+
+<p>ProcessMaker 3.3 is not compatible with PHP 7.2 in the Ubuntu 18.04 repository, so PHP 7.1 needs to be installed from a third-party repository. ProcessMaker 3.3 also has not been tested with MariaDB 10.1, so MySQL 5.6 needs to be downloaded from Oracle's website.</p>
+
+<p>Before installing, it is recommended to first check the <a href="../3.3/ProcessMaker_Installation_Requirements.html"> Installation Requirements</a>. After installing, see <a href="../3.0/Additional_Configuration.html" title="Additional Server Configuration"> Additional Server Configuration</a>.</p>
+
+<h2><span  id="Install_MySQL"><b>Step 1:</b> Install MySQL</span></h2>
+
+<p>To get MySQL 5.6, go to <a href="https://dev.mysql.com/downloads/mysql/5.6.html#download">https://dev.mysql.com/downloads/mysql/5.6.html#downloads</a> and download the tar file for MySQL 5.6 in Ubuntu 14.04. Then decompress it.</p>
+
+<p><img src="../sites/default/files/3.3installubuntu18.04_downloadmysql5.6.png" width="781" height="760" alt=""  /></p>
+
+<p>If using the command line, it can be downloaded and unpacked in this manner:</p>
+<codeblock>wget https://cdn.mysql.com//Downloads/MySQL-5.6/mysql-server_5.6.42-1ubuntu14.04_amd64.deb-bundle.tar
+tar -xvf mysql-server_5.6.42-1ubuntu14.04_amd64.deb-bundle.tar
+</codeblock>
+<p>Then, install the mysql .deb packages which you want to install. To install all of them:</p>
+<codeblock>sudo dpkg -i mysql-client_* mysql-community-server_* mysql-server_* mysql-community-source_* libmysqlclient18_* libmysqlclient-dev_* libmysqld-dev_* mysql-community-client_* mysql-community-bench_* mysql-common_* mysql-community-test_* mysql-testsuite_*
+</codeblock>
+<p>There will be errors about missing dependencies. To resolve these dependencies and finish the installation, issue the command:</p>
+<codeblock>apt-get -f install
+</codeblock>
+
+<p>When MySQL is being installed, a dialog box will appear asking for a new root password for MySQL.</p>
+<p><img src="../sites/default/files/3.3installubuntu18.04_setmysqlpassword.png" width="747" height="506" alt=""  /></p>
+<p>Enter a password and select the option <b>OK</b>. Then enter the <b>same password</b> a second time in the next screen to confirm it.</p>
+
+<!--
+<p>Then, execute the <a hef="https://dev.mysql.com/doc/refman/5.7/en/mysql-secure-installation.html">mysql_secure_installation</a> command to improve the security of MySQL. It will give the opportunity to change MySQL's root password and ask ask several security questions.</p>
+<codeblock>sudo mysql_secure_installation</codeblock>
+<ul>
+<li>To the question <code>Remove anonymous users? [Y/n]</code>, enter <b><code>Y</code></b>.
+<li>To the question <code>Disallow root login remotely? [Y/n]</code>, enter <b><code>Y</code></b> if ProcessMaker and MySQL will be installed on the same server. Enter <b><code>n</code></b> if ProcessMaker and MySQL will be installed on different servers. 
+<li>To the question <code>Remove test database and access to it? [Y/n]</code>, enter <b><code>Y</code></b>.
+</ul>
+--> 
+<p>Then, Verify that MySQL is correctly configured as a service:</p>
+<codeblock>sudo systemctl status mysql </codeblock>
+
+<p><img src="../sites/default/files/3.3installubuntu18.04_mysqlstatus.png" width="969" height="200" alt=""  /></p>
+
+<p>(Press <code><b>q</b></code> to quit.)</p>
+
+<p>Then, configure MySQL to turn off <a href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_sql_mode">MySQL STRICT mode</a>, which is enabled by default in MySQL 5.6.6 and later. Also, make sure that ONLY_FULL_GROUP_BY mode is not enabled, which is the default in MySQL 5.7.5 and later.</p> 
+
+<p>First, login to MySQL and verify the current settings for <a href="https://dev.mysql.com/doc/refman/5.6/en/sql-mode.html">sql_mode</a>:</p>
+<codeblock>mysql -u root -p</codeblock>
+<p>Once inside MySQL, issue the following command:</p>
+<codeblock>mysql> <b>SELECT @@SESSION.sql_mode, @@GLOBAL.sql_mode;</b>
++------------------------+------------------------+
+| @@SESSION.sql_mode     | @@GLOBAL.sql_mode      |
++------------------------+------------------------+
+| NO_ENGINE_SUBSTITUTION | NO_ENGINE_SUBSTITUTION |
++------------------------+------------------------+
+1 row in set (0,00 sec)
+</codeblock>
+<p>The <code>sql_mode</code> should not include NO_ENGINE_SUBSTITUTION, STRICT_ALL_TABLES, STRICT_TRANS_TABLES or ONLY_FULL_GROUP_BY settings. If any of those settings are included, then copy the current sql_mode settings, but exclude those four. Then, exit MySQL:</p>
+<codeblock>mysql> <b>EXIT;</b>
+</codeblock>
+<p>Then, edit the file <tt><b>/etc/mysql/conf.d/mysql.cnf</b></tt> to change the <code>sql_mode</code>:</p>
+<codeblock>sudo nano /etc/mysql/conf.d/mysql.cnf</codeblock>
+<p>Under the <code>[mysqld]</code> section, add the <code>sql_mode</code> settings which don't include the above four settings which aren't allowed. In this example, there are none, so set:</p>
+<codeblock>[mysqld]
+sql_mode=""</codeblock>
+<div style="margin-left:25px;"><font color=green><b>Note:</b></font> <font color=dimgrey>If the <code>[mysqld]</code> section doesn't exist, then it needs to be created. If <code>sql_mode</code> is placed under the <code>[mysql]</code> section then it will cause an error.</font></div>
+<p>Then, exit <code>nano</code> by pressing <b>CTL</b> and <code>x</code> simultaneously and press <code><b>y</b></code> to the question asking if the changes should be saved.</p>
+
+<p>Then, restart the <code>mysql</code> service for new configuration to take effect:</p>
+<codeblock>sudo systemctl restart mysql</codeblock
+<p></p>
+<h2><span class="mw-headline" id="Install_PHP_and_Apache"><b>Step 2:</b> Install PHP and Apache</span></h2>
+
+<p>Add Ondřej Surý's <a href="https://launchpad.net/~ondrej/+archive/ubuntu/php">PHP repository</a>:</p>
+<codeblock>sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+</codeblock>
+<p>Press ENTER at the question whether to continue adding the repository.</p>
+
+<p>Then install Apache 2.4 and PHP 7.1 with the following command:</p>
+<codeblock>sudo apt install apache2 php7.1 php7.1-mbstring php7.1-mcrypt php7.1-mysql php7.1-xml php7.1-gd php7.1-ldap php7.1-curl php7.1-cli php7.1-soap</codeblock>
+<p></p>
+
+<h3><span class="mw-headline" id="Install_PhpMyAdmin">Install PhpMyAdmin </span></h3>
+<p><a class="external text" href="http://www.phpmyadmin.net" rel="nofollow">phpMyAdmin</a> can be installed to <a href="../3.0/Consulting_the_ProcessMaker_databases.html#From_the_phpMyAdmin_GUI" title="Consulting the ProcessMaker databases">easily view the MySQL databases</a> used by ProcessMaker inside a web browser.</p>
+<p>First, verify that the "universe" repository is in your <b><tt>/etc/apt/sources.list</tt></b> file. If not, edit the file:</p>
+
+<codeblock>sudo nano /etc/apt/sources.list
+</codeblock>
+
+<p>Add "universe" to the end of the list of repositories in a line which is similar to the following:</p>
+<codeblock>deb http://us.archive.ubuntu.com/ubuntu/ bionic universe</codeblock>
+<p>(Your URL and the list of repositories may be different, but make sure that it contains at least "bionic" and "universe".)
+
+<p>Then, update the list of available packages from the repositories:</p>
+<codeblock>sudo apt update
+</codeblock>
+
+<p>Then, install PhpMyAdmin:</p>
+
+<codeblock>sudo apt install phpmyadmin
+</codeblock>
+
+<p>If asked which web server PhpMyAdmin should use, press the space bar to select "apache2":</p>
+<p><img src="../sites/default/files/PhpMyAdminWhichWebServerDialog_0.png" width="547" height="203" alt=""  /></p>
+<p>Select whether to configure the database with the <tt>dbconfig-common</tt> package. In most cases, it is easier to select <b><code>Yes</code></b>:</p>
+<img src="../sites/default/files/3UbuntuInst-ConfigDBwithdbconfig.png">
+<p>When asked for a password to create the MySQL databases, enter the MySQL root password:</p>
+<p><img src="../sites/default/files/PhpMyAdminRootPasswordDialog_0.png" width="533" height="173" alt=""  /></p>
+<p>Then, enter a password which can be used to access the PhpMyAdmin web application:</p>
+<p><img src="../sites/default/files/PhpMyAdminApplicationPasswordDialog_0.png" width="540" height="174" alt=""  /></p>
+<p>Reconfirm that password by entering it a second time.</p>
+
+
+
+<h2><span id="Configuring_PHP_Settings"><b>Step 3:</b> Configuring PHP Settings </span></h2>
+<p>The default configuration of PHP should be able to run ProcessMaker, however, check the following settings if PHP's configuration file <strong><tt>php.ini</tt></strong> has been modified.</p>
+
+<p>Edit PHP 7.1's configuration file <strong><tt>php.ini</tt></strong>:</p>
+<codeblock>sudo nano /etc/php/7.1/apache2/php.ini </codeblock>
+
+<p>Search for the following lines and edit them using the following configurations:</p>
+
+<codeblock>file_uploads = <b>On</b>
+short_open_tag = <b>On</b>
+memory_limit = <b>512M</b>
+error_reporting = <b>E_ALL & ~E_DEPRECATED & ~E_STRICT</b>
+display_errors = <b>Off</b>
+post_max_size = <b>24M</b>
+upload_max_filesize = <b>24M</b>
+</codeblock>
+
+<p>It is also recommended to set the <code>date.timezone</code> to a your time zone, especially if using <a href="../3.0/Events.html#Timer_Start_Event">timer events</a> in the Enterprise Edition. See this list of <a href="http://php.net/manual/en/timezones.php">supported time zones</a>.</p>
+<codeblock>date.timezone = America/New_York</codeblock>
+
+<p><span style="color: green"><strong>Note:</strong></span> <span style="color: dimgrey">After installation, the same time zone should be set in the ProcessMaker interface by going to <b>Admin > Settings > System</b> and setting the <a href="../3.0/System.html#Changing_The_Time_Zone">Time Zone</a> (or in the <a href="../3.0/Configuration_File_env.ini.html" title="Configuration File env.ini"><tt>env.ini</tt></a> file).</span></p>
+
+<span id="save"><p>After editing the php.ini file, save the changes in Nano by pressing <b>CTL+X</b> and pressing <b><code>y</code></b> when asked whether to save the changes.</p>
+</span>
+
+<h2><span class="mw-headline" id="Download_.26_Extract_ProcessMaker"><b>Step 4:</b> Download &amp; Extract ProcessMaker</span></h2>
+<p>Go to <a href="http://sourceforge.net/projects/processmaker/files/ProcessMaker/">ProcessMaker's SourceForge</a> page and download a recent tarball of ProcessMaker, which should be named <strong><tt>processmaker-<font color=blue><i>X.X.X.X</i></font>-community.tar.gz</tt></strong>.</p>
+
+If downloading from the command line, the <a href="https://www.tecmint.com/10-wget-command-examples-in-linux/">wget</a> command can be used to obtain the ProcessMaker code:
+<codeblock>wget https://razaoinfo.dl.sourceforge.net/project/processmaker/ProcessMaker/3.3.0/processmaker-3.3.0-community.tar.gz</codeblock>
+
+<p>After the download has finished, decompress the tarball in the directory where ProcessMaker will be installed. ProcessMaker can be installed in any directory which is not publicly accessible to the internet (so do NOT install it in <strong><tt>/var/www</tt></strong>), but it is generally installed in <strong><tt>/opt</tt></strong>, since it is an optional program which doesn't come from the standard repositories:</p>
+
+<codeblock>tar -C /opt -xzvf processmaker-3.<i><font color=blue>X.X</font></i>-community.tar.gz </codeblock>
+
+<p>Verify that ProcessMaker was correctly decompressed:</p>
+
+<codeblock>ls /opt/processmaker</codeblock>
+
+<p>The <strong><tt>processmaker</tt></strong> directory should contain the following contents:</p>
+
+<p><img src="../sites/default/files/3.0Ubuntu16LsOptProcessMaker.png" /></p>
+
+<h3><strong><span class="mw-headline" id="Set_file_permissions">Set file permissions </span></strong></h3>
+<p>Then, issue the following commands with <a href="https://help.ubuntu.com/community/RootSudo#root_account">sudo</a>, so that ProcessMaker can access the necessary files when run by the Apache server:</p>
+<codeblock>sudo chown -R www-data:www-data /opt/processmaker
+</codeblock>
+
+<!--Check if works without this:
+ cd /opt/processmaker
+sudo chmod -R 770 shared workflow/public_html gulliver/js gulliver/thirdparty/html2ps_pdf/cache
+cd workflow/engine/
+sudo chmod -R 770 config content/languages plugins xmlform js/labels-->
+
+
+
+<h2><span class="mw-headline" id="MySQL_Configuration"><b>Step 5:</b> MySQL Configuration </span></h2>
+
+<p>Set up a secure installation of MySQL, by removing the "test" database and the remote connections, with the following command:</p>
+
+<codeblock>sudo mysql_secure_installation
+</codeblock>
+
+<p>Follow the wizard to secure MySQL:</p>
+<p>Here it is necessary to enter root password:</p>
+
+<p><img src="../sites/default/files/3.0Ubuntu16MySQLSecure00.png"></p>
+
+<p>In the next part, it is possible to change the root password if wanted.</p>
+
+<p><img src="../sites/default/files/3.0Ubuntu16MySQLSecure01.png"></p>
+
+<p>Then, remove anonymous users by choosing "Y":</p>
+
+<p><img src="../sites/default/files/3.0Ubuntu16MySQLSecure02.png"></p>
+
+<p>In this part, the prompt will ask about disabling root login. Answer <b>Y</b> to disable remote access.</p>
+
+<p><img src="../sites/default/files/3.0Ubuntu16MySQLSecure03.png"></p>
+
+<p>Then, it is possible to remove the default "Test" database:</p>
+
+<p><img src="../sites/default/files/3.0Ubuntu16MySQLSecure04.png"></p>
+
+<p>Finally, reload privileges tables:</p>
+
+<p><img src="../sites/default/files/3.0Ubuntu16MySQLSecure05.png"></p>
+
+<p>Once done, restart the "mysql" service.</p>
+
+<codeblock>sudo systemctl restart mysql</codeblock>
+
+
+<h3><strong><span class="mw-headline" id="Set_user_other_than_root">Set a user other than root</span></strong></h3>
+
+<p>The MySQL "root" user should already have all the necessary privileges to setup the ProcessMaker databases. If planning on using a MySQL user other than "root" to set up the ProcessMaker databases, then follow the instructions below to grant a MySQL user superuser privileges to create and update databases.</p>
+<p>Login to MySQL:</p>
+
+<codeblock>mysql -u root -p 
+</codeblock>
+
+<p>Enter the root password for MySQL.</p>
+<p>Once in MySQL, give the user which will be running ProcessMaker superuser privileges to create create and modify MySQL databases:</p>
+
+<codeblock>mysql&gt; grant all on *.* to '<i><b>USER'</b></i>@'<b>localhost'</b> identified by '<i><b>PASSWORD'</b></i> with grant option;
+</codeblock>
+
+<p>Replace <i><b><tt>USER</tt></b></i> with the name of your MySQL user and <i><b><tt>PASSWORD</tt></b></i> with the password for that user. (If that user doesn't already exist, he/she will be automatically created with the above <tt>grant</tt> command. If you are running ProcessMaker on a different server than your MySQL server, then replace <b><tt>localhost</tt></b> with the domain name or IP address of the server where ProcessMaker is located.</p>
+<p>Exit MySQL:</p>
+
+<codeblock>mysql&gt; exit;
+</codeblock>
+
+
+
+<h3><strong><span class="mw-headline" id="MySQL_Configuration_Issues">MySQL Configuration Issues</span></strong></h3>
+
+
+<h4><strong><span class="mw-headline" id="Setting_the_root_Password">Setting the root Password</span></strong></h4>
+<p>If MySQL doesn't have a root password, set one for better security:</p>
+
+<codeblock>sudo mysqladmin -u root password <i><b>PASSWORD</b></i>
+</codeblock>
+
+<p>If you have forgotten the root password, see <a class="external text" href="http://dev.mysql.com/doc/refman/5.1/en/resetting-permissions.html#resetting-permissions-unix">these instructions</a> to reset it.</p>
+
+
+<h4><strong><span class="mw-headline" id="Starting_as_a_Service">Starting as a Service</span></strong></h4>
+<p>When logging into MySQL, if the following error message appears:</p>
+
+<codeblock>ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+</codeblock>
+
+<p>Then, MySQL needs to be started as a service:</p>
+
+<codeblock>sudo systemctl start mysql
+</codeblock>
+
+<p>If MySQL was installed from Oracle's MySQL repository, it should automatically start as a service on bootup. If not, then use <a class="external text" href="http://www.debuntu.org/how-to-managing-services-with-update-rc-d/" rel="nofollow">use <tt>update-rc.d</tt></a> to add it as a service:</p>
+
+<codeblock>sudo update-rc.d mysql defaults
+</codeblock>
+
+
+
+<h2><span id="Configure_Apache"><strong>Step 6:</strong> Configure Apache </span></h2> 
+<p>Copy the sample ProcessMaker configuration file (which is named <b><tt>pmos.conf.example</tt></b>) to Apache's list of available sites:</p>
+
+<codeblock>sudo cp /opt/processmaker/pmos.conf.example /etc/apache2/sites-available/pmos.conf
+</codeblock>
+
+<p>Then edit the <strong><tt>pmos.conf</tt></strong> file to fit your environment:</p>
+
+<codeblock>sudo nano /etc/apache2/sites-available/pmos.conf
+</codeblock>
+
+In Apache 2.4, use the following VirtualHost configuration. In the <b><tt>pmos.conf</tt></b> file, replace <i><strong><code>your_ip_address</code></strong></i> and <i><strong><code>your_processmaker_domain</code></strong></i> with the IP address or domain name used by your ProcessMaker server. And replace <b><tt>/opt/processmaker</tt></b> with your installation directory:</p>
+
+<codeblock><font color=dimgrey>#processmaker virtual host</font>
+&lt;VirtualHost <i><font color=blue>your_ip_address</font></i> &gt;
+    ServerName "<i><font color=blue>your_processmaker_domain</font></i>"
+    DocumentRoot <font color=blue>/opt/processmaker</font>/workflow/public_html
+    DirectoryIndex index.html index.php
+
+    &lt;Directory <font color=blue>/opt/processmaker</font>/workflow/public_html&gt;
+        Options Indexes FollowSymLinks MultiViews
+        AddDefaultCharset UTF-8
+        AllowOverride All
+        Require all granted
+        ExpiresActive On
+
+        &lt;IfModule mod_rewrite.c&gt;
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^.*/(.*)$ app.php [QSA,L,NC]
+        &lt;/IfModule&gt;
+
+        <font color=dimgrey>#Deflate filter is optional. It reduces download size, but adds slightly more CPU processing:</font>
+        <strong>AddOutputFilterByType DEFLATE text/html</strong>
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</codeblock>
+
+<p>Replace <i><b><code>your_ip_address</code></b></i> with the IP number or domain name of the server running ProcessMaker. If only planning on running and accessing ProcessMaker on your local machine, then use the IP address "127.0.0.1". If using ProcessMaker on a machine whose IP address might change (such as a machine whose IP address is assigned with DHCP), then use <code>*</code>, which represents any IP address. If not using the standard port 80, then it is necessary to also specify the port number.</p>
+<p>If your DNS or <strong><tt>/etc/hosts</tt></strong> has a defined domain for ProcessMaker, then use that domain for <i><strong><code>your_processmaker_domain</code></strong></i>. Otherwise, use the same IP address for <i><strong><code>your_processmaker_domain</code></strong></i> as was used for <i><strong><code>your_ip_address</code></strong></i>. For more information, see the <a href="https://httpd.apache.org/docs/current/vhosts"</a>Apache Virtual Hosts Documentation</a>.</p>
+
+<p style="margin-left:25px"><font color="green"><strong>Note 1:</strong></font> <font color="dimgray">It is also possible to define the virtual host for ProcessMaker directly in the Apache configuration by inserting the above <code>VirtualHost</code> definition in the file <strong><tt>/etc/apache2/apache2.conf</tt></strong>.</font></p>
+
+<p style="margin-left:25px"><font color="green"><strong>Note 2:</strong></font> <font color="dimgray">If using Apache's mod_proxy_fcgi and php-fpm, then add the following line to the virtualhost definition:
+<codeblock>SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1</codeblock>
+</font></div>
+
+<p><b>Example 1:</b></p>
+<div style="margin-left: 25px;">
+<p>ProcessMaker is installed in the <b><tt>/opt/processmaker</tt></b> directory and is running on a server at the address 192.168.1.100:</p>
+<codeblock><font color=dimgrey>#processmaker virtual host</font>
+&lt;VirtualHost 192.168.1.100&gt;
+    ServerName "192.168.1.100" 
+    DocumentRoot /opt/processmaker/workflow/public_html
+    ...
+</codeblock>
+</div>
+
+<p><b>Example 2:</b></p>
+<div style="margin-left: 25px;">
+<p>ProcessMaker is installed in the <b><tt>/user/fred</tt></b> directory on your local machine at port 8080 with an dynamic IP assigned by DHCP:</p>
+<codeblock>Listen 8080
+<font color=dimgrey>#processmaker virtual host</font>
+&lt;VirtualHost *:8080 &gt;
+    #don't include ServerName
+    DocumentRoot /user/fred/processmaker/workflow/public_html
+    ...
+</codeblock>
+</div>
+
+<p><b>Example 3:</b></p>
+<div style="margin-left: 25px;">
+<p>ProcessMaker is installed in the <b><tt>/opt/pm3.3</tt></b> directory at the IP address 123.45.67.89 and the domains <code>www.example.com</code> and any variant of <code><font color=blue><i>X</i></font>.example.com</code>:</p>
+<codeblock><font color=dimgrey>#processmaker virtual host</font>
+&lt;VirtualHost 123.45.67.89 &gt;
+    ServerName "www.example.com"
+    ServerAlias "*.example.com"
+    DocumentRoot /opt/pm3.3/processmaker/workflow/public_html
+    ...
+</codeblock>
+
+<p>Note that <code>www.example.com</code> and <code>*.example.com</code> need to be defined in the server's DNS or <b><tt>/etc/hosts</tt></b> file for this example to work correctly.</p>
+</div>
+
+<p>Then <a href="919.html#save">save and write</a> the <tt>pmos.conf</tt>.</p>
+
+ 
+
+<h3><span id="Enable_site_and_modules">Enable site and modules</span></h3>
+<p>After editing the <strong><tt>pmos.conf</tt></strong> file, enable the ProcessMaker web site, as the "root" user:</p>
+
+<codeblock>sudo a2ensite pmos.conf
+</codeblock>
+
+<p>To activate the new configuration, restart the Apache server.</p>
+<codeblock>sudo systemctl restart apache2</codeblock>
+
+<p>Then, verify that Apache is correctly configured as a service and is functioning:</p>
+<codeblock>systemctl status apache2 </codeblock>
+
+<p>ProcessMaker needs to use the following modules in the Apache 2 web server:
+
+<ul>
+<li><tt>ldap</tt></li>
+<li><tt>authnz_ldap</tt></li>
+<li><tt>deflate</tt></li>
+<li><tt>expires</tt></li>
+<li><tt>rewrite</tt></li>
+<li><tt>ssl</tt></li>
+<li><tt>vhost_alias</tt></li>
+<li><tt>filter</tt></li>
+</ul>
+
+<p>To check whether these modules are enabled, run the following command:</p>
+
+<codeblock>ls /etc/apache2/mods-enabled/
+</codeblock>
+
+<p><img src="../sites/default/files/3.0Ubuntu16ApacheModules.png"></p>
+
+<p>If you don't see them in the list, enabled them with the <strong><tt>a2enmod</tt></strong> command:</p>
+
+<codeblock>sudo a2enmod ldap; sudo a2enmod authnz_ldap; sudo a2enmod deflate; sudo a2enmod expires; sudo a2enmod rewrite; sudo a2enmod ssl; sudo a2enmod vhost_alias; sudo a2enmod filter
+</codeblock>
+
+<p>After adding the web site <strong><tt>pmos.conf</tt></strong> and enabling modules, it is necessary to restart the Apache web server:</p>
+
+<codeblock>sudo systemctl reload apache2
+</codeblock>
+
+<h3 ><span id="Apache_Possible_Configuration_Issues">Apache Possible Configuration Issues</span></h3>
+<h4 ><span id="No_ServerName">No ServerName</span></h4>
+<p>If a similar warning message appears when restarting Apache:</p>
+
+<codeblock>apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+</codeblock>
+
+<p>Then, the <strong><tt>ServerName</tt></strong> needs to be set for Apache. Edit the Apache configuration file:</p>
+
+<codeblock>sudo nano /etc/apache2/apache2.conf 
+</codeblock>
+
+<p>Add the line:</p>
+
+<codeblock>ServerName <i><font color=blue>ip-address</font></i>
+</ip-address></codeblock>
+
+<p>For instance, if running ProcessMaker from the local machine, then:</p>
+
+<codeblock>ServerName 127.0.0.1
+</codeblock>
+
+<h4 ><span id="Non-standard_Port">Non-standard Port</span></h4>
+<p>If running ProcessMaker off a port other than the default port 80, then add the following line to the file <strong><tt>/etc/apache2/ports.conf</tt></strong>:</p>
+
+<codeblock>Listen <i><font color=blue>ip-address:port</font></i>
+</port></ip-address></codeblock>
+
+<p>For instance, if running ProcessMaker from the local machine at port 8080:</p>
+
+<codeblock>Listen 127.0.0.1:8080
+</codeblock>
+
+<p>Or simply:</p>
+
+<codeblock>Listen 8080
+</codeblock>
+
+<p><span style="color: green;"><strong>Note:</strong></span> <font color=dimgrey>If Apache is using the default port 80, then configure other programs to not use port 80. Check whether a program is currently listening on port 80 with the command:</font></p>
+
+<codeblock>netstat -tanp 
+</codeblock>
+
+<p><font color=dimgrey>To configure Skype to stop listening on port 80, press CTRL+O or go to <strong>Tools &gt; Options</strong>. Under the <strong>Advanced</strong> section of the "Options" dialog box, go to the "Connection" section and enter an alternative port for <strong>Use port [ ] for incoming connections</strong>.</font></p>
+
+<h4 ><span id="Disable_the_default_Apache_site">Disable the default Apache site</span></h4>
+<div id="ApacheDefaultSite">If Apache is configured to display a default message like the following:</div>
+
+<p><img src="../sites/default/files/3.0Ubuntu16Apache2Defaultpage.png"></p>
+
+<p>Then, disable the default site:</p>
+<codeblock>sudo a2dissite 000-default.conf
+sudo systemctl reload apache2
+</codeblock></p>
+
+<p>If the default page has not disabled, restart your ubuntu sesion. In another case if the default page is not displayed, skip this step.</p>
+
+<h4 ><strong><span id="No_VirtualHosts_Warning">No VirtualHosts Warning</span></strong></h4>
+<p>If you see the following message when reloading or restarting Apache:</p>
+
+<codeblock>[warn] NameVirtualHost *:80 has no VirtualHosts
+</codeblock>
+
+<p>Then, comment out or delete the following line in the file <strong><tt>/etc/apache2/ports.conf</tt></strong>:</p>
+
+<codeblock>NameVirtualHost *:80
+</codeblock>
+
+<h2><span class="mw-headline" id="Setting_up_ProcessMaker"><b>Step 7:</b> Setting up ProcessMaker </span></h2>
+<p>Open a web browser and enter the IP address (and port number if not using the default port 80) where ProcessMaker is installed. For instance, if ProcessMaker is installed at the address 192.168.10.100, then go to: <b><tt>http://192.168.10.100</tt></b><br>If using ProcessMaker which is installed locally on port 8080, go to: <b><tt>http://127.0.0.1:8080</tt></b></p>
+
+<p><img src="../sites/default/files/3.0Ubuntu16PMReady.png"></p>
+
+<p>Then follow the steps in the <a href="../3.0/ProcessMaker_Generic_Installation.html#Step_4:_Installation_Wizard" title="3.0/ProcessMaker Generic Installation">Installation Wizard</a> in the web browser to complete the installation of ProcessMaker.</p>
+
+
+
+<h2><strong><span class="mw-headline" id="Additional_Configuration"><b>Step 8:</b> Additional Configuration</span></strong></h2>
+<p>Additional aspects of ProcessMaker may need to be configured. See <a href="../3.0/Additional_Configuration.html">Additional Server Configuration</a> and the <a href="../index.html#quicktabs-tab-test_quicktabs-4">Administration</a> section of the wiki. Most installations of ProcessMaker need to configure the following:</p>
+
+<h3 ><span id="Setting_the_Time_Zone">Setting the Time Zone</span></h3>
+<p>The default time zone for the ProcessMaker server can be set by logging into ProcessMaker with the "admin" user and going to <b>Admin > Settings > System</b> and setting the <a href="../3.0/System.html#Changing_The_Time_Zone">Time Zone</a>. Another way to set the time zone is edit the <a href="../3.0/Configuration_File_env.ini.html" title="Configuration File env.ini"><b><tt>env.ini</tt></b> configuration file</a>. 
+
+<h3 ><span id="Configuring_Email">Configuring Email </span></h3>
+<p>If planning on sending out <a href="../3.0/Notifications.html">email notifications</a> or enabling users to recover <a href="../3.0/Login.html#Forgotten_Password">forgotten passwords</a>, then see <a href="../3.0/Email_Settings.html">Email - Settings</a> to configure ProcessMaker to use an email server.</p>
+
+<h3 ><span id="Execution_of_cron.php">Execution of <tt>cron.php</tt></span></h3>
+<p>If planning on using <a href="../3.0/Notifications.html">email notifications</a> or <a href="../3.0/Events.html#Timer_Start_Event">timer events</a>, then the server running ProcessMaker has to be configured to periodically execute the <strong><tt>cron.php</tt></strong> file. See <a href="../3.0/Executing_cron.php.html">Executing Cron Scripts</a>.</p>
+
+
+<h3><strong><span class="mw-headline" id="Configuring_the_mycrypt.ini">Configuring the mycrypt.ini</span></strong></h3>
+<p>In case of having errors with the <tt>mycrypt</tt> extension, even if it was enabled, follow the steps below to fix the problem:</p>
+<ul><li>Change the path of the <tt>mycrypt.so</tt> file location. Use the command line and write the <tt>locate</tt> command in order to find the path.</li></ul>
+<ul><li>Look for the <tt>mycrypt.ini</tt> file and open it.</li></ul>
+<ul><li>Copy the path of the <tt>mycrypt.so</tt> file in the <tt>mycrypt.ini</tt> file.</li></ul>
+<ul><li>Restart apache.</li></ul>
+
+
+<h2><span class="mw-headline" id="Errors_during_Installation">Errors during Installation</span></h2>
+<p>If an error occurs during the installation, check the installation log file:
+<div style="margin-left: 25px;"><b><tt><a href="../3.0/File_Locations.html#Installation_Directory" title="File Locations">&lt;install-directory&gt;</a>/shared/log/install_log.log</tt></b></div></p>
+
+<p>Depending on the errors found in the installation log file, check the following files:</p>
+<p>The Apache configuration file:
+<div style="margin-left: 25px;"><b><tt>/etc/apache2/apache2.conf</tt></b><br>
+<i>and</i><br>
+<b><tt>/etc/apache2/ports.conf</tt></b>
+</div></p>
+
+<p>The ProcessMaker web site configuration file for Apache:
+<div style="margin-left: 25px;"><b><tt>/etc/apache2/sites-available/pmos.conf</tt></b></div></p>
+
+<p>The PHP configuration file:
+<div style="margin-left: 25px;"><b><tt>/etc/php7.1/apache2/php.ini</tt></b></div></p>
+
+<p>The MySQL configuration file:
+<div style="margin-left: 25px;"><b><tt>/etc/mysql/my.cnf</tt></b><br>
+<i>or</i><br>
+<b><tt>/etc/mysql/mysql.conf.d/mysqld.cnf</tt></b>
+</div></p>
+
+<p>The ProcessMaker configuration file where components are installed:
+<div style="margin-left: 25px;"><b><tt><a href="../3.0/File_Locations.html#Installation_Directory" title="File Locations">&lt;install-directory&gt;</a>/workflow/engine/config/paths_installed.php</tt></b></div></p>
+
+<p>The ProcessMaker configuration file for database connections:
+<div style="margin-left: 25px;"><b><tt><a href="../3.0/File_Locations.html#Installation_Directory" title="File Locations">&lt;install-directory&gt;</a>/shared/sites/workflow/db.php</tt></b></div></p>
+
+<p>The ProcessMaker redirection to login screen:
+<div style="margin-left: 25px;"><b><tt><a href="../3.0/File_Locations.html#Installation_Directory" title="File Locations">&lt;install-directory&gt;</a>/processmaker/workflow/public_html/index.html</tt></b></div></p>
+
+<p>If the following error appears at the login screen:</p>
+<p><img alt="" src="../sites/default/files/ErrorIDNotWorkspace.png"></p>
+<p>This error indicates that the installer was unable to access the MySQL databases to install the translations. Make sure that the MySQL port (which is 3306 by default) isn't blocked by a firewall and MySQL is configured to accept connections from the server running ProcessMaker.</p>
+
+<p>If having other issues, please ask for help on our <a href="http://forum.processmaker.com/">ProcessMaker forum</a>.</p>
+
+</div></div></div>  </div>
+
+      <footer>
+      <ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul>    </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

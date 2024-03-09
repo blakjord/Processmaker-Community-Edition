@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.6/Advanced_LDAP.html" />
+<link rel="shortlink" href="1029.html" />
+<title>3.6 - 3.8 - Advanced LDAP/AD | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"d2-Gd3u_5MoV3d5r88GtsetWClcX_2pfJz3brCf7vpc","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-1029 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="1029.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="1029.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-ti3AxXG87kbuMj85yBegmFZJqdFYCHrGHWVJ8nX8avI" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.6 - 3.8 - Advanced LDAP/AD</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a href="../3.2/Advanced_LDAP.html" class="">3.5</a></li><li><a href="../3.2/Advanced_LDAP.html" class="">3.4</a></li><li><a href="../3.2/Advanced_LDAP.html" class="">3.3</a></li><li><a href="../3.2/Advanced_LDAP.html" class="">3.2</a></li><li><a href="../3.1/Advanced_LDAP.html" class="">3.1</a></li><li><a href="../3.0/Advanced_LDAP.html" class="">3.0</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.6 - 3.8 - Advanced LDAP/AD" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="1029.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.6 - 3.8 - Advanced LDAP/AD 1/5</option><option value="40" selected="selected">Give 3.6 - 3.8 - Advanced LDAP/AD 2/5</option><option value="60">Give 3.6 - 3.8 - Advanced LDAP/AD 3/5</option><option value="80">Give 3.6 - 3.8 - Advanced LDAP/AD 4/5</option><option value="100">Give 3.6 - 3.8 - Advanced LDAP/AD 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.5</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-HeUQvoGbFBVFYMcPBSd3riMtCB33c-tJKkF5hLjspqY" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="1029.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="1029.html#Overview">Overview</a></li>
+<li class="toc"><a href="1029.html#How_the_plugin_works">How the Advanced LDAP/AD Works</a></li>
+<li class="toc"><a href="1029.html#Considerations">Considerations</a></li>
+<li class="toc"><a href="1029.html#Recommendations">Recommendations</a></li>
+<li class="toc"><a href="1029.html#Setup">Setup</a></li>
+<li class="toc"><a href="1029.html#Authentication_Sources">Authentication Sources</a></li>
+<ol class="toc">
+<li class="toc"><a href="1029.html#Create_Connection">Create Connection</a></li>
+<ol class="toc">
+<li class="toc"><a href="1029.html#Match_attributes_to_sync">Match Attributes to Sync</a></li>
+</ol>
+<li class="toc"><a href="1029.html#Import_Connection">Import Connection</a></li>
+<li class="toc"><a href="1029.html#Import_Users">Import Users</a></li>
+<li class="toc"><a href="1029.html#Download_Settings">Download Settings</a></li>
+<li class="toc"><a href="1029.html#Sync_Groups">Sync Groups</a></li>
+<li class="toc"><a href="1029.html#Sync_Departments">Sync Departments</a></li>
+<li class="toc"><a href="1029.html#Edit Settings">Edit Settings</a></li>
+<li class="toc"><a href="1029.html#Delete_Authentication_Source">Delete Authentication Source</a></li>
+</ol>
+<li class="toc"><a href="1029.html#Run_ldapcron.php">Run <strong><code>ldapcron.php</code></strong></a></li>
+<ol class="toc">
+<li class="toc"><a href="1029.html#ldapcron.php_Options">ldapcron.php Options</a></li>
+<li class="toc"><a href="1029.html#Removed_Users_from_Active_Directory">Removed Users from Active Directory</a></li>
+</ol>
+<li class="toc"><a href="1029.html#Change_user_password_after_importing_and_synchronization">Change User Password After Importing and Synchronization</a></li>
+<li class="toc"><a href="1029.html#Change_a_user_status_after_importing_and_synchronization">Change a User Status after Importing and Synchronization</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>The Advanced LDAP/AD Sync feature allows ProcessMaker users to log on by authenticating directly into a LDAP server or Microsoft Active Directory server. Unlike the <a href="../3.0/External_Authentication.html" title="External Authentication">LDAP</a> community version that only imports users, it also enables synchronization with LDAP or Active Directory to update user information.</p>
+<p>In previous versions of ProcessMaker, this plugin used to be acquired with the Enterprise Manager and the corresponding license. From ProcessMaker Enterprise Edition version 3.0.1 on, this plugin has become a core feature acquired with the corresponding license.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">The usage of LDAPS and its default port 636 is currently deprecated. It is strongly recommended to use start-TLS which uses the default port 389 for SSL connections and to have credentials installed in the server environment if required.</font></p>
+
+<h2><span id="How_the_plugin_works">How the Advanced LDAP/AD Works</span></h2>
+<p>The Advanced LDAP/AD Sync plugin is used to compare the user list in ProcessMaker to the user list in Lightweight Directory Access Protocol (LDAP) or Microsoft Active Directory. Users in Active Directory that have not been imported or synchronized in ProcessMaker will not be created. However, if the option <strong>Enable automatic registration</strong> is activated, users will automatically be imported from Active Directory the first time they log on to ProcessMaker.</p>
+
+<p>LDAP uses distinguished names (dn) to identify users, groups, and other types of entities. In LDAP and <a href="http://technet.microsoft.com/en-us/library/cc977985.aspx">Active Directory</a>, which is Microsoft's extension of LDAP, distinguished names are constructed hierarchically using:</p>
+<ul>
+<li><strong>dn</strong> - domain components, such as: <tt>dc=acme,dc=com</tt></li>
+<li><strong>ou</strong> - organizational units, such as: <tt>ou=managers,ou=regionalbranch</tt></li>
+<li><strong>cn</strong> - common names, such as: <tt>cn=John Doe</tt></li>
+</ul>
+
+<p>Other naming attributes described in <a href="http://tools.ietf.org/html/rfc2253">RFC 2253</a>, such as <strong>o=</strong> for organization name and <strong>c=</strong> for country/region name, are not used in Active Directory, although they are recognized by LDAP.</p>
+<p>The distinguished name describes entities starting from the specific and moving to the general in the hierarchy of entities.<br>For example: <tt>cn=John Doe,ou=managers,ou=regionalbranch,dc=acme,dc=com</tt></p>
+
+<h2><span id="Considerations">Considerations</span></h2>
+
+<p style="margin-left:25px"><font color="green"><b>Note:</b></font> <font color=dimgrey> Take into consideration that ProcessMaker does NOT support sub-groups. Therefore, user groups cannot be organized hierarchically, and nested groups can not be created.</font></p>
+
+<p>If both the LDAP plugin and the LDAP feature are enabled, some issues may arise because both cannot work at the same time. In order to use only the LDAP feature, please follow these steps:
+<ol>
+	<li>Disable the Advanced LDAP plugin.</li>
+	<li>Enable the Advanced LDAP feature.</li>
+	<li>Delete the following files at the following locations:<br>
+		<div style="margin-left: 25px;"><strong><tt>processmaker/rbac/engine/classes/plugins/class.ldapAdvanced.php</tt></strong><br>
+		<strong><tt>processmaker/engine/bin/plugins/ldapadvanced.php</tt></strong></div>
+	</li>
+</ol>
+</p>
+
+<p>It is strongly recommended to delete these files. Otherwise, the files may continue in an active state, even if the plugin is disabled.</p>
+
+<h2><span id="Recommendations">Recommendations</span></h2>
+<ul>
+<li>If there are thousands of users to import, the <tt><strong>max_page_size</strong></tt> variable should be set in the <b>Active Directory</b>. If this setting is not configured, the Advanced LDAP may not return all users. See <a href="http://www.fots.nl/index.php/set-the-maxpagesize/">this documentation</a>.</li>
+<li>Due to security reasons, it is not recommended to use anonymous connections.</li>
+<li>The <strong>Enable automatic register</strong> does not work when using the <a href="../3.5/SAML_Authentication_Plugin.html">SAML plugin</a>.</li>
+</ul>
+
+<h2><span id="Setup">Setup</span></h2>
+<p>Follow these steps to configure Linux or Windows servers to support Advanced LDAP connection using TLS:</p>
+<ol style="font-weight:bold;">
+	<li><p style="font-weight:normal;">Verify that the <strong>ldapAdvanced</strong> is part of the Enterprise Features in <b>Admin > Plugins > Enterprise Manager</b>.</p></li>
+
+	<li><p style="font-weight:normal;">If the Apache installation is on Windows, verify that the following modules are not commented in the <code>httpd.conf</code> file:<br/>
+	</p>
+<codeblock style="font-weight:normal;">LoadModule authnz_ldap_module modules/mod_authnz_ldap.so
+LoadModule ldap_module modules/mod_ldap.so</codeblock>
+	<p style="font-weight:normal;">Review the equivalent files for the NGINX web server.</p></li>
+
+	<li><p style="font-weight:normal;">Export the Directory CA Certificate. Follow <a href="../3.1/Export_the_Active_Directory_Certificate.html">these instructions</a> to export the certificate from Active Directory.</p></li>
+
+	<li><p style="font-weight:normal;">Import to the server the generated certificate to the following path:
+        <ul style="font-weight:normal;">
+            <li><b>Linux:</b> <code>/etc/openldap/cacerts/</code></li>
+            <li><b>Windows:</b> <code>c:\openldap\sysconf\</code></li>
+        </ul>
+    </p></li>
+
+	<li><p style="font-weight:normal;">Change permissions of the certificate file to <code>0644</code>. Furthermore, depending on your server, the Apache/Nginx user must have access to this file.</p></li>
+
+	<li><p style="font-weight:normal;">Create a TLS connection by adding the following line to the file <code>/etc/openldap/ldap.conf</code> (<b>Linux</b>) or <code>c:\openldap\sysconf\ldap.conf</code> (<b>Windows</b>):</p>
+        <ul style="font-weight:normal;">
+            <li><b>Linux:</b>
+                <codeblock style="font-weight:normal;">TLS_CACERT /etc/openldap/cacerts/&lt;CERTIFICATE-NAME&gt;.cer</codeblock></li>
+            <li><b>Windows:</b>
+                <codeblock style="font-weight:normal;">TLS_CACERT c:\openldap\sysconf\&lt;CERTIFICATE-NAME&gt;.cer</codeblock></li>
+        </ul>
+	</li>
+
+	<li><p style="font-weight:normal;">Save changes and restart the Apache/Nginx server and the php-fpm service.</p></li>
+
+	<li><p style="font-weight:normal;">TLS connection does not only work with the IP address of the LDAP server, it is required to add the DNS used to generate the certificate. Include this DNS by editing the file <code>/etc/hosts</code> (<b>Linux</b>) or <code>c:\System32\drivers\etc\hosts</code> (<b>Windows</b>):</p>
+	<codeblock style="font-weight:normal;">&lt;LDAP-IP-ADDRESS&gt; &lt;DNS-NAME&gt;</codeblock>
+	<p style="font-weight:normal;">Example:</p>
+	<codeblock style="font-weight:normal;">172.16.0.201 TEST-AD01.processmaker.local</codeblock>
+	<p><img alt="" src="../sites/default/files/3.4.0Advanced_LDAP_Setup_Hosts.png" /></p></li>
+</ol>
+
+<p style="margin-left:25px"><font color="green"><strong>Note:</strong></font> When configuring the connection in ProcessMaker to the LDAP/Active Directory server, it is strongly recommended to use port <code>389</code> and not <code>636</code>. The PHP LDAP module creates a normal connection to the server through the default port and then runs a command that makes the connection secure via TLS (<code>ldap_start_tls</code>).</p>
+
+<h2><span id="Authentication_Sources">Authentication Sources</span></h2>
+<p>To access the Authentication Sources window, go to <b>Admin > Users</b> and click <b>Authentication Sources</b>.</p>
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_Admin_AuthenticationSources.png"></p> <p>The available <b>Authentication Sources</b> list displays.</p>
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_AuthenticationSources.png"></p>
+<p>In the <strong>Authentication Sources</strong> environment, you can do the following:</p>
+<ul>
+	<li><a href="1029.html#Create_Connection">Create Connection</a></li>
+	<li><a href="1029.html#Import_Connection">Import Connection</a></li>
+	<li><a href="1029.html#Import_Users">Import Users</a></li>
+	<li><a href="1029.html#Download_Settings">Download Settings</a></li>
+	<li><a href="1029.html#Sync_Groups">Sync Groups</a></li>
+	<li><a href="1029.html#Sync_Departments">Sync Departments</a></li>
+	<li><a href="1029.html#Edit_Settings">Edit Settings</a></li>
+	<li><a href="1029.html#Delete_Authentication_Source">Delete Authentication Source</a></li>
+</ul>
+
+<h3><span id="Create_Connection">Create Connection</span></h3>
+<p>Follow these steps to create an authentication source:</p>
+<ol style="font-weight:bold;">
+	<li><p style="font-weight:normal;">Go to <b>Admin > Users > Authentication Sources</b>.</p></li>
+	<li><p style="font-weight:normal;">Click <strong>New connection</strong>. The <strong>New Authentication Sources </strong> screen displays.</p>
+	<p><img alt="" src="../sites/default/files/3.6.0LDAP_NewAuth.png"></p>
+	</li>
+	<li><p style="font-weight:normal;">From the <strong>Available Authentication Sources</strong>, select the Authentication Provider, which can be <strong>LDAP</strong> or <strong>LDAP Advanced</strong>. For Active Directory connections, it is strongly recommended to use the <strong>LDAP Advanced</strong> option because it offers synchronization to update the user information and the ability to import groups and departments from the Active Directory server.</p></li>
+	<li><p style="font-weight:normal;">In the <strong>Name</strong> field, enter a label that identifies the Authentication Source.</p></li>
+	<li><p style="font-weight:normal;">From the <strong>Type</strong> field, select either <strong>Open LDAP</strong> or <strong>Active Directory</strong>. Moreover, there is the <strong>389 DS</strong> option to connect to <a  href="http://directory.fedoraproject.org/" >389 Directory Server</a>.</p></li>
+	<li><p style="font-weight:normal;">Check <strong>Require sign-in policy for LDAP</strong> to increase security in the Active Directory connections according to <a href="https://support.microsoft.com/en-us/help/4520412/2020-ldap-channel-binding-and-ldap-signing-requirements-for-windows">Microsoft Windows</a>.</p></li>
+	<li><p style="font-weight:normal;">In the <strong>Server Address</strong> field, enter the IP address or domain name of the LDAP or Active Directory server. If located on the same machine, then enter "localhost".</p></li>
+	<li><p style="font-weight:normal;">In the <strong>Port</strong> field, enter the port number for the LDAP or Active Directory service. By default, LDAP and Active Directory use port 389. If unsure, use the <strong><code>netstat -l</code></strong> and <strong><code>netstat -lnp</code></strong> commands in Linux/UNIX or <strong><code>netstat -a</code></strong> and <strong><code>netstat -ab</code></strong> commands in Windows to determine which port is being used.
+
+		<p style="font-weight:normal;margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">The usage of LDAPS and its default port 636 is currently deprecated. It is strongly recommended to use start-TLS which uses the default port 389.</font></p></p></li>
+	<li><p style="font-weight:normal;">Switch on the <strong>Enable automatic register</strong> to log on new users connecting to the LDAP or Active Directory server and verify whether the user exists in the authentication source. Users that exist in LDAP or Active Directory are automatically imported into ProcessMaker and be able to log on.
+
+		<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">When using this feature along with <a href="../3.1/Windows_Single_SignOn.html">Windows Single Sign On</a>, it is very important to enable this field.</font></p></p></li>
+	<li><p style="font-weight:normal;">Switch on <strong>Anonymous</strong> if the LDAP or Active Directory server accepts anonymous searches for users. Otherwise, switch off if a login is required. It is not recommended to use this type of connection.</p></li>
+	<li><p style="font-weight:normal;">Switch on <strong>Enabled TLS</strong> if using Transport Security Layer (TLS) or Secure Socket Layer (SSL) to connect to the Authentication Source. Otherwise, switch off.</p></li>
+	<li><p style="font-weight:normal;">In the <strong>Base DN</strong> field, enter the <i>Distinguished Name</i> from the Base object. In most cases it is the domain components (dc) of the Distinguished Name. For example, the Base DN for processmaker.com would be "dc=processmaker,dc=com". For more information on constructing DN chains, see <a  href="http://www.zytrax.com/books/ldap/apa/dn-rdn.html" >this LDAP guide</a>.</p></li>
+	<li><p style="font-weight:normal;">In the <strong>Inactive Users</strong>, enter users to be synchronized as inactive.</p>
+
+    <p style="font-weight:normal;margin-left:25px">
+    <font color="green"><strong>Note:</strong></font> 
+    <font color="dimgrey">This setting is useful when an Active Directory user is removed, then there is no action by ProcessMaker. You can deactivate these users instead as follows:</font></p>
+    <div style="margin-left:25px">
+    <ol style="font-weight:normal;color: dimgrey;">
+        <li>In Active Directory, create the <strong>Organizational Unit</strong> group.</li>
+        <li>In Active Directory, move all users to be deactivated to this group.</li>
+        <li>In ProcessMaker, place this group name in the setting <strong>Inactive Users</strong>.</li>
+    </ol></div>
+    <p style="font-weight:normal;margin-left:25px;color: dimgray;">When running the user synchronization, ProcessMaker deactivate all users in the group <b>Organizational Unit</b>.</p>
+
+     </li>
+	<li><p style="font-weight:normal;">From the <strong>Role</strong> field, select the specific user roles to synchronize.</p></li>
+	<li><p style="font-weight:normal;">For non-anonymous users, in the <strong>Username</strong>, enter a username to log in to the LDAP or Active Directory server.</p></li>
+	<li><p style="font-weight:normal;">For non-anonymous users, in the <strong>Password</strong>, enter a password to log in to the LDAP or Active Directory server.</p></li>
+	<li><p style="font-weight:normal;">In the <strong>User identifier</strong>, enter the object to identify users, which will be the username in ProcessMaker.</p>
+		<ul>
+			<li>For <strong>Active Directory</strong>, enter <strong>"samaccountname"</strong>.</li>
+			<li>For <strong>Open LDAP</strong>, enter <strong>"uid"</strong>.</li>
+			<li>If unsure which object class to use, enter "*", which is slower because it will cause ProcessMaker to look in all object classes.</li>
+		</ul></li>
+	<li><p style="font-weight:normal;">In the <strong>Filter to search users</strong>, enter a filter to use when searching users in the authentication source.</p></li>
+	<li><p style="font-weight:normal;">In the <strong>User Class Identifier</strong>, enter a class identifier to authenticate users.</p></li>
+	<li><p style="font-weight:normal;">In the <strong>Group Class Identifier</strong>, enter a class identifier to authenticate groups.</p></li>
+	<li><p style="font-weight:normal;">In the <strong>Department Class Identifier</strong>, enter a class identifier to authenticate groups.</p></li>
+	<li><p style="font-weight:normal;">Click <strong>Test</strong> to add the new authentication source. A confirmation message displays <strong>Successful Test Connection</strong>.</p></li>
+</ol>
+
+<h4><span id="Match_attributes_to_sync">Match Attributes to Sync</span></h4>
+<p>Map user attributes in the authentication source to fields in ProcessMaker's <strong><code>USERS</code></strong> table in the MySQL database. This option only supports existing fields in Active Directory.</p>
+<p style="margin-left:25px"><font color="green"><strong>Note:</strong></font> <font color="dimgrey">This feature only works if the authentication source is Active Directory.</font></p>
+<p>After creating an authentication source, the <strong>Match attributes to sync</strong> option enables:</p>
+<p><img src="../sites/default/files/3.6.0LDAP_MatchLink.png" alt=""></p>
+<p>Click <strong>Match attributes to sync</strong>, and the <b>Match Attributes</b> window displays:</p>
+<p><img alt=""src="../sites/default/files/3.6.0LDAP_MatchList.png"> </p>
+<p>Where:</p>
+<ul>
+<li><strong>Add Attribute:</strong> Add a new field. After clicking <strong>Add Attribute</strong> the <strong>New Matched Attribute</strong> screen displays:
+<p><img alt=""src="../sites/default/files/3.6.0LDAP_MatchAttribute.png"> </p>
+<ul>
+	<li><strong>Role:</strong> Select the user role to sync.</li>
+	<li><strong>ProcessMaker User Field:</strong> Select the extended user attribute in ProcessMaker.</li>
+	<li><strong>LDAP Attribute:</strong> Enter the attribute name.</li>
+</ul>
+</li>
+<li><strong>Role:</strong> User role to sync.</li>
+<li><strong>User Field:</strong> User field where the new LDAP field will be stored.</li>
+<li><strong>LDAP Field:</strong> Name for the field to synch.</li>
+<li><strong>Edit Attribute:</strong> Edit a field.</li>
+<li><strong>Remove Attribute:</strong> Remove an existing field.</li>
+</ul>
+
+<h3><span id="Import_Connection">Import Connection</span></h3>
+<p>Import a connection through a JSON file with the identifier and settings for the user and group ID as custom. The JSON file does not import the matching attributes; it just imports the authentication sources settings without LDAP passwords because of security vulnerabilities that might be included the JSON file.</p>
+<p>You can import a connection when creating a new connection, editing a connection or in the <b>Authentication Sources</b> list.</p>
+<p>Click the <strong>Import Connection</strong> option and the following window displays to upload the JSON file:</p>
+<p><img alt=""src="../sites/default/files/3.6.0LDAP_Import.png"> </p>
+<p>When uploading a connection and it has the same name, a confirmation message displays:</p>
+<p><img alt=""src="../sites/default/files/3.6.0LDAP_Import2.png"> </p>
+<p>Where:</p>
+<ul>
+	<li><strong>Cancel:</strong> Return to the main page requesting this uploading.</li>
+	<li><strong>Update Settings:</strong> Update the connection information.</li>
+	<li><strong>New Connection:</strong> Creates another connection with the same settings and the same name plus (#number). For example <i>ProcessMaker Employees (2)</i>.</li>
+</ul>
+<p>If the import settings are set inside a connection, they will not confirm, but only update the property parameters.</p>
+<p>Take into account the following:</p>
+<ul>
+	<li>When importing a new authentication source and the extended attributes are not created in that instance, the missing attributes are not created in the matching attributes.</li>
+	<li>Only a verified tested connection can be exported.</li>
+	<li>If an imported connection without a TLS certificate setting throws a warning message while this certificate is not set: <strong>TLS certificate is not installed in the server</strong>.</li>
+	<li>When importing, an authentication source in the main Authentication Source Page is created as New Authentication Source. Inside an authentication source there is also the option to import, but this option just will import the configurations to be tested/saved.</li>
+</ul>
+
+<h3><span id="Import_Users">Import Users</span></h3>
+<p>After configuring the authentication sources, go to <strong>Admin &gt; Users &gt; Authentication Sources</strong>. Select an authentication source in the list and click on its <strong>Import Users</strong> icon.</p>
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_ImportUsers.png"></p>
+<p style="margin-left:25px"><font color="green"><strong>Note 1:</strong></font> <font color="dimgrey">When importing department users, their roles are always imported as operators regardless of whether they were configured as another role.</font></p>
+<p style="margin-left:25px"><font color="green"><strong>Note 2:</strong></font> <font color="dimgrey">Before the synchronization, users must be assigned to a group or a department in the authentication source.</font></p>
+
+<p>In the panel <strong>Search for user</strong>, enter text into the <strong>Keyword</strong> field to do a case-insensitive search for the full name, username, email or distinguished name (dn) of users in the authentication source. Use <tt><strong>*</strong></tt> (asterisk) to do a wildcard search for any number of characters (including zero characters). For instance <strong>jo*n</strong> would find <strong>johan@processmaker.com</strong>, <strong>Joe Norris</strong> and <strong>Jonson</strong>. Enter <tt><strong>*</strong></tt> to return all users in the authentication source.</p>
+
+<p><img alt="" src="../sites/default/files/ProcessMaker3_LDAP_SearchUserPanel.png"></p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgrey">The search for LDAP users, supports more than 1000 results. Instead, the search for Active Directory users only support 1000 results. So, if the LDAP/AD server has a large number of users in the thousands, searches may not show any users if the search returns too many results. In this case, narrow the search. For example, searches for "<tt>*</tt>" (all users) or "<tt>e</tt>" (all users with the vowel "e") may not work, but narrowed searches such as "<tt>er</tt>" or "<tt>kat*e</tt>" may work. To increase search results, review the <a href="1029.html#Example_to_Increase_Search_Results_When_Importing_Users">Example to Increase Search Results When Importing Users</a> section.</font></p>
+
+<p>The following information will be displayed about the users in the authentication source:</p>
+<ul>
+<li><strong>Username</strong> (formerly named <strong>Name</strong>): This field shows the username.</li>
+<li><strong>First Name</strong>: This field shows the user's first name.</li>
+<li><strong>Last Name</strong>: This field shows the user's last name.</li>
+<li><strong>E-Mail</strong>: This field shows the user's email.</li>
+<li><strong>Distinguished Name</strong>: The DN is a chain of information needed to identify a user, such as the common name (cn=), organizational units (ou=) and domain components (dc=), etc.</li>
+<li><strong>Status</strong>: It shows whether the user was <strong>IMPORTED</strong> or <strong>NOT IMPORTED</strong>; otherwise the status is <b>CANNOT IMPORT</b> if the user already exists, is reserved by the system, or has other authentication source.</li>
+</ul>
+
+<p>After finding users, select which ones will be imported by marking the checkbox next to their names. To select all the users in the list, mark the checkbox in the upper left-hand corner. Then click on the <strong>Import</strong> button to import the selected users into ProcessMaker.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_LDAP_ImportUsersButtonl.png"></p>
+
+<p>After importing user(s), a confirmation message will be displayed. Click on <strong>Yes</strong> to import the user(s); otherwise, the importing of the user(s) will be canceled.</p>
+<p><img alt="" src="../sites/default/files/ConfirmationImportingUsersv1_4_40.png"></p>
+
+<p>When done importing users, click on the <strong>Back</strong> button to return to the list of Authentication Sources.</p>
+
+<h3><span id="Download_Settings">Download Settings</span></h3>
+<p>You can export an authentication source settings just by clicking the <strong>Download Settings</strong> option and download a JSON file.</p>
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_Export.png"></p>
+
+<h3><span id="Sync_Groups">Sync Groups</span></h3>
+<p>The Advanced LDAP plugin can be used to update the information about users imported from an authentication source. The plugin can also import both departments and groups into ProcessMaker from LDAP and Active Directory. After importing groups and departments, the Advanced LDAP plugin can be used to synchronize the information about the departments and groups and their users, so the information in ProcessMaker is the same as in the authentication source. The group and department names are immediately imported after selecting which groups and departments will be synchronized, but the members are only imported and synchronized when <a href="1029.html#Executing_ldapcron.php"><strong><tt>ldapcron.php</tt></strong> is run</a>.</p>
+
+<p style="margin-left:25px"><font color="green"><strong>Note:</strong></font> <font color="dimgrey">Before running the <a href="1029.html#Executing_ldapcron.php"><tt>ldapcron.php</tt></a> script with or without a cron job, the Active Directory users must have valid <b>useraccountcontrol</b> property values as 512, 544, 66048, and 66080 to sync active users in ProcessMaker. Otherwise, they are going to set as inactive.</font></p>
+<p style="margin-left:25px"><font color="red"><strong>Warning:</strong></font> <font color="dimgrey">The Advanced LDAP plugin will only import members of a group or an organizational unit from an LDAP server if those users were created as child objects under the group or organizational unit. (Note that ProcessMaker treats organizational units as <i>departments</i>).</font></p>
+
+<p>To configure which groups will be synchronized when cron is executed, click the <strong>Synchronize Groups</strong> icon.</p>
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_SyncGroups.png"></p>
+<p>A list of groups from the authentication source displays.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_LDAP_SynchronizeGroups.png"></p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgrey">If the LDAP server has a large number of records in the thousands, the first time ProcessMaker tries to show its list of groups, it may appear that there are no groups in the authentication source because ProcessMaker spends several minutes constructing the list.</font></p>
+
+<p>Select the groups to synchronize and then click <strong>Save Changes</strong>. The groups that were selected will immediately be created in ProcessMaker, but the members of the groups will not be imported/synchronized until cron runs.</p>
+
+<h3><span id="Sync_Departments">Sync Departments</span></h3>
+<p>To configure which departments will be synchronized when the cron runs, click the <strong>Synchronize Departments</strong> icon.</p>
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_SyncDptos.png"></p>
+
+<p>A list of departments and their sub-departments display. If the authentication source is LDAP, all organizational units (ou) are considered departments and will be listed.</p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgrey">If the LDAP server has a large number of records in the thousands, the first time ProcessMaker tries to show its list of departments, it may appear that there are no departments in the authentication source because ProcessMaker spends several minutes constructing the list.</font></p>
+
+<p>Select the departments to import. The department along with all its members will be imported and the information in ProcessMaker about the department and its members will be synchronized each time that cron runs. Note that in order to select a department, all its parent departments must also be selected.</p>
+
+<p><img alt="" src="../sites/default/files/ProcessMaker3_LDAP_SynchronizeDepartments.png"></p>
+
+<p>After selecting the departments and subdepartments to synchronize, then click on <strong>Save Changes</strong> at the bottom right side of the window. The departments that were selected will immediately be created in ProcessMaker, but the members of the departments will not be imported/synchronized until the cron runs.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgrey">If using LDAP, the <strong>Reports To</strong> field of imported users will be left blank and there will be no supervisors assigned for imported departments. If using Active Directory, the Advanced LDAP plugin will assign the manager for each user by inserting the manager's UID into the <strong><tt>wf_<workspace>.USERS.USR_REPORTS_TO</workspace></tt></strong> field in the MySQL database, but it doesn't assign supervisors to imported departments. After importing a department from LDAP or Active Directory, the supervisor must be manually assigned for the department.</font></p>
+<p><img alt="" src="../sites/default/files/USR_REPORTS_TO_DB.png"></p>
+
+<h3><span id="Edit Settings">Edit Settings</span></h3>
+<p>You can edit an authentication source by clicking <strong>Edit Settings</strong> and edit values with the same criteria as when <a href="1029.html#Create_Connection">creating an Authentication Source</a>.</p> 
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_Edit.png"></p>
+
+<h3><span id="Delete_Authentication_Source">Delete Authentication Source</span></h3>
+<p>You can delete an authentication source by clicking <strong>Delete Settings</strong>.</p> 
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_DeleteAuth.png"></p>
+<p>A confirmation message displays.</p>
+<p><img alt="" src="../sites/default/files/3.6.0LDAP_DeleteAuth2.png"></p>
+
+<h2><span id="Run_ldapcron.php">Run <strong><code>ldapcron.php</code></strong></span></h2>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">As of <strong>ProcessMaker 3.5.0</strong>, the <code>ldapcron.php</code> can be scheduled in the <a href="../3.5/Task_Scheduler.html#Task_Scheduler_Modules">Task Scheduler</a> feature.</font></p>
+<p>Synchronize users, groups and departments by using the Advanced LDAP cron file, which is located at <strong><tt>workflow\engine\bin\ldapcron.php</tt></strong>. This file will be executed independently, meaning that the ProcessMaker <a href="../index.php/Executing_cron.php.html" title="Executing cron.php">cron file</a> won't execute the LDAP synchronization.</p>
+<p>To execute the <strong><tt>ldpacron.php</tt></strong> file from the command line:</p>
+
+<p><strong>Windows:</strong></p>
+
+<div style="margin-left:25px"><p>Change to the directory where the <strong><code>php.exe</code></strong> file is located to run PHP and then issue the command to execute the <strong><code>ldapcron.php</code></strong> file:</p>
+
+<codeblock>
+cd <INSTALL-DIRECTORY>\php
+php -f "<INSTALL-DIRECTORY>\processmaker\workflow\engine\bin\ldapcron.php"
+</codeblock>
+</div>
+
+<p><strong>Linux/UNIX:</strong></p>
+<div style="margin-left:25px">
+<codeblock>
+php -f <INSTALL-DIRECTORY>/workflow/engine/bin/ldapcron.php
+</codeblock>
+</div>
+
+<p>If the <strong><tt>ldapcron.php</tt></strong> script is executed without any options, the imported users and selected departments and groups will be synchronized for all workspaces.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgrey">The Advanced LDAP plugin takes roughly an hour to import 20,000 new users from LDAP and 25 minutes to update 20,000 user profiles from LDAP, so it is recommended to use the <strong><tt>+force</tt></strong> option to prevent problems with large authentication sources if executing the <strong><tt>ldapcron.php</tt></strong> file as a cron job in Linux/UNIX or a Scheduled Task in Windows.</font></p>
+<p>If executed from the command line, the following information is displayed about the users, departments and groups that were synchronized:</p>
+<codeblock>
+# php /opt/processmaker/workflow/engine/bin/ldapcron.php 
+Processing workspace: workflow
++--------------------------------------------------------------------------------------------------+
+| Authentication Source: Example Company LDAP Server
+...
+...
+....
+--- details of the import/update of users, departments, groups, etc---
+
+Finished 1 workspaces processed
+Done! 
+</codeblock>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_LDAP_ConsoleResult.png"></p>
+
+<p>To see more detailed information about the synchronization, check the contents of the <strong><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>/shared/log/ldapAdvanced.log</tt></strong> file.</p>
+<dl><dd><strong><font color="green">Hint:</font></strong> <font color="dimgrey"><strong><tt>ldapcron.php</tt></strong> appends new information to the <strong><tt>ldapAdvanced.log</tt></strong> file each time the script is executed. If <strong><tt>ldapcron.php</tt></strong> will be executed periodically as a cron job or scheduled task, it is recommended to also periodically delete the <strong><tt>ldapAdvanced.log</tt></strong> file to save disk space on the ProcessMaker server and improve the processing time of the <strong><tt>ldapcron.php</tt></strong> script.</font></dd></dl>
+
+<h3><span id="ldapcron.php_Options">ldapcron.php Options</span></h3>
+<p>The options to run the ldap cron in a server console are the following:</p>
+<ul>
+<!--<li><strong>+d</strong> Specify an alternative date and time for the script.
+<p>By default, the script will execute using the server's current system time. If may be useful to specify an alternative date and time when testing for past or future events. Remember to use 4 digits for specifying the year and 2 digits for specifying the month, day, hour, minute and seconds. The time is on a 24 hour clock.</dd><dd><strong>Ex:</strong> <code>php ldapcron.php +d"2015-09-25 07:05:59"</code></p>
+</li>-->
+<li><strong>+w</strong> Specify a workspace whose imported users and selected departments and groups will be synchronized.
+<p>By default, the pending activities in <i>all</i> workspaces are executed. To save processing, it can be useful to only execute the pending activities in a single workspace.</dd><dd><strong>Ex:</strong> <tt>php ldapcron.php +wworkflow</tt></p>
+</li>
+<li><strong>+force</strong> This option ensures that the <strong><tt>ldapcron.php</tt></strong> file is executed by stopping the execution of any existing ldapcron job and deleting its temporary files, so the current ldapcron can be executed. Remember that only one instance of ldapcron can be executed at a time, so without the <strong><tt>+force</tt></strong> option, <tt>ldapcron.php</tt> will not be executed if another instance is already being executed.</li></ul>
+<dl><dd><strong>Ex:</strong> <tt>php ldapcron.php +force</tt></dd></dl>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgrey">If not using the <tt>+force</tt> option to cancel the execution of <tt>ldapcron.php</tt>, press <tt>CTRL+C</tt> in the command line or use the <strong><tt><a  href="http://www.digitalocean.com/community/tutorials/how-to-use-ps-kill-and-nice-to-manage-processes-in-linux" >kill</a></tt></strong> command in Linux or the Task Manager in Windows to kill the process. Also delete the temporary file located at: <strong><tt><a href="../index.php/File_Locations.html#Installation_Directory" title="File Locations"><install-directory></a>/shared/ldapcron</tt></strong></font></p>
+
+<ul><li><strong>+debug</strong> Inserts more detailed information into the <strong><tt><a href="../index.php/ProcessMaker_-_AdvancedLDAP.html#Installation_Directory"><install-directory></a>/shared/log/ldapadvance.log</tt></strong> file. It lists the properties used to connect to the authentication sources and lists the users, groups and departments that were created, updated, moved or deleted. Use this option to investigate any errors that may occur during the synchronization.</li></ul>
+<dl><dd><strong>Ex:</strong> <tt>php ldapcron.php +debug</tt></dd></dl>
+<div style="margin-left:40px"><p>If some users can't be imported from an authentication source, they will be listed as <strong><tt>impossible</tt></strong>. To see which users couldn't be imported, run <strong><tt>ldapcron.php</tt></strong> again with the <strong><tt>+debug</tt></strong> option. Then, search in the <strong><tt>ldapadvance.log</tt></strong> file for the users listed in the line after "<tt>Impossible Users:</tt>".</p>
+<p>For example, the following commands can be used in Linux/UNIX to find the users that can't be imported:</p>
+
+<codeblock># <strong>php /opt/processmaker/workflow/engine/bin/ldapcron.php</strong> 
+Processing workspace: workflow
++--------------------------------------------------------------------------------------------------+
+| Authentication Source: Example Company LDAP Server                                                           
+...
+...
+....
+--- details of the import/update of users, departments, groups, etc---
+Finished 1 workspaces processed
+Done! 
+</codeblock>
+
+<p>The output of <tt>ldapcron.php</tt> shows that 3 users couldn't be imported, so run <tt>ldapcron.php</tt> again with the <tt>+debug</tt> option:</p>
+
+<codeblock># <strong>php /opt/processmaker/workflow/engine/bin/ldapcron.php <font color="green">+debug</font></strong> 
+</codeblock>
+
+<p>Then use the <tt><a  href="http://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/" >grep</a></tt> command to find the usernames of the 3 users:</p>
+
+<codeblock># <strong>grep -A 1 "Impossible Users:" shared/log/ldapadvanced.log</strong> 
+2014-11-28 09:34:04  workflow 0 Impossible Users:  
+2014-11-28 09:34:04  workflow 0 <strong><font color="green">liliana fernando eric</font></strong>
+</codeblock>
+</div>
+
+<h3><span id="Removed_Users_from_Active_Directory">Removed Users from Active Directory</span></h3>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgrey">As of <b>ProcessMaker 3.8.2</b>.</font></p>
+<p>After synchronizing through <code>ldapcron.php</code>, to comply with General Data Protection Regulation (GDPR), users that are removed from an organization’s Active Directory or any supported User Management Directory through LDAP are also removed as a ProcessMaker user.</p>
+<p>Take into account the following:</p>
+<ul>
+    <li>All string data information are unknown.</li>
+    <li>Date <code>0000/00/00</code>.</li>
+    <li>Extended User Attributes should be removed for that user.</li>
+    <li>ProcessMaker Standard Log mentions a unique user UID, which is not personal information.</li>
+</ul>
+
+<p>All cases from the removed user are assigned to the unknown user, which has a unique UID.</p>
+<p>If the user:</p>
+<ul>
+    <li>Has pending cases, cases are assigned to the unknown user. To recover these cases, reassign them to a process supervisor.</li>
+    <li>Is assigned in a group, the user is removed from the group.</li>
+    <li>Is owner in a process, the system administrator is the new process owner.</li>
+    <li>Is assigned in a process permission, the permission is removed for that user.</li>
+    <li>Is a supervisor, the user is no longer a supervisor.</li>
+</ul>
+
+<h2><span id="Change_user_password_after_importing_and_synchronization">Change User Password After Importing and Synchronization</span></h2>
+
+<p>During login, the authentication of imported users occurs in Active Directory, not in ProcessMaker.</p>
+<p>After users are imported from Active Directory, their passwords can NOT be changed in ProcessMaker; instead, their passwords need to be changed inside Active Directory. Passwords must meet the following requirements:</p>
+<ul><li>The password must be at least six characters long.</li><li>The password must contain characters from at least three of the following five categories:<ul><li>English uppercase characters (A - Z)</li><li>English lowercase characters (a - z)</li><li>Base 10 digits (0 - 9)</li><li>Non-alphanumeric (For example: !, $, #, or %)</li><li>Unicode characters</li></ul></li><li>Do NOT use spaces after and before the password</li></ul>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgrey">If the password is changed in ProcessMaker, the user cannot log in.</font></p>
+
+<p>To check whether a user was imported from Active Directory, go to <strong>Admin &gt; Users</strong> and select the user in the list and click on <strong>Authentication</strong>. If the Authentication Source option is an Active Directory connection, the password must be changed in Active Directory.</p>
+<p><img alt="" height="167" src="../sites/default/files/AuthenticationSourceAssignmentPM2_5_X.png" width="511"></p>
+<p>If the Authentication Source option is <tt>"ProcessMaker (MYSQL)"</tt>, the password must be changed in ProcessMaker:</p>
+<p><img alt="" height="156" src="../sites/default/files/AuthenticationSourceAssignmentMYSQLPM2_5_X.png" width="518"></p>
+
+<h2><span id="Change_a_user_status_after_importing_and_synchronization">Change a User Status after Importing and Synchronization</span></h2>
+
+<p>After users are imported from Active Directory, any change to a user's status must be configured in the Active Directory server, any change will be overwritten in the next sync with the ProcessMaker server. Note that the user status "On vacation", which can be configured in ProcessMaker, is considered an active status and it will be maintained after the sync.</p>
+
+<p></p>
+<table>
+	<tr>
+		<th>Active Directory</th>
+		<th>ProcessMaker Status Change</th>
+		<th>Result in ProcessMaker</th>
+	</tr>
+	<tr>
+		<td>Active</td>
+		<td>Active -> Active </td>
+		<td>The status will remain active.</td>
+	</tr>
+	<tr>
+		<td>Active</td>
+		<td>Inactive -> Active</td>
+		<td>The status will be changed to active, as set in Active Directory.</td>
+	</tr>
+	<tr>
+		<td>Active</td>
+		<td>Vacation -> Vacation</td>
+		<td>The On Vacation status will remain. </td>
+	</tr>
+	<tr>
+		<td>Inactive </td>
+		<td>Active -> Inactive</td>
+		<td>The status will be changed to inactive.</td>
+		
+	</tr>
+	<tr>
+		<td>Inactive</td>
+		<td>Inactive -> Inactive</td>
+		<td>The status will remain inactive.</td>
+	</tr>
+	<tr>
+		<td>Inactive</td>
+		<td>Vacation -> Inactive</td>
+		<td>The status will be changed to inactive.</td>
+	</tr>
+</table></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

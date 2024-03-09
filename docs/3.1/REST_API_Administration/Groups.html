@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Groups.html" />
+<link rel="shortlink" href="../../node/749.html" />
+<title>3.1 - 3.8 - REST API Administration - Groups | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"qrCco7rcIh6en6dabAevZCYVze3NEG56FOzJ-GNG-To","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-749 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../../index.html" title="Home"><img src="../../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Groups.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Groups.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form--5URVoZpLD8KZ7B9dA7CsNL6OWlLURGACa2tM90iy-g" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - 3.8 - REST API Administration - Groups</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - 3.8 - REST API Administration - Groups" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Groups.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - 3.8 - REST API Administration - Groups 1/5</option><option value="40">Give 3.1 - 3.8 - REST API Administration - Groups 2/5</option><option value="60" selected="selected">Give 3.1 - 3.8 - REST API Administration - Groups 3/5</option><option value="80">Give 3.1 - 3.8 - REST API Administration - Groups 4/5</option><option value="100">Give 3.1 - 3.8 - REST API Administration - Groups 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-BaGOafKL1Y0rcJpzPFs95cRBxlvIEh8N-NyRey4ByCU" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><!--Groups-->
+<h2><span class="mw-headline" id="Groups">Groups </span></h2>
+
+<p>The following REST endpoints are used to manage <a href="../../3.0/Managing_Users.html#Groups" title="3.0/Managing Users">groups</a>, as well as their member users in ProcessMaker.</p>
+<div style=" background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><strong>Contents:</strong> [<a href="Groups.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Groups.html#Groups">Groups </a></li>
+<ol class="toc">
+<li class="toc"><a href="Groups.html#Get_Groups_List:_GET_.2Fgroups">Get Groups List: <code>GET /groups</code></a></li>
+<li class="toc"><a href="Groups.html#Get_Group_Information:_GET_.2Fgroup.2F.7Bgrp_uid.7D">Get Group Information: <code>GET /group/{grp_uid}</code></a></li>
+<li class="toc"><a href="Groups.html#Create_Group:_POST_.2Fgroup">Create Group: <code>POST /group</code></a></li>
+<li class="toc"><a href="Groups.html#Update_Group:_PUT_.2Fgroup.2F.7Busr_uid.7D">Update Group: <code>PUT /group/{grp_uid}</code></a></li>
+<li class="toc"><a href="Groups.html#Delete_Group:_DELETE_.2Fgroup.2F.7Bgrp_uid.7D">Delete Group: <code>DELETE /group/{grp_uid}</code></a></li>
+<li class="toc"><a href="Groups.html#Get_Group_Members:_GET_.2Fgroup.2F.7Bgrp_uid.7D.2Fusers">Get Group Members: <code>GET /group/{grp_uid}/users</code></a></li>
+<li class="toc"><a href="Groups.html#Get_Available_Users:_GET_.2Fgroup.2F.7Bgrp_uid.7D.2Favailable-users">Get Available Users: <code>GET /group/{grp_uid}/available-users</code></a></li>
+<li class="toc"><a href="Groups.html#Assign_User_to_Group:_POST_.2Fgroup.2F.7Bgrp_uid.7D.2Fuser">Assign User to Group: <code>POST /group/{grp_uid}/user</code></a></li>
+<li class="toc"><a href="Groups.html#Batch assignment of users to a group:_POST_.2Fgroup.2Fbatch-users">Batch assignment of users to a group: <code>POST /group/batch-users</code></a></li>
+<li class="toc"><a href="Groups.html#Unassign_User_from_Group:_DELETE_.2Fgroup.2F.7Bgrp_uid.7D.2Fuser.2F.7Busr_uid.7D">Unassign User from Group: <code>DELETE /group/{grp_uid}/user/{usr_uid}</code></a></li>
+</ol>
+</div></div>
+
+
+<p><br><span style="font-weight: bold;font-size: 1.20em; color: #4C5255;"><u><b>Available methods:</b></u></span></p>
+
+<h3><span class="mw-headline" id="Get_Groups_List:_GET_.2Fgroups">Get Groups List: <code>GET /groups</code></span></h3>
+
+<p><span id="GetGroups">Get a list of all the <font color="#483D8B">groups</font> in the workspace (including groups with "INACTIVE" status).</span> The groups are returned in alphabetical order.</p>
+<dl>
+    <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/groups?filter={filter}&amp;start={start}&amp;limit={limit}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Optional GET Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>filter</td>
+                    <td>string</td>
+                    <td>Case insensitive string to search for in the group name.<br>For example, <code>"api/1.0/workspace/groups?<b>filter=sal</b>"</code>                        would return the groups "Sales" and "Condiments &amp; salts".</td>
+                </tr>
+                <tr>
+                    <td>start</td>
+                    <td>integer</td>
+                    <td>The number of groups where the list begins. The counting starts from the number 0.<br>For example,
+                        <code>"api/1.0/workspace/groups?<b>start=3</b>"</code> would start the list of groups with
+                        the fourth group.</td>
+                </tr>
+                <tr>
+                    <td>limit</td>
+                    <td>integer</td>
+                    <td>The maximum number of groups which are returned in the list.<br>For example if wanting to return
+                        10 groups at a time and there are 25 groups in total, then call this endpoint 3 times:<br><code>"api/1.0/workspace/groups?<b>limit=10</b>"</code>                        (returns groups 0-9)<br><code>"api/1.0/workspace/groups?<b>start=10&amp;limit=10</b>"</code>                        (returns groups 10-19)<br><code>"api/1.0/workspace/groups?<b>start=20&amp;limit=10</b>"</code>                        (returns groups 20-24)</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>Returns an HTTP status code of 200 and the following array of group objects:</p>
+
+<table class="codecolumn">
+    <tbody>
+        <tr>
+            <th><u>Element</u></th>
+            <th><u>Description</u></th>
+        </tr>
+        <tr>
+            <td>[</td>
+            <td>Start array</td>
+        </tr>
+        <tr>
+            <td> {</td>
+            <td>Start group object</td>
+        </tr>
+        <tr>
+            <td> grp_uid</td>
+            <td>The group's unique ID.</td>
+        </tr>
+        <tr>
+            <td> grp_title</td>
+            <td>The group's title.</td>
+        </tr>
+        <tr>
+            <td> grp_status</td>
+            <td>The group's status, which can be "ACTIVE" or "INACTIVE".</td>
+        </tr>
+        <tr>
+            <td> grp_users</td>
+            <td>The number of users who are members of the group, including users who have "INACTIVE" and "VACATION"
+                status.</td>
+        </tr>
+        <tr>
+            <td> grp_tasks</td>
+            <td>The number of tasks to which the group is assigned. Note that this number includes tasks which are
+                in deactivated processes, but it does not include <i>ad hoc</i> assignment to tasks.</td>
+        </tr>
+        <tr>
+            <td> },</td>
+            <td>End group object.</td>
+        </tr>
+        <tr>
+            <td> ...</td>
+            <td>Additional group objects.</td>
+        </tr>
+        <tr>
+            <td>]</td>
+            <td>End array.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>For example:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; grp_uid<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;47113834154e4a6c5cd1f11014216675&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_title<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;European Sales&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_status<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;ACTIVE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_users<span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">3</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_tasks<span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">1</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; grp_uid<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;23251789354e4a6d6812cb4062218479&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_title<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Factory Workers&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_status<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;INACTIVE&quot;</span><br />
+&nbsp; &nbsp; grp_users<span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">20</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_tasks<span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">7</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; grp_uid<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;92331939154e4a6b3d46cc3062046323&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_title<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Managers&quot;</span><br />
+&nbsp; &nbsp; grp_status<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;ACTIVE&quot;</span><br />
+&nbsp; &nbsp; grp_users<span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">4</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; grp_tasks<span style="color: #339933;">:</span> &nbsp;<span style="color: #CC0000;">2</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+
+<p>If there is are no groups, then an empty array is returned. If an error occurs, then</p>
+
+<p><b>PHP Example:</b> The following example creates an array of the active groups which are assigned to one or more tasks.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/groups&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer &quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$accessToken</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aGroups</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$aActiveGroups</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aGroups</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oGroup</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oGroup</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">grp_status</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;ACTIVE&quot;</span> and <span style="color: #000088;">$oGroup</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">grp_tasks</span> <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aActiveGroups</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;uid&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$oGroup</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">grp_uid</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;title&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$oGroup</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">grp_title</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span class="mw-headline" id="Get_Group_Information:_GET_.2Fgroup.2F.7Bgrp_uid.7D">Get Group Information: <code>GET /group/{grp_uid}</code></span></h3>
+
+<p><span id="GetAGroup">Get information about a specified <font color="#483D8B">group</font></span>.</p>
+<dl>
+    <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/group/{grp_uid}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>grp_uid</td>
+                    <td>String</td>
+                    <td>Group UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>Returns the HTTP status code 200 and the same group object as the <a href="Groups.html#Get_Groups_List:_GET_.2Fgroups"> GET /groups</a> endpoint. For example:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; grp_uid<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;47113834154e4a6c5cd1f11014216675&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; grp_title<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;European Sales&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; grp_status<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;ACTIVE&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; grp_users<span style="color: #3366CC;">&quot;: 5,<br />
+&nbsp; grp_tasks&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">2</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>If a bad request, then it returns the HTTP status code 400 and an error object like this:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; code<span style="color: #339933;">:</span> <span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; message<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The group with grp_uid: 66065213554dd1feb48fe79020620851 does not exist.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b></p>
+
+<p>This example prints out how many users are in a group with the ID "47113834154e4a6c5cd1f11014216675":</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<span style="color: #000088;">$userId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'47113834154e4a6c5cd1f11014216675'</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to the unique ID of a group</span><br />
+<br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'/api/1.0/workflow/group/'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$userId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer &quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$accessToken</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oGroup</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oGroup</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error in <span style="color: #006699; font-weight: bold;">$apiServer</span>: <span style="color: #000099; font-weight: bold;">\n</span>Code: <span style="color: #006699; font-weight: bold;">{$oGroup-&gt;error-&gt;code}</span><span style="color: #000099; font-weight: bold;">\n</span>Message: <span style="color: #006699; font-weight: bold;">{$oGroup-&gt;error-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Group '<span style="color: #006699; font-weight: bold;">{$oGroup-&gt;grp_title}</span>' has <span style="color: #006699; font-weight: bold;">{$oGroup-&gt;grp_users}</span> members.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span class="mw-headline" id="Create_Group:_POST_.2Fgroup">Create Group: <code>POST /group</code></span></h3>
+
+<p><span id="CreateGroup">Create a new <font color="#483D8B">group</font></span>.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>The logged-in user needs to have the <a href="../Roles.html#PM_USERS">PM_USERS</a> permission in his/her role in order to be able to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>POST</b> <font color="blue">/api/1.0/{workspace}/group</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>POST Fields:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>grp_title</td>
+                    <td>String</td>
+                    <td>The name of the group.</td>
+                </tr>
+                <tr>
+                    <td>grp_status</td>
+                    <td>String</td>
+                    <td>The group's status, which can be "ACTIVE" or "INACTIVE". If the group is assigned to a task
+                        and its status is "INACTIVE", then members of the group will NOT be assigned to the task
+                        when cases are run.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>If a new group was created, then the HTTP status code is 201 and a JSON object with information about the new group is returned. For example:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; grp_uid<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;95436327554e4c87a5bd201063097966&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; grp_title<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Accounting&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; grp_status<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;ACTIVE&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>If a bad request, then the HTTP status code is 400 or greater and a JSON object like the following is returned:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; code<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; message<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The group title with grp_title: <span style="color: #000099; font-weight: bold;">\&quot;</span>Accounting<span style="color: #000099; font-weight: bold;">\&quot;</span> already exists.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$postParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'grp_title'</span> &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Accounting&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'grp_status'</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;ACTIVE&quot;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/group&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer <span style="color: #006699; font-weight: bold;">$accessToken</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_TIMEOUT<span style="color: #339933;">,</span> <span style="color: #cc66cc;">30</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <span style="color: #000088;">$postParams</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oGroup</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oGroup</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error accessing <span style="color: #006699; font-weight: bold;">$apiServer</span>: <span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span> <a href="http://php.net/curl_error"><span style="color: #990000;">curl_error</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oGroup</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error in <span style="color: #006699; font-weight: bold;">$apiServer</span>: <span style="color: #000099; font-weight: bold;">\n</span>Code: <span style="color: #006699; font-weight: bold;">{$oGroup-&gt;error-&gt;code}</span><span style="color: #000099; font-weight: bold;">\n</span>Message: <span style="color: #006699; font-weight: bold;">{$oGroup-&gt;error-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Group '<span style="color: #006699; font-weight: bold;">{$oGroup-&gt;grp_title}</span>' created with UID: <span style="color: #006699; font-weight: bold;">{$oGroup-&gt;grp_uid}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span class="mw-headline" id="Update_Group:_PUT_.2Fgroup.2F.7Busr_uid.7D">Update Group: <code>PUT /group/{grp_uid}</code></span></h3>
+
+<p><span id="UpdateGroup">Update information about a specified <font color="#483D8B">group</font></span>.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>The logged-in user needs to have the <a href="../Roles.html#PM_USERS">PM_USERS</a> permission in his/her role in order to be able to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>PUT</b> <font color="blue">/api/1.0/{workspace}/group/{grp_uid}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>grp_uid</td>
+                    <td>String</td>
+                    <td>Group unique ID.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Optional Fields:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>grp_title</td>
+                    <td>String</td>
+                    <td>The group's title.</td>
+                </tr>
+                <tr>
+                    <td>grp_status</td>
+                    <td>String</td>
+                    <td>Group status, which can be "ACTIVE" or "INACTIVE". If the group is assigned to a task and its
+                        status is "INACTIVE", then members of the group will NOT be assigned to the task when cases
+                        are run.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>If the group was successfully updated, the HTTP status code is 200 and there is nothing returned.</p>
+
+<p>If it is a bad request, then the HTTP status code is set to 400 or greater, and a JSON object like the following is returned:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; code<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; message<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The group with grp_uid: 47113834154e4a6c5cd1f11014216674 does not exist.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b><br>The following example changes the group title to "Accounting" and sets its status to "INACTIVE":</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<span style="color: #000088;">$userId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;75740355754dd28ba73d7d6082172937&quot;</span><span style="color: #339933;">;</span> &nbsp;<span style="color: #666666; font-style: italic;">//set to the unique ID of a group</span><br />
+<br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$postParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; <span style="color: #0000ff;">'grp_title'</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;Accounting&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #0000ff;">'grp_status'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;INACTIVE&quot;</span><span style="color: #339933;">,</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/group/&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$groupId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer <span style="color: #006699; font-weight: bold;">$accessToken</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_CUSTOMREQUEST<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;PUT&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <a href="http://php.net/http_build_query"><span style="color: #990000;">http_build_query</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$postParams</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oResult</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$statusCode</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$statusCode</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oResult</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oResult</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error Code: <span style="color: #006699; font-weight: bold;">{$oResult-&gt;error-&gt;code}</span><span style="color: #000099; font-weight: bold;">\n</span>Message: <span style="color: #006699; font-weight: bold;">{$oResult-&gt;error-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error: HTTP status code: <span style="color: #006699; font-weight: bold;">$statusCode</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Note that the following line sets the request to be a PUT request:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_CUSTOMREQUEST<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;PUT&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Also note that the POST parameters need to be passed to http_build_query() to generate a URL-encoded query string which can be used with PUT requests.</p>
+
+<h3><span class="mw-headline" id="Delete_Group:_DELETE_.2Fgroup.2F.7Bgrp_uid.7D">Delete Group: <code>DELETE /group/{grp_uid}</code></span></h3>
+
+<p><span id="DeleteGroup">Delete a specified <font color="#483D8B">group</font></span>. Note that this endpoint deletes the group's record from the <b><tt>GROUPWF</tt></b> table and its title from the <b><tt>CONTENT</tt></b> table in the database, but it doesn't delete the group's membership list from the <b><tt>GROUP_USER</tt></b> table.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>The logged-in user needs to have the <a href="../Roles.html#PM_USERS">PM_USERS</a> permission in his/her role in order to be able to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>DELETE</b> <font color="blue">/api/1.0/{workspace}/group/{grp_uid}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>grp_uid</td>
+                    <td>String</td>
+                    <td>Group unique ID.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>If the group was deleted, then the HTTP status code is 200. Otherwise, the HTTP status code is 400 or greater and a JSON object is returned like the following:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; code<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; message<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The group with grp_uid: 23251789354e4a6d6812cb4062218479 does not exist.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<span style="color: #000088;">$groupId</span> &nbsp; <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;75740355754dd28ba73d7d6082172937&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to a group's ID to delete it</span><br />
+<br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/group/&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$groupId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer <span style="color: #006699; font-weight: bold;">$accessToken</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_TIMEOUT<span style="color: #339933;">,</span> <span style="color: #cc66cc;">30</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_CUSTOMREQUEST<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;DELETE&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oResult</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$statusCode</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$statusCode</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oResult</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oResult</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error in <span style="color: #006699; font-weight: bold;">$apiServer</span>: <span style="color: #000099; font-weight: bold;">\n</span>Code: <span style="color: #006699; font-weight: bold;">{$oResult-&gt;error-&gt;code}</span><span style="color: #000099; font-weight: bold;">\n</span>Message: <span style="color: #006699; font-weight: bold;">{$oResult-&gt;error-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error: HTTP status code: <span style="color: #006699; font-weight: bold;">$statusCode</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p><span style="font-weight: bold;font-size: 1.20em; color: #4C5255;"><u><b>GROUPS - USERS </b></u></span></p>
+
+<h3><span class="mw-headline" id="Get_Group_Members:_GET_.2Fgroup.2F.7Bgrp_uid.7D.2Fusers">Get Group Members: <code>GET /group/{grp_uid}/users</code></span></h3>
+
+<p><span id="ListUsersGroups">List the assigned <font color="#483D8B">users</font> to a specified <font color="#483D8B">group</font>.</span></p>
+<dl>
+    <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/group/{grp_uid}/users?filter={filter}&amp;start={start}&amp;limit={limit}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>grp_uid</td>
+                    <td>String</td>
+                    <td>Group UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><br><b>Optional GET Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>filter</td>
+                    <td>string</td>
+                    <td>Case insensitive string to search for in the user's first name, last name or username.<br>For
+                        example, <code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>filter=mit</b>"</code>                        would return the users "smith", "Mitter" and "solmit".</td>
+                </tr>
+                <tr>
+                    <td>start</td>
+                    <td>integer</td>
+                    <td>The number of users where the list begins. The counting starts from number 0.<br>For example,
+                        <code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>start=3</b>"</code>                        would start the list of users with the fourth user.</td>
+                </tr>
+                <tr>
+                    <td>limit</td>
+                    <td>integer</td>
+                    <td>The maximum number of users which are returned in the list.<br>For example if wanting to return
+                        10 users at a time and there are 25 users in total, then call this endpoint 3 times:<br><code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>limit=10</b>"</code>                        (returns users 0-9)<br><code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>start=10&amp;limit=10</b>"</code>                        (returns users 10-19)<br><code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>start=20&amp;limit=10</b>"</code>                        (returns users 20-24)</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>If a successful request, the HTTP status code is set to 200 and a JSON array of user objects is returned, like the following one:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; usr_uid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;55324179754ca442baeb994077387342&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_username<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;jane&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_firstname<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Jane&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_lastname<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Doe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_email<span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;janedoe@example.com&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_status<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;ACTIVE&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; usr_uid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;66065213554dd1feb48fe79020620851&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_username<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;sam&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_firstname<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Sam&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_lastname<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Sloe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_email<span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;samsloe@example.com&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_status<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;INACTIVE&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+
+<p>If a bad request, then the HTTP status code is 400 or greater and a JSON error object is returned, like this one:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; code<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; message<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The group with grp_uid: 47113834154e4a6c5cd1f11014216674 does not exist.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b><br>This PHP example creates a list of active users who are members of a group with the unique ID of "47113834154e4a6c5cd1f11014216675" and places them in the array <code>$aActiveUsers</code>.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<span style="color: #000088;">$groupId</span> &nbsp; <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;47113834154e4a6c5cd1f11014216675&quot;</span><span style="color: #339933;">,</span> <span style="color: #666666; font-style: italic;">//set to the unique ID of a group</span><br />
+<br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;api/1.0/workspace/group/<span style="color: #006699; font-weight: bold;">$groupId</span>/users&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer &quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$accessToken</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aUsers</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$statusCode</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$aActiveUsers</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$statusCode</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error code: <span style="color: #006699; font-weight: bold;">{$aUsers-&gt;error-&gt;code}</span><span style="color: #000099; font-weight: bold;">\n</span>Message: <span style="color: #006699; font-weight: bold;">{$aUsers-&gt;error-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error: HTTP status code: <span style="color: #006699; font-weight: bold;">$statusCode</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$oUser</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oUser</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">usr_status</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;ACTIVE&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$aActiveUsers</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;uid&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$oUser</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">usr_uid</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;username&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$oUser</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">usr_username</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span class="mw-headline" id="Get_Available_Users:_GET_.2Fgroup.2F.7Bgrp_uid.7D.2Favailable-users">Get Available Users: <code>GET /group/{grp_uid}/available-users</code></span></h3>
+
+<p><span id="GetAvUsersGroup">Get a list of available <font color="#483D8B">users</font>, which can be assigned to a specified <font color="#483D8B">group</font></span>. All users which aren't yet assigned to the group will be listed, including users with "INACTIVE" and "VACATION" status.</p>
+<dl>
+    <dd><b>GET</b> <font color="blue">/api/1.0/{workspace}/group/{grp_uid}/available-users?filter={filter}&amp;start={start}&amp;limit={limit}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>grp_uid</td>
+                    <td>String</td>
+                    <td>Group unique ID.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p> </p>
+
+<p><b>Optional GET Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>filter</td>
+                    <td>string</td>
+                    <td>Case insensitive string to search for in the user's first name, last name or username.<br>For
+                        example, <code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>filter=mit</b>"</code>                        would return the users "smith", "Mitter" and "solmit".</td>
+                </tr>
+                <tr>
+                    <td>start</td>
+                    <td>integer</td>
+                    <td>The number of users where the list begins. The counting starts from number 0.<br>For example,
+                        <code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>start=3</b>"</code>                        would start the list of users with the fourth user.</td>
+                </tr>
+                <tr>
+                    <td>limit</td>
+                    <td>integer</td>
+                    <td>The maximum number of users which are returned in the list.<br>For example if wanting to return
+                        10 users at a time and there are 25 users in total, then call this endpoint 3 times:<br><code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>limit=10</b>"</code>                        (returns users 0-9)<br><code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>start=10&amp;limit=10</b>"</code>                        (returns users 10-19)<br><code>"api/1.0/workspace/group/47113834154e4a6c5cd1f11014216675/users?<b>start=20&amp;limit=10</b>"</code>                        (returns users 20-24)</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>If a successful request, the HTTP status code is set to 200 and a JSON array of user objects is returned, like the following one:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; usr_uid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;55324179754ca442baeb994077387342&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_username<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;jane&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_firstname<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Jane&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_lastname<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Doe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_email<span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;janedoe@example.com&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_status<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;ACTIVE&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; usr_uid<span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;66065213554dd1feb48fe79020620851&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_username<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;sam&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_firstname<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Sam&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_lastname<span style="color: #339933;">:</span> &nbsp;<span style="color: #3366CC;">&quot;Sloe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_email<span style="color: #339933;">:</span> &nbsp; &nbsp; <span style="color: #3366CC;">&quot;samsloe@example.com&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; usr_status<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;INACTIVE&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+
+<p>If a bad request, then the HTTP status code is 400 or greater and a JSON error object is returned, like this one:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; code<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; message<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The group with grp_uid: 47113834154e4a6c5cd1f11014216674 does not exist.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b></p>
+
+<p>This example gets a list of the first 10 available users to be assigned to a group with the ID ""47113834154e4a6c5cd1f11014216675":</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<span style="color: #000088;">$groupId</span> &nbsp; <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;47113834154e4a6c5cd1f11014216675&quot;</span><span style="color: #339933;">,</span> <span style="color: #666666; font-style: italic;">//set to the unique ID of a group</span><br />
+<br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;api/1.0/workspace/group/<span style="color: #006699; font-weight: bold;">$groupId</span>/users&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer &quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$accessToken</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aUsers</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$statusCode</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$aAvailableUsers</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$statusCode</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error code: <span style="color: #006699; font-weight: bold;">{$aUsers-&gt;error-&gt;code}</span><span style="color: #000099; font-weight: bold;">\n</span>Message: <span style="color: #006699; font-weight: bold;">{$aUsers-&gt;error-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error: HTTP status code: <span style="color: #006699; font-weight: bold;">$statusCode</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">10</span> and <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aAvailableUsers</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;uid&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">usr_uid</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;name&quot;</span><span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;{<span style="color: #006699; font-weight: bold;">$aUsers</span>[<span style="color: #006699; font-weight: bold;">$i</span>]-&gt;usr_firstname} {<span style="color: #006699; font-weight: bold;">$aUsers</span>[<span style="color: #006699; font-weight: bold;">$i</span>]-&gt;usr_lastname} ({<span style="color: #006699; font-weight: bold;">$aUsers</span>[<span style="color: #006699; font-weight: bold;">$i</span>]-&gt;usr_username})&quot;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span class="mw-headline" id="Assign_User_to_Group:_POST_.2Fgroup.2F.7Bgrp_uid.7D.2Fuser">Assign User to Group: <code>POST /group/{grp_uid}/user</code></span></h3>
+
+<p><span id="AssignUsersGroup">Assign a <font color="#483D8B">user</font> to a specified <font color="#483D8B">group</font></span>.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>The logged-in user needs to have the <a href="../Roles.html#PM_USERS">PM_USERS</a> permission in his/her role in order to be able to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>POST</b> <font color="blue">/api/1.0/{workspace}/group/{grp_uid}/user</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>grp_uid</td>
+                    <td>String</td>
+                    <td>The group's unique ID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>POST Fields:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>usr_uid</td>
+                    <td>String</td>
+                    <td>The unique ID of the user who will be added to the group as a member. Note that it is possible
+                        to add a user with "INACTIVE" or "VACATION" status to a group, but that user will not be
+                        assigned to any cases until his/her status changes to "ACTIVE" status.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Optional Fields:</b></p>
+
+<p>These fields may be included, but they will be ignored by the REST endpoint.</p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>usr_username</td>
+                    <td>String</td>
+                    <td>Username</td>
+                </tr>
+                <tr>
+                    <td>usr_firstname</td>
+                    <td>String</td>
+                    <td>User first name</td>
+                </tr>
+                <tr>
+                    <td>usr_lastname</td>
+                    <td>String</td>
+                    <td>User last name</td>
+                </tr>
+                <tr>
+                    <td>usr_email</td>
+                    <td>String</td>
+                    <td>User email</td>
+                </tr>
+                <tr>
+                    <td>usr_status</td>
+                    <td>String</td>
+                    <td>User status</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>If the user was assigned to the group, then the HTTP status code is 201 (Created) and there is no return object. Otherwise, it is 400 or greater and returns a JSON error object like:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; code<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; message<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The user with usr_uid: 55324179754ca442baeb994077387342 is already assigned to the group.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<span style="color: #000088;">$groupId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;75740355754dd28ba73d7d6082172937&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to the unique ID of a group</span><br />
+<span style="color: #000088;">$userId</span> &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;14680180454ca4477335a27034362107&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to unique ID of user to add to group</span><br />
+<br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$postParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'usr_uid'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$userId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/group/<span style="color: #006699; font-weight: bold;">$groupId</span>/user&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer <span style="color: #006699; font-weight: bold;">$accessToken</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <span style="color: #000088;">$postParams</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oResult</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$statusCode</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$statusCode</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">201</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oResult</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oResult</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error in <span style="color: #006699; font-weight: bold;">$apiServer</span>:<span style="color: #000099; font-weight: bold;">\n</span>Code: <span style="color: #006699; font-weight: bold;">{$oResult-&gt;error-&gt;code}</span><span style="color: #000099; font-weight: bold;">\n</span>Message: <span style="color: #006699; font-weight: bold;">{$oResult-&gt;error-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error: HTTP status code <span style="color: #006699; font-weight: bold;">$statusCode</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<!-- BATCH assign PM 3.1-->
+<h3><span class="mw-headline" id="Batch assignment of users to a group:_POST_.2Fgroup.2Fbatch-users">Batch assignment of users to a group: <code>POST /group/batch-users</code></span></h3>
+
+<p><span id="BatchAssignUsersGroup">Assign a group of <font color="#483D8B">users</font> to a specified <font color="#483D8B">group or groups</font></span>.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>The logged-in user needs to have the <a href="../../3.3/Roles.html#PM_USERS">PM_USERS</a> permission in his/her role in order to be able to perform this action. As of <b>ProcessMaker 3.7.6</b>, there is no need to have the <code>PM_USERS</code> in the role.</dd></dl>
+
+<p><b>Structure:</b></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+<dl>
+    <dd><b>POST</b> <font color="blue">/api/1.0/{workspace}/group/batch-users</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>POST Fields:</b></p>
+<dl>
+    <dd>
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>group_uid</td>
+                    <td>String</td>
+                    <td>The unique ID of the group.</td>
+                </tr>
+                <tr>
+                    <td>usr_uid</td>
+                    <td>String</td>
+                    <td>The unique ID of the user who will be added to the group as a member. Note that it is possible
+                        to add a user with <b>"INACTIVE"</b> or <b>"VACATION"</b> status to a group, but that user
+                        will not be assigned to any cases until his/her status changes to "ACTIVE" status.</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Example:</b><br>
+<i>Request</i></p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span> &nbsp; <span style="color: #3366CC;">&quot;groupUid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;736859293580694224723e4044919733&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;users&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;53394423757e2b2b0ad67f8037960288&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;46659397457e2b247449e47034509320&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;76081561857e2b295df50e8089175787&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;53394423757e2b2b0ad67f8037960277&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#123;</span> &nbsp; <span style="color: #3366CC;">&quot;groupUid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;40282513256e338ca2244a0065846602&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;users&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#91;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;53394423757e2b2b0ad67f8037960288&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;46659397457e2b247449e47034509320&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;76081561857e2b295df50e8089175787&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;53394423757e2b2b0ad67f8037960277&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+
+<p><em>Response</em></p>
+
+<p>If the users were assigned to the groups, then the HTTP status code is 201 (Created) and there is a return object with the state of the assignment of each user.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;groupUid&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;736859293580694224723e4044919733&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;GROUP_EXISTS&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;users&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;53394423757e2b2b0ad67f8037960288&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;USER_NOT_EXISTS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;46659397457e2b247449e47034509320&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;USER_SUCCESSFULLY_ASSIGNED&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;76081561857e2b295df50e8089175787&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;USER_SUCCESSFULLY_ASSIGNED&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;53394423757e2b2b0ad67f8037960277&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;USER_ALREADY_ASSIGNED&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;groupUid&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;40282513256e338ca2244a0065846602&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;GROUP_EXISTS&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;users&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;53394423757e2b2b0ad67f8037960288&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;USER_NOT_EXISTS&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;46659397457e2b247449e47034509320&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;USER_ALREADY_ASSIGNED&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;76081561857e2b295df50e8089175787&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;USER_SUCCESSFULLY_ASSIGNED&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;53394423757e2b2b0ad67f8037960277&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;USER_ALREADY_ASSIGNED&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#93;</span></div></div>
+
+<p>Otherwise, it is 400 or greater and returns a JSON error object like:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;code&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">404</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&quot;message&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Not Found&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<!-- -->
+
+
+
+<h3><span class="mw-headline" id="Unassign_User_from_Group:_DELETE_.2Fgroup.2F.7Bgrp_uid.7D.2Fuser.2F.7Busr_uid.7D">Unassign User from Group: <code>DELETE /group/{grp_uid}/user/{usr_uid}</code></span></h3>
+
+<p><span id="UnassignUsersGroup">Unassign (remove) a <font color="#483D8B">user</font> from a <font color="#483D8B">group</font></span> so no longer a member of the group.</p>
+
+<p><b>Permission:</b></p>
+<dl><dd>The logged-in user needs to have the <a href="../Roles.html#PM_USERS">PM_USERS</a> permission in his/her role in order to be able to perform this action.</dd></dl>
+
+<p><b>Structure:</b></p>
+<dl>
+    <dd><b>DELETE</b> <font color="blue">/api/1.0/{workspace}/group/{grp_uid}/user/{usr_uid}</font></dd>
+</dl>
+
+<p><b>URL Parameters:</b></p>
+<dl>
+    <dd>
+
+        <table class="codecolumn">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Type</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                <tr>
+                    <td>workspace</td>
+                    <td>String</td>
+                    <td>Workspace name</td>
+                </tr>
+                <tr>
+                    <td>grp_uid</td>
+                    <td>String</td>
+                    <td>Group UID</td>
+                </tr>
+                <tr>
+                    <td>usr_uid</td>
+                    <td>String</td>
+                    <td>Group UID</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+
+<p><b>Result:</b></p>
+
+<p>If the user was removed from the group, then the HTTP status code is 200 and there is no return object. Otherwise, the HTTP status code is 400 or greater and a JSON error object is returned, such as:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; error<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; code<span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #CC0000;">400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; message<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Bad Request: The user with usr_uid: 98883020754dd1f052ee1f1034403381 is not assigned to the group.&quot;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>PHP Example:</b></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;https://example.com&quot;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//set to your ProcessMaker address</span><br />
+<span style="color: #000088;">$groupId</span> &nbsp; <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;75740355754dd28ba73d7d6082172937&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to a group's ID</span><br />
+<span style="color: #000088;">$userId</span> &nbsp; &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;98883020754dd1f052ee1f1034403381&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to the ID of the user to be removed from the group</span><br />
+<br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> getAccessToken<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$apiServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/group/<span style="color: #006699; font-weight: bold;">$groupId</span>/user/<span style="color: #006699; font-weight: bold;">$userId</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_HTTPHEADER<span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Authorization: Bearer <span style="color: #006699; font-weight: bold;">$accessToken</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_TIMEOUT<span style="color: #339933;">,</span> <span style="color: #cc66cc;">30</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_CUSTOMREQUEST<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;DELETE&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$oResult</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$statusCode</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$statusCode</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oResult</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oResult</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error in <span style="color: #006699; font-weight: bold;">$apiServer</span>: <span style="color: #000099; font-weight: bold;">\n</span>Code: <span style="color: #006699; font-weight: bold;">{$oResult-&gt;error-&gt;code}</span><span style="color: #000099; font-weight: bold;">\n</span>Message: <span style="color: #006699; font-weight: bold;">{$oResult-&gt;error-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error: HTTP status code: <span style="color: #006699; font-weight: bold;">$statusCode</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<!--Groups End--></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

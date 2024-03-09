@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Configuration_File_env.ini.html" />
+<link rel="shortlink" href="../node/333.html" />
+<title>2.0 - Configuration File env.ini | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"RuHKMetjububSUFhWz-P4h1iD5-JPwNdUZY3asVfGA8","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-333 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Configuration_File_env.ini.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-0x4MBExX31bgJ4kwgYWVoK8k0_fC7T8CZPvjVcD399c" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.0 - Configuration File env.ini</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.3/Configuration_File_env.ini.html" class="">3.8</a></li><li><a href="../3.3/Configuration_File_env.ini.html" class="">3.7</a></li><li><a href="../3.3/Configuration_File_env.ini.html" class="">3.6</a></li><li><a href="../3.3/Configuration_File_env.ini.html" class="">3.5</a></li><li><a href="../3.3/Configuration_File_env.ini.html" class="">3.4</a></li><li><a href="../3.3/Configuration_File_env.ini.html" class="">3.3</a></li><li><a href="../3.2/Configuration_File_env.ini.html" class="">3.2</a></li><li><a href="../3.0/Configuration_File_env.ini.html" class="">3.1</a></li><li><a href="../3.0/Configuration_File_env.ini.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.0 - Configuration File env.ini" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Configuration_File_env.ini.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.0 - Configuration File env.ini 1/5</option><option value="40">Give 2.0 - Configuration File env.ini 2/5</option><option value="60" selected="selected">Give 2.0 - Configuration File env.ini 3/5</option><option value="80">Give 2.0 - Configuration File env.ini 4/5</option><option value="100">Give 2.0 - Configuration File env.ini 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.7</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-bTYsqjeKb7aKwp4eo889pniPqQRAuMBFAvgWfkk2no8" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Configuration_File_env.ini.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Configuration_File_env.ini.html#Overview">Overview</a></li>
+<li class="toc"><a href="Configuration_File_env.ini.html#Editing_the_env.ini_file">Editing the <tt>env.ini</tt> file</a></li>
+<ol class="toc">
+<li class="toc"><a href="Configuration_File_env.ini.html#Available_Settings:">Available Settings:</a></li>
+<li class="toc"><a href="Configuration_File_env.ini.html#MySQL_Logging">MySQL Logging</a></li>
+<ol class="toc">
+<li class="toc"><a href="Configuration_File_env.ini.html#Enabling_MySQL_Logging_before_version_2.0.29">Enabling MySQL Logging before version 2.0.29</a></li>
+</ol>
+<li class="toc"><a href="Configuration_File_env.ini.html#Time_Logging">Time Logging</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+
+<p>In version 2.0.29 and later, ProcessMaker uses the configuration file <strong><tt>env.ini</tt></strong> for global settings which aren't available under the <strong>ADMIN</strong> menu.</p>
+
+<h2><span id="Editing_the_env.ini_file">Editing the <tt>env.ini</tt> file</span></h2>
+
+<p>Use a plain text editor to edit the configuration file located at:</p>
+<dl><dd><tt><a href="File_Locations.html#Installation_Directory" title="File Locations">&lt;INSTALL-DIRECTORY&gt;</a>/workflow/engine/config/env.ini</tt></dd></dl>
+
+<p>It is generally found at:</p>
+
+<dl><dd><strong>Linux/UNIX:</strong>
+<dl><dd><tt>/opt/processmaker/workflow/engine/config/env.ini</tt></dd></dl>
+</dd><dd>
+<strong>Windows XP/Server 2003:</strong>
+<dl><dd><tt>C:\Program Files\ProcessMaker-2_<i>X</i>_<i>X</i>\processmaker\workflow\engine\config\env.ini</tt></dd></dl>
+</dd><dd>
+<strong>Windows Vista/7/8/Server 2008:</strong>
+<dl><dd><tt>C:\Users\<i><strong>USERNAME</strong></i>\AppData\Roaming\ProcessMaker-2_<i><strong>X</strong></i>_<i><strong>X</strong></i>\processmaker\workflow\engine\config\env.ini</tt>
+</dd></dl>
+</dd></dl>
+<p>By default, the <strong><tt>env.ini</tt></strong> file has the following content:</p>
+
+<codeblock>
+debug=0
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">; To set the time zone uncomment the following line.</span>
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">; For valid time zones check http://php.net/manual/en/timezones.php</span>
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">;time_zone = "America/New_York"</span>
+ 
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">; To set a different memory limit, uncomment the following line.</span>
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">; For more info http://php.net/manual/en/ini.core.php#ini.sect.resource-limits</span>
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">;memory_limit = "100M"</span>
+ 
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">; To turn off caching of web services calls, uncomment the following line.</span>
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">;wsdl_cache = 0</span>
+</codeblock>
+
+<p>Most of the settings can be enabled by setting them to <strong><tt>1</tt></strong> and disabled by setting them to <strong><tt>0</tt></strong>. Settings which are strings should be enclosed in double quotation marks. Lines beginning with ";" (semicolons) are treated as comments and are ignored. Remove the semicolon to uncomment the setting.</p>
+<h3><span id="Available_Settings:">Available Settings:</span></h3>
+<ul><li><strong>debug_sql = 0|1</strong></li></ul>
+<dl><dd>Set to 1 to log all SQL queries to the <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong>, <strong><tt>rb_&lt;WORKSPACE&gt;</tt></strong> and <strong><tt>rp_&lt;WORKSPACE&gt;</tt></strong> <a href="ProcessMaker_Database_Model.html" title="ProcessMaker Database Model">databases</a> in MySQL. Default is 1. For more information, see <a href="Configuration_File_env.ini.html#MySQL_Logging">MySQL Logging</a>.</dd></dl>
+<ul><li><strong>debug_time = 0|1</strong></li></ul>
+<dl><dd>Set to 1 to log the time for web requests to be processed by ProcessMaker. Default is 0. For more information, see <a href="Configuration_File_env.ini.html#Time_Logging">Time Logging</a>.</dd></dl>
+<ul><li><strong>debug_calendar = 0|1</strong></li></ul>
+<dl><dd>Set to 1 to log information about calendars. Default is 0.</dd></dl>
+<ul><li><strong>wsdl_cache = 0|1</strong></li></ul>
+<dl><dd>Set to 0 to disable the <a href="ProcessMaker_WSDL_Web_Services.html#Programming_WSDL_Web_Services" title="ProcessMaker WSDL Web Services">caching of WSDL</a> (Web Services Description Language) function calls. The default is 1, so WSDL function calls are cached for up to 24 hours, which increases the reliability (especially if there are connection problems), but is a problem when needing immediate execution for debugging.</dd></dl>
+<ul><li><strong>memory_limit = "<i>X</i>M"</strong></li></ul>
+<dl><dd>Set the maximum amount of memory available for each login session in ProcessMaker. Use "M" for megabytes, "K" for kilobyes and "G" for gigabytes. It is not recommended to set this value to less than "100M", which is the default. If generating large <a href="Output_Documents.html" title="Output Documents">Output Documents</a>, it may be necessary to increase this value. To set the <tt>memory_limit</tt> before version 2.0.29, see<a href="Changing_the_ProcessMaker_Configuration.html#Increasing_the_maximum_memory_per_session_ProcessMaker" title="Changing the ProcessMaker Configuration">Increasing the maximum memory per session</a>.</dd></dl>
+<ul><li><strong>time_zone = "<i>zone</i>"</strong></li></ul>
+<dl><dd>Set the time zone for the ProcessMaker server. This setting determines the time zone used for all timestamps in ProcessMaker, such as the starting and ending time for cases. By default, the time zone is set to <tt>"America/New_York"</tt>. A list of available timezones can be found at: <a href="http://php.net/manual/en/timezones.php">http://php.net/manual/en/timezones.php</a></dd><dd>To set ProcessMaker's time zone before version 2.0.29, See <a href="2.0/Default_Time_Zone.html" title="Default Time Zone">Default Time Zone</a>.</dd></dl>
+
+<h3><span id="MySQL_Logging">MySQL Logging</span></h3>
+
+<p>If the <strong><tt>debug_sql</tt></strong> option is set to <strong>1</strong> (or <strong><tt>debug</tt></strong> is set to <strong>1</strong>), then every SQL query to the workflow (<strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong>), rbac (<strong><tt>rb_&lt;WORKSPACE&gt;</tt></strong>) and report (<strong><tt>rp_&lt;WORKSPACE&gt;</tt></strong>) databases will be written in the following three log files:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&lt;INSTALL-DIRECTORY&gt;/shared/log/<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;rbac.log &nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;report.log &nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;workflow.log</div></div>
+
+<p>Each line in the log files records SQL actions in the following format:</p>
+
+<codeblock>time(HH:MM:SS.mmm) address-of-user database workspace [type] function/SQL-query [URL-path -&gt; code-file.php:line-number:function() -&gt; ...]
+</codeblock>
+
+<p>For example, here is the <strong><tt>shared/log/workflow.log</tt></strong> file for the "admin" user's login from the IP address 192.168.0.168:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">12:18:26.179 192.168.0.168 wf workflow [info] executeQuery(): SELECT LANGUAGE.LAN_ID, LANGUAGE.LAN_NAME, LANGUAGE.LAN_NATIVE_NAME, LANGUAGE.LAN_DIRECTION, LANGUAGE.LAN_WEIGHT, LANGUAGE.LAN_ENABLED, LANGUAGE.LAN_CALENDAR FROM LANGUAGE WHERE LANGUAGE.LAN_ID='en' [ /sysworkflow/en/classic/login/sysLoginVerify -&gt; sysGeneric.php:535:getLanDirection()-&gt;class.serverConfiguration.php:355:load()-&gt;Language.php:49:retrieveByPK()-&gt;BaseLanguagePeer.php:555:doSelect()-&gt;BaseLanguagePeer.php:266:doSelectRS()-&gt;BaseLanguagePeer.php:298:doSelect()-&gt;BasePeer.php:450:executeQuery()-&gt;PreparedStatementCommon.php:334:executeQuery()-&gt; ]<br />
+<br />
+12:18:26.223 192.168.0.168 wf workflow [info] Beginning transaction. [ /sysworkflow/en/classic/login/sysLoginVerify -&gt; sysGeneric.php:592:require_once()-&gt;sysLoginVerify.php:31:require_once()-&gt;authentication.php:181:create()-&gt;LoginLog.php:30:save()-&gt;BaseLoginLog.php:504:begin()-&gt; ]<br />
+12:18:26.223 192.168.0.168 wf workflow [info] Beginning transaction. [ /sysworkflow/en/classic/login/sysLoginVerify -&gt; sysGeneric.php:592:require_once()-&gt;sysLoginVerify.php:31:require_once()-&gt;authentication.php:181:create()-&gt;LoginLog.php:30:save()-&gt;BaseLoginLog.php:505:doSave()-&gt;BaseLoginLog.php:535:doInsert()-&gt;BaseLoginLogPeer.php:383:begin()-&gt; ]<br />
+<br />
+12:18:26.224 192.168.0.168 wf workflow [info] executeUpdate(): INSERT INTO LOGIN_LOG (LOG_UID,LOG_STATUS,LOG_IP,LOG_SID,LOG_INIT_DATE,LOG_CLIENT_HOSTNAME,USR_UID) VALUES ('5507406534e1f16d2367124077319688','ACTIVE','192.168.0.168','15db39802fcaba5acd1ed3d53335c3d6','2011-07-14 <br />
+<br />
+12:18:26','192.168.1.76:20302','00000000000000000000000000000001') [ /sysworkflow/en/classic/login/sysLoginVerify -&gt; sysGeneric.php:592:require_once()-&gt;sysLoginVerify.php:31:require_once()-&gt;authentication.php:181:create()-&gt;LoginLog.php:30:save()-&gt;BaseLoginLog.php:505:doSave()-&gt;BaseLoginLog.php:535:doInsert()-&gt;BaseLoginLogPeer.php:384:doInsert()-&gt;BasePeer.php:304:executeUpdate()-&gt;PreparedStatementCommon.php:356:executeUpdate()-&gt; ]<br />
+<br />
+12:18:26.225 192.168.0.168 wf workflow [info] Committing transaction. [ /sysworkflow/en/classic/login/sysLoginVerify -&gt; sysGeneric.php:592:require_once()-&gt;sysLoginVerify.php:31:require_once()-&gt;authentication.php:181:create()-&gt;LoginLog.php:30:save()-&gt;BaseLoginLog.php:505:doSave()-&gt;BaseLoginLog.php:535:doInsert()-&gt;BaseLoginLogPeer.php:385:commit()-&gt; ]<br />
+<br />
+12:18:26.225 192.168.0.168 wf workflow [info] Committing transaction. [ /sysworkflow/en/classic/login/sysLoginVerify -&gt; sysGeneric.php:592:require_once()-&gt;sysLoginVerify.php:31:require_once()-&gt;authentication.php:181:create()-&gt;LoginLog.php:30:save()-&gt;BaseLoginLog.php:506:commit()-&gt; ]<br />
+<br />
+12:18:26.225 192.168.0.168 wf workflow [info] Committing transaction. [ /sysworkflow/en/classic/login/sysLoginVerify -&gt; sysGeneric.php:592:require_once()-&gt;sysLoginVerify.php:31:require_once()-&gt;authentication.php:181:create()-&gt;LoginLog.php:38:commit()-&gt; ]<br />
+<br />
+12:18:26.254 192.168.0.168 wf workflow [info] executeQuery(): SELECT COUNT(PROCESS.PRO_UID) FROM PROCESS WHERE PROCESS.PRO_STATUS='ACTIVE' [ /sysworkflow/en/classic/login/sysLoginVerify -&gt; sysGeneric.php:592:require_once()-&gt;sysLoginVerify.php:31:require_once()-&gt;authentication.php:185:getWorkspaceInfo()-&gt;class.serverConfiguration.php:266:doCount()-&gt;BaseProcessPeer.php:308:doSelectRS()-&gt;BaseProcessPeer.php:378:doSelect()-&gt;BasePeer.php:450:executeQuery()-&gt;PreparedStatementCommon.php:334:executeQuery()-&gt; ]</div></div>
+
+<p>Logging will noticeably slow down ProcessMaker's performance, so it is not suggested to use this option except for debugging. The log files are not automatically deleted, so they will continue to append new information (until the file system runs out of space). If SQL Logging is enabled for long periods of time, it is a good idea to periodically delete the log files so they don't occupy too much harddrive space.</p>
+<h4><span id="Enabling_MySQL_Logging_before_version_2.0.29">Enabling MySQL Logging before version 2.0.29</span></h4>
+<p>To turn on MySQL logging before version 2.0.29, edit the file <strong><tt>&lt;INSTALL-DIRECTORY&gt;/workflow/public_html/sysGeneric.php</tt></strong> with a plain text editor. it can generally be found at:<strong>Linux/UNIX:</strong></p>
+<dl><dd><tt>/opt/processmaker/workflow/public_html/sysGeneric.php</tt></dd></dl>
+<p><strong>Windows</strong>, before ProcessMaker version 1.6-4260:</p>
+<dl><dd><tt>C:\Program Files\ProcessMaker\apps\processmaker\workflow\public_html\sysGeneric.php</tt></dd></dl>
+<p><strong>Windows</strong>, in ProcessMaker version 1.6-4260 and later:</p>
+<dl><dd><tt><a href="File_Locations.html#Installation_Directory" title="File Locations">&lt;INSTALL-DIRECTORY&gt;</a>\processmaker\workflow\public_html\sysGeneric.php</tt></dd></dl>
+<p>Change the value of the <strong><tt>debug</tt></strong> setting to <strong><tt>1</tt></strong> to turn on detailed SQL logging:</p>
+
+<codeblock> 
+<span class="st_h" style="color: rgb(0, 0, 255);">'debug'</span> <span class="sy0" style="color: rgb(51, 153, 51);">=&gt;</span> <span class="nu0" style="color: rgb(204, 102, 204);">1</span><span class="sy0" style="color: rgb(51, 153, 51);">,</span> <span class="co1" style="color: rgb(102, 102, 102); font-style: italic;">//change this value to 1, to have a detailed sql log in PATH_DATA . 'log' . PATH_SEP . 'workflow.log'</span></codeblock>
+
+<h3><span id="Time_Logging">Time Logging</span></h3>
+<p>If the <strong><tt>debug_time</tt></strong> option is set to <strong><tt>1</tt></strong>, then the time to process each web request will be logged in a file located at:</p>
+<dl><dd><tt><a href="File_Locations.html#Installation_Directory" title="File Locations">&lt;INSTALL-DIRECTORY&gt;</a>/shared/log/time.log</tt></dd></dl>
+<p>Each line in the log file records the time to process a separate web request in the following format:</p>
+
+<codeblock>time-of-request(HH:MM:SS.mmm) user-address server-address processing-time(S.mmm) URL-path</codeblock>
+
+<p>Note that the processing-time is in seconds and milliseconds, so a time of 1.309 means 1 second and 309 milliseconds. The URL-path does not include the protocol and IP/Domain address. Time Logging is a good way to discover the URLs and GET variables used in the different frames in the ProcessMaker interface.</p>
+<p>For example, here is the <strong><tt>shared/log/time.log</tt></strong> file for running a case:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">13:11:15.000 &nbsp; 192.168.0.168 1.76 0.179 /sysworkflow/en/classic/cases/proxyCasesList<br />
+13:11:16.000 &nbsp; 192.168.0.168 1.76 0.507 /sysworkflow/en/classic/cases/casesMenuLoader?action=getAllCounters&amp;amp;r=0.7974853888047986<br />
+13:11:16.000 &nbsp; 192.168.0.168 1.76 0.481 /sysworkflow/en/classic/cases/casesStartPage?action=startCase<br />
+13:11:16.000 &nbsp; 192.168.0.168 1.76 0.496 /sysworkflow/en/classic/cases/casesStartPage?action=startCase<br />
+13:11:20.000 &nbsp; 192.168.0.168 1.76 0.381 /sysworkflow/en/classic/cases/casesStartPage_Ajax.php<br />
+13:11:21.000 &nbsp; 192.168.0.168 1.76 0.323 /sysworkflow/en/classic/cases/open?APP_UID=9361624344e1f2338d52331039957370&amp;amp;DEL_INDEX=1&amp;amp;action=draft<br />
+13:11:23.000 &nbsp; 192.168.0.168 1.76 0.402 /sysworkflow/en/classic/cases/ajaxListener?action=steps<br />
+13:11:23.000 &nbsp; 192.168.0.168 1.76 0.579 /sysworkflow/en/classic/cases/cases_Open?APP_UID=9361624344e1f2338d52331039957370&amp;amp;DEL_INDEX=1&amp;amp;action=draft<br />
+13:11:23.000 &nbsp; 192.168.0.168 1.76 0.404 /sysworkflow/en/classic/cases/cases_Step?TYPE=DYNAFORM&amp;amp;UID=8318185774e1c7ec7100be1011109529&amp;amp;POSITION=1&amp;amp;ACTION=EDIT<br />
+13:11:24.000 &nbsp; 192.168.0.168 1.76 0.335 /sysworkflow/en/classic/cases/ajaxListener<br />
+13:11:24.000 &nbsp; 192.168.0.168 1.76 0.327 /sysworkflow/en/classic/cases/ajaxListener?action=steps<br />
+13:11:26.000 &nbsp; 192.168.0.168 1.76 0.402 /sysworkflow/en/classic/cases/cases_Step?TYPE=ASSIGN_TASK&amp;amp;UID=-1&amp;amp;POSITION=10000&amp;amp;ACTION=ASSIGN<br />
+13:11:28.000 &nbsp; 192.168.0.168 1.76 0.402 /sysworkflow/en/classic/cases/cases_Derivate</div></div>
+
+<p>The client machine is running on 192.168.0.168 and the ProcessMaker server is running on 192.168.1.76 (the first two numbers of the IP address aren't displayed because of the network's netmask).</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

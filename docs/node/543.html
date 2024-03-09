@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.0/FTP_Monitor.html" />
+<link rel="shortlink" href="543.html" />
+<title>3.0 - 3.8 - FTP Monitor | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"JEmgdF4cN6x4l_Fe4XUDQl0-9W75E7jul26CExDNCkU","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-543 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="543.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="543.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-1HDd_T-8164Ccf9WsUkbIWDqeme41vn8y6Sy4DyTuaE" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.0 - 3.8 - FTP Monitor</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a  class="active-version">3.0</a></li><li><a href="../index.php/FTP_Monitor.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.0 - 3.8 - FTP Monitor" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="543.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.0 - 3.8 - FTP Monitor 1/5</option><option value="40" selected="selected">Give 3.0 - 3.8 - FTP Monitor 2/5</option><option value="60">Give 3.0 - 3.8 - FTP Monitor 3/5</option><option value="80">Give 3.0 - 3.8 - FTP Monitor 4/5</option><option value="100">Give 3.0 - 3.8 - FTP Monitor 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-euDio6BRicR_1cbILBjdxn9wLlcFfZJVBXfL8t5RHew" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="543.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="543.html#Overview">Overview</a></li>
+<li class="toc"><a href="543.html#Requirements">Requirements</a></li>
+<ol class="toc">
+<li class="toc"><a href="543.html#ProcessMaker_Compatibility">ProcessMaker Compatibility</a></li>
+</ol>
+<li class="toc"><a href="543.html#How_the_plugin_works">How the Plugin Works</a></li>
+<li class="toc"><a href="543.html#Installation_and_Configuration">Installation and Configuration</a></li>
+<li class="toc"><a href="543.html#Creating_an_FTP_Monitor_Connection">Creating an FTP Monitor Connection </a></li>
+<ol class="toc">
+<li class="toc"><a href="543.html#FTP_Connection_Properties">FTP Connection Properties</a></li>
+<li class="toc"><a href="543.html#Local_Connection_Properties">Local Connection Properties</a></li>
+</ol>
+<li class="toc"><a href="543.html#XML_File_Format">XML File Format</a></li>
+<li class="toc"><a href="543.html#Examples_Creating_Cases">Examples Creating Cases</a></li>
+<ol class="toc">
+<li class="toc"><a href="543.html#Using_an_FTP_Connection">Using an FTP Connection</a></li>
+<ol class="toc">
+<li class="toc"><a href="543.html#Uploading_images_into_the_Server">Uploading Images to the Server</a></li>
+</ol>
+<li class="toc"><a href="543.html#Using_a_Local.2FShared_Connection">Using a Local/Shared Connection</a></li>
+<ol class="toc">
+<li class="toc"><a href="543.html#Using_an_XML_file_and_conditional_routing">Using an XML File and Conditional Routing</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="543.html#FTP_Monitor_Log">FTP Monitor Log</a></li>
+<ol class="toc">
+<li class="toc"><a href="543.html#FTP_Monitor_Log_Details">FTP Monitor Log Details</a></li>
+</ol>
+</div></div>
+
+<hr>
+<p><img src="../sites/default/files/faviconpm_23.png" alt="" width="16" height="16"> <span style="color: #009688"><strong>Plugin Version:</strong></span> <span style="color: dimgrey"><strong>3.1.2</strong></span> | <a href="https://drive.google.com/file/d/1Y6YiS9vxigTxutX15MyJMSMkYswX09UK/view?usp=sharing"><span style="font-size: 9pt;"><strong>Release Notes</strong></span></a> | <a href="../3.2/FTP_Monitor_Old_Versions.html"><span style="font-size: 9pt;"><strong>Old Versions</strong></span></a></p>
+<hr>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p>FTP Monitor is a plugin that creates a new case for each new file in the directory by checking the FTP or Shared/Local directory periodically. </p>
+
+<h2><span id="Requirements">Requirements</span></h2>
+<h3><span id="ProcessMaker_Compatibility">ProcessMaker Compatibility</span></h3>
+
+<p>This plugin is fully compatible with the following ProcessMaker versions:</p>
+<ul>
+    <li>v. 2.5.2.x</li>
+    <li>v. 2.8.0.x</li>
+    <li>v. 3.0.1.x</li>
+    <li>v. 3.1.x</li>
+    <li>v. 3.2.x</li>
+    <li>v. 3.3.x</li>
+</ul>
+
+<h2><span id="How_the_plugin_works">How the Plugin Works</span></h2>
+<p>The FTP Monitor needs to have access to a valid FTP or Shared/Local directory. For each file uploaded to the directory, a new case will automatically be created and routed to the second task in the process. The file is added as an Input Document file in the new case. For this reason, the process needs to include an initial task, which will automatically be skipped by the FTP Monitor, and an <a href="../3.0/Input_Documents.html" title="Input Documents">Input Document</a>. The FTP Monitor checks for new files in the directory when ProcessMaker's <strong><tt>cron.php</tt></strong> file is executed. To ensure that FTP Monitor is regularly checking the directory, a cron job in Linux/UNIX or a Scheduled Task in Windows should be created to periodically <a href="../3.0/Executing_cron.php.html" title="Executing cron.php">execute ProcessMaker's <strong><tt>cron.php</tt></strong> file</a>.</p>
+
+<p>In addition, if an XML file is placed in a directory with the same filename as the file that initiated the case, then its XML data will be parsed and added as case variables in the new case. The passed variables can be used in fields in Dynaforms, triggers, conditions and evaluation routing rules, or to assign users to tasks.</p>
+
+<h2><span id="Installation_and_Configuration">Installation and Configuration</span></h2>
+
+<ul>
+    <p>Log in with a user, such as "admin", who has the <a href="../3.0/Roles.html#PM_SETUP_ADVANCE" title="3.0/Roles">PM_SETUP_ADVANCE</a> permission in his/her <a href="../3.0/Roles.html" title="3.0/Roles">role</a> and then go to <strong>Admin &gt; Plugins &gt; Enterprise Manager</strong>. Either install the FTP Monitor plugin by clicking on <img alt="" height="19" src="../sites/default/files/InstallPluginIcon.png" width="20"><strong>Install from File</strong> and uploading the plugin file <i>or</i> by clicking on its <strong>Install Now</strong> button in the list of available plugins.</p>
+
+    <p><img src="../sites/default/files/3.2FTPMonitor310Install.png"></p>
+
+    <p>After installing the plugin, make sure that the FTP Monitor plugin is&nbsp;
+<img alt="" height="20" src="../sites/default/files/EnabledIcon.png" width="22"> enabled.
+</p>
+
+    <p><img src="../sites/default/files/3.2FTPMonitor310Enabled.png" ></p>
+
+
+    <h2><span id="Creating_an_FTP_Monitor_Connection">Creating an FTP Monitor Connection </span></h2>
+    <p>Once the plugin is enabled, go to <strong>Admin &gt; Plugins</strong> and the&nbsp; <strong>FTP Monitor Setup</strong> option will be available in the sidebar. Click on it and all the available connections will be listed:</p>
+
+    <p><img src="../sites/default/files/3.0FTPMonitorOption.png"></p>
+
+    <p>In connection list, the menu offers the following options:</p>
+
+    <p><img src="../sites/default/files/3.0FTPMonitorOptionMenu.png"></p>
+
+    <ul>
+        <li><strong>New</strong>: Create a new FTP or SHARED/LOCAL connection by clicking on&nbsp; <strong>New</strong>.</li>
+        <li><strong>Edit</strong>: Edit an existing connection by choosing one in the list and clicking on  <strong>Edit</strong>.</li>
+        <li><strong>Delete</strong>: Delete an existing connection by choosing one in the list and clicking on <strong>Delete</strong>.</li>
+        <li><strong>Disable</strong>: Disable an existing connection by choosing one in the list and clicking on <strong>Disable</strong>.</li>
+        <li><strong>Enable</strong>: Enable an existing connection by choosing one in the list and clicking on <strong>Enable</strong>.</li>
+    </ul>
+
+    <p>To create a new connection, click on <strong>New</strong> and a form will be displayed to define the properties of the new connection. The form contains two sections and provides a <strong>Test connection</strong> button to check whether the connection is correct.</p>
+
+    <p><img src="../sites/default/files/3.0FTPMonitorOptionForm.png"></p>
+
+    <p>Select whether the <strong>Connection Type</strong> is:
+<ul>
+  <li><a href="543.html#FTP_Connection_Properties">FTP</a></li>
+  <li><a href="543.html#Shared.2FLocal_Connection_Properties">LOCAL</a></li>
+</ul>
+</p>
+
+    <p>Depending on the selection, different properties will need to be defined.</p>
+
+    <h3><span id="FTP_Connection_Properties">FTP Connection Properties</span></h3>
+    <p>Creates cases from a specific directory on an FTP server.</p>
+
+    <p><strong>Basic Information FTP</strong></p>
+    <ul>
+        <li><strong>Host</strong>: The server address where the FTP server is located.</li>
+        <li><strong>Port</strong>: The server port for FTP. Leave blank to use the default port (21 for FTP or 22 for SSH).</li>
+        <li><strong>User</strong>: Enter the username if FTP server needs authentication. Otherwise, leave it blank.</li>
+        <li><strong>Password</strong>: The password if the FTP server needs authentication. Otherwise, leave it blank.</li>
+        <li><strong>Path</strong>: Specify the directory where files will be uploaded to initiate new ProcessMaker cases.</li>
+        <li><strong>Search Pattern</strong>: Use <a href="http://en.wikipedia.org/wiki/Glob_%28programming%29">glob pattern matching</a> to specify which files will be used to initiate new cases.<br>
+  <ul>
+  <li>Use <strong>*</strong> to match any number of characters (including zero). </li>
+        <li>Use <strong>?</strong> to match any single character.</li>
+        <li>Use <strong><tt>[<i>xyz</i>]</tt></strong> to match one of the specified characters.</li>
+        <li>Use <strong><tt>\</tt></strong> (backslash) to escape a character so it won't be treated as a wildcard.</li>
+    </ul>
+
+    <p>Examples:
+<ul><li><strong><tt>*</tt></strong> would accept all files.</li>
+<li> <strong><tt>*.doc</tt></strong> would except only Word documents.</li>
+<li> <strong><tt>*invoice*</tt></strong> would accept any files that have the word "invoice" in the filename</li>
+<li><strong><tt>[aeiou]*.pdf</tt></strong> would accept any PDF files that start with a vowel in the filename.</li>
+</ul>
+</p>
+    </li>
+    <li> <strong>Pass Variables in an XML file</strong>: Mark this option if variables in an XML file will be added as case variables to the new cases. See <a href="543.html#XML_File_Format">XML File Format</a> for more information.
+</li>
+</ul>
+
+<p><strong>Process Information</strong></p>
+<ul>
+    <li><strong>Process</strong>: Select the process (in the current workspace) where new cases will be created.</li>
+    <li><strong>Task</strong>: Select the initial task where the new case will begin.
+</li>
+    <li><strong>User</strong>: Select the user who will be designated to work on the first task in the case.  Only users who are assigned to the first task are available to be selected.
+</li>
+    <li><strong>Input Document</strong>: Choose the Input Document that the uploaded file will be attached to.</li>
+    <li><strong>Active</strong>: Select this option if the connection will be used; otherwise, unselect it to deactivate the connection so the directory will not be monitored and new cases will not be created.</li>
+</ul>
+
+<h3><span id="Local_Connection_Properties">Local Connection Properties</span></h3>
+
+<p>A local directory located on the server where ProcessMaker is installed (or a NAT addressable from the local directory structure) is used to initiate new ProcessMaker cases.</p>
+<p><img src="../sites/default/files/3.0FTPMonitorOptionLOCAL.png"></p>
+
+<p>This option does not require authentication, but make sure that this directory can be read by Apache, which is running ProcessMaker. On Linux/UNIX systems, the user running Apache (<tt>apache</tt> in Red Hat/Fedora, <tt>www-data</tt> in Debian/Ubuntu, and <tt>wwwrun</tt> (or the <tt>www</tt> group) in SuSE/OpenSUSE) should have read access to the directory.</p>
+
+<h2><span id="XML_File_Format">XML File Format</span></h2>
+
+<p>To automatically create case variables in the new case, an XML file can be placed in the specified directory to initiate new cases. The XML file must have the following structure:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&lt;metadata file='filename.extension'&gt;<br />
+&nbsp; &lt;field1&gt;value1&lt;/field1&gt;<br />
+&nbsp; &lt;field2&gt;value2&lt;/field2&gt;<br />
+&nbsp; ...<br />
+&lt;/metadata&gt;</div></div>
+
+<p>Where <i><strong>filename.extension</strong></i> is the filename of the file initiating the case, and <i><strong>field1</strong></i> and <i><strong>field2</strong></i> will become case variables in the new case, which can be used in Dynaform fields or in trigger code. Note that variable names are case sensitive and that all values will be treated as strings and can contain spaces and new lines.</p>
+
+<p>If the value will be used in a ProcessMaker date field, the date should be in <b><tt>YYYY-MM-DD</tt></b> or <b><tt>YYYY-MM-DD HH:MM:SS</tt></b> format, such as <b><tt>2014-12-31</tt></b> or <b><tt>1970-01-25 18:59:00</tt></b>.</p>
+
+<p>If the value is a number that will be used in a mathematical calculation by ProcessMaker, it should not have a thousands separator and "." (dot) should be used as the decimal point. For example, <tt>123456</tt> (integer) or <tt>89797.99</tt> (floating point number).</p>
+
+<p>The XML file must have the same filename as the file that is used to initiate the new case; otherwise, the FTP Monitor won't recognize the XML file and associate its data with the right case.</p>
+
+<p>For example, to start a case with a file named <b><tt>clientAcmeConsulting.pdf</tt></b>, the XML file should be named <b><tt>clientAcmeConsulting.xml</tt></b>. To create a new case with the case variables "clientFirstName", "clientLastName", "address" and "contractAmount", the following XML file can be used:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;metadata</span> <span style="color: #000066;">file</span>=<span style="color: #ff0000;">'clientAcmeConsulting.pdf'</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;firstName<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>John Robert<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/firstName<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;lastName<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Doe<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/lastName<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;address<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>234 Oak St.<br />
+Littletown CA 73613<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/address<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;contractAmount<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>2800.00<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/contractAmount<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/metadata<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray"> Please take note that it is NOT possible to pass grid variables through the mentioned XML file.</font></p>
+
+<h2><span id="Examples_Creating_Cases">Examples Creating Cases</span></h2>
+
+<h3><span id="Using_an_FTP_Connection">Using an FTP Connection</span></h3>
+
+<h4><span id="Uploading_images_into_the_Server">Uploading Images to the Server</span></h4>
+<p>This first example will show how to create cases from image files uploaded to an FTP server.</p>
+<p>
+<b>Step 1 - Creating the connection:</b> Create an FTP connection to specify the location where the image files will be uploaded:</p>
+<p><img src="../sites/default/files/3.0FTPMonitorOptionEX1.png"></p>
+
+<p><i>Note that in this example, the FTP Monitor will only create new cases, but will not create case variables in those cases, since the the option <b>Pass variables in an XML file</b> was not selected.</i></p>
+
+<p><b>Step 2 - Upload Images:</b> Upload image files to the FTP directory:</p>
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleFTP01.png"></p>
+
+<p><b>Step 3 - Execute <tt>cron.php</tt>:</b> After creating the FTP Monitor connection, configure the server to periodically <a href="../3.0/Executing_cron.php.html" title="Executing cron.php">execute the <b><tt>cron.php</tt></b> file</a>.</p>
+
+<p>It is a good idea to manually execute the <b><tt>cron.php</tt></b> file at least one time to make sure that new cases are being created correctly. When <b><tt>cron.php</tt></b> is executed, it will report how many new files were found in the directory to initiate new cases. In the following example, two files were found to initiate new cases.</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleFTP02.png" ></p>
+
+<p>The second part of the execution details information about each case created with the corresponding case number:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleFTP03Big.png" ></p>
+
+<p>In ProcessMaker two new cases were created in the Inbox:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleFTP2.png" ></p>
+
+<p><code><b>Step 4 - Route the case:</b></code> Choose a case and open it to see the image file that initiated the case and was attached as an Input Document file:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleFTP3.png"></p>
+
+
+<h3><span id="Using_a_Local.2FShared_Connection">Using a Local/Shared Connection</span></h3>
+<p>Follow this example if the FTP Monitor starts cases by using files placed in the local directory on the server where ProcessMaker is installed. Follow the steps below to create cases using a local connection.</p>
+
+<p><code><b>Step 1 - Create the connection:</b></code>Create the connection by choosing the "LOCAL" connection type. Select a process with at least two tasks:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleLOCALSettings.png"></p>
+
+<p><code><b>Step 2 - Upload files to the ProcessMaker server:</b></code> Now, place files in the directory on the same server where ProcessMaker is installed. In this example, the monitored directory is inside the ProcessMaker main directory. Two files are uploaded, so two cases will be created.</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleLOCAL1.png" ></p>
+
+<p>An XML file has been placed in the directory, but the <b>Pass variables in an XML files</b> option wasn't marked, so no variables will be passed and the file will be treated as an independent file when starting a case.</p>
+
+<p><code><b>Step 3 - Execute <tt>cron.php</tt>:</b></code> Now execute the <b><tt>cron.php</tt></b> file:</p>
+
+<p><img  src="../sites/default/files/3.0FTPMonitorOptionExampleLOCAL0.png"></p>
+
+<p>In the details output by <b><tt>cron.php</tt></b>, the two new cases are listed, along with the names of the uploaded files. Log in to ProcessMaker with the user who was assigned to the two cases to see them in the Inbox:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleLOCAL2.png" ></p>
+
+<p>Open one of the cases to see the file that was used to initiate the case. It should have been added as an Input Document file:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorOptionExampleLOCAL3.png"></p>
+
+<h4><span id="Using_an_XML_file_and_conditional_routing">Using an XML File and Conditional Routing</span></h4>
+
+<p>The following example will show how to start a case from a file and its corresponding XML file, which passes variables to the case to automatically fill fields in a Dynaform. One of the passed variables named "<code>shipToCountry</code>" is used in a <a href="../3.0/Gateways.html#Exclusive_Gateway">exclusive gateway</a> to route the case.</p>
+
+<p><code><b>Step 1 - Create a process with a exclusive gateway:</b></code> Create a process whose first task is named <i>Dummy Task</i>, since this task will automatically be executed by the FTP Monitor and route onto the next task using an evaluation routing rule. This routing rule will choose between 3 possible tasks, which terminate the process.</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXML.png"></p>
+
+<p>Create an Input Document named "Invoice" and assign it as the first step of the <i>Dummy Task</i>.</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLDummyStep.png"></p>
+
+<p>The exclusive gateway will route the process to the "USA", "Canada" or "Unrecognized Country" tasks, based upon the value of the @@shipToCountry case variable, which comes from the XML file.</p>
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLConditions.png"></p>
+
+<p><code><b>Step 2 - Create Dynaform:</b></code> Create the following DynaForm with the following fields:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLCreateForm.png"></p>
+
+<p>Remember that the variables assigned to these fields must be the variables that contain the data in the XML file.</p>
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLFormVariables.png"></p>
+
+<p>Set this Dynaform as the second step in the tasks "USA", "Canada" and "Unrecognized Country", so the user can view the input document and the data when running a case. Remember that all steps in the initial task ("Dummy Task") are automatically skipped by FTP Monitor when it initiates a case.</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLTaskSteps.png"></p>
+
+<p><code><b>Step 3 - Create the connection:</b></code> Create a local FTP Monitor connection, mark the Pass variables in an XML file option and include *invoice* as a search pattern so that only files with the word "invoice" can initiate cases.</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLConnection.png" ></p>
+
+<p><code><b>Step 4 - Create the XML data file:</b></code> For every case that will be initiated by the FTP Monitor, create an XML file with the following structure:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&lt;metadata file='35307980_invoice.png'&gt;<br />
+&nbsp; &lt;invoiceNumber&gt;123&lt;/invoiceNumber&gt;<br />
+&nbsp; &lt;totalAmount&gt;780.25&lt;/totalAmount&gt;<br />
+&nbsp; &lt;invoiceDate&gt;2016-07-4&lt;/invoiceDate&gt;<br />
+&nbsp; &lt;shipToName&gt;Harry Mason&lt;/shipToName&gt;<br />
+&nbsp; &lt;shipToAddress&gt;7366 Clear Robin Front&lt;/shipToAddress&gt;<br />
+&nbsp; &lt;shipToCity&gt;Never Spur&lt;/shipToCity&gt;<br />
+&nbsp; &lt;shipToState&gt;MT&lt;/shipToState&gt;<br />
+&nbsp; &lt;shipToZipCode&gt;59893-6673&lt;/shipToZipCode&gt;<br />
+&nbsp; &lt;shipToCountry&gt;US&lt;/shipToCountry&gt;<br />
+&nbsp; &lt;shipToPhone&gt;(406) 972-2585&lt;/shipToPhone&gt;<br />
+&lt;/metadata&gt;</div></div>
+
+<p>Each field name in the XML file must have the same name as the variable names used in the Dynaform.  Remember that field names are case sensitive.</p>
+
+<p>The XML can be automatically created using a database trigger when a new invoice is added to the database, or using a stored procedure that is periodically executed. For example, the following MySQL query in the INVOICES table will create an XML data file for a specified invoice number:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> CONCAT<span style="color: #66cc66;">&#40;</span><br />
+&nbsp; <span style="color: #ff0000;">&quot;&lt;metadata file='&quot;</span><span style="color: #66cc66;">,</span> INV_NUMBER<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;_invoice.png'&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;invoiceNumber&gt;&quot;</span><span style="color: #66cc66;">,</span> INV_NUMBER<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/invoiceNumber&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;invoiceDate&gt;&quot;</span><span style="color: #66cc66;">,</span> INV_DATE<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/invoiceDate&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;totalAmount&gt;&quot;</span><span style="color: #66cc66;">,</span> INV_AMOUNT<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/totalAmount&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;shipToName&gt;&quot;</span><span style="color: #66cc66;">,</span> SHIP_NAME<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/shipToName&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;shipToAddress&gt;&quot;</span><span style="color: #66cc66;">,</span> SHIP_ADDRESS<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/shipToAddress&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;shipToCity&gt;&quot;</span><span style="color: #66cc66;">,</span> SHIP_CITY<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/shipToCity&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;shipToState&gt;&quot;</span><span style="color: #66cc66;">,</span> SHIP_STATE<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/shipToState&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;shipToZipCode&gt;&quot;</span><span style="color: #66cc66;">,</span> SHIP_ZIPCODE<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/shipToZipCode&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;shipToCountry&gt;&quot;</span><span style="color: #66cc66;">,</span> SHIP_COUNTRY<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/shipToCountry&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot; &nbsp;&lt;shipToPhone&gt;&quot;</span><span style="color: #66cc66;">,</span> SHIP_PHONE<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;&lt;/shipToPhone&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">,</span><br />
+&nbsp; <span style="color: #ff0000;">&quot;&lt;/metadata&gt;&quot;</span><br />
+<span style="color: #66cc66;">&#41;</span><br />
+<span style="color: #993333; font-weight: bold;">FROM</span> INVOICES <span style="color: #993333; font-weight: bold;">WHERE</span> INV_NUMBER <span style="color: #66cc66;">=</span> XXXX<br />
+<span style="color: #993333; font-weight: bold;">INTO</span> <span style="color: #993333; font-weight: bold;">OUTFILE</span> <span style="color: #66cc66;">/</span>path<span style="color: #66cc66;">/</span>dir<span style="color: #66cc66;">/</span>XXXX_invoice<span style="color: #66cc66;">.</span>xml;</div></div>
+
+<p>Another way to automatically create the XML file is to use a script, such as the following PHP code, which creates an XML file for every record in the INVOICE table whose CASE_START_DATE field is set to NULL (no data). The script uses the <a href="http://php.net/manual/en/function.ftp-connect.php">ftp_connect()</a> and <a href="http://php.net/manual/en/function.ftp-login.php">ftp_login()</a> functions to connect to the FTP server and log in. It also uses <a href="http://php.net/manual/en/mysqli.quickstart.connections.php">mysqli</a> to connect to a MySQL database.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #000088;">$ftp_server</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;ftp.example.com&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$ftp_username</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;myuser&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$ftp_password</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;p@ssW0rD&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$ftp_conn</span> <span style="color: #339933;">=</span> <a href="http://php.net/ftp_connect"><span style="color: #990000;">ftp_connect</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ftp_server</span><span style="color: #009900;">&#41;</span> or <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Could not connect to <span style="color: #006699; font-weight: bold;">$ftp_server</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$ftp_log</span> &nbsp;<span style="color: #339933;">=</span> <a href="http://php.net/ftp_login"><span style="color: #990000;">ftp_login</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ftp_conn</span><span style="color: #339933;">,</span> <span style="color: #000088;">$ftp_username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$ftp_userpass</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$db</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> mysqli<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'localhost'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'myuser'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'p@ssw0rd'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'BILLING_DATABASE'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">connect_errno</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Unable to connect to database ['</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">connect_error</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">']'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #000088;">$sql</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT * FROM INVOICES WHERE CASE_START_DATE IS NULL&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">query</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$sql</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'There was an error running the query ['</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">']'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #b1b100;">while</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$row</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">fetch_assoc</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$xml</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;&lt;metadata file='<span style="color: #006699; font-weight: bold;">{$row['INV_NUMBER']}</span>_invoice.png'&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;shipToName&gt;<span style="color: #006699; font-weight: bold;">{$row['SHIP_NAME']}</span>&lt;/shipToName&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;shipToAddress&gt;<span style="color: #006699; font-weight: bold;">{$row['SHIP_ADDRESS']}</span>&lt;/shipToAddress&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;shipToCity&gt;<span style="color: #006699; font-weight: bold;">{$row['SHIP_CITY']}</span>&lt;/shipToCity&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;shipToState&gt;<span style="color: #006699; font-weight: bold;">{$row['SHIP_STATE']}</span>&lt;/shipToState&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;shipToZipCode&gt;<span style="color: #006699; font-weight: bold;">{$row['SHIP_ZIPCODE']}</span>&lt;/shipToZipCode&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;shipToCountry&gt;<span style="color: #006699; font-weight: bold;">{$row['SHIP_COUNTRY']}</span>&lt;/shipToCountry&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;shipToPhone&gt;<span style="color: #006699; font-weight: bold;">{$row['SHIP_PHONE']}</span>&lt;/shipToPhone&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;totalAmount&gt;<span style="color: #006699; font-weight: bold;">{$row['INV_AMOUNT']}</span>&lt;/totalAmount&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;invoiceNumber&gt;<span style="color: #006699; font-weight: bold;">{$row['INV_NUMBER']}</span>&lt;/invoiceNumber&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot; &nbsp;&lt;invoiceDate&gt;<span style="color: #006699; font-weight: bold;">{$row['INV_DATE']}</span>&lt;/invoiceDate&gt;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;&lt;/metadata&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$xmlFilename</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$row</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'INV_NUMBER'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;_invoice.xml&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/file_put_contents"><span style="color: #990000;">file_put_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;/local/path/&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$xmlFilename</span><span style="color: #339933;">,</span> <span style="color: #000088;">$xml</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//use the following code to upload the $xmlFilename to an FTP directory:</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/ftp_put"><span style="color: #990000;">ftp_put</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ftp_conn</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;/server/path/&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$xmlFilename</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;/local/path/&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$xmlFilename</span><span style="color: #339933;">,</span> FTP_ASCII<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&quot;Successfully uploaded file '<span style="color: #006699; font-weight: bold;">$xmlFilename</span>'<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//set the CASE_START_DATE to the current time:</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">query</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;UPDATE INVOICES SET CASE_START_DATE = NOW() WHERE INV_NUMBER = &quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$row</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'INV_NUMBER'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&quot;Error uploading <span style="color: #006699; font-weight: bold;">$xmlFilename</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<a href="http://php.net/ftp_close"><span style="color: #990000;">ftp_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ftp_conn</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">close</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<p>Set the above script to be periodically executed as a cron job in Linux/UNIX or as a Scheduled Task in Windows.</p>
+
+<p><b>Step 5 - Upload files:</b> Now upload the XML file and the PNG image file to the monitored directory. Remember that both files must have the same filenames as in the image below:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLFileUploaded.png"></p>
+
+<p><b>Step 6 - Execute <tt>cron.php</tt>:</b> Execute <b><tt>cron.php</tt></b> to start cases for each file uploaded to the directory monitored. In this case just one case will be started:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLExecuteCron.png"></p>
+
+</div>
+
+</div>
+
+<p>Case #504 was created, and according to the condition, must go to the task named "USA" since the value entered in the XML for the variable "<code>shipToCountry</code>" was "US". Log in with the user assigned to that task and open case #504:</p>
+
+<p>&nbsp;<img  src="../sites/default/files/3.0FTPMonitorExampleXMLFormOpenCase.png"></p>
+
+<p>The file that initiated the case was added as an Input Document file:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorExampleXMLFormStep1.png" ></p>
+
+<p>Click on <b>Next Step</b> to see the Dynaform filled in with the variables passed from the XML file:</p>
+
+<p><img  src="../sites/default/files/3.0FTPMonitorExampleXMLForm.png" ></p>
+
+<h2><span id="FTP_Monitor_Log">FTP Monitor Log</span></h2>
+<p>A log is created for each cron executed. It will display a registry that will list all the characteristics of the cron executed:</p>
+
+<p><img  src="../sites/default/files/3.0FTPMonitorLOGAccessl.png"></p>
+
+<p><b>Characteristics</b>:</p>
+<ul>
+    <li><i>Execution Date Time</i>: Displays the cron execution time.</li>
+    <li><i>Connection Type</i>: Displays whether the connection is FTP or SHARED.</li>
+    <li><i>Path</i>: Shows the path where the files are located.</li>
+    <li><i>Failed</i>: Shows whether some cases failed to be created.</li>
+    <li><i>Succeeded</i>: Shows how many cases were created.</li>
+    <li><i>Processed</i>: Shows how many files were processed.</li>
+</ul>
+
+<h3><span id="FTP_Monitor_Log_Details">FTP Monitor Log Details</span></h3>
+<p>The FTP Monitor Log lists how many cases were initiated each time <b><tt>cron.php</tt></b> was executed. To see the log, go to <b>ADMIN &gt; Logs &gt;&nbsp; FTP Monitor Log</b>:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorLOGRecord.png"></p>
+
+<p>Click on the View icon to see a list of execution times and the number of cases that were created.</p>
+<p><img src="../sites/default/files/3.0FTPMonitorLOGRecordVIEW.png"></p>
+
+<p>To see a list of the cases that were initiated, click on an execution time to display the following details:</p>
+
+<p><img src="../sites/default/files/3.0FTPMonitorLOGRecordVIEWDetails.png"></p>
+<p><b>Characteristics</b></p>
+<ul>
+    <li><code><b>Execution Date Time</b>:</code> Displays the time when the <b><tt>cron.php</tt></b> file was executed.</li>
+    <li><code><b>Path</b>:</code> Displays the file uploaded from the directory to ProcessMaker to initiate the case.</li>
+    <li><code><b>Have XML</b>:</code> Displays TRUE if the case has an associated XML file and the option <b>Pass variables in an XML file'</b> was enabled. Otherwise, it displays FALSE.</li>
+    <li><code><b>Variables:</b></code> Displays the variables passed from the XML file to the case.</li>
+    <li><code><b>Status:</b></code> Set to "OK" if the case(s) were created without problems.</li>
+    <li><code><b>Description:</b></code> Displays any errors that may have occurred during the creation of the cases.</li>
+</ul>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

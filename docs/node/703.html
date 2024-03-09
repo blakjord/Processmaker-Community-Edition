@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../Best_Practices/Process_Development.html" />
+<link rel="shortlink" href="703.html" />
+<title>3.2 - 3.7 - Best Practices - Process Development | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"1jc8ukLx-LSC08mpzUHMxiq79AuPqRIq__9ykIlOW_g","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-703 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="703.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="703.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-wHR6AX0OVQ6yBhtKkXWoGXhMvhnoRE3Az_Y4pk6eZD4" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.7 - Best Practices - Process Development</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.7 - Best Practices - Process Development" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="703.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.7 - Best Practices - Process Development 1/5</option><option value="40">Give 3.2 - 3.7 - Best Practices - Process Development 2/5</option><option value="60" selected="selected">Give 3.2 - 3.7 - Best Practices - Process Development 3/5</option><option value="80">Give 3.2 - 3.7 - Best Practices - Process Development 4/5</option><option value="100">Give 3.2 - 3.7 - Best Practices - Process Development 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-bVdXcxG-C1FKQZCLg9Hbfpg0-unzj55x7N-8dxK8BmI" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div class="getting-started-index">
+    <ul>
+        <li><a href="../Best_Practices/ProcessMaker_Installation.html">1. ProcessMaker Installation</a></li>
+        <li><a href="../Best_Practices/ProcessMaker_Upgrade.html">2. ProcessMaker Upgrade</a></li>
+        <li><a href="../Best_Practices/ProcessMaker_Administration.html">3. ProcessMaker Administration</a></li>
+        <li><a href="../Best_Practices/User_Management.html">4. User Management</a></li>
+        <li><a class="getting-started-index-active">5. Process Development</a></li>
+        <li><a href="../Best_Practices/Advanced_Developer_REST.html">6. Advanced Developer - REST</a></li>
+        <li><a href="../Best_Practices/Advanced_Developer_Triggers.html">7. Advanced Developer - Triggers</a></li>
+        <li><a href="../Best_Practices/Advanced_Developer_Javascript.html">8. Advanced Developer - Javascript</a></li>
+        <li><a href="../Best_Practices/ProcessMaker_End_User.html">9. ProcessMaker End User</a></li>
+        <li><a href="../Best_Practices/ProcessMaker_Mobile.html">10. ProcessMaker Mobile</a></li>
+    </ul>
+</div>
+
+<div class="getting-started-content">
+    <div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="703.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="703.html#Process_Development">Process Development</a></li>
+<ol class="toc">
+<li class="toc"><a href="703.html#Architect">Architect</a></li>
+<li class="toc"><a href="703.html#Process_Design">Process Design</a></li>
+<li class="toc"><a href="703.html#For_Tasks">For Tasks</a></li>
+<li class="toc"><a href="703.html#Naming_Variables">Naming Variables</a></li>
+<li class="toc"><a href="703.html#For_Gateways">For Gateways</a></li>
+<li class="toc"><a href="703.html#Parallel_Threads">Parallel Threads</a></li>
+<li class="toc"><a href="703.html#For_events">For Events</a></li>
+<li class="toc"><a href="703.html#For_Pools_and_Lanes">For Pools and Lanes</a></li>
+<li class="toc"><a href="703.html#DynaForm_Designer">DynaForm Designer</a></li>
+<li class="toc"><a href="703.html#Input_Documents">Input Documents</a></li>
+</ol>
+</div></div>
+
+
+    <h2><span id="Process_Development">Process Development</span></h2>
+
+    <h3><span id="Architect">Architect</span></h3>
+    <ul>
+        <li>All architects should have broad knowledge of BPM and BPMN 2.0.</li>
+        <li>When designing processes, it is recommended to work using an established methodology for process designing. For example, it is recommended to work first on a SOW document.</li>
+        <li>All processes should be designed first in a development environment. If making changes to an already existing process, it is strongly recommended to not deploy those changes to processes which are live in production before completing all pending cases. Otherwise undesired and random errors may occur in those in-progress cases.</li>
+        <li>
+Refer to the <a href="../index.html">ProcessMaker wiki</a> page to start learning how to properly design processes in ProcessMaker.</li>
+        </ol>
+
+        <h3><span id="Process_Design">Process Design</span></h3>
+        <ol>
+            <li>
+In the <a href="../3.2/Processes.html#Designer_Menu">designer menu</a>, an item needs to be selected first to use the Edit, Status and Delete options.
+<p><img src="../sites/default/files/3.1ProcessesDesignerMenu.png"></p>
+</li>
+
+            <li>
+The Process Map <b>is not collaborative</b>, so please be careful when more than one person works on the design of a process.</li>
+            <li>Processes should have around ten objects in the design.
+The Process Map's performance may slow down when there are many objects to load on the Process Map, and the objects may not all fit on the map. When there are many objects on the Process Map, it is recommended to use sub-processes in the design to avoid the use of multiple pages for one Process Map.</li>
+            <li>
+The Process Map is not very restrictive when designing processes; therefore, it may be possible to design invalid flows that are not supported by ProcessMaker when they are executed.</li>
+            <li>
+It's strongly recommended to <a href="../3.2/Processes.html#Creating_a_new_Project">create and design processes in one language</a>, because ProcessMaker DOES NOT support multilingual task labels and descriptions.
+  </li>
+            <li>
+Take care when using the <b>Redo</b> and <b>Undo</b> options, especially with elements that have their own configurations. These options work only with the visual side of the elements. The elements have to be configured again when using the Undo and Redo options.</li>
+            <li>Deleting a project will not remove its cases from the database (read more <a href="../3.2/Processes.html#Deleting_a_project">here</a>).</li>
+            <li>
+It is not recommended to design a process using different tabs or windows of the browser.
+ProcessMaker does not work properly when multiple browser tabs or windows are open of a process while it is being designed (read more <a href="../3.2/Processes.html#The_Process_Map">here</a>).</li>
+            <li>When designing a process, it is highly recommended to assign labels to all elements so the design easy to understand by end-users. </li>
+        </ol>
+
+        <h3><span id="For_Tasks">For Tasks</span></h3>
+        <ol>
+            <li>Note that the name of the task should not be changed when there are cases being executed in the task.If the name of the task is changed anyway, then take into account that the name of the task shown in the case lists will not be updated if a case of the process has already been started (read more <a href="../3.1/Tasks.html#Adding_Tasks">here</a>).</li>
+            <li>DO NOT delete a task while running a case of a process, because it could cause errors in the case (read more <a href="../3.2/Processes.html#Task_Context_Menu">here</a>).</li>
+            <li>Script tasks can not start the flow of the process (read more <a href="../3.1/Tasks.html#ScriptTask">here</a>).</li>
+            <li>It is not recommended to delete a step while running cases of a process, because it can cause errors and prevent the case from being completed. To edit a process while it is being executed, make a copy of the process and edit the new version of the process (read more <a href="../3.1/Tasks.html#Assigning_Triggers_to_a_Task">here</a>).</li>
+            <li>Avoid configuring the task incorrectly.  For example, consolidated cases (using the batch routing plugin) must not be assigned in the first task of the process.</li>
+        </ol>
+
+        <h3><span id="Naming_Variables">Naming Variables</span></h3>
+        <ol>The validation of the name of variables take into account the following points. The validation is in <a href="../3.2/Variables.html#Defining_Variables">variables</a>, <a href="../3.2/DynaForm_Controls.html">creating controls</a>, <a href="../3.1/Grid_Control.html#Controls_of_the_Grid">creating controls in a grid</a>, and <a href="703.html">creating report tables</a>.
+            <li>Variable names must match the regular expression: ^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]* (read more <a href="../3.2/Variables.html#Defining_Variables">here</a>).</li>
+            <li>All variables in a case are stored in the MEDIUMTEXT field of <tt>wf_&lt;workspace&gt;.APPLICATION.APP_DATA</tt> in the database, which holds a <a href="http://dev.mysql.com/doc/refman/5.0/en/storage-requirements.html#idm139695134411008">maximum of 16,777,213 bytes</a>. The maximum number of characters in a string is determined by the size of that field, but can also be limited by the Size property of Textbox controls in Dynaforms and by the <a href="../3.0/Additional_Configuration.html#Uploading_large_Input_Documents">post_max_size</a> setting in the php.ini configuration file (read more <a href="../3.2/Variables.html#Defining_Variables">here</a>).</li>
+            <li>Use underscores to separate words with characters entirely in lower or upper case, eg: "my_variable_name" or "MY_VARIABLE_NAME".</li>
+            <li><p>Do NOT use camel case or '_' characters to differentiate similarly-named variables. If a variable, such as "my_variable_name", already exists and a new variable, such as "my_variable____name", "MY__VARIABLE_NAME", "MY_variable_Name", "MY_Variable_NAME", "MY_VARIABLE_NAME", is being created, an error dialog displays.</p>
+            <p><img src="../sites/default/files/3.2VariableSupportedNamesError.png"></p></li>
+            <li>Don't mix camel case with underscores: myVariable_name.</li>
+            <li>Similar variable names might have conflicts when moving the data to a report table. The risk of mixing naming practices is that variables might have conflicts when moving the data to a report table. For example: MY_VARIABLE_NAME, myVariableName, MyVariableName, myVariable_name, MY_variableName, my_variable_name will be saved correctly in ProcessMaker and will keep their values independent from the other variables, but when generating a report table, they will all map to a column named MY_VARIABLE_NAME.</li>
+            <li>Don't name a variable with "_label" at the end, since variables are automatically created in ProcessMaker using this appendix in their name. For example a variable named "MyVariable" will also include a "MyVariable_label", which stores the text of the field. For more information, read the <a href="../3.2/Variables.html#_label_Variables">_label Variables</a>.</li>
+        </ol>
+
+        <h3><span id="For_Gateways">For Gateways</span></h3>
+        <ol>
+            <li>Converging gateways receive a unique flow: they have one input flow and can have two or more outgoing flows. Diverging gateways have more than two incoming flows and a <b>unique</b> outgoing flow. To make more complex paths or more than one outgoing path, it is better to add activities, such as the Script Task, to the design rather than diverging gateways (read more <a href="../3.2/Gateways.html#Defining_the_Gateway_Direction">here</a>).</li>
+            <li>When working with Exclusive gateways, take into consideration that the diverging and converging gateways must be the same (e.g. Exclusive - Exclusive), and the design cannot mix Exclusive with Parallel or Exclusive with Inclusive gateways. If this happens, then an error will occur when running the case (read more <a href="../3.2/Gateways.html#Exclusive_Gateway">here </a>).<br>
+
+<p><img src="../sites/default/files/2Gateways_ExclusiveGateways_SameGatewayInputOutput.png"></p>
+
+</li>
+            <li>Take into consideration that when working with Parallel gateways, the input and output gateway must be the same. Meaning that the diverging and converging path must use the same gateway (Parallel - Parallel) and that Parallel gateways cannot be used with Exclusive or Inclusive gateways. If this happens, then an error will occur when running the case (read more <a href="../3.2/Gateways.html#Parallel_Gateway">here</a>)
+
+<p><img src="../sites/default/files/2Gateways_ParallelGateways_SameGatewayInputOutput.png"></p>
+</li>
+
+            <li>Notice that when working with Inclusive gateways, the input and output gateway must be the same. Meaning that the diverging and converging path must use the same type of gateway (Inclusive - Inclusive) and cannot mix Inclusive with Exclusive or Inclusive with Parallel. If this happens, then an error will occur when running the case (read more <a href="../3.2/Gateways.html#Inclusive_Gateway">here</a>).
+
+<p><img src="../sites/default/files/3Gateways_InclusiveGateways_SameGatewayInputOutput.png"></p>
+
+</li>
+            <li>Make sure all conditions set in the exclusive and inclusive gateway are correct.</li>
+            <li>Also make sure to correctly manage the variables using these <a href="../3.2/Triggers.html#Typing_rules_for_Case_Variables">typing rules</a> for case variables.</li>
+            <li>The ProcessMaker engine does not support the execution of a sub-process configured as "asynchronous" after a parallel gateway.
+
+<p><img src="../sites/default/files/ProcessMaker3_Parallel_AsynchronousSubProcess.png"></p>
+
+If the design of the process includes a section like the figure above, set the asynchronous process(es) and the rest of the elements in a sequential order instead of using a parallel gateway (read more <a href="../3.2/Gateways.html#Parallel_Gateway">here</a>).</li>
+            <li><a href="../3.2/Gateways.html#Exclusive_Gateway">Exclusive gateways</a> must count all the variables' values. Otherwise, the routing screen uses the default flow to display the next task and user. For example, if the variables come from several threads, converging an Inclusive gateway followed by an exclusive gateway, the routing screen might miscalculate the next user until all variables required are defined. For this purpose, you should do one of the following:
+                <ul>
+                    <li>Use a dummy task for the default flow named <b>Not yet defined</b>. Then, the routing screen displays <b>Next Task: Not yet defined</b>.</li>
+                    <li>Use a Script task between the converging inclusive gateway and the exclusive gateway.</li>
+                    <li>Skip the routing screen by redirecting it and using the <a href="../3.2/ProcessMaker_Functions/Case_Routing_Functions.html#PMFDerivateCase.28.29"><code>PMFDerivateCase()</code></a> function.</li>
+                    <li><a href="../3.2/Templates.html#Routing_Screen_Template">Replace the routing screen</a>.</li>
+                </ul>
+            </li> 
+            <li>In <a href="../3.2/Gateways.html#Exclusive_Gateway">exclusive gateways</a> when there is a yes/no conditional gateway, the trigger code structure is as follows:
+            <codeblock>@@condition == 'no' && @@completed == '0'
+@@condition == 'yes' && @@completed == '0'                
+@@completed == '1'</codeblock>
+All variables used in the conditional have to be used in the trigger to enforce a correct outcome of the path in the workflow.<br>
+As a general rule, conditional gateways use nested structure as follows:
+<codeblock>if(conditional1 ==  true){
+//option}else if(conditional2 == true){
+//option}else if(conditional3 == true){
+//option}else{
+//option}</codeblock>
+Therefore, it is recommended to analize every gateway conditional to do not have an inconsistent gateway option.
+            </li>
+        </ol>
+
+        <h3><span id="Parallel_Threads">Parallel Threads</span></h3>
+        <p>The following best practices are for <a href="../3.2/Gateways.html#Parallel_Gateway">parallel gateways</a>, <a href="../3.2/Tasks.html#ParallelMarker">parallel tasks</a> and/or <a href="../3.2/Gateways.html#Inclusive_Gateway">inclusive gateways</a>.</p>
+
+        <ol>
+            <li>A case can't be <a href="../3.3/Cases/Actions.html#Cancel">canceled</a> if more than one parallel thread is being executed.</li>
+            <li>Do not change the variables that are equal in tasks that are running in parallel threads. The last task that completes overwrites the variable value. This rule applies to all <a href="../3.2/Variables.html#Defining_Variables">variable types</a>.</li>
+        </ol>
+
+        <h3><span id="For_events">For Events</span></h3>
+        <ol>
+            <li>For message events, these events must be part of two separate processes represented by different pools in the Process Map, according to BPMN (read more <a href="../3.2/Events.html#Configuration_the_Receive_Message_Event">here</a>).</li>
+            <li>Take into account that the following events will continue only after their respective cron files are executed, even if they are overdue: timer events (cron file name: timereventcron.php) and message events (cron file name: messageeventcron.php) (read more <a href="../3.2/Events.html#Timer_Start_-_Running_Cases">here</a>).</li>
+            <li>Take into account that events that are not configured correctly will not be able to continue the execution of any case or start a new case of any process. It is important to make sure that the correlation value in both processes is valid (meaning that the proper tests must be done in a development environment before publishing it in a production environment) and that the message type in both processes is also the same, because cases of processes whose events are not correctly configured can not be recovered.<br>
+            For events that have not been configured correctly, the message shown when running the message event cron file for these cases is the following:
+            <p><img src="../sites/default/files/ProcessMaker3_Events_CronEventsPending.png"></p>
+            <p>For information about troubleshooting events, go <a href="../3.2/Events.html#Events_Troubleshooting">here</a>.<p>
+            </li>
+            <li>
+               <a href="../3.2/Events.html#Receive_Message">Receive</a> and <a href="../3.2/Events.html#Receive_Message_Intermediate_Event">Intermediate</a> messages only accept a sequential correlation, <b>NOT</b> multiple correlations like SEND or RECEIVE signals simultaneously as shown below:
+            <p><img src="../sites/default/files/3.2MultipleCorrelationsReceiveIntermediateMessage.png"></p>
+            </li>
+            <li>
+                When working with <a href="../3.1/Dropdown_Control.html">dropdown</a> and <a href="../3.2/Suggest_Control.html">suggest</a> controls, the label values must be sent in the events.<br />
+                For example, if there is a suggest control with the name <b>MsgContractCode</b>, the label saved with the name <b>MsgContractCode_label</b> must be past in the events properties.
+            </li>
+        </ol>
+
+        <h3><span id="For_Pools_and_Lanes">For Pools and Lanes</span></h3>
+        <ol>
+            <li>To add an existing process to a pool, do NOT create a new pool on top of the process. Instead, create the new pool in a blank area in the designer and resize it so it is big enough to encompass the entire process. Then select the entire process with the group selector tool and drag it into the pool (read more <a href="../3.0/Pools_and_Lanes.html#Pools">here</a>).</li>
+            <li>Black boxes are only available for designing in the Process Map. The ProcessMaker engine does not support this element (read more <a href="../3.0/Pools_and_Lanes.html#Black_Box_Pools">here</a>).</li>
+        </ol>
+
+        <h3><span id="DynaForm_Designer">DynaForm Designer</span></h3>
+        <ul>
+            <li>First, read about managing variables in form fields <a href="../3.2/Variables.html#Supported_Variables">here</a>.</li>
+            <li>When relating variables to fields, it is highly recommended that the variable name and the control ID be the same to avoid errors and make the field easier to manage.</li>
+            <li><p><b>Textareas</b></p>
+                <p><ul>
+                    <li>The ability to re-size textareas might not work if using IE 11 (read more <a href="../3.0/Text_and_Textarea_Controls.html#Textarea_Control">here</a>).</li>
+                    <li> The Rows property in textareas does not have any effect inside grids due to the amount of controls that grids handle at the same time, and because the look and feel of the grid would change dramatically if the Rows property were applied. Only one row is shown at a time in a grid (read more <a href="../3.0/Text_and_Textarea_Controls.html#Rows">here</a>).</li>
+                </ul></p>
+            </li>
+            <li><p><b>Grids</b></p>
+                <p><ul>
+                    <li>Do not forget to set the column width of the control to correctly render the columns in the field. Also, take a look at this section to see which controls are supported inside grids (read more <a href="../3.1/Grid_Control.html">here</a>).</li>
+                    <li>Take care to make the correct calculations for this property. If the percentage set in the columns surpasses 100%, the last columns (the ones to the right of where 100% was surpassed) will be cut off or will not be shown in the Dynaform (read more <a href="../3.1/Grid_Control.html#Column_Width">here</a>).</li>
+                </ul></p>
+            </li>
+    <li><p><b>Panels</b></p>
+<p><ul><li> Be careful not to leave a blank space between the size and the unit ("numberpx"). For example, if 3 px is defined, the property will not work correctly (read more <a href="../3.0/Panel_Control.html#Border">here</a>).</li></ul>
+    </p>
+    </li>
+    <li><p><b>Links</b></p>
+<p><ul><li>If inserting the JavaScript code directly into the Href property, note that single quotes must be used. This rule is not applied if the JavaScript editor of the form is used. In that case, use double quotes (read more <a href="../3.0/Links.html#Executing_JavaScript_Functions_in_the_Control">here</a>).</li></ul>
+    </p>
+    </li>
+    <li><p><b>Files</b></p>
+<p>
+<ul><li>Read the <a href="../3.1/File_control.html#File_Extensions">considerations</a> for file validations when running cases.<li>
+<li>This query only retrieves data from the files uploaded with the control. It will not show data from files uploaded using the control that are related to an input document. To view all files, remove the AND D.APP_DOC_FIELDNAME = 'fileControlID' condition in the query (read more <a href="../3.1/File_control.html#File_Storage">here</a>).</li>
+    <li>The code method_exists(G, "getPathFromUID") checks whether the G::getPathFromUID() method exists before calling it (read more <a href="../3.1/File_control.html#File_Storage">here</a>).</li>
+    <li>The file field does not respect the configuration made in the PATH of the input document. This will be solved in future versions of ProcessMaker (read more <a href="../3.1/File_control.html#Relating_an_Input_Document_with_a_File">here</a>).</li>
+    </ul>
+    </p>
+    </li>
+
+    <li><p><b>Custom CSS</b></p>
+<p><ul><li>Take care when using custom CSS files. Make sure these files only contain classes that modify the elements in the form, but not other elements in ProcessMaker.</li></ul>
+    </p>
+    </li>
+    </ul>
+    <h3><span id="Input_Documents">Input Documents</span></h3>
+    <ul>
+        <li>Input document paths should not use variables that were not yet saved. This means that these variables are not populated in the same form where files are being uploaded.</li>
+    </ul>
+</div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

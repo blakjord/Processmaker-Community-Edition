@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="BPMN_Supported_and_Unsupported_Elements.html" />
+<link rel="shortlink" href="../node/345.html" />
+<title>Supported and Unsupported BPMN Elements | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"QfvUd18orU8dMWD4a_LqdLUzIRhYpUOo1wNZf4nflzs","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-345 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="BPMN_Supported_and_Unsupported_Elements.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-ftIiwXZ5ruOZzk9O6GXXXq_lkUXoSLNtgBXuI4_noTU" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">Supported and Unsupported BPMN Elements</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+          </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="Supported and Unsupported BPMN Elements" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="BPMN_Supported_and_Unsupported_Elements.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Supported and Unsupported BPMN Elements 1/5</option><option value="40">Give Supported and Unsupported BPMN Elements 2/5</option><option value="60">Give Supported and Unsupported BPMN Elements 3/5</option><option value="80">Give Supported and Unsupported BPMN Elements 4/5</option><option value="100" selected="selected">Give Supported and Unsupported BPMN Elements 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >5</span></span> <span class="total-votes">(<span >5</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-M9i8KEIGPe3cB8YOKA-qj__CqrV-Qy5RusO5pmtqGkU" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="BPMN_Supported_and_Unsupported_Elements.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Overview">Overview</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_BPMN_Elements">Supported BPMN 2.0 Elements</a></li>
+<ol class="toc">
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_Tasks">Tasks</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_Subprocess">Sub-processes</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_Events">Events</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_Gateways">Gateways</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_Pools_And_Lanes">Pools and Lanes</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_Artifacts">Artifacts</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_Flows">Flows</a></li>
+</ol>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Elements_for_Designing_purposes">Elements for Design Purposes</a></li>
+<ol class="toc">
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_Tasks">Tasks</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_Events">Events</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Supported_Data_Elements">Data Elements</a></li>
+</ol>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_BPMN_Elements">Unsupported BPMN 2.0 Elements</a></li>
+<ol class="toc">
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_Activity_Markers">Activity Markers</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_Events">Events</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_Collaboration">Collaboration</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_Pools">Black Box Pool</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_Gateways">Gateways</a></li>
+<li class="toc"><a href="BPMN_Supported_and_Unsupported_Elements.html#Unsupported_Flows">Flows</a></li>
+</ol>
+</div></div>
+</p>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>Version 3.0 of ProcessMaker offers a completely new process designer based on the Business Process Management Notation (BPMN) 2.0 standard, which allows designers to design more complex workflows that can be imported from and exported to other software that supports the standard. The engine of ProcessMaker has also been enhanced to support the execution of most BPMN 2.0 elements without losing performance and functionality.</p>
+
+<p>Nevertheless, the process designer and execution engine does not yet support all the elements included in BPMN 2.0. The following sections explain which elements are fully supported (meaning that they are available for both process design and case execution), which elements are only available inside the Process Map for design purposes (not for case execution), and which elements are not available either for designing purposes or for case execution.</p>
+
+<h2><span id="Supported_BPMN_Elements">Supported BPMN 2.0 Elements</span></h2>
+<p>The following elements are supported by the BPMN Designer and the ProcessMaker engine for execution when running cases. They are categorized according to their BPMN 2.0 designations. These elements are documented in the Basic Design section of the <a href="../index.html">ProcessMaker Community version 3.0 wiki</a>.</p>
+
+<h3><span id="Supported_Tasks">Tasks</span></h3>
+<p>In ProcessMaker, a <a href="Tasks.html">task</a> is a logical group of sequential steps sharing a common goal. The type of tasks supported by the ProcessMaker engine in version 3.0 of ProcessMaker are the following: </p>
+		<ul>
+			<li><a href= "Tasks.html#Empty_Task">Normal Task</a>.</li>
+			<li><a href= "Tasks.html#ScriptTask">Script Task</a>.</li>
+            <li><strong>Marker Type:</strong> <a href="Tasks.html#ParallelMarker">Parallel</a></li>
+		</ul>
+	<p>"Normal Tasks" and "Script Tasks" have a <a href="Processes.html#Task_Context_Menu">menu</a> in which the forms, input documents, output documents, and triggers can be assigned to the task's <a href="Tasks.html#Steps">steps</a> and they will be shown or executed when running a case in ProcessMaker. Also, inside the task <a href="Tasks.html#Properties">properties</a>, the expected due date, case labels and notifications can be defined. Finally, users, groups and <em>ad hoc</em> users and groups can be <a>assigned and managed</a> for these types of tasks.</p>
+	<p><img src="../sites/default/files/BPMProjectTaskShape.png" alt=""></p>
+	
+	<h3><span id="Supported_Subprocess">Sub-processes</span></h3>
+	<p>A <a href="Sub-Processes.html">sub-process</a> is a separate process that is embedded in another process. The ProcessMaker engine supports the execution of sub-processes that are included in the design of the process. This element is shown in its collapsed state, which is represented by the + marker,&nbsp;and the process it will execute must be configured inside its <a href="Sub-Processes.html#Configuring_a_Sub-process.27s_Properties">properties</a>. ProcessMaker does NOT support expanding the sub-process to show the details of the process and it can only be edited by opening it as a separate process.</p>
+	<p><img src="../sites/default/files/BPMMasterProcessExampleEmployeeOnboarding.png" alt=""></p>
+	
+<h3><span id="Supported_Events">Events</span></h3>
+<p>An <a href="Events.html">event</a> is something that occurs during the course of a process. These events have a cause or an impact on the implementation of a process and usually require or permit an action. The events supported by the ProcessMaker engine are divided into BPM start events, intermediate events, and end events.</p>
+<ul>
+<li><p><strong><a href="Events.html#Start_Events">Start Events</a>:</strong> These events start the process and begin the workflow. In other words, a start event starts a new <em>case</em> in ProcessMaker, which executes a process a single time.</p>
+<ul>
+<li><p><strong><a href="Events.html#Empty_.28None.29">Empty</a>:</strong> This start event begins the workflow of the process.</p></li>
+<li><p><strong><a href="Events.html#Receive_Message">Receive Message</a>:</strong> This start event begins the workflow of the process when it receives a message. This message can come from outside processmaker in the form of an email or it can be sent by another process. The message may contain data that will be used when executing the case in the current process.</p></li>
+<li><p><strong><a href="Events.html#Timer_Start_Event">Timer Start Event</a>:</strong> The Timer start event provides a way to automatically start new cases at specified times.</p></li>
+</ul>
+</li>
+<li><p><strong><a href="Events.html#Intermediate_Events">Intermediate Events</a>:</strong> An intermediate event represents a point between the start of the process and its end, where something occurs within the execution of the process.</p>
+<ul>
+<li><p><strong><a href="Events.html#EmailMessage">Email Message</a>:</strong> Add this event directly from the shapes toolbox to the design in the process map. </p></li>
+<li><p><strong><a href="Events.html#Send_Message_Intermediate_Event">Send Message</a>:</strong> Use this type of event to send a message during the execution of the process to another process that will require the message.</p></li>
+<li><p><strong><a href="Events.html#IntermediateTimerEvent">Timer Intermediate Event</a>:</strong> The Timer intermediate event represents a delay in a flow that depends on a certain time defined in the configuration of a process.</p></li>
+<li><p><strong><a href="Events.html#Receive_Message_Intermediate_Event">Receive Message</a>:</strong> Use this type of intermediate event to receive a message sent from another process.</p></li>
+</ul>
+</li>
+<li><p><strong><a href="Events.html#End_Events">End Events</a>:</strong> These events terminate the process, which means that the flow ends for the case executing the process. Unlike when a case is paused, a case can not be restarted after an end event terminates the case.</p>
+<ul>
+<li><p><strong><a href="Events.html#Empty_.28None.29_2">Empty</a>:</strong> This event simply terminates the process. </p></li>
+<li><p><strong><a href="Events.html#EndEmailMessage">Email</a>:</strong> Use this event to send a notification as soon as flow the finishes. </p></li>
+<li><p><strong><a href="Events.html#Message_End_Event">Message</a>:</strong> This event terminates the process and sends out a <a href="Message_Types.html">message</a>. </p></li>
+</ul>
+</li>
+</ul>
+
+<p><img src="../sites/default/files/BPMCompleteMessageFlowBetween2PoolsVersion3.png" alt=""></p>
+	
+<h3><span id="Supported_Gateways">Gateways</span></h3>
+<p><a href="Gateways.html">Gateways</a> are elements used to control how the flow moves in a process. Gateways are mechanisms that control and regulate process flows based on routing rules. The following gateways are supported by ProcessMaker:</p>
+<ul>
+<li><p><strong><a href="Gateways.html#Exclusive_Gateway">Exclusive Gateway:</a></strong> Exclusive gateways are used to split the flow into multiple possible paths, but only one path may be taken. The first path whose condition evaluates to TRUE is the only path executed.</p><p><img src="../sites/default/files/BPMExclusiveGatewayExample.png" alt=""></p></li>
+<li><p><strong><a href="Gateways.html#Parallel_Gateway">Parallel Gateway:</a></strong> Parallel gateways are used to split the process flow into multiple parallel paths. They can also be used to merge multiple parallel paths into one path. If merging paths, the flow pauses at the gateway until all merging paths have finished executing before moving onto the next element in the process. Unlike other types of gateways, no conditions are evaluated by parallel gateways.</p><p><img src="../sites/default/files/BPMParallelGatewayExample.png" alt=""></p></li>
+<li><p><strong><a href="Gateways.html#Inclusive_Gateway">Inclusive Gateway:</a></strong> Inclusive gateways are used to split the process flow into one or more parallel paths. All paths whose condition evaluates to TRUE will be executed.</p><p><img src="../sites/default/files/BPMInlcusiveGatewayExample.png" alt=""></p></li>
+</ul>
+<p><span><strong><a href="Gateways.html#Default_Flow">Default Flows:</a></strong> For inclusive and exclusive gateways, ProcessMaker supports the <em>default flow</em>, which is the path marked by a \ (backslash). This path is taken by default if all the conditions in an inclusive or exclusive gateway evaluate to FALSE.&nbsp; </span></p>
+<p><img style="width: 247px; height: 216px; margin-left: 25px; margin-right: 25px;" src="../sites/default/files/BPMExclusiveGatewayDefaultFlowMark.png" alt="Default Flow"></p>
+
+	
+<h3><span id="Supported_Pools_And_Lanes">Pools and Lanes</span></h3>
+<p>Pools and Lanes are organizational boundary tools that encompass all the elements with a single process. Inside the Process Map of ProcessMaker there are two types of pools available inside the shapes toolbox and the lane feature:.</p>
+<ul>
+	<li><p><strong>Normal Pool:</strong> Inside ProcessMaker, a pool is used to define an organization's process and to create communication with other organizations' processes, this type of pool holds the lanes and/or the rest of the elements in the process, for more information see <a href="Pools_and_Lanes.html#Pools">this</a> page.</p></li>
+	<li>
+		<p><b>Black Box Pool:</b> This type of pools are used to model external processes that participate in the flow of the process, for more information see <a href="Pools_and_Lanes.html#Black_Box_Pools">this</a> page.</p>
+		<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">Take into consideration that ProcessMaker 3.0 and later, has implemented Black Box Pools in the designing process but these pools haven't yet been implemented in the process engine. Therefore, Black Box Pools must be used for designing purposes only. Please be on the lookout for future releases.</font></p>
+	</li>
+	<li><p><b>Lanes:</b> Are used to divide up a pool into sections. They can be used to indicate different departments or offices, geographical regions, conceptual differences, etc, for more information see <a href="Pools_and_Lanes.html#Lanes">this</a> page.</p></li>
+</ul>
+<p><img src="../sites/default/files/CompleteProcessIn2LanesInPoolPM3.png" alt=""></p>
+	
+<h3><span id="Supported_Artifacts">Artifacts</span></h3>
+<p>Artifacts are design tools that allow processes to be clearly labeled and organized so they can be easily understood at a glance. The artifacts available in the shapes toolbox of ProcessMaker are the following:</p>
+<ul>
+<li><p><strong><a href="Artifacts.html#Group">Group</a>:</strong> This artifact simply groups elements of the Process Map and provides a visual mechanism that highlights certain areas of the design.</p></li>
+<li><p><strong><a href="Artifacts.html#Annotations">Annotation</a>:</strong> This tool provides supporting information about the process or elements within the process.</p></li>
+</ul>
+	
+<h3><span id="Supported_Flows">Flows</span></h3>
+<p>The following flows are supported inside ProcessMaker version 3.0.</p>
+<ul>
+<li><p>Sequence flow</p></li>
+<li><p>Message flow</p></li>
+</ul>
+
+<h2><span id="Elements_for_Designing_purposes">Elements for Design Purposes</span> Only</h2>
+<p>The following BPMN 2.0 elements are available inside the Process Map <strong><span style="text-decoration: underline;">only for design purposes</span></strong>. They are ignored by the ProcessMaker engine when executing cases.</p>
+
+<h3><span id="Unsupported_Tasks">Tasks</span></h3>
+<p>ProcessMaker's Designer allows all types of BPMN 2.0 tasks to be used in the Process Map; nonetheless, only the normal type of task is supported when the ProcessMaker engine executes cases.</p>
+
+<p>The following tasks are available <span style="text-decoration: underline;"><strong>only for design purposes</strong></span> inside the Process Map:</p>
+<ul>
+<li><p>Receive Message Task</p></li>
+<li><p>Send Message Task</p></li>
+<li><p>User Task</p></li>
+<li><p>Service Task</p></li>
+<li><p>Manual Task</p></li>
+<li><p>Business Rules Task</p></li>
+</ul>
+<p>To include these tasks in the process design, see the following <a href="Tasks.html#Task_types">documentation</a>.</p>
+
+<h3><span id="Unsupported_Events">Events</span></h3>
+<p>An <a href="Events.html">event</a> is something that "occurs" during the course of a process. These events have a cause or an impact on the implementation of a process and usually require or permit an action. The events, available in the process map only for designing purposes are the following:</p>
+<ul>
+<li><p><strong>Start Events:</strong></p>
+<ul>
+<li>Conditional</li>
+<li>Signal</li>
+</ul>
+</li>
+<li><p><strong>Intermediate Events:</strong>
+<ul>
+<li><strong>Throwing Events</strong>
+<ul><li>Signal</li></ul>
+</li>
+<li><strong>Catching Events</strong>
+<ul>
+<li>Conditional</li>
+<li>Signal</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>End Events:</strong></p>
+<ul>
+<li>Error</li>
+<li>Signal</li>
+<li>Terminate</li>
+</ul>
+</li>
+</ul>
+
+<h3><span id="Supported_Data_Elements">Data Elements</span></h3>
+<p>Data elements are used to introduce data into a process or output data from a process. The following two types of data elements can be included in the Process Map <span style="text-decoration: underline;"><strong>for design purposes only</strong></span>:</p>
+<ul>
+<li><p><strong><a href="Data_Elements.html#Data_Object">Data Object:</a></strong> A data object represents information flowing through the process, such as business documents, emails or letters. There are three types of data objects available for process design in ProcessMaker:</p>
+<ul>
+<li><p>Input</p></li>
+<li><p>Output</p></li>
+<li><p>Empty</p></li>
+</ul>
+</li>
+<li><p><strong><a href="Data_Elements.html#Data_Store">Data Store:</a></strong> A data store is a place where the process can read or write data, such as a database or a filing cabinet.</p></li>
+</ul>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"><a href="Input_Documents.html"> Input Documents</a>, <a href="Output_Documents.html">Output Documents</a> and <a href="Tasks.html#NOTIFICATIONS">Notifications</a> roughly correspond to BPMN Data Objects, but they are used inside tasks and cannot be visualized in the Process Map. Likewise, <a href="Database_Connections.html">Database Connections</a> roughly correspond to BPMN Data Stores, but they are used in database queries in DynaForms and Triggers and cannot be visualized in the Process Map.</font></p>
+	
+<h2><span id="Unsupported_BPMN_Elements">Unsupported BPMN 2.0 Elements</span></h2>
+<p>The following BPMN 2.0 elements are not supported by either the Process Designer or by the ProcessMaker engine that executes cases.</p>
+
+<h3><span id="Unsupported_Activity_Markers">Activity Markers</span></h3>
+<p>The only activity marker supported by ProcessMaker 3.0 is the sub-process marker. The following activity markers are NOT supported:</p>
+<ul>
+<li><p>Call activity</p></li>
+<li><p>Expanded sub-process</p></li>
+<li><p>Loop Marker</p></li>
+<li><p>Ad hoc</p></li>
+<li><p>Compensation</p></li>
+<li><p>The combination of activity markers in one activity is not supported.</p></li>
+<li><p>Choreography</p></li>
+<li><p>Conversation</p></li>
+<li><p>Transaction</p></li>
+<li><p>Event sub-process</p></li>
+</ul>
+	
+	<h3><span id="Unsupported_Events">Events</span></h3>
+	<p>The BPMN events that are not supported in version 3.0 of ProcessMaker are the following:</p>
+		<ul>
+			<li><p><strong>Start Events</strong></p>
+				<ul>
+					<li><p>Conditional Event</p></li>
+					<li><p>Signal Event</p></li>
+					<li><p>Multiple Event</p></li>
+					<li><p>Parallel Event</p></li>
+				</ul>
+			</li>
+			<li><p><strong>Intermediate Events</strong></p>
+				<ul>
+					<li><p>Signal</p></li>
+					<li><p>Escalation</p></li>
+					<li><p>Link Event</p></li>
+					<li><p>Compensation Event</p></li>
+					<li><p>Multiple</p></li>
+					<li><p>Parallel</p></li>
+				</ul>
+			</li>
+			<li><p><strong>End Events</strong></p>
+				<ul>
+					<li><p>Escalation Message Event</p></li>
+					<li><p>Error Event</p></li>
+					<li><p>Cancel Event</p></li>
+					<li><p>Compensation Event</p></li>
+					<li><p>Signal Event</p></li>
+					<li><p>Multiple Event</p></li>
+					<li><p>Terminate Event</p></li>
+				</ul>
+			</li>
+			<li><p><strong>Boundaries</strong></p>
+				<ul>
+					<li><p>Message Boundary Interrupting and Non Interrupting</p></li>
+					<li><p>Timer Boundary Interrupting and Non Interrupting</p></li>
+					<li><p>Escalation Boundary Interrupting and Non Interrupting</p></li>
+					<li><p>Conditional Boundary Interrupting and Non Interrupting</p></li>
+					<li><p>Error Boundary Interrupting</p></li>
+					<li><p>Cancel Boundary Interrupting</p></li>
+					<li><p>Compensation Boundary Interrupting</p></li>
+					<li><p>Signal Boundary Interrupting and Non Interrupting</p></li>
+					<li><p>Multiple Boundary Interrupting and Non Interrupting</p></li>
+					<li><p>Parallel Multiple Boundary Interrupting and Non Interrupting</p></li>
+				</ul>
+			</li>
+		</ul>
+	
+	<h3><span id="Unsupported_Collaboration">Collaboration</span></h3>
+	<p>In version 3.0 of ProcessMaker, the Multi Instance pool or any other marker in the pool is not supported.</p>
+
+       <h3><span id="Unsupported_Pools">Black Box Pool</span></h3>
+       <p>The current beta version of ProcessMaker 3.0 has implemented <a href="Pools_and_Lanes.html#Black_Box_Pools">Black Box</a> pools in the process designer, but these pools haven't yet been implemented in the process engine, so       wait for future releases in order to test this feature.</p>
+	
+	<h3><span id="Unsupported_Gateways">Gateways</span></h3>
+	<p>The BPMN gateway elements that are not supported in version 3.0 of ProcessMaker are the following:</p>
+		<ul>
+			<!-- <li><p>Event Based Gateway</p></li> -->
+			<li><p>Complex Gateway</p></li>
+			<li><p>Exclusive Event Based Gateway</p></li>
+			<li><p>Parallel Event Based Gateway</p></li>
+			<li><p>Uncontrolled Flow Fork</p></li>
+			<li><p>Uncontrolled Flow Merge</p></li>
+		</ul>
+	
+	<h3><span id="Unsupported_Flows">Flows</span></h3>
+	<p>The following flows are not supported inside ProcessMaker version 3.0.</p>
+		<ul>
+			<li><p>Conditional Flow</p></li>
+			<li><p>Conversation Link</p></li>
+		</ul></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

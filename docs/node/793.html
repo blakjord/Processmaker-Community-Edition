@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.2/ProcessMaker_Functions/Email_Functions.html" />
+<link rel="shortlink" href="793.html" />
+<title>3.2 - 3.8 - ProcessMaker Functions - Email Functions | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"Pxrkc5mLFMVjPqPtVUoIIOUEVOfmbwBPxJAR2qsEJjA","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-793 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="793.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="793.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-GoPdC3lRyAWcGd9UZxQnHsYePt_HPaSXhHpV36rFuNQ" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.8 - ProcessMaker Functions - Email Functions</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a href="../3.1/ProcessMaker_Functions.html" class="">3.1</a></li><li><a href="../3.0/ProcessMaker_Functions.html" class="">3.0</a></li><li><a href="../index.php/ProcessMaker_Functions.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.8 - ProcessMaker Functions - Email Functions" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="793.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.8 - ProcessMaker Functions - Email Functions 1/5</option><option value="40">Give 3.2 - 3.8 - ProcessMaker Functions - Email Functions 2/5</option><option value="60" selected="selected">Give 3.2 - 3.8 - ProcessMaker Functions - Email Functions 3/5</option><option value="80">Give 3.2 - 3.8 - ProcessMaker Functions - Email Functions 4/5</option><option value="100">Give 3.2 - 3.8 - ProcessMaker Functions - Email Functions 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-IqAVz8aSX1SrrfcRlDN5HNW-dBmoGL2-slH4buYYpak" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div class="getting-started-index">
+    <ul>
+        <li><a href="../3.2/ProcessMaker_Functions.html">1. Overview</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Process_Functions.html">2. Process Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Task_Functions.html">3. Task Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Dynaform_and_Field_Functions.html">4. Dynaform and Field Functions</a></li>
+        <li><a href="../3.7/ProcessMaker_Functions/Case_Functions.html">5. Case Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Case_Routing_Functions.html">6. Case Routing Functions</a></li>
+        <li><a href="../3.5/ProcessMaker_Functions/Case_Notes_Functions.html">7. Case Notes Functions</a></li>
+        <li><a href="../3.7/ProcessMaker_Functions/User_Functions.html">8. User Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Group_Functions.html">9. Group Functions</a></li>
+        <li><a class="getting-started-index-active">10. Email Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Document_Functions.html">11. Document Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Unique_ID_Functions.html">12. Unique ID Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Date_Functions.html">13. Date Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/String_Functions.html">14. String Functions</a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Database_Functions.html">15. Database Functions </a></li>
+        <li><a href="../3.2/ProcessMaker_Functions/Grid_Functions.html">16. Grid Functions</a></li>
+    </ul>
+</div>
+
+<div class="getting-started-content">
+    <div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="793.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="793.html#Email_Functions">Email Functions</a></li>
+<ol class="toc">
+<li class="toc"><a href="793.html#PMFSendMessage.28.29">PMFSendMessage()</a></li>
+<li class="toc"><a href="793.html#PMFSendMessageToGroup.28.29">PMFSendMessageToGroup()</a></li>
+<li class="toc"><a href="793.html#PMFGetUserEmailAddress.28.29">PMFGetUserEmailAddress()</a></li>
+<li class="toc"><a href="793.html#PMFAddAttachmentToArray.28.29">PMFAddAttachmentToArray()</a></li>
+<li class="toc"><a href="793.html#getEmailConfiguration.28.29">getEmailConfiguration()</a></li>
+</ol>
+</div></div>
+
+    <!-- EMAIL Functions -->
+    <h2><span id="Email_Functions">Email Functions</span></h2>
+    <hr>
+
+    <h3><span id="PMFSendMessage.28.29">PMFSendMessage()</span></h3>
+    <p>The <strong><code>PMFSendMessage()</code></strong> function sends out customized email notifications using a template. For more information, see <a href="../3.2/Notifications.html#Trigger_Messages" title="Notifications">Trigger Messages</a>.</p>
+
+    <codeblock><i>int</i> <strong>PMFSendMessage</strong>(<i>string</i> caseUID, <i>string</i> from, <i>string</i> to, <i>string</i> cc, <i>string</i> bcc, <i>string</i> subject, <i>string</i> template, <i>array</i> aFields=array(), <i>array</i> aAttachments=array(), <i>boolean</i> showMessage=true, <i>int</i> delIndex=0, <i>array</i> config=array())
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <p>
+    <ul>
+        <li><i>string</i> <strong>caseUID</strong>: The UID (unique identification) of a case, which is a string of 32 hexadecimal characters that uniquely identifies each individual case. For the current case use the system variable <code>@@APPLICATION</code>. Other case UIDs can be found with the <a href="793.html#PMFCaseList.28.29">PMFCaseList()</a> function, the <a href="../index.php/Simple_Trigger_Web_Services.html#WSCaseList" title="Simple Trigger Web Services">WSCaseList()</a> function, the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="ProcessMaker WSDL Web Services">caseList()</a> web service, or by using the <a href="../3.0/ProcessMaker_Functions.html#executeQuery.28.29" title="ProcessMaker Functions">executeQuery()</a> function to query the <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_UID</tt></strong> field in the database.</li>
+
+        <li><i>string</i> <strong>from</strong>: The email address of the person who sends out the email. Use the <a href="../3.2/ProcessMaker_Functions.html#userInfo.28.29" title="ProcessMaker Functions">userInfo()</a> function to get a user's email address. If it is necessary to include the person's name along with the email address, list the name first followed by the email address enclosed inside angle brackets <strong><code>&lt; &gt;</code></strong>. The name may be enclosed inside double quotations, but it isn't necessary:
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #0000ff;">'Liliana Iriarte &lt;liliana@example.com&gt;'</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; </div></div>
+        <p><i><font color="green">or</font></i></p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #0000ff;">'&quot;Liliana Iriarte&quot; &lt;liliana@example.com&gt;'</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; </div></div>
+        <p style="margin-left:25px"><strong><font color="green">Note 1:</font></strong> <font color="dimgray">Due to security restrictions, Yahoo!, Gmail and many other email providers will no longer deliver email that doesn't come from the same email address as the account in the <a href="../3.2/Email_Settings.html#Email_Configuration" title="3.0/Email Settings">Email Configuration</a> at <strong>Admin &gt; Settings &gt; Email</strong>. To avoid this problem, set the email address for the <strong><code>from</code></strong> parameter to the same email address found in the Email Configuration.</font></p>
+        <p style="margin-left:25px"><strong><font color="green">Note 2:</font></strong> <font color="dimgray">In the <a href="../3.3/Email_Settings.html">email server settings</a>, you enter the <b>Sender Account</b>, <b>Sender Email</b> and <b>Sender Name</b>. Then, the <b>From</b> and <b>Reply to</b> in the email header is as follows:
+        <ol>
+        <li>If the <tt>from</tt> parameter in the function is empty:<br>
+         <b>From:</b> <span class="geshifilter"><code class="text geshifilter-text">SenderName &lt;SenderAccount&gt;</code></span><br>
+         <b>Reply to:</b> <span class="geshifilter"><code class="text geshifilter-text">SenderName &lt;SenderEmail&gt;</code></span></li>
+        <li>If the <tt>from</tt> parameter in the function is <span class="geshifilter"><code class="text geshifilter-text">&lt;sample.account@gmail.com&gt;</code></span> or <span class="geshifilter"><code class="text geshifilter-text">sample.account@gmail.com</code></span>:<br>
+        <b>From:</b> <span class="geshifilter"><code class="text geshifilter-text">&lt;SenderAccount&gt;</code></span><br>
+         <b>Reply to:</b> <tt>from</tt>
+        </li>
+        <li>If the <tt>from</tt> parameter in the function is <span class="geshifilter"><code class="text geshifilter-text">Sample Account Name &lt;sample.account@gmail.com&gt;</code></span>:<br>
+        <b>From:</b> <span class="geshifilter"><code class="text geshifilter-text">Sample Account Name &lt;SenderAccount&gt;</code></span><br>
+         <b>Reply to:</b> <tt>from</tt></li>
+        </ol>
+        </font></p>
+        </li>
+    
+        <li><i>string</i> <strong>to</strong>: The email address(es) to whom the email is sent. If there are multiple recipients, separate each email address with a comma ",". If it is necessary to include the person's name along with the email address, list the name first followed by the email address enclosed inside angle brackets <strong><code>&lt; &gt;</code></strong> as shown above. Use the <a href="../3.0/ProcessMaker_Functions.html#userInfo.28.29" title="ProcessMaker Functions">userInfo()</a> function to get a user's email address.</li>
+
+        <li><i>string</i> <strong>cc</strong>: The email address(es) of the people who will receive carbon copies of the email. If there are multiple recipients, separate each email address with a comma. Use the <a href="793.html#userInfo.28.29" title="ProcessMaker Functions">userInfo()</a> function to get a user's email address.</li>
+        
+        <li><i>string</i> <strong>bcc</strong>: The email address(es) of the people who will receive blind carbon copies of the email. Unlike a normal carbon copy, the other recipients won't see who has received blind carbon copies. If there are multiple recipients, separate each email address with a comma. Use the <a href="793.html#userInfo.28.29" title="ProcessMaker Functions">userInfo()</a> function to get a user's email address.</li>
+        
+        <li><i>string</i> <strong>subject</strong>: The subject (title) of the email.</li>
+        
+        <li><p><i>string</i> <strong>template</strong>: The name of the template file in HTML format that produces the body of the email. Include the file extension in the file name (i.e. <code>"negativeResponse.html"</code>.</p>
+        <p>The template file must be located in the <a href="../3.2/Templates.html" title="Templates">Templates</a> or the <a href="../3.2/Public_Files.html" title="Public Files">Public Files</a> of the current process. The template file can contain system variables, case variables (which weren't defined in the same trigger), or any variables that are passed in the <strong><code>fields</code></strong> parameter. See <a href="../3.7/Notifications.html" title="Notifications">Notifications</a> to learn how to insert variables into an email template.</p>
+        </li>
+        
+        <li><i>array</i> <strong>fields</strong>: Optional parameter to define custom variables that can be inserted into the template file. The fields parameter is an associative array where the keys are the variable's name and the values are the variable's value. If no array is included, an empty array is included by default. Case variables defined in the same trigger that calls <code>PMFSendMessage()</code> should be passed to the email template using the <code>fields</code> array. See the example below for how to set the values in the <code>fields</code> array.</li>
+        
+        <li><i>array</i> <strong>aAttachments</strong>: <i>Optional.</i> An array of complete paths of files to attach to the email. The paths can be paths in the file system of the server where ProcessMaker is installed. For example:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'/home/foobar/clients/client_03452342.xls'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'/var/www/public/profile.pdf'</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; </div></div>
+        <p>By default, files are attached using their original file names, which means that Input Documents, Output Documents and attached files are sent with filenames containing their unique ID and version number. It is possible to rename file attachments by setting the new filename as the array key. For example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;InvoiceForJohnDoe.xls&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;/home/foobar/clients/client_03452342.xls&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;scannedInvoice.png&quot;</span> <span style="color: #339933;">=&gt;</span> PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;9743702654e6925b52e1e34098864192_1.png&quot;</span><br />
+<span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; </div></div>
+        <p>If sending files stored by ProcessMaker, it is recommended to use ProcessMaker's predefined system constants, such as <code>PATH_DATA_PUBLIC</code>, <code>PATH_DATA_MAILTEMPLATES</code>, <code>PATH_DOCUMENT</code> and <code>PATH_SEP</code>, to construct the paths:</p>
+        <ul>
+        <li>Files in the "public" directory of the <a href="../3.0/Process_Files_Manager.html" title="Process Files Manager">Process Files Manager</a>:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DATA_PUBLIC <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;PROCESS-UID&gt;&quot;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;FILENAME&gt;&quot;</span></div></div>
+        <p>Example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DATA_PUBLIC <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>PROCESS <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;letterheadLogo.png&quot;</span></div></div>
+</li>
+        <li>Template files (without inserted data) in the "mailTemplates" directory of the <a href="../3.0/Process_Files_Manager.html" title="Process Files Manager">Process Files Manager</a>:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DATA_MAILTEMPLATES <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;PROCESS-UID&gt;&quot;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;FILENAME&gt;&quot;</span></div></div>
+    <p>Example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DATA_MAILTEMPLATES <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>PROCESS <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;companyProfile.html&quot;</span></div></div>
+        </li>
+        <li>Uploaded <a href="../3.0/Input_Documents.html" title="3.0/Input Documents">Input Document</a> files and attached <a href="../3.0/File_control.html" title="3.0/Files">files</a>:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;&lt;CASE-UID&gt;&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;CASE-DOC-UID&gt;_&lt;VERSION&gt;.&lt;EXTENSION&gt;&quot;</span></div></div>
+        <p>Example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;9743702654e6925b52e1e34098864192_1.png&quot;</span></div></div>
+        </li>
+        <li>Generated <a href="../3.0/Output_Documents.html" title="3.0/Output Documents">Output Document</a> files:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;&lt;CASE-UID&gt;&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;outdocs&quot;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;CASE-DOC-UID&gt;_&lt;VERSION&gt;.&lt;EXTENSION&gt;&quot;</span></div></div>
+        <p>Example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;outdocs&quot;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;6960198894e6927e0a40b14004833875_2.pdf&quot;</span></div></div>
+         </li>
+    </ul>
+    </li>
+
+    <li><i>boolean</i> <strong>showMessage</strong>: Optional. If set to <strong><code>true</code></strong>, which is the default, the email message will be displayed in the <a href="../3.0/Cases.html#Message_History" title="3.0/Cases">message history</a>. If set to <strong><code>false</code></strong>, then the email message will not be displayed in the message history, although a record of the email will still be stored in the <strong><tt>APP_MESSAGE</tt></strong> table.</li>
+
+    <li><i>int</i> <strong>delIndex</strong>: Optional. If not set to 0, the message will be associated with a particular task in the case, which is indicated by its delegation index. The delegation index for the current case is stored in the system variable <code>@%INDEX</code>. Note that the delegation index changes with each new task in the case, so look up the index in the <strong><tt>APPLICATION.DEL_INDEX</tt></strong> field before calling this function.</li>
+
+    <li><i>string</i> or <i>array</i> <strong>config</strong>: Optional parameter available in Enterprise Edition to configure an alternative email server to send the message. It could be set with the UID or with an array of the other email server or user account configuration (See <a href="../3.0/Email_Settings.html#Sending_Emails_from_Different_Accounts" title="3.0/Sending Emails from Different Accounts">Use an alternative email server</a>).</li></ul>
+    </p>
+
+    <p><strong>Return Value:</strong></p><p>Returns 1 if email was sent to the configured <a href="../3.0/Email_Settings.html" title="Email Settings">email server</a>; otherwise, returns 0 if an error occurred.</p>
+
+    <p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> As of <b>ProcessMaker 3.4.0</b>, all Parameters send through the trigger function normally. However, the behavior changes when the function returns an integer number for confirmation: instead of confirming an email has been sent through the email server, the <code>artisan queue:work</code> command adds the ProcessMaker function in the queue with a <code>0</code> or <code>1</code> to confirm for the job was created. For more information about it, see the <a href="../3.3/processmaker_command.html#artisan">artisan</a> command.</font></p>
+
+    <p><strong>When the Trigger Should be Set to Fire:</strong></p>
+    <p>The PMFSendMessage() function can be used in triggers set to fire after a Dynaform step.</p>
+
+    <p><strong>Example Sending Variables to a Template:</strong></p>
+    <p>The following trigger code is used to send an email template named "LeaveRequestTemplate.html" to the user working on the current case. An array of variables is passed to <code>PMFSendMessage()</code>, so the <code>@#reqUserName</code>, <code>@#reqSup</code>, <code>@#fromReq</code>, <code>@#toReq</code> and <code>@#daysReq</code> fields will be filled in the template:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aFields</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'reqUserName'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>reqUserName<span style="color: #339933;">,</span> <span style="color: #0000ff;">'reqSup'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>reqSup<span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'fromReq'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>fromReq<span style="color: #339933;">,</span> <span style="color: #0000ff;">'toReq'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>toReq<span style="color: #339933;">,</span> <span style="color: #0000ff;">'daysReq'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>daysReq<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$usr</span> <span style="color: #339933;">=</span> userInfo<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$to</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$usr</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'mail'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'manager@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$to</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ceo@acme.com, cfo@acme.com'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'Leave Request Notification'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'LeaveRequestTemplate.html'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aFields</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p><strong>Example Sending Variables to a Template with different email server and/or user account:</strong></p>
+    <p>The following trigger code is used to send an email template named "LeaveRequestTemplate.html" to the user working on the current case. An array of variables is passed to <code>PMFSendMessage()</code>, so the <code>@#reqUserName</code>, <code>@#reqSup</code>, <code>@#fromReq</code>, <code>@#toReq</code> and <code>@#daysReq</code> fields will be filled in the template. To allow emails to be sent out with a different email server and/or user account, the <b>config</b> parameter has to be added:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aFields</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'reqUserName'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>reqUserName<span style="color: #339933;">,</span> <span style="color: #0000ff;">'reqSup'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>reqSup<span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'fromReq'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>fromReq<span style="color: #339933;">,</span> <span style="color: #0000ff;">'toReq'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>toReq<span style="color: #339933;">,</span> <span style="color: #0000ff;">'daysReq'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@=</span>daysReq<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$usr</span> <span style="color: #339933;">=</span> userInfo<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$to</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$usr</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'mail'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$otherConfigUID</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'6696428855ec5eefa27ff86043207174'</span><span style="color: #339933;">;</span><br />
+<br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #000088;">$to</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'Leave Request Notification'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'LeaveRequestTemplate.html'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Leave Request Notification'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'LeaveRequestTemplate.html'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aFields</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> <span style="color: #000088;">$otherConfigUID</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p><strong>Example Emailing Attachments from the Process Files Manager:</strong></p>
+    <p>The following trigger sends two files named "companyLogo.png" and "companyProfile.pdf", which are stored in the "public" directory of the <a href="../3.0/Process_Files_Manager.html" title="Process Files Manager">Process Files Manager</a>:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aAttachFiles</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; PATH_DATA_PUBLIC <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>PROCESS <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">'companyLogo.png'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; PATH_DATA_PUBLIC <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>PROCESS <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">'companyProfile.pdf'</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$usr</span> <span style="color: #339933;">=</span> userInfo<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'manager@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$usr</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'mail'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'Company Information'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'companyInfoTemplate.html'</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aAttachFiles</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p><strong>Example Emailing Input Document Files:</strong></p>
+    <p>This trigger emails all the uploaded files in an Input Document whose definition has the ID "8935316924e692b256860c4075654232".</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$caseUID</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Unique ID for the current case</span><br />
+<span style="color: #000088;">$inDocDef</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;8935316924e692b256860c4075654232&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//change for the Input Document definition's unique ID</span><br />
+<span style="color: #000088;">$aAttachFiles</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$inDocQuery</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT APP_DOC_UID, DOC_VERSION, APP_DOC_FILENAME AS FILENAME<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;FROM APP_DOCUMENT<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WHERE APP_UID = '<span style="color: #006699; font-weight: bold;">$caseUID</span>' AND DOC_UID = '<span style="color: #006699; font-weight: bold;">$inDocDef</span>'<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AND APP_DOC_TYPE = 'INPUT' AND APP_DOC_STATUS = 'ACTIVE'&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$inDocs</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$inDocQuery</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$inDocs</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$inDocs</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$inDoc</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aAttachFiles</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$inDoc</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FILENAME'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$caseUID</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$inDoc</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_DOC_UID'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'_'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$inDoc</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DOC_VERSION'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'.'</span> <span style="color: #339933;">.</span> <a href="http://php.net/pathinfo"><span style="color: #990000;">pathinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$inDoc</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FILENAME'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> PATHINFO_EXTENSION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000088;">$usr</span> <span style="color: #339933;">=</span> userInfo<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'manager@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$usr</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'mail'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'Client documents'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'clientTemplate.html'</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aAttachFiles</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <dl>
+        <dd><strong><font color="green">Note:</font></strong> <font color="dimgrey">This example only emails the latest version of input document files. To email all versions, remove from the query: <code>AND AD.APP_DOC_STATUS='ACTIVE'</code></font></dd>
+    </dl>
+    <dl>
+        <dd><font color="dimgrey">To email all uploaded files from a case, remove from the query: <code>AND AD.DOC_UID='$inDocDef'</code></font></dd>
+    </dl>
+    <p><strong>Example Emailing a File Uploaded to a Dynaform's File Field:</strong></p>
+    <p>This trigger emails all the files uploaded to <a href="../3.0/File_control.html" title="3.0/Files">file</a> fields in the current case:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aAttachFiles</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseUID</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Unique ID for the current case</span><br />
+<span style="color: #000088;">$docQuery</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT APP_DOC_UID, DOC_VERSION, APP_DOC_FILENAME AS FILENAME<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;FROM APP_DOCUMENT<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WHERE APP_UID = '<span style="color: #006699; font-weight: bold;">$caseUID</span>'<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AND APP_DOC_TYPE = 'ATTACHED' AND APP_DOC_STATUS = 'ACTIVE'&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$docs</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$docQuery</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$docs</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$docs</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$doc</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aAttachFiles</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$doc</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FILENAME'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$caseUID</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000088;">$doc</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_DOC_UID'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'_'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$doc</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DOC_VERSION'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'.'</span> <span style="color: #339933;">.</span> <a href="http://php.net/pathinfo"><span style="color: #990000;">pathinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$doc</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FILENAME'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> PATHINFO_EXTENSION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000088;">$usr</span> <span style="color: #339933;">=</span> userInfo<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'manager@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$usr</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'mail'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'Invoices for case'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'invoiceInfo.html'</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aAttachFiles</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p><strong>Example Emailing Generated Output Document Files:</strong></p>
+    <p>This trigger emails the PDF and DOC files of the latest version of an Output Document whose definition has the ID "691319281570bc9938b4460028767596".</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//set to the Output Document definition's unique ID:</span><br />
+<span style="color: #000088;">$outDocDef</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;691319281570bc9938b4460028767596&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$caseUID</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Unique ID for the current case</span><br />
+<span style="color: #000088;">$aAttachFiles</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$outDocQuery</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT APP_DOC_UID, DOC_VERSION, APP_DOC_FILENAME AS FILENAME<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM APP_DOCUMENT<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseUID</span>' AND DOC_UID='<span style="color: #006699; font-weight: bold;">$outDocDef</span>'<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND APP_DOC_TYPE = 'OUTPUT' AND APP_DOC_STATUS = 'ACTIVE'<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ORDER BY DOC_VERSION DESC&quot;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$outDoc</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$outDocQuery</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$outDoc</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$path</span> <span style="color: #339933;">=</span> PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$caseUID</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">'outdocs'</span><span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$outDoc</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_DOC_UID'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'_'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$outDoc</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DOC_VERSION'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$filename</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$outDoc</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FILENAME'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aAttachFiles</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$filename</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'.pdf'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$path</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'.pdf'</span><span style="color: #339933;">;</span> &nbsp;<span style="color: #666666; font-style: italic;">//remove if not generating a PDF file</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aAttachFiles</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$filename</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'.doc'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$path</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'.doc'</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//remove if not generating a DOC file</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #000088;">$usr</span> <span style="color: #339933;">=</span> userInfo<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$from</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;admin@processmaker.com&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to the email account set in Admin &gt; Email Servers</span><br />
+<span style="color: #339933;">@@</span>resp<span style="color: #339933;">=</span>PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #000088;">$from</span><span style="color: #339933;">,</span> <span style="color: #000088;">$usr</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'mail'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;Case Report&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;caseReportTemplate.html&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aAttachFiles</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <h3><span id="PMFSendMessageToGroup.28.29">PMFSendMessageToGroup()</span></h3>
+    <p><b><code>PMFSendMessageToGroup()</code></b> sends a notification to a group of users.</p>
+
+    <codeblock><i>int</i> <strong>PMFSendMessageToGroup</strong>(<i>string</i> groupUID, <i>string</i> caseUID, <i>string</i> from, <i>string</i> subject, <i>string</i> template, <i>array</i> aFields, <i>array</i> aAttachments, <i>string</i> showMessage, <i>int</i> delIndex, <i>string</i> emailServerUID, <i>int</i> limit)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul>
+
+        <li><i>string</i> <strong>groupUID: </strong>The group identifier. The email will be sent to all users that are currently part of the group. Note that inactive and on vacation users will NOT receive the email. </li>
+
+        <li><i>string</i> <strong>caseUID</strong>: The UID of a case, which is a string of 32 hexadecimal characters that uniquely identifies each individual case. For the current case use the system variable <code>@@APPLICATION</code>. Another case UID can be found with the <a href="793.html#PMFCaseList.28.29">PMFCaseList()</a> function, the <a href="../index.php/Simple_Trigger_Web_Services.html#WSCaseList" title="Simple Trigger Web Services">WSCaseList()</a> function, the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#caseList.28.29" title="ProcessMaker WSDL Web Services">caseList()</a> web service, or by using the <a href="../3.0/ProcessMaker_Functions.html#executeQuery.28.29" title="ProcessMaker Functions">executeQuery()</a> function to query the <strong><tt>wf_&lt;WORKSPACE&gt;.APPLICATION.APP_UID</tt></strong> field in the database.</li>
+
+        <li><i>string</i> <strong>from</strong>: The email address of the person who sends out the email. Use the <a href="../3.0/ProcessMaker_Functions.html#userInfo.28.29" title="ProcessMaker Functions">userInfo()</a> function to get a user's email address. If it is necessary to include the person's name along with the email address, list the name first followed by the email address enclosed inside angle brackets <strong><code>&lt; &gt;</code></strong>. The name may be enclosed inside double quotation marks, but it isn't necessary:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #0000ff;">'Travis Grady &lt;travisGrady@example.com&gt;'</span></div></div>
+<p><i><font color="green">or</font></i></p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #0000ff;">'&quot;Travis Grady&quot; &lt;travisGrady@example.com&gt;'</span></div></div>
+
+        <p style="margin-left:25px"><b><font color="green">Note 1:</b></font><font color="dimgrey"> Due to security restrictions, Yahoo!, Gmail and many other email providers will no longer deliver email that doesn't come from the same email address as the account in the <a href="../3.2/Email_Settings.html#Email_Configuration" title="3.2/Email Settings">Email Configuration</a> at <strong>Admin &gt; Settings &gt; Email</strong>. To avoid this problem, set the email address for the <strong><code>from</code></strong> parameter to the same email address found in the Email Configuration.</font></p>
+
+        <p style="margin-left:25px"><strong><font color="green">Note 2:</font></strong> <font color="dimgray">In the <a href="../3.3/Email_Settings.html">email server settings</a>, you enter the <b>Sender Account</b>, <b>Sender Email</b> and <b>Sender Name</b>. Then, the <b>From</b> and <b>Reply to</b> in the email header is as follows:
+    <ol>
+        <li>If the <tt>from</tt> parameter in the function is empty:<br>
+         <b>From:</b> <span class="geshifilter"><code class="text geshifilter-text">SenderName &lt;SenderAccount&gt;</code></span><br>
+         <b>Reply to:</b> <span class="geshifilter"><code class="text geshifilter-text">SenderName &lt;SenderEmail&gt;</code></span></li>
+        <li>If the <tt>from</tt> parameter in the function is <span class="geshifilter"><code class="text geshifilter-text">&lt;sample.account@gmail.com&gt;</code></span> or <span class="geshifilter"><code class="text geshifilter-text">sample.account@gmail.com</code></span>:<br>
+        <b>From:</b> <span class="geshifilter"><code class="text geshifilter-text">&lt;SenderAccount&gt;</code></span><br>
+         <b>Reply to:</b> <tt>from</tt>
+        </li>
+        <li>If the <tt>from</tt> parameter in the function is <span class="geshifilter"><code class="text geshifilter-text">Sample Account Name &lt;sample.account@gmail.com&gt;</code></span>:<br>
+        <b>From:</b> <span class="geshifilter"><code class="text geshifilter-text">Sample Account Name &lt;SenderAccount&gt;</code></span><br>
+         <b>Reply to:</b> <tt>from</tt></li>
+    </ol>
+    </font></p>
+
+
+        </li>
+
+        <li><i>string</i> <strong>subject</strong>: The subject (title) of the email.</li>
+
+        <li><i>string</i> <strong>template</strong>: The name of the <a href="../3.0/Templates.html">template</a> file in plain text or HTML format that will produce the body of the email. Include the file extension in the file name. For example: <code>"negativeResponse.html"</code> or <code>"caseStatus.txt"</code>
+</li>
+
+        <li><i>array</i> <strong>aFields</strong>: (Optional) Parameter to define custom variables that can be inserted into the template file. An associative array where the keys are the variable name and the values are the variable's value. If no array is included, an empty array is included by default. Case variables defined in the same trigger that calls <code>PMFSendMessage()</code> should be passed to the email template using the <code>fields</code> array. See the example below for how to set the values in the <code>fields</code> array.</li>
+
+        <li><i>array</i> <strong>aAttachments</strong>: (Optional) An array of files (full paths) to be attached to the email. Paths can be web addresses or paths in the file system of the ProcessMaker server. For example:<br>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'/home/foobar/clients/client_03452342.xls'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'/var/www/public/profile.pdf'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'http://www.example.com/finances.doc'</span><span style="color: #009900;">&#41;</span></div></div>
+
+<p>By default, files are attached using their original file names, which means that Input Documents, Output Documents and attached files are sent with filenames containing their unique ID and version number.</p>
+
+        <p>If sending files stored by ProcessMaker, it is recommended to use ProcessMaker's predefined system constants, such as <code>PATH_DATA_PUBLIC</code>, <code>PATH_DATA_MAILTEMPLATES</code>, <code>PATH_DOCUMENT</code> and <code>PATH_SEP</code>, to construct the paths:</p>
+
+        <ul>
+            <li>Files in the "public" directory of the <a href="../3.0/Process_Files_Manager.html" title="Process Files Manager">Process Files Manager</a>:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DATA_PUBLIC <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;PROCESS-UID&gt;&quot;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;FILENAME&gt;&quot;</span></div></div>
+<p>Example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DATA_PUBLIC <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>PROCESS <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;letterheadLogo.png&quot;</span></div></div>
+</li>
+        <li>Template files (without inserted data) in the "mailTemplates" directory of the <a href="../3.0/Process_Files_Manager.html" title="Process Files Manager">Process Files Manager</a>:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DATA_MAILTEMPLATES <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;PROCESS-UID&gt;&quot;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;FILENAME&gt;&quot;</span></div></div>
+<p>Example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DATA_MAILTEMPLATES <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>PROCESS <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;companyProfile.html&quot;</span></div></div>
+</li>
+
+        <li>Uploaded <a href="../3.0/Input_Documents.html" title="3.0/Input Documents">Input Document</a> files and attached <a href="../3.0/File_control.html" title="3.0/Files">files</a>:
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;&lt;CASE-UID&gt;&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP<span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;CASE-DOC-UID&gt;_&lt;VERSION&gt;.&lt;EXTENSION&gt;&quot;</span></div></div>
+<p>Example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span><span style="color: #0000ff;">&quot;9743702654e6925b52e1e34098864192_1.png&quot;</span></div></div>
+</li>
+
+        <li>Generated <a href="../3.0/Output_Documents.html" title="3.0/Output Documents">Output Document</a> files:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;&lt;CASE-UID&gt;&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;outdocs&quot;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;&lt;CASE-DOC-UID&gt;_&lt;VERSION&gt;.&lt;EXTENSION&gt;&quot;</span></div></div>
+<p>Example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PATH_DOCUMENT <span style="color: #339933;">.</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPathFromUID</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;outdocs&quot;</span> <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;6960198894e6927e0a40b14004833875_2.pdf&quot;</span></div></div>
+</li>
+    </ul>
+    </li>
+
+    <li><i>boolean</i> <strong>showMessage</strong>: (Optional) If set to <strong><code>TRUE</code></strong>, which is the default state, then the email message will be displayed in the <a href="../3.0/Cases.html#Message_History" title="3.0/Cases">message history</a>. If set to <strong><code>FALSE</code></strong>, then the email message will not be displayed in the message history, although a email record will be stored in the <strong><tt>APP_MESSAGE</tt></strong> table.</li>
+
+    <li><i>int</i> <strong>delIndex</strong>: (Optional) If not set to 0, the message will be associated with a particular task in the case, which is indicated by its delegation index. The delegation index for the current case is stored in the system variable <code>@%INDEX</code>. Note that the delegation index changes with each new task in the case, so look up the index in the <strong><tt>APPLICATION.DEL_INDEX</tt></strong> field before calling this function.</li>
+
+    <li><i>string</i> <strong>emailConfigUID</strong>: (Optional) Configure an alternative email server to send the messages. The <a href="../3.0/Email_Settings.html">email server</a> configuration UID can be found using the <a href="../3.1/ProcessMaker_Functions.html#executeQuery.28.29" title="ProcessMaker Functions">executeQuery()</a> function to query the <strong><tt>wf_&lt;WORKSPACE&gt;.EMAIL_SERVER.MESS_UID</tt></strong> field in the database.</li>
+
+    <li><i>int</i> <strong>limit</strong>: The limit of emails that can be sent in each batch. </li>
+    </ul>
+
+    <p><strong>Return Value:</strong></p>
+    <p>Returns 1 if the emails were sent to the users in the specified group; otherwise, returns 0 if an error occurred.</p>
+
+    <p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> As of <b>ProcessMaker 3.4.0</b>, all Parameters send through the trigger function normally. However, the behavior changes when the function returns an integer number for confirmation: instead of confirming an email has been sent through the email server, the <code>artisan queue:work</code> command adds the ProcessMaker function in the queue with a <code>0</code> or <code>1</code> to confirm for the job was created. For more information about it, see the <a href="../3.3/processmaker_command.html#artisan">artisan</a> command.</font></p>
+
+    <p><strong>Example:</strong></p>
+    <p>The following trigger code uses the userInfo function to retrieve the email of the user currently logged in. Then, it sends the emails using the email.html template to the group with the ID: "967043513571685b19ad9a3030022260".</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$usr</span> <span style="color: #339933;">=</span> userInfo<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>result <span style="color: #339933;">=</span> PMFSendMessageToGroup<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;967043513571685b19ad9a3030022260&quot;</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #000088;">$usr</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'mail'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;Testing Email&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;email.html&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">TRUE</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>INDEX<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">5</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <h3><span id="PMFGetUserEmailAddress.28.29">PMFGetUserEmailAddress()</span></h3>
+    <p><b><code>PMFGetUserEmailAddress()</code></b> returns the email addresses of the specified user(s).</p>
+
+    <codeblock><i>variant</i> <strong>PMFGetUserEmailAddress</strong>(<i>variant</i> ID, <i>string</i> APP_UID=null, <i>string</i> prefix='usr')
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>variant</i> <strong>ID</strong>:</code> A list of recipients, which can be a mixture of user IDs, group IDs, variable names or email addresses. To find the IDs of the users and groups, go to <strong>ADMIN &gt; Settings &gt; Web Services Test</strong> and use the <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#User_List" title="ProcessMaker WSDL Web Services">userList()</a> and <a href="../3.0/ProcessMaker_WSDL_Web_Services.html#Group_List" title="ProcessMaker WSDL Web Services">groupList()</a> web services, or look them up in the <strong><tt>wf_&lt;WORKSPACE&gt;.USERS.USR_UID</tt></strong> field or in <strong><tt>wf_&lt;WORKSPACE&gt;.GROUPWF.GRP_UID</tt></strong> field in the database. This list can either be an array with each recipient in a separate element, or a string with each recipient separated by commas ",". If the recipients are all the same type, then set that type in the <code>$prefix</code> parameter. If the list contains a mix of different types, then prepend <code>"usr|"</code>, <code>"grp|"</code>, <code>"dyn|"</code> or <code>"ext|"</code> before each recipient. For the user currently assigned to a case, use <code>"-1"</code> or <code>"usr|-1"</code>.</li>
+
+        <li><i>string</i> <strong>$APP_UID</strong>:</code> The unique of the ID of the case from which the emails will be retrieved.  Notice that the result value will be obtained from the last open delegation of the case specified. If using a variable to get the currently assigned user, specify the unique ID of the case that contains this variable. If using "<b>-1</b>" as the first value to obtain the user currently assigned to the case's email, then the second parameter has to be  <code>@@APPLICATION</code>.</li>
+
+        <li><i>string</i> <strong>$prefix</strong>:</code> An optional parameter. Specify the type for <i>all</i> the recipients in the list:
+<ul><li><code>"usr":</code> All the recipients are users, so the <code>ID</code> is a list of the user's unique IDs. This is the default value if the parameter is not included.</li>
+        <li><code>"grp":</code> All the recipients are groups, so the <code>ID</code> is a list of the group's unique IDs.</li>
+        <li><code>"dyn":</code> All the recipients are variables, so the <code>ID</code> is a list of case variable names from the case specified in the $APP_UID parameter.</li>
+        <li><code>"ext":</code> All the recipients have external email addresses, so the <code>ID</code> is a list of email addresses.</li></ul>
+    </li>
+    </ul>
+    <div style="line-height: 19.0499992370605px; margin-left: 20px;"><p>If the <code>ID</code> has mixed types of recipients, then do not include this parameter and specify the type in the <code>$id</code>, separated by vertical bars "|".</p></div>
+    <p><strong>Return Value:</strong><br>A list of email addresses. If the <code>$id</code> is a string, then a string will be returned with each email address separated by commas. If the <code>$id</code> was an array, then an array of email addresses will be returned. If there were no valid recipients in the <code>$id</code>, then the function returns <code>false</code>.</p>
+
+    <p><strong>Examples:</strong><br>Send an email to the user assigned to the current case:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$to</span> <span style="color: #339933;">=</span> PMFGetUserEmailAddress<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'-1'</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;boss@example.com&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$to</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Reminder Notice'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'reminderNote.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>To send an email to the currently assigned user and two users with the IDs "79498307748c8645cbed0d2037379255" and "6187429034914a77c452de6051925565" in the current case:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$to</span> <span style="color: #339933;">=</span> PMFGetUserEmailAddress<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'-1, 79498307748c8645cbed0d2037379255, 6187429034914a77c452de6051925565'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;boss@example.com&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$to</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Reminder Notice'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'reminderNote.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>To do the same thing with an array of recipients:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aTo</span> <span style="color: #339933;">=</span> PMFGetUserEmailAddress<span style="color: #009900;">&#40;</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'-1'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'79498307748c8645cbed0d2037379255'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'6187429034914a77c452de6051925565'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$sTo</span> <span style="color: #339933;">=</span> <a href="http://php.net/implode"><span style="color: #990000;">implode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">','</span> <span style="color: #000088;">$aTo</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//convert to a string with emails separated by commas</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;boss@example.com&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$sTo</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Reminder Notice'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'reminderNote.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>Send out an email to the user IDs found in the case variables <code>@@StoreManager</code>, <code>@@RegionalManager</code>, and <code>@@CEO</code> in the current case:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$to</span> <span style="color: #339933;">=</span> PMFGetUserEmailAddress<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'StoreManager, RegionalManager, CEO'</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'dyn'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'boss@example.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$to</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Reminder Notice'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'reminderNote.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>Send out the same email as above, but use the case variables of a case with the ID "1014502514e4556596e2e29033579043":</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$to</span> <span style="color: #339933;">=</span> PMFGetUserEmailAddress<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'StoreManager, RegionalManager, CEO'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'1014502514e4556596e2e29033579043'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'dyn'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'1014502514e4556596e2e29033579043'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'boss@example.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$to</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Reminder Notice'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'reminderNote.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>Send an email to users, groups, variables and email addresses. In this example, the email is sent to the user currently assigned to the current case, all the members of a group with the UID of "6538387794e45573cdaa563079341214", a user whose UID is specified in the field "selectedManager" in a Dynaform, and to the email address "john_doe@example.com":</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$ids</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'usr|-1, grp|6538387794e45573cdaa563079341214, dyn|selectedManager, ext|john_doe@example.com'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$to</span> <span style="color: #339933;">=</span> PMFGetUserEmailAddress<span style="color: #009900;">&#40;</span><span style="color: #000088;">$ids</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'boss@example.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$to</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Reminder Notice'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'reminderNote.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>To do the same thing, using an array:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aIds</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'usr|-1'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'grp|6538387794e45573cdaa563079341214'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'dyn|selectedManager'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ext|john_doe@example.com'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aTo</span> <span style="color: #339933;">=</span> PMFGetUserEmailAddress<span style="color: #009900;">&#40;</span><span style="color: #000088;">$aIds</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$sTo</span> <span style="color: #339933;">=</span> <a href="http://php.net/implode"><span style="color: #990000;">implode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">','</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aTo</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'boss@example.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$sTo</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Reminder Notice'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'reminderNote.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <h3><span id="PMFAddAttachmentToArray.28.29">PMFAddAttachmentToArray()</span></h3>
+
+    <p>The <strong><code>PMFAddAttachmentToArray()</code></strong> function is used to add an additional file to an array of files, which can be passed to the <a href="793.html#PMFSendMessage.28.29">PMFSendMessage()</a> function to send out emails with attached files. If a file with the same filename already exists in the array, it will add the file to the array, but rename its index key from "<i><strong><tt>filename.ext</tt></strong></i>" to "<strong><tt><i>filename</i> Copy(<i>X</i>).<i>ext</i></tt></strong>" where <i><strong><tt>X</tt></strong></i> is incremented so the original file doesn't get replaced.</p>
+
+    <codeblock><i>array</i> <strong>PMFAddAttachmentToArray</strong>(<i>array</i> arrayData, <i>string</i> index, <i>string</i> value, <i>string</i> suffix)
+</codeblock>
+
+    <p><strong>Parameters:</strong></p>
+    <ul><li><i>array</i> <strong>arrayData</strong>: An existing associative array of files, where the index key is the filename and the value is the file. To understand the format of this array, see the <code>aAttachments</code> parameter of the <a href="793.html#PMFSendMessage.28.29">PMFSendMessage()</a> function.</li>
+        <li><i>string</i> <strong>index</strong>: The new filename of the file to be added, which will also be the new index in the associative array of files. Note that the added file will be renamed with this value, so it is recommended to include the file extension, such as <strong><code>.doc</code></strong>, <strong><code>.pdf</code></strong>, etc.</li>
+        <li><i>string</i> <strong>value</strong>: The web address or the path on the ProcessMaker server of the file to be added to the array.</li>
+        <li><i>string</i> <strong>suffix</strong>: Optional parameter. A string that will concatenated to the <code>index</code> if the filename already exists in the array. Its default value is <strong><code>" Copy({i})"</code></strong>, where <strong><code>{i}</code></strong> will be replaced by an auto-incremented number.</li></ul>
+    <p><strong>Return Value:</strong></p>
+    <p>The modified associative array of files, with the new file added to it. This return value can be used as the <code>aAttachments</code> parameter in the <a href="793.html#PMFSendMessage.28.29">PMFSendMessage()</a> function.</p>
+    <p><strong>Example:</strong><br>In this example, the paths to 3 different files named "accountingGuide.pdf", "expenseReport.doc" and "expenseReport.doc" are in an array. Each file from the array is added as an attachment file to an email. The PMFAddAttachmentToArray() function is used avoid overwriting the existing files in the array of file attachments. Then PMFSendMessage() is used to send out the email with the file attachments.</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aFiles</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; PATH_DATA_PUBLIC <span style="color: #339933;">.</span> <span style="color: #339933;">@@</span>PROCESS <span style="color: #339933;">.</span> PATH_SEP <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;accountingGuide.pdf&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;/home/accounting/2014-Nov/expenseReport.doc&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;/home/accounting/2014-Dec/expenseReport.doc&quot;</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aAttachments</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aFiles</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$file</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$aAttachments</span> <span style="color: #339933;">=</span> PMFAddAttachmentToArray<span style="color: #009900;">&#40;</span><span style="color: #000088;">$aAttachments</span><span style="color: #339933;">,</span> <a href="http://php.net/basename"><span style="color: #990000;">basename</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$file</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$file</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'accountant@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'manager@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'3 months of expense reports'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'monthlyExpenses.html'</span><span style="color: #339933;">,</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aAttachments</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>The above trigger code will send an email to manager@acme.com with the attached files named "accountingGuide.pdf", "expenseReport.doc" and "expenseReport Copy(2).doc".</p>
+
+
+    <h3><span id="getEmailConfiguration.28.29">getEmailConfiguration()</span></h3>
+    <p><b><code>getEmailConfiguration()</code></b> returns information about the current email configuration.</p>
+
+    <codeblock><i>array</i> <strong>getEmailConfiguration</strong>()
+</codeblock>
+
+    <p><strong>Return Value:</strong></p>
+    <p>Returns an associative array with the following information about the email configuration:</p>
+
+    <table class="codecolumn">
+        <tr>
+            <td>array( </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> "MESS_PASSWORD", </td>
+            <td>Encrypted password used to log in to the email server, such as: <code>"vKbAqYO+urusxc6+xbp+eIF9"</code></td>
+        </tr>
+        <tr>
+            <td> "MESS_PASSWORD_HIDDEN", </td>
+            <td>Always set to <code>""</code> (empty string).</td>
+        </tr>
+        <tr>
+            <td> "MESS_ENABLED", </td>
+            <td>Set to "1" if email notifications are enabled. If not enabled, set to <code>"0"</code>.</td>
+        </tr>
+        <tr>
+            <td> "MESS_ENGINE", </td>
+            <td>The email engine, which can be <code>"PHPMAILER"</code> to use the PHPMailer program that supports
+                SMTP, or <code>"MAIL"</code> to use PHP's mail() function to send the email via the mail transfer
+                agent configured for the ProcessMaker server.</td>
+        </tr>
+        <tr>
+            <td> "MESS_SERVER", </td>
+            <td>The IP number or domain name of the email server, such as: <code>"smtp.mail.yahoo.com"</code></td>
+        </tr>
+        <tr>
+            <td> "MESS_RAUTH", </td>
+            <td>Set to
+                <span class="geshifilter"><code class="php geshifilter-php"><span style="color: #009900; font-weight: bold;">true</span></code></span> if login needed to send out messages; otherwise set to
+                <span class="geshifilter"><code class="php geshifilter-php"><span style="color: #009900; font-weight: bold;">false</span></code></span>.</td>
+        </tr>
+        <tr>
+            <td> "MESS_PORT", </td>
+            <td>Port number of the email server, such as <code>"25"</code>, <code>"465"</code> or <code>"587"</code>.</td>
+        </tr>
+        <tr>
+            <td> "MESS_ACCOUNT", </td>
+            <td>The username of the email account. For some email servers, such as Gmail, the account name includes
+                the full email address, such as:"joedoe@gmail.com"</td>
+        </tr>
+        <tr>
+            <td> "MESS_BACKGROUND", </td>
+            <td>HTML code of the background to the email message. Generally set to <code>""</code> (no background).</td>
+        </tr>
+        <tr>
+            <td> "MESS_EXECUTE_EVERY", </td>
+            <td>Time between attempts to send message. If set to <code>""</code>, then uses the default.</td>
+        </tr>
+        <tr>
+            <td> "MESS_SEND_MAX", </td>
+            <td>Maximum number of attempts to send the message. If set to "", then uses the default.</td>
+        </tr>
+        <tr>
+            <td> "SMTPSecure", </td>
+            <td>The type of secure connection to the email server: <code>"ssl"</code>, <code>"tls"</code> or <code>""</code>                (empty string for no secure connection)</td>
+        </tr>
+        <tr>
+            <td> "MAIL_TO", </td>
+            <td>Email address to whom the test email will be sent.</td>
+        </tr>
+        <tr>
+            <td> "MESS_FROM_NAME", </td>
+            <td>Name of the sender, such as: "ProcessMaker Admin"</td>
+        </tr>
+        <tr>
+            <td> "MESS_TRY_SEND_INMEDIATLY",</td>
+            <td>Set to <code>"1"</code> to send out a test email after configuring the email server or <code>"false"</code>                to not send it.</td>
+        </tr>
+        <tr>
+            <td> "MESS_FROM_MAIL", </td>
+            <td>Email address of the sender of emails. In most cases this will be the same as the email account.</td>
+        </tr>
+        <tr>
+            <td>) </td>
+            <td></td>
+        </tr>
+    </table>
+
+    <p><strong>Example:</strong><br>Check whether email notifications are enabled before sending out an email with PMFSendMessage():</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$aEmailConfig</span> <span style="color: #339933;">=</span> getEmailConfiguration<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$aEmailConfig</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'MESS_ENABLED'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">===</span> <span style="color: #0000ff;">&quot;1&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'accountant@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'manager@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Accounting report'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'accountingTemplate.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+</div>
+<!-- END EMAIL Functions --></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Simple_Trigger_Web_Services.html" />
+<link rel="shortlink" href="../node/137.html" />
+<title>Simple Trigger Web Services | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"HIqXbafAfB4uXHZJFQAnLwtlQXtN8u7Sgr2AQJG14jU","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-137 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Simple_Trigger_Web_Services.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form--VN8hKcDUhYL_YFJFRUdsGlJWgBighM56sfija7iTYI" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">Simple Trigger Web Services</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+          </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="Simple Trigger Web Services" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Simple_Trigger_Web_Services.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Simple Trigger Web Services 1/5</option><option value="40">Give Simple Trigger Web Services 2/5</option><option value="60" selected="selected">Give Simple Trigger Web Services 3/5</option><option value="80">Give Simple Trigger Web Services 4/5</option><option value="100">Give Simple Trigger Web Services 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-Emik_Xj7f3CSA6dLmw8JuFguaorqHa5jVWWJUpCjhxk" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Simple_Trigger_Web_Services.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#Overview">Overview</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#ReturnValues">Return Values</a></li>
+<ol class="toc">
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#wsresponse">WS Response Associative Array:</a></li>
+</ol>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSOpen">WSOpen()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSLogin">WSLogin()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSGetSession">WSGetSession()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSTaskCase">WSTaskCase()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSTaskList">WSTaskList()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSUserList">WSUserList()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSGroupList">WSGroupList()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSRoleList">WSRoleList()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSCaseList">WSCaseList()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSProcessList">WSProcessList()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSSendVariables">WSSendVariables()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSDerivateCase">WSDerivateCase()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSNewCaseImpersonate">WSNewCaseImpersonate()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSNewCase">WSNewCase()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSAssignUserToGroup">WSAssignUserToGroup()</a></li>
+<li class="toc"><a href="Simple_Trigger_Web_Services.html#WSCreateUser">WSCreateUser()</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>ProcessMaker offers its web services in two formats: <i>WSDL Web Services</i> and <i>Simple Trigger Web Services</i>. When controlling ProcessMaker from an external application or script, use the standardized <a href="ProcessMaker_WSDL_Web_Services.html" title="ProcessMaker WSDL Web Services">WSDL (Web Services Description Language) functions</a> which can be called with any programming language such as PHP, Perl, Python, Ruby, VB.NET, C# or C++, which supports SOAP 1.2 and WSDL 1.1. When working with PHP in triggers, it is recommended to use ProcessMaker's Simple Trigger Web Services functions which have a much simpler syntax and less overhead than standard WSDL functions. These functions are named "<tt>WS...()</tt>". ProcessMaker's standard WSDL web services can be called in both triggers and in external scripts, whereas its simple trigger web services will only work inside triggers.</p><p>The standard WSDL web services pass objects with complicated structures as parameters and return even more complicated objects as their return value. In contrast, ProcessMaker's Simple Trigger Web Services use simpler data types for their parameters and return either integers or arrays which are simpler to parse than WSDL objects.</p><p>In addition to the two types of web services, there are corresponding <a href="ProcessMaker_Functions.html#ProcessMaker_Functions" title="ProcessMaker Functions">ProcessMaker Functions</a> named <strong><tt>PMF...()</tt></strong> to control ProcessMaker from within triggers. Unlike the web services functions, these ProcessMaker functions do not require a login and the creation of a SOAP client. They will execute as the currently logged-in user.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> From Version 2.0.42 <code>WS Functions</code> are deprecated.</font></p>
+
+<h2><span id="ReturnValues">Return Values</span></h2>
+<p>There are three standard types of return values for ProcessMaker's Simple Trigger Web Services functions. They generally return either an associative array containing a <tt>status_code</tt> and a <tt>message</tt>, or a numbered array of associative arrays containing a <tt>guid</tt> and a <tt>name</tt>.</p>
+<h3><span id="wsresponse">WS Response Associative Array:</span></h3>
+<p>If a <tt>WS...()</tt> function returns a status code and message, it will return an associative array with the following structure:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">associative array <br />
+(<br />
+&nbsp; [int status_code]<br />
+&nbsp; [string message]<br />
+&nbsp; [int timestamp]<br />
+)</div></div>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>int <strong>status_code</strong></i><strong> :</strong> An integer indicating the status or error number returned by the web service. If zero, then the function executed correctly. If a positive integer, then this is an error number. Check the documentation for each function for the different error numbers.</li><li><i>string <strong>message</strong></i><strong> :</strong> A message returned by the web service. If an error occurred, then this message will indicate the type of error.</li><li><i>int <strong>timestamp</strong></i><strong> :</strong> The datatime when the web service response was returned.</li></ul>
+<div id="wsListResponse" style="font-family: sans-serif; font-size: 12.6999998092651px; line-height: 19.0499992370605px;"><strong>WS List Array:</strong></div>
+<p><tt>WS...()</tt> list functions return a numbered array containing associative arrays:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">[0] array<br />
+(<br />
+&nbsp; &nbsp;associative array<br />
+&nbsp; &nbsp;(<br />
+&nbsp; &nbsp; &nbsp; [string guid]<br />
+&nbsp; &nbsp; &nbsp; [string name]<br />
+&nbsp; &nbsp;)<br />
+)<br />
+[1] array<br />
+(<br />
+&nbsp; &nbsp;associative array<br />
+&nbsp; &nbsp;(<br />
+&nbsp; &nbsp; &nbsp; [string guid]<br />
+&nbsp; &nbsp; &nbsp; [string name]<br />
+&nbsp; &nbsp;)<br />
+)<br />
+..</div></div>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>string <strong>guid</strong></i><strong>:</strong> The unique ID (of a group, role, process, task, etc.)</li><li><i>string <strong>name</strong></i><strong>:</strong> The name (of a group, role, process, task, etc.)</li></ul>
+<h2><span id="WSOpen">WSOpen()</span></h2>
+<p><tt>WSOpen()</tt> opens a connection for web services and returns a SOAP client object which is used by all subsequent other WS function calls.</p>
+
+<codeblock>object SoapClient <strong>WSOpen</strong>(<strong>boolean</strong> force=false)
+</codeblock>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> This function currently has a bug</a> and doesn't work.</font></p>
+<p><strong>Parameters:</strong></p>
+<ul><li><i>boolean <strong>force</strong></i><strong>:</strong> Optional parameter. Set to <tt>true</tt> to force a new connection to be created even if a valid connection already exists. If not included, will be set to <tt>false</tt> by default.</li></ul>
+<p><strong>Return Value:</strong></p>
+<p>A SoapClient object. If unable to establish a connection, returns NULL.</p>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$oClient</span> <span style="color: #339933;">=</span> WSOpen<span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$oClient</span> <span style="color: #339933;">!==</span> <span style="color: #009900; font-weight: bold;">NULL</span><span style="color: #009900;">&#41;</span><br />
+&nbsp;<span style="color: #009900;">&#123;</span> &nbsp; <br />
+&nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">// Continue with trigger code</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+<h2><span id="WSLogin">WSLogin()</span></h2>
+<p><tt>WSLogin()</tt> logs in a user to initiate a web services session in a ProcessMaker server.</p>
+
+<codeblock>string <strong>WSLogin</strong>(string username, string password, string endpoint)
+</codeblock>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> This function currently has a bug</a> and doesn't work.</font></p>
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string <strong>username</strong></i><strong> :</strong> The username of the user who will login to ProcessMaker. All subsequent actions will be limited to the permissions of that user. Remember that a standard production user only has the PM_LOGIN and PM_CASES permissions in his/her role.</li><li><i>string <strong>password</strong></i><strong> :</strong> The user's password encrypted as an MD5 hash with <tt>'md5:'</tt> prepended. For example: <tt>'md5:21232f297a57a5a743894a0e4a801fc3'</tt>. If a user's password is known, use PHP's <a href="http://php.net/manual/en/function.md5.php">md5()</a> function to create the MD5 hash. If the password is not known, use <a href="ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a> to look up the user's password in the field <tt>wf_&lt;WORKSPACE&gt;.USERS.USR_PASSWORD</tt>.</li><li><i>string <strong>endpoint</strong></i><strong> :</strong> The URI (address) of the WSDL definition of the ProcessMaker web services, which is found at:</li></ul>
+
+<dl><dl><dd><tt>http://&lt;IP-ADDRESS&gt;:&lt;PORT&gt;/sys&lt;WORKSPACE&gt;/en/green/services/wsdl</tt></dd></dl></dd></dl>
+
+<p><strong>Return Value:</strong></p>
+<p>The unique ID for the initiated session.</p>
+<p><strong>Example:</strong></p>
+<p>Login as the user "admin", using the password "admin" whose hash is generated by PHP's <tt>md5()</tt> function:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$pass</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'md5:'</span> <span style="color: #339933;">.</span> <a href="http://php.net/md5"><span style="color: #990000;">md5</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'admin'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$sessionId</span> <span style="color: #339933;">=</span> WSLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'admin'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$pass</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'http://localhost/sysworkflow/en/green/services/wsdl'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Lookup the "admin" user's password in the ProcessMaker database and then use it to login:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT USR_PASSWORD FROM USERS WHERE USR_USERNAME='admin'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&amp;</span>amp<span style="color: #339933;">;&amp;</span>amp<span style="color: #339933;">;</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$pass</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_PASSWORD'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$pass</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'md5:'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$pass</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$sessionId</span> <span style="color: #339933;">=</span> WSLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'admin'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$pass</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'http://localhost/sysworkflow/en/green/services/wsdl'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<p><i>Notice that "md5:" has to be put before the recovered password from the database, as in the example.</i></p>
+<p>By default sessions will close after 5 minutes of inactivity. To extend the inactivity time, open the file: <tt>/&lt;WORKSPACE&gt;/engine/classes/class.wsBase.php</tt><br>On a Linux/UNIX server it will generally be found at: <tt>/opt/processmaker/workflow/engine/classes/class.wsBase.php</tt><br>Look for the line:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$session</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setSesDueDate</span><span style="color: #009900;">&#40;</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-d H:i:s'</span><span style="color: #339933;">,</span><a href="http://php.net/mktime"><span style="color: #990000;">mktime</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'H'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'i'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">+</span><span style="color: #cc66cc;">5</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'s'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'m'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'d'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></div></div>
+
+<p>Change the number 5 to something larger. For instance to have sessions expire after 60 minutes of inactivity:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$session</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setSesDueDate</span><span style="color: #009900;">&#40;</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-d H:i:s'</span><span style="color: #339933;">,</span><a href="http://php.net/mktime"><span style="color: #990000;">mktime</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'H'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'i'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">+</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'s'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'m'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'d'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></div></div>
+
+<h2><span id="WSGetSession">WSGetSession()</span></h2>
+<p><tt>WSGetSession()</tt> returns the unique ID for the current active session.</p>
+
+<codeblock>string <strong>WSGetSession</strong>(void)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<p>None.</p>
+<p><strong>Return Value:</strong></p>
+<p>The unique ID for the current active session.</p>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$sessionId</span> <span style="color: #339933;">=</span> WSGetSession<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSTaskCase">WSTaskCase()</span></h2>
+<p><tt>WSTaskCase()</tt> returns all the tasks which has open delegations for the indicated case.</p>
+
+<codeblock>array <strong>WSTaskCase</strong>(string caseId)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li>string caseId<i> :'</i> The unique ID for the case. Case UIDs can be found with WSCaseList() and are stored in the field wf_&lt;WORKSPACE&gt;.APPLICATION.APP_UID.</li></ul>
+<p><strong>Return Value:</strong></p>
+<p>An array of tasks in the indicated case which have open delegations. The array has the following structure:</p>
+
+<codeblock>
+[0] array
+(
+   associative array
+   (
+      [string guid]
+      [string name]
+   )
+)
+..
+</codeblock>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>string <strong>guid</strong></i><strong> :</strong> The unique ID of a task.</li><li><i>string <strong>name</strong></i><strong> :</strong> The name of a task.</li></ul>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@@</span>PendingTasks <span style="color: #339933;">=</span> WSTaskCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<h2><span id="WSTaskList">WSTaskList()</span></h2>
+<p><tt>WSTaskList()</tt> returns a list of tasks in which the logged-in user can initiate cases or is assigned to these cases.</p>
+
+<codeblock>array <strong>WSTaskList</strong>(void)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li>It does not need any parameters.</li></ul>
+<p><strong>Return Value:</strong></p>
+<ul><li>This function returns a list of tasks with the following structure:</li></ul>
+
+<codeblock>[0] array
+(
+   associative array
+   (
+      [string guid]
+      [string name]
+   )
+)
+..
+</codeblock>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>string <strong>guid</strong></i><strong>:</strong> The unique ID for a task.</li><li><i>string <strong>name</strong></i><strong>:</strong> The name of a task.</li></ul>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@@</span>Tasks <span style="color: #339933;">=</span> WSTaskList<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSUserList">WSUserList()</span></h2>
+<p><tt>WSUserList()</tt> returns a list of users whose status is "ACTIVE" in the current workspace. Note that the logged-in user must have PM_USERS permission in his/her role to see UsersList.</p>
+
+<codeblock>array <strong>WSUserList</strong>(void)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li>It does not need any parameter.</li></ul>
+<p><strong>Return Value:</strong></p>
+<ul><li>The function returns a list of users, with the following structure:</li></ul>
+
+<codeblock>[0] array
+(
+   associative array
+   (
+      [string guid]
+      [string name]
+   )
+)
+..
+</codeblock>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>string <strong>guid</strong></i><strong>:</strong> The unique ID for a user.</li><li><i>string <strong>name</strong></i><strong>:</strong> The name of a user.</li></ul>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;WSLogin<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'admin'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'admin'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #339933;">@@</span>aUsers <span style="color: #339933;">=</span> WSUserList<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSGroupList">WSGroupList()</span></h2>
+<p><tt>WSGroupList()</tt> returns a list of active groups in a workspace. Note that the logged in user must have PM_USERS permission in his/her role to see the groups.</p>
+
+<codeblock>array <strong>WSGroupList</strong>(void)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li>It does not need any parameter.</li></ul>
+<p><strong>Return Value:</strong></p>
+<ul><li>It returns a list of active groups in the current workspace, with the following structure:</li></ul>
+
+<codeblock>[0] array
+(
+   associative array
+   (
+      [string guid]
+      [string name]
+   )
+)
+..
+</codeblock>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>string <strong>guid</strong></i><strong>:</strong> The unique ID for a group.</li><li><i>string <strong>name</strong></i><strong>:</strong> The name of a group.</li></ul>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@@</span>aGroups <span style="color: #339933;">=</span> WSGroupList<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSRoleList">WSRoleList()</span></h2>
+<p><tt>WSRoleList()</tt> returns a list of roles in the current workspace. Note that the logged in user must have PM_USERS permission in his/her role to have permission to see the roles.</p>
+
+<codeblock>array <strong>WSRoleList</strong>(void)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li>This function does not need parameters.</li></ul>
+<p><strong>Return Value:</strong></p>
+<ul><li>It returns a list of roles with the following structure:</li></ul>
+
+<codeblock>[0] array
+(
+   associative array
+   (
+      [string guid]
+      [string name]
+   )
+)
+..
+</codeblock>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>string <strong>guid</strong></i><strong>:</strong> The unique ID for a role.</li><li><i>string <strong>name</strong></i><strong>:</strong> The name of a role.</li></ul>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@@</span>GridRoles <span style="color: #339933;">=</span> WSRoleList<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSCaseList">WSCaseList()</span></h2>
+<p><tt>WSCaseList()</tt> returns a list of the cases to which the logged in user has privileges to see them.</p>
+
+<codeblock>array <strong>WSCaseList</strong>(void)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li>This function does not need any parameter.</li></ul>
+<p><strong>Return Value:</strong></p>
+<ul><li>It returns a list of cases with the following structure:</li></ul>
+
+<codeblock>[0] array
+(
+   associative array
+   (
+      [string guid]
+      [string name]
+   )
+)
+..
+</codeblock>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>string <strong>guid</strong></i><strong>:</strong> The unique ID for a case.</li><li><i>string <strong>name</strong></i><strong>:</strong> The name of a case.</li></ul>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@@</span>GRID_CASES <span style="color: #339933;">=</span> WSCaseList<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<h2><span id="WSProcessList">WSProcessList()</span></h2>
+<p><tt>WSProcessList()</tt> returns a list of processes in the current workspace.</p>
+
+<codeblock>array <strong>WSProcessList</strong>(void)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li>It does not need any parameter.</li></ul>
+<p><strong>Return Value:</strong></p>
+<p>A list of processes with the following structure:</p>
+
+<codeblock>[0] array
+(
+   associative array
+   (
+      [string guid]
+      [string name]
+   )
+)
+..
+</codeblock>
+
+<p><strong>Where:</strong></p>
+<ul><li><i>string <strong>guid</strong></i><strong>:</strong> The unique ID for a process.</li><li><i>string <strong>name</strong></i><strong>:</strong> The name of a process.</li></ul>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #339933;">@@</span>GRID_PROCESSES <span style="color: #339933;">=</span> WSProcessList<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>This example will return the processes list of the workflow workspace.</p>
+
+<h2><span id="WSSendVariables">WSSendVariables()</span></h2>
+<p><tt>WSSendVariables()</tt> sends two variables to the specified case. It will create new case variables if they don't already exist. If they do exist, it will change the value of the existing variables. If only one variable needs to be sent a case, use empty strings for the second variable name and value.</p>
+
+<codeblock>array <strong>WSSendVariables</strong>(string caseId, string varname2, string varvalue2, string varname2, string varvalue2)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string <strong>caseId</strong></i><strong> :</strong> The unique ID of the case which will receive the variables. To send variables to the current case, use the system variable @@APPLICATION.</li><li><i>string <strong>varname1</strong></i><strong> :</strong> The name of the first variable to be sent to the created case.</li><li><i>string <strong>varvalue1</strong></i><strong> :</strong> The value of the first variable to be sent to the created case.</li><li><i>string <strong>varname2</strong></i><strong> :</strong> The name of the second variable to be sent to the created case.</li><li><i>string <strong>varvalue2</strong></i><strong> :</strong> The value of the second variable to be sent to the created case.</li></ul>
+<p><strong>Return Value:</strong></p>
+<ul><li>The function returns a <a href="Simple_Trigger_Web_Services.html#wsresponse">WS Response</a> associative array.</li></ul>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;WSSendVariables<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'ContactCompany'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Acme Inc.'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ContactDate'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'2010-12-31'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSDerivateCase">WSDerivateCase()</span></h2>
+<p><tt>WSDerivateCase()</tt> routes (derivates) a case, i.e., moves the case to the next task in the process according its routing rules. Note that the logged in user must be assigned to the current task of the case or have proper permissions to route the case.</p>
+
+<codeblock>array <strong>WSDerivateCase</strong>(string caseId, int delegation)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string <strong>caseId</strong></i><strong> :</strong> The unique ID for a case, which can be found with WSCaseList() or by examining the field wf_&lt;WORKSPACE&gt;.APPLICATION.APP_UID. To route the current case, use the system variable @@APPLICATION. Note that the case UID changes with every task in a process.</li><li><i>int <strong>delegation</strong></i><strong> :</strong> The delegation index for the task, which can be found by examining the field wf_&lt;WORKSPACE&gt;.APP_DELEGATION.DEL_INDEX. Note that the delegation index starts counting from 1 and can change frequently, so it is a good idea to lookup the delegation index immediately before calling WSDerivateCase().</li></ul>
+<p><strong>Return Value:</strong></p>
+<p>A <a href="Simple_Trigger_Web_Services.html#wsresponse">WS Response</a> associative array.</p>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$app</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT DEL_INDEX FROM APP_DELEGATION &quot;</span> <span style="color: #339933;">.</span> <br />
+&nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$app</span>' AND DEL_THREAD_STATUS='OPEN'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp;WSDerivateCase<span style="color: #009900;">&#40;</span><span style="color: #000088;">$app</span><span style="color: #339933;">,</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSNewCaseImpersonate">WSNewCaseImpersonate()</span></h2>
+<p><tt>WSNewCaseImpersonate()</tt> creates a case with any user with two initial case variables.</p>
+
+<codeblock>array <strong>WSNewCaseImpersonate</strong>(string processId, string userId, string varname1, string varvalue1, 
+                           string varname2, string varvalue2)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string <strong>processId</strong></i><strong> :</strong> The unique ID for the process.</li><li><i>string <strong>userId</strong></i><strong> :</strong> The unique ID for the user.</li><li><i>string <strong>varname1</strong></i><strong> :</strong> The name of the first variable to be sent to the created case.</li><li><i>string <strong>varvalue1</strong></i><strong> :</strong> The value of the first variable to be sent to the created case.</li><li><i>string <strong>varname2</strong></i><strong> :</strong> The name of the second variable to be sent to the created case.</li><li><i>string <strong>varvalue2</strong></i><strong> :</strong> The value of the second variable to be sent to the created case.</li></ul>
+<p>To not to send any case variables to the new case, set varname1, varvalue1, varname2, and varvalue2 to empty strings.</p>
+<p><strong>Return Value:</strong></p>
+<p>A <a href="Simple_Trigger_Web_Services.html#wsresponse">WS Response</a> associative array.</p>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;WSNewCaseImpersonate<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #0000ff;">'OrderDate'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'2010-12-31'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSNewCase">WSNewCase()</span></h2>
+<p><tt>WSNewCase()</tt> creates a new case starting with a specified task and using two initial case variables.</p>
+
+<codeblock>array <strong>WSNewCase</strong>(string processId, string taskId, string varname1, string varvalue1, 
+                string varname2, string varvalue2)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string <strong>processId</strong></i><strong> :</strong> The unique ID for the process. To use the current process, use the system variable @@PROCESS.</li><li><i>string <strong>userId</strong></i><strong> :</strong> The unique ID for the user. To use the currently logged-in user, use the system variable @@USER_LOGGED.</li><li><i>string <strong>varname1</strong></i><strong> :</strong> The name of the first variable to be sent to the created case.</li><li><i>string <strong>varvalue1</strong></i><strong> :</strong> The value of the first variable to be sent to the created case.</li><li><i>string <strong>varname2</strong></i><strong> :</strong> The name of the second variable to be sent to the created case.</li><li><i>string <strong>varvalue2</strong></i><strong> :</strong> The value of the second variable to be sent to the created case.</li></ul>
+<p><strong>Return Value:</strong></p>
+<p>A <a href="Simple_Trigger_Web_Services.html#wsresponse">WS Response</a> associative array.</p>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;WSNewCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #0000ff;">'Company'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Acme Inc.'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'ContactDate'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'2010-12-31'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSAssignUserToGroup">WSAssignUserToGroup()</span></h2>
+<p><tt>WSAssignUserToGroup()</tt> assigns a user to a group (as long as the logged in user has the PM_USERS permission in their role).</p>
+
+<codeblock>array <strong>WSAssignUserToGroup</strong>(string userId, string groupId)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string <strong>userId</strong></i><strong> :</strong> The unique ID for a user.</li><li><i>string <strong>groupId</strong></i><strong> :</strong> The unique ID for a group.</li></ul>
+<p><strong>Return Value:</strong></p>
+<p>A <a href="Simple_Trigger_Web_Services.html#wsresponse">WS Response</a> associative array.</p>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT CON_ID FROM CONTENT WHERE &quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; <span style="color: #0000ff;">&quot;CON_VAL='Employees' AND CON_CATEGORY='GRP_TITLE'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$groupUID</span> <span style="color: #339933;">=</span> result<span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'CON_ID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp;WSAssignUserToGroup<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #000088;">$groupUID</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="WSCreateUser">WSCreateUser()</span></h2>
+<p><tt>WSCreateUser()</tt> creates a new user in ProcessMaker.</p>
+
+<codeblock>array <strong>WSCreateUser</strong>(string userId, string password, string firstname, string lastname, 
+                   string email, string role)
+</codeblock>
+
+<p><strong>Parameters:</strong></p>
+<ul><li><i>string <strong>userId</strong></i><strong>:</strong> The username of the new user, which can be up to 32 characters long.</li><li><i>string <strong>password</strong></i><strong>:</strong> The password of the new user, which can be up to 32 characters long. See <a href="Customizing_Authentication.html" title="Customizing Authentification">Customizing Authentification</a>.</li><li><i>string <strong>firstname</strong></i><strong>:</strong> The first name(s) of the new user, which can be up to 50 characters long.</li><li><i>string <strong>lastname</strong></i><strong>:</strong> The last name(s) of the new user, which can be up to 50 characters long.</li><li><i>string <strong>email</strong></i><strong>:</strong> The e-mail of the new user, which can be up to 100 characters long.</li><li><i>string <strong>role</strong></i><strong>:</strong> The role of the new user, such as 'PROCESSMAKER_ADMIN' and 'PROCESSMAKER_OPERATOR'.</li></ul>
+<p>To set the value of other information about the new user such as the address and phone number, use executeQuery() to insert values in the USERS table after calling <tt>WSCreateUser()</tt>.</p>
+<p><strong>Return Value:</strong></p>
+<p>A <a href="Simple_Trigger_Web_Services.html#wsresponse">WS Response</a> associative array.</p>
+<p><strong>Example:</strong></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> WSCreateUser<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'jdoe'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'P@22w0rd'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Jane'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Doe'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'jdoe@company.com'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'PROCESSMAKER_OPERATOR'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'status_code'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;INSERT INTO USERS FIELDS(USR_ADDRESS, USR_PHONE) &quot;</span> <span style="color: #339933;">.</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;VALUES('123 W. Capital St.', '(276)235-1357') WHERE USR_USERNAME='jdoe'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

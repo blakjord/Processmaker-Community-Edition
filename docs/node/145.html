@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/Trigger_Examples.html" />
+<link rel="shortlink" href="145.html" />
+<title>Trigger Examples | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"g7v-2KKEt8gq9Px7__kJ2_Rgv7Z2UBK1yb46V29tz9Q","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-145 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="145.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-gKYvwd-a1fzQUU4oR4uEV4UNhCv898tHbp-MV7T1Bb0" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">Trigger Examples</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.2/Trigger_Examples.html" class="">3.8</a></li><li><a href="../3.2/Trigger_Examples.html" class="">3.7</a></li><li><a href="../3.2/Trigger_Examples.html" class="">3.6</a></li><li><a href="../3.2/Trigger_Examples.html" class="">3.5</a></li><li><a href="../3.2/Trigger_Examples.html" class="">3.4</a></li><li><a href="../3.2/Trigger_Examples.html" class="">3.3</a></li><li><a href="../3.2/Trigger_Examples.html" class="">3.2</a></li><li><a href="../3.0/Trigger_Examples.html" class="">3.1</a></li><li><a href="../3.0/Trigger_Examples.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="Trigger Examples" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="145.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Trigger Examples 1/5</option><option value="40">Give Trigger Examples 2/5</option><option value="60" selected="selected">Give Trigger Examples 3/5</option><option value="80">Give Trigger Examples 4/5</option><option value="100">Give Trigger Examples 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.8</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-bg1rKa393nPIpbCBjFqPNq5GxUDoPAp6gVx8Y7KCe1c" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="145.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="145.html#Overview">Overview</a></li>
+<li class="toc"><a href="145.html#Aborting_New_Cases_Under_Certain_Circumstances">Aborting New Cases Under Certain Circumstances</a></li>
+<li class="toc"><a href="145.html#Workaround_for_Global_Variables">Workaround for Global Variables</a></li>
+<ol class="toc">
+<li class="toc"><a href="145.html#Global_Counters_for_Cases">Global Counters for Cases</a></li>
+</ol>
+<li class="toc"><a href="145.html#Routing_.28Derivating.29_all_Parallel_Tasks_in_a_Case">Routing (Derivating) all Parallel Tasks in a Case</a></li>
+<li class="toc"><a href="145.html#Routing_Parallel_Tasks_after_Completing_a_Fixed_Number">Routing Parallel Tasks after Completing a Fixed Number</a></li>
+<li class="toc"><a href="145.html#Displaying_a_List_of_Cases_in_a_Grid">Displaying a List of Cases in a Grid</a></li>
+<li class="toc"><a href="145.html#Skipping_the_Next_Task_in_a_Case">Skipping the Next Task in a Case</a></li>
+<li class="toc"><a href="145.html#Uncancelling_a_Case">Uncancelling a Case</a></li>
+<li class="toc"><a href="145.html#Executing_a_Task_a_Variable_Number_of_Times">Executing a Task a Variable Number of Times</a></li>
+<ol class="toc">
+<li class="toc"><a href="145.html#Repeating_a_Task_with_a_Loop-Around">Repeating a Task with a Loop-Around</a></li>
+<ol class="toc">
+<li class="toc"><a href="145.html#If_a_Task_May_Repeat_Zero_Times">If a Task May Repeat Zero Times</a></li>
+<li class="toc"><a href="145.html#Drawbacks">Drawbacks</a></li>
+</ol>
+<li class="toc"><a href="145.html#A_Variable_Number_of_Parallel_Tasks">A Variable Number of Parallel Tasks</a></li>
+</ol>
+<li class="toc"><a href="145.html#Sending_Grid_Information_via_Email">Sending Grid Information via Email</a></li>
+<li class="toc"><a href="145.html#Changing_Case_Status_to_TO_DO">Create new case and change its status</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>Triggers provide a great deal of customization and flexibility to process design. These examples provide some ideas for more advanced uses of triggers.</p>
+<h2><span id="Aborting_New_Cases_Under_Certain_Circumstances">Aborting New Cases Under Certain Circumstances</span></h2>
+
+<p>A trigger could be written to abort an existing case under certain circumstances. For instance, suppose there is a process where users should not open a new case if there is already an existing case which hasn't yet been completed (or canceled). The following trigger code could be inserted before the first step in the initial task to lookup whether there is already a case assigned to the current logged-in user whose <strong><tt>APP_DELEGATION.DEL_THREAD_STATUS</tt></strong> field is equal to <tt>'OPEN'</tt>, meaning that the task hasn't hasn't been completed (or canceled) yet. If there is, then the new case which was just started will be deleted and a message will be displayed in red to the user to first complete the existing case.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp;<span style="color: #666666; font-style: italic;">//assign system variables to PHP variables so can be inserted in strings</span><br />
+&nbsp;<span style="color: #000088;">$user</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">;</span> <br />
+&nbsp;<span style="color: #000088;">$process</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>PROCESS<span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #666666; font-style: italic;">//Query to find any uncompleted steps assigned to logged-in user</span><br />
+&nbsp;<span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT * FROM APP_DELEGATION WHERE PRO_UID='<span style="color: #006699; font-weight: bold;">$process</span>' AND <br />
+&nbsp; &nbsp;USR_UID='<span style="color: #006699; font-weight: bold;">$user</span>' AND DEL_THREAD_STATUS='OPEN'&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$res</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #666666; font-style: italic;">//if any open tasks are are found, assigned to user: </span><br />
+&nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$res</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$res</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><br />
+&nbsp;<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$c</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Cases<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$c</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">removeCase</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//delete the existing case</span><br />
+&nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//Look up info on the existing case:</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$res</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$resExisting</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT * FROM APPLICATION WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$caseNo</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$resExisting</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_NUMBER'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$resExisting</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$caseIdx</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$resExisting</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//Finally display message to user to first complete other case and redirect to the existing case </span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">SendMessageText</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Case Aborted. Please complete or cancel this Case #<span style="color: #006699; font-weight: bold;">$caseNo</span> before starting a new case&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'WARNING'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; G<span style="color: #339933;">::</span><a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Location: cases_Open?APP_UID=<span style="color: #006699; font-weight: bold;">$caseId</span>&amp;DEL_INDEX=<span style="color: #006699; font-weight: bold;">$caseIdx</span>&quot;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//abort trigger to prevent any errors</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="Workaround_for_Global_Variables">Workaround for Global Variables</span></h2>
+<p>ProcessMaker does not have global variables, which can be used for all cases and processes. The best workaround for a global variable is to store values in a PM Table or an external database, and then look it up when needed with <a href="../index.php/ProcessMaker_Functions.html#executeQuery.28.29" title="ProcessMaker Functions">executeQuery()</a>. When needing to permanently change the value of the variable, write to the database.</p>
+<p>For example, a PM Table named "GLOBALS" could be created with the fields "VARIABLE" and "VALUE". To store the names of the managers of a company, the following data could be stored in the "GLOBALS" PM Table:</p>
+
+<codeblock>
+VARIABLE           VALUE
+----------------   -------------------------------
+CEO                Jane Doe
+COO                John Smith
+CFO                Billy Bragg
+SALES_MANAGER      Sarah Quimby
+SUPPORT_MANAGER    Sally Simpson
+</codeblock>
+
+<p>Then use the following query to look up the "CEO" global variable:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT VALUE FROM PMT_GLOBALS WHERE VARIABLE='CEO'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$ceo</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'VALUE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$ceo</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span></div></div>
+
+<p>To set the "CEO" global variable to "Mary Marvin":</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;UPDATE PMT_GLOBALS SET VALUE='Mary Marvin' WHERE VARIABLE='CEO'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> In ProcessMaker 2.0+, PM Tables have "<tt>PMT_</tt>" prepended to their names in the <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database.</font></p>
+
+<h3><span id="Global_Counters_for_Cases">Global Counters for Cases</span></h3>
+<p>PM Tables can be used to implement global counters that can work across all cases. For example, if needing to keep a counter of the number of cases for each department in an organization, create a PM Table named "COUNTERS" with the fields "VARIABLE" and "VALUE" with the following contents:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">VARIABLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VALUE<br />
+------------------------ &nbsp;-------<br />
+SALES_COUNTER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0<br />
+FINANCE_COUNTER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0<br />
+HUMAN_RESOURCES_COUNTER &nbsp; 0</div></div>
+
+<p>Then, add a trigger to every case to increment the counter and display the number in the counter in a DynaForm when beginning a new case. For example a new case in the Finance department would execute the following trigger before the first step in the first task:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//get the current value of the FINANCE_COUNTER and increment it:</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT VALUE FROM PMT_COUNTERS WHERE VARIABLE='FINANCE_COUNTER'&quot;</span><span style="color: #009900;">&#41;</span> or <br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error accessing the COUNTERS PM Table!&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@%</span>counter <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'VALUE'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">+</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//write the new counter value to the database:</span><br />
+&nbsp; &nbsp;executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;UPDATE PMT_COUNTERS SET VALUE=&quot;</span> <span style="color: #339933;">.</span> <span style="color: #339933;">@%</span>counter <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot; WHERE VARIABLE='FINANCE_COUNTER'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@%</span>counter <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span></div></div>
+
+<p>Then, add a field named "counter" to a subsequent DynaForm, so the value of the counter can be displayed to the user.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> In this case, the <tt>VALUE</tt> field is an INTEGER type, so its value doesn't need to be enclosed in single quotation marks like a CHAR or VARCHAR field.</font></p>
+
+<h2><span id="Routing_.28Derivating.29_all_Parallel_Tasks_in_a_Case">Routing (Derivating) all Parallel Tasks in a Case</span></h2>
+<p>A trigger can be used to automatically route (derivate) all the the parallel tasks in a case.</p>
+<p>For example, a purchase request is sent to 3 managers as 3 parallel tasks. Once one manager makes a decision to approve or disapprove the purchase request, the case will automatically route on for all the other managers, so the first manager to make a decision will decide for the others and the case will be removed from the inbox of the other managers.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//if set, then a decision was submitted by the manager</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>ManagerDecision<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$caseId</span><span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$userLogged</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$index</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@%</span>INDEX<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//Select all the other parallel tasks for the current case that are still open</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT DEL_INDEX, U.USR_USERNAME FROM APP_DELEGATION AD, USERS U &quot;</span><span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;WHERE AD.APP_UID = '<span style="color: #006699; font-weight: bold;">$case_id</span>' AND AD.DEL_THREAD_STATUS='OPEN' AND &quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;AD.USR_UID = U.USR_UID AND AD.DEL_INDEX &lt;&gt; <span style="color: #006699; font-weight: bold;">$index</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$threads</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$threads</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$threads</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> &nbsp; <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$threads</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$thread</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//Login as the assigned users and route on their tasks </span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$sql</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT USR_PASSWORD FROM USERS WHERE USR_USERNAME = '<span style="color: #006699; font-weight: bold;">{$thread['USR_USERNAME']}</span>'&quot;</span><span style="color: #339933;">;</span> &nbsp; <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$task_user</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$sql</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'rbac'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$task_user</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&amp;&amp;</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$task_user</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$pass</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'md5:'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$task_user</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_PASSWORD'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WSLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$thread</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_USERNAME'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$pass</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WSDerivateCase<span style="color: #009900;">&#40;</span><span style="color: #000088;">$case_id</span><span style="color: #339933;">,</span> <span style="color: #000088;">$thread</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span> &nbsp; <br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="Routing_Parallel_Tasks_after_Completing_a_Fixed_Number">Routing Parallel Tasks after Completing a Fixed Number</span></h2>
+
+<p>A process to approve expenses needs at least 3 out of 5 managers to review the expense before a decision can be made. The process has 5 parallel tasks which are each assigned to one of the managers. The following trigger is fired <i>before assignment</i> of all the parallel tasks (which means that it will be fired after all the steps have been completed). The trigger code checks to see whether at least two of the other parallel tasks have already been completed. Including the current task, that would mean that three tasks have been completed, so the rest of the parallel tasks will automatically be routed (derivated). The code looks up the assigned users for those tasks and logins as those users and calls the routeCase() web service for each task.</p>
+<p>First go to <strong>ADMIN &gt; Web Services Test</strong> and use the <a href="../index.php/ProcessMaker_WSDL_Web_Services.html#Task_List" title="ProcessMaker WSDL Web Services">taskList()</a> web service to look up the unique IDs for all the parallel tasks, which will be used in the following trigger code:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//ID for current case</span><br />
+<span style="color: #000088;">$taskId</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>TASK<span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$countClosedTasks</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span><br />
+<span style="color: #666666; font-style: italic;">//list of the IDs for the 5 parallel tasks:</span><br />
+<span style="color: #000088;">$parallelTasks</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;'1129023074e8e00f01f0642011534782', '7837951304e8dd53d613964054647943', &quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">&quot;'3001879264e8dbd30a46809038822000', '2506791564e8de6ea87bfc9026376538', '7564234874e8de6ec4fbe66022890094'&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$tasks</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT * FROM APP_DELEGATION WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>' AND TAS_UID in (<span style="color: #006699; font-weight: bold;">$parallelTasks</span>) AND<br />
+&nbsp; &nbsp;TAS_UID&lt;&gt;'<span style="color: #006699; font-weight: bold;">$taskId</span>'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <br />
+<span style="color: #b1b100;">foreach</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$tasks</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$task</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>task<span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_THREAD_STATUS'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">'CLOSED'</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$countClosedTasks</span><span style="color: #339933;">++;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #666666; font-style: italic;">//If at least 2 of the parallel tasks have been completed, then route on the rest </span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$countClosedTasks</span> <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">2</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$client</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> SoapClient<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'http://myserver.com/sysworkflow/en/green/services/wsdl2'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$tasks</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$task</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//if the task is open, then login as its user and route it on</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$task</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_THREAD_STATUS'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">'OPEN'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT USR_USERNAME, USR_PASSWORD FROM USERS WHERE USR_UID='<span style="color: #006699; font-weight: bold;">{$task['USR_UID']}</span>'&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rbac'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$params</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'userid'</span> &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_USERNAME'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'password'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'md5:'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_PASSWORD'</span><span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$client</span><span style="color: #339933;">-&gt;</span>__SoapCall<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'login'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status_code</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000088;">$sessionId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">else</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Unable to connect to ProcessMaker.<span style="color: #000099; font-weight: bold;">\n</span>Error Number: <span style="color: #006699; font-weight: bold;">{$result-&gt;status_code}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;Error Message: <span style="color: #006699; font-weight: bold;">{$result-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$params</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'sessionId'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$sessionId</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'caseId'</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$caseId</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'delIndex'</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$task</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INDEX'</span><span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$client</span><span style="color: #339933;">-&gt;</span>__SoapCall<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'routeCase'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status_code</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error deriving case: <span style="color: #006699; font-weight: bold;">{$result-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp;<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="Displaying_a_List_of_Cases_in_a_Grid">Displaying a List of Cases in a Grid</span></h2>
+<p>A grid with information and links to cases can be displayed in a DynaForm. For example, to display a list of cases for the currently logged in user in a grid, first create a grid named "casesGrid" with the fields "caseNumber" (textbox), "processName" (textbox), "taskName" (textbox), "dueDate"(date), "linkToCase" (link), "urlForCase" (hidden), and "labelForCase" (hidden). Then, fire a trigger before the DynaForm to populate the grid, with code like this:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@=</span>casesGrid <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$userId</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$q</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT APP_UID, DEL_INDEX FROM APP_DELEGATION WHERE USR_UID='<span style="color: #006699; font-weight: bold;">$userId</span>' and DEL_THREAD_STATUS='OPEN'&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$cases</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$q</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$cases</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$cases</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;=</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$cases</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$cases</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$caseIndex</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$cases</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$oCase</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Cases<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$aCaseInfo</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$oCase</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">loadCase</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$caseId</span><span style="color: #339933;">,</span> <span style="color: #000088;">$caseIndex</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//look up the Task Name and Process Name:</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$lang</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>SYS_LANG<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT CON_VALUE FROM CONTENT WHERE CON_ID = '<span style="color: #006699; font-weight: bold;">{$aCaseInfo['PRO_UID']}</span>' AND CON_CATEGORY='PRO_TITLE' AND CON_LANG='<span style="color: #006699; font-weight: bold;">$lang</span>'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$processName</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'CON_VALUE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT CON_VALUE FROM CONTENT WHERE CON_ID = '<span style="color: #006699; font-weight: bold;">{$aCaseInfo['TAS_UID']}</span>' AND<br />
+CON_CATEGORY='TAS_TITLE' AND CON_LANG='<span style="color: #006699; font-weight: bold;">$lang</span>'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000088;">$taskName</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'CON_VALUE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #339933;">@=</span>casesGrid<span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;caseNumber&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCaseInfo</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_NUMBER'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;processName&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$processName</span> <span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;taskName&quot;</span> <span style="color: #339933;">=&gt;</span> &nbsp;<span style="color: #000088;">$taskName</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;dueDate&quot;</span> <span style="color: #339933;">=&gt;</span> &nbsp;<span style="color: #000088;">$aCaseInfo</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_TASK_DUE_DATE'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;linkToCase&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;urlForCase&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&quot;../cases/cases_Open?APP_UID=<span style="color: #006699; font-weight: bold;">$caseId</span>&amp;DEL_INDEX=<span style="color: #006699; font-weight: bold;">$caseIndex</span>&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;labelForCase&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$aCaseInfo</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_TITLE'</span><span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@=</span>casesGrid <span style="color: #339933;">=</span> orderGrid<span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>casesGrid<span style="color: #339933;">,</span> <span style="color: #0000ff;">'dueDate'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'DESC'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div></div>
+
+<p>Then, add the following JavaScript code to the DynaForm to set the links in the casesGrid:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">var</span> totalRows <span style="color: #339933;">=</span> Number_Rows_Grid<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;MyGrid&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;Date&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000000; font-weight: bold;">var</span> i <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;=</span> totalRows<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> &nbsp; <br />
+&nbsp; &nbsp; getGridField<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;casesGrid&quot;</span><span style="color: #339933;">,</span> i<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;linkToCase&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">.</span>href <span style="color: #339933;">=</span> getGridValueById<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;casesGrid&quot;</span><span style="color: #339933;">,</span> i<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;urlForCase&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; getGridField<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;casesGrid&quot;</span><span style="color: #339933;">,</span> i<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;linkToCase&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">.</span>innerHTML <span style="color: #339933;">=</span> getGridValueById<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;casesGrid&quot;</span><span style="color: #339933;">,</span> i<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;labelForCase&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="Skipping_the_Next_Task_in_a_Case">Skipping the Next Task in a Case</span></h2>
+
+<p>If inside the current task, the rest of the steps in that task can be skipped by calling the <a href="../index.php/ProcessMaker_Functions.html#PMFDerivateCase.28.29">PMFDerivateCase()</a> function in a trigger. However, the PMFDerivateCase() function can't be called for tasks to which the current logged-in user is not assigned. Moreover, <code>PMFDerivateCase()</code> can't be called for tasks which don't yet have a record in the <strong><tt>wf_&lt;WORKSPACE&gt;.APP_DELEGATION</tt></strong> table and whose <strong><tt>DEL_THREAD_STATUS</tt></strong> field does not equal <code>"OPEN"</code>. For these reasons, <code>PMFDerivateCase()</code> cannot be used to skip the <i>next</i> task in a case.</p>
+<p>Instead, to skip the next task, create a trigger which fires <i>after</i> derivation/routing of the previous task. After derivation, a record has already been created in the <strong><tt>wf_&lt;WORKSPACE&gt;.APP_DELEGATION</tt></strong> table, so the assigned user and the delegation index for the next task can be looked up with <a href="../index.php/ProcessMaker_Functions.html#executeQuery.28.29" title="ProcessMaker Functions">executeQuery()</a>. Also look up the MD5 hash for that user's password in the RBAC database. Then, login as that next assigned user with the <a href="../index.php/ProcessMaker_WSDL_Web_Services.html#Logging_in_with_ProcessMaker.27s_WSDL_web_services" title="ProcessMaker WSDL Web Services">login()</a> web service and then call <a href="../index.php/ProcessMaker_WSDL_Web_Services.html#Route_.28derivate.29_a_case" title="ProcessMaker WSDL Web Services">routeCase()</a> to route through the next task.</p>
+<p>For example:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">;</span><br />
+<span style="color: #666666; font-style: italic;">//lookup the user assigned to the next task in the case</span><br />
+<span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT AD.DEL_INDEX, U.USR_USERNAME<br />
+&nbsp; &nbsp;FROM APP_DELEGATION AD, USERS U<br />
+&nbsp; &nbsp;WHERE AD.APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>' AND<br />
+&nbsp; &nbsp;AD.DEL_INDEX=(SELECT MAX(DEL_INDEX) FROM APP_DELEGATION WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>')<br />
+&nbsp; &nbsp;AND AD.USR_UID=U.USR_UID&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$nextUser</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_USERNAME'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$nextIndex</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #666666; font-style: italic;">//lookup the md5 hash for the password</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT USR_PASSWORD FROM USERS WHERE USR_USERNAME='<span style="color: #006699; font-weight: bold;">$nextUser</span>'&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'rbac'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$nextPass</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'md5:'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_PASSWORD'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #000088;">$client</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> SoapClient<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'http://192.168.1.76:2036/sysworkflow/en/classic/services/wsdl2'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$params</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'userid'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$nextUser</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'password'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$nextPass</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$client</span><span style="color: #339933;">-&gt;</span>__SoapCall<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'login'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status_code</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$sessionId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">else</span><br />
+&nbsp; &nbsp; <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Unable to connect to ProcessMaker.<span style="color: #000099; font-weight: bold;">\n</span>Error Message: <span style="color: #006699; font-weight: bold;">{$result-&gt;message}</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$params</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'sessionId'</span><span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$sessionId</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'caseId'</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'delIndex'</span> &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$nextIndex</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$client</span><span style="color: #339933;">-&gt;</span>__SoapCall<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'routeCase'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">status_code</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error routing case: <span style="color: #006699; font-weight: bold;">{$result-&gt;message}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>If needing to execute this code in the middle of the previous task, first call <code>PMFDerivateCase()</code>, then execute the rest of the above code. At the end, call <a href="../index.php/ProcessMaker_Functions.html#G::header.28.29" title="ProcessMaker Functions">G::header()</a> to redirect to the cases list and then call <a href="http://php.net/manual/en/function.die.php">die()</a>, to stop the previous task from trying to continue onto the next step.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PMFDerivateCase<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #339933;">@%</span>INDEX<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #666666; font-style: italic;">//insert above code here</span><br />
+<br />
+G<span style="color: #339933;">::</span><a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;location: casesListExtJs&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//if using version 2.0</span><br />
+<span style="color: #666666; font-style: italic;">//G::header(&quot;location: cases_List&quot;); //if using version 1.X</span><br />
+<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> This code will have problems if the next task is a parallel task, because its index number might not be the maximum index number. In that case, search for a particular task ID in the <strong><tt>APP_DELEGATION</tt></strong> table. Task IDs can be found with the <a href="../index.php/ProcessMaker_WSDL_Web_Services.html#Task_List" title="ProcessMaker WSDL Web Services">taskList()</a> function under <strong>ADMIN &gt; Settings &gt; Web Services Test</strong>.</font></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT AD.DEL_INDEX, U.USR_USERNAME<br />
+&nbsp; &nbsp;FROM APP_DELEGATION AD, USERS U<br />
+&nbsp; &nbsp;WHERE AD.APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>' AND AD.TAS_UID='XXXXXXXXXXXXXXXXXXXXXXX' AND<br />
+&nbsp; &nbsp;AD.DEL_INDEX=(SELECT MAX(DEL_INDEX) FROM APP_DELEGATION WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>' AND AD.TAS_UID='XXXXXXXXXXXXXXXXXXXXXXX')<br />
+&nbsp; &nbsp;AND AD.USR_UID=U.USR_UID&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="Uncancelling_a_Case">Uncancelling a Case</span></h2>
+<p>After a case has been canceled, it is not possible to uncancel the case from the ProcessMaker interface. However, it is possible to uncancel a case inside the <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database and return its status to "To Do". To uncancel a case, change the value of the <strong><tt>APPLICATION.APP_STATUS</tt></strong> field from <code>"CANCELLED"</code> to <code>"TO_DO"</code> (or <code>"DRAFT"</code>) and change the <strong><tt>APP_DELEGATION.DEL_THREAD_STATUS</tt></strong> field from <code>"CLOSED"</code> to <code>"OPEN"</code> and set the <strong><tt>APP_DELEGATION.DEL_FINISH_DATE</tt></strong> field to <code>NULL</code> for the last task(s) in the case. Also, change the <strong><tt>APP_DELEGATION.APP_THREAD_STATUS</tt></strong> field from <code>"CLOSED"</code> to <code>"OPEN"</code>.</p>
+<p>For example, to uncancel all the cases for a user selected in dropdown box named "userId" of a previous DynaForm:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$userId</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>userId<span style="color: #339933;">;</span> &nbsp;<span style="color: #666666; font-style: italic;">//ID of the user whose cases will be uncanceled</span><br />
+<span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT AD.APP_UID, AD.DEL_THREAD FROM APP_DELEGATION AD, APPLICATION A <br />
+&nbsp; &nbsp;WHERE AD.USR_UID='<span style="color: #006699; font-weight: bold;">$userId</span>' AND AD.APP_UID=A.APP_UID AND A.APP_STATUS='CANCELLED'&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$cases</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span> or <a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: Unable to query database.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp;<br />
+<span style="color: #b1b100;">foreach</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$cases</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$case</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$caseId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$cases</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$thread</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$cases</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_THREAD'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//find all the tasks which have the same thread number, so they can all be opened</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT * FROM APP_DELEGATION WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>' AND DEL_THREAD=<span style="color: #006699; font-weight: bold;">$thread</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$tasksOnThread</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$executeQuery</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$tasksOnThread</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$task</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;UPDATE APP_DELEGATION SET DEL_THREAD_STATUS='OPEN', DEL_FINISH_DATE=NULL <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>' AND DEL_INDEX=&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$task</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'DEL_INDEX'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>executeQuery<span style="color: #009900;">&#40;</span>query<span style="color: #009900;">&#41;</span> <span style="color: #339933;">&lt;</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: Unable to update APP_DELEGATION table.<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;UPDATE APP_THREAD SET APP_THREAD_STATUS='OPEN' WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>' AND APP_THREAD_INDEX=<span style="color: #006699; font-weight: bold;">$thread</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;UPDATE APPLICATION SET APP_STATUS='TO_DO' WHERE APP_UID='<span style="color: #006699; font-weight: bold;">$caseId</span>'&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>Note that this example code will need to be adapted to work for cases which have multiple open threads.</p>
+
+<h2><span id="Executing_a_Task_a_Variable_Number_of_Times">Executing a Task a Variable Number of Times</span></h2>
+<p>There are two ways to execute a task a variable number of times in a process, but both methods have their drawbacks.</p>
+
+<h3><span id="Repeating_a_Task_with_a_Loop-Around">Repeating a Task with a Loop-Around</span></h3>
+
+<p>Use an <a href="../index.php/2.0/Routing_Rules.html#Evaluation_Routing_Rule" title="2.0/Routing Rules">evaluation routing rule</a> to create a loop-around for the same task in the process map so the task can be repeatedly executed.</p>
+
+<p><img alt="" src="../sites/default/files/LoopAroundToRepeatTask.png"></p>
+
+<p>In the "Initial Task", set a case variable (either with a DynaForm field or a Trigger) to determine how many times the task should be repeated. If the "Repeating Task" needs to be worked on by a different user each time it executes, then set it to use <a href="../index.php/2.0/Tasks.html#Value_Based_Assignment" title="2.0/Tasks">Value Based Assignment</a>, so that a different user can be designated with each pass through the task.</p>
+<p>For example, the "Repeating Task" needs to be executed once by every member of a group named "Audit Team" (which has a unique ID of "2509613254f466254cdcf07067330602"). Set a Trigger to fire in the "Initial Task" which will lookup the members of the "Audit Team". The Trigger creates:</p>
+<ol><li>A case variable named <code>@%noRepeats</code> to keep track of the number of times the task has been repeated.</li><li>An array named <code>@=membersAuditTeam</code> to hold the unique IDs of the members of the "Audit Team" group.</li><li>A case variable named <code>@@currentAuditor</code> to hold the unique ID of the user who is designated to work on the "Repeating Task".</li></ol>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@%</span>noRepeats <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@=</span>membersAuditTeam <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>currentAuditor <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span><br />
+G<span style="color: #339933;">::</span><span style="color: #004000;">LoadClass</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;groups&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Groups<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aUsers</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getUsersOfGroup</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'2509613254f466254cdcf07067330602'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@=</span>membersAuditTeam<span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>membersAuditTeam<span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>currentAuditor <span style="color: #339933;">=</span> <span style="color: #339933;">@=</span>membersAuditTeam<span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span> &nbsp;</div></div>
+
+<p>Set the "Repeating Task" to use Value Based Assignment with the variable <code>@@currentAuditor</code>. Set the evaluation routing rule after "Repeating Task" to use these <a href="../index.php/Using_Conditions.html" title="Using Conditions">conditions</a>:</p>
+
+<p><img alt="" src="../sites/default/files/RepeatingTaskCondition.png"></p>
+
+<p>Finally, set the following Trigger to fire with each pass through the "Repeating Task", so that <code>@%noRepeats</code> will be incremented and <code> @@currentAuditor</code> will be set to the next user in the <code>@=membersAuditTeam</code> array.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@%</span>noRepeats <span style="color: #339933;">+=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//increment for each pass through the task</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>noRepeats <span style="color: #339933;">&lt;</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>membersAuditTeam<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>currentAuditor <span style="color: #339933;">=</span> <span style="color: #339933;">@=</span>membersAuditTeam<span style="color: #009900;">&#91;</span><span style="color: #339933;">@%</span>noRepeats<span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span></div></div>
+
+<h4><span id="If_a_Task_May_Repeat_Zero_Times">If a Task May Repeat Zero Times</span></h4>
+<p>If the "Repeating Task" needs to have the possibility of not being executed at all (for example, there a zero members in the "Audit Team"), then an evaluation routing rule needs to be added before the "Repeating Task" to skip it.</p>
+
+<p><img alt="" src="../sites/default/files/RepeatTaskIncludingZeroTimes.png"></p>
+
+<p>Then, conditions can be added to the first evaluation routing rule to either go to the Repeating Task or skip to the "Final Task". For example:</p>
+
+<p><img alt="" src="../sites/default/files/ConditionZeroMembers.png"></p>
+
+<p>The conditions in the second evaluation routing rule will be the same as in the previous example.</p>
+
+<h4><span id="Drawbacks">Drawbacks</span></h4>
+<p>Repeating a task with a loop-around has several drawbacks:</p>
+<ol><li>The task will be executed serially, so that it can take a long time for each user to execute the task one by one.</li><li>If the repeating task contains a DynaForm, then each new user can change the values of the DynaForm fields with each loop, so the values from the first user might get overwritten by the second user, and the values of the second user might get overwritten by the values of the third user, etc.</li></ol>
+<h3><span id="A_Variable_Number_of_Parallel_Tasks">A Variable Number of Parallel Tasks</span></h3>
+<p>The other way to repeat a variable number of tasks is to create a parallel tasks which will all execute at the same time. Create as many variable tasks as the maximum number of times that the task could possibly be executed.</p>
+<p>For example, if each parallel task needs to be executed by a member of the "Audit Team", then create as many parallel tasks as the largest number of possible members of the "Audit Team".</p>
+
+<p><img alt="" src="../sites/default/files/VariableNumberParallelTasks.png"></p>
+
+<p>Set each of the parallel tasks to use Value Based Assignment. "Parallel Task 1" uses variable <code>@@userForTask1</code>, "Parallel Task 2" uses variable <code>@@userForTask2</code>, "Parallel Task 3" uses variable <code>@@userForTask3</code>, and "Parallel Task 4" uses variable <code>@@userForTask4</code>.</p>
+<p>Then, set a Trigger to fire in the "Initial Task" which determines the number of parallel tasks to execute and which users will be designated to work on each parallel task.</p>
+<p>For example, the following Trigger fired during the "Initial Task" looks up the members of the "Audit Team" (which has a unique ID of "2509613254f466254cdcf07067330602") and assigns each member to a different parallel task:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>userForTask1 <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>userForTask2 <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>userForTask3 <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>userForTask4 <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span> <br />
+G<span style="color: #339933;">::</span><span style="color: #004000;">LoadClass</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;groups&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Groups<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$aUsers</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getUsersOfGroup</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'2509613254f466254cdcf07067330602'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@%</span>noMembers <span style="color: #339933;">=</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>noMembers <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>userForTask1 <span style="color: #339933;">=</span> <span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>noMembers <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">2</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>userForTask2 <span style="color: #339933;">=</span> <span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>noMembers <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">3</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>userForTask3 <span style="color: #339933;">=</span> <span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@%</span>noMembers <span style="color: #339933;">&gt;=</span> <span style="color: #cc66cc;">4</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>userForTask4 <span style="color: #339933;">=</span> <span style="color: #000088;">$aUsers</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USR_UID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span> &nbsp;</div></div>
+
+<p>Set the <a href="../index.php/Using_Conditions.html" title="Using Conditions">conditions</a> in the <a href="../index.php/2.0/Routing_Rules.html" title="2.0/Routing Rules">parallel by evaluation routing rule</a> so that only as many parallel tasks are executed as the number of members in the "Audit Team":</p>
+
+<p><img alt="" src="../sites/default/files/ConditionsVariableNumberOfParallelTasks.png"></p>
+
+<p>Finally, set the steps for each of the parallel tasks. If needing each parallel task to execute the same steps, then keep the following caveats in mind:</p>
+<ul><li>For DynaForm steps, create a <i>separate</i> DynaForm for each of the parallel tasks. If the <i>same</i> DynaForm is used in all the parallel tasks, then every user can overwrite the data entered by the other users.<br>To create separate DynaForms for each parallel task, use the <strong>Save As</strong> option to create copies. Then go through the copies and rename all the DynaForm fields so they have different names.</li></ul>
+<div style="margin-left: 50px;"><p>For example, if the original DynaForm is named "Audit Form" and it has the fields "accountName", "lastAudit" and "auditResult", then create:</p>
+<ul><li>Audit Form 1 with the fields: "accountName1", "lastAudit1" and "auditResult1"</li><li>Audit Form 2 with the fields: "accountName2", "lastAudit2" and "auditResult2"</li><li>Audit Form 3 with the fields: "accountName3", "lastAudit3" and "auditResult3"</li><li>Audit Form 4 with the fields: "accountName4", "lastAudit4" and "auditResult4"</li></ul>
+<p>In this way, each member of the "Audit Team" can fill out a separate form and won't see the data from the other auditors.</p></div>
+<ul><li>For Input Document steps, the same Input Document can be used for all the parallel tasks. Each auditor can add additional files to the existing Input Document. However, if none of the auditors should be able to see the Input Document files from the other auditors, then create a separate Input Document for each parallel task.</li><li>For Output Document steps, the same Output Document can be used for all the parallel tasks as long as versioning is enabled, so each user doesn't overwrite the Output Documents of the other users.</li></ul>
+
+<h2><span id="Sending_Grid_Information_via_Email">Sending Grid Information via Email</span></h2>
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"> Works on version 2.0.45 or previous.</font></p>
+<p>If the information of a Grid is required to be sent via email follow the steps below:</p>
+<p><strong>1.</strong> Let's say that we need to send by email the information of a list of users adding in a grid, the name of the grid is <tt>GridName</tt> and field names are <tt>FirstName</tt> and <tt>LastName</tt> respectively, so create a trigger with the following HTML code on which the structure of the grid will be created:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$Grid</span><span style="color: #339933;">=</span> <span style="color: #0000ff;">'&lt;table &nbsp;border=&quot;1&quot;&gt;'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;tr&gt;'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;td style=&quot;background-color:#DEDEDE;&quot;&gt;First Name&lt;/td&gt;'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;td style=&quot;background-color:#DEDEDE;&quot;&gt;Last Name &lt;/td&gt;'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;/tr&gt;'</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>Grid <span style="color: #b1b100;">as</span> <span style="color: #000088;">$row</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;tr&gt;'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;td&gt;'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$row</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FirstName'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'&lt;/td&gt;'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;td&gt;'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$row</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'LastName'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'&lt;/td&gt;'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;/tr&gt;'</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000088;">$Grid</span><span style="color: #339933;">.=</span> <span style="color: #0000ff;">'&lt;/table&gt;'</span><span style="color: #339933;">;</span></div></div>
+
+<p>It is necessary to create a table structure with a <tt>$Grid</tt> variable, this variable will be defined to store all the HTML structure, on each line <tt>$Grid</tt> variable will be concatenated with a previous value to construct the table. On the first part the header of the grid is defined, also cases variables can be defined. As the example above some styles can be used.</p>
+
+<p>On the second part, it is necessary to add a <tt>foreach</tt> sentence, since it is not possible to know how many rows will be created on the grid, so <tt>foreach</tt> will allow to go through each line of the grid to create it on the template.</p>
+
+<p><strong>2.</strong> Once the structure of the Grid is created, <a href="../index.php/ProcessMaker_Functions.html#PMFSendMessage.28.29" title="ProcessMaker Functions">PMFSendMessage</a> function must be created to define the necessary parameters to send the email:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>result <span style="color: #339933;">=</span> PMFSendMessage <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span><span style="color: #0000ff;">'mail@example.com'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'mail@example.com'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'mail2@example.com'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'mail3@example.com'</span><span style="color: #339933;">,</span><br />
+<span style="color: #0000ff;">'Grid Example'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'template.html'</span><span style="color: #339933;">,</span><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Grid'</span><span style="color: #339933;">=&gt;</span><span style="color: #000088;">$Grid</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Since $Grid is an array it must be send on the last parameter of the function:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Grid'</span><span style="color: #339933;">=&gt;</span><span style="color: #000088;">$Grid</span><span style="color: #009900;">&#41;</span></div></div>
+
+<p><tt>Grid</tt> will be the name of the variable which will be defined inside template.html, it means that this variable will contain all the grid structure stored at <tt>$Grid</tt>.</p>
+<p><strong>3.</strong> Finally create an HTML template named <tt>template.html</tt> with the following line:</p>
+
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #339933;">@</span><span style="color: #666666; font-style: italic;">#Grid</span></code></span>
+
+<p>Upload it using the <a href="../index.php/Process_Files_Manager.html" title="Process Files Manager">Process Files Manager</a>. Assign the trigger After Derivation or After Dynaform. Don't forget to configure <a href="../index.php/2.0/Email_-_Settings.html" title="2.0/Email - Settings">email notifications</a> to have mails sent successfully.</p>
+
+
+<h2><span id="Changing_Case_Status_to_TO_DO">Create new case and change its status</span></h2>
+When a new case is created, its status is automatically set to "DRAFT", so it doesn't appear in the list of cases under <b>Home > Inbox</b>. The <a href="../index.php/Internal_Functions_and_Classes.html#Cases::updateCase.28.29">Cases::updateCase()</a> method can be used to change the status of the case from "DRAFT" to "TO_DO", so it will appear in the user's <b>Inbox</b>.</p>  
+<p>The following example creates a new case using the <a href="../3.0/ProcessMaker_Functions.html#PMFNewCase.28.29">PMFNewCase()</a> function and then changes its status to "TO_DO":</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$taskId</span> &nbsp; &nbsp; <span style="color: #339933;">=</span> <span style="color: #0000ff;">'23505646456d0ea2a77f011077155450'</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to starting task's unique ID</span><br />
+<span style="color: #000088;">$processId</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'43232262556d0e93847dbd2083513445'</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//set to the process' unique ID</span><br />
+<span style="color: #666666; font-style: italic;">//set variables from the current case to send to the new case:</span><br />
+<span style="color: #000088;">$aData</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'clientName'</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@@</span>clientName<span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'invoiceAmount'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">@@</span>InvoiceAmount<br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$newCaseId</span> <span style="color: #339933;">=</span> PMFNewCase<span style="color: #009900;">&#40;</span><span style="color: #000088;">$processId</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">,</span> <span style="color: #000088;">$taskId</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aData</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$newCaseId</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//change status:</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$c</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Cases<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aCase</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$c</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">loadCase</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$newCaseId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$aCase</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'APP_STATUS'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'TO_DO'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$c</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">updateCase</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$newCaseId</span><span style="color: #339933;">,</span> <span style="color: #000088;">$aCase</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<p>Note that the above method should only be used if setting the status of a case to "TO_DO" or "DRAFT". if needing to change the case's status to "CANCELLED", "DELETED" or "PAUSED", then then the corresponding PMFCancelCase(), cases::deleteCase() or PMFPauseCase() functions should be used. To change the status to "COMPLETED", the PMFDerivateCase() function can be used to complete a final task in the process.</p> </div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

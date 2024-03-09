@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.3/Database_Connections/MSSQL.html" />
+<link rel="shortlink" href="898.html" />
+<title>3.2 - 3.7 - Database Connections - Microsoft SQL Server | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"-_qHVCn-r1InDGbAzERW0qAro3op-ArVMUwMyTNuHYY","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-898 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="898.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="898.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-6O1uu6sdYnHt3l7M5IQjPlT2Okayokd-0XQOzQGuJto" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.2 - 3.7 - Database Connections - Microsoft SQL Server</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a href="../3.0/Database_Connections.html" class="">3.1</a></li><li><a href="../3.0/Database_Connections.html" class="">3.0</a></li><li><a href="../index.php/Database_Connections.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.2 - 3.7 - Database Connections - Microsoft SQL Server" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="898.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.2 - 3.7 - Database Connections - Microsoft SQL Server 1/5</option><option value="40">Give 3.2 - 3.7 - Database Connections - Microsoft SQL Server 2/5</option><option value="60" selected="selected">Give 3.2 - 3.7 - Database Connections - Microsoft SQL Server 3/5</option><option value="80">Give 3.2 - 3.7 - Database Connections - Microsoft SQL Server 4/5</option><option value="100">Give 3.2 - 3.7 - Database Connections - Microsoft SQL Server 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.2</span></span> <span class="total-votes">(<span >5</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-oCD2ZIcUo85foy2VWZ3C1QnQzCYWcbUFlPr1hSl9e3k" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div class="getting-started-index">
+    <ul>
+        <li><a href="../3.2/Database_Connections.html">1. Database Connections</a></li>
+        <li><a href="../3.2/Database_Connections/MySQL.html">2. MySQL</a></li>
+        <li><a href="../3.2/Database_Connections/PostgreSQL.html">3. PostgreSQL</a></li>
+        <li><a class="getting-started-index-active">4. Microsoft SQL Server</a></li>
+        <li><a href="../3.2/Database_Connections/Oracle.html">5. Oracle</a></li>
+        <li><a href="../3.2/Database_Connections/Other_Databases.html">6. Other Databases</a></li>
+        <li><a href="../3.2/Database_Connections/Discovering_Ports.html">7. Discovering Ports</a></li>
+    </ul>
+</div>
+
+<div class="getting-started-content">
+    <div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="898.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="898.html#Microsoft_SQL_Server">Microsoft SQL Server</a></li>
+<ol class="toc">
+<li class="toc"><a href="898.html#MSSQL_Windows">Windows</a></li>
+<ol class="toc">
+<li class="toc"><a href="898.html#Installing_the_SQLSRV_Module_Windows">Installing the SQLSRV Module</a></li>
+<li class="toc"><a href="898.html#Possible_Configuration_Issues">Possible Configuration Issues</a></li>
+<ol class="toc">
+<li class="toc"><a href="898.html#Microsoft_SQL_Server_option_is_missing">Microsoft SQL Server Option is Missing</a></li>
+<li class="toc"><a href="898.html#Destination_Port_Unreachable">Destination Port Unreachable</a></li>
+<li class="toc"><a href="898.html#MS_SQL_Connection_Refused">MS-SQL Connection Refused</a></li>
+<li class="toc"><a href="898.html#Database_doesnt_exist">Database Does Not Exist</a></li>
+<li class="toc"><a href="898.html#Unicode_support_in_MSSQL">Unicode Support in MSSQL</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="898.html#Linux.2FUNIX">Linux/UNIX</a></li>
+<ol class="toc">
+<li class="toc"><a href="898.html#Executing_Store_Procedures">Executing stored procedures</a></li>
+<ol class="toc">
+<li class="toc"><a href="898.html#Best_Practices_When_Using_Stored_Procedures">Best Practices When Using Stored Procedures</a></li>
+</ol>
+<li class="toc"><a href="898.html#Installing_the_SQLSRV_module_Linux">Installing the SQLSRV Module</a></li>
+<li class="toc"><a href="898.html#If_the_SQL_Server_database_does_not_use_UTF-8_encoding">SQL Server Not Using UTF-8</a></li>
+<li class="toc"><a href="898.html#Solving_issues_with_UTF-8_characters">Solving Issues with UTF-8 Characters</a></li>
+<ol class="toc">
+<li class="toc"><a href="898.html#Setup_FREETDS_in_Linux.2FUNIX">Setup FREETDS in Linux/UNIX</a></li>
+<li class="toc"><a href="898.html#Change_MSSQLResultSet.php">Change MSSQLResultSet.php</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="898.html#Collation_Database_Configuration">Collation Database Configuration</a></li>
+</ol>
+</div></div>
+
+    <h2><span id="Microsoft_SQL_Server">Microsoft SQL Server</span></h2>
+    <p style="margin-left:25px"><strong><font color="green">Note 1:</font></strong> <font color="dimgray">ProcessMaker does not support connections to Microsoft SQL Azure databases.</font></p>
+
+    <p style="margin-left:25px">
+        <strong><font color="green">Note 2:</font></strong>
+        <font color="dimgray">
+            Server configurations are needed depending on which platform and Web server your ProcessMaker environment uses. Check following links:
+            <p style="margin-left:50px"><a href="../Stack_255.html#Database_Integrations">Stack 255</a>, <a href="../Stack_N255.html#Database_Integrations">Stack N255</a> or <a href="../Stack_260.html#Database_Integrations">Stack 260</a>.</p>
+        </font>
+    </p>
+
+    <p>To connect ProcessMaker to Microsoft SQL Server databases, follow the instructions for your environment:</p>
+    <ul>
+        <li><a href="898.html#MSSQL_Windows">Windows</a></li>
+        <li><a href="898.html#Linux.2FUNIX">Linux</a></li>
+
+    </ul>
+
+    <h3><span id="MSSQL_Windows">Windows</span></h3>
+
+    <p>To connect ProcessMaker to a remote or local MSSQL installation on a Windows server, follow the steps below:</p>
+
+    <p><b>1.</b> Download the php_dblib.dll file for your system's architecture and PHP version.</p>
+    <p>For instances, which requires <b>PHP 5.6.x</b>, the following files are the thread safe (TS) <tt>dll</tt> compiled:</p>
+    <ul>
+        <li>For 32-bit ProcessMaker installations, download <a href="../sites/default/files/php_dblibx86.dll">php_dblibx86.dll</a>.</li>
+        <li>For 64-bit ProcessMaker installations, download <a href="../sites/default/files/php_dblibx64.dll">php_dblibx64.dll</a>.</li>
+    </ul>
+
+<!--<p>For 32 bit Bitnami ProcessMaker installations, which require <b>PHP 5.6.x</b> with ProcessMaker 3.2 and 3.2.1, download <a href="/sites/default/files/FreeTDS_0.95_PHP_5.6.x_(vc11_ts_dblib).zip">php_dblib.dll for PHP 5.6 Thread Safe</a>, which was generated by Josh Urbain and posted on the <a href="https://moodle.org/mod/forum/discuss.php?d=232844#p1297504">Moodle forum</a>.</p>
+
+    <p>
+<table border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr>
+<td>
+<font color="red"><b>Warning:</b></font> <font color=dimgrey>Currently, there is NO php_dblib.dll file that works with <b>PHP 5.6.x of 64bits</b>.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>-->
+
+    <p><b>2.</b> Place the <b>php_dblib.dll</b> file in the <b><tt>php/ext/</tt></b> directory, which is located at:</p>
+<div style="margin-left:25px;">
+    <p><b>Bitnami Installation:</b></p>
+    <div style="margin-left: 25px;"><tt>&lt;<a href="../3.0/File_Locations.html#Installation_Directory">INSTALLATION-DIRECTORY</a>&gt;/Bitnami/processmaker-3.x.x/php/ext/</tt></div>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexDLLPlaced.png" /></p>
+
+    <p><b>Self-Installer Installation:</b></p>
+    <div style="margin-left: 25px;"><tt>&lt;<a href="../3.0/File_Locations.html#Installation_Directory">INSTALLATION-DIRECTORY</a>&gt;/Users/<font color="blue">USERNAME</font>/AppData/Roaming/ProcessMaker-<font color="blue">3_X_X</font>/php/ext/</tt>
+    </div>
+
+    <p><b>Manual Installation:</b></p>
+    <div style="margin-left: 25px;"><tt>C:/php/ext/</tt>
+    </div>
+</div>
+
+    <p><b>3.</b> Open the <strong><tt>php.ini</tt></strong> file located at:</p>
+<div style="margin-left:25px;">
+    <p><b>Bitnami Installation:</b></p>
+    <div style="margin-left: 25px;"><tt><a href="../3.0/File_Locations.html#Installation_Directory" title="File Locations">&lt;install-directory&gt;</a>/Bitnami/processmaker-3.x.x-0/php/php.ini</tt></div>
+
+    <p><b>Self-Installer Installation:</b></p>
+    <div style="margin-left: 25px;"><tt><a href="../3.0/File_Locations.html#Installation_Directory" title="File Locations">&lt;install-directory&gt;</a>/Users/<font color="blue">USERNAME</font>/AppData/Roaming/ProcessMaker-3_<font color="blue">X_X_X</font>/php/php.ini</tt></div>
+
+    <p><b>Manual Installation:</b></p>
+    <div style="margin-left: 25px;"><tt>C:/php/ext/ini</tt>
+    </div>
+</div>
+    <p>To enable the <tt>mssql</tt> extension, add the following line under the <code>Windows Extensions</code> section:</p>
+
+    <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">extension=php_dblib.dll</div></div>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexDLLPlacedPHPINI.png" /></p>
+
+    <p>Next, restart the Apache server to use the new PHP configuration. This can be done in several ways:</p>
+
+    <ol>
+        <li>
+        <p><b>Using the Microsoft Windows Services console:</b><br>
+Open a terminal (<strong>Start &gt; All Programs &gt; Accessories &gt; Command Prompt</strong>)
+        and type:</p>
+        <codeblock>services.msc
+</codeblock>
+
+<p>The Services console will open. Search for the service <b>processmakerApache</b>        and click on the <b>Restart</b> option.</p>
+
+<p><img src="../sites/default/files/3.0MSSQLConexApacheRestart.png" /></p>
+
+<p>The Service Control will restart the Apache service.</p>
+
+<p><img src="../sites/default/files/3.0MSSQLConexApacheRestartProcess.png"
+        /></p>
+    </li>
+
+        <li>
+
+        <p><b>Using the <a href="../3.0/Windows_Bitnami_Installer_v.3.0.1.8.html#Bitnami_ProcessMaker_Stack_Manager_Tool">Bitnami ProcessMaker Stack Manager Tool</a>:</b> (Only if ProcessMaker was installed with the Bitnami installer.)<br>
+        Open the manager tool by going to <strong>Start &gt; All Programs &gt; Bitnami ProcessMaker</strong> and selecting <b>Bitnami ProcessMaker Stack Manager Tool</b>. Go to
+        the <b>Manage Servers</b> tab, select "Apache Web Server" and click
+        on the <b>Restart</b> button.</p>
+
+        <p><img src="../sites/default/files/3.0MSSQLConexApacheRestartBitnamiManagerTool.png"
+        /></p>
+    </li>
+
+        <li>
+        <p><b>Using only the Command Prompt:</b><br> 
+Open a command line (<strong>Start &gt; All Programs &gt; Accessories &gt; Command Prompt</strong>) and go to the Apache directory inside the ProcessMaker folder. For a Bitnami Installation on the C: disk, the directory will be:</p>
+
+        <codeblock>cd c:\Bitnami\processmaker-3.x.x-0\apache2\bin\
+</codeblock>
+
+        <p>The Apache service created during the ProcessMaker installation is named "processmakerApache". Execute the following command, which includes the name of the service, to restart the Apache service.</p>
+        <codeblock>httpd -n processmakerApache -k restart
+</codeblock>
+    </li>
+    </ol>
+
+    <p>Finally, log into ProcessMaker and open a process. Go to <strong>Database Connections</strong>    and click on the <strong>New</strong> link. The option <b>Microsoft SQL Server</b>    should now be available under the <strong>Engine</strong> dropdown
+    box.
+  </p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexEngineMSSQL.png" /></p>
+
+    <p>Fill in the rest of the fields according to the instructions in the <a href="../3.2/Database_Connections.html#Creating_a_New_Database_Connection">Creating a New Database Connection</a> section.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexEngineMSSQLtest.png" /></p>
+
+    <p>Finally, click on the <b>Test Connection</b> option. If the configuration is correct, all marks will turn green in the Testing Server Connection dialog.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexAllok.png" /></p>
+
+    <p>If a problem occurs, see the <a href="898.html#Possible_Configuration_Issues">Possible Configuration Issues</a>    section.</p>
+
+<h4><span id="Installing_the_SQLSRV_Module_Windows">Installing the SQLSRV Module</span></h4>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.3.0.</font></p>
+<p>In case that the ProcessMaker instance uses PHP 7, instead of installing the <b>mssql</b> extension, install the <b>sqlsrv</b> extension.</p>
+<p>Before installing the <b>sqlsrv</b> extension, check the following requirements:</p>
+<ul>
+    <li>Verify the <a href="https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-drivers-for-sql-server-support-matrix?view=sql-server-2017#sql-server-version-certified-compatibility">SQL Server version</a> installed is compatible with the driver version package.</li>
+    <li>Verify the <a href="https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-drivers-for-sql-server-support-matrix?view=sql-server-2017#microsoft-php-drivers-support-lifecycle-matrix-and-policy">Microsoft Drivers for PHP for SQL Server version</a> is compatible with the <a href="../3.3/ProcessMaker_Installation_Requirements.html">ProcessMaker requirements</a> including the <a href="https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-drivers-for-sql-server-support-matrix?view=sql-server-2017#php-version-support">PHP version</a> and the <a href="https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-drivers-for-sql-server-support-matrix?view=sql-server-2017#supported-operating-systems">Operating System version</a>.</li>
+</ul>
+
+<p>The following steps explain how to install the SQLSRV module on <a href="../3.3/Supported_Stacks.html">Windows Server Stacks</a>:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">After verifying the requirements mentioned above, link the proper driver package version <a href="https://docs.microsoft.com/en-us/sql/connect/php/download-drivers-php-sql-server?view=sql-server-2017">here</a>.</li>
+    <li><p style="font-weight:normal;">The link for the last driver package version 5.6 is <a href="https://www.microsoft.com/en-us/download/details.aspx?id=57916">here</a>.</p></li>
+    <li><p style="font-weight:normal;">In the <b>Microsoft Drivers 5.6 for PHP for SQL Server</b> section, click <b>Download</b>.</p>
+    <p><img src="../sites/default/files/3.3.0MicrosoftDrivers5.6_PHP_SQLServer.png" alt=""></p>
+    </li>
+    <li><p style="font-weight:normal;">An executable file (<b>SQLSRV561.EXE</b>) is downloaded. Run this file as the administrator.</p></li>
+    <li><p style="font-weight:normal;">The <b>License Agreement</b> screen displays. Click <b>Yes</b> to install the driver package.</p>
+    <p><img src="../sites/default/files/3.3.0MicrosoftDrivers5.6_PHP_SQLServerAcept.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">In the next screen, browse the <code>ext</code> folder where PHP was installed. Then click <b>OK</b>.</p>
+    <p><img src="../sites/default/files/3.3.0MicrosoftDrivers5.6_PHP_SQLServerBrowse.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">After the Driver Package files is extracted to the <code>ext</code> folder, a confirmation message displays. Click <b>OK</b>.</p>
+    <p><img src="../sites/default/files/3.3.0MicrosoftDrivers5.6_PHP_SQLServerOk.png" alt=""></p></li>
+    <li><p style="font-weight:normal;">In the <code>ext</code> folder, search for the proper extension for your PHP version. For example, for the version PHP 7.1, the compatible driver is <code>php_sqlsrv_71_ts_x64.dll</code>. If the PHP construction is <tt>nts</tt>, then use the version <code>php_sqlsrv_71_nts_x64.dll</code>.</p></li>
+    <li><p style="font-weight:normal;">Go to the folder where <code>php.ini</code> is located and edit it. Add the following extension line selected in the previous step:</p>
+    <codeblock style="font-weight:normal;">extension = php_sqlsrv_71_ts_x64.dll</codeblock></li>
+    <li><p style="font-weight:normal;">Restart your web server, in this case <a href="../3.2/Additional_Configuration.html#Restarting_Apache">restart Apache</a>.</p></li>
+    <li><p style="font-weight:normal;">In the <b>Command Prompt</b> go to the folder where <code>php.exe</code> is located, and run the following command to display the PHP information:</p>
+    <codeblock style="font-weight:normal;">c:\opt\php>php.exe -i> phpinfo.txt</codeblock>
+    <p style="font-weight:normal;">If there is a SQLSRV warning message, it means that the extension is located in a different folder or probably it is not compatible with your PHP version. Try downloading the proper extension version.</p>
+    </li>
+</ol>
+
+    <h4><span class="mw-headline" id="Possible_Configuration_Issues">Possible Configuration Issues</span></h4>
+
+    <h5><span id="Microsoft_SQL_Server_option_is_missing">Microsoft SQL Server Option is Missing</span></h5>
+
+    <p>If for some reason the Microsoft SQL Server option does not appear in the list of database connections, verify that PHP is using the <tt>mssql</tt> extension. Log into ProcessMaker and select the <b>Admin</b> tab. Click the <b>PHP Information</b> option under Settings, and scroll down to the <b>mssql</b> extension section, which is usually between the myhash and mysql sections.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexCheckPHPInfo.png" /></p>
+
+    <p>If the section is missing, restart the server system to apply the changes.</p>
+
+    <h5><span id="Destination_Port_Unreachable">Destination Port Unreachable</span></h5>
+
+    <p>If the <b>Test Connection</b> option is clicked, the following dialog will be displayed if the destination port is unreachable:</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexPortUnreachable.png" /></p>
+
+    <p>Verify that the MSSQL remote server is allowing remote connections. Open <b>SQL Server Configuration Management</b>, click on <b>SQL Server Configuration Manager</b>, go to <b>Protocols for SQLExpress</b> and make sure <b>TCP/IP</b> is enabled. The TCP/IP option allows other computers to connect with MSSQL through the IP. If not, right click on it and choose <b>Enable</b>.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexPortUnreachableTCPIPDisabled.png"
+    /></p>
+
+    <p>Check that the port is the correct one by right-clicking on <b>TCP/IP</b> and selecting <b>Properties</b>. In the TCP/IP Properties dialog, select the <b>IP Addresses</b> tab and scroll down to <b>IPAII</b>. Make sure the TCP Dynamic Ports field is blank and that TCP Port is set to 1433.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexPortUnreachableTCPIPPort.png"
+    /></p>
+
+    <p>Lastly, ensure that the SQL Server is running in <b>Network Service</b> mode by going to <b>SQL Server Services</b>. Right-click on <b>SQL Server</b> and select <b>Properties</b>.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexPortUnreachableNetworkServiceOON.png"
+    /></p>
+
+    <p>In the properties dialog, check that "Network Service" is selected in the <b>Built in account</b> option.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexPortUnreachableNetworkServiceON.png"
+    /></p>
+
+    <p>The changes won't take effect until the SQLExpress service is restarted.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexPortUnreachableSQLExpressRestart.png"
+    /></p>
+
+    <p>If there is still a problem, make sure the TCP port 1433 is not blocked
+    by the firewall.</p>
+
+    <h5><span id="MS_SQL_Connection_Refused">MS-SQL Connection Refused</span></h5>
+
+    <p>If the <b>Test Connection</b> option is clicked, the following dialog is displayed if the MS-SQL connection is refused:</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexMSSQLConnectionRefused.png"
+    /></p>
+
+    <p>Notice that MSSQL has two methods of authentication: Windows Authentication and SQL Server Authentication. ProcessMaker uses the <b>SQL Server Authentication</b> method to establish a connection.</p>
+
+    <p>The user must choose the login method. To see the login method for a particular user, open the <b>SQL Server Management Studio</b>, right-click on <b>Security</b>, select <b>Login</b> and look for the user.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexMSSQLConnectionRefusedUsern.png"
+    /></p>
+
+    <p>Right-click on the user and choose <b>Properties</b>. Verify that the credentials provided are the right ones in the Login Properties dialog.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexMSSQLConnectionRefusedUserCre.png"
+    /></p>
+
+    <p>After that, check the user settings by going to <b>Status</b>. Verify
+    that the <b>Permission to connect to database engine</b> option is "Grant" and <b>Login</b> is "Enabled".</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexMSSQLConnectionRefusedUserPer.png"
+    /></p>
+
+    <h5><span id="Database_doesnt_exist">Database Does Not Exist</span></h5>
+
+    <p>If the <b>Test Connection</b> option is clicked, the following dialog will be displayed if there is a problem connecting to the database:</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexDBnotexist.png" /></p>
+
+    <p>Verify that the user is the owner or has permission to access the database. To do this, open the <b>SQL Server Management Studio</b>, right-click on the database and choose <b>Properties</b>.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexDBnotexistDBPro.png" /></p>
+
+    <p>In the Database Properties dialog, check that the specified user is the owner of the database.</p>
+
+    <p><img src="../sites/default/files/3.0MSSQLConexDBnotexistDBOwner.png" /></p>
+
+<h5><span id="Unicode_support_in_MSSQL">Unicode Support in MSSQL</span></h5>
+    <p>ProcessMaker uses the UTF-8 (8 bit Unicode) character set, but Microsoft SQL Server 2008 and earlier only supported Unicode in the UCS-2 (little endian) character set and it must be stored in nvarchar or nchar fields.  SQL Server 2012 added support for UTF-16 (little endian) character set. In order to query SQL Server from ProcessMaker, it is recommended that the text in SQL Server should be stored in nvarhar or nchar fields and stored as UCS-2 or UTF-16. </p>
+
+    <h3><span id="Linux.2FUNIX">Linux/UNIX</span></h3>
+
+    <p>ProcessMaker servers running on Linux/UNIX can access Microsoft SQL Server or Sybase databases by installing <a href="http://www.freetds.org/">FreeTDS</a>. Most distributions provide FreeTDS and a PHP extension for Microsoft SQL Server or Sybase. If your distribution doesn't provide a package for FreeTDS, see <a href="http://www.freetds.org/userguide/config.htm">these instructions</a> to compile FreeTDS from the source code.</p>
+
+    <p><b><span id="RedHat">Red Hat/CentOS/Fedora</span></b></p>
+    <div style="margin-left: 25px;">
+        <p>Install FreeTDS and the <tt>php-mssql</tt> package using <tt>yum:</tt></p>
+
+        <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">yum install freetds php56w-mssql</div></div>
+
+        <p>Then, edit the <strong><tt>/etc/php.ini</tt></strong> file and add the following line to enable the <tt>mssql</tt> extension:</p>
+
+        <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">extension=mssql.so</div></div>
+
+        <p>For CentOS version 6.0 or later, follow the <a href='https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-SQL-Server-from-RHEL-or-Centos'>RHEL/Centos version 6.0 instructions</a></p>
+
+    </div>
+    <p><b><span id="Ubuntu">Ubuntu</span></b></p>
+    <div style="margin-left: 25px;">
+        <p>For Ubuntu 16.04 or later, log in as root and install FreeTDS and the <strong><tt>php5.6-sybase</tt></strong> module using the following command:</p>
+        <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">apt-get install freetds-bin php5.6-sybase</div></div>
+
+        <p>Edit the php.ini file located in the /php/5.6/apache2/ directory.</p>
+        <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">sudo nano /etc/php/5.6/apache2/php.ini</div></div>
+
+        <p>Add the following line to enable the <tt><b>mssql</b></tt> extension.</p>
+        <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">extension=mssql.so</div></div>
+    </div>
+
+    <p><b><span id="Debian">Debian</span></b></p>
+    <div style="margin-left: 25px;">
+        <p>For Debian 8 (Squeeze), log in as root, install FreeTDS and the <strong><tt>php5.6-sybase</tt></strong> package with the following command:</p>
+
+        <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">apt-get install freetds-bin php5.6-sybase</div></div>
+
+        <p>For Debian 5 (Lenny), install the <strong><tt>freetds-common</tt></strong> package instead:</p>
+
+        <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">apt-get install freetds-common php5.6-sybase</div></div>
+    </div>
+
+    <p><b><span id="SUSE">SUSE/openSUSE</span></b></p>
+    <div style="margin-left: 25px;">
+        <p>SUSE/openSUSE does not provide a PHP package for MS SQL Servers,
+    so <a href="http://www.freetds.org/">freeTDS</a> and the <a href="http://php.net/manual/en/book.mssql.php">mssql</a> PHP extension will have to be compiled from the source code.</p>
+
+        <p>First, install the <strong><tt>unixOBDC</tt></strong> package and the
+    tools for compiling:</p>
+
+        <codeblock>zypper install unixOBDC gcc make</codeblock>
+
+        <p>Then, download the <a href="http://www.ibiblio.org/pub/Linux/ALPHA/freetds/stable/freetds-stable.tgz">source code</a> of the latest stable version of freeTDS. Decompress the code then configure
+ and compile it:</p>
+
+        <codeblock>tar xzf freetds-stable.tgz
+cd freetds-0.82/
+./configure -with-unixODBC=/usr/lib
+make
+make install
+</codeblock>
+
+        <p>Install the <strong><tt>php5-devel</tt></strong> package (which contains
+    the <strong><tt>phpize</tt></strong> command):</p>
+
+        <codeblock>zypper install php5-devel</codeblock>
+
+        <p>Next, check which version of PHP you are using:</p>
+
+        <codeblock>php -i</codeblock>
+
+        <p>Then, download the <a href="http://www.php.net/releases/">source code</a> for your version of PHP to a local directory. Decompress the code, switch to the <strong><tt>ext/mssql</tt></strong> directory and compile the <strong><tt>mssql</tt></strong> extension. Note that the following commands will <i>only</i> compile the <strong><tt>mssql</tt></strong> extension and insert it into your existing installation of PHP without
+    altering anything else:</p>
+
+        <codeblock>tar xzf php-5.3.3.tar.gz
+cd php-5.3.3/ext/mssql
+phpize
+./configure
+make
+make install
+</codeblock>
+
+        <p>Then, configure PHP to use the new extension by editing the PHP configuration files:</p>
+        <codeblock>vi /etc/php5/apache2/php.ini
+vi /etc/php5/cli/php.ini
+</codeblock>
+
+        <p>In both files, add the line:</p>
+        <codeblock>extension=mssql.so
+</codeblock>
+    </div>
+
+    <p>Finally, <a href="../3.0/Additional_Configuration.html#Restarting_Apache">restart Apache</a> to be able to use the new configuration. Microsoft SQL Server will be added to the list of database connections.</p>
+
+    <p>For older versions of Red Hat/CentOS that don't contain a <tt>php-mssql</tt> package, read <a href="http://www.howtoforge.com/installing_php_mssql_centos5.0">these instructions</a> to manually compile FreeTDS and PHP's <tt>mssql</tt> extension.</p>
+
+    <h4><span id="Executing_Store_Procedures">Executing stored procedures</span></h4>
+    <p>To execute stored procedures on the Microsoft SQL Server database, edit the FreeTDS configuration file, which is generally found at <strong><tt>/etc/freetds/freetds.conf</tt></strong>.</p>
+
+    <p>Edit the following lines to include the IP address and server port where Microsoft SQL Server is installed and the TDS version number:</p>
+
+    <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">host = xxx.xxx.xxx.xxx<br />
+port = 1433<br />
+tds version = 7.0</div></div>
+
+<!--    h4<span id="Installing_the_ODBC_Driver_and_SQLSRV_module">Installing the ODBC Driver and SQLSRV module</span>
+    <p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.3.0.</font></p>
+    <p>In case that the instance uses PHP 7, instead of installing <b>mssql</b> extension, install <b>sqlsrv</b> extension. The following steps explain how to install Microsoft ODBC Driver for SQL Server and SQLSRV module on CentOS:</p>
+    <p><b>1. </b>Open a terminal and login as root user or use the sudo command to gain root privileges.</p>
+    <codeblock>su     <font color=green><i>or</i></font>     sudo -i</codeblock>
+    <p><b>2. </b>Download the proper repositories for CentOS 7 and put it on <tt>/etc/yum.repos.d/mssql-release.repo</tt>.</p>
+    <codeblock>curl https://packages.microsoft.com/config/rhel/7/prod.repo > /etc/yum.repos.d/mssql-release.repo</codeblock>
+    <p><b>3. </b>Exit to the root user and update the installed package.</p>
+    <codeblock>exit
+sudo yum update</codeblock>
+    <p><b>4. </b>Remove unixODBC to avoid conflicts.</p>
+    <codeblock>sudo yum remove unixODBC</codeblock>
+    <p><b>5. </b>Install Microsoft Drivers.</p>
+    <codeblock>sudo ACCEPT_EULA=Y yum install msodbcsql-13.0.1.0-1 mssql-tools-14.0.2.0-1
+sudo yum install unixODBC-utf16-devel   <font color=dimgray>#It is optional but recommended</font></codeblock>
+    <p><b>6. </b>Create symlinks for tools.</p>
+    <codeblock>ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd 
+ln -sfn /opt/mssql-tools/bin/bcp-13.0.1.0 /usr/bin/bcp</codeblock>
+    <p><b>7. </b>Install SQLSRV module.</p>
+    <codeblock>pecl7 install sqlsrv
+pecl7 install pdo_sqlsrv</codeblock>
+
+<p>If ProcessMaker is installed in an operating system other than CentOS, see <a href="https://docs.microsoft.com/en-us/sql/connect/php/system-requirements-for-the-php-sql-driver?view=sql-server-2017">System Requirements for the Microsoft Drivers for PHP for SQL Server</a> and <a href="https://docs.microsoft.com/en-us/sql/connect/php/download-drivers-php-sql-server?view=sql-server-2017">Download the Microsoft Drivers for PHP for SQL Server</a>.</p>-->
+
+<h5><span id="Best_Practices_When_Using_Stored_Procedures">Best Practices When Using Stored Procedures</span></h5>
+<p>These are examples of best ways to use stored procedures in MSSQL:</p>
+<ul>
+    <li>
+        <p><code>EXEC <font color="blue">procedure-name</font></code> is allowed in the following controls: <a href="../3.1/Dropdown_Control.html#MSSQL_Stored_Procedures_and_Dependent_Fields">dropdowns</a> or <a href="../3.2/Suggest_Control.html#Using_MSSQL_Stored_Procedures">suggests</a>. Here is an example with a dropdown control:</p>
+        <p><img src="../sites/default/files/3.1DependentFieldStoredProcMSSQLDrop1.png" /></p>
+    </li>
+    <li>
+        <p><code>EXEC <font color="blue">procedure-name</font></code> is also allowed in triggers. Here is an example filling a grid control with data:</p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@=</span>productsGrid <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$db</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;71525495056005261835755079295218&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Unique example ID of a database connection</span><br />
+<span style="color: #000088;">$products</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;EXEC productPro2&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$db</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$products</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$products</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;=</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$products</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">@=</span>productsGrid<span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;productID&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$products</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'productID'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">&quot;productName&quot;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$products</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'productName'</span><span style="color: #009900;">&#93;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </li>
+    <li>
+        <p><code>EXEC <font color="blue">procedure-name</font> @VALUE = '<font color="blue">some-value</font>'</code> is not allowed because the <a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-serveroption-transact-sql?view=sql-server-ver15" target="_blank">sp_serveroption</a> can not be used inside a ProcessMaker transaction. For example, using a trigger with the following code displays an error similar to the one on the image:</p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$db</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;71525495056005261835755079295218&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Unique example ID of a database connection</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;EXEC productPro2 @VALUE = 'Mixer'&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$db</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+        <p><img src="../sites/default/files/3.5.0DatabaseConnection_MSSQL_StoreProcedureEx2.png" /></p>
+    </li>
+    <li>
+        <p><code>use <font color="blue">database-name</font>; EXEC <font color="blue">procedure-name</font>;</code> is not allowed because the database name is already set on the database configuration. For example, using a trigger with the following code displays an error similar to the one on the image:</p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$db</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;71525495056005261835755079295218&quot;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//Unique example ID of a database connection</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;use sqlCustomConn; EXEC productPro2;, <span style="color: #006699; font-weight: bold;">$db</span>);</span></div></div>
+        <p><img src="../sites/default/files/3.5.0DatabaseConnection_MSSQL_StoreProcedureEx1.png" /></p>
+    </li>
+</ul>
+
+<h4><span id="Installing_the_SQLSRV_module_Linux">Installing the SQLSRV Module</span></h4>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.3.0.</font></p>
+<p>In case that the ProcessMaker instance uses PHP 7, instead of installing the <b>mssql</b> extension, install the <b>sqlsrv</b> extension. The next steps explain how to install the SQLSRV module on CentOS specifically for <a href="../Stack_225.html">Stack 225</a>:</p>
+
+<ol style="font-weight:bold;">
+    <li><p style="font-weight:normal;">Install PHP 7.1</p>
+    <p style="font-weight:normal;margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray"> It is possible that you have conflicts with PHP versions previously installed, please delete prior versions and use the repositories of the official SQLSRV installation documentation.</font></p>
+        <codeblock style="font-weight:normal;">sudo su
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+wget https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+rpm -Uvh remi-release-7.rpm epel-release-latest-7.noarch.rpm
+yum install yum-utils
+yum-config-manager --enable remi-php71
+yum update
+yum install php php-pdo php-xml php-pear php-devel re2c gcc-c++ gcc</codeblock>
+    </li>
+    <li><p style="font-weight:normal;">Install prerequisites</p>
+    <codeblock style="font-weight:normal;">sudo su
+#Download appropriate package for the OS version
+curl https://packages.microsoft.com/config/rhel/7/prod.repo > /etc/yum.repos.d/mssql-release.repo
+exit
+sudo yum remove unixODBC-utf16 unixODBC-utf16-devel #to avoid conflicts
+sudo ACCEPT_EULA=Y yum install msodbcsql17
+#optional: for bcp and sqlcmd
+sudo ACCEPT_EULA=Y yum install mssql-tools
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+#optional: for unixODBC development headers
+sudo yum install unixODBC-devel</codeblock>
+    </li>
+    <li><p style="font-weight:normal;">Install devtoolset-7</p>
+<codeblock style="font-weight:normal;">sudo yum-config-manager --enable rhel-server-rhscl-7-rpms
+sudo yum install centos-release-scl
+sudo yum install devtoolset-7-gcc-c++
+scl enable devtoolset-7 bash</codeblock>
+    </li>
+    <li><p style="font-weight:normal;">Install the PHP drivers for Microsoft SQL Server</p>
+<codeblock style="font-weight:normal;">sudo pecl install sqlsrv
+sudo pecl install pdo_sqlsrv
+sudo su
+echo extension=pdo_sqlsrv.so >> php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"/30-pdo_sqlsrv.ini
+echo extension=sqlsrv.so >> php --ini | grep "Scan for additional .ini files" | sed -e "s|.*:\s*||"/20-sqlsrv.ini
+exit</codeblock>
+    </li>
+    <li><p style="font-weight:normal;">View the installed <code>sqlsrv</code> module</p>
+    <codeblock style="font-weight:normal;">php --ri sqlsrv</codeblock></li>
+</ol>
+
+    <!--<p><b>1. </b>Open a terminal and login as root user or use the sudo command to gain root privileges.</p>
+    <codeblock>su     <font color=green><i>or</i></font>     sudo -i</codeblock>
+    <p><b>2. </b>Download the proper repositories for CentOS 7 and put it on <tt>/etc/yum.repos.d/mssql-release.repo</tt>.</p>
+    <codeblock>curl https://packages.microsoft.com/config/rhel/7/prod.repo > /etc/yum.repos.d/mssql-release.repo</codeblock>
+    <p><b>3. </b>Exit to the root user and update the installed package.</p>
+    <codeblock>exit
+sudo yum update</codeblock>
+    <p><b>4. </b>Remove unixODBC to avoid conflicts.</p>
+    <codeblock>sudo yum remove unixODBC</codeblock>
+    <p><b>5. </b>Install Microsoft Drivers.</p>
+    <codeblock>sudo ACCEPT_EULA=Y yum install msodbcsql-13.0.1.0-1 mssql-tools-14.0.2.0-1
+sudo yum install unixODBC-utf16-devel   <font color=dimgray>#It is optional but recommended</font></codeblock>
+    <p><b>6. </b>Create symlinks for tools.</p>
+    <codeblock>ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd 
+ln -sfn /opt/mssql-tools/bin/bcp-13.0.1.0 /usr/bin/bcp</codeblock>
+    <p><b>7. </b>Install SQLSRV module.</p>
+    <codeblock>pecl7 install sqlsrv
+pecl7 install pdo_sqlsrv</codeblock>-->
+
+<p>If ProcessMaker is installed in an operating system other than CentOS, see <a href="https://docs.microsoft.com/en-us/sql/connect/php/system-requirements-for-the-php-sql-driver?view=sql-server-2017">System Requirements for the Microsoft Drivers for PHP for SQL Server</a> and <a href="https://docs.microsoft.com/en-us/sql/connect/php/download-drivers-php-sql-server?view=sql-server-2017">Download the Microsoft Drivers for PHP for SQL Server</a>.</p>
+
+    <h4><span id="If_the_SQL_Server_database_does_not_use_UTF-8_encoding">SQL Server Not Using UTF-8</span></h4>
+
+    <p>Some issues might arise if the Microsoft SQL Server database does not use the UTF-8 character set and contains non-ASCII characters, because <u>ProcessMaker is designed to use UTF-8</u>.
+<ul>
+    <li>The source code of ProcessMaker is written in UTF-8, and produces UTF-8 HTML pages.</li>
+    <li>The character set of the Apache server needs to be UTF-8.</li>
+    <li>AJAX requests using JSON encode are in UTF-8.</li>
+    <li>The collation in MySQL for ProcessMaker databases is in UTF-8.</li>
+</ul>
+
+<p>These four components need to be in UTF-8 for everything to work: the source code, Apache server, interactive data and database fields.</p>
+
+    <h4><span id="Solving_issues_with_UTF-8_characters">Solving Issues with UTF-8 Characters</span></h4>
+
+    <p>To display Unicode data from a Microsoft SQL Server database, it is recommended to:</p>
+    <ul>
+        <li><a href="898.html#Setup_FREETDS_in_Linux.2FUNIX" title="Database Connections">Setup freetds</a> to send UTF-8 data to ProcessMaker.</li>
+    </ul>
+    <ul>
+        <li>Remove some lines in the <a href="898.html#Change_MSSQLResultSet.php" title="Database Connections">MSSQLResultSet.php</a>        file.</li>
+    </ul>
+
+    <h5><span id="Setup_FREETDS_in_Linux.2FUNIX">Setup FREETDS in Linux/UNIX</span></h5>
+
+    <p>To avoid permissions problems with the <strong><tt>freetds.conf</tt></strong> file, it is recommended to give the <strong><tt>freetds.conf</tt></strong> file global read permissions. For example:</p>
+
+    <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">chmod +r /etc/freetds/freetds.conf</div></div>
+
+    <p>Make the environment variable <code>FREETDSCONF</code> point to the location of the <strong><tt>freetds.conf</tt></strong> file. At the beginning of the Apache service script (which is located at <strong><tt>/etc/init.d/httpd</tt></strong> in Red Hat/Cent OS/Fedora and at <strong><tt>/etc/init.d/apache2</tt></strong> in Debian/Ubuntu/SuSE), add the following line:</p>
+
+    <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">export FREETDSCONF=/etc/freetds/freetds.conf</div></div>
+
+    <p>Finally, in the global section of the <strong><tt>freetds.conf</tt></strong> file, change the following lines to:</p>
+
+    <div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">tds version = 7.0<br />
+client charset = UTF-8</div></div>
+
+    <p style="margin-left:25px"><strong><font color="green">Note:</font></strong>
+    <font color="dimgray">The TDS version may change depending on the version of the database engine with which the server is trying to communicate. For more information, please visit the <a href="http://www.freetds.org/userguide/freetdsconf.htm">freetds guide</a> page.</font>
+  </p>
+
+    <h5><span id="Change_MSSQLResultSet.php">Change MSSQLResultSet.php</span></h5>
+
+    <p>Once freetds gets all the data in UTF-8, the code is no longer needed to convert all fields to UTF-8. Remove the lines 123-133 from the <strong><tt>MSSQLResultSet.php</tt></strong> file, which is located at:</p>
+    <dl>
+        <dd><strong><tt>/thirdparty/creole/drivers/mssql/MSSQLResultSet.php</tt></strong></dd>
+    </dl>
+
+    <h3><span id="Collation_Database_Configuration">Collation Database Configuration</span></h3>
+
+    <p>Usually, when trying to execute queries that contain the character <strong><tt>ñ</tt></strong>, an error will occur. If searching in fields, the result will be <code>NULL</code>.</p>
+
+    <p>The problem is that the database collation in ProcessMaker is configured with UTF-8. To make queries using ñ work, data must be converted from the character set used by the SQL Server database to UTF-8 using PHP's <a href="http://php.net/manual/en/function.mb-convert-encoding.php">mb_convert_encoding()</a> function. To convert from ISO-8859-1, which is the most commonly used character set in Windows, the <a href="http://php.net/manual/en/function.utf8-encode.php">utf8_encode()</a> and <a href="http://php.net/manual/en/function.utf8-decode.php">utf8_decode()</a> functions can be used.</p>
+
+    <p>For example, the following trigger code converts UTF-8 to ISO-8859-1 to send queries to an Microsoft SQL Server database and then it converts the search results from ISO-8859-1 to UTF-8, so the results can be displayed in a grid field in ProcessMaker:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$idMssql</span> &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">'11609821854ca4355344560009542371'</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//change UID for database connection to SQL Server</span><br />
+<span style="color: #000088;">$group</span> <span style="color: #339933;">=</span> <a href="http://php.net/utf8_decode"><span style="color: #990000;">utf8_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>SelectedGroup<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//convert from UTF-8 to ISO-8859-1</span><br />
+<span style="color: #000088;">$rows</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT FIRST_NAME + ' ' + LAST_NAME from TABLE_EMPLOYEES<br />
+&nbsp; &nbsp;where GROUP = '<span style="color: #006699; font-weight: bold;">$group</span>' and COMPANY in ('5','4','3','1')&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$idMssql</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #666666; font-style: italic;">//place search results in a grid field named &quot;EmployeesGrid&quot; which has the rows firstName and lastName,</span><br />
+<span style="color: #666666; font-style: italic;">//which will be displayed in a subsequent DynaForm:</span><br />
+<span style="color: #339933;">@=</span>EmployeesGrid <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;=</span> <a href="http://php.net/count"><span style="color: #990000;">count</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$rows</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//use utf8_encode() to convert from ISO-8859-1 to UTF-8:</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@=</span>EmployeesGrid<span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'firstName'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/utf8_encode"><span style="color: #990000;">utf8_encode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$rows</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'FIRST_NAME'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'lastName'</span> <span style="color: #339933;">=&gt;</span> <a href="http://php.net/utf8_encode"><span style="color: #990000;">utf8_encode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$rows</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$i</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'LAST_NAME'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+</div>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

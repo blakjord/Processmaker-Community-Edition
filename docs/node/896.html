@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.3/Process_Permissions.html" />
+<link rel="shortlink" href="896.html" />
+<title>3.3 - 3.5 - Process Permissions | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"1r_LjfpfkHfUByW9Lm11cqR5Q7rO0_Biv7RDlPKf8ao","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-896 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="896.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="896.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form--x55r2vlJRWtKST7jrd22kWLxpwxGTmOaAGV1TnXgls" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.3 - 3.5 - Process Permissions</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.6/Process_Permissions.html" class="">3.8</a></li><li><a href="../3.6/Process_Permissions.html" class="">3.7</a></li><li><a href="../3.6/Process_Permissions.html" class="">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a href="../3.2/Process_Permissions.html" class="">3.2</a></li><li><a href="../3.1/Process_Permissions.html" class="">3.1</a></li><li><a href="../3.0/Process_Permissions.html" class="">3.0</a></li><li><a href="../index.php/2.0/Process_Permissions.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.3 - 3.5 - Process Permissions" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="896.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.3 - 3.5 - Process Permissions 1/5</option><option value="40">Give 3.3 - 3.5 - Process Permissions 2/5</option><option value="60">Give 3.3 - 3.5 - Process Permissions 3/5</option><option value="80" selected="selected">Give 3.3 - 3.5 - Process Permissions 4/5</option><option value="100">Give 3.3 - 3.5 - Process Permissions 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.2</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-R3o7ZcZBiEO6RfSNNoBUPWbKuxkpzSDAykxmyWMOhzY" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="896.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="896.html#Overview">Overview </a></li>
+<li class="toc"><a href="896.html#Assigning_Process_Permissions">Assigning Process Permissions</a></li>
+<li class="toc"><a href="896.html#viewing">Viewing the Permissions of a Process</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Using_the_BLOCK_permission">Using the BLOCK Permission</a></li>
+<li class="toc"><a href="896.html#How_Permissions_are_Calculated">How Permissions are Calculated</a></li>
+</ol>
+<li class="toc"><a href="896.html#Accessing_Case_Objects_with_Process_Permissions">Accessing Case Objects with Process Permissions</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Accessing_Attached_Files">Attachment Process Permission</a></li>
+<li class="toc"><a href="896.html#Accessing_Case_Notes">Case Notes Permission</a></li>
+<li class="toc"><a href="896.html#Accessing_DynaForms">Dynaform Permission</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Dynaforms">Accesing Dynaforms</a></li>
+<li class="toc"><a href="896.html#Accessing_the_Change_Log">Accessing the Change Log</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Data_Changes">Data Changes</a></li>
+<li class="toc"><a href="896.html#Permissions_and_Access">Permissions and Access</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Change_Log_From_Actions_by_Email">Change Log From Actions by Email</a></li>
+</ol>
+</ol>
+</ol>
+<li class="toc"><a href="896.html#Accessing_Input_Documents">Input Document Permission</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Deleting_Input_Documents">Deleting Input Documents</a></li>
+</ol>
+<li class="toc"><a href="896.html#Accessing_Message_History">Message History Permissions</a></li>
+<li class="toc"><a href="896.html#Accessing_Output_Documents">Output Document Permission</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Deleting_Output_Documents">Deleting Output Documents</a></li>
+</ol>
+<li class="toc"><a href="896.html#Reassigning_my_cases">Reassign My Cases Permission</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Reassigning">Reassigning Cases</a></li>
+</ol>
+<li class="toc"><a href="896.html#Accessing_the_Summary_Form">Summary Form Permission</a></li>
+<ol class="toc">
+<li class="toc"><a href="896.html#Custom_Dynaform_when_Opening_a_Case">Viewing the Custom Dynaform when Opening a Case</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="896.html#Process_Permissions_Example">Process Permissions Example</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview </span></h2>
+<p>By default, only assigned users can work on cases, Process Permissions can be used to grant a user(s) or group(s) read-only access to the objects in cases, which include <a href="../3.0/Dynaforms.html">Dynaforms</a>, <a href="../3.2/Input_Documents.html">input</a> and <a href="../3.2/Output_Documents.html">output</a> documents, <a href="../3.0/Case_Notes.html">case notes</a>, <a href="../3.2/Case_Summary.html#More_Information">summary forms</a> and message history.</p>
+
+<p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 60%;">
+<tbody>
+<tr>
+<td>
+<font color="red"><b>Warning:</b></font> <font color=dimgrey>Note that the ability to access Input Documents is restricted also for the <a href="../3.2/Configuration_File_env.ini.html#Available_Settings:">disable_download_documents_session_validation</a> flag, which is enabled by default. For more information read the <a href="896.html#Accessing_Input_Documents">Input Document permission</a> section.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>Only the user currently designated to work on a case can open the case. To allow other users the ability to see (but not change) the data in cases, they need to be assigned Process Permissions. Remember that if users need to have write access to cases, see <a href="../3.1/Process_Supervisors.html"> Process Supervisor</a>.</p>
+
+<p>Process Permissions are designed to offer advanced control over how users access cases and what information they can view in specific tasks during the case.</p>
+
+<h2><span id="Assigning_Process_Permissions">Assigning Process Permissions</span></h2>
+<p>Assign Process Permissions to a user(s) or group(s) by going to the <strong>Designer</strong> tab and opening a process. Then, hover the pointer of the mouse over the (+) icon next to the <strong>Permissions</strong> option. Click on the <strong>Create</strong> button.</p>
+
+<p><img alt="" src="../sites/default/files/ProcessMaker3_ProcessPermission_MainToolboxCreateOption.png"></p>
+
+<p>A new modal window displays where the user can configure the new process permission.</p>
+
+<p><img alt="" src="../sites/default/files/3.3CreatePermissionWindow.png"></p>
+
+<p>Follow these steps to assign process permissions:</p>
+
+<p>
+<ol>
+<li><p><strong>Group or User:</strong> Enter the name of the user or user group that will have the permission in the process. When there is a large amount of users/groups, this field has a suggest property where a letter or a name can be typed and the field will filter the results based on what is typed in. This is a required field.</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_Permissions_UserAssignationPerformance.png"></p>
+</li>
+
+<li><p><strong>Type:</strong> Select the type of objects that the user or group will be given access to. They can be:</p>
+<p>
+<ul>
+    <li><a href="896.html#Accessing_Attached_Files">Attachment</a></li>
+    <li><a href="896.html#Accessing_Case_Notes">Case Notes</a></li>
+    <li><a href="896.html#Accessing_DynaForms">Dynaforms</a></li>
+    <li><a href="896.html#Accessing_Input_Documents">Input Documents</a></li>
+    <li><a href="896.html#Accessing_Message_History">Message History</a></li>
+    <li><a href="896.html#Accessing_Output_Documents">Output Documents</a></li>
+    <li><a href="896.html#Reassigning_my_cases">Reassign my cases</a> <font color="green">(Available as of ProcessMaker 3.3.0)</font></li>
+    <li><a href="896.html#Accessing_the_Summary_Form">Summary Forms</a>   <font color=green>(only available in the Enterprise Edition)</font></li>
+</ul>
+</p>
+<p>If one of the following options is chosen: <b>Dynaform</b>, <b>Input Document</b>, <b>Output Document</b>, then a field below the <strong>Participation required?</strong> field is displayed to select the specific object(s) that can be accessed (all Dynaforms, input and output documents that are inside the process).</p>
+</li>
+
+<li><p><strong>Case Status: </strong>Select the status the case must currently have to allow the user/group to access it. The options shown are the following:</p>
+<p>
+    <ul>
+    <li><strong>All</strong>: Gives the user(s) or group(s) access to all cases, no matter which status they have.</li>
+
+    <li><strong>DRAFT</strong>: Gives the user(s) or group(s) permission to access cases with the DRAFT status. It means that the current task of the case has started to be worked on (a step has been opened and saved), but hasn't yet been completed.</li>
+
+    <li><strong>TO DO</strong>: Gives the user(s) or group(s) permission to access cases with TO_DO status. It means that the current task of the case has been assigned to a user, but hasn't been worked on yet (i.e., no steps have been saved yet).</li>
+
+    <li><strong>PAUSED</strong>: Gives the user(s) or group(s) permission to access cases that have been paused.</li>
+
+    <li><strong>COMPLETED</strong>: Gives the user(s) or group(s) permission to access cases with the COMPLETED status. It means that the case has arrived at an end event and wasn't closed by canceling or deleting the case.</li>
+    </ul>
+    </p>
+    <p>The <strong>Case Status</strong> option is not displayed if the permission type is "Reassign my cases".</p>
+</li>
+
+<li><p><strong>Target Task:</strong> Select the task where the case must be in the process and to access the case if it is the current pending task and the thread is open. Select the <strong>All Tasks</strong> option to disable this permission, which give access to the selected process objects no matter what the current task is. The selected user/group can not open the case if:
+    <ul>
+        <li>The case is currently in any other task.</li>
+        <li>The case is completed.</li>
+        <li>The case is closed.</li>
+    </ul>
+For example: If the "Review Form" task has been configured as the target task, the selected process elements will only be accessible when the process reaches this specific task.</p></li>
+
+<li><p><strong>Origin Task:</strong> Select the task whose objects will be granted access to. The selected user/group can see objects related to this task. <b>Origin Task</b> is disabled if <b>Target Task</b> has configured a task. To allow the user/group to see objects and information from all tasks, choose the <strong>All Tasks</strong> option.<br>
+The <strong>Origin Task</strong> option is not displayed if the permission type is "Reassign my cases".<br>
+For example: If the "Send Form" task has been selected as the origin task, the selected process elements will only be accessible if they are currently assigned as steps of this specific task.</p>
+</li>
+
+<p><strong><font color="green">Note:</font></strong> <font color="dimgray">About the <strong>Target Task</strong> and <strong>Origin Task</strong>, take into account the following:
+<ul>
+    <li><b>Target Task</b> Has priority over <b>Origin Task</b> settings.</li>
+    <li>The task status is not relevant.</li>
+    <li>The <strong>Target Task</strong> and <strong>Origin Task</strong> combination in the same task is not available.</li>
+    <li>The major permission cancels the minor.</li>
+</ul>
+</font></p>
+
+<li><p><strong>Participation Required?:</strong> Select <strong>Yes</strong> if the user must have been previously designated to work on the case at some prior point to have permission to access the case. Select <strong>No</strong> if the user doesn't need to have been designated to work on the case to open it. Note that selecting <strong>Yes</strong> means that the user will only have the process permission to open the case <strong>after</strong> they have worked on the case, and not throughout the whole process.</p>
+<p>The <strong>Participation Required?</strong> option is not displayed if the permission type is "Reassign my cases".</p>
+</li>
+
+<li><p><strong>Permission:</strong> Select one of the options:</p>
+    <p><ul>
+        <li><strong>View:</strong> This option allows the user or group to open the case and view its object(s).</li>
+        <li><strong>Block:</strong> This option prevents the user or group from opening the case and viewing its objects. Read more about the Block permission <a href="896.html#Using_the_BLOCK_permission">here</a>.</li>
+        <li><strong>Delete:</strong> This option is only available if the user selects "Input Document" or "Output Document" as the type. It allows the user to delete document(s) that are assigned as a task's step.</li>
+    </ul>
+</p>
+
+<p>The <strong>Permission</strong> option is not displayed if the type of the permission is "Case Notes", "Case Summary" or "Reassign my cases". In the first two options, the permission is set to View by default. Otherwise, the "Reassign my cases" option doesn't displays permission.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionSummaryandCaseNotes.png"></p>
+
+</li>
+<li><p><strong>Cancel button:</strong> Click on this button to cancel the creation of the new permission.</p></li>
+<li><p><strong>Save button:</strong> After setting all the necessary conditions to create the permission, click on this button to save it.</p></li>
+</ol>
+</p>
+
+<p>Take into account that multiple process permissions can be used in combination to block a small subset of users or block access to a small subset of objects. First, create a general permission with the <strong>VIEW</strong> option. Then, create more specific permissions that <strong>BLOCK</strong> access to that smaller subset of users or objects. Read <a href="896.html#Using_the_BLOCK_permission">this section</a> to learn more.</p>
+
+
+<h2><span id="viewing">Viewing the Permissions of a Process</span></h2>
+<p>View the permissions of the process by going to the <strong>Permissions</strong> option. </p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_ProcessPermission_MainToolboxOption.png"></p>
+<p>The modal window that appears will show a list of all permissions given in the process.</p>
+<p><img alt="" src="../sites/default/files/ProcessPermissionsWindowVersion3.png"></p>
+<ol>
+    <li><strong>Search:</strong> In this field, enter the name of the user or group that has a process permission. This field has the auto complete property, so all matches will be listed while entering text.</li>
+    <li><strong>Create:</strong> Click on this button to create a new permission. The modal window that opens is explained <a href="896.html#Assigning_Process_Permissions">above</a>.</li>
+    <li><strong>Group or user:</strong> This column lists the groups or users who have been given a process permission. Note that the list can be resorted in alphabetical order by clicking on one of the column headers. Click again to switch the sort order from ascending to descending or vice versa.</li>
+    <li><strong>Participation:</strong> Shows whether the participation of the user in the case is required to view the case.</li>
+
+    <li><strong>Type:</strong> Shows the type of objects (Dynaforms, input documents, output documents, case notes, message history or all) the user has access to.</li>
+
+    <li><strong>Object:</strong> Shows the specific object(s) that the user may access, depending on the selected type.</li>
+    <li><strong>Permission:</strong> Shows the type of permission, which may be "view", "block" or "delete".</li>
+    <li><strong>Status:</strong> Shows the status (ALL, TO_DO, DRAFT or COMPLETED) the case must have for the user or group to have access to it.</li>
+    <li><strong>Edit:</strong> Click to edit the settings of the permission.</li>
+    <li><strong>Delete:</strong> Click on this button to delete a process permission, and a delete confirmation dialog will be displayed.</li>
+    <li><strong>Pagination control:</strong> Use this control to navigate through the pages of permissions, which are displayed ten at a time.</li>
+</ol>
+
+<h3><span id="Using_the_BLOCK_permission">Using the BLOCK Permission</span></h3>
+<p>The BLOCK permission is used in combination with a VIEW permission. Use the VIEW permission to create a general class that has access to an object, then create additional BLOCK permissions to remove specific users or objects from that general class.</p>
+<p>For example, if it is necessary for all users in a group named "Employees" to have access to a Dynaform except user jane_doe, then first create a VIEW permission to grant the Employees group access to the Dynaform. Then, create a second BLOCK permission to prevent user jane_doe from accessing the Dynaform.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionsBlockExample2.png"></p>
+
+<p>BLOCK permissions can also be used to remove objects from a general class. For example, to give users access to all the objects in a case except the final output document, which contains sensitive information, then first create a VIEW permission with Type set to "All". Then create a second BLOCK permission with Type set to "Output Document" and select the particular output document to block.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionsBlockExample1.png"></p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">If a permission has an <a href="896.html">Input Document</a>, <a href="896.html">Output Document</a> or <a href="896.html">Message History</a> type selected, the Block permissions applies when the user does not generate information. If the user generates information (as upload a document to the case, generate an output document or send a message history), the BLOCK permission is not available.</font></p>
+
+<h3><span id="How_Permissions_are_Calculated">How Permissions are Calculated</span></h3>
+<p>Take into account the following rules:</p>
+
+<ol>
+  <li><p>When a user is assigned to more than one permission, VIEW permissions are added together. In contrast, BLOCK permissions are subtracted.</p>
+
+<p>For example, if a user has been assigned the following list of permission rules:<br>
+<ul>
+<li>Permission Rule 1 VIEW (Positive)</li>
+<li>Permission Rule 2 VIEW (Positive)</li>
+<li>Permission Rule 3 BLOCK (Negative)</li>
+<li>Permission Rule 4 VIEW (Positive)</li>
+<li>Permission Rule 5 BLOCK (Negative)</li>
+</ul>
+</p>
+
+<p>The final process permissions will be calculated in this way:</p>
+
+<p>Positive (VIEW) permissions are added <tt><b>(OR)</b></tt>:</p>
+<codeblock>Permission Rule 1 positive  <b>OR</b>  Permission Rule 2 positive  <b>OR</b>  Permission Rule 4 positive</codeblock>
+
+<p>And negative (BLOCK) permissions will be subtracted <b><tt>(AND)</tt></b></p>
+<codeblock><b>AND</b>  Permission Rule 3 negative  <b>AND</b>  Permission Rule 5 negative</codeblock>
+
+<p>The resulting permissions will be calculated like so:</p>
+<codeblock>(Permission Rule 1 positive  <b>OR</b>  Permission Rule 2 positive  <b>OR</b>  Permission Rule 4 positive)  <b>AND</b>  Permission Rule 3 negative  <b>AND</b>  Permission Rule 5 negative</codeblock>
+
+<p><img alt="" src="../sites/default/files/3.0PermissionsBlockExCalculated.png"></p></li>
+  <li>
+    <p>Adding the SUMMARY permission as follows:</p>
+    <ul>
+      <li>Permission Rule 1 BLOCK.</li>
+      <li>Permission Rule 2 SUMMARY.</li>
+    </ul>
+    <p>Or:</p>
+    <ul>
+      <li>Permission Rule 2 SUMMARY.</li>
+      <li>Permission Rule 1 BLOCK.</li>
+    </ul>
+    <p>In both cases, the SUMMARY permission is the most important permission over the BLOCK.</p>
+  </li>
+</ol>
+
+<h2><strong><span id="Accessing_Case_Objects_with_Process_Permissions">Accessing Case Objects with Process Permissions</span></strong></h2>
+
+<p>After process permissions have been assigned to users or groups, if the user is or were assigned to the case, the case object can be access by going to the <strong>Home</strong> tab, and opening the case using one of the following folders:</p>
+<ul>
+    <li><a href="../3.2/Cases.html#Inbox">Inbox</a></li>
+    <li><a href="../3.2/Cases.html#Draft">Draft</a></li>
+    <li><a href="../3.2/Cases.html#Participated">Participated</a></li>
+</ul>
+
+<p>They can access to the case object by and searching for the case using the <a href="896.html">Jump to</a> option.
+
+<p>If the user isn't assigned to the case and hasn't participated in the case, then the case can be accessed:<br>
+<ul>
+<li>Using the <a href="../3.2/Cases.html#Search">advanced search</a>, which is only available to users who have the <a href="../3.1/Roles.html#PM_ALLCASES"> PM_ALLCASES</a> permission in their <a href="../3.1/Roles.html"> role</a>.</li>
+
+<li>Using the <a href="../3.2/cases.1.html#Search_Criteria">Jump To</a> option, which can be found in the Inbox, Draft, Participated, Unassigned, and Paused folders.</li>
+</ul>
+</p>
+
+<h3><span id="Accessing_Attached_Files">Attachment Process Permission</span></h3>
+<p>An <b>Attachment</b> process permission allows users to download files that were uploaded using a Multiple File Uploader control that was not related to an <a href="../3.2/Multiple_File_Uploader.html#Relating_an_Input_Document_with_a_File">Input Document</a> when the <a href="../3.2/Configuration_File_env.ini.html">disable_download_documents_session_validation</a> flag is enabled.</p>
+
+<p>If the user does not have an Attachment process permission, he/she will be restricted from downloading the attached files and an error 403 message will be displayed.</p>
+
+<p><img src="../sites/default/files/3.2ProcessPermissionInputRestrictionFlag.png"></p>
+
+<h3><span id="Accessing_Case_Notes">Case Notes Permission</span></h3>
+
+<p>A <b>Case Notes permission</b> allows users to access and post <a href="../3.0/Case_Notes.html">case notes</a> in a case.</p>
+<p>To access case notes, go to one of the case lists (Inbox, Draft, Participated, Unassigned, or Paused) under the Home panel, and click on the <img alt="" src="../sites/default/files/CaseNotesIcon.png"> icon of a case. The notes of that particular case will be displayed in a separate window.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionCaseNotesView.png"></p>
+
+<p>Case notes can also be accessed by opening a case and clicking on the <img alt="" src="../sites/default/files/CaseNotesIcon.png"> Case Notes button in the toolbar.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionCaseNotesOpen.png"></p>
+
+<h3><span id="Accessing_DynaForms">Dynaform Permission</span></h3>
+<p>A <b>Dynaform permission</b> allows the user to view:</p>
+<ul>
+     <li><a href="896.html#Dynaforms">Dynaforms</a></li>
+     <li><a href="896.html#Accessing_the_Change_Log">Change Log</a></li>
+ </ul>
+
+<h4><span id="Dynaforms">Accesing Dynaforms</span></h4>
+<p>To view the Dynaform(s), go to <strong>Home</strong> and open the case. Then, go to the <strong>Information</strong> submenu and select the <strong>Dynaforms</strong> option to see a list of available Dynaforms the user has access to:</p>
+<p><img alt="" src="../sites/default/files/3.1ProcessPermissionDynaformAccess.png"></p>
+
+<p>To view a Dynaform, select it in the list, and click on the <strong>Preview</strong> button in the toolbar. The Dynaform opens in a new tab in read-only mode.</p>
+
+<p><img src="../sites/default/files/3.1ProcessPermission_DynaFormPreview.png"></p>
+
+<h4><span id="Accessing_the_Change_Log">Accessing the Change Log</span></h4>
+
+<p>The Change Log section displays variable value changes after each step of each task in the process from a web application, mobile application or <a href="../3.2/Actions_by_Email.html">actions by email</a>. This includes all modified and unmodified variables in each step, including before and after triggers.</p>
+
+<h5><span id="Data_Changes">Data Changes</span></h5>
+<p>The Change Log functionality registers the variable value changes after each step. For example, if a task only has one step:</p>
+
+<codeblock>[Before trigger, [step object], after trigger] - write log</codeblock>
+
+<p>Therefore, if the task has two steps, then the log will register the changes twice:</p>
+
+<codeblock>Step 1 - [Before trigger, [step object], after trigger] - write log - after step 1
+Step 2 - [Before trigger, [step object], after trigger] - write log - after step 2</codeblock>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> Modifications made by <a href="../3.1/Process_Supervisors.html">Supervisor Users</a> will be reflected in the change log.</font></p>
+
+<h5><span id="Permissions_and_Access">Permissions and Access</span></h5>
+
+<p>All variables modified in each step (including before and after triggers) are displayed in the Change Log section only if the user has the proper permission.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">
+Users who do not participate in any of the tasks defined in the permission need the <a href="../3.1/Roles.html#PM_ALLCASES">PM_ALLCASES</a> permission to search for the case using the Advanced Search option and have access to the Change Log option.
+</font></p>
+
+<p>To allow users to access the change log in a specific task(s), create a process permission with the type "Dynaform" and assign the users using the Group or User field. An example of the permission is shown below:</b>.
+<p><img src="../sites/default/files/3.2ChangeLogPermission.png"></p>
+
+<p>Access the change log by going to <b>Home</b> and opening a case. Then, go to the <b>Information</b> sub-menu and select the Change Log option.</p>
+<p><img src="../sites/default/files/PM3.0ChangeLogOption.png"></p>
+
+<p>A new tab displays the content of the variables, as well as their values and changes throughout each step, as shown in the image below:</p>
+<p><img src="../sites/default/files/3.3ChangeLogExample.png"></p>
+
+<p>The change log will specify the following:</p>
+    <ul>
+            <li><strong>Field Name:</strong> Name of the field that was modified. Usually the name that is displayed is the name given when the field was created.</li>
+            <li><strong>Previous Values:</strong> If changes were made, the previous values will be displayed in this field. </li>
+            <li><strong>Current Values:</strong> Displays all the fields and their modified values. </li>
+    </ul>
+<p>For each step the Change Log header displays:</p>
+<ul>
+    <li><strong>Task:</strong> The task name where the step change variables.</li>
+    <li><strong>Dynaform:</strong> The Dynaform name where the step change variables.</li>
+    <li><strong>Date Updated:</strong> The when variables are modified.</li>
+    <li><strong>User:</strong> User in the current task.</li>
+    <li><strong>From:</strong> Origin of the change:
+    <p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">The <b>From</b> section is available as of ProcessMaker 3.3.0.</font></p>
+    <ul>
+        <li>Web Application</li>
+        <li>Mobile Application</li>
+        <li><a href="896.html#Change_Log_From_Actions_by_Email">Actions by Email</a> <font color="green">(As of ProcessMaker 3.3.0)</font></li>
+    </ul></li>
+</ul>
+<h6><span id="Change_Log_From_Actions_by_Email">Change Log From Actions by Email</span></h6>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.3.0.</font></p>
+<p>The Change Log headers of the <strong>Actions By Email</strong> are as follows:</p>
+<ul>
+    <li><strong>Link to Fill a Form: </strong>In the header information shows the name of the Dynaform defined in the Action by Email configuration. Change Log saves changes of variables present in the form.
+    <p><img src="../sites/default/files/3.3ChangeLogExample3.png" alt=""></p></li>
+    <li><strong>Using a Field to Generate Action Links: </strong>In the header information, the Dynaform is set to <strong>N/A</strong> non-applicable, similarly to <b>Custom Actions</b> where there is one data saved in the change log. So, the only data saved in Change Log corresponds to the variable that holds the value of the option selected in the form.</li>
+    <li><strong>Custom Actions: </strong>In the header information, the Dynaform is set to <strong>N/A</strong> non-applicable. The only data saved in Change Log corresponds to the result variable that holds the custom action (in the example below, it is <b>result</b>).
+    <p><img src="../sites/default/files/3.3ChangeLogExample2.png" alt=""></p></li>
+</ul>
+
+<h3><span id="Accessing_Input_Documents">Input Document Permission</span></h3>
+<p>An <b>Input Document permission</b> is used to grant access to the input documents of a case in the following two scenarios:<br>
+<ol>
+<li><p><b>Users that are NOT assigned to the case:</b> This permission allows users that are not assigned to the case, to see the case's input documents by opening a case, going to the <strong>Information</strong> submenu and selecting the <strong>Uploaded Documents</strong> option. A list of available input document files will be displayed in a new tab.</p>
+<p><img alt="" src="../sites/default/files/3.1PermissionsUploadedDocuments.png"></p>
+
+<p>To view a file, first select it and click on the <strong>Download</strong> option in the toolbar. The configuration of your web browser will determine how the file is opened or saved.</p>
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionInputDocView.png"></p>
+
+<p>The same list of input documents can be seen in the <a href="../3.2/Case_Summary.html#Uploaded_Documents">Uploaded Documents</a> tab inside the <a href="../3.2/Case_Summary.html">Case Summary</a> if the user has the Input Document permission.</p>
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionInputDocViewSummary.png"></p>
+</li>
+
+<li><p><b>Users assigned to the case:</b> If the <a href="../3.2/Configuration_File_env.ini.html">disable_download_documents_session_validation</a> flag is set to "0" or is not included in the <a href="../3.2/Configuration_File_env.ini.html">env.ini</a> file, the user will be restriced from downloading input documents. Therefore, even if the user is assigned to the case, he/she will need an Input Document process permission to download input documents.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionInputExample.png"></p>
+
+<p>Otherwise, a "403 Access denied" error message will be displayed:</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionInputRestrictionFlag.png"></p>
+
+<p><strong><font color="green">Note:</font></strong> <font color="dimgray">If the user assigned to the case is the same user who uploaded the input documents, the Input Document permission is not needed.</font></p>
+
+</li>
+</ol>
+
+<p></p>
+
+<h4><span id="Deleting_Input_Documents">Deleting Input Documents</span></h4>
+
+<p>An <b>Input Document permission</b> of Delete type allows users to delete input documents that were assigned as a task's step.</p>
+<p><img src="../sites/default/files/PM3.0PermissionsInputDocStep.png"></p>
+
+<p>To delete an input document, create a process permission and set its type as "Input Document" and the Permission field as "Delete", as shown in the image below:</p>
+<p><img src="../sites/default/files/3.2PermissionsInputDocStepDeletePermission.png"></p>
+
+<p>Then, go to Home and open the case. Go to the <b>Steps</b> button and select the input document in the list of steps.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> Remember that only users who are assigned to the case or are Process Supervisors have access to the <strong>Steps</strong> button, so unassigned users who need to delete input document files should also be assigned as <a href="../3.1/Process_Supervisors.html"> Process Supervisors</a> and given access to the input document object. These users need to have the <a href="../3.1/Roles.html#PM_SUPERVISOR"> PM_SUPERVISOR</a> permission in their <a href="../3.1/Roles.html">role</a>.</font></p>
+
+<p><img src="../sites/default/files/PM3.0PermissionsInputDocStepDeleteCase.png"></p>
+
+<p>The Delete button will be available in the documents defined in the Object field of the permission. After clicking on it, the following confirmation message will be displayed.
+</p>
+
+<p><img src="../sites/default/files/PM3.0InputDocStepDeleteButtonConfirm.png"></p>
+
+<p>Finally, click on <b>OK</b> to delete the file or click on <b>Cancel</b> to close the message.</p>
+
+<h3><span id="Accessing_Message_History">Message History Permissions</span></h3>
+
+<p>By default, the <a href="../3.3/Cases/Information.html#Message_History">Message History</a> displays the list of all the email messages that were sent when running a case, including Actions by Email messages. Permissions restrict or allow the ability to see the email content, re-send or block the emails messages in the Message History list. These permissions also affect Actions by Email messages.</p>
+
+<p><img alt="" src="../sites/default/files/3.3.8MessageHistory.png"></p>
+
+<p>To add a permission, open <strong>Process Permission</strong> and in <strong>Type</strong> select <strong>Message History</strong>.</p>
+
+<p><img alt="" src="../sites/default/files/3.2PermissionsMessageHistoryPermissionView.png"></p>
+
+<p>Configure the following fields:</p>
+<p>
+<ul>
+<li><b>Participation required?:</b>
+    <p>
+    <ul>
+    <li><b>Yes:</b> Only messages in cases that the user with the permission has participated in will be able to be seen, resent or blocked, depending on the type of permission.</li>
+
+<li><b>No:</b> The type of permission will be applied to all the messages sent during the case.</li>
+</ul>
+</p>
+</li>
+<li>
+<p><b>Type of permission:</b></p>
+
+<p>
+<ul>
+    <li><p><strong>View:</strong> Users will have permission to view the message content.</p>
+
+<p>For example, as shown in the image below, a permission with the View type was assigned to the user named Travis to grant him the ability to see the content of the emails sent in all completed cases he participated in.</p>
+
+<p><img alt="" src="../sites/default/files/3.2PermissionsMessageHistoryPermissionViewEx.png"></p>
+
+<p>Therefore, the user Travis will be able to see the content of the messages in completed cases he has participated in.</p>
+
+<p><img alt="" src="../sites/default/files/3.2PermissionsMessageHistoryPermissionViewExResult.png"></p>
+
+
+    </li>
+<li><p><strong>Block:</strong> Users won't see any messages listed in the Message History.</p>
+
+    <p>For example, as shown in the image below, the user named Travis has a Block permission.</p>
+    <p><img alt="" src="../sites/default/files/3.2PermissionsMessageHistoryPermissionBlockEx.png"></p>
+
+    <p>Therefore, the user Travis won't see any messages listed in the Message History tab in any of the cases of the process.</p>
+
+    <p><img alt="" src="../sites/default/files/3.2PermissionsMessageHistoryPermissionBlockExResult.png"></p>
+
+    </li>
+
+<li><p><strong>Resend:</strong> Users will have the resend option available next to each message.</p>
+
+    <p>For example, as shown in the image below, the user named Travis is assigned a resend permission to be able to resend all the messages in the case, whether he has participated or not.</p>
+
+    <p><img alt="" src="../sites/default/files/3.2PermissionsMessageHistoryPermissionResendEx.png"></p>
+
+    <p>The user Travis will see the resend icon enabled next to each message in the list.</p>
+
+    <p><img alt="" src="../sites/default/files/3.2PermissionsMessageHistoryPermissionResendExResult.png"></p>
+
+    <p>After clicking the resend option, a dialog will be displayed to confirm the action.</p>
+
+    <p><img alt="" src="../sites/default/files/3.2PermissionsMessageHistoryPermissionResendExConfirm.png"></p>
+
+    </li>
+</ul>
+</p>
+
+</li>
+</ul>
+</p>
+
+<h3><span id="Accessing_Output_Documents">Output Document Permission</span></h3>
+
+<p>An <b>Output Document permission</b> allows users to see the output documents generated in a case by  opening a case, going to the <strong>Information</strong> submenu and selecting the <strong>Generated Documents</strong> option.
+
+<p><img alt="" src="../sites/default/files/3.1ProcessPermission_OutputDocView1.png"></p>
+
+<p>The list of output document generated in the case will be displayed in a different tab.</p>
+
+<p><img src="../sites/default/files/3.2ProcessPermissionOutputDocView.png"></p>
+
+<p>To download one, select a document to enable the <strong>Download</strong> (both <tt>.doc</tt> and <tt>.pdf</tt> formats, depending on the output document's configuration) buttons. Click on either of them to begin the download. The configuration of your web browser will determine how the file is opened or saved.</p>
+
+<p>The same list of output documents generated in the case can be seen in the <a href="../3.2/Case_Summary.html#Generated_Documents">Generated Documents</a> tab of the <a href="../3.2/Case_Summary.html">Case Summary</a>.</p>
+
+<p><img src="../sites/default/files/3.2ProcessPermissionOutputDocViewSummary.png"></p>
+
+<h4><span id="Deleting_Output_Documents">Deleting Output Documents</span></h4>
+
+<p>If accessing the list of output documents with an Output Document permission of <b>Delete</b> type, each element listed in the output document list will have a <strong>Delete</strong> button on the right-hand side, as shown in the image below.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionsOutDocDelete.png"></p>
+
+<p>The Delete button will also be available in the <a href="../3.2/Case_Summary.html#Generated_Documents">Generated Documents</a> tab of the <a href="../3.2/Case_Summary.html">Case Summary</a>.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionOutputDocViewSummaryDelete.png"></p>
+
+<h3><span id="Reassigning_my_cases">Reassign My Cases Permission</span></h3>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.3.0.</font></p>
+<p>Currently a supervisor or an administrator can reassign cases. Operators with the <strong>Reassign my cases</strong> permission can reassign their cases in "TO DO" status in certain tasks. This allows operators to delegate work that they can't complete themselves.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">Granting "All" permission can not grant operators the "Reassign my cases" permission.</font></p>
+
+<p>To grant a <strong>Reassign my cases</strong> permission to users or groups, open a project for editing and create a new permission. In the <b>Type</b> field, select the "Reassign my cases" option and define the other properties of the process permission.</p>
+
+<p><img src="../sites/default/files/3.3ReassigningMyCasesPermission.png" alt=""></p>
+
+<p>In the <b>Create permission</b> form, the <strong>Type</strong> is moved below <strong>Group or User</strong>. The only fields available are <strong>Target Task</strong> and <strong>Group or User</strong>.</p>
+<p>After you save the permission, it is listed as follows:</p>
+<p><img src="../sites/default/files/3.3ReassigningMyCasesList.png" alt=""></p>
+<p>The columns show the following:</p>
+<ul>
+    <li><strong>Group or User</strong> shows the group or user applied to the permission.</li>
+    <li><strong>Type</strong> shows REASSIGN_MY_CASES.</li>
+    <li><strong>Participation</strong> shows N/A.</li>
+    <li><strong>Object</strong> shows N/A.</li>
+    <li><strong>Permission</strong> shows N/A.</li>
+    <li><strong>Status</strong> always shows TO_DO.</li>
+</ul>
+<h4><span id="Reassigning">Reassigning Cases</span></h4>
+<p>After granting permission, follow these steps to reassign cases:</p>
+<p><strong>1. </strong>Go to the case list.</p>
+<p><strong>2. </strong>Open the case assigned to the user.</p>
+<p><strong>3. </strong>To reassign the case, click the <strong>Actions</strong> menu, and then <strong>Reassign</strong>.</p>
+<p><img src="../sites/default/files/3.3ReassigningMyCases1.png" alt=""></p>
+<p>After clicking <strong>Reassign</strong>, the reassignment pop up opens.</p> 
+<p><img src="../sites/default/files/3.3ReassigningMyCases2.png" alt=""></p>
+<p><strong>4. </strong>Fill in a reason to reassign the case.</p>
+<p><strong>5. </strong>Select a user to reassign the case. The list of users to reassign the case is populated with all task assignees and <a href="../3.2/Tasks.html#Ad_Hoc_Users">Ad Hoc users</a>.</p>
+<p><strong>6. </strong>Click <img src="../sites/default/files/3.3ReassigningMyCases3.png" alt="">.</p>
+
+<h3><span id="Accessing_the_Summary_Form">Summary Form Permission</span></h3>
+<p style="margin-left:25px"><font color="red"><b>Warning:</b></font> <font color=dimgrey> This permission and feature are only available in the Enterprise Edition.</font></p>
+
+<p>A <b>Summary Form permission</b> allows users to see the custom Dynaform selected in the <b>Dynaform to show a case summary</b> option in the <a href="../3.2/Processes.html#Editing_a_Project">process</a> configuration.</p>
+
+<p><img src="../sites/default/files/3.2ProcessPermissionSummaryAssign.png"></p>
+
+<p>This Dynaform displays in read-only mode in:</p>
+
+<ul>
+    <li>
+        <p>The <a href="../3.2/Case_Summary.html#More_Information">More Information</a> tab under the <a href="../3.2/Case_Summary.html">Case Summary</a> option, or when opening a case using the <b>Jump To</b> option or a case link (read <a href="896.html#Custom_Dynaform_when_Opening_a_Case">this section</a> for more information).</p><p><img src="../sites/default/files/ProcessMaker3_ProcessPermission_SummaryForm.png"></p>
+    </li>
+    <li>
+        <p>As of <b>ProcessMaker 3.3.4</b>, opening <a href="../3.2/Cases/Cases.html#Unassigned">unassigned</a> cases.</p>
+        <p><img src="../sites/default/files/3.3.4UnassignedCase.png" alt=""></p>
+    </li>
+</ul>
+ 
+<p>To grant a Summary Form permission to users or groups, open a project and then create a new permission. In the <b>Type</b> field, select the <b>Summary Form</b> option and then define the other properties of the process permission.</p>
+<p><img src="../sites/default/files/3.2ProcessPermission_SummaryFormCreation.png"></p>
+
+<p>If the user doesn't have the <b>Summary Form</b> permission and tries to see the content in the <b>More Information</b> tab of the Case Summary, the following message displays:</p>
+<p><img src="../sites/default/files/3.2CaseSummaryRestriction.png"></p>
+<p>If the user doesn't have the <b>Summary Form</b> permission, the <a href="../3.2/Cases/Cases.html#Unassigned">unassigned</a> cases displays just general information of the case.</p>
+
+<h4><span id="Custom_Dynaform_when_Opening_a_Case">Viewing the Custom Dynaform when Opening a Case</span></h4>
+
+<p>A user that hasn't participated in the case, is not a supervisor of the process and doesn't have the <a href="../3.1/Roles.html#PM_ALLCASES">PM_ALLCASES</a> permission assigned to their role does NOT have access to the case. Therefore, if the user opens the case using the <a href="896.html#Search_Criteria">Jump To</a> option or a <a href="../3.0/Links.html#Linking_inside_ProcessMaker">case link</a>, only the case's <a href="../3.2/Case_Summary.html#General_Information">general information</a> will be displayed.</p>
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionSummaryFormNoPermission.png"></p>
+
+<p>Nevertheless, if the user has a Summary Form permission and a Dynaform has been selected in the <b>Dynaform to show a Case Summary</b> option in the process configuration, the selected Dynaform will be displayed when the user uses the Jump To option or a case link to open a case.
+
+<p><img alt="" src="../sites/default/files/3.2ProcessPermissionSummaryForm.png"></p>
+
+<p>The custom Dynaform will be displayed in cases with a TO DO, DRAFT, PAUSED, CANCELLED, UNASSIGNED and COMPLETED status.</p>
+
+<h2><span id="Process_Permissions_Example">Process Permissions Example</span></h2>
+<p>In this example, a new process permission will be created that gives a user, who is not assigned to any task, access to view a Dynaform named "Order Request Form."</p>
+
+<p>The process in this example is the following:</p>
+<p><img src="../sites/default/files/3.2PermissionsExProcess.png"></p>
+
+<p>Each task in the process has a Dynaform assigned as a step:<br>
+<table>
+    <tr>
+        <td><b>Task</b></td>
+        <td><b>Dynaform Assigned</b></td>
+    </tr>
+    <tr>
+        <td>Submit Request</td>
+        <td>Order Request Form</td>
+    </tr>
+    <tr>
+        <td>Assess Request</td>
+        <td>Assess Request Form</td>
+    </tr>
+    <tr>
+        <td>Deliver Order</td>
+        <td>Deliver Order Form</td>
+    </tr>
+</table>
+</p>
+
+<p>A user must be created for this example. Go to <b>Admin</b>, and in the Users tab, click on <b>New</b>.
+<p><img src="../sites/default/files/3.2PermissionsExProcessNewUser.png"></p>
+
+<p>This will lead to another window where personal information about the new user must be filled in. As seen in the image below, only the required fields were filled in for the purpose of this example. The new user will be "James Sunderland" and he will have the role of "Operator", plus the <a href="../3.1/Roles.html#PM_ALLCASES">PM_ALLCASES</a> permission to search the case. Give a password to the new user and then click on <b>Save</b> to store their information.</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessNewUserInfo.png"></p>
+
+<p>After creating the new user, go to the <b>Designer</b> tab and open the process being worked on. In the Process Objects toolbox, go to <b>Permissions</b> and create a new permission by clicking on <b>Create</b>.</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessCreatePermission.png"></p>
+
+<p>Once in the Create permission window, configure the new permission as follows:</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessPermission.png"></p>
+
+<ul>
+    <li><b>Case Status:</b> Select <b>ALL</b> so the user will be able to use this permission no matter the case status.</li>
+    <li><b>Target Task:</b> Select the <b>Assess Request</b> task. The case should be in this task when the process permission is used. </li>
+    <li><b>Group or User:</b> Assign the user created earlier, named "James Sunderland", by typing a "J" in the suggest box and selecting his name from the list of suggested users.</li>
+
+    <li><b>Origin Task:</b> Select the "Submit Request" task. This task has the Order Request Form Dynaform assigned as a step.</li>
+
+    <li><b>Participation Required?:</b> Choose <b>No</b> since the user is not designated to work on this process.</li>
+
+    <li><b>Type:</b> Choose <b>Dynaform</b>, because in this example James needs to see the Order Request Form Dynaform.</li>
+
+    <li><b>Dynaform:</b> Choose the <b>Order Request Form</b> Dynaform from the available Dynaforms in the dropdown menu. Note that this field will become available after choosing "Dynaform" in the Type field.</li>
+
+    <li><b>Permission:</b> Select <b>View</b> to give the user access to see the Dynaform previously selected.</li>
+</ul>
+
+<p>Click on <b>Save</b> to maintain all changes. After saving, the permission created will be listed in the Permissions window.</p>
+<p><img src="../sites/default/files/3.2PermissionsExProcessPermissionListed.png"></p>
+
+<p>To make sure the permission works, run a case by going to <b>Home</b>, then <b>New Case</b> in the left menu, and choosing the case that was given the permission created.</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessCreateaCase.png"></p>
+
+<p>Since the permission's target task is the Assess Request task, the case has to be routed to this task.</p>
+
+<p>Log in to ProcessMaker with the user named "James".
+Remember that James wasn't assigned to any of the tasks in the Purchase Request process, but his role has the PM_ALLCASES permission, so he can search through all the cases using the Advanced Search option.
+
+Remember that James wasn't assigned to any of the tasks in the Purchase Request process, but his role has the <a href="../3.1/Roles.html#PM_ALLCASES">PM_ALLCASES</a> permission, so he can search through all the cases using the <a href="../3.2/Cases.html#Advanced_Search">Advanced Search</a> option. Enter the case number of the case created before, which in this example is #25, in the box next to the Search button and the case will be listed.</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessSearch.png"></p>
+
+<p>Open the case and the case details will be displayed.</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessOpenCase.png"></p>
+
+<p>In the Information tab choose <b>Dynaforms</b>.</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessOpenCaseDynaform.png"></p>
+
+<p>The user will be able to see the Dynaform selected during the creation of the process permission. In this example, the "Order Request Form" Dynaform will be listed. Check the box next to the Dynaform's name and click on <b>Preview</b> to see the Dynaform's content.</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessOpenCaseDynaformList.png"></p>
+
+<p>The Dynaform will be displayed in read only mode.</p>
+
+<p><img src="../sites/default/files/3.2PermissionsExProcessOpenCaseDynaformDisplayed.png"></p>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

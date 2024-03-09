@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Consulting_the_ProcessMaker_databases.html" />
+<link rel="shortlink" href="../node/135.html" />
+<title>2.0 - Consulting the ProcessMaker Databases | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"a2C5SYhofdj0g_KsxTVrjXVQlGB8h_deYdZLpojLd0I","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-135 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Consulting_the_ProcessMaker_databases.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-I1aJv_k7zGsw9SKcERZq6Bt-KVLM7p3ROs-6aQjo6k4" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.0 - Consulting the ProcessMaker Databases</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.8</a></li><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.7</a></li><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.6</a></li><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.5</a></li><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.4</a></li><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.3</a></li><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.2</a></li><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.1</a></li><li><a href="../3.0/Consulting_the_ProcessMaker_databases.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.0 - Consulting the ProcessMaker Databases" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Consulting_the_ProcessMaker_databases.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.0 - Consulting the ProcessMaker Databases 1/5</option><option value="40">Give 2.0 - Consulting the ProcessMaker Databases 2/5</option><option value="60" selected="selected">Give 2.0 - Consulting the ProcessMaker Databases 3/5</option><option value="80">Give 2.0 - Consulting the ProcessMaker Databases 4/5</option><option value="100">Give 2.0 - Consulting the ProcessMaker Databases 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.8</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-o_S11qTx3QGVwXcVBBaXADaZEPtPAYv1aB9N8wmpbFo" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Consulting_the_ProcessMaker_databases.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#From_the_Command_Line">From the Command Line</a></li>
+<ol class="toc">
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Login_into_MySQL">Login into MySQL </a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Examining_the_databases">Examining the databases </a></li>
+</ol>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#From_the_phpMyAdmin_GUI">From the phpMyAdmin GUI</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Finding_ProcessMaker_objects">Finding ProcessMaker objects</a></li>
+<ol class="toc">
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Examples">Examples</a></li>
+<ol class="toc">
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Users">Users </a></li>
+<ol class="toc">
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Listing_all_available_users">Listing all available users</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Finding_information_about_a_particular_user">Finding information about a particular user</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Listing_what_groups_a_user_belongs_to">Listing what groups a user belongs to</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Listing_what_tasks_a_user_is_assigned_to">Listing what tasks a user is assigned to</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Listing_the_pending_cases_for_a_user">Listing the pending cases for a user</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Accessing_in_Dynaform_Fields">Accessing in Dynaform Fields</a></li>
+</ol>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Groups">Groups </a></li>
+<ol class="toc">
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Listing_the_available_groups">Listing the available groups</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Finding_the_status_of_a_group">Finding the status of a group</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Listing_members_of_a_particular_group">Listing members of a particular group</a></li>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Accessing_in_DynaForm_Fields_2">Accessing in DynaForm Fields</a></li>
+</ol>
+</ol>
+</ol>
+<li class="toc"><a href="Consulting_the_ProcessMaker_databases.html#Using_ProcessMaker_classes">Using ProcesMaker classes to lookup translations</a></li>
+</ol>
+</div></div>
+
+<p>All the information which ProcessMaker stores in held in <a href="ProcessMaker_Database_Model.html" title="ProcessMaker Database Model">three MySQL databases</a> for each <a  href="Workspaces.html#Creating_Workspaces" title="Create a new Workspace">workspace</a>, which are generally named <strong><tt>wf_<font color=blue><i>&lt;workspace&gt;</i></font></tt></strong>, <strong><tt>rb_<font color=blue><i>&lt;workspace&gt;</i></font></tt></strong> and <strong><tt>rp_<font color=blue><i>&lt;workspace&gt;</i></font></tt></strong>. This information can be easily looked up and even modified with <a href="http://www.mysql.com">MySQL</a> or a graphical interface such as <a href="http://www.phpmyadmin.net">PhpMyAdmin</a> to access MySQL databases. It can also be consulted from within ProcessMaker using the <a href="ProcessMaker_Functions.html#executeQuery.28.29" title="ProcessMaker Functions">executeQuery()</a> function in triggers.</p><dl><dd><strong><font color="green">Note:</font></strong> <font color="dimgrey">By default, MySQL tables are not case sensitive in Windows, but they are case sensitive in Linux/UNIX. See the <a href="http://dev.mysql.com/doc/refman/5.0/en/identifier-case-sensitivity.html">MySQL documentation</a>. The ProcessMaker table and field names are in lowercase in Windows installations, but they are in UPPERCASE in Linux/UNIX systems. When creating SQL queries to access the ProcessMaker databases, it is recommended to spell the table and field names in UPPERCASE, since those SQL queries can be used in <i>both</i> Windows and Linux systems. For example, refer to <strong>USERS.USR_USERNAME</strong>, rather than <strong>users.usr_username</strong> or <strong>Users.Usr_Username</strong>.</font></dd></dl>
+
+<h2><span id="From_the_Command_Line">From the Command Line</span></h2><p>The ProcessMaker databases can be accessed from the command line of your operating system with <a href="http://dev.mysql.com/doc/refman/5.1/en/mysql.html">mysql</a> (or from your web browser with <a href="http://dev.mysql.com/doc/refman/5.1/en/mysqladmin.html">mysqladmin</a>). Enter MySQL as the root user (or whichever user was configured to the MySQL databases for ProcessMaker). If you have forgotten this password as well, see <a href="http://dev.mysql.com/doc/refman/5.0/en/resetting-permissions.html">these instructions</a> to reset the root password.</p><h3><span id="Login_into_MySQL">Login into MySQL </span></h3>
+<p>In Windows open the <strong>Command Prompt</strong> (found at <strong>Start &gt; All Programs &gt; Accessories &gt; Command Prompt</strong>) and enter:</p>
+<div>
+<codeblock>cd "C:\Program Files\ProcessMaker\mysql\bin"
+<font color=green><i>(the path depends on where MySQL was installed)</i></font> 
+mysql -u root -p 
+<font color=green><i>Enter the MySQL root password</i></font> 
+</codeblock>
+<div>In GNU/Linux or UNIX, open a terminal and enter:</div>
+<codeblock>mysql -u root -p
+<font color=green><i>Enter the MySQL root password</i></font> 
+</codeblock>
+<div>(If logged in as the root user in Red Hat/Fedora, it generally isn't necessary to use the <strong><tt>-p</tt></strong> option and enter the MySQL root password.)</div>
+<h3><span id="Examining_the_databases">Examining the databases </span></h3>
+<p>Once inside MySQL, examine the available databases:</p>
+<div>
+<codeblock>mysql&gt; <strong>show databases;</strong>
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydata             |
+| mysql              |
+| rb_workflow        |
+| rpworkflow         |
+| test               |
+| wf_workflow        |
++--------------------+
+7 rows in set (0.00 sec)
+</codeblock>
+</div>
+<p>Switch to a particular database:</p>
+<div>
+<codeblock>mysql&gt; <strong>use wf_workflow;</strong>
+Database changed
+</codeblock>
+</div>
+<p>See all the tables in a database:</p>
+<div>
+<codeblock>mysql&gt; <strong>show tables;</strong>
++-----------------------+
+| Tables_in_wf_workflow |
++-----------------------+
+| additional_tables     |
+| app_delay             |
+| app_delegation        |
+| app_document          |
+| app_message           |
+| app_owner             |
+| app_thread            |
+| application           |
+| case_tracker          |
+| case_tracker_object   |
+| configuration         |
+| content               |
+| db_source             |
+| department            |
+| dynaform              |
+| fields                |
+| group_user            |
+| groupwf               |
+| holiday               |
+| input_document        |
+| iso_country           |
+| iso_location          |
+| iso_subdivision       |
+| language              |
+| lexico                |
+| login_log             |
+| object_permission     |
+| output_document       |
+| process               |
+| process_owner         |
+| process_user          |
+| report_table          |
+| report_var            |
+| route                 |
+| session               |
+| shadow_table          |
+| stage                 |
+| step                  |
+| step_supervisor       |
+| step_trigger          |
+| sub_application       |
+| sub_process           |
+| swimlanes_elements    |
+| task                  |
+| task_user             |
+| translation           |
+| triggers              |
+| users                 |
+| users_properties      |
++-----------------------+
+49 rows in set (0.00 sec)
+</codeblock>
+</div>
+<p>Examine the structure of a table:</p>
+<div>
+<codeblock>mysql&gt; <strong>desc users;</strong>
++-----------------+--------------+------+-----+--------------------+-------+
+| Field           | Type         | Null | Key | Default            | Extra |
++-----------------+--------------+------+-----+--------------------+-------+
+| USR_UID         | varchar(32)  | NO   | PRI |                    |       |
+| USR_USERNAME    | varchar(100) | NO   |     |                    |       |
+| USR_PASSWORD    | varchar(32)  | NO   |     |                    |       |
+| USR_FIRSTNAME   | varchar(50)  | NO   |     |                    |       |
+| USR_LASTNAME    | varchar(50)  | NO   |     |                    |       |
+| USR_EMAIL       | varchar(100) | NO   |     |                    |       |
+| USR_DUE_DATE    | date         | NO   |     |                    |       |
+| USR_CREATE_DATE | datetime     | NO   |     |                    |       |
+| USR_UPDATE_DATE | datetime     | NO   |     |                    |       |
+| USR_STATUS      | varchar(32)  | NO   |     | ACTIVE             |       |
+| USR_COUNTRY     | varchar(3)   | NO   |     |                    |       |
+| USR_CITY        | varchar(3)   | NO   |     |                    |       |
+| USR_LOCATION    | varchar(3)   | NO   |     |                    |       |
+| USR_ADDRESS     | varchar(255) | NO   |     |                    |       |
+| USR_PHONE       | varchar(24)  | NO   |     |                    |       |
+| USR_FAX         | varchar(24)  | NO   |     |                    |       |
+| USR_CELLULAR    | varchar(24)  | NO   |     |                    |       |
+| USR_ZIP_CODE    | varchar(16)  | NO   |     |                    |       |
+| USR_POSITION    | varchar(100) | NO   |     |                    |       |
+| USR_RESUME      | varchar(100) | NO   |     |                    |       |
+| USR_BIRTHDAY    | date         | NO   |     |                    |       |
+| USR_ROLE        | varchar(32)  | YES  |     | PROCESSMAKER_ADMIN |       |
+| DEP_UID         | varchar(32)  | NO   |     |                    |       |
++-----------------+--------------+------+-----+--------------------+-------+
+23 rows in set (0.00 sec)
+</codeblock>
+</div>
+<p>Exiting MySQL:</p>
+<codeblock>mysql&gt; <b>exit;</b>
+bye
+</codeblock>
+<h2><span id="From_the_phpMyAdmin_GUI">From the phpMyAdmin GUI</span></h2>
+<p>The ProcessMaker databases can be accessed with a graphical interface by using <a href="http://www.phpmyadmin.net">phpMyAdmin</a>. The Windows installer for ProcessMaker automatically installs phpMyAdmin by default, but for Linux/UNIX, it will have to be manually installed.</p>
+<p>To use phpMyAdmin, enter the address <code>http://<font color=blue><i>IP-ADDRESS</i></font>/phpmyadmin</code> in your web browser. For example, if ProcessMaker was installed on the local machine, use the address <code>http://localhost/phpmyadmin</code> . The Windows installer for ProcessMaker automatically created the user "administrator", so login to phpMyAdmin as "administrator" with the password which you entered during the installation.</p>
+<p><img alt="" src="../sites/default/files/PM_in_phpMyAdmin.png" height="760" width="926"></p>
+<h2><span id="Finding_ProcessMaker_objects">Finding ProcessMaker objects</span></h2>
+<p>Objects in ProcessMaker such as users, groups, processes, tasks, cases, DynaForms, database connections, etc. are identified by their <strong>UID</strong> or <i><strong>unique identification</strong></i>, which is a string of 32 hexadecimal numbers generated by ProcessMaker. In most cases, the individual tables which hold information about ProcessMaker objects do not include their names (i.e, titles or labels), so it is very hard to know which object is being referenced in the table.</p>
+<p>Instead the name of most objects (except users) is stored in the <strong><tt>wf_<font color=blue><i>&lt;workspace&gt;</i></font>.CONTENT</workspace></tt></strong> table. To find out information about a particular object, look up their names and their matching UID in the <strong><tt>CONTENT</tt></strong> table, then look up the information about the object in their particular table.</p>
+<p>To find types of elements in the <strong><tt>CONTENT</tt></strong> table, look for the following values in the <strong><tt>CON_CATEGORY</tt></strong> field:</p>
+<table border="1" cellpadding="3" cellspacing="0"><tbody>
+<tr><th>CON_CATEGORY</th><th>Description</th></tr>
+<tr><td>APP_DESCRIPTION</td><td>Case description.</td></tr>
+<tr><td>APP_DOC_COMMENT</td><td>Comment on a document in a case.</td></tr>
+<tr><td>APP_DOC_FILENAME</td><td>Filename of a document in a case.</td></tr>
+<tr><td>APP_DOC_TITLE</td><td>Title of a document in a case.</td></tr>
+<tr><td>APP_TITLE</td><td>Case title.</td></tr>
+<tr><td>DBS_DESCRIPTION</td><td>Database connection description.</td></tr>
+<tr><td>DEPO_TITLE</td><td>Department Title.</td></tr>
+<tr><td>DYN_DESCRIPTION</td><td>DynaForm description.</td></tr>
+<tr><td>DYN_TITLE</td><td>DynaForm title.</td></tr>
+<tr><td>GRP_TITLE</td><td>Group title.</td></tr>
+<tr><td>INP_DOC_DESCRIPTION</td><td>Input Document description</td></tr>
+<tr><td>INP_DOC_TITLE</td><td>Input Document title</td></tr>
+<tr><td>OUT_DOC_DESCRIPTION</td><td>Output Document description.</td></tr>
+<tr><td>OUT_DOC_FILENAME</td><td>Output Document filename</td></tr>
+<tr><td>OUT_DOC_TEMPLATE</td><td>Output Document template</td></tr>
+<tr><td>OUT_DOC_TITLE</td><td>Output Document title</td></tr>
+<tr><td>PRO_DESCRIPTION</td><td>Process description.</td></tr>
+<tr><td>PRO_TITLE</td><td>Process title</td></tr>
+<tr><td>REP_TAB_TITLE</td><td>Report Table title</td></tr>
+<tr><td>SWI_TEXT</td><td>Text in process maps</td></tr>
+<tr><td>TAS_DEF_DESCRIPTION</td><td>&nbsp;</td></tr>
+<tr><td>TAS_DEF_MESSAGE</td><td> </td></tr>
+<tr><td>TAS_DEF_PROC_CODE</td><td>&nbsp;</td></tr>
+<tr><td>TAS_DEF_TITLE</td><td>&nbsp;</td></tr>
+<tr><td>TAS_DESCRIPTION</td><td>Task description</td></tr>
+<tr><td>TAS_TITLE</td><td>Task title</td></tr>
+<tr><td>TRI_DESCRIPTION</td><td>Trigger description</td></tr>
+<tr><td>TRI_TITLE</td><td>Trigger title</td></tr></tbody></table>
+<h3><span id="Examples">Examples</span></h3>
+<p>To see a list of all the cases and their UIDs:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> CON_ID<span style="color: #66cc66;">,</span> CON_VALUE <span style="color: #993333; font-weight: bold;">FROM</span> CONTENT <span style="color: #993333; font-weight: bold;">WHERE</span> CON_CATEGORY<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'APP_TITLE'</span>;</div></div>
+
+<p><strong>Running the query from the command line:</strong></p>
+<p><img alt="" src="../sites/default/files/QueryListCases.png" height="433" width="622"></p>
+<p><strong>Running the query from the <tt>phpMyAdmin GUI</tt></strong></p>
+<p><img alt="" src="../sites/default/files/QueryListCasesGUI.png" height="655" width="623"></p>
+<p>To look up the UID for a particular case whose title is "#46":</p>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> CON_ID <span style="color: #993333; font-weight: bold;">FROM</span> CONTENT <span style="color: #993333; font-weight: bold;">WHERE</span> CON_CATEGORY<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'APP_TITLE'</span> <span style="color: #993333; font-weight: bold;">AND</span> CON_VALUE<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'#46'</span>;</div></div>
+<h4><span id="Users">Users </span></h4>
+<h5><span id="Listing_all_available_users">Listing all available users</span></h5>
+<div>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> USR_FIRSTNAME<span style="color: #66cc66;">,</span> USR_LASTNAME<span style="color: #66cc66;">,</span> USR_USERNAME<span style="color: #66cc66;">,</span> USR_EMAIL <span style="color: #993333; font-weight: bold;">FROM</span> USERS;</div></div>
+</div>
+<p><strong>Running the query from the command line:</strong></p>
+<p><img alt="" src="../sites/default/files/QueryUsersCL.png" height="165" width="619"></p>
+<p><strong>Running the query from the <tt>phpMyAdmin GUI</tt></strong></p>
+<p><img alt="" src="../sites/default/files/QueryUsersGUI.png" height="121" width="819"></p>
+<h5><span id="Finding_information_about_a_particular_user">Finding information about a particular user</span></h5>
+<div>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">select * from USERS where USR_USERNAME='admin';</div></div>
+</div>
+<h5><span id="Listing_what_groups_a_user_belongs_to">Listing what groups a user belongs to</span></h5>
+<div>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> C<span style="color: #66cc66;">.</span>CON_ID<span style="color: #66cc66;">,</span> C<span style="color: #66cc66;">.</span>CON_VALUE <span style="color: #993333; font-weight: bold;">FROM</span> CONTENT C<span style="color: #66cc66;">,</span> GROUP_USER GU<span style="color: #66cc66;">,</span> USERS U <span style="color: #993333; font-weight: bold;">WHERE</span><br />
+&nbsp;C<span style="color: #66cc66;">.</span>CON_ID<span style="color: #66cc66;">=</span>GU<span style="color: #66cc66;">.</span>GRP_UID <span style="color: #993333; font-weight: bold;">AND</span> U<span style="color: #66cc66;">.</span>USR_UID<span style="color: #66cc66;">=</span>GU<span style="color: #66cc66;">.</span>USR_UID <span style="color: #993333; font-weight: bold;">AND</span><br />
+&nbsp;U<span style="color: #66cc66;">.</span>USR_USERNAME<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'admin'</span>;</div></div>
+</div>
+<p><strong>Running the query from the command line:</strong></p>
+<p><img alt="" src="../sites/default/files/QueryUsersGroupsbelongsCL.png" height="148" width="654"></p>
+<p><strong>Running the query from the <tt>phpMyAdmin GUI</tt></strong></p>
+<p><img alt="" src="../sites/default/files/QueryUsersGroupsbelongsGUI.png" height="63" width="503"></p>
+<h5><span id="Listing_what_tasks_a_user_is_assigned_to">Listing what tasks a user is assigned to</span></h5>
+<div>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> C<span style="color: #66cc66;">.</span>CON_VALUE <span style="color: #993333; font-weight: bold;">FROM</span> CONTENT C<span style="color: #66cc66;">,</span> USERS U<span style="color: #66cc66;">,</span> TASK_USER TU <span style="color: #993333; font-weight: bold;">WHERE</span><br />
+&nbsp;C<span style="color: #66cc66;">.</span>CON_ID <span style="color: #66cc66;">=</span> TU<span style="color: #66cc66;">.</span>TAS_UID <span style="color: #993333; font-weight: bold;">AND</span> U<span style="color: #66cc66;">.</span>USR_UID <span style="color: #66cc66;">=</span> TU<span style="color: #66cc66;">.</span>USR_UID<br />
+&nbsp;<span style="color: #993333; font-weight: bold;">AND</span> U<span style="color: #66cc66;">.</span>USR_USERNAME <span style="color: #66cc66;">=</span> <span style="color: #ff0000;">'admin'</span> <span style="color: #993333; font-weight: bold;">AND</span> C<span style="color: #66cc66;">.</span>CON_CATEGORY <span style="color: #66cc66;">=</span> <span style="color: #ff0000;">'TAS_TITLE'</span>;</div></div>
+</div>
+<p><strong>Running the query from the command line:</strong></p>
+<p><img alt="" src="../sites/default/files/QueryTaskAssignedUserCL.png" height="306" width="569"></p>
+<p><strong>Running the query from the <tt>phpMyAdmin GUI</tt></strong></p>
+<p><img alt="" src="../sites/default/files/QueryTaskAssignedUserGUI.png" height="359" width="454"></p>
+<h5><span id="Listing_the_pending_cases_for_a_user">Listing the pending cases for a user</span></h5>
+<div>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> C<span style="color: #66cc66;">.</span>CON_ID <span style="color: #993333; font-weight: bold;">AS</span> CASE_ID<span style="color: #66cc66;">,</span> A<span style="color: #66cc66;">.</span>APP_NUMBER <span style="color: #993333; font-weight: bold;">AS</span> CASE_NUMBER<span style="color: #66cc66;">,</span> C<span style="color: #66cc66;">.</span>CON_VALUE <span style="color: #993333; font-weight: bold;">AS</span> CASE_TITLE <br />
+&nbsp;<span style="color: #993333; font-weight: bold;">FROM</span> CONTENT C<span style="color: #66cc66;">,</span> APPLICATION A<span style="color: #66cc66;">,</span> APP_DELEGATION AD<span style="color: #66cc66;">,</span> USERS U<br />
+&nbsp;<span style="color: #993333; font-weight: bold;">WHERE</span> C<span style="color: #66cc66;">.</span>CON_ID <span style="color: #66cc66;">=</span> AD<span style="color: #66cc66;">.</span>APP_UID <span style="color: #993333; font-weight: bold;">AND</span> AD<span style="color: #66cc66;">.</span>APP_UID<span style="color: #66cc66;">=</span>A<span style="color: #66cc66;">.</span>APP_UID <span style="color: #993333; font-weight: bold;">AND</span> U<span style="color: #66cc66;">.</span>USR_UID <span style="color: #66cc66;">=</span> AD<span style="color: #66cc66;">.</span>USR_UID <span style="color: #993333; font-weight: bold;">AND</span> <br />
+&nbsp;U<span style="color: #66cc66;">.</span>USR_USERNAME <span style="color: #66cc66;">=</span> <span style="color: #ff0000;">'admin'</span> <span style="color: #993333; font-weight: bold;">AND</span> C<span style="color: #66cc66;">.</span>CON_CATEGORY <span style="color: #66cc66;">=</span> <span style="color: #ff0000;">'APP_TITLE'</span> <span style="color: #993333; font-weight: bold;">AND</span> <span style="color: #66cc66;">&#40;</span>A<span style="color: #66cc66;">.</span>APP_STATUS <span style="color: #66cc66;">=</span> <span style="color: #ff0000;">'OPEN'</span> <br />
+&nbsp;<span style="color: #993333; font-weight: bold;">OR</span> A<span style="color: #66cc66;">.</span>APP_STATUS<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'TO_DO'</span><span style="color: #66cc66;">&#41;</span> <span style="color: #993333; font-weight: bold;">AND</span> AD<span style="color: #66cc66;">.</span>DEL_THREAD_STATUS<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'OPEN'</span>;</div></div>
+</div>
+<p>Change <tt>U.USR_USERNAME = '<font color="green">admin</font>'</tt> to the username to query. The @@USR_USERNAME system variable can be used if needing to query for the currently logged-in user in a trigger or a DynaForm field.</p>
+<p>To see the pending cases for a particular user from the command line:</p>
+<p><img alt="" src="../sites/default/files/QueryOpenCasesForUserCLI.png" height="181" width="757"></p>
+<h5><span id="Accessing_in_Dynaform_Fields">Accessing in Dynaform Fields</span></h5>
+<p>If needing to use a database query in a <a href="2.0/Dropdown_Boxes_and_Listboxes.html#Dropdown" title="2.0/Dropdown Boxes and Listboxes">dropdown box</a>, <a href="2.0/Dropdown_Boxes_and_Listboxes.html#Listbox" title="2.0/Dropdown Boxes and Listboxes">listbox</a>, <a href="2.0/Checkboxes_and_Radio_Buttons.html#Radiogroup" title="2.0/Checkboxes and Radio Buttons">radiogroup</a> or <a href="2.0/Checkboxes_and_Radio_Buttons.html#Checkgroup" title="2.0/Checkboxes and Radio Buttons">checkgroup</a> inside a DynaForm, make sure that the query returns two fields where the first field is the <i>value</i> which is stored when an option is selected and the second field is the <i>label</i> which is displayed to the user. Enter the query in the SQL query field without a <tt>semicolon (;)</tt> at the end.</p>
+<p>For example listing what groups a user belongs to:</p>
+<p>The XML definition:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;GroupsUser</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;dropdown&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">btn_cancel</span>=<span style="color: #ff0000;">&quot;Cancel&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #339933;">&lt;![CDATA[</span><br />
+<span style="color: #339933;"> &nbsp;SELECT C.CON_ID, C.CON_VALUE FROM CONTENT C, GROUP_USER GU, USERS U WHERE C.CON_ID = GU.GRP_UID AND U.USR_UID = GU.USR_UID AND U.USR_USERNAME = 'liriarte'</span><br />
+<span style="color: #339933;"> &nbsp;]]&gt;</span><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Groups that a user belongs to<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/GroupsUser<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+<p>The preview will be:</p>
+<p><img alt="" src="../sites/default/files/ListGroupsUsersDynaform.png" height="66" width="260"></p>
+<p>If needing to use a case or system variable in the query, then create a hidden field in the DynaForm which has the same name as the variable so that its value will be passed to the DynaForm when it is loaded. Then, that variable can be used in the SQL query, either as <code>@@<i>variable</i></code> (variable inserted inside double quotation marks) or <code>@#<i>variable</i></code> (variable inserted without enclosing quotation marks).</p>
+<p>For example, if needing to display a list of the list of groups for the currently logged-in user, then use the @@USR_USERNAME system variable by adding a hidden field named "USR_USERNAME" and placing <code>U.USR_USERNAME = @@USR_USERNAME</code> in the SQL query:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;USR_USERNAME</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;hidden&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">optgroup</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;GroupsUser</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;dropdown&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">btn_cancel</span>=<span style="color: #ff0000;">&quot;Cancel&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #339933;">&lt;![CDATA[</span><br />
+<span style="color: #339933;"> &nbsp;SELECT C.CON_ID, C.CON_VALUE FROM CONTENT C, GROUP_USER GU, USERS U WHERE C.CON_ID = GU.GRP_UID AND U.USR_UID = GU.USR_UID AND U.USR_USERNAME = @@USR_USERNAME</span><br />
+<span style="color: #339933;"> &nbsp;]]&gt;</span><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Groups that the user belongs to<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/GroupsUser<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+<h4><span id="Groups">Groups </span></h4>
+<h5><span id="Listing_the_available_groups">Listing the available groups</span></h5>
+<div>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> CON_VALUE<span style="color: #66cc66;">,</span> CON_ID <span style="color: #993333; font-weight: bold;">FROM</span> CONTENT <span style="color: #993333; font-weight: bold;">WHERE</span> CON_CATEGORY<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'GRP_TITLE'</span>;</div></div>
+</div>
+<p><strong>Running the query from the command line:</strong></p>
+<p><img alt="" src="../sites/default/files/QueryAvailableGroupsCL.png" height="324" width="615"></p>
+<p><strong>Running the query from the <tt>phpMyAdmin GUI</tt></strong></p>
+<p><img alt="" src="../sites/default/files/QueryQueryAvailableGroupsCL.png" height="415" width="675"></p>
+<h5><span id="Finding_the_status_of_a_group">Finding the status of a group</span></h5>
+<div>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> GROUPWF<span style="color: #66cc66;">.</span>GRP_UID<span style="color: #66cc66;">,</span> GROUPWF<span style="color: #66cc66;">.</span>GRP_STATUS <span style="color: #993333; font-weight: bold;">FROM</span> GROUPWF <span style="color: #993333; font-weight: bold;">INNER</span> <span style="color: #993333; font-weight: bold;">JOIN</span> CONTENT <br />
+&nbsp;<span style="color: #993333; font-weight: bold;">ON</span> GROUPWF<span style="color: #66cc66;">.</span>GRP_UID<span style="color: #66cc66;">=</span>CONTENT<span style="color: #66cc66;">.</span>CON_ID <span style="color: #993333; font-weight: bold;">WHERE</span> CONTENT<span style="color: #66cc66;">.</span>CON_VALUE<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'Employees'</span>;</div></div>
+</div>
+<p><strong>Running the query from the command line:</strong></p>
+<p><img alt="" src="../sites/default/files/QueryStatusGroupsCL.png" height="128" width="659"></p>
+<p><strong>Running the query from the <tt>phpMyAdmin GUI</tt></strong></p>
+<p><img alt="" src="../sites/default/files/QueryStatusGroupsGUI.png" height="64" width="520"></p>
+<h5><span id="Listing_members_of_a_particular_group">Listing members of a particular group</span></h5>
+<div>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> U<span style="color: #66cc66;">.</span>USR_UID<span style="color: #66cc66;">,</span> U<span style="color: #66cc66;">.</span>USR_USERNAME <span style="color: #993333; font-weight: bold;">FROM</span> <span style="color: #66cc66;">&#40;</span>USERS U <span style="color: #993333; font-weight: bold;">LEFT</span> <span style="color: #993333; font-weight: bold;">JOIN</span> GROUP_USER GU <br />
+&nbsp; <span style="color: #993333; font-weight: bold;">ON</span> U<span style="color: #66cc66;">.</span>USR_UID<span style="color: #66cc66;">=</span>GU<span style="color: #66cc66;">.</span>USR_UID<span style="color: #66cc66;">&#41;</span> <span style="color: #993333; font-weight: bold;">LEFT</span> <span style="color: #993333; font-weight: bold;">JOIN</span> CONTENT C<br />
+&nbsp; <span style="color: #993333; font-weight: bold;">ON</span> GU<span style="color: #66cc66;">.</span>GRP_UID<span style="color: #66cc66;">=</span>C<span style="color: #66cc66;">.</span>CON_ID <span style="color: #993333; font-weight: bold;">WHERE</span> C<span style="color: #66cc66;">.</span>CON_VALUE<span style="color: #66cc66;">=</span><span style="color: #ff0000;">'Employees'</span>;</div></div>
+</div>
+<p><strong>Running the query from the command line:</strong></p>
+<p><img alt="" src="../sites/default/files/QueryMemebersGroupsCL.png" height="165" width="629"></p>
+<p><strong>Running the query from the <tt>phpMyAdmin GUI</tt></strong></p>
+<p><img alt="" src="../sites/default/files/QueryMembersGroupsGUI.png" height="90" width="648"></p>
+<h5><span id="Accessing_in_DynaForm_Fields_2">Accessing in DynaForm Fields</span></h5>
+<p>If queries are required to make them work in a <a href="2.0/Dropdown_Boxes_and_Listboxes.html#Dropdown" title="2.0/Dropdown Boxes and Listboxes">dropdown</a> inside a Dynaform refer them without the <tt>semicolon(;)</tt> at the end of the sentence.</p>
+<p>For example listing members of a particular group:</p>
+<p>The XML definition:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;membersGroup</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;dropdown&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">btn_cancel</span>=<span style="color: #ff0000;">&quot;Cancel&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #339933;">&lt;![CDATA[SELECT U.USR_UID, U.USR_USERNAME from (USERS U left join GROUP_USER GU on U.USR_UID=GU.USR_UID) left join CONTENT C on </span><br />
+<span style="color: #339933;"> &nbsp;GU.GRP_UID=C.CON_ID where C.CON_VALUE='Employees']]&gt;</span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Members of a particular Group<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/membersGroup<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+<p>The preview will be:</p>
+<p><img alt="" src="../sites/default/files/QueryMembersGroupsDynaform.png" height="63" width="238"></p>
+<h2><span id="Using_ProcessMaker_classes">Using ProcesMaker classes to lookup translations</span></h2>
+<p>It is also possible to lookup the text associated with a specified ProcessMaker object in the <b><tt>CONTENT</tt></b> by using the <a href="Internal_Functions_and_Classes.html#Content::load.28.29">Content::load()</a> method. This method allows the language to be specified, so this method can be used to obtain translations.
+<p>Example:</b><br>
+Obtain the title an task with the UID "13027240856a7f04516b3e1011191907" in English and French from France:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$titleEn</span> <span style="color: #339933;">=</span> Content<span style="color: #339933;">::</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'TAS_TITLE'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'12a16611256a0006a028ab7006995270'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'en'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$titleFr</span> <span style="color: #339933;">=</span> Content<span style="color: #339933;">::</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'TAS_TITLE'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'12a16611256a0006a028ab7006995270'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'fr-FR'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

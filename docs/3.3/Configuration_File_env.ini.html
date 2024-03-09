@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Configuration_File_env.ini.html" />
+<link rel="shortlink" href="../node/901.html" />
+<title>3.3 - 3.4 - Configuration File env.ini | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"J3V14rZgbKrHKZN8s2i2bVCCNB6ideBXGjvPL_f94qw","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-901 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Configuration_File_env.ini.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Configuration_File_env.ini.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-8gKiWkp0-63OFbQU1WAFsA7oEdAQoRLkrI0tQ9YqG4M" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.3 - 3.4 - Configuration File env.ini</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.5/Configuration_File_env.ini.html" class="">3.8</a></li><li><a href="../3.5/Configuration_File_env.ini.html" class="">3.7</a></li><li><a href="../3.5/Configuration_File_env.ini.html" class="">3.6</a></li><li><a href="../3.5/Configuration_File_env.ini.html" class="">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a href="../3.2/Configuration_File_env.ini.html" class="">3.2</a></li><li><a href="../3.0/Configuration_File_env.ini.html" class="">3.1</a></li><li><a href="../3.0/Configuration_File_env.ini.html" class="">3.0</a></li><li><a href="../index.php/Configuration_File_env.ini.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.3 - 3.4 - Configuration File env.ini" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Configuration_File_env.ini.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.3 - 3.4 - Configuration File env.ini 1/5</option><option value="40">Give 3.3 - 3.4 - Configuration File env.ini 2/5</option><option value="60" selected="selected">Give 3.3 - 3.4 - Configuration File env.ini 3/5</option><option value="80">Give 3.3 - 3.4 - Configuration File env.ini 4/5</option><option value="100">Give 3.3 - 3.4 - Configuration File env.ini 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-H7zZqZ8EeSMvY95RaPB7qOK11hBO9ELvV8VpICZnN8I" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Configuration_File_env.ini.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Configuration_File_env.ini.html#Overview">Overview</a></li>
+<li class="toc"><a href="Configuration_File_env.ini.html#Editing_the_env.ini_file">Editing the <tt>env.ini</tt> File</a></li>
+<li class="toc"><a href="Configuration_File_env.ini.html#Available_Settings">Available Settings</a></li>
+<li class="toc"><a href="Configuration_File_env.ini.html#Input_Documents_Download_Restriction">Input Document Download Restriction</a></li>
+<li class="toc"><a href="Configuration_File_env.ini.html#MySQL_Logging">MySQL Logging</a></li>
+<li class="toc"><a href="Configuration_File_env.ini.html#Blocking_multiple_browser_instances">Blocking Multiple Browser Instances</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+
+<p>ProcessMaker uses the configuration file <strong><tt>env.ini</tt></strong> for global settings that aren't available in the <b>Admin</b> panel.</p>
+
+<h2><span id="Editing_the_env.ini_file">Editing the <tt>env.ini</tt> File</span></h2>
+
+<p>Use a plain text editor to edit the configuration file located at:</p>
+<dl>
+    <dd><tt><a href="../3.0/File_Locations.html#Installation_Directory" title="3.0/File Locations">&lt;INSTALL-DIRECTORY&gt;</a>/workflow/engine/config/env.ini</tt></dd>
+<i>or:</i>
+    <dd><tt><a href="../3.0/File_Locations.html#Installation_Directory" title="3.0/File Locations">&lt;INSTALL-DIRECTORY&gt;</a>/shared/sites/<font color=indianred><i>WORKSPACE</i></font>/env.ini</tt></dd>
+</dl>
+<dl>
+    <dd><strong>In Linux/UNIX (manual install):</strong>
+        <dl>
+            <dd><tt>/opt/processmaker/workflow/engine/config/env.ini</tt></dd>
+            <dd><tt>/opt/processmaker/shared/sites/<font color=indianred><i>WORKSPACE</i></font>/env.ini</tt></dd>
+        </dl>
+    </dd>
+    <dd><strong>In Linux/UNIX (Bitnami install):</strong>
+        <p style="margin-left:25px">
+            <strong><font color="green">Note: </font></strong>
+            <font color="dimgray">Bitnami is no longer used in ProcessMaker as of version 3.4.0. This must be considered when accessing some directories provided in this document.</font>
+        </p>
+        <dl>
+            <dd><tt>/opt/processmaker-3.<font color=indianred><i>X</i></font>.<font color=indianred><i>X</i></font>.b1-0/apps/processmaker/htdocs/workflow/engine/config/env.ini</tt></dd>
+            <dd><tt>/opt/processmaker-3.<font color=indianred><i>X</i></font>.<font color=indianred><i>X</i></font>.b1-0/apps/processmaker/htdocs/shared/sites/<font color=indianred><i>WORKSPACE</i></font>/env.ini</tt></dd>
+        </dl>
+    </dd>
+    <dd><strong>In Windows (manual install):</strong>
+        <dl>
+            <dd><tt>C:\opt\processmaker\workflow\engine\config\env.ini</tt></dd>
+            <dd><tt>C:\opt\processmaker\shared\sites\<font color=indianred><i>WORKSPACE</i></font>\env.ini</tt></dd>
+            </dd>
+        </dl>
+    </dd>
+    <dd><strong>In Windows (Bitnami install):</strong>
+        <dl>
+            <dd><tt>C:\Bitnami\processmaker-3.<font color=indianred><i>X</i></font>.<font color=indianred><i>X</i></font>-1\apps\processmaker\htdocs\workflow\engine\config\env.ini</tt></dd>
+            <dd><tt>C:\Bitnami\processmaker-3.<font color=indianred><i>X</i></font>.<font color=indianred><i>X</i></font>-1\apps\processmaker\htdocs\shared\sites\<font color=indianred><i>WORKSPACE</i></font>\env.ini</tt></dd>
+        </dl>
+    </dd>
+</dl>
+<p style="margin-left:25px"><img src="../sites/default/files/PM3_EnviniLocation.png"></p>
+<p></p>
+<p>The settings in the <b><tt>engine/config/env.ini</tt></b> file are used by all workspaces, whereas the settings in the <b><tt>sites/<font color=indianred><i>WORKSPACE</i></font>/env.ini</tt></b> file only apply to a particular workspace. Settings can added to either file, but a setting in the <b><tt>sites/<font color=indianred><i>WORKSPACE</i></font>/env.ini</tt></b> file will override a setting in the <b><tt>engine/config/env.ini</tt></b> file.</p>
+<p></p>   
+<p>The default content in the <strong><tt>env.ini</tt></strong> file is the following:</p>
+
+<codeblock><span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">;Setting default_lang - Created by System on Fri 16 Dec, 2016 16:20:43</span>
+default_lang = "en"
+
+<span class="co0" style="color: rgb(102, 102, 102); font-style: italic;">;Setting default_skin - Created by System on Fri 16 Dec, 2016 16:20:43</span>
+default_skin = "neoclassic"
+</codeblock>
+
+<p>Most of the settings can be enabled by setting them to <strong><code>1</code></strong> and disabled by setting them to <strong><code>0</code></strong>. Settings that are strings should be enclosed in double quotation marks. Lines beginning with ";" (semicolons) are treated as comments and are ignored. Remove the semicolon to uncomment the setting.</p>
+
+<h2><span id="Available_Settings">Available Settings</span></h2>
+<ul>
+    <li><code><strong>code_scanner_enable =  <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.17 and later.</font></p>
+Set to <code>1</code> to activate the <a href="../Plugin_Trigger_Code_Security_Scanner_v2.html">Plugin/Trigger Code Security Scanner</a> feature.<br>
+This is an alias of <span class="geshifilter"><code class="text geshifilter-text">enable_blacklist</code></span>.</li>
+
+    <li><code><strong>code_scanner_scope = "<font color=blue><i>import_plugin, enable_plugin, import_process, trigger</i></font>"</strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.17 and later.</font></p>
+The parameter "<span class="geshifilter"><code class="text geshifilter-text">code_scanner_scope</code></span>" can be added to ProcessMaker <span class="geshifilter"><code class="text geshifilter-text">env.ini</code></span> file to define the scope of Code Scanner, the parameter accepts one or multiple values separated by commas and enclosed in double quotes, a <b>default behavior</b> will apply to all the elements if this parameter is not present in env.ini or if there is not any valid argument. For more information, see the <a href="../Plugin_Trigger_Code_Security_Scanner_v2.html">Plugin/Trigger Code Security Scanner</a> page.</li>
+
+    <li><code><strong>debug_sql = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></strong></code><br>
+Set to <code>1</code> to log all SQL queries to the <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> <a href="../3.2/ProcessMaker_Database_Model.html" title="3.2/ProcessMaker Database Model">database</a> in MySQL and view SQL error messages in the <code>__ERROR__</code> system variable in the <a href="../3.0/Triggers.html#Using_the_ProcessMaker_Debugger">Debugger</a>. Default is <code>0</code>. For more information, see the <a href="Configuration_File_env.ini.html#MySQL_Logging">MySQL Logging</a> section.</li>
+
+    <li><code><strong>debug_calendar = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></strong></code><br>
+Set to <code>1</code> to log information about calendars. Default is <code>0</code>.</li>
+
+    <li><code><strong>default_lang =</strong> "<font color=blue><i>LANG</i></font>"</code><br>
+Example: <code>default_lang = "es"</code><br>
+Sets the default <a href="../3.2/Languages.html">language</a> of ProcessMaker at the login screen. When the web browser is directed to <code>http://<font color=blue><i>IP-ADDRESS</i></font></code>, it will automatically be redirected to <code>http://<font color=blue><i>IP-ADDRESS</i></font>/sysworkflow/<font color=blue><i>LANG</i></font>/<font color=blue><i>SKIN</i></font>/login/login</code>. If not set, then the default language is <code>"en"</code> (English).
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">This setting is the same configured in the <a href="../3.2/System.html#Changing_the_Default_Language">Preferences</a> configuration of the ProcessMaker interface.</font></p>
+</li>
+
+    <li><code><strong>default_skin =</strong> "<font color=blue><i>SKIN</i></font>"</code><br>
+Sets the default <a href="../3.0/Skins.html">skin</a> of ProcessMaker at the login screen. When the web browser is directed to <code>http://<font color=blue><i>IP-ADDRESS</i></font></code>, it will automatically be redirected to <code>http://<font color=blue><i>IP-ADDRESS</i></font>/sysworkflow/<font color=blue><i>LANG</i></font>/<font color=blue><i>SKIN</i></font>/login/login</code>. If not set, then the default skin is <code>"neoclassic"</code>.
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">This setting is the same configured in the <a href="../3.2/System.html#Changing_the_Default_Skin">Preferences</a> configuration of the ProcessMaker interface.</font></p>
+</li>
+
+<li><code><b>disable_advanced_search_case_title_fulltext = 0|1</b></code><br>
+    <p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray"> As of ProcessMaker 3.4.11.</font></p>
+    Set to <code>1</code> to disable full-text search techniques in the <b>Case Title</b> of the <a href="../3.2/Cases/Search.html#Advanced_Search">Advanced Search</a>. By default, this value is <code>0</code>.
+    <p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">It is not recommended for full load environments because this setting affects performance.</font></p>
+</li>
+
+    <li><code><b>disable_download_documents_session_validation = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></b></code><br>
+Set to <code>1</code> to enable the download of input or output documents without restrictions. This means that is not necessary to have a valid session or the right user permissions to download the document. If set to <code>0</code>, the user must have a valid session and the correct user permissions to download the input or output document. If not set, then the default value is <code>0</code>. For more information, read the <a href="Configuration_File_env.ini.html#Input_Documents_Download_Restriction">Input Documents Download Restriction</a> section.
+</li>
+
+    <li><code><b>disable_php_upload_execution = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></b></code><br>
+Set to <code>1</code> to disable the upload and execution of PHP files. By default, the value is set to <code>0</code>. This flag can be set for the whole ProcessMaker installation or individually for each workspace. If the flag is active and a user tries to upload a PHP file, an alert message with "phpUpload" type will be recorded in the <a href="../3.2/ProcessMaker_Standard_Logging.html">ProcessMaker Standard Log</a>. This restriction includes: <a href="../3.2/Input_Documents.html">inputs documents</a>, <a href="../3.2/Public_Files.html">public files</a>, <a href="../3.2/Cases.html#Documents">documents</a>,  BPMN and classic dynaforms and files uploaded through the <a href="../3.0/File_control.html">file</a> and <a href="../3.1/Multiple_File_Uploader.html">multiple file uploader</a> control.
+</li>
+
+    <li><code><strong>enable_blacklist = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></strong></code><br>
+Set to <code>1</code> to activate the <a href="../Plugin_Trigger_Code_Security_Scanner_v2.html">Plugin/Trigger Code Security Scanner</a> feature.
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.17 and later allows you to set which blacklisted activities to monitor. See <a href="../Plugin_Trigger_Code_Security_Scanner_v2.html#Configuring_the_env.ini_file">Configure the Env.ini file for the Plugin/Trigger Code Security Scanner</a>.</font></p>
+     </li>
+
+<li><code><strong>files_white_list = "<font color=blue><i>extension1,extension2,...</font></i>"</strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.1 and later.</font></p>
+<p>This setting validates the file extension types that are allowed to be uploaded to ProcessMaker without MIME type validation. To do so, add the <a href="Compatible_Content_and_File_Extensions.html">file extension white list</a> separated by commas to the files_white_list parameter.</p>
+Example: <code>files_white_list = "jpg,jpeg,png,tiff"</code><br>
+    </li>
+
+    <li><code><strong>google_map_api_key = "<font color=blue><i>API-KEY</i></font>"</strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.0 and later.</font></p>
+Set the Google Maps API key after generating a key using the following page: <a href="https://developers.google.com/maps/documentation/maps-static/get-api-key">Get API key</a>. This is necessary to use the <a href="Realtime_Google_Maps.html">Geomap control</a>. For more information go <a href="Realtime_Google_Maps.html#Google_API_key">here</a>.</li>
+
+    <li><code><strong>google_map_signature = "<font color=blue><i>SIGNATURE</i></font>"</strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.0 and later.</font></p>
+Set the signature for the Google Maps API to work properly with the <a href="Realtime_Google_Maps.html">Geomap control</a>. For more information, see <a href="Realtime_Google_Maps.html#Google_API_key">Google API key</a>.</li>
+
+      <li><code><strong>load_headers_ie = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></strong></code><br>
+Set to <code>1</code> to disable the 2.X compatibility mode. If not set to <code>0</code>, code and headers that are used only in 2.X processes will be set to maintain 2.X compatibility mode.</li>
+
+    <li><code><strong>logging_level = "<font color=blue><i>level</i></font>"</strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.0 and later.</font></p>
+    Set the download level of ProcessMaker Standard logs. For more information, see <a href="ProcessMaker_Standard_Logging.html#Turn_Standard_Logs_On_or_Off">Turn Standard Logs On or Off</a>.
+    </li>
+
+    <li><code><strong>logs_location = "<font color=blue><i>&lt;Location-Directory&gt;</i></font>"</strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.0 and later.</font></p>
+    Set the path to store <a href="Logs.html#Log_Files">Log Files</a>. The default path is:
+    <codeblock>logs_location = "<a href="../3.0/File_Locations.html#Installation_Directory" title="3.0/File Locations">&lt;INSTALL-DIRECTORY&gt;</a>/processmaker/shared/sites/<font color="blue">&lt;WORKSPACE&gt;</font>/logs/"</codeblock>
+    </li>
+
+    <li><code><strong>logs_max_files = <font color=blue>XX</font></strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.0 and later.</font></p>
+    Set the number of days before the last entry in the <a href="ProcessMaker_Standard_Logging.html">Standard logs</a> is deleted.
+    </li>
+
+    <span id="memory_limit"><li><code><strong><span id="memory_limit">memory_limit = "<i>X</i>M"</strong></code><br>
+<p>
+                <table border="1" cellpadding="1" cellspacing="1">
+                    <tbody>
+                    <tr>
+                    <td>
+                    <font color="red"><b>Warning:</b></font> <font color=dimgrey> As of ProcessMaker 3.5.0, the <code>memory_limit</code> setting is removed. Edit the <a href="../3.0/Changing_the_ProcessMaker_Configuration.html#Editing_the_PHP_configuration"><tt>php.ini</tt></a> file instead.</font>
+                    </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </p>
+Example: <code>memory_limit = "512M"</code><br>
+Set the maximum amount of memory available for each login session in ProcessMaker. Use <code>"M"</code> for megabytes, <code>"K"</code> for kilobytes and <code>"G"</code> for gigabytes. It is not recommended to set this value to less than <code>"100M"</code>, which is the default. If generating large <a href="../3.2/Output_Documents.html" title="Output Documents">Output Documents</a>, it may be necessary to increase this value.</li></span>
+
+    <li><code><strong><span id="mobileNotifications">mobileNotifications</span> = true|false</strong></code><br>
+Set to <strong>false</strong> to deactivate notifications in ProcessMaker Mobile.<br>
+<codeblock>mobileNotifications = false</codeblock>
+By default, mobile notifications are enabled. If this setting is not found in the <b><tt>env.ini</tt></b> file, the default value is <code>true</code>.
+<p> <img src="../sites/default/files/PM3_mobileNotifications.png"></p>
+</li>
+
+    <li><code><b>redirect_to_mobile = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></b></code><br>
+Set to <code>1</code> to open the <a href="../3.2/Direct_Case_Link.html">direct case link</a> directly in the ProcessMaKer Mobile app. Set to <code>0</code>, to open the link in the device's browser. The default is <code>0</code>.</li>
+
+    <li><code><strong>session_block =  <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></strong></code><br>
+Set to <code>1</code> to block the use of multiple browser instances of ProcessMaker. The default is <code>0</code>. For more details, go to <a href="Configuration_File_env.ini.html#Blocking_multiple_browser_instances">blocking multiple browser instances.</a></li>
+
+    <li><code><strong>smtp_timeout = <font color=blue>XX</font></strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.0 and later.</font></p>
+    For <a href="Email_Settings.html#SMTP_.28PHPMailer.29">PHPMailer</a>, set the the SMTP mail time out in seconds. If this value is not set in the <b><tt>env.ini</tt></b> file, then the default value is <tt>20</tt>. If set to a non-numeric value, then it will be ignored and the default value will be used.
+    </li>
+
+<li><code><strong>system_utc_time_zone = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></strong></code><br>
+Set to <code>1</code> to enable the multi time zone. Default is <code>0</code>. When the parameter is set to <code>1</code>, all dates in the database are stored as UTC0.
+When the parameter is set to <code>0</code>. All dates in the database are stored applying the server time zone.<br>
+For best practices regarding using this parameter, see <a href="../Best_Practices/User_Management.html#Time_Zone">Time Zone best practices</a>.</li>
+
+    <li><code><strong>time_zone = "<font color=blue><i>zone</i></font>"</strong></code><br>
+Set the time zone of the ProcessMaker server. This setting determines the time zone used for all timestamps in ProcessMaker, such as the starting and ending time for cases. By default, the time zone is set to <code>"America/New_York"</code>. A list of available time zones can be found at: <a href="http://php.net/manual/en/timezones.php">http://php.net/manual/en/timezones.php</a></li>
+
+    <li><code><strong>upload_attempts_limit_per_user = <font color=blue>'XX.YY'</font></strong></code><br>
+<p style="margin-left:25px"><strong><font color="green">Available Version:</font></strong> <font color="dimgray">ProcessMaker 3.3.1 and later.</font></p>
+    Set the <font color=blue>XX</font> and <font color=blue>YY</font> integer numbers. Upload a file in any place of ProcessMaker that stand <font color=blue>XX</font> attempts every <font color=blue>YY</font> minutes per user.<br>
+    The default value is sixty attempts every minute per user (<code>'60,1'</code>).
+    If the number of attempts has been exceeded, the ProcessMaker server will return status 429 (Too many requests).
+    </li>    
+
+    <li><code><strong>wsdl_cache = <span class="geshifilter"><code class="text geshifilter-text">0|1</code></span></strong></code><br>
+Set to <code>0</code> to disable the <a href="ProcessMaker_WSDL_Web_Services.html#Programming_WSDL_Web_Services" title="ProcessMaker WSDL Web Services">caching of WSDL</a> (Web Services Description Language) function calls. The default is <code>1</code>, so WSDL function calls are cached for up to 24 hours, which increases the reliability (especially if there are connection problems), but is a problem if immediate execution for debugging is necessary.</li>
+</ul>
+
+<h2><span id="Input_Documents_Download_Restriction">Input Document Download Restriction</span></h2>
+<p>If the <b>disable_download_documents_session_validation</b> flag is set to <code>1</code>, then unauthorized users may download Input Documents. If the <b>disable_download_documents_session_validation</b> flag is set to <code>0</code> or is not included in the <b><tt>env.ini</tt></b> file, then only authorized users may download Input Documents. Therefore, if the user is not the one who uploaded the documents, he/she will need an <a href="Process_Permissions.html#Accessing_Input_Documents">Input Document process permission</a> to download Input Documents.</p>
+
+<p>This restriction affects:</p>
+<ul>
+    <li><a href="../3.2/Input_Documents.html#Links_to_Input_Document_Files">Input Document direct links.</a></li>
+    <li><a href="../3.2/Process_Permissions.html#Accessing_Input_Documents">Input Documents set as steps in tasks.</a></li>
+    <li><a href="../3.1/Multiple_File_Uploader.html">Documents uploaded using the Multiple File Uploader control.</a></li>
+    <li><a href="../3.2/File_control.html">Documents uploaded using the File control.</a></li>
+</ul>
+
+<p>Remember that this restriction is enabled by default. If the user is not allowed to download the file, a <code>"403 Access denied"</code> error message will be displayed:</p>
+<p><img src="../sites/default/files/3.2InputOutputDownloadAccessDenied.png"></p>
+
+<p>If this setting is not enabled and the user doesn't have an open login session, then clicking on a link to download an Input or Output Document file will redirect to the ProcessMaker login screen. After login, the web browser will be redirected to the URL to download the file.</p>
+
+<p>This setting is often enabled when needing to include links to files in emails and Output Documents or when accessing ProcessMaker files remotely via REST or web services. However, keep in mind that enabling this setting is a security hole, since it allows files to be downloaded using their file IDs and version numbers without verifying that the downloader is a valid ProcessMaker user and has permissions to access the file. If needing to guarantee that the files saved in ProcessMaker can only be accessed by authorized users, then do NOT enable this setting.</p>
+
+<!--<p>If this setting is not enabled, it is possible to download files outside the ProcessMaker interface by using web services to <a href="/3.0/ProcessMaker_WSDL_Web_Services#Automatic_Login">obtain a login's session ID</a> and appending that session ID to the URL.</p>
+
+<div style="margin-left:25px;">
+URL to download an Input Document file or attached file:
+ <dl>
+     <dd><code>http://&lt;IP-OR-DOMAIN&gt;/sys&lt;WORKSPACE&gt;/&lt;LANG&gt;/&lt;SKIN&gt;/cases/cases_ShowDocument?a=&lt;CASE-DOCUMENT-UID&gt;&v=&lt;VERSION&gt;&sid=&lt;SESSION-ID&gt;</code></dd>
+ </dl>
+Example:
+ <dl>
+     <dd><code>https://pm.example.com/sysworkflow/en/neoclassic/cases/cases_ShowtDocument?a=7647950535a9f46ade01ab3092163527&v=2&sid= 3D2187041194d000bca6b8756033322858</code></dd>
+ </dl>
+URL to download an Output Document:
+  <dl>
+    <dd><code>http://&lt;IP-OR-DOMAIN&gt;/sys&lt;WORKSPACE&gt;/&lt;LANG&gt;/&lt;SKIN&gt;/cases/cases_ShowOutputDocument?a=&lt;CASE-DOCUMENT-UID&gt;&v=&lt;VERSION&gt;&ext=&lt;FILE-EXTENSION&gt;&sid=&lt;SESSION-ID&gt;</code></dd>
+  </dl>
+Example:
+<dl>
+    <dd><code>https://pm.example.com/sysworkflow/en/neoclassic/cases/cases_ShowOutputDocument?a=7647950535a9f46ade01ab3092163527&v=2&ext=pdf&sid= 3D2187041194d000bca6b8756033322858</code></dd>
+</dl>
+</div>-->
+
+<h2><span id="MySQL_Logging">MySQL Logging</span></h2>
+
+<p>If the <strong><tt>debug_sql</tt></strong> option is set to <strong><code>1</code></strong> (or <strong><tt>debug</tt></strong> is set to <strong><code>1</code></strong>), then every SQL query to the <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database (which is named <tt><b>wf_workflow</b></tt> by default) will be written in the following log file:</p>
+
+<codeblock>&lt;<a href="../3.0/File_Locations.html#Installation_Directory">INSTALL-DIRECTORY</a>&gt;/shared/log/propel.log
+</codeblock>
+
+<p>Each line in the log file records SQL actions in the following format:</p>
+
+<codeblock>time(HH:MM:SS.mmm) | workspace | address-of-user | #### | Type | Processing-time | SQL-query | [URL-path -&gt; code-file.php:line-number:function() -&gt; ...]
+</codeblock>
+
+<p>For example, here is the <strong><tt>shared/log/propel.log</tt></strong> file for the admin user's login from the IP address 192.168.0.168:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">04:54:03.4044|dani3018|192.168.0.90|413862|executeQuery|0.00016093254089355|SELECT PMT_BLACKLISTTRY.ID, PMT_BLACKLISTTRY.NAME, PMT_BLACKLISTTRY.DNI FROM PMT_BLACKLISTTRY LIMIT 20|app.php:61:include()-&gt;sysGeneric.php:1018:call()-&gt;class.httpProxyController.php:97:dataView()-&gt;pmTablesProxy.php:509:getAllData()-&gt;AdditionalTables.php:479:eval()-&gt;AdditionalTables.php(479) : eval()'d code:1:doSelectRS()-&gt;BasePmtBlacklisttryPeer.php:278:doSelect()-&gt;BasePeer.php:467:executeQuery()-&gt;PreparedStatementCommon.php:334:executeQuery()-&gt;|GET|/sysdani3018/en/neoclassic/pmTablesProxy/dataView?id=61419351656f372b9924b29018254312&amp;_dc=1458766640428|id=61419351656f372b9924b29018254312 _dc=1458766640428<br />
+<br />
+04:55:05.1668|dani3018|192.168.0.90|546286|executeUpdate|0.00035500526428223|INSERT INTO BLACKLISTTRY (Name, DNI) VALUES (\'Daniela\', 167)]\&quot;;s:15:\&quot;__VAR_CHANGED__\&quot;;N;}',`APP_DRIVE_FOLDER_UID` = '' WHERE APPLICATION.APP_UID='86281452856f37325e5c2a8033826603'|app.php:61:include()-&gt;sysGeneric.php:1022:require_once()-&gt;cases_Step.php:241:updateCase()-&gt;class.case.php:1046:update()-&gt;Application.php:448:save()-&gt;BaseApplication.php:1004:doSave()-&gt;BaseApplication.php:1041:doUpdate()-&gt;BaseApplicationPeer.php:480:doUpdate()-&gt;BasePeer.php:420:executeUpdate()-&gt;PreparedStatementCommon.php:356:executeUpdate()-&gt;|GET|/sysdani3018/en/neoclassic/cases/cases_Step?TYPE=DYNAFORM&amp;UID=80263955456d8ab9949a783019937009&amp;POSITION=1&amp;ACTION=EDIT|TYPE=DYNAFORM &nbsp;UID=80263955456d8ab9949a783019937009 &nbsp; &nbsp;POSITION=1 &nbsp;ACTION=EDIT<br />
+<br />
+05:13:32.4765|dani3018|192.168.0.90|604648|executeUpdate|0.00020098686218262|UPDATE PMT_BLACKLISTTRY SET Name = 'Dani123' where DNI = 167|app.php:61:include()-&gt;sysGeneric.php:1022:require_once()-&gt;cases_Step.php:196:executeTriggers()-&gt;class.case.php:3575:execute()-&gt;class.pmScript.php:349:executeAndCatchErrors()-&gt;class.pmScript.php:208:eval()-&gt;class.pmScript.php(208) : eval()'d code:2:executeQuery()-&gt;class.pmFunctions.php:317:executeUpdate()-&gt;|GET|/sysdani3018/en/neoclassic/cases/cases_Step?TYPE=DYNAFORM&amp;UID=80263955456d8ab9949a783019937009&amp;POSITION=1&amp;ACTION=EDIT|TYPE=DYNAFORM &nbsp; UID=80263955456d8ab9949a783019937009 &nbsp; &nbsp;POSITION=1 &nbsp;ACTION=EDIT</div></div>
+
+<p>Logging will noticeably slow down ProcessMaker's performance, so it is not suggested to use this option except for debugging. The log file is not automatically deleted, so it will continue to append new information until the file system runs out of space. If SQL logging is enabled for long periods of time, it is a good idea to periodically delete the log file so it doesn't occupy too much hard drive space.</p>
+
+<p>Note that the processing time is in seconds and milliseconds, so a time of 1.309 means 1 second and 309 milliseconds.</p>
+
+<h2><span id="Blocking_multiple_browser_instances">Blocking Multiple Browser Instances</span></h2>
+
+<p>Set the setting <code><strong>session_block</strong></code> to <strong><code>1</code></strong> in the <b><tt>env.ini</tt></b> file to disallow the use of multiple browser instances of ProcessMaker. If this setting is not found in the <b><tt>env.ini</tt></b> file, the default value is <code>0</code>.</p>
+<codeblock>session_block = 1;
+</codeblock>
+
+<p>This restriction affects the following tabs: <a href="../3.2/Cases.html">Home</a>, <a href="../3.2/Processes.html#Designer">Designer</a>, <a href="../3.0/Dashboards.html">Dashboards</a>, <a href="../3.0/StrategicDashboards.html#ManagersDashboards">KPIs</a>, Admin and any of the options inside them.</br>
+Whenever trying to open multiple instances, the following warning page will display:</p>
+<p> <img src="../sites/default/files/PM3_SessionBlockWarningpage.png"></p>
+
+<p>For the restriction to take effect, it is strongly recommended to log out of ProcessMaker and clear the cache of the browser.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">This restriction does not affect <a href="../3.0/Dynaforms.html">Dynaforms</a> or <a href="../3.2/Processes.html">Processes</a> in the <a href="../3.2/Processes.html#Designer">Designer tab</a> that are <strong>automatically</strong> opened in other tabs in <a href="../3.1/Supported_Browsers.html#InternetExplorerCompatibility">Internet Explorer 11</a> and later.</font></p>ltiple instances, the following warning page will display:</p>
+<p> <img src="../sites/default/files/PM3_SessionBlockWarningpage.png"></p>
+
+<p>For the restriction to take effect, it is strongly recommended to log out of ProcessMaker and clear the cache of the browser.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">This restriction does not affect <a href="../3.0/Dynaforms.html">Dynaforms</a> or <a href="../3.2/Processes.html">Processes</a> in the <a href="../3.2/Processes.html#Designer">Designer tab</a> that are <strong>automatically</strong> opened in other tabs in <a href="../3.1/Supported_Browsers.html#InternetExplorerCompatibility">Internet Explorer 11</a> and later.</font></p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

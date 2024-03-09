@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Outlook_Connector.html" />
+<link rel="shortlink" href="../node/369.html" />
+<title>3.3 - 3.6 - Microsoft Outlook Connector  | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"ZhZaBTmx2ZzIq80sJNtRPoBbyaFgsVJzyL3SosL4bzs","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-369 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Outlook_Connector.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Outlook_Connector.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-owYKFxm_XVVa_hIJ1SbI8pB7c4ibK_pk494A3Xb9UDo" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.3 - 3.6 - Microsoft Outlook Connector </h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.3 - 3.6 - Microsoft Outlook Connector " class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Outlook_Connector.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.3 - 3.6 - Microsoft Outlook Connector  1/5</option><option value="40">Give 3.3 - 3.6 - Microsoft Outlook Connector  2/5</option><option value="60">Give 3.3 - 3.6 - Microsoft Outlook Connector  3/5</option><option value="80" selected="selected">Give 3.3 - 3.6 - Microsoft Outlook Connector  4/5</option><option value="100">Give 3.3 - 3.6 - Microsoft Outlook Connector  5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.7</span></span> <span class="total-votes">(<span >6</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-qqPE2VkDvxFF69T39r28GK7Bt9k02M6NTJXqI_mIMEo" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Outlook_Connector.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Outlook_Connector.html#Overview">Overview</a></li>
+<li class="toc"><a href="Outlook_Connector.html#How_the_plugin_works">How the plugin works </a></li>
+<li class="toc"><a href="Outlook_Connector.html#Scopes">Scopes</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Requirements">Requirements</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Restrictions">Restrictions</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Recommendations">Recommendations</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Secure_Connections_through_TLS">Secure Connections through TLS</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Installation_and_Configuration">Installation and Configuration</a></li>
+<ol class="toc">
+<li class="toc"><a href="Outlook_Connector.html#Outlook_Configuration">Outlook Configuration</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Install_the_plugin_in_ProcessMaker">Install the plugin in ProcessMaker</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Install_the_Add-in_for_Outlook">Install the Add-In for Outlook</a></li>
+<ol class="toc">
+<li class="toc"><a href="Outlook_Connector.html#Configure_a_user_on_Outlook">Configure a user on Outlook</a></li>
+</ol>
+<li class="toc"><a href="Outlook_Connector.html#Reinstalling_the_Outlook_Add-in">Reinstalling the Outlook Add-In</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Setup_the_Add-in_for_Outlook">Setup the Add-In for Outlook</a></li>
+</ol>
+<li class="toc"><a href="Outlook_Connector.html#Interaction_with_Cases_List">Interaction with Cases Lists</a></li>
+<ol class="toc">
+<li class="toc"><a href="Outlook_Connector.html#ProcessMaker">ProcessMaker</a></li>
+<li class="toc"><a href="Outlook_Connector.html#New_Case">New Case</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Inbox">Inbox</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Draft">Draft</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Participated">Participated</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Unassigned">Unassigned</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Paused">Paused</a></li>
+</ol>
+<li class="toc"><a href="Outlook_Connector.html#Running_Cases_-_Cases_Menu">Running Cases - Cases Menu </a></li>
+<ol class="toc">
+<li class="toc"><a href="Outlook_Connector.html#Steps">Steps</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Information">Information</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Actions">Actions</a></li>
+<li class="toc"><a href="Outlook_Connector.html#Case_Notes">Case Notes</a></li>
+</ol>
+<li class="toc"><a href="Outlook_Connector.html#Session_Lost">Session Lost</a></li>
+</ol>
+</div></div>
+</p>
+<hr>
+<p><span style="color: green; font-size: 9pt;"><strong>Version:</strong></span> <span style="color: grey; font-size: 9pt;"><strong>3.2.0 </strong></span>| <a href="https://drive.google.com/file/d/1uHyUqoCMj9wdFxbq3AoFBFuf2fqD6aBA/view?usp=sharing"><span style="font-size: 9pt;"><strong>Release Notes</strong></span></a></p>
+<hr>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray"> The Microsoft Outlook Connector plugin and the Outlook Add-In are deprecated because Office 365 replaces Outlook. Furthermore, <a href="https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666">Microsoft Office 365 no longer supports Internet Explorer 11</a>. Therefore, ProcessMaker no longer supports Internet Explorer 11.</font></p>
+
+<h2><span id="Overview">Overview</span></h2>
+<p><strong>ProcessMaker InOutlook</strong> is a plugin created to allow standard ProcessMaker users to use ProcessMaker from within a Microsoft Outlook email client (versions 2013 and 2016) and through the standard browser interface.</p>
+
+<h2><span id="How_the_plugin_works">How the plugin works </span></h2>
+
+<p>Outlook adds an extra folder labeled ProcessMaker inside Outlook. By clicking on its icon, it shows all user cases sorted into folders, based on the status of each case. This allows working and managing cases just as if the user was logged directly into the ProcessMaker workspace.</p>
+<p>Dynaforms are available to the user via the current browser, for the user to interact with them as usual.</p>
+
+<h2><span id="Scopes">Scopes</span></h2>
+<p>This plugin allows users to perform only the following tasks from within the Outlook interface:</p>
+<ul>
+<li>Start a <a href="../3.0/Cases.html#New_Case" title="3.0/Cases">New Case</a>.</li>
+<li>Review and attend to existing Cases in the <a href="../3.0/Cases.html#Inbox" title="3.0/Cases">Inbox</a>.</li>
+<li>Save <a href="../3.0/Cases.html#Draft" title="3.0/Cases">Drafts</a>.</li>
+<li>Review <a href="../3.0/Cases.html#Participated" title="3.0/Cases">Participated</a>, <a href="../3.0/Cases.html#Paused" title="3.0/Cases">Paused</a>, and <a href="../3.0/Cases.html#Unassigned" title="3.0/Cases">Unassigned Cases</a>.</li>
+<li>All tasks are performed in the same way that they are performed through the web browser. Designers and Administrators should still enter via a web browser to perform their respective tasks.</li>
+<li>Cases Menu with the following options <a href="../3.0/Cases.html#Steps" title="3.0/Cases">Steps</a>, <a href="../3.0/Cases.html#Information" title="3.0/Cases">Information</a>, <a href="../3.0/Cases.html#Actions" title="3.0/Cases">Actions</a>, <a href="../3.0/Cases.html#Case_Notes" title="3.0/Cases">Cases Notes</a>.</li>
+<li>The execution of any rules set in the <a href="../index.php/2.5.X/DynaForms.html#Conditions_Editor_tab" title="2.5.X/DynaForms"> conditions editor</a>&nbsp;</li>
+</ul>
+
+<h2><span id="Requirements">Requirements</span></h2>
+
+<ul>
+<li>This version plugin is compatible with ProcessMaker Enterprise version 3.3.2 or higher with a proper license.</li>
+</ul>
+
+<p><strong>Supported Stacks</strong></p>
+
+<ul>
+<li>This version plugin is compatible with PHP5.6.X or PHP 7.1.X.</li>
+<li>See this <a href="../3.3/Supported_Stacks.html">documentation </a>to view the server configurations which are supported.</li>
+</ul>
+<p><strong>Browser Requirements</strong></p>
+<ul>
+<li>See this <a href="../3.3/Supported_Browsers.html">documentation</a> to view the browsers which are supported.
+</li>
+</ul>
+
+<h2><span id="Restrictions">Restrictions</span></h2>
+<p>Please take into consideration the following restrictions:</p>
+<ul>
+<li>The <a href="Outlook_Connector.html#Install_the_Add-in_for_Outlook">Outlook Add-In</a> is not compatible with Office365 because the Outlook Web Access (OWA) for Office365 has a different management in an Add-In.</li>
+<li>The Outlook Connector plugin does NOT support <a href="../3.0/Advanced_LDAP.html#Importing_Users">LDAP users</a>.</li>
+</ul>
+
+<h2><span id="Recommendations">Recommendations</span></h2>
+<ul>
+
+<li>If using Outlook Connector v 2.0.6, please <a href="Outlook_Connector.html#Reinstalling_the_Outlook_Add-in">uninstall and reinstall the Add-In</a> to see new added features.</li>
+
+<li>The Outlook Connector plugin must be updated in the server.</li>
+
+<li>Clear the ProcessMaker cache server right after installing the new version in the server.</li>
+
+<li>Even if you have more than one language installed on your server, the Outlook connector plugin will only display English at the moment of <a href="Outlook_Connector.html#Setup_the_Add-in_for_Outlook">configuring the server data</a>.
+</li>
+</ul>
+
+<h2><span id="Secure_Connections_through_TLS">Secure Connections through TLS</span></h2>
+<p>As a security best practice, ProcessMaker recommends configuring only TLS 1.1 and superior for the Web Server API request, which can be set in Apache/NGINX as follows:</p>
+<ul>
+    <li>For Apache, in the <b><tt>pmos.conf</tt></b> file, add the following line:
+    <codeblock>SSLProtocol all -SSLv3 -TLSv1</codeblock></li>
+    <li>For NGINX, in the <b><tt>processmaker.conf</tt></b> file, add the following line:
+    <codeblock>ssl_protocols TLSv1.1 TLSv1.2;</codeblock></li>
+</ul>
+
+<h2><span id="Installation_and_Configuration">Installation and Configuration</span></h2>
+<p>For extra information check <a href="https://support.microsoft.com/en-us/help/2758902/how-to-set-up-an-internet-email-account-in-outlook-2013-or-2016">this documentation</a> in the <b>Manually set up Internet email</b>.</p>
+
+<h3><span id="Outlook_Configuration">Outlook Configuration</span></h3>
+<p>For this plugin to work properly, follow the next steps:</p>
+<ol>
+    <li><p>The Outlook account setup MUST be configured manually. This means that when adding a new Outlook account, the "Manually configure server settings or additional server types" option MUST be selected. If this mandatory manual configuration is not selected, the Add-In will not work.</p>
+        <p><img src="../sites/default/files/ProcessMaker3_Outlook_AccountConfiguration1.png" alt=""></p>
+    </li>
+    <li><p>Click <b>Next</b>.</p></li>
+    <li><p>The Internet E-mail Settings screen displays, select the option to connect to a <b>POP</b> or <b>IMAP</b> email account serverThis configuration depends on the supported email server  configuration for POP and IMAP. See <a href="http://www.howto-outlook.com/howto/accountsettings.htm">this documentation</a> to view how to configure some of the most used email servers.</p></li>
+    <li><p>After completing the configuration click <strong>More Settings&nbsp;</strong>to access the advanced configuration.</p>
+        <p><img src="../sites/default/files/ProcessMaker3_Outlook_AccountConfiguration2.png" alt=""></p>
+        <p><span style="color: #ff0000;"><strong>Note:</strong> </span>It’s very important to make sure that the email server has POP and IMAP support. These options must be enabled so external programs such as Outlook can upload and download messages.&nbsp;</p>
+    </li>
+    <li><p>Inside the Internet Email Settings screen, choose the <b>Outgoing Server</b> tab and set it as the picture below:</p>
+        <p><img src="../sites/default/files/ProcessMaker3_Outlook_ConfigFinishAdvancedOutgoing.png" alt=""></p>
+    </li>
+    <li><p>Go to the <strong>Advanced</strong> tab and set it as shown below:</p>
+        <p><img src="../sites/default/files/ProcessMaker3_Outlook_ConfigFinishAdvanced.png" alt=""></p>
+    </li>
+    <li><p>Click <b>OK</b> to close the window.</p></li>
+    <li><p>Click on <strong>Test Account Settings...</strong> to test the new configuration.</p>
+        <p><img src="../sites/default/files/ProcessMaker3_Outlook_TestSuccess.png" alt=""></p>
+    </li>
+    <li><p>After all tests are complete, the account is configured. Click <b>Close</b> to exit.</p></li>
+    <li><p>Click <b>Finish</b> to exit the wizard.</p>
+        <p><img src="../sites/default/files/ProcessMaker3_Outlook_ConfigFinish.png" alt=""></p>
+    </li>
+</ol>
+
+<h3><span id="Install_the_plugin_in_ProcessMaker">Install the plugin in ProcessMaker</span></h3>
+<p>The plugin will be available once the Enterprise Edition plugin with the corresponding license is  <a href="../index.php/Enterprise_Edition_2.0.html#InstallingEnterpriseEdition" class="external text">imported</a>. It's necessary to activate this plugin once it's installed, it does not  need additional configuration on the server side, follow these steps:</p>
+<ol>
+    <li>Open ProcessMaker and go to <b>Admin > Plugins > Enterprise Manager</b>.</li>
+    <p><img src="https://wiki.processmaker.com/sites/default/files/installnoutlook3.png"></p>
+    <li>Install and enable the plugin <b>N_InOutlook</b>.</li>
+    <p><img src="https://wiki.processmaker.com/sites/default/files/installnoutlook4.png"></p>
+</ol>
+
+<h3><span id="Install_the_Add-in_for_Outlook">Install the Add-In for Outlook</span></h3>
+
+<p>Supported versions with the Enterprise plugin:</p>
+
+<ul>
+    <li><span style="font-size: 13.008px; line-height: 1.538em;">Outlook Add-In for Outlook 2013</span></li>
+    <li><span style="font-size: 13.008px; line-height: 1.538em;">Outlook Add-In for Outlook 2016</span></li>
+</ul>
+
+<p><span style="color: #ff0000;"><strong>Note:</strong></span> The installers are available only to clients or partners who have the license and are not using the trial version of ProcessMaker.</p>
+
+<p>Please <a href="http://artifacts.processmaker.net/add-in/outlook/ProcessMaker_1.00.0008.zip">download</a> the ProcessMaker Add-In for Outlook.</p>
+
+<p>Follow these steps to install the Outlook Add-In:</p>
+
+<ol>
+    <li>Close the Outlook application if it is open.</li>
+    <li>Run the Add-In installer "setup.exe" which will check if .NET Framework is installed on the system, if .NET Framework is not installed, the following window displays:</li>
+    <p><img src="../sites/default/files/installAddInOutlook.PNG"></p>
+    <li>Click <b>Yes</b> to redirect you to the .NET Framework download page, download the 3.5 version and install the .NET framework.</li>
+    <li>Once the .NET Framework is installed and running, the setup will display the following installer window.</li>
+    <p><img src="../sites/default/files/installAddInOutlook2.PNG"></p>
+    <li>Click <b>Next</b> and select a folder where the Outlook plugin will be installed.</li>
+    <p><img src="../sites/default/files/installAddInOutlook3.PNG"></p>
+    <li>Confirm the installation and click <b>Next</b>.</li>
+    <p><img src="../sites/default/files/installAddInOutlook4.PNG"></p>
+    <li>Wait until the installation is finished and once the installation is complete, click Close to exit.</li>
+    <p><img src="../sites/default/files/installAddInOutlook5.PNG"></p>
+    <li><p>After the add-In is installed, open Outlook. A new tab labeled "<b>Add-Ins</b>" displays. <br>The Add-In tab displays two options:</p>
+        <ul>
+            <li><p>The ProcessMaker logo displaying the version of the Add-In.</p></li>
+            <li><p>The <b>Configuration</b> option.</p>
+                <p><img src="../sites/default/files/installAddInOutlook6.PNG"></p>
+            </li>
+        </ul>
+    </li>   
+    <li>Click the <b>Configuration</b> option. Enter the following information into the <b>Configuration</b> screen:<br>
+         <ul>
+            <li>IP address for the ProcessMaker server where you enabled the N_InOutlook plugin.</li>
+            <li>ProcessMaker's credentials.</li>
+            <li>ProcessMaker's workspace name.</li>
+            <li><p>ProcessMaker's skin.</p>
+                <p><img src="../sites/default/files/installAddInOutlook6.PNG"></p>
+            </li>
+         </ul>
+     </li>
+    <li><p>Click <b>Save</b>. A new tab displays on the Outlook’s menu on the left side where ProcessMaker options display, including <b>New Case</b>, <b>Inbox</b>, <b>Draft</b> and others.</p>
+        <p><img src="https://wiki.processmaker.com/sites/default/files/outlookwelcomef.png"></p>
+    </li>
+</ol>
+
+<!--<h4><span id="Configure_a_user_on_Outlook">Configure a user on Outlook</span></h4>
+<p>These steps are optional as it is not necessary to do so, it will not affect if there is not an account linked to Outlook.</p>
+<p>Follow these steps to configure a user on Outlook:</p>
+<ol>
+    <p><img src="/sites/default/files/confOutlook.PNG"></p>
+    <li>Select if you want to use an email address.</li>
+    <p><img src="/sites/default/files/confOutlook2.PNG"></p>
+    <li>Select the <b>manual setup</b>.</li>
+    <p><img src="/sites/default/files/confOutlook3.PNG"></p>
+    <li>Select the <b>POP service</b>.</li>
+    <p><img src="/sites/default/files/confOutlook5.PNG"></p>
+    <li>Complete with your information.</li>
+    <p><img src="/sites/default/files/confOutlook6.PNG"></p>
+    <li>When you complete fulfilling the requirements, click the <b>More Settings …</b> button.</li>
+    <p><img src="/sites/default/files/confOutlook7.PNG"></p>
+    <li>Go to the <b>Outgoing Server</b> tab.</li>
+    <p><img src="/sites/default/files/confOutlook8.PNG"></p>
+    <li>Select the checkbox <b>My outgoing server</b> and go to the <b>advanced</b> tab.</li>
+    <p><img src="/sites/default/files/confOutlook9.PNG"></p>
+    <li>Complete the fields with the information of the screenshot and click the <b>OK</b> button.</li>
+    <p><img src="/sites/default/files/confOutlook10.PNG"></p>
+    <li>To continue, click the button <b>Next</b>, this displays a test account window, when it is completed the test, click the <b>Close</b> button to continue.</li>
+    <p><img src="/sites/default/files/confOutlook11.PNG"></p>
+    <li>Click the <b>finish</b> button and you would have successfully linked your email account to Outlook.</li>
+    <p><img src="/sites/default/files/confOutlook12.PNG"></p>
+    <p><img src="/sites/default/files/confOutlook13.PNG"></p>
+</ol>-->
+
+<h3><span id="Reinstalling_the_Outlook_Add-in">Reinstalling the Outlook Add-In</span></h3>
+<p>When updating the Outlook plugin to version to 2.0.6 or greater, it is necessary to uninstall the current Outlook Add-In and reinstall it to the last version one. To do this, follow the steps below:</p>
+<ol>
+    <li><p>Close Outlook.</p></li>
+    <li><p>Uninstall the Outlook previously installed, so <strong>Open Programs and Features</strong> by clicking the &nbsp;<strong>Start button</strong>, clicking Control Panel, clicking Programs, and then clicking Programs and Features, then look for the <strong>ProcessMaker in Outlook</strong> add-in and click <strong>Uninstall</strong>:</p>
+        <p><img src="https://wiki.processmaker.com/sites/default/files/outlookversionf.png" alt="" width="1059" height="307"></p>
+    </li>
+    <li>Install the new version of Outlook Add-In.</p></li>
+</ol>
+<p>Open your Microsoft Outlook, the Add-In must be included inside the Add-In tab:</p>
+<p><img src="../sites/default/files/ProcessMAkerAddin.png" alt="" width="645" height="424"></p>
+
+<h3><span id="Setup_the_Add-in_for_Outlook">Setup the Add-In for Outlook</span></h3>
+<p>After installing the Add-In, do the following:</p>
+<ol>
+    <li><p>Open Outlook and click <strong>Configuration</strong>.</p></li>
+    <li><p>A window appears to configure the data server and the user account to use it.</p>
+        <p><img src="../sites/default/files/Configuration.png" alt="" width="351" height="303"></p>
+        <p>Where:</p>
+        <ul>
+            <li><strong>Protocol:</strong> Choose between <span class="geshifilter"><code class="text geshifilter-text">http</code></span> or <span class="geshifilter"><code class="text geshifilter-text">https</code></span>.</li>
+            <li><strong>Server:</strong> Specify the name of the server.</li>
+            <li><strong>Workspace:</strong> Specify the name of the workspace.</li>
+            <li><strong>User:</strong> Enter the name of the user.</li>
+            <li><strong>Password:</strong> Enter the password of the user.</li>
+            <li><strong>Language:</strong> Choose between <span class="geshifilter"><code class="text geshifilter-text">Spanish</code></span> or <span class="geshifilter"><code class="text geshifilter-text">English</code></span>.</li>
+            <li><strong>Enable Cases Menu:</strong> Check this option if you want to see the <a href="Outlook_Connector.html#Running_Cases_-_Cases_Menu" title="Outlook Connector">Case Menu</a> when a case is being executed.</li>
+        </ul>
+    </li>
+    <li><p>When the <b>Save</b> button is pressed, it connects to the server to validate the user. If the validation was successful, the configuration window disappears and the system is ready to use.
+</p></li>
+</ol> 
+
+<h2><span id="Interaction_with_Cases_List">Interaction with Cases Lists</span></h2>
+<p>It is possible to interact with cases (lists, steps, etc) in the same way as from the web application, but in a simpler and faster way, because the Add-In for Outlook records user information the first time and subsequently, it is useful to be used by the system without being authenticated every time.</p>
+<p>By clicking on the ProcessMaker folder, all the folders from the ProcessMaker workspace display:</p>
+<p><img src="https://wiki.processmaker.com/sites/default/files/outlooksidemenuf.png" alt="" width="218" height="251"></p>
+<p>Notice that the Folder <strong>Inbox</strong> shows the number of new cases that are pending review assigned to the current user.</p>
+<p>All of the characteristics (forms, input documents, output documents, triggers, derivations, etc.) are fully functional from Outlook.</p>
+<p>Due to performance, the number of cases in the <strong>Participated </strong>and <strong>Unassigned </strong>folders do not show unlike the <strong>Inbox </strong>and <strong>Draft </strong>folders which are displayed between  parenthesis.</p>
+
+<h3><span id="ProcessMaker">ProcessMaker</span></h3>
+<p>This folder contains essential information about the Outlook Connector Plugin:</p>
+<p><img src="https://wiki.processmaker.com/sites/default/files/outlookpmf.png" alt=""></p>
+
+<h3><span id="New_Case">New Case</span></h3>
+<p>One of the main characteristics of this plugin is the possibility to start cases inside the Outlook application. By clicking on this option, all cases in which the user configured on the Outlook Settings participates are listed. (Don't forget that this user must be assigned to the initial task in order to start the case)</p>
+<p><img src="https://wiki.processmaker.com/sites/default/files/outlooknewcasef.png" alt=""></p>
+
+<h3><span id="Inbox">Inbox</span></h3>
+<p>All incoming cases will be stored in this folder as the following image displays:</p>
+<p><img src="https://wiki.processmaker.com/sites/default/files/outlookinboxf.png" alt=""></p>
+<p>Double click on the name of the case to open it.</p>
+
+<h3><span id="Draft">Draft</span></h3>
+<p>Includes cases that are being edited or advanced by the user but have not yet been submitted to the next task, check the following image:<br>
+    <img src="https://wiki.processmaker.com/sites/default/files/outlookdraftf.png" alt=""></p>
+<p>Double click on the name of the case to open it</p>
+
+<h3><span id="Participated">Participated</span></h3>
+<p>Includes all the cases that the user has been sent or participated in, check the following image:</p>
+<p><img src="https://wiki.processmaker.com/sites/default/files/outlookparticipatedf.png" alt=""></p>
+
+<h3><span id="Unassigned">Unassigned</span></h3>
+<p>Includes all cases which are claimed by a pool of users assigned to the task, check the following image:</p>
+<p><img src="https://wiki.processmaker.com/sites/default/files/outlookunassignedf.png" alt=""></p>
+
+<h3><span id="Paused">Paused</span></h3>
+<p>Includes a list of all cases which were paused during their execution. This gives users a quick view of their cases status since it is not possible to pause and unpause cases from the Outlook interface. Cases must be unpaused by going to ProcessMaker Interface.</p>
+<p><img src="https://wiki.processmaker.com/sites/default/files/outlookpausef.png" alt=""></p>
+
+<h2><span id="Running_Cases_-_Cases_Menu">Running Cases - Cases Menu </span></h2>
+<p>When running a case, the Case Menu with the four options found when running cases in ProcessMaker, you will find them at the top of the Menu like the one shown in the illustration below.</p>
+<p><img src="../sites/default/files/ProcessMakerNewCaseOption.png" alt=""></p>
+<p>This functionality can be configured when ProcessMaker server is <a href="Outlook_Connector.html#Setup_the_Add-in_for_Outlook" title="Outlook Connector">configured</a> inside the Outlook, it means that the user can decide if whether the Cases Menu will display it or not. This is practically the same as the one you will find in ProcessMaker. Next you will find a brief explanation of each one of these options:</p>
+
+<h3><span id="Steps">Steps</span></h3>
+<p>It shows all the Dynaforms, Output and Input Documents assigned in the current task, so they can be accessed easily. For more information about this, check <a href="../3.0/Cases.html#Steps" title="3.0/Cases">Cases documentation</a>.</p>
+
+<h3><span id="Information">Information</span></h3>
+<p>It shows all the information of the current process, if you click the down arrow you will find the following options:</p>
+<p><img src="../sites/default/files/ProcessMakerInformationOptions.png" alt=""></p>
+<ul>
+    <li><tt><strong><a href="../3.0/Cases.html#Process_Map" title="3.0/Cases">Process Map:</a></strong></tt> Click on the <b>Process Map</b> option and a new tab opens next to the current case, showing the Process Map of the current process which is being executed.</li>
+    <li><tt><strong><a href="../3.0/Cases.html#Process_Information" title="3.0/Cases">Process Information:</a></strong></tt> Click on the <b>Process Information</b> option and a new window with the information of the current process will display.</li>
+    <li><tt><strong><a href="../3.0/Cases.html#Task_Information" title="3.0/Cases">Task Information:</a></strong></tt> Click on <b>Task Information</b> and a new window with the information of the current task displays.</li>
+    <li><tt><strong><a href="../3.0/Cases.html#Case_History" title="3.0/Cases">Case History:</a></strong></tt> Click <b>Case History</b> and a brief description of the cases displays.</li>
+    <li><tt><strong><a href="../3.0/Cases.html#Message_History" title="3.0/Cases">Messages History:</a></strong></tt> Click <b>Messages History</b> and  it  shows all the email notifications sent during the process.</li>
+    <li><tt><strong><a href="../3.0/Cases.html#Dynaforms" title="3.0/Cases">Dynaforms:</a></strong></tt> Click <b>Dynaforms</b> to display all the dynaforms defined in the process. Users must have <a href="../3.0/Process_Permissions.html" title="Process Permissions">Process Permissions</a> to see the list of dynaforms.</li>
+    <li><tt><strong><a href="../3.0/Cases.html#Uploaded_Documents" title="3.0/Cases">Uploaded Documents:</a></strong></tt> Click <b>Uploaded Documents</b> to show all the <a href="../3.0/Process_Permissions.html" title="3.0/Process Permissions">allowed</a> documents uploaded by any input document defined during the process.</li>
+    <li><tt><strong><a href="../3.0/Cases.html#Generated_Documents" title="3.0/Cases">Generated Documents:</a></strong></tt> Click <b>Generated Documents</b> to show all the <a href="../3.0/Process_Permissions.html" title="3.0/Process Permissions">allowed</a> documents generated by any output document defined during the process.</li>
+</ul>
+
+<h3><span id="Actions">Actions</span></h3>
+<p>Users can execute the following actions:</p>
+<ul>
+    <li><strong><a href="../3.0/Cases.html#Pause" title="3.0/Cases"><tt>Pause:</tt></a></strong> The current case in execution can be paused. By clicking on the calendar icon, a calendar will display in which the date of the unpaused case must be defined.</li>
+    <li><strong><a href="../3.0/Cases.html#Delete" title="3.0/Cases"><tt>Delete:</tt></a></strong> It deletes the current case, ONLY if the user has the <a href="../3.0/Roles.html#PM_DELETECASE" title="3.0/Roles">correct permissions</a> to delete it.</li>
+    <li><strong><a href="../3.0/Cases.html#Cancel" title="3.0/Cases"><tt>Cancel:</tt></a></strong> It cancels a case.</li>
+    <li><strong><a href="../3.0/Cases.html#Reassign_2" title="3.0/Cases"><tt>Reassign:</tt></a></strong> A selected case from the list can be reassigned, it means that the owner of a case will change. If a different user different to <strong>admin</strong> needs to reassign a case, then assign this user a <a href="../3.0/Roles.html" title="3.0/Roles">role</a> with the <tt><a href="../3.0/Roles.html#PM_REASSIGNCASE" title="3.0/Roles">PM_REASSIGNCASE</a></tt></li>
+</ul>
+
+<h3><span id="Case_Notes">Case Notes</span></h3>
+<p><tt><a href="../3.0/Case_Notes.html" title="3.0/Case Notes">Case Notes</a></tt> are used to add comments and observations about cases, which can be read by anyone who has rights to open the case.</p>
+
+<h2><span id="Session_Lost">Session Lost</span></h2>
+<p>In the case when OutLook lost the session a message will display.</p>
+<p><img src="https://wiki.processmaker.com/sites/default/files/outlooklostsessionf.png" alt=""></p>
+<p>In order to recover the session the user only needs to open any folder and OutLook will reload the connection.</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

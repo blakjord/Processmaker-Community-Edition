@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.1/Multitenant_Workspace_Management.html" />
+<link rel="shortlink" href="639.html" />
+<title>3.1 - 3.8 - Multitenant Workspace Management | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"dzVe4lWh_Ro9cqaQ87mQbnZfG3lZwQVn92OnBM3XuQ8","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-639 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="639.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="639.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-485ShMNqFABWVIMypdaCLvQoW01IJXcijlw1vz7ovrg" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - 3.8 - Multitenant Workspace Management</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a href="https://wiki.processmaker.com/MultitenantWorkspaceManagement" class="">3.0</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - 3.8 - Multitenant Workspace Management" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="639.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - 3.8 - Multitenant Workspace Management 1/5</option><option value="40">Give 3.1 - 3.8 - Multitenant Workspace Management 2/5</option><option value="60">Give 3.1 - 3.8 - Multitenant Workspace Management 3/5</option><option value="80" selected="selected">Give 3.1 - 3.8 - Multitenant Workspace Management 4/5</option><option value="100">Give 3.1 - 3.8 - Multitenant Workspace Management 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.7</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-4hXhQdHtKeSr48C54QzImF9EwQ8U9RgMNsmp85t7Fxc" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="639.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="639.html#Overview">Overview</a></li>
+<li class="toc"><a href="639.html#Requirements">Requirements</a></li>
+<li class="toc"><a href="639.html#Installation">Installation</a></li>
+<li class="toc"><a href="639.html#Configuration">Configuration</a></li>
+<li class="toc"><a href="639.html#Accessing_the_Multitenant_workspace">Accessing the Multitenant Workspace</a></li>
+<li class="toc"><a href="639.html#Workspace_Management_Interface">Workspace Management Interface</a></li>
+<ol class="toc">
+<li class="toc"><a href="639.html#Workspace_Information">Workspace Information</a></li>
+<li class="toc"><a href="639.html#Actions_Menu">Actions Menu</a></li>
+<ol class="toc">
+<li class="toc"><a href="639.html#New_Workspace">New Workspace</a></li>
+<li class="toc"><a href="639.html#Backup_Workspace">Backup Workspace</a></li>
+<li class="toc"><a href="639.html#Restore_Workspace">Restore Workspace</a></li>
+<li class="toc"><a href="639.html#Clone_Workspace">Clone Workspace</a></li>
+<li class="toc"><a href="639.html#Delete_Workspace">Delete Workspace</a></li>
+<li class="toc"><a href="639.html#Disable_Workspace">Disable Workspace</a></li>
+<li class="toc"><a href="639.html#Refresh_Information">Refresh Information</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="639.html#Admin">Admin</a></li>
+<ol class="toc">
+<li class="toc"><a href="639.html#Managing_Roles">Managing Roles and Permissions</a></li>
+<li class="toc"><a href="639.html#Plugins_Manager">Plugins Manager</a></li>
+<ol class="toc">
+<li class="toc"><a href="639.html#Import_a_Plugin">Import a Plugin</a></li>
+<li class="toc"><a href="639.html#Configure_a_Plugin">Configure a Plugin</a></li>
+<li class="toc"><a href="639.html#Enable_and_Disable_a_Plugin">Enable and Disable a Plugin</a></li>
+<li class="toc"><a href="639.html#Delete_a_Plugin">Delete a Plugin</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="639.html#Multitenant_Log">Multitenant Log</a></li>
+<ol class="toc">
+<li class="toc"><a href="639.html#SearchPanel">Search Panel</a></li>
+</ol>
+<li class="toc"><a href="639.html#Executing_mttCron.php">Executing mttCron.php</a></li>
+<li class="toc"><a href="639.html#Manage_Workspaces_Through_REST_API">Manage Workspaces Through REST API</a></li>
+<ol class="toc">
+<li class="toc"><a href="639.html#Get_Workspace_Information:_GET_.2Fmanagement">Get Workspace Information</a></li>
+<li class="toc"><a href="639.html#Get_Workspaces:_POST_.2Fmanagement">Create a Workspace</a></li>
+<li class="toc"><a href="639.html#Enable_Disable_a_Workspace:_PUT_.2Fmanagement.2F.7DwksUid.7D"> Enable or Disable a Workspace</a></li>
+<li class="toc"><a href="639.html#Get_Workspaces:_DELETE_.2Fmanagement.2F.7DwksUid.7D"> Delete a Workspace</a></li>
+</ol>
+</div></div>
+</p>
+<hr>
+<p>
+<img src="../sites/default/files/faviconpm_23.png" alt="" width="16" height="16"> 
+<span style="color: #009688"><strong>Plugin Version:</strong></span>
+<span style="color: dimgrey"><strong>3.1.8</strong></span></p>
+<hr>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p>The Multitenant Workspace Management plugin allows a super user to manage workspaces directly inside the ProcessMaker interface. After logging into the Multitenant workspace, the super user will be able to:</p><ul><li>Create workspaces.</li><li>Backup workspaces.</li><li>Restore workspaces based on the generated backups.</li><li>Clone workspaces.</li><li>Delete workspaces.</li><li>Enable/Disable workspaces.</li></ul>
+<p>The backup, restore, clone and delete operations aren't executed in real time. Instead, they are executed in the background, when the plugin's <a href="639.html#Executing_mttCron.php"><b><tt>mttCron.php</tt></b></a> file is evaluated.</p>
+
+<p>Therefore, make sure that the server where ProcessMaker is installed is configured to execute this file periodically, either as a cron job in Linux/UNIX servers or as a Scheduled Task in Windows servers. Moreover, the user who configures the backup, restore, clone or delete workspaces operations will receive an email notification indicating that these operations were completed successfully.</p>
+
+<p style="margin-left:25px"><strong><font color="red">Disclaimer:</font></strong> <font color="dimgray"> The information on this page only applies to customers with an Enterprise license. This information does not apply to resellers or OEMs. Resellers and OEMs should contact their account manager for more information on how to use this plugin.</font></p>
+
+<h2><span id="Requirements">Requirements</span></h2>
+
+<p>Take into accout the following software compatibility requirements:</p>
+
+<ol>
+<li> This plugin version is available as of ProcessMaker 3.2.2 and later.</li>
+<li> Check the OS platform, MySQL version, web server and PHP version in the following Stack links:<br>
+	<ul>
+	<li><a href="../3.2/Supported_Stacks.html">ProcessMaker versions 3.2.2 through 3.2.3</a></li>
+	<li><a href="../3.4/Supported_Stacks.html">ProcessMaker versions 3.4.x</a></li>
+	<li><a href="../3.5/Supported_Stacks.html">ProcessMaker versions 3.5.x and 3.6.x</a></li>
+	</ul></li>
+<li><a href="../3.3/Supported_Browsers.html"> Supported Web Browsers</a></li>
+</li>
+</ol>
+<!--h3 <span id="Considerations_Before_Installing">Considerations before Installing</span>
+
+<p>Before installing or upgrading the Multitenant plugin to v.3.1.4, check the following instructions that ensure the correct operation of the Multitenant plugin v.3.1.4:</p>
+
+<p><b>Updating to Multitenant v.3.1.4</b></p>
+<p>To update the Multitenant plugin:<br>
+<ol>
+<li>First, install ProcessMaker 3.1.3.</li>
+<li>Then, install the Multitenant plugin v.3.1.3.</li>
+<li>Add ProcessMaker 3.1.3 Patch 1.</li>
+<li>Finally, update to Multitenant v.3.1.4.</li>
+</ol>
+</p>
+
+<p><b>Installing Multitenant v.3.1.4</b></p>
+<p>To install the multitenant plugin:<br>
+<ol>
+<li>First, install ProcessMaker 3.1.3</li>
+<li>Add ProcessMaker 3.1.3 Patch 1.</li>
+<li>Finally, install the Multitenant plugin v.3.1.4</li>
+</ol>
+</p>-->
+
+<h2><span id="Installation">Installation</span></h2>
+<p>First of all, the Multitenant Workspace Management plugin needs to be installed and enabled inside ProcessMaker.</p>
+
+<p>Login as a user, such as "admin", who has the <a href="../3.1/Roles.html#PM_SETUP" title="3.1/Roles">PM_SETUP</a> and <a href="../3.1/Roles.html#PM_SETUP_ADVANCED" title="3.1/Roles">PM_SETUP_ADVANCED</a> permissions in their role. Then, go to <strong>ADMIN &gt; Plugins &gt; Enterprise Manager</strong>. Either install the Multitenant Workspace Management plugin by clicking on <img alt="" height="19" src="../sites/default/files/InstallPluginIcon.png" width="20"><strong>Install from File</strong> and uploading the plugin file <i>or</i> by clicking on its <strong>Install Now</strong> button in the list of available plugins.</p>
+
+<p><img src="../sites/default/files/3.6Multitenant317InstallPlugin.png"></p>
+
+<p>After installing the plugin, make sure that the <b>Multitenant Workspace Management</b> plugin is&nbsp;
+<img alt="" height="20" src="../sites/default/files/EnabledIcon.png" width="22"> enabled.
+</p>
+
+<p><img src="../sites/default/files/3.6Multitenant317InstallPluginEnable.png" ></p>
+
+<!--h2<span id="Considerations_Before_Using_the_Plugin">Considerations Before Using the Plugin</span>h2
+<p>The following actions are not recommended:</p>
+<ul>
+<li>Add other permissions to a Multitenant user.</li>
+<li>Delete permissions to a created Multitenant user; otherwise the Multitenant interface will be disturbed.</li>
+</ul>-->
+<p>After <b>Multitenant Workspace Management</b> plugin is activated, the&nbsp;
+<img alt="" height="20" src="../sites/default/files/EnabledIcon.png" width="22"> icon is displayed in the <b>Enabled</b> column.</p>
+
+<p><img src="../sites/default/files/3.6Multitenant317InstallPluginInstalledEnabled.png" ></p>
+
+<h2><span id="Configuration">Configuration</span></h2>
+
+<p>Once the plugin has been installed, the <strong>Multitenant Installation</strong> option will appear under the<strong> Admin &gt; Plugins</strong> sidebar.</p>
+<p><img src="../sites/default/files/3.1MultitenantIMenuOption.png"></p>
+
+<p>Click this option and an installation wizard will appear:</p>
+<p><img src="../sites/default/files/3.1MultitenantIMenuInstallationWizard1.png"></p>
+
+<p>In the next screen, specify the super user who will manage the workspaces. Take note of these credentials, they will be used to log in to the Multitenant Workspace Management interface.</p>
+<p><img src="../sites/default/files/3.1MultitenantIMenuInstallationWizard2.png"></p>
+
+<p>Note that both fields show a description of the username and password policy respectively. If the password does not meet the password policy, the Confirm Password field will continue to be blocked.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantIMenuInstallationWizard2_1.png" ></p>
+
+<p>After entering the credentials, click the <strong>Install</strong> button and wait until the plugin has finished installing.</p>
+<p><img src="../sites/default/files/3.1MultitenantIMenuInstallationWizard2_2.png"></p>
+
+<p>The following message will appear indicating that the workspace has been created.</p>
+<p><img src="../sites/default/files/3.1MultitenantIMenuInstallationWizard3.png"></p>
+
+<p>Finally, click <b>Next</b> and in the next window, click the <b>Login</b> button to be redirected to the Multitenant Manager login screen.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantIMenuInstallationWizard4.png" ></p>
+
+<h2><span id="Accessing_the_Multitenant_workspace">Accessing the Multitenant Workspace</span></h2>
+<p>The Multitenant plugin works as a separate workspace named Multitenant. The first time after the configuration, the browser will be redirected to:<br> 
+<dl><dd><code>http://{pm-server}/sysmultitenant/en/neoclassic/login/login</code></dd></dl></p>
+
+<p>At this point it is necessary to upload the Enterprise license file, even if it was uploaded before.</p>
+<p><img src="../sites/default/files/3.1MultitenantLicense.png"></p>
+
+<p>Once the license has been updated successfully, ProcessMaker will redirect the web browser to the multitenant login page:</p>
+<p><img src="../sites/default/files/3.1MultitenantLogin.png"></p>
+
+<p>In the login screen of ProcessMaker set the <strong>Workspace</strong> to "multitenant":</p>
+
+<p><img src="../sites/default/files/3.1MultitenanLoginMultitenant.png" ></p>
+
+<p>Another way to access the Multitenant workspace is to edit the URL of the login screen in the web browser so it directs to <code>.../sys<strong>multitenant</strong>/...</code> :</p>
+<p><img src="../sites/default/files/3.1MultitenanLoginURL.png" ></p>
+
+<h2><span id="Workspace_Management_Interface">Workspace Management Interface</span></h2>
+
+<p>After the first login, a pop-up message will ask if the user wants to search for existing workspaces.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantInterface.png" ></p>
+
+<p>Click on <b>Yes</b> to start the searching process.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantSearchingCurrentWorkspaces.png" ></p>
+
+<p>Once done, the following dialog will be displayed.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantSearchingCurrentWorkspacesDone.png" ></p>
+
+<p>All the workspaces already present in the ProcessMaker installation will be listed.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantWorkspacesDetected.png" ></p>
+
+<ol>
+	<li><strong><a href="639.html#Workspace_Information">Workspace Information</a></strong>: Displays information about the workspace, such as its name, cases, disk usage, tables and statistics.</li>
+
+	<li><strong><a href="639.html#Actions_Menu">Actions Menu</a></strong>: Contains the main actions to manage workspaces.</li>
+
+	<li><strong>Search Field:</strong> Enter the name of a workspace to search for. This field will filter the possible matches while entering the workspace name.</li>
+</ol>	
+
+<h3><span id="Workspace_Information">Workspace Information</span></h3>
+<p>Each item in the list represents a workspace with its information detailed in each column.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantCreateWorkspaceDetails.png"></p>
+
+<ul>
+<li><b>Workspace:</b> The workspace name.</li>
+<li><b>Cases:</b> All the cases contained in the workspace.<br>
+	<ul>
+	<li><strong>To Do:</strong> Shows the total number of cases stored in the inbox of all users.</li>
+	<li><strong>Cancelled:</strong> Shows the total number of cases that have been cancelled.</li>
+	<li><strong>Paused:</strong> Shows the total number of cases that were paused during their execution.</li>
+	<li><strong>Completed:</strong> Shows the total number of cases that reached an end event.</li>
+	<li><strong>Draft:</strong> Shows the total number of cases that are being edited or advanced by the user but have not yet been submitted to the next task.</li>
+	</ul>
+</li>
+<li><b>Disk Usage:</b> The disk usage of both the workspace and the database.
+</li>
+<li><b>Tables</b> <br>
+	<ul>
+	<li><span><strong>MyISAM:</strong> Shows the number of tables held by the MyISAM engine.</span></li>
+	<li><span><strong>InnoDB:</strong> Shows the number of tables held by the InnoDB engine.</span></li>
+	</ul>
+</li>
+<li><b>Statistics</b> 
+	<ul>
+	<li><span><strong>Active Processes:</strong> Shows the number of processes being currently executed.</span></li>
+	<li><span><strong>Number of users:</strong> Shows the number of users in the workspace.</span></li>
+	</ul>
+</li>
+<li><b>Configuration:</b> Shows the current status of the workspace: “enabled” or “disabled”.</li>
+
+<li><b>Last Update Date:</b> Last datetime when the workspace was accessed.</li>
+</ul>
+
+
+<h3><span id="Actions_Menu">Actions Menu</span></h3>
+<p>The main menu buttons are located in the top part of the panel under the Multitenant tab, and contains the following options to manage workspaces:<br>
+<ul>
+	<li><a href="639.html#New_Workspace">New workspace</a></li>
+	<li><a href="639.html#Backup_Workspace">Backup workspace</a></li>
+	<li><a href="639.html#Restore_Workspace">Restore workspace</a></li>
+	<li><a href="639.html#Clone_Workspace">Clone workspace</a></li>
+	<li><a href="639.html#Delete_Workspace">Delete workspace</a></li>
+	<li><a href="639.html#Disable_Workspace">Disable workspace</a></li>
+	<li><a href="639.html#Refresh_Information">Refresh information</a></li>
+</ul>
+</p>
+
+<p>Some of these actions will be executed when the user clicks on the option in the Multitenant Management interface, but the options to backup, restore or clone a workspace are not executed in real time. Instead, they are set as pending actions that will be executed when the multitenant cron file named <strong><tt>mttCron.php</tt></strong> is executed.</p>
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>Only one pending action can be executed at a time on a workspace, so the <strong><tt>mttCron.php</tt></strong> file needs to be executed before a second pending action can be executed on the same workspace.</font></p>
+
+<h4><span id="New_Workspace">New Workspace</span></h4>
+<p>Select this option to start the creation of a new workspace with a valid enterprise license. Fill in the following information about the new workspace:</p>
+
+<p><img src="../sites/default/files/3.1MultitenantCreateWorkspaceNew.png"></p>
+
+<p><b><u>Workspace</u></b></p>
+<ul>
+<li><strong>Name</strong>: Enter a name for the new workspace with a maximum length of 30 characters or less. It is recommended to only use ASCII letters, numbers and underscores (_) to avoid problems.</li>
+
+<li><strong>Database options.</strong> This section defines the MySQL database that will be created to hold data for the new workspace. Each database name can only have 16 characters or less. By default, the prefix "wf_" is added to the workspace name.<br>
+
+	<ul>
+	<li><strong>Workflow database</strong>: The name of the database that will hold data about processes, cases, users, report tables, etc. </li>
+
+	<li><strong>Drop database if exists</strong>: Check this option to delete any existing databases that have the same name as the ones above.</li>
+	</ul>
+</li>
+<li><strong>Workspace administrator.</strong> Defines the administrator credentials for the new workspace. This user will have the "PROCESSMAKER_ADMIN" role, which has permissions for all the ProcessMaker functions.<br>
+	<ul>
+	<li><strong>Username</strong>: Enter the username of the administrator of the new workspace. By default, the username is "admin".</li>
+	<li><strong>Password</strong>: Enter the password of the administrator of the new workspace. By default, the password is "admin".</li>
+	<li><strong>Re-type password</strong>: The password must be entered twice to confirm it.</li>
+	</ul>
+
+</li>
+</ul>
+<p><b><u>License</u></b></p>
+
+<p><img src="../sites/default/files/3.1MultitenantCreateWorkspaceLicense.png"></p>
+
+<ul>
+	<li><b>Start Date:</b> Start date of the license. The time value is interpreted as per the Coordinated Universal Time (UTC) standard.</li>
+	<li><b>End Date:</b> End date of the license. The time value is interpreted as per the Coordinated Universal Time (UTC) standard.</li>
+	<li><b>First Name:</b> First name of the person for whom the license will be generated.</li>
+	<li><b>Last Name:</b> Last name of the person for whom the license will be generated.</li>
+	<li><b>Email Address:</b> Email of the person for whom the license will be generated.</li>
+	<li><b>Select Plugins:</b> Plugins that will be included in the license. Plugins not selected will be available to be purchased. </li>
+	<li><b>Select Features:</b> Features that will be included in the license. Features not selected will be marked with a cross sign.</li>
+
+</ul>
+
+<p>After filling out both forms, click on <b>Test</b> to check whether the entered values are valid and don't conflict with the names of existing MySQL databases. A new message window will open asking if you want to create the new workspace.</p>
+<p><img src="../sites/default/files/3.1MultitenantCreateWorkspaceTest.png"></p>
+
+<p>Click <b>No</b> to close the window and return to the creation window, or click <b>Yes</b> to start the creation of the new workspace. After the workspace has been created, a new message window will appear to confirm that the workspace was created:</p>
+<p><img src="../sites/default/files/3.1MultitenantCreateWorkspaceConfirmation.png"></p>
+
+<p>The workspace that was created will be added to the list of existing workspaces:</p>
+<p><img src="../sites/default/files/3.1MultitenantCreateWorkspaceListed.png"></p>
+
+<p>When accessing the new workspace, it won't be necessary to upload a license file. The details of the license created with the workspace will be displayed inside the <b>Plugins</b> section under the <b>Admin</b> tab. Plugins that weren't included in the license will be available through the <b>Buy Now</b> button.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantCreateWorkspaceLogged.png"></p>
+
+<h4><span id="Backup_Workspace">Backup Workspace</span></h4>
+<p>To make a backup of a workspace, first click on the name of the workspace to select it. When it is highlighted in a light blue color, go to the main menu and select the <b>Backup Workspace</b> option.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantBackupWorkspace.png" ></p>
+
+<p>A new window will open where a short description must be entered for the workspace backup. Note that the description is limited to 20 characters long.</p>
+<p><img src="../sites/default/files/3.1MultitenantBackupWorkspaceDescription.png"></p>
+
+<p>After entering the description, click on <b>Ok</b> to start the backup operation, or click on <b>Cancel</b> to close the window and return to the previous list. A message will appear indicating that the backup operation will run in the background:</p>
+
+<p><img src="../sites/default/files/3.1MultitenantBackupWorkspaceSuccess.png" ></p>
+
+<p>And the workspace status will change to Backing Up:</p>
+
+<p><img src="../sites/default/files/3.1MultitenantBackupWorkspaceStatusChanged.png"></p>
+
+<p>Do not forget that to finish backing up the workspace, it is necessary to run the <a href="639.html#Executing_mttCron.php"><tt>mttCron.php</tt></a> script.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantBackupWorkspaceCron.png"></p>
+
+<p>Once the workspace backup process has finished, the workspace status will be set back to Enabled and the following email message will be sent to the user who executed this operation:</p>
+
+<p><img src="../sites/default/files/3.1MultitenanBackupWorkspaceEmail.png"></p>
+
+<p>Note that the backup file won't be listed in the workspace management list.</p>
+
+<h4><span id="Restore_Workspace">Restore Workspace</span></h4>
+
+<p>To restore a workspace from a previous backup, first select the workspace that will be restored. When it is highlighted in a light blue color, click on the <b>Restore Workspace</b> option:</p>
+<p><img src="../sites/default/files/3.1MultitenantRestoreWorkspace.png" ></p>
+
+<p>The following window will display a list of the available backups of the selected workspace. Besides the description of the backup, the list includes the ProcessMaker version in which the backup was made.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanRestoreWorkspaceSelect.png" ></p>
+
+<p>Select the backup version and click on <strong>Ok</strong>, the following message will display, indicating that the operation will be running in background:</p>
+
+<p><img src="../sites/default/files/3.1MultitenanRestoreWorkspaceSuccess.png" ></p>
+
+<p>And its status will change to <strong>Restoring:</strong></p>
+<p><img src="../sites/default/files/3.1MultitenantRestoreWorkspaceStatusChanged.png" ></p>
+
+<p>The pending restore operation will be completed the next time the <a href="639.html#Executing_mttCron.php"><b><tt>mttCron.php</tt></b></a> file is executed.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantBackupWorkspaceCron.png" ></p>
+
+<p>When the restore operation finishes, the following notification will be sent to the user who executed this operation. Note the <a href="639.html">Email</a> configuration must be set.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanRestoreWorkspaceEmail.png" ></p>
+
+
+<h4><span id="Clone_Workspace">Clone Workspace</span></h4>
+<p>This option copies all existing data of a workspace into an existing or new workspace. First, select the workspace to be copied and click on <b>Clone Workspace</b>.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanCloneWorkspace.png" ></p>
+
+<p>The following window will open.</p>
+<p><img src="../sites/default/files/3.1MultitenanCloneWorkspaceSource.png"></p>
+
+<ul>
+<li><strong>Source workspace:</strong> The name of the selected workspace to be cloned.</li>
+
+<li><strong>Create clone from:</strong> The workspace version. By default, it is set as “Current Version”. Nevertheless, if one or more backups of the workspace exist they will be listed in the dropdown list.</li>
+
+<li><strong>Target workspace:</strong> The workspace where the copy will be made. By default, it shows the New Workspace option; nevertheless, it is possible to clone a workspace into another workspace. Select one workspace among the existing workspaces in the list. Remember that all data of the workspace selected will be lost when the cloning is done.</li>
+
+<li><strong>New workspace name:</strong> The name of the new workspace. This field is only available if the previous field is set as New Workspace.</li>
+</ul>
+
+<p>Click <b>Cancel</b> to cancel the operation, or click <b>Ok</b> to start the cloning of the workspace.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanCloneWorkspaceSuccess.png"></p>
+
+<p>The workspace status will change to Cloning, and if one of the existing workspaces was selected, its status will change to Overwriting.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanCloneWorkspaceStatus.png" ></p>
+
+<p>The pending cloning operation will be completed the next time the <a href="639.html#Executing_mttCron.php"><b><tt>mttCron.php</tt></b></a> script is executed.</p>
+
+<p>When the cloning operation finishes, the following notification will be sent to the user who executed this operation. Note that the <a href="639.html">email</a> configuration must be set to sent the notification.</p>
+
+<p><img src="../sites/default/files/3.1MultitenantCloningWorkspaceEmail.png" ></p>
+
+
+
+<h4><span id="Delete_Workspace">Delete Workspace</span></h4>
+<p>Select this option to completely delete all workspace data. Select the workspace to delete, then click the <b>Delete Workspace</b> option.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanDeleteWorkspace.png"></p>
+
+<p>A message window will ask if you really want to delete the selected workspace.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanDeleteWorkspaceConfirmation.png"></p>
+
+<p>Click <b>Ok</b> to delete the workspace. The delete operation will run in background.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanDeleteWorkspaceSuccess.png" ></p>
+
+<p>The workspace status will change to Deleting.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanDeleteWorkspaceStatus.png" ></p>
+
+<p>As soon as the <b><tt>mttCron.php</tt></b> script is executed and the <b>Refresh Information</b> button is clicked, the workspace will be removed from the list. Also, when the delete operation finishes, the following notification will be sent to the user who executed this operation.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanDeleteWorkspaceEmail.png" ></p>
+
+<h4><span id="Disable_Workspace">Disable Workspace</span></h4>
+<p>This option allows a workspace to be disabled, so it will not be available if a user wants to access it. Select a workspace and click the <b>Disable Workspace</b> option.</p>
+<p><img src="../sites/default/files/3.1MultitenanDisableWorkspace.png" ></p>
+
+<p>A message dialog will ask the user for confirmation to disable the workspace.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanDisableWorkspaceConfirmation.png"></p>
+
+<p>Click <b>Ok</b> to disable the workspace. Another window will open with a success or fail message.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanDisableWorkspaceSuccess.png"></p>
+
+<p>The status of the workspace will be changed to Disabled.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanDisableWorkspaceStatus.png"></p>
+
+<p>To enable the workspace, select the workspace and the Enable Workspace  option will become available in the main menu.</p>
+<p><img src="../sites/default/files/3.1MultitenanEnableWorkspace.png" ></p>
+
+<p>Once the workspace is enabled the following message will appear:</p>
+<p><img src="../sites/default/files/3.1MultitenanEnableWorkspaceSuccess.png" ></p>
+
+
+<h4><span id="Refresh_Information">Refresh Information</span></h4>
+<p>Click the <b>Refresh Information</b> button to refresh the information of one or more workspaces. The following message window will open.</p>
+<p><img src="../sites/default/files/3.1MultitenanRefreshWorkspace.png"></p>
+
+<p>This message warns the user that the process may take a while, and lets the user choose between refreshing a few selected workspaces or refreshing all of them.</p>
+
+<p>Click <b>Yes</b> to start the refreshing process.</p>
+<p><img src="../sites/default/files/3.1MultitenanRefreshWorkspaceProcess.png"></p>
+
+<p>Once finished, the following message will be displayed.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanRefreshWorkspaceSuccess.png"></p>
+
+<h2><span id="Admin">Admin</span></h2>
+
+<h3><span id="Managing_Roles">Managing Roles and Permissions</span></h3>
+
+<p>The super user that was created during the initial configuration of the Multitenant workspace has the PROCESSMAKER_ADMIN role, which has the following <a href="../3.1/Roles.html">permissions</a> to access all the functions in the Workspace Management interface:</p>
+
+<p>
+<table>
+<tbody>
+<tr>
+<td><strong>Permissions</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+
+<tr>
+<td>MTT_MULTITENANT</td>
+<td>Access to the Multitenant tab.</td>
+</tr>
+
+<tr>
+<td>MTT_LIST_ALL_WORKSPACES</td>
+<td>Ability to view the list of available workspaces.</td>
+</tr>
+
+<tr>
+<td>MTT_NEW_WORKSPACE&nbsp;&nbsp;&nbsp;</td>
+<td>Ability to create new workspaces.</td>
+</tr>
+
+<tr>
+<td>MTT_BACKUP_WORKSPACE</td>
+<td>Ability to backup workspaces.</td>
+</tr>
+
+<tr>
+<td>MTT_RESTORE_WORKSPACE</td>
+<td>Ability to restore workspaces from a backup file.</td>
+</tr>
+
+<tr>
+<td>MTT_CLONE_WORKSPACE</td>
+<td>Ability to clone workspaces.</td>
+</tr>
+
+<tr>
+<td>MTT_DELETE_WORKSPACE</td>
+<td>Ability to delete workspaces.</td>
+</tr>
+
+<tr>
+<td>MTT_ENABLE_DISABLE_WORKSPACE</td>
+<td>Ability to disable or enable a workspace.</td>
+</tr>
+
+<tr>
+<td>MTT_REFRESH_WORKSPACES_INFO</td>
+<td>Ability to refresh the workspace management interface.</td>
+</tr>
+
+<tr>
+<td>MTT_MULTITENANT_LOG</td>
+<td>Access to the Multitenant log</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>Additional users can be created with these permissions by going to <b>Admin &gt; Users</b> and creating users with the PROCESSMAKER_ADMIN role. To give users access to some of the above funcions, but not all of them, then create a new role and assign some of the permissions to that role. Make sure to include the PM_LOGIN permission in the new role, so users can log in to ProcessMaker. Then, assign users to that new role with limited functions.</p>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray">When creating a new role, it is not recommended to add the <a href="../3.2/Roles.html#PM_CASES">PM_CASES</a> permission with Multitenant permissions to a user's role. If a role is assigned with both the PM_CASES permission and the Multitenant permissions, the ProcessMaker Cases menu will be shown on the Multitenant interface, which changes the entire appearance of the Multitentant interface.</font></p>
+
+<h3><span id="Plugins_Manager">Plugins Manager</span></h3>
+<p>The Plugins Manager section allows to add functionalities and customize the interface of the Multitenant plugin and its workspace. To see the list of plugins installed in ProcessMaker, go to the <b>ADMIN</b> menu and click on the <b>Plugins Manager</b> option in the left sidebar:</p>
+
+<p><img src="../sites/default/files/3.1MultitenanAdminPluginManager.png"></p>
+
+<h4><span id="Import_a_Plugin">Import a Plugin</span></h4>
+<p>To import a new plugin, click on the <b>Import</b> button in the toolbar. Then, select a plugin's tar file to upload to ProcessMaker.</p>
+<p><img alt="" src="../sites/default/files/Import_File.png"></p>
+
+<h4><span id="Configure_a_Plugin">Configure a Plugin</span></h4>
+<p>This option is only available if a plugin contains a package that includes many plugins. Choose a plugin from the list and then click on the <b>Configure</b> button. A new list with many plugins will be displayed.</p>
+
+<h4><span id="Enable_and_Disable_a_Plugin">Enable and Disable a Plugin</span></h4>
+<p>A plugin status is displayed as <font color="green">Enabled</font> or <font color="red">Disabled</font> in the <strong>Plugins Manager</strong> list.</p>
+
+<p><img src="../sites/default/files/3.1MultitenanAdminPluginManagerStatus.png"></p>
+
+<p>To change the status, select the plugin in the list and click on the <b>Status</b> option in the toolbar. Note that the Status option will change to <b>Enable</b> or <b>Disable</b> depending on the plugin's current status.</p>
+	
+<p><img src="../sites/default/files/3.1MultitenanAdminPluginManagerChangeStatus.png"></p>
+
+<h4><span id="Delete_a_Plugin">Delete a Plugin</span></h4>
+<p>To delete a plugin, select the plugin in the list, click on the <b>Delete</b> button in the toolbar and confirm the action by clicking on the <strong>Yes</strong> button.</p>
+<p><img alt="" src="../sites/default/files/3.1MultitenanAdminPluginManagerDelete.png"></p>
+
+<h2><span id="Multitenant_Log">Multitenant Log</span></h2>
+<p>The multitenant log is available to users with the <a href="639.html#Managing_Roles">MTT_MULTITENANT_LOG</a> permissions assigned to their role. The multitenant log records can be used to check what actions users have executed.</p>
+<p><img src="../sites/default/files/3.1MultitenanLog.png" ></p>
+
+<h3><span id="SearchPanel">Search Panel</span></h3>
+<p>This section allows users to search for information using the following criteria:<br></p>
+
+<ul>
+<li>
+<span><strong>Date from:</strong> Search for the operations made from a certain date. Click inside the textarea to enable the date picker:<br></span></li></ul>
+
+<p style="padding-left: 30px;"><span><img src="../sites/default/files/49.png" alt="" height="191" width="260"></span></p>
+
+<ul>
+<li><strong>Date to:&nbsp;</strong>Search for the operations that were executed last. <span>Click inside the textarea to enable the date picker:</span></li></ul>
+
+<p style="padding-left: 30px;"><img src="../sites/default/files/50.png" alt="" height="196" width="215"></p>
+
+<ul><li><span><strong>Operation:</strong>&nbsp; Search for the following operations: Any, backup, restore, clone, delete, disable, enable and create workspaces.</span></li></ul>
+
+<p style="padding-left: 30px;"><span><img src="../sites/default/files/51.png" alt="" height="159" width="275"></span></p>
+
+<ul><li><span><strong>Result</strong>: Filter information according to two results: Successful and Unsuccessful. </span></li>
+
+<li><strong>IP Address:&nbsp;</strong>Search results according to the IP Address from where the operations were executed.</li>
+
+<li><span><strong>Content:</strong>&nbsp; Search the information listed in the description and details columns.<br></span></li>
+</ul>
+<p>The number of workspaces will be listed in the panel. Each item in the list shows the logs generated by the Workspace Management plugin. It shows the following details:</p>
+<ul>
+<li><strong>ID</strong></li>
+<li><strong>Date Time</strong></li>
+<li><strong>IP</strong></li>
+<li><strong>Action</strong></li>
+<li><strong>Type</strong></li>
+<li><strong>Description</strong></li>
+<li><strong>Details</strong></li>
+</ul>
+
+<p>To view the log entry of any of them, click on the item and a new window will open:</p>
+
+<p><img src="../sites/default/files/3.1MultitenanWorkspaceLogDetails.png"></p>
+
+<p>For instance, if looking for information about successful cloning operations, the results will be:</p>
+<p><img src="../sites/default/files/3.1MultitenanWorkspaceLogResults.png"></p>
+
+
+<h2><span id="Executing_mttCron.php">Executing mttCron.php</span></h2>
+<p>In order for pending actions to be executed in the Multitenant Workspace Management plugin, the <strong><tt>mttCron.php</tt></strong> file must be executed. This file can be manually executed by opening a command-line terminal on the server where ProcessMaker is installed and issuing the following commands:</p>
+<codeblock>cd <a href="../index.php/File_Locations.html#Installation_Directory">{INSTALL-DIRECTORY}</a>/workflow/engine/plugins/pmWorkspaceManagement
+php -f <a href="../index.php/File_Locations.html#Installation_Directory">{INSTALL-DIRECTORY}</a>/workflow/engine/plugins/pmWorkspaceManagement/bin/mttCron.php</codeblock>
+<div style="margin-left:25px;">
+
+<p>Example in Linux/UNIX:</p>
+<codeblock>php -f /opt/processmaker/workflow/engine/plugins/pmWorkspaceManagement/bin/mttCron.php</codeblock>
+<p>Example in Windows:</p>
+<codeblock>"C:\Users\<em>USERNAME</em>\AppData\Roaming\ProcessMaker-<em>X</em>_<em>X</em>_<em>X</em>\php\php.exe" -f "..\..\processmaker\workflow\engine\plugins\pmWorkspaceManagement\bin\mttCron.php"</codeblock>
+</div>
+
+<div style="margin-left:25px;">
+  <p><font color=green><b>Note:</b></font> <font color=dimgrey>When running cloud servers, make sure to use the proper permissions for web server users as Apache or NGINX. For more details about how to configure permissions for web server users, see <a href="../3.2/Executing_cron.php.html#In_Linux">Cron Scripts</a>.</font></p>
+</div>
+
+<p>It can take <strong><tt>mttCron.php</tt></strong> up to an hour to clone or restore a workspace, so be prepared for a long wait if one of those actions is being executed.
+
+<p>When <strong><tt>mttCron.php</tt></strong> has finished, it will display the words :</p>
+
+<p><img src="../sites/default/files/3.1MultitenantBackupWorkspaceCron.png">
+</p>
+
+
+<div style="margin-left:25px;">
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>If an error occurs while restoring a workspace, then redo the restore operation. If the cloning of a workspace is cut short and does not complete, the following error message will be displayed when the <b>Refresh Information</b> button is clicked:</p>
+<img src="../sites/default/files/ErrorWorkspaceManagement.png">
+<p>There is no way to continue when the cloning of a workspace has been cut short. The only solution is to delete the files and database that were created by cloning and clone the workspace again. The workspace files to be deleted are located at <b><tt>{INSTALL-DIRECTORY}/shared/sites/{CLONE-NAME}</tt></b>. If using Linux/UNIX, the root user on the ProcessMaker server can delete the cloned workspace files with the following command in a terminal:</font></p>
+<codeblock>rm -rf /opt/processmaker/shared/sites/<i><font color=blue>CLONE-NAME</font></i></codeblock>
+<p><font color=dimgrey>Then, log in to MySQL as the root user and delete the cloned workspace database, which is a database named <b><tt>wf_{CLONE-NAME}</tt></b>. For example:</font></p>
+<codeblock>mysql -u root -p <br>mysql> show databases; <br>mysql> drop database wf_myclone; <br>mysql> exit;</codeblock>
+</div>
+
+<p>It is recommended to set the <strong><tt>mttCron.php</tt></strong> file to periodically execute on the server where ProcessMaker is installed, either as a <a href="../3.1/Executing_cron.php.html#Configuring_crontab_in_Linux.2FUNIX">cron job in Linux/UNIX</a> or a<a href="639.html"> Scheduled Task in Windows</a>.</p>
+
+<h2><span id="Manage_Workspaces_Through_REST_API">Manage Workspaces Through REST API</span></h2>
+
+<p>The following REST endpoints are used by the Multitenant Workspace Management plugin to return information, enable or disable and delete workspaces. They are defined in <b><tt>workflow/engine/plugins/pmWorkspaceManagement/src/Services/Api/PmWorkspaceManagement/Management.php</tt></b>.</p>
+
+<p>Remember that the multitenant workspace works as a single workspace. Therefore, the external application to call these endpoints must be registered in:</p>
+
+<dl><dd><code>http://{pm-server}/sys<font color="blue">multitenant</font>/en/neoclassic/oauth2/applications</code></dd></dl>
+
+<!-- GET ALL WORKSPACES  -->
+<h3><span class="mw-headline" id="Get_Workspace_Information:_GET_.2Fmanagement">Get Workspace Information</span>: <code>GET /pmworkspacemanagement/management</code></h3>
+<p>Get the list of <font color="#483D8B">workspaces</font>.</p>
+<p>
+<dl><dd><b>GET</b> <font color="blue">/api/1.0/multitenant/pmworkspacemanagement/management</font></dd></dl>
+</p>
+<p><b>Example:</b></p>
+<p>If successful, then the HTTP status code is set to <code>200</code> and an array of workspace objects is returned.</p>
+<p><em>Response</em></p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span><span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;status&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;success&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;data&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;wksUid&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;83025909958792f213b5353070805653&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;catUid&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;catName&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;workspaceName&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;workflow&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;totalCases&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;todo&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;6&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;cancelled&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;paused&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;0&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;completed&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;20&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;draft&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;14&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;fileDiskUsage&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;16.4732&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;dataBaseDiskUsage&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;70.1121&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;totalActiveProcesses&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;59&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;numberOfUsers&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;5&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;totalTables&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;MyISAM&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;15&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;InnoDB&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;516&quot;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;status&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;1&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;updateDate&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;2017-01-16 20:56:38&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;logo&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">null</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ...<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div> 
+<!-- FIN -->
+
+<!-- POST CREATE A WORKSPACE  -->
+<h3><span class="mw-headline" id="Get_Workspaces:_POST_.2Fmanagement">Create a Workspace</span>: <code>POST /pmworkspacemanagement/management</code></h3>
+<p>Create a <font color="#483D8B">workspace</font>.</p>
+<p>
+<dl><dd><b>POST</b> <font color="blue">/api/1.0/multitenant/pmworkspacemanagement/management</font></dd></dl>
+</p>
+<p><b>POST Parameters:</b><br>
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr>
+    <th><b>Name</b></th>
+    <th><b>Type</b></th>
+    <th><b>Description</b></th>
+</tr>
+<tr>
+    <td>name</td>
+    <td>String</td>
+    <td>Workspace name.</td>
+</tr>
+<tr>
+    <td>username</td>
+    <td>String</td>
+    <td>Workspace user name.</td>
+</tr>
+<tr>
+    <td>password</td>
+    <td>String</td>
+    <td>Workspace password.</td>
+</tr>
+
+
+</tbody>
+</table>
+</dd></dl>
+</p>
+
+<p><b>Optional Parameters:</b><br>
+<dl><dd>
+<table class="codecolumn"><tbody>
+<tr>
+    <th><b>Name</b></th>
+    <th><b>Type</b></th>
+    <th><b>Description</b></th>
+</tr>
+<tr>
+    <td>name</td>
+    <td>String</td>
+    <td>Workspace name. </td>
+</tr>
+<tr>
+    <td>database</td>
+    <td>String</td>
+    <td>The name of the database that will hold data about processes, cases, users, report tables, etc. If not included, the database will be named as: "wf_&lt;workspace_name&gt;".</td>
+</tr>
+
+<tr>
+	<td>startDate</td>
+	<td>Datetime</td>
+	<td>Start date of the license. The time value is interpreted as per the Coordinated Universal Time (UTC) standard. If not included, the default value will be the current datetime of the endpoint execution.</td>
+</tr>
+
+<tr>
+	<td>endDate</td>
+	<td>Datetime</td>
+	<td>End date of the license. The time value is interpreted as per the Coordinated Universal Time (UTC) standard. If not included, the default value will be the current datetime plus 3 months.
+
+<tr>
+	<td>firstName</td>
+	<td>String</td>
+	<td>First name of the person for whom the license will be generated. If not included, the default value will be: "Processmaker"</td>
+</tr>
+<tr>
+	<td>lastName </td>
+	<td>String</td>
+	<td>Last name of the person for whom the license will be generated. If not included, the default value will be: "Inc".</td>
+</tr>
+<tr>
+	<td>emailAddress</td>
+	<td>String</td>
+	<td>Email of the person for whom the license will be generated. If not included, the default value will be: "support@processmaker.com".</td>
+</tr>
+
+</tbody>
+</table>
+</dd></dl>
+</p>
+
+<p><b>Request Example:</b><br>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;sample123&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;username&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;admin&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;password&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;admin&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p><b>Response:</b></p>
+<p>If successful, then the HTTP status code is set to <code>201</code> and the following array is returned.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">201</span><span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+Content<span style="color: #339933;">-</span>Type<span style="color: #339933;">:</span> application<span style="color: #339933;">/</span>json<br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;status&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;success&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;data&quot;</span><span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">null</span><br />
+<span style="color: #009900;">&#125;</span></div></div> 
+<!-- FIN -->
+
+<!-- PUT ENABLE/DISABLE Workspace -->
+<h3><span class="mw-headline" id="Enable_Disable_a_Workspace:_PUT_.2Fmanagement.2F.7DwksUid.7D"> Enable or Disable a Workspace</span>: <code>PUT /pmworkspacemanagement/management/{wksUid}</code></h3>
+<p>Enable or disable a <font color="#483D8B">workspace</font>. If the workspace is enabled, then when executing this endpoint, the workspace will become disabled and vice versa.</p>
+
+<p>
+<dl><dd><b>PUT</b> <font color="blue">/api/1.0/multitenant/pmworkspacemanagement/management/{wksUid}</font></dd></dl>
+</p>
+
+<p><b>URL Parameters:</b><br>
+<dl><dd><table class="codecolumn"><tbody>
+<tr><th>Parameter</th><th>Description</th><th>Example</th></tr>
+<tr><td>wksUid</td><td>Workspace UID.</td><td>/api/1.0/multitenant/pmworkspacemanagement/management/947397617587d43352fe932065395918</td></tr>
+</tbody></table>
+</dd></dl>
+</p>
+
+<p><b>PUT Parameters:</b><br>
+None.</p>
+
+<p><b>Response Example:</b></p>
+<p>If successful, then the HTTP status code is set to <code>200</code> and the following array is returned.</p>
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #CC0000;">200</span><span style="color: #009900;">&#40;</span>OK<span style="color: #009900;">&#41;</span><br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;status&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;success&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;data&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;sample123&quot;</span><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;wksUis&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;947397617587d43352fe932065395918&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;previewStatus&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Enabled&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;newStatus&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;Disabled&quot;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+<!--FIN -->
+
+<!-- DELETE Workspace -->
+<h3><span class="mw-headline" id="Get_Workspaces:_DELETE_.2Fmanagement.2F.7DwksUid.7D"> Delete a Workspace</span>: <code>DELETE /pmworkspacemanagement/management/{wksUid}</code></h3>
+<p>Delete a <font color="#483D8B">workspace</font>. Do not forget that to complete the deleting process, the <a href="639.html#Executing_mttCron.php"><b><tt>mttCron.php</tt></b></a> must be executed.</p>
+
+<p>
+<dl><dd><b>DELETE</b> <font color="blue">/api/1.0/multitenant/pmworkspacemanagement/management/{wksUid}</font></dd></dl>
+</p>
+
+<p><b>URL Parameters:</b><br>
+<dl><dd><table class="codecolumn"><tbody>
+<tr><th>Parameter</th><th>Description</th><th>Example</th></tr>
+<tr><td>wksUid</td><td>Workspace UID.</td><td>/api/1.0/multitenant/pmworkspacemanagement/management/947397617587d43352fe932065395918</td></tr>
+</tbody></table>
+</dd></dl>
+</p>
+<p><b>Response:</b></p>
+<p>If successful, then the HTTP status code is set to <code>204</code> and no object is returned. The status of the workspace will be changed to Deleting.</p>
+<!--FIN --></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

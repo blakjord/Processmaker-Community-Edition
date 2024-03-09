@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="OAuth_2.0.html" />
+<link rel="shortlink" href="../node/587.html" />
+<title>3.1 - 3.8 - OAuth 2.0 | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"a3B9x-fRrqav8FHFUyeonEZIMcc6jcOtzSTkN6UiFOU","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-587 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="OAuth_2.0.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="OAuth_2.0.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-_e2PsnqAalsu5kUWewk6RQVrbjStsRUAilCNc0gGyWc" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - 3.8 - OAuth 2.0</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a href="../3.0/OAuth_2.0.html" class="">3.0</a></li><li><a href="../2.0/OAuth_2.0.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - 3.8 - OAuth 2.0" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="OAuth_2.0.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - 3.8 - OAuth 2.0 1/5</option><option value="40">Give 3.1 - 3.8 - OAuth 2.0 2/5</option><option value="60" selected="selected">Give 3.1 - 3.8 - OAuth 2.0 3/5</option><option value="80">Give 3.1 - 3.8 - OAuth 2.0 4/5</option><option value="100">Give 3.1 - 3.8 - OAuth 2.0 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.9</span></span> <span class="total-votes">(<span >16</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-XT8buhgWe9cuYsIJe1yYA-dGy2yNTS48r9StYBcXL5M" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="OAuth_2.0.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="OAuth_2.0.html#Registering_an_external_application_to_use_REST" class="mw-headline"> Registering an External Application to Use REST </a></li>
+<li class="toc"><a href="OAuth_2.0.html#Authorization_and_login_to_obtain_an_access_token" class="mw-headline">Authorization and Login to Obtain an Access Token</a></li>
+<ol class="toc">
+<li class="toc"><a href="OAuth_2.0.html#.22password.22_grant_type" class="mw-headline">"Password" Grant Type</a></li>
+<ol class="toc">
+<li class="toc"><a href="OAuth_2.0.html#PHP_example" class="mw-headline">PHP Example</a></li>
+<ol class="toc">
+<li class="toc"><a href="OAuth_2.0.html#Calling_pmRestLogin.28.29_from_a_web_page" class="mw-headline">Calling <code>pmRestLogin()</code> from a Web Page</a></li>
+<li class="toc"><a href="OAuth_2.0.html#Calling_pmRestLogin.28.29_from_credentials_in_a_file" class="mw-headline">Calling <code>pmRestLogin()</code> from Credentials in a File</a></li>
+</ol>
+<li class="toc"><a href="OAuth_2.0.html#jQuery_example" class="mw-headline">jQuery Example</a></li>
+<ol class="toc">
+<li class="toc"><a href="OAuth_2.0.html#Call_pmRestLogin.28.29_from_a_web_form" class="mw-headline">Call <code>pmRestLogin()</code> from a Web Form</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="OAuth_2.0.html#.22authorization_code.22_grant_type" class="mw-headline">"authorization_code" Grant Type</a></li>
+<ol class="toc">
+<li class="toc"><a href="OAuth_2.0.html#First_Step:_Authorization_from_OAuth2.0" class="mw-headline">First Step: Authorization from OAuth2.0</a></li>
+<li class="toc"><a href="OAuth_2.0.html#Second_Step:_Get_access_token" class="mw-headline">Second Step: Get Access Token</a></li>
+<li class="toc"><a href="OAuth_2.0.html#PHP_Example_2" class="mw-headline">PHP Example</a></li>
+</ol>
+<li class="toc"><a href="OAuth_2.0.html#Implicit_Grant" class="mw-headline">Implicit Grant</a></li>
+<li class="toc"><a href="OAuth_2.0.html#Client_Credentials" class="mw-headline">Client Credentials</a></li>
+</ol>
+<li class="toc"><a href="OAuth_2.0.html#Get_a_new_access_token_using_the_refresh_token" class="mw-headline"> Get a New Access Token Using the Refresh Token </a></li>
+<ol class="toc">
+<li class="toc"><a href="OAuth_2.0.html#PHP_Example_3" class="mw-headline">PHP Example</a></li>
+<li class="toc"><a href="OAuth_2.0.html#JavaScript_Example_2" class="mw-headline">JavaScript Example</a></li>
+</ol>
+<li class="toc"><a href="OAuth_2.0.html#Existing_Access_Token">Existing Access Token Inside ProcessMaker</a></li>
+<li class="toc"><a href="OAuth_2.0.html#Error_Response" class="mw-headline">Error Response</a></li>
+<li class="toc"><a href="OAuth_2.0.html#REST_security" class="mw-headline">REST Security</a></li>
+</ol>
+</div></div>
+
+<p>Before accessing one of ProcessMaker's REST endpoints, it is necessary to first use <a href="http://oauth.net/2/" >OAuth 2.0</a> to access ProcessMaker. After authenticating the external application with OAuth and logging into processmaker with a valid username and password, OAuth2.0 will return an <code>access_token</code>. Using that <code>access_token</code>, the ProcessMaker REST endpoints can then be accessed until the OAuth session expires or the user's login session expires.</p>
+
+<h2><span id="Registering_an_external_application_to_use_REST" class="mw-headline"> Registering an External Application to Use REST </span></h2>
+
+<p>To be able to call ProcessMaker REST endpoints, the external application that will use REST needs to be registered in OAuth, which is the authorization protocol used by ProcessMaker. It is necessary to register the external application, no matter whether the REST endpoints will be called in an external web page, a command line script on the ProcessMaker server, in JavaScript code in a Dynaform or in PHP code in a trigger.</p>
+
+<p>To register a new REST application, login to ProcessMaker with a user (such as "admin") who has the <a href="Roles.html#PM_REST_API_APPLICATIONS">PM_REST_API_APPLICATIONS</a> permission in his/her role.</p>
+
+<p>Log in to ProcessMaker with that user. After logging in, go to the following URL in the web browser:</p><dl><dd><code>http://{pm-server}/sys{workspace}/en/neoclassic/oauth2/applications</code></dd></dl>
+
+<p><img src="../sites/default/files/PM3_OAuthExample1.png" alt="RegisterRestApplicationInterface.png"></p>
+
+<p>Click <strong>New</strong> and fill out the following form to register a new application:</p>
+
+<p><img src="../sites/default/files/PM3_OAuthExample2.png" alt="FillRestApplicationForm.png"></p>
+<ul><li><strong>Name:</strong> Enter a name to identify the application.</li>
+<li><strong>Description:</strong> <em>Optional.</em> Enter a description of the application.</li>
+<li><strong>Web Site:</strong> Enter a URL for the application's home page, including the protocol "http://". If the external application won't have a web site, make up a URL. It won't be used so don't worry if it isn't a valid URL.</li>
+<li><strong>Callback URL:</strong> <em>Optional.</em> Enter the URL where the code is located that calls the <strong><code>/{workspace}/oauth2/token</code></strong> endpoint to obtain an access_token. The application will be redirected to this location <em>after</em> calling the <code>{workspace}/oauth2/authorize</code> endpoint.<br>
+The callback URL is only needed if the grant_type is "authorization_code", which is a two step process where the user logs in and then authorizes the external application to access ProcessMaker. The callback URL is not needed if the grant_type is "password", which is a simpler procedure where OAuth2.0 authorizes the external application and logs in to ProcessMaker in a single step by directly calling the <strong><code>/{workspace}/oauth2/token</code></strong> endpoint.</li></ul>
+
+<p>When done filling out the form, click on <strong>Save Changes</strong>. Once the application has been successfully registered its credentials are generated, which are used by the external application to obtain access to ProcessMaker:</p>
+
+<p><img src="../sites/default/files/PM3_OAuth_FormAppID.png" alt="ChowCaselisterApplicationDetails.png"></p>
+
+<p>Copy the <code>Client ID</code> and <code>Client secret</code>, which will be used by the external application to obtain authorization from ProcessMaker:</p>
+
+<codeblock>Client ID: HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF
+Client secret: 28060566356f0b9db4f0429090515303
+</codeblock><dl><dd><strong><span style="color: green;">Note:</span></strong> <span style="color: dimgrey;">In version 3.0.0.4 and earlier, <em>every</em> ProcessMaker user who logs in using the REST API will need to register a separate application because the Client ID and Client Secret codes only work for a single user. In version 3.0.0.5 and later, the Client ID and Client Secret codes can be used by <i>any</i> user (in the workspace), so it is only necessary to register an application once.</span></dd></dl>
+
+<h2><span id="Authorization_and_login_to_obtain_an_access_token" class="mw-headline">Authorization and Login to Obtain an Access Token</span></h2>
+
+<p>There are two ways to be authorized by OAuth2.0 and log into ProcessMaker in order to obtain an <code>access_token</code>. The recommended way is to set the <a href="OAuth_2.0.html#.22password.22_grant_type"><code>grant_type</code> to "password"</a>, since it is a simpler one step process.</p>
+
+<p>In contrast, if the <a href="OAuth_2.0.html#.22authorization_code.22_grant_type"><code>grant_type</code> is "authorization_code"</a>, authorization from OAuth2.0 is separate from login in ProcessMaker. This latter option requires the user to log into ProcessMaker (if there isn't a valid login session already open) and then click a button authorizing access by the external application. The advantage of this option is that the external application doesn't need to know the username and password of the user.</p>
+
+<h3><span id=".22password.22_grant_type" class="mw-headline">"Password" Grant Type</span></h3>
+
+<p>Add code to the external application that calls the following URL using the POST method:</p><dl><dd><code>http://{pm-server}/{workspace}/oauth2/token</code></dd></dl>
+
+<p>Send the following POST object with credentials to obtain authorization from OAuth2.0 and log into ProcessMaker:</p>
+
+<table class="objectTable"><tbody>
+
+<tr><th><span style="text-decoration: underline;">Element</span></th><th><span style="text-decoration: underline;">Description</span></th><th><span style="text-decoration: underline;">Example</span></th></tr>
+
+<tr><td>{</td><td>Start object.</td></tr>
+
+<tr><td>"grant_type": "password",</td><td>The grant type, which can be <code>"password"</code> or <code>"authorization_code"</code>.</td><td>"password"</td></tr>
+
+<tr><td>"scope: "{scope}",</td><td>The scope that determines which endpoints can be accessed: <code>"*"</code> (all scopes), <code>"edit_process"</code> (access to endpoints to change processes), <code>"view_process"</code> (access to endpoints to view but not change processes).</td><td>"*"</td></tr>
+
+<tr><td>"client_id": "{code}",</td><td>The Client ID code, which was given when registering the application.</td><td>"HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF"</td></tr>
+
+<tr><td>"client_secret":"{code}",</td><td>The Client Secret code, which was given when registering the application.</td><td>"28060566356f0b9db4f0429090515303"</td></tr>
+
+<tr><td>"username": "{username}",</td><td>The username of a ProcessMaker user, which is case insensitive.</td><td>"johndoe"</td></tr>
+
+<tr><td>"password": "{password}"</td><td>The password of a ProcessMaker user.</td><td>"p4ssw0rd"</td></tr>
+
+<tr><td>}</td><td>End object.</td></tr></tbody></table>
+
+<p>If an access_token was granted, the HTTP status code is set to 200 (success) and the following JSON object is returned:</p>
+
+<table class="objectTable"><tbody>
+
+<tr><th><span style="text-decoration: underline;">Element</span></th><th><span style="text-decoration: underline;">Description</span></th><th><span style="text-decoration: underline;">Example</span></th></tr>
+
+<tr><td>{</td><td>Start return object.</td></tr>
+
+<tr><td>"access_token": "{code}",</td><td>Access token that is passed in header of subsequent REST calls.</td><td>"fefeeff09de2f40957a8747e53bc0186a99df2ef"</td></tr>
+
+<tr><td>"expires_in": {sec},</td><td>Number of seconds until the access_token expires. By default it is 86400.</td><td>86400</td></tr>
+
+<tr><td>"token_type": "bearer",</td><td>The type of token that is always "bearer", which means that <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-04" >any request using the access_token is considered valid</a> and no further verification is required. ProcessMaker doesn't support the <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-http-mac-00">"mac" token type</a>, which requires an encrypted password.</td><td>"bearer"</td></tr>
+
+<tr><td>"scope": "{scope}",</td><td>The scope of the REST access.</td><td>"view_processes edit_processes",</td></tr>
+
+<tr><td>"refresh_token":"{code}"</td><td>The refresh token that is used to obtain another access_token when the current one expires.</td><td>"9ed17b93a0731e218a3a85b52974afaf23838337"</td></tr>
+
+<tr><td>}</td><td>End return object.</td></tr></tbody></table>
+
+<p>If an error occurred, then the HTTP status code is set to <strong><code>200</code></strong> and an <a href="OAuth_2.0.html#Error_Response">error object</a> like the following is returned:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;invalid_client&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;The client credentials are invalid&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h4><span id="PHP_example" class="mw-headline">PHP Example</span></h4>
+
+<p>This example shows how to get the <code>access_token</code> when the <code>grant_type</code> is "password". This means that not only the <code>client_id</code> and the <code>client_secret</code> codes are needed from the registration of the application, but also the username and password of the user. The following PHP code defines a pmRestLogin() function that can be used to gain authorization from OAuth and log into ProcessMaker:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//change the server address and workspace to match your system:</span><br />
+<span style="color: #000088;">$pmServer</span> &nbsp; &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">'http://example.com'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$pmWorkspace</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'workflow'</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #000000; font-weight: bold;">function</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$clientId</span><span style="color: #339933;">,</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">,</span> <span style="color: #000088;">$username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$password</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">global</span> <span style="color: #000088;">$pmServer</span><span style="color: #339933;">,</span> <span style="color: #000088;">$pmWorkspace</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$postParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'grant_type'</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'password'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'scope'</span> &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'*'</span><span style="color: #339933;">,</span> &nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//set to 'view_process' if not changing the process</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'client_id'</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$clientId</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'client_secret'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'username'</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$username</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'password'</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$password</span> <br />
+&nbsp; &nbsp;<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;<span style="color: #006699; font-weight: bold;">$pmServer</span>/<span style="color: #006699; font-weight: bold;">$pmWorkspace</span>/oauth2/token&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_TIMEOUT<span style="color: #339933;">,</span> <span style="color: #cc66cc;">30</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <span style="color: #000088;">$postParams</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$httpStatus</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$httpStatus</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error in HTTP status code: <span style="color: #006699; font-weight: bold;">$httpStatus</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">return</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error logging into <span style="color: #006699; font-weight: bold;">$pmServer</span>:<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;Error: &nbsp; &nbsp; &nbsp; <span style="color: #006699; font-weight: bold;">{$oToken-&gt;error}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;Description: <span style="color: #006699; font-weight: bold;">{$oToken-&gt;error_description}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//At this point $oToken-&gt;access_token can be used to call REST endpoints.</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//If planning to use the access_token later, either save the access_token </span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//and refresh_token as cookies or save them to a file in a secure location. </span><br />
+&nbsp;<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//If saving them as cookies:</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/setcookie"><span style="color: #990000;">setcookie</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;access_token&quot;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #339933;">,</span> &nbsp;<a href="http://php.net/time"><span style="color: #990000;">time</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #cc66cc;">86400</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/setcookie"><span style="color: #990000;">setcookie</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;refresh_token&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">refresh_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//refresh token doesn't expire</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/setcookie"><span style="color: #990000;">setcookie</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;client_id&quot;</span><span style="color: #339933;">,</span> &nbsp; &nbsp; <span style="color: #000088;">$clientId</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/setcookie"><span style="color: #990000;">setcookie</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;client_secret&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$clientSecret</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//If saving to a file:</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//file_put_contents(&quot;/secure/location/oauthAccess.json&quot;, json_encode($tokenData));</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">return</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">;</span> <br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>The pmRestLogin() function in this script creates an array of POST variables to obtain authorization from OAuth and log into ProcessMaker. Note that the <code>grant_type</code> is set to "password" so it can log in directly to ProcessMaker, and the <code>scope</code> is set to "*" so it can access all endpoints.</p>
+
+<p>PHP's <a href="http://php.net/manual/en/book.curl.php" >cURL</a> library is used to send the HTTP POST data to the <code>http://{pm-server}/{workspace}/oauth2/token</code> endpoint in order to authenticate the application and log into ProcessMaker. Note that cURL's <code>CURLOPT_RETURNTRANSFER</code> option is set to <code>true</code> so that HTTP will return the access token data, which is provided by OAuth as a <a href="http://en.wikipedia.org/wiki/JSON" >JSON</a> string. The <a href="http://php.net/manual/en/function.json-decode.php" >json_decode()</a> function is used to convert the JSON string into a PHP object.</p>
+
+<p>The <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" >HTTP status code</a> is also obtained using <code>curl_getinfo($ch, CURLINFO_HTTP_CODE)</code>. If the status code is not 200, then the URL is wrong, there is no internet access, or some other error occurred. If the JSON object that was returned has an error code, then print it and quit.</p>
+
+<p>If OAuth returned an <code>access_token</code>, then it can be used to call other REST endpoints. If planning to call REST endpoints later, then the <code>access_token</code> needs to be saved, so it can be retrieved later. If using the web, it is recommended to use the <a href="http://php.net/manual/en/function.setcookie.php" >setcoookie()</a> function to save the <code>access_token</code> and the <code>refresh_token</code> as <a href="http://en.wikipedia.org/wiki/HTTP_cookie" >HTTP cookies</a>. They can be retrieved later as <span class="mw-geshi php source-php"><span class="re0">$_COOKIE</span><span class="br0">[</span><span class="st_h">'access_token'</span><span class="br0">]</span></span> and <span class="mw-geshi php source-php"><span class="re0">$_COOKIE</span><span class="br0">[</span><span class="st_h">'refresh_token'</span><span class="br0">]</span></span>. Otherwise, save the <code>access_token</code> and <code>refresh_token</code> as a JSON string in a file in a secure location or in a database.</p>
+
+<p><strong><span style="color: green;">Note:</span></strong> <span style="color: dimgrey;">Google Chrome doesn't allow cookies for localhost or numbered IP addresses, such as 192.168.1.1. See this <a href="http://stackoverflow.com/questions/5849013/setcookie-does-not-set-cookie-in-google-chrome" >workaround</a>.</span></p>
+
+<p>By default, the <code>access_token</code> will expire in 60 minutes and the ProcessMaker login session will expire in 24 minutes (although the length of ProcessMaker <a href="../index.php/2.0/Login_Settings.html#Altering_Login_Session_Time" title="2.0/Login Settings">login sessions can be changed</a>). To check whether the ProcessMaker login session has expired, use <span class="mw-geshi php source-php"><span class="kw3">isset</span><span class="br0">(</span><span class="re0">$_COOKIE</span><span class="br0">[</span><span class="st_h">'PHPSESSID'</span><span class="br0">]</span><span class="br0">)</span></span> to see whether it has a session ID cookie. If not, the <code>pmRestLogin()</code> function will need to be called again. Likewise, use <span class="mw-geshi php source-php"><span class="kw3">isset</span><span class="br0">(</span><span class="re0">$_COOKIE</span><span class="br0">[</span><span class="st_h">'access_token'</span><span class="br0">]</span><span class="br0">)</span></span> to check whether the <code>access_token</code> has expired. If it has expired, the <code>pmRestRefresh()</code> function defined below can be used to acquire another <code>access_token</code>, or <code>pmRestLogin()</code> can be called again.</p>
+
+<h5><span id="Calling_pmRestLogin.28.29_from_a_web_page" class="mw-headline">Calling <code>pmRestLogin()</code> from a Web Page</span></h5>
+
+<p>The credentials to authorize access from OAuth 2.0 and log into ProcessMaker can be obtained in several ways. For example, the following web page named <strong><tt>loginForm.php</tt></strong> is displayed when the user needs to log in:</p>
+
+<div class="geshifilter"><div class="html5 geshifilter-html5" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;?php <span style="color: #66cc66;">//</span>print error message if any from previous login attempt:</span><br />
+<span style="color: #009900;">if <span style="color: #66cc66;">&#40;</span>isset<span style="color: #66cc66;">&#40;</span>$_GET<span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'error'</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> </span><br />
+<span style="color: #009900;"> &nbsp; print <span style="color: #ff0000;">&quot;&lt;p&gt;&lt;font color=red&gt;</span></span>{$_GET['error']}<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span>font&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span>\n&quot;;<br />
+?&gt; <br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/form.html"><span style="color: #000000; font-weight: bold;">form</span></a> <span style="color: #000066;">action</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;login.php&quot;</span> <span style="color: #000066;">method</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;post&quot;</span>&gt;</span><br />
+&nbsp; Client ID<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;client_id&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">width</span><span style="color: #66cc66;">=</span><span style="color: #cc66cc;">32</span> <span style="color: #66cc66;">/</span>&gt;&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; Client Secret<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;client_secret&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">width</span><span style="color: #66cc66;">=</span><span style="color: #cc66cc;">32</span> <span style="color: #66cc66;">/</span>&gt;&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; Username<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;username&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">width</span><span style="color: #66cc66;">=</span><span style="color: #cc66cc;">20</span> <span style="color: #66cc66;">/</span>&gt;&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; Password<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;password&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">width</span><span style="color: #66cc66;">=</span><span style="color: #cc66cc;">20</span> <span style="color: #66cc66;">/</span>&gt;&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;submit&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;Login&quot;</span><span style="color: #66cc66;">/</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/form.html"><span style="color: #000000; font-weight: bold;">form</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span></div></div>
+
+<p>In the <strong><tt>login.php</tt></strong> file, place the following code to call the <code>pmRestLogin()</code> function:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">//set to path of the PHP file on the server (not the web URL) which defines the pmRestLogin() function:</span><br />
+<span style="color: #b1b100;">include</span> <span style="color: #0000ff;">&quot;/path/to/file/with/rest/functions.php&quot;</span><span style="color: #339933;">;</span> <br />
+<span style="color: #000088;">$error</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">;</span> <br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_id'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$error</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;No credentials POSTed to access ProcessMaker REST.&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_id'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;&quot;</span> or <span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_secret'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #009900;">&#41;</span> <br />
+&nbsp; &nbsp;<span style="color: #000088;">$error</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;No client ID or secret specified to get authorization from ProcessMaker OAuth.&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'username'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;&quot;</span> or <span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'password'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$error</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;No username or password specified to login to ProcessMaker.&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$error</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'location: loginForm.php?error='</span> <span style="color: #339933;">.</span> <a href="http://php.net/urlencode"><span style="color: #990000;">urlencode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//pass error so login screen can display it to user. </span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_id'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_secret'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'username'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$_POST</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'password'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//can now call REST endpoints using $oToken-&gt;access_token</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/users&quot;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">...</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<dl><dd><strong><span style="color: green;">Note:</span></strong> <span style="color: dimgrey;">It generally takes a few microseconds for a cookie to be saved, so a new cookie will not be immediately available after it is set with the <code>setcookie()</code> function. If planning on using the new access token immediately after calling the <code>pmRestLogin()</code> function, it is recommended to get the access token from the return value of the function rather than using <span class="mw-geshi php source-php"><span class="re0">$_COOKIE</span><span class="br0">[</span><span class="st_h">'access_token'</span><span class="br0">]</span></span>. For this reason, <code>$oToken-&gt;access_token</code> is passed as a parameter to <a href="../index.php/Calling_REST_Endpoints.html#PHP_pmRestRequest.28.29_function" title="Calling REST Endpoints">pmRestRequest()</a> in the above example.</span></dd></dl>
+
+<h5><span id="Calling_pmRestLogin.28.29_from_credentials_in_a_file" class="mw-headline">Calling <code>pmRestLogin()</code> from Credentials in a File</span></h5>
+
+<p>This example shows how to call <code>pmRestLogin()</code> with credentials stored in a plain-text file named <strong><tt>oauthCredentials.json</tt></strong>, which isn't web accessible. It contains contents similar to the following:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;client_id&quot;</span> &nbsp; &nbsp; <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;client_secret&quot;</span> <span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;28060566356f0b9db4f0429090515303&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;username&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;johndoe&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;password&quot;</span> &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;p4ssw0rd&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>In Linux/UNIX systems, the <strong><tt>oauthCredentials.json</tt></strong> file is given 400 permissions and its owner is the same as the owner of the script file, so that only the script can read it but a web browser can't. In Windows systems, this file is placed in a location that can't be accessed by the web server or other users. If using REST to do tasks that one user can handle, such as starting cases or creating users, it is also recommended to create a special user in ProcessMaker whose password will never change, so that user can be used in REST scripts.</p>
+
+<p>The following PHP code opens the <strong><tt>oauthCredentials.json</tt></strong> file and uses <a href="http://php.net/manual/en/function.json-decode.php">json_decode()</a> to convert the contents of the file from a JSON string to an object. Then, it uses the credentials to call the <code>pmRestLogin()</code> function that was defined above.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//include the path in the filename if not located in the same directory:</span><br />
+<span style="color: #000088;">$json</span> <span style="color: #339933;">=</span> <a href="http://php.net/file_get_contents"><span style="color: #990000;">file_get_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;oauthCredentials.json&quot;</span><span style="color: #009900;">&#41;</span> or <br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: Unable to open file oauthCredentials.json.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$oCred</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$json</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oCred</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oCred</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_id</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Error: oauthCredentials.json file lacks credentials or JSON string can't be decoded.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$oCred</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_id</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oCred</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_secret</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oCred</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oCred</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">password</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//can now call REST endpoints using $oToken-&gt;access_token:</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oRet</span> <span style="color: #339933;">=</span> pmRestRequest<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;GET&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;/api/1.0/workflow/users&quot;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">...</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h4><span id="jQuery_example" class="mw-headline">jQuery Example</span></h4>
+
+<p>This example shows how to use the <a href="http://jquery.com/" >jQuery</a> library for JavaScript to request a "password" grant type and obtain an access_token.</p>
+
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;">&lt;html&gt;<br />
+&lt;head&gt;<br />
+&nbsp;&lt;script src=&quot;http://code.jquery.com/jquery-1.11.2.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;<br />
+&nbsp;<span style="color: #339933;">&lt;</span>script type<span style="color: #339933;">=</span><span style="color: #3366CC;">&quot;text/javascript&quot;</span><span style="color: #339933;">&gt;</span><br />
+&nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//change to the address and workspace of your ProcessMaker server: </span><br />
+&nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">var</span> restServer <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;http://192.168.1.77:2803/workflow/&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">var</span> jqxhr <span style="color: #339933;">=</span> <span style="color: #000066;">$</span>.<a href="http://docs.jquery.com/Ajax/ajax"><span style="color: #000066;">ajax</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; type<span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;POST&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; url<span style="color: #339933;">:</span> &nbsp;restServer <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;oauth2/token&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; dataType<span style="color: #339933;">:</span> <span style="color: #3366CC;">'json'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">// insecure example of data to obtain access token and login:</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a><span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;grant_type &nbsp; <span style="color: #339933;">:</span> <span style="color: #3366CC;">'password'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;scope &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">'*'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;client_id &nbsp; &nbsp;<span style="color: #339933;">:</span> <span style="color: #3366CC;">'HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;client_secret<span style="color: #339933;">:</span> <span style="color: #3366CC;">'28060566356f0b9db4f0429090515303'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;username &nbsp; &nbsp; <span style="color: #339933;">:</span> <span style="color: #3366CC;">'johndoe'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;password &nbsp; &nbsp; <span style="color: #339933;">:</span> <span style="color: #3366CC;">'p4sSw0rd'</span> &nbsp; &nbsp; &nbsp; &nbsp; <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;.<span style="color: #660066;">done</span><span style="color: #009900;">&#40;</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a>.<a href="http://docs.jquery.com/Events/error"><span style="color: #000066;">error</span></a><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Error in login!<span style="color: #000099; font-weight: bold;">\n</span>Error: &quot;</span> <span style="color: #339933;">+</span> <a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a>.<a href="http://docs.jquery.com/Events/error"><span style="color: #000066;">error</span></a> <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>Description: &quot;</span> <span style="color: #339933;">+</span> <a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a>.<span style="color: #660066;">error_description</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a>.<span style="color: #660066;">access_token</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//Can call REST endpoints here using the data.access_token.</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//To call REST endpoints later, save the access_token and refresh_token</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #006600; font-style: italic;">//as cookies that expire in one hour &nbsp; &nbsp; </span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">var</span> d <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">new</span> Date<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;d.<span style="color: #660066;">setTime</span><span style="color: #009900;">&#40;</span>d.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #CC0000;">60</span><span style="color: #339933;">*</span><span style="color: #CC0000;">60</span><span style="color: #339933;">*</span><span style="color: #CC0000;">1000</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;document.<span style="color: #660066;">cookie</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;access_token=&quot;</span> &nbsp;<span style="color: #339933;">+</span> <a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a>.<span style="color: #660066;">access_token</span> &nbsp;<span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;; expires=&quot;</span> <span style="color: #339933;">+</span> d.<span style="color: #660066;">toUTCString</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;document.<span style="color: #660066;">cookie</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;refresh_token=&quot;</span> <span style="color: #339933;">+</span> <a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a>.<span style="color: #660066;">refresh_token</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//refresh token doesn't expire</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">alert</span><span style="color: #009900;">&#40;</span>JSON.<span style="color: #660066;">stringify</span><span style="color: #009900;">&#40;</span><a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">4</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//for debug</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span> <br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;.<span style="color: #660066;">fail</span><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><a href="http://docs.jquery.com/Core/data"><span style="color: #000066;">data</span></a><span style="color: #339933;">,</span> statusText<span style="color: #339933;">,</span> xhr<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Failed to connect.<span style="color: #000099; font-weight: bold;">\n</span>HTTP status code: &quot;</span> <span style="color: #339933;">+</span> xhr.<span style="color: #000066;">status</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">' '</span> <span style="color: #339933;">+</span> statusText<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #339933;">&lt;/</span>script<span style="color: #339933;">&gt;</span><br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+...<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</div></div>
+
+<h5><span id="Call_pmRestLogin.28.29_from_a_web_form" class="mw-headline">Call <code>pmRestLogin()</code> from a Web Form</span></h5>
+
+<p>The above <code>pmRestLogin()</code> function can be called with credentials from a web form. For example, the following form can be used to enter the client ID and client secret for an application registered with OAuth, plus the username and password to log into ProcessMaker:</p>
+
+<p><img src="../sites/default/files/PM3_OAuth_Form.png" alt="OAuthLoginWebForm.png"></p>
+
+<p>When the user fills out the form and clicks on the Login button, the credentials are passed to the <code>pmRestLogin()</code> function, which requests an access token from OAuth. The following code provides the HTML for the form and the JavaScript to request the access token:</p>
+
+<div class="geshifilter"><div class="html5 geshifilter-html5" style="font-family:monospace;"><span style="color: #00bbdd;">&lt;!DOCTYPE html&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/javascript&quot;</span>&gt;</span><br />
+function submitCredentials(oForm) {<br />
+&nbsp; pmRestLogin(<br />
+&nbsp; &nbsp; &nbsp;oForm.elements[&quot;client_id&quot;].value,<br />
+&nbsp; &nbsp; &nbsp;oForm.elements[&quot;client_secret&quot;].value,<br />
+&nbsp; &nbsp; &nbsp;oForm.elements[&quot;username&quot;].value, <br />
+&nbsp; &nbsp; &nbsp;oForm.elements[&quot;password&quot;].value,<br />
+&nbsp; &nbsp; &nbsp;false &nbsp;//synchronous function call<br />
+&nbsp; ); &nbsp; <br />
+}<br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/head.html"><span style="color: #000000; font-weight: bold;">head</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;loginDialog&quot;</span> <span style="color: #000066;">style</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;position: absolute; left: 0px; top: 0px; </span><br />
+<span style="color: #009900;"> &nbsp;width:100%; height:100%; text-align:left; z-index: 1000;&quot;</span>&gt;</span> <br />
+&nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/form.html"><span style="color: #000000; font-weight: bold;">form</span></a> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;LoginForm&quot;</span> <span style="color: #000066;">style</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;width:300px; margin:20px auto; background-color:#ffffff; </span><br />
+<span style="color: #009900;"> &nbsp; &nbsp; &nbsp;border:1px solid #000; padding:15px; text-align:left;&quot;</span>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; Client ID<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;client_id&quot;</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;client_id&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">size</span><span style="color: #66cc66;">=</span><span style="color: #cc66cc;">32</span><span style="color: #66cc66;">/</span>&gt;&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; Client Secret<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;client_secret&quot;</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;client_secret&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">size</span><span style="color: #66cc66;">=</span><span style="color: #cc66cc;">32</span><span style="color: #66cc66;">/</span>&gt;&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; Username<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;username&quot;</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;username&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">size</span><span style="color: #66cc66;">=</span><span style="color: #cc66cc;">20</span><span style="color: #66cc66;">/</span>&gt;&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; Password<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">name</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;password&quot;</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;password&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">size</span><span style="color: #66cc66;">=</span><span style="color: #cc66cc;">20</span><span style="color: #66cc66;">/</span>&gt;&lt;<a href="http://december.com/html/4/element/br.html"><span style="color: #000000; font-weight: bold;">br</span></a>&gt;</span> &nbsp; &nbsp;<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/input.html"><span style="color: #000000; font-weight: bold;">input</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;button&quot;</span> <span style="color: #000066;">value</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;Login&quot;</span> <span style="color: #000066;">onclick</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;submitCredentials(this.parentNode)&quot;</span><span style="color: #66cc66;">/</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/form.html"><span style="color: #000000; font-weight: bold;">form</span></a>&gt;</span><br />
+&nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/body.html"><span style="color: #000000; font-weight: bold;">body</span></a>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/html.html"><span style="color: #000000; font-weight: bold;">html</span></a>&gt;</span></div></div>
+
+<p>There are many ways to use the Login web form, such as in a separate HTML page. In that case, direct the user toward the <strong><tt>login.html</tt></strong> page with the code:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">window.<span style="color: #660066;">location</span>.<span style="color: #660066;">href</span><span style="color: #339933;">=</span><span style="color: #3366CC;">&quot;login.html&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>At the end of the <code>submitCredentials()</code> function add a line to redirect to another page, such as <strong><tt>cases.html</tt></strong>. For example:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">window.<span style="color: #660066;">location</span>.<span style="color: #660066;">href</span><span style="color: #339933;">=</span><span style="color: #3366CC;">&quot;cases.html&quot;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Another way to call the above Login web form is to use it as a hidden dialog box, which only appears when needing to log in. For example, the <code>pmRestRequest()</code> function can contain the following lines that check whether the cookies for <code>access_code</code> and <code>PHPSESSID</code> exist to determine whether the authorization code from OAuth or the ProcessMaker login sessions have expired. If so, then display the Login web form to the user to fill in the credentials and get a new access token:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>getCookie<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;access_token&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #003366; font-weight: bold;">false</span> <span style="color: #339933;">||</span> getCookie<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;PHPSESSID&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;loginDialog&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">style</span>.<span style="color: #660066;">display</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//display form</span><br />
+&nbsp; &nbsp;document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;client_id&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">focus</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>To hide the form from the user, add the following line of code to the pmRestLogin() function:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp; &nbsp;document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;loginDialog&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">style</span>.<span style="color: #660066;">display</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;none&quot;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//hide form</span></div></div>
+
+<p>For a modal dialog box, there are many libraries available to download to create nice dialog boxes. One way to do it is include the <a href="http://jqueryui.com/" >jQuery UI</a> library and then add this code to your JavaScript:</p>
+
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #006600; font-style: italic;">// Setup dialog</span><br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#loginDialog'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">dialog</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; autoOpen<span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">,</span> <span style="color: #006600; font-style: italic;">// Do not open on page load</span><br />
+&nbsp; modal<span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">true</span> <span style="color: #006600; font-style: italic;">// Freeze the background behind the overlay</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #006600; font-style: italic;">// Open the dialog when something is clicked</span><br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#showDialog'</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Events/click"><span style="color: #000066;">click</span></a><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#loginDialog'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">dialog</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'open'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Where "loginDialog" is the DIV defined above that holds the Login web form, and "showDialog" is the id of a button or link in the HTML page.</p>
+
+<p>The following CSS code can be used to darken the rest of the screen when the dialog box is displayed:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">.</span>ui<span style="color: #339933;">-</span>widget<span style="color: #339933;">-</span>overlay <span style="color: #009900;">&#123;</span><br />
+&nbsp; opacity<span style="color: #339933;">:</span> <span style="color:#800080;">0.5</span><span style="color: #339933;">;</span><br />
+&nbsp; filter<span style="color: #339933;">:</span> Alpha<span style="color: #009900;">&#40;</span>Opacity<span style="color: #339933;">=</span><span style="color: #cc66cc;">50</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; background<span style="color: #339933;">-</span>color<span style="color: #339933;">:</span> black<span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id=".22authorization_code.22_grant_type" class="mw-headline">"authorization_code" Grant Type</span></h3>
+
+<p>This is a two step process to obtain the access token.</p>
+
+<h4><span id="First_Step:_Authorization_from_OAuth2.0" class="mw-headline">First Step: Authorization from OAuth2.0</span></h4>
+
+<p>Add code to the external application that will call the following URL:</p><dl><dd><strong>GET</strong> <span style="color: blue;"><tt>http://{pm-server}/{workspace}/oauth2/authorize?response_type=code&amp;client_id={client-id}&amp;scope={scope}</tt></span></dd></dl>
+
+<p>For example:</p><dl><dd><code>http://192.168.1.110:3018/workspace/oauth2/authorize?response_type=code&amp;client_id=HWAYUEGWRMWNVLSTKPXAJDZGUQKAXKSF&amp;scope=*</code></dd></dl>
+
+<p>This endpoint has the following required URL parameters:</p><dl><dd>
+
+<table border="1" cellpadding="2" cellspacing="0"><tbody>
+
+<tr><th style="text-align: center;"><strong>Parameter</strong></th><th style="text-align: center;"><strong>Description</strong></th><th style="text-align: center;"><strong>Valid Values</strong></th></tr>
+
+<tr><td>response_type</td><td>The response type, which is always "code".</td><td><code>code</code></td></tr>
+
+<tr><td>client_id</td><td>The Client ID, which is given during registration of the application.</td><td>&nbsp;</td></tr>
+
+<tr><td>scope</td><td>The API's scope.</td><td><code>*</code>, <code>view_process</code>, <code>edit_process</code></td></tr></tbody></table></dd></dl><dl><dd><span style="color: green;"><strong>Note:</strong></span> <span style="color: dimgrey;">The scope can have multiples values separated by a single space or its URL encode equivalent&nbsp;%20. Set the scope to * to include all available scopes.</span></dd></dl>
+
+<p>When the above URL is requested, if there isn't an open login session, the web browser will first be redirected to a ProcessMaker login screen:</p><dl><dd><span style="color: blue;">http://{pm-server}/sys{workspace}/{lang}/{skin}/login/login?u=http%3A%2F%2F{pm-server}%2F{workspace}%2Foauth2%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3D{client-id}%26scope%3D{scope}</span></dd></dl>
+
+<p><img src="../sites/default/files/PM3_OAuth_FormNoLogin.png"></p>
+
+<p>After the login, the web browser will redirect back to the OAuth2.0 authorization screen:</p><dl><dd><strong>GET</strong> <span style="color: blue;"><tt>http://{pm-server}/{workspace}/oauth2/authorize?response_type=code&amp;client_id={client-id}&amp;scope={scope}</tt></span></dd></dl>
+
+<p>Where the user may authorize the external application to access ProcessMaker:</p>
+
+<p><img src="../sites/default/files/PM3_OAuth_FormPermission.png" ></p>
+
+<p>If the user clicks on <strong>Accept</strong>, then the web browser will be redirected to the callback URL specified in the application registration:</p><dl><dd><strong>GET</strong> <span style="color: blue;"><tt>http://{callback-url}?code={authorization-code}</tt></span></dd></dl>
+
+<p>The <strong><code>code</code></strong> parameter will be added to the URL to specify the authorization code, which can be used to obtain the access token in the second step.</p>
+
+<p>If the user clicks on <strong>Deny</strong>, the web browser will be redirected to the same callback URL, but instead of a <strong><code>code</code></strong> parameter, <strong><code>error</code></strong> and <strong><code>error_description</code></strong> parameters will be added to the URL:</p><dl><dd><strong>GET</strong> <span style="color: blue;"><tt>http://{callback-url}?error=access_denied&amp;error_description=The+user+denied+access+to+your+application</tt></span></dd></dl>
+
+<h4><span id="Second_Step:_Get_access_token" class="mw-headline">Second Step: Get Access Token</span></h4>
+
+<p>In the page where the callback URL redirects, add code to call the following endpoint to obtain the access token:</p><dl><dd><strong>POST</strong> <span style="color: blue;"><tt>http://{pm-server}/{workspace}/oauth2/token</tt></span></dd></dl>
+
+<p>For example:</p><dl><dd><code>http://example.com/workflow/oauth2/token</code></dd></dl>
+
+<p>This endpoint has the following required POST parameters:</p><dl><dd>
+
+<table border="1" cellpadding="2" cellspacing="0"><tbody>
+
+<tr><th style="text-align: center;"><strong>Parameter</strong></th><th style="text-align: center;"><strong>Description</strong></th></tr>
+
+<tr><td>grant_type</td><td>Set the grant type to "authorization_code".</td></tr>
+
+<tr><td>code</td><td>Authorization code available as a GET variable in the current page's URL.<br>In PHP it can be accessed with: <strong><code>$_GET['code']</code></strong><br>In JavaScript, it can be accessed with: <strong><code>location.search.substr(6)</code></strong></td></tr>
+
+<tr><td>client_id</td><td>The client ID, which is given when registering the application.</td></tr>
+
+<tr><td>client_secret</td><td>The Client Secret code, which is given when registering the application.</td></tr></tbody></table></dd></dl><div class="indent">
+
+<p><strong><span style="color: green;">Note:</span></strong> The <code>client_id</code> and <code>client_secret</code> can be omitted from the POST parameters, if they are set as the <code>username</code> and <code>password</code> in the HTTP header.</p>
+
+<p>In PHP:</p>
+
+<codeblock>$ch = curl_init('http://example.com/workflow/oauth2/token'); 
+curl_setopt($ch, CURLOPT_USERPWD, '<span style="color: blue;">{client_id}</span>:<span style="color: blue;">{client_secret}</span>');
+</codeblock>
+
+<p>In JavaScript:</p>
+
+<codeblock>var req = new XMLHttpRequest();
+req.open('GET', 'http://example.com/workflow/oauth2/token', false, '<span style="color: blue;">{client_id}</span>', '<span style="color: blue;">{client_secret}</span>');
+</codeblock></div>
+
+<p>If the <code>grant_type</code> is "authorization_code", then the user will be redirected to the normal ProcessMaker login screen to enter a valid username and password, then click the <strong>Accept</strong> button granting the external application the right to access ProcessMaker. This button will need to be clicked every time OAuth2.0 authorizes an external application to access the ProcessMaker REST API. The advantage of this option is that the external application does not need to know the username and password to log into ProcessMaker.</p>
+
+<h4><span id="PHP_Example_2" class="mw-headline">PHP Example</span></h4>
+
+<p>In this example, the callback URL is <code>http://example.com/gettoken.php</code> and the <strong><tt>gettoken.php</tt></strong> file is located at <strong><tt>/var/www/gettoken.php</tt></strong> on the server. If the token is not granted, then the error message is printed. If it is granted, then the web browser is redirected to another web page to list the cases.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">//set to the address and workspace of your ProcessMaker server:</span><br />
+<span style="color: #000088;">$pmServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;http://example.com/workflow&quot;</span><span style="color: #339933;">;</span> <br />
+&nbsp;<br />
+<span style="color: #666666; font-style: italic;">//check if the user clicked on &quot;Deny&quot; or some other error:</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span> <a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_GET</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'error'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;pre&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/print_r"><span style="color: #990000;">print_r</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_GET</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;/pre&gt;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$credentials</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/file_get_contents"><span style="color: #990000;">file_get_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;/secure/location/oauthCredentials.json&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$postParams</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'grant_type'</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'authorization_code'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'code'</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$_GET</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'code'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'client_id'</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$credentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_id</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #0000ff;">'client_secret'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$credentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_secret</span><br />
+<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$pmServer</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;/oauth2/token&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_TIMEOUT<span style="color: #339933;">,</span> <span style="color: #cc66cc;">30</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <span style="color: #000088;">$postParams</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$httpStatus</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$httpStatus</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error in HTTP status code: <span style="color: #006699; font-weight: bold;">$httpStatus</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;&lt;pre&gt;Error logging into <span style="color: #006699; font-weight: bold;">$pmServer</span>:<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;Error: &nbsp; &nbsp; &nbsp; <span style="color: #006699; font-weight: bold;">{$result-&gt;error}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;Description: <span style="color: #006699; font-weight: bold;">{$result-&gt;error_description}</span><span style="color: #000099; font-weight: bold;">\n</span>&lt;/pre&gt;&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//to save access_token and refresh_token as cookies that will expire 86400 seconds:</span><br />
+&nbsp; &nbsp;<a href="http://php.net/setcookie"><span style="color: #990000;">setcookie</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'access_token'</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #339933;">,</span> &nbsp;<a href="http://php.net/time"><span style="color: #990000;">time</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">+</span><span style="color: #cc66cc;">86400</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/setcookie"><span style="color: #990000;">setcookie</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'refresh_token'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$result</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">refresh_token</span><span style="color: #339933;">,</span> <a href="http://php.net/time"><span style="color: #990000;">time</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">+</span><span style="color: #cc66cc;">86400</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//to save the access_token and refresh_token to a file for later use:</span><br />
+&nbsp; &nbsp;<a href="http://php.net/file_put_contents"><span style="color: #990000;">file_put_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;/secure/location/oauthAccess.json&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/json_encode"><span style="color: #990000;">json_encode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//redirect web browser to a new location:</span><br />
+&nbsp; &nbsp;<a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;location: caseslist.html&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div></div>
+
+<p>See this <a href="../3.0/Get_the_ProcessMaker_Cases_List_in_an_external_application.html" title="Get the ProcessMaker Cases List in an external application">this example</a> using an "authorization_code" grant type with PHP.</p>
+
+<h3><span id="Implicit_Grant" class="mw-headline">Implicit Grant</span></h3>
+
+<p>The implicit grant type is used to obtain access tokens (it does not support the issuance of refresh tokens) and is optimized for public clients known to operate a particular redirection URL.</p><dl><dd><strong>GET</strong> <span style="color: blue;">http://{processmaker-server}/{workflow}/oauth2/authorize?response_type=token&amp;client_id={client-id}&amp;scope=*</span></dd></dl>
+
+<h3><span id="Client_Credentials" class="mw-headline">Client Credentials</span></h3>
+
+<p>The client can request an access token using only its client credentials (or other supported means of authentication) when requesting access to the protected resources under its control, or those of another resource owner that have been previously arranged with the authorization server.</p><dl><dd><strong>POST</strong> <span style="color: blue;">http://{processmaker-server}/{workspace}/oauth2/token</span></dd></dl>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Content-Type: &nbsp;application/x-www-form-urlencoded<br />
+Authorization: Basic eC1wbS1sb2NhbC1jbGllbnQ6MTc5YWQ0NWM2Y2UyY2I5N2NmMTAyOWUyMTIwNDZlODE<br />
+grant_type: &nbsp; &nbsp;client_credentials</div></div>
+<h2><span id="Get_a_new_access_token_using_the_refresh_token" class="mw-headline"> Get a New Access Token Using the Refresh Token </span></h2>
+
+<p>When the access token expires, a new one can be acquired <i>as long as the ProcessMaker login session is still open</i> by using the <code>refresh_token</code> obtained during authentication at the <strong><code>/{workspace&gt;/oauth2/token</code></strong> endpoint.</p>
+<p>The purpose for the <span class="geshifilter"><code class="text geshifilter-text">refresh_token</code></span> is to generate a new <span class="geshifilter"><code class="text geshifilter-text">access_token</code></span> as well as a new <span class="geshifilter"><code class="text geshifilter-text">refresh_token</code></span>; the new <span class="geshifilter"><code class="text geshifilter-text">refresh_token</code></span> is used to generate a new <span class="geshifilter"><code class="text geshifilter-text">access_token</code></span> after the current <span class="geshifilter"><code class="text geshifilter-text">access_token</code></span> expires. The <span class="geshifilter"><code class="text geshifilter-text">refresh_token</code></span> does not expire, but it is only used once. After the <span class="geshifilter"><code class="text geshifilter-text">refresh_token</code></span> generates a new <span class="geshifilter"><code class="text geshifilter-text">access_token</code></span>, that refresh_token is invalid, but is replaced by the new <span class="geshifilter"><code class="text geshifilter-text">refresh_token</code></span> it generated.</p>
+
+<p>A new access token can be obtained at the endpoint:</p>
+
+<dl><dd><strong><code>POST</code></strong> <span style="color: blue;">http://{processmaker-server}/{workspace}/oauth2/token</span></dd></dl><p><strong>POST parameters:</strong></p><dl><dd>
+
+<table border="1" cellpadding="2" cellspacing="0"><tbody>
+<tr><th style="text-align: center;"><strong>Parameter</strong></th><th style="text-align: center;"><strong>Description</strong></th></tr>
+<tr><td>grant_type</td><td>The grant type. To get a new access token, use <strong>"refresh_token"</strong></td></tr>
+<tr><td>client_id</td><td>The Client ID, granted when the application was registered.</td></tr>
+<tr><td>client_secret</td><td>The Client Secret code, granted when the application was registered.</td></tr>
+<tr><td>refresh_token</td><td>The refresh token, granted in a previous call to <strong><code>/oauth1/token</code></strong> where the <code>grant_type</code> was "password" or "authorization_code"</td></tr></tbody></table></dd></dl>
+
+<p><strong>Response:</strong></p><p>If successful, the HTTP status code is 200 and a JSON object like the following is returned:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;access_token&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;17ff8d81b23748f1ea0111770d17b414fb2134ee&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;expires_in&quot;</span><span style="color: #339933;">:</span> <span style="color: #CC0000;">86400</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;token_type&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;bearer&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;scope&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;*&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;refresh_token&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;242fa88dbe056e7b00d65e9765f38d53d3d0d7ee&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>If an error is detected by ProcessMaker, then the HTTP status code is still 200, but an error object like this one is returned:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;invalid_client&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; <span style="color: #3366CC;">&quot;error_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;The client credentials are invalid&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="PHP_Example_3" class="mw-headline">PHP Example</span></h3>
+
+<p>Create a <code>pmRestRefresh()</code> function that can be called when the current access token has expired.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//change the server address and workspace to match your system:</span><br />
+<span style="color: #000088;">$pmServer</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'http://mypmserver'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$pmWorkspace</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'workflow'</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #666666; font-style: italic;">/*Function to obtain a new access token, using a refresh token. If the parameters are not specified<br />
+then get them from the cookie if they exist. The new access token is set as a cookie available at $_COOKIE[&quot;access_token&quot;]<br />
+Parameters:<br />
+&nbsp; clientId: &nbsp; &nbsp; The cliend ID.<br />
+&nbsp; clientSecret: The client secret code.<br />
+&nbsp; refreshToken: The refreshToken from a previous call to /oauth2/token endpoint. <br />
+Return value:<br />
+&nbsp; Object returned by /oauth2/token endpoint, which either contains access token or error message.*/</span><br />
+<span style="color: #000000; font-weight: bold;">function</span> pmRestRefresh<span style="color: #009900;">&#40;</span><span style="color: #000088;">$clientId</span><span style="color: #339933;">=</span><span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">=</span><span style="color: #009900; font-weight: bold;">null</span><span style="color: #339933;">,</span> <span style="color: #000088;">$refreshToken</span><span style="color: #339933;">=</span><span style="color: #009900; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000000; font-weight: bold;">global</span> <span style="color: #000088;">$pmServer</span><span style="color: #339933;">,</span> <span style="color: #000088;">$pmWorkspace</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$clientId</span> &nbsp; &nbsp; <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$clientId</span> <span style="color: #339933;">===</span> <span style="color: #009900; font-weight: bold;">null</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_id'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> &nbsp; &nbsp; &nbsp; &nbsp; ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_id'</span><span style="color: #009900;">&#93;</span> &nbsp; &nbsp; <span style="color: #339933;">:</span> <span style="color: #000088;">$clientId</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$clientSecret</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$clientSecret</span> <span style="color: #339933;">===</span> <span style="color: #009900; font-weight: bold;">null</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_secret'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'client_secret'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$refreshToken</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$refreshToken</span> <span style="color: #339933;">===</span> <span style="color: #009900; font-weight: bold;">null</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'refresh_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'refresh_token'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">:</span> <span style="color: #000088;">$refreshToken</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #000088;">$aVars</span> <span style="color: #339933;">=</span> <a href="http://php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'grant_type'</span> &nbsp; &nbsp;<span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'refresh_token'</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'client_id'</span> &nbsp; &nbsp; <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$clientId</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'client_secret'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$clientSecret</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">'refresh_token'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$refreshToken</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #000088;">$ch</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_init"><span style="color: #990000;">curl_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;<span style="color: #006699; font-weight: bold;">$pmServer</span>/<span style="color: #006699; font-weight: bold;">$pmWorkspace</span>/oauth2/token&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_TIMEOUT<span style="color: #339933;">,</span> <span style="color: #cc66cc;">30</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <span style="color: #000088;">$aVars</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLOPT_RETURNTRANSFER<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$httpStatus</span> <span style="color: #339933;">=</span> <a href="http://php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #339933;">,</span> CURLINFO_HTTP_CODE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/curl_close"><span style="color: #990000;">curl_close</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$ch</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$httpStatus</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error in HTTP status code: <span style="color: #006699; font-weight: bold;">$httpStatus</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">elseif</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">error</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">print</span> <span style="color: #0000ff;">&quot;Error logging into <span style="color: #006699; font-weight: bold;">$pmServer</span>:<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;Error: &nbsp; &nbsp; &nbsp; <span style="color: #006699; font-weight: bold;">{$oToken-&gt;error}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;Description: <span style="color: #006699; font-weight: bold;">{$oToken-&gt;description}</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//Save access token as a cookie that expires in 86400 seconds:</span><br />
+&nbsp; &nbsp; &nbsp; <a href="http://php.net/setcookie"><span style="color: #990000;">setcookie</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;access_token&quot;</span><span style="color: #339933;">,</span> &nbsp;<span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #339933;">,</span> <a href="http://php.net/time"><span style="color: #990000;">time</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #cc66cc;">86400</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//If saving to a file:</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #666666; font-style: italic;">//file_put_contents(&quot;/secure/location/oauthAccess.json&quot;, json_encode($oToken));</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">return</span> <span style="color: #000088;">$oToken</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>The <code>pmRestRefresh()</code> function can be called when a REST endpoint returns <strong><code>401</code></strong> (Unauthorized) and there is a refresh_token available. If the client_id, client_secret, and refresh_token are available as cookies, it can be called in this manner:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$_COOKIE</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'refresh_token'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestRefresh<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">else</span> <br />
+&nbsp; &nbsp;<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Quitting because can't access ProcessMaker REST&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>If the credentials to login to ProcessMaker are stored as a JSON string in the file <strong><tt>/secure/location/oauthAccess.json</tt></strong>, then the <code>pmRestRefresh()</code> function can be called in this way:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$oCredentials</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/file_get_contents"><span style="color: #990000;">file_get_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;/secure/location/oauthAccess.json&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+<span style="color: #666666; font-style: italic;">//if file doesn't exist or it is empty, then use pmRestLogin() instead</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oCredentials</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oCredentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">refresh_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oCredentials</span> <span style="color: #339933;">=</span> <a href="http://php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/file_get_contents"><span style="color: #990000;">file_get_contents</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;/secure/location/oauthCredentials.json&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestLogin<span style="color: #009900;">&#40;</span><span style="color: #000088;">$oCredentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_id</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oCredentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_secret</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$oCredentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oCredentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">password</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$oToken</span> <span style="color: #339933;">=</span> pmRestRefresh<span style="color: #009900;">&#40;</span><span style="color: #000088;">$oCredentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_id</span><span style="color: #339933;">,</span> <span style="color: #000088;">$oCredentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client_secret</span><span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$oCredentials</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">refresh_token</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #009900;">&#41;</span> or <span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$oToken</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">access_token</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Quitting because can't access ProcessMaker REST&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="JavaScript_Example_2" class="mw-headline">JavaScript Example</span></h3>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #006600; font-style: italic;">/*Function to obtain a new access token, using a refresh token. If the parameters aren't specified<br />
+then gets them from cookie if they exist. &nbsp;<br />
+Parameters:<br />
+&nbsp;clientId: &nbsp; &nbsp; The cliend ID.<br />
+&nbsp;clientSecret: The client secret code.<br />
+&nbsp;refreshToken: The refreshToken from a previous call to /oauth2/token endpoint.<br />
+&nbsp;asynchronous: Set to true for an asynchronous call to /oath2/token endpoint. The default is false. */</span> <br />
+<span style="color: #000066; font-weight: bold;">function</span> pmRestRefresh<span style="color: #009900;">&#40;</span>clientId<span style="color: #339933;">,</span> clientSecret<span style="color: #339933;">,</span> refreshToken<span style="color: #339933;">,</span> asynchronous<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;clientId &nbsp; &nbsp; <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">typeof</span> clientId <span style="color: #339933;">===</span> <span style="color: #3366CC;">&quot;undefined&quot;</span><span style="color: #009900;">&#41;</span> &nbsp; &nbsp; <span style="color: #339933;">?</span> getCookie<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'client_id'</span><span style="color: #009900;">&#41;</span> &nbsp; &nbsp; <span style="color: #339933;">:</span> clientId<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;clientSecret <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">typeof</span> clienSecret <span style="color: #339933;">===</span> <span style="color: #3366CC;">&quot;undefined&quot;</span><span style="color: #009900;">&#41;</span> &nbsp;<span style="color: #339933;">?</span> getCookie<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'client_secret'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> clientSecret<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;refreshToken <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">typeof</span> refreshToken <span style="color: #339933;">===</span> <span style="color: #3366CC;">&quot;undefined&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">?</span> getCookie<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'refresh_token'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> refreshToken<span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;asynchronous <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">typeof</span> asynchronous <span style="color: #339933;">===</span> <span style="color: #3366CC;">&quot;undefined&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">?</span> <span style="color: #003366; font-weight: bold;">false</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #339933;">:</span> asynchronous<span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">typeof</span> XMLHttpRequest <span style="color: #339933;">!=</span> <span style="color: #3366CC;">&quot;undefined&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> req <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> XMLHttpRequest<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">try</span> <span style="color: #009900;">&#123;</span> &nbsp;<span style="color: #006600; font-style: italic;">//for IE 5, 5.5 &amp; 6:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> req <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> ActiveXObject<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Microsoft.XMLHTTP&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">catch</span> <span style="color: #009900;">&#40;</span>e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;alert <span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Error: This browser does not support XMLHttpRequest.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">return</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span> <br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> oVars <span style="color: #339933;">=</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;grant_type&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp;<span style="color: #3366CC;">&quot;refresh_token&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;client_id&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; clientId<span style="color: #339933;">,</span> <br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;client_secret&quot;</span><span style="color: #339933;">:</span> clientSecret<span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;refresh_token&quot;</span><span style="color: #339933;">:</span> refreshToken<span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span> <br />
+&nbsp;<br />
+&nbsp; &nbsp;req.<span style="color: #660066;">open</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'POST'</span><span style="color: #339933;">,</span> pmServer <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;/workflow/oauth2/token&quot;</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> sVars <span style="color: #339933;">=</span> JSON.<span style="color: #660066;">stringify</span><span style="color: #009900;">&#40;</span>oVars<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp; <br />
+&nbsp; &nbsp;req.<span style="color: #660066;">setRequestHeader</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Content-type'</span><span style="color: #339933;">,</span><span style="color: #3366CC;">'application/json; charset=utf-8'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;req.<span style="color: #660066;">setRequestHeader</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Content-length'</span><span style="color: #339933;">,</span> sVars.<span style="color: #660066;">length</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <br />
+&nbsp;<br />
+&nbsp; &nbsp;req.<span style="color: #660066;">onreadystatechange</span> <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>req.<span style="color: #660066;">readyState</span> <span style="color: #339933;">==</span> <span style="color: #CC0000;">4</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <span style="color: #006600; font-style: italic;">//the request is completed</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> status <span style="color: #339933;">=</span> req.<span style="color: #660066;">status</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> oResp <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>req.<span style="color: #660066;">responseText</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//use JSON.parse() to decode response text if the web browser supports it:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; oResp <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>JSON<span style="color: #009900;">&#41;</span> <span style="color: #339933;">?</span> JSON.<span style="color: #660066;">parse</span><span style="color: #009900;">&#40;</span>req.<span style="color: #660066;">responseText</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> eval<span style="color: #009900;">&#40;</span>req.<span style="color: #660066;">responseText</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>oResp <span style="color: #339933;">&amp;&amp;</span> oResp.<span style="color: #660066;">error</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> msg <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;Error code: &quot;</span> <span style="color: #339933;">+</span> oResp.<span style="color: #660066;">error</span>.<span style="color: #660066;">code</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>Message: &quot;</span> <span style="color: #339933;">+</span> oResp.<span style="color: #660066;">error</span>.<span style="color: #660066;">message</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert<span style="color: #009900;">&#40;</span>msg<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//throw error if wanting to handle it:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//throw new Error(msg);</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>status <span style="color: #339933;">!=</span> <span style="color: #CC0000;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> &nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;HTTP status error: &quot;</span> <span style="color: #339933;">+</span> req.<span style="color: #660066;">status</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #006600; font-style: italic;">//save the access_token as cookie that expires in 60 minutes:</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">var</span> d <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d.<span style="color: #660066;">setTime</span><span style="color: #009900;">&#40;</span>d.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #CC0000;">60</span><span style="color: #339933;">*</span><span style="color: #CC0000;">60</span><span style="color: #339933;">*</span><span style="color: #CC0000;">1000</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.<span style="color: #660066;">cookie</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;access_token=&quot;</span> &nbsp;<span style="color: #339933;">+</span> oResp.<span style="color: #660066;">access_token</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;; &nbsp;expires=&quot;</span> <span style="color: #339933;">+</span> d.<span style="color: #660066;">toUTCString</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp;req.<span style="color: #660066;">send</span><span style="color: #009900;">&#40;</span>sVars<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="Existing_Access_Token">Existing Access Token Inside ProcessMaker</span></h2>
+<p>The current user in ProcessMaker automatically creates a new access token when logging in and doing various actions inside ProcessMaker, like starting a new case. These access tokens are stored in the <b><tt>wf_<font color=gree><i>WORKSPACE</i></font>.OAUTH_ACCESS_TOKENS.ACCESS_TOKEN</tt></b> field in the database and they are linked to a PHP login session which lasts for a default time of <a href="../3.0/System.html#Changing_time_before_automatic_logout">24 minutes of inactivity</a> before expiring. If using REST inside ProcessMaker (either in a trigger or in a plugin), the current access token for logged-in user can be looked up in the database and used to call REST endpoints.</p>
+ 
+<p>To obtain the current access token for the logged-in user when inside a trigger, use the following code:
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$userId</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>USER_LOGGED<span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT ACCESS_TOKEN FROM OAUTH_ACCESS_TOKENS WHERE USER_ID='<span style="color: #006699; font-weight: bold;">$userId</span>' ORDER BY EXPIRES DESC&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ACCESS_TOKEN'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #666666; font-style: italic;">//now call a REST endpoint using the access token</span></div></div>
+<p>The same code can be used in a plugin, but the unique ID of the user currently logged in needs to be obtained from the <a href="http://php.net/manual/en/reserved.variables.session.php">$_SESSION</a> superglobal variable:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//if no active login session, then redirect to the login screen:</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_SESSION</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USER_LOGGED'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #666666; font-style: italic;">//set to the page of the plugin, where it will redirect after logging in:</span><br />
+&nbsp; &nbsp;G<span style="color: #339933;">::</span><a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Location: login?u=sysworkflow/en/neoclassic/myplugin/mypage&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<a href="http://php.net/die"><span style="color: #990000;">die</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000088;">$userId</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$_SESSION</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'USER_LOGGED'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$query</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;SELECT ACCESS_TOKEN FROM OAUTH_ACCESS_TOKENS WHERE USER_ID='<span style="color: #006699; font-weight: bold;">$userId</span>' ORDER BY EXPIRES DESC&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$query</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$accessToken</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'ACCESS_TOKEN'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+<span style="color: #666666; font-style: italic;">//now call a REST endpoint using the access token</span></div></div>
+
+<h2><span id="Error_Response" class="mw-headline">Error Response</span></h2>
+
+<p>If authorization by OAuth2.0 or the ProcessMaker login fails, the <strong><code>{workspace}/oauth2/token</code></strong> endpoint responds with an HTTP status code of <strong><code>200</code></strong> (OK)</a> and returns the following error object:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;">&nbsp;<br />
+<span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error&quot;</span><span style="color: #339933;">:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;{error}&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp;<span style="color: #3366CC;">&quot;error_description&quot;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&quot;{description}&quot;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>The following errors may be returned:</p><dl><dd>
+
+<table><tbody>
+
+<tr><th><strong>error</strong></th><th><strong>error_description</strong></th></tr>
+
+<tr><td>'invalid_uri'</td><td>'No redirect URL was supplied or stored'</td></tr>
+
+<tr><td>'invalid_token'</td><td>'The client credentials are invalid'</td></tr>
+
+<tr><td>'invalid_token'</td><td>'The access token provided is invalid'</td></tr>
+
+<tr><td>'invalid_token'</td><td>'Malformed token (missing "expires" or "client_id")'</td></tr>
+
+<tr><td>'invalid_token'</td><td>'The access token provided has expired'</td></tr>
+
+<tr><td>'invalid_grant'</td><td>'Invalid username and password combination'</td></tr>
+
+<tr><td>'invalid_grant'</td><td>'Authorization code doesn't exist or is invalid for the client'</td></tr>
+
+<tr><td>'invalid_client'</td><td>'Client credentials were not found in the headers or body'</td></tr>
+
+<tr><td>'invalid_scope'</td><td>'An unsupported scope was requested'</td></tr>
+
+<tr><td>'unsupported_grant_type'</td><td>'Grant type "<em>X</em>" not supported'</td></tr>
+
+<tr><td>&nbsp; &nbsp;</td><td>Argument "is_authorized" must be a boolean. This method must know if the user has granted access to the client.</td></tr>
+
+<tr><td>'access_denied'</td><td>"The user denied access to your application"</td></tr>
+
+<tr><td>&nbsp;</td><td>First argument to OAuth2\Storage\Pdo must be an instance of PDO or a configuration array.</td></tr>
+
+<tr><td>&nbsp;</td><td>configuration array must contain "dsn"</td></tr></tbody></table></dd></dl>
+
+<p>If the name of the workspace isn't valid, then the error code is set to <strong><code>503</code></strong> and there is no return object.</p>
+
+<h2><span id="REST_security" class="mw-headline">REST Security</span></h2>
+
+<p>REST does not come with any built-in encryption. If doing REST calls over the internet, the contents of every REST call and response are viewable to any traffic sniffer. If not using REST over a private network or on localhost, it is <em>strongly recommended</em> to setup your ProcessMaker server to use SSL/TLS (Secure Socket Layer or Transport Layer Security) and always make REST calls using the <code>https</code> rather than the <code>http</code> protocol.</p>
+
+<p>To force all accesses to ProcessMaker to use the https protocol, the following lines can be added to ProcessMaker's virtualhost definition in Apache:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">RewriteEngine On<br />
+RewriteCond %{HTTPS} !=on<br />
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] </div></div>
+
+<p>If using Microsoft's Internet Information Server (IIS), see this <a href="http://blogs.msdn.com/b/kaushal/archive/2013/05/23/http-to-https-redirects-on-iis-7-x-and-higher.aspx" >blog post</a>.</p>
+
+<p>To force SSL/TLS when calling a particular PHP page, this code can be added to the top of the page:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$_SERVER</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&quot;HTTPS&quot;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">!=</span> <span style="color: #0000ff;">&quot;on&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <a href="http://php.net/header"><span style="color: #990000;">header</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Location: https://&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$_SERVER</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&quot;HTTP_HOST&quot;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$_SERVER</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&quot;REQUEST_URI&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <a href="http://php.net/exit"><span style="color: #990000;">exit</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>Likewise, JavaScript can be used to redirect a particular page from http to https:</p>
+
+<div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>window.<span style="color: #660066;">location</span>.<span style="color: #660066;">protocol</span> <span style="color: #339933;">!=</span> <span style="color: #3366CC;">&quot;https:&quot;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp;window.<span style="color: #660066;">location</span>.<span style="color: #660066;">href</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;https:&quot;</span> <span style="color: #339933;">+</span> window.<span style="color: #660066;">location</span>.<span style="color: #660066;">href</span>.<span style="color: #660066;">substring</span><span style="color: #009900;">&#40;</span>window.<span style="color: #660066;">location</span>.<span style="color: #660066;">protocol</span>.<span style="color: #660066;">length</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>However, it is not recommended to use JavaScript to redirect to https, because a man-in-the-middle could simply delete these two lines of JavaScript when the web page is initially downloaded, so this code would never be executed.</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

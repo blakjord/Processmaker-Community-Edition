@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/Dependent_Fields.html" />
+<link rel="shortlink" href="124.html" />
+<title>2.x - Dependent Fields | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"tCHmWW9ffIMU02OouIWKAOAhzCp_pHU0UE72bftCbcc","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-124 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="124.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-CQYAdtIzxlctPnoOja0oV_77B15-6qoxxT0yi_RWudM" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.x - Dependent Fields</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.5/Dependent_Fields.html" class="">3.8</a></li><li><a href="../3.5/Dependent_Fields.html" class="">3.7</a></li><li><a href="../3.5/Dependent_Fields.html" class="">3.6</a></li><li><a href="../3.5/Dependent_Fields.html" class="">3.5</a></li><li><a href="../3.1/Dependent_Fields.html" class="">3.4</a></li><li><a href="../3.1/Dependent_Fields.html" class="">3.3</a></li><li><a href="../3.1/Dependent_Fields.html" class="">3.2</a></li><li><a href="../3.1/Dependent_Fields.html" class="">3.1</a></li><li><a href="../3.0/Dependent_Fields.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.x - Dependent Fields" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="124.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.x - Dependent Fields 1/5</option><option value="40" selected="selected">Give 2.x - Dependent Fields 2/5</option><option value="60">Give 2.x - Dependent Fields 3/5</option><option value="80">Give 2.x - Dependent Fields 4/5</option><option value="100">Give 2.x - Dependent Fields 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >1.8</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-Q4lkTPWPC9IvfQbFLovEUwXKUNEqqsooYxdO7nh9da8" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="124.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="124.html#Dependent_Fields">Dependent Fields</a></li>
+<ol class="toc">
+<li class="toc"><a href="124.html#Examples">Examples</a></li>
+<ol class="toc">
+<li class="toc"><a href="124.html#Using_dropdwon_fields">Using dropdown fields</a></li>
+<li class="toc"><a href="124.html#Using_a_Suggest_Box_Field">Using a Suggest Box</a></li>
+<li class="toc"><a href="124.html#Using_Text_Fields">Using Text Fields</a></li>
+</ol>
+<li class="toc"><a href="124.html#Dependent_Fields_in_grids">Dependent Fields inside grids</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Dependent_Fields">Dependent Fields</span></h2>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;"><tbody><tr><td style="width: 250px;"><strong>Used by:</strong><br><a href="../index.php/2.0/Textboxes_and_Textareas.html" title="2.0/Textboxes and Textareas">textbox</a>, <a href="../index.php/2.0/Dates.html" title="2.0/Dates">date</a>, <a href="../index.php/2.0/Dropdown_Boxes_and_Listboxes.html" title="2.0/Dropdown Boxes and Listboxes">dropdown</a>, <a href="../index.php/2.0/Textboxes_and_Textareas.html#Suggest_box" title="2.0/Textboxes and Textareas">suggest</a>.</td></tr></tbody></table>
+<p>This property allows other field(s) to be selected as <i>dependent field(s)</i>, and thus convert the present field into an <i>independent field</i>.</p>
+
+<p>Normally the SQL <tt>SELECT</tt> queries used to populate DynaForm fields are only executed once when the DynaForm is initially displayed. Selecting a field to be a dependent field, allows that field to execute its SQL SELECT query whenever the value in the independent field changes. The SQL SELECT statement in the dependent field can reference the value in the independent field as a <a href="../index.php/2.0/Triggers.html#Case_Variables" title="Triggers">case variable</a> which is used in the query. Reference the independent field either as a string variable <code>@@INDEPENDENT_FIELD</code> whose value will be enclosed in double quotes with backslashes added before quotation marks to escape them so they be safely sent as part of an SQL string:</p>
+<codeblock>SELECT <font color=blue><i>VALUE_FIELD</i></font>, <font color=blue><i>LABEL_FIELD</i></font> FROM <font color=blue><i>TABLE</i></font> WHERE <font color=blue><i>FIELD</i></font> = <font color=blue><i>@@INDEPENDENT_FIELD</i></font></codeblock>
+
+<p>If the value of the independent field should be treated as a number, then use <code>@#INDEPENDENT_FIELD</code> which inserts the value without enclosing it in double quotation marks or escaping any quotation marks:</p>
+<codeblock>SELECT <font color=blue><i>VALUE_FIELD</i></font>, <font color=blue><i>LABEL_FIELD</i></font> FROM <font color=blue><i>TABLE</i></font> WHERE <font color=blue><i>FIELD</i></font> = <font color=blue><i>@#INDEPENDENT_FIELD</i></font></codeblock></pre>
+
+Only use <font color=blue><i>@#INDEPENDENT_FIELD</i></font> if sure that its value will be a number and the user can't use the independent field to introduce <a href="http://www.unixwiz.net/techtips/sql-injection.html">SQL code injection</a> attacks. If querying for a date or a datetime in a MySQL database, then use <font color=blue><i>@@INDEPENDENT_FIELD</i></font> so its value will be treated as a string. Remember that MySQL stores dates in <code>"YYYY-MM-DD"</code> format and datetimes in <code>"YYYY-MM-DD HH:MM:SS"</code> format.</p>
+
+<p>In DynaForms, only textboxes, dropdown boxes and date boxes may be independent fields, while textboxes, suggest boxes, dropdown boxes and listboxes may be dependent fields. If a textbox is the dependent field, the SQL SELECT query will determine the value inserted into the field. If a dropdown, listbox or suggest box is the dependent field, the SQL SELECT query will populate the list of available options.</p>
+<p>DynaForms can use independent and dependent fields to easily conduct searches in an external database. For instance, an organization has a database table called CLIENTS and its staff needs to search in its database for a particular client. It could design a DynaForm with an independent field which is a textbox named "ClientNameSearch". Its dependent field could be a listbox named "ClientSearchResults" which uses the following SQL SELECT statement to populate its list:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> CLIENT_ID<span style="color: #66cc66;">,</span> CONCAT<span style="color: #66cc66;">&#40;</span>CLIENT_FIRSTNAME<span style="color: #66cc66;">,</span> <span style="color: #ff0000;">' '</span><span style="color: #66cc66;">,</span> CLIENT_LASTNAME<span style="color: #66cc66;">&#41;</span> <span style="color: #993333; font-weight: bold;">FROM</span> CLIENTS <br />
+<span style="color: #993333; font-weight: bold;">WHERE</span> CLIENT_FIRSTNAME<span style="color: #66cc66;">=</span>@@ClientNameSearch <span style="color: #993333; font-weight: bold;">OR</span> CLIENT_LASTNAME<span style="color: #66cc66;">=</span>@@ClientNameSearch</div></div>
+
+<p>Whenever a new name is entered into the "ClientNameSearch" textbox, all the clients with matching names will be displayed in the "ClientSearchResults" listbox.</p>
+<p>Because the value of the independent field can change while the DynaForm is being used, the SQL SELECT statement in the dependent field also needs to be allowed to change so it can conduct queries with the new value. Normally the SELECT statement is fixed in the XML definition of the field, but the SQL SELECT statements for dependent fields are placed in a <i>character data structure</i> <code>&lt;![CDATA[...]]&gt;</code> so they won't be parsed as XML. That way the SELECT statement can be altered and the database requeried while the DynaForm is in use. For instance, here is the XML definition of the "ClientSearchResults" listbox:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ClientSearchResults</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;listbox&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;4&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">options</span>=<span style="color: #ff0000;">&quot;Array&quot;</span> </span><br />
+<span style="color: #009900;"> &nbsp;<span style="color: #000066;">defaultvalue</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">sqlconnection</span>=<span style="color: #ff0000;">&quot;5821228024ab657ac40d9b3065753771&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #339933;">&lt;![CDATA[SELECT CLIENT_ID, CONCAT(CLIENT_FIRSTNAME, ' ', CLIENT_LASTNAME) FROM CLIENTS </span><br />
+<span style="color: #339933;"> &nbsp;WHERE CLIENT_FIRSTNAME=@@ClientNameSearch OR CLIENT_LASTNAME=@@ClientNameSearch]]&gt;</span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Search Results: &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;option</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ClientSearchResults<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>Note that a blank option is provided to appear at the top of the list above the search results. That way no client will be selected by default. To not have a blank option, remove <code>&lt;option name=""/&gt;</code> from the XML definition.</p>
+<p>The independent field does not have to be limited to the WHERE clause of the SELECT statement. It can be used in any part of the statement. For instance if a DynaForm has a dropdown box named "ClientColumn" where the user can select one of the fields in the CLIENTS table, then the dependent field could have the following SQL SELECT statements:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> CLIENT_ID<span style="color: #66cc66;">,</span> @#ClientColumn <span style="color: #993333; font-weight: bold;">FROM</span> CLIENTS</div></div>
+
+<p>or:</p>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> CLIENT_ID<span style="color: #66cc66;">,</span> CLIENT_LASTNAME <span style="color: #993333; font-weight: bold;">FROM</span> CLIENTS <span style="color: #993333; font-weight: bold;">ORDER</span> <span style="color: #993333; font-weight: bold;">BY</span> @#ClientColumn </div></div>
+
+<p><b>XML Definition in the independent field:</b></p>
+<p style="margin-left:25px;"><span class="geshifilter"><code class="xml geshifilter-xml"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;NAME</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;FIELD1[,FIELD2...]&quot;</span> ...<span style="color: #000000; font-weight: bold;">&gt;</span></span> ... <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/NAME<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></code></span>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> If more than one dependent field, separate them with commas, but do NOT include any spaces.</font></p>
+<p><b>XML Definition in the dependent field:</b></p>
+<div style="margin-left:25px">
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;NAME</span> ...<span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #339933;">&lt;![CDATA[SELECT ... @@INDEPENDENT_FIELD...']]&gt;</span> <br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/NAME<span style="color: #000000; font-weight: bold;">&gt;</span></span></span> </div></div>
+</div>
+
+<h3><span id="Examples">Examples</span></h3>
+<h4><span id="Using_dropdwon_fields">Using dropdown fields</span></h4>
+<p>The following example shows how to create dependent fields in dropdown boxes in a Dynaform. This example queries tables which already exist in the ProcessMaker database. In this example, the <strong>STATE</strong> is defined as a dependent field for the <strong>COUNTRY</strong>, which is the independent field. When a country is selected in the first dropdown, the cities found in that country will appear as options in the second dropdown. In turn, the <b>LOCATION</b> is the dependent field for the <b>STATE</b>. When a state/province/department is selected in the second dropdown, the third dropdown box will then contain a list of locations found in the selected state/province/department.</p>
+<p>For this example, it is required to:</p>
+<ul>
+<li>Create three dropdowns named "COUNTRY", "STATE" and "LOCATION".</li>
+<li>Use the tables <b><tt>ISO_COUNTRY</tt></b>, <b><tt>ISO_SUBDIVISION</tt></b>, <b><tt>ISO_LOCATION</tt></b> located in the <b><tt>wf_<font color=blue><i>{WORKSPACE}</i></font></tt></b> database, which by default is named <b><tt>wf_workflow</tt></b>.</li></ul>
+<p><img alt="" src="../sites/default/files/TablesISO.png" height="552" width="650"></p>
+
+<p>Follow these steps to create a dependent field:</p>
+<p>1. <strong> Create a DynaForm</strong> with a dropdown field named "COUNTRY":</p>
+<p><img alt="" src="../sites/default/files/450px-CreateDynaFormCountry.png" height="393" width="450"></p>
+<p>Add the following SQL query: <span class="geshifilter"><code class="sql geshifilter-sql"><span style="color: #993333; font-weight: bold;">SELECT</span> IC_UID<span style="color: #66cc66;">,</span> IC_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_COUNTRY</code></span>
+
+<p>The XML definition will be:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;COUNTRY</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;dropdown&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">options</span>=<span style="color: #ff0000;">&quot;Array&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;STATE&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>SELECT IC_UID, IC_NAME FROM ISO_COUNTRY<br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>COUNTRY &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;option</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/COUNTRY<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p><b>Defining the dependent field:</b></p>
+<p>According to which country is selected in the first dropdown, the states/provinces/departments found in that country will be listed in the STATE dropdown box. 
+<p>Either edit the XML code or use the graphical interface to define the dependent field:</p>
+<ul>
+<li>In the XML definition of the COUNTRY field, add STATE as a dependent field: <span class="geshifilter"><code class="xml geshifilter-xml"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;COUNTRY</span> ... <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;STATE&quot;</span> ...<span style="color: #000000; font-weight: bold;">&gt;</span></span></code></span></li>
+<li>Go to the fields handler and select COUNTRY in the list of fields. In its definition, select STATE as the <b>dependent field</b>:</li></ul>
+<p><img alt="" src="../sites/default/files/SelectingState.png" height="76" width="604"></p>
+
+<p>2. Create a second dropdown field named "STATE":</p>
+<p><img alt="" src="../sites/default/files/DynaFormState.png" height="515" width="593"></p>
+<p>The SQL query obtains the list of states/provinces/departments, based on what was selected in the COUNTRY field:</p>
+<p>Add the SQL query:</p>
+<span class="geshifilter"><code class="sql geshifilter-sql">&nbsp;<span style="color: #993333; font-weight: bold;">SELECT</span> IS_UID<span style="color: #66cc66;">,</span> IS_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_SUBDIVISION <span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #66cc66;">=</span> @@COUNTRY <span style="color: #993333; font-weight: bold;">ORDER</span> <span style="color: #993333; font-weight: bold;">BY</span> IS_NAME</code></span>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> The independent field is enclosed in quotation marks so it will be treated as string. If the independent field is a textbox where users can enter any value, then always reference the independent field as <code>@@name</code> to prevent SQL injection attacks:</font> <span class="geshifilter"><code class="sql geshifilter-sql"><span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #66cc66;">=</span> @@COUNTRY</code></span></p>
+
+<p>The XML definition will be:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;STATE</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;dropdown&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">options</span>=<span style="color: #ff0000;">&quot;Array&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;LOCATION&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #339933;">&lt;![CDATA[SELECT IS_UID, IS_NAME FROM ISO_SUBDIVISION WHERE IC_UID = @@COUNTRY ORDER BY IS_NAME ]]&gt;</span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>STATE &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;option</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/STATE<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+ 
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> It is recommended using <a href="http://en.wikipedia.org/wiki/CDATA"><tt>CDATA</tt></a> because if HTML tags are used, they will break the XML node. <tt>CDATA</tt> allows special characters to be used without problems.</font></p>
+
+<p><b>Defining the dependent field:</b></p>
+<p>According to which state/province/department is selected in the second dropdown, its locations will be listed in the third dropdown which is named "LOCATION". There are two ways to define LOCATION as the dependent field for the STATE field:</p>
+<ul>
+<li>In the XML definition, define the dependent field: <span class="geshifilter"><code class="xml geshifilter-xml"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;STATE</span> ... <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;LOCATION&quot;</span> ...<span style="color: #000000; font-weight: bold;">&gt;</span></span></code></span></li>
+<li>Go to the Fields handler and select the LOCATION field in the <b>Dependent Fields</b> property:
+<p><img alt="" src="../sites/default/files/SelectingLocation.png" height="64" width="589"></p></li>
+</ul>
+<p>3. Create a third dropdown field named "LOCATION", which is defined as a dependent field for STATE. The DynaForm now contains 3 dropdown boxes:</p>
+<p><img alt="" src="../sites/default/files/DynaFormLocation.png" height="521" width="595"></p>
+
+<p>Add the following SQL query, which obtains a list of locations from the database, depending on which country and which state/province/department was selected by the user:</p>
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">SELECT</span> IL_UID<span style="color: #66cc66;">,</span> IL_NAME <span style="color: #993333; font-weight: bold;">FROM</span> ISO_LOCATION <span style="color: #993333; font-weight: bold;">WHERE</span> IC_UID <span style="color: #66cc66;">=</span> @@COUNTRY <span style="color: #993333; font-weight: bold;">AND</span> IS_UID <span style="color: #66cc66;">=</span> @@STATE</div></div>
+
+<p>The XML definition will be:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;LOCATION</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;dropdown&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;edit&quot;</span> <span style="color: #000066;">options</span>=<span style="color: #ff0000;">&quot;Array&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #339933;">&lt;![CDATA[SELECT IL_UID, IL_NAME FROM ISO_LOCATION WHERE IC_UID = @@COUNTRY AND IS_UID = @@STATE</span><br />
+<span style="color: #339933;"> &nbsp; &nbsp; AND IS_UID NOT IN (&quot;&quot;) ORDER BY IL_NAME]]&gt;</span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>LOCATION &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;option</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span><span style="color: #000000; font-weight: bold;">&lt;/option<span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/LOCATION<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>The final result will be:</p>
+<p><img alt="" src="../sites/default/files/DynaFormFinal.png" height="431" width="510"></p>
+
+<h4><span id="Using_a_Suggest_Box_Field">Using a Suggest Box</span></h4>
+<p>In version <strong>2.0.43</strong> and later, suggest boxes can be used as independent and dependent fields.</p>
+<p>Based on the example above,  change the <strong>COUNTRY</strong> field from a dropdown box to a suggest box:</p>
+<p><img alt="" src="../sites/default/files/SuggestBoxDependent.png" height="563" width="604"></p>
+<p>Keep the XML for the <strong>STATE</strong> and <strong> LOCATION</strong> as in the previous example.</p>
+
+<p>Entering a country in the suggest box:</p>
+<p><img alt="" src="../sites/default/files/ExampleSuggestBox.png" height="268" width="525"></p>
+<p><span style="font-family: sans-serif; font-size: 12.6999998092651px; line-height: 19.0499992370605px;">The final example will be:</span></p>
+<p><img alt="" src="../sites/default/files/ExampleSuggestBoxDyn.png" height="326" width="518"></p>
+
+<h4><span id="Using_Text_Fields">Using Text Fields</span></h4>
+<p>In textboxes, the SQL query sets the value in the field, so if a textbox is used as an dependent field, its value will be changed when the value in the independent field changes.
+
+<p>This example shows how to use multiple dependent fields which depend on the value of one independent field. A table named <tt>EMPLOYEE</tt> contains the <tt>EMPLOYEE_NAME</tt> and <tt>DEP_CODE</tt> fields, where the employee's name and the code of his/her department are stored.</p>
+<p>Then, create a DynaForm with 3 textbox fields: <tt>Employee Code</tt>, <tt>Employee Name</tt> and <tt>Department Code</tt>. When an employee code is entered in the first field, the employee's name and department codes will automatically be inserted in the other two fields. </p>
+
+<p>Create the independent field which will be the "Employee Code" textbox:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Employee_code</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">sqlconnection</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">enablehtml</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">style</span>=<span style="color: #ff0000;">&quot;text-align:center;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Employee Code<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Employee_code<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>Then, create the "Employee Name" textbox:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Client_Name</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">defaultvalue</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">sqlconnection</span>=<span style="color: #ff0000;">&quot;&quot;</span> </span><br />
+<span style="color: #009900;"> &nbsp;<span style="color: #000066;">style</span>=<span style="color: #ff0000;">&quot;text-align:center;background: rgb(209, 222, 223) none repeat scroll 0% 0%;font-weight:bold;background-color:##D2D4E1;text-transform: uppercase;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Client Name<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Client_Name<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> A <tt>style</tt> is added to this field to customize its appearance.</font></p>
+
+<p>Finally, create the "Department Code" textbox:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Dep_Code</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;4&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">sqlconnection</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">enablehtml</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;&quot;</span> </span><br />
+<span style="color: #009900;"> &nbsp;<span style="color: #000066;">style</span>=<span style="color: #ff0000;">&quot;font-size:15px; font-type:Arial;color:#084B8A;font-weight:bold&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Department Code<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Dep_Code<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>Once the three fields are created, define the dependent fields. In this example, Employee_code is the independent field and Employee_Name and Dep_Code are the dependent fields:</p>
+<p><span class="geshifilter"><code class="xml geshifilter-xml">dependentfields=&quot;Employee_Name,Dep_Code&quot;</code></span></p>
+<p>When the employee code is entered, the Employee Name and Department Code fields will be filled.</p>
+<p>Then, in the Employee Name field, add the SQL query which will look up the name depending on the employee's code:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;">&nbsp;<span style="color: #339933;">&lt;![CDATA[ &nbsp;SELECT EMPLOYEE_NAME, EMPLOYEE_NAME FROM EMPLOYEE WHERE EMPLOYEE_CODE = @@Employee_code]]&gt;</span></div></div>
+
+<p>ProcessMaker expects two fields to be returned in dependent field queries, where the first field is the <i>value</i> and the second is the <i>label</i> used in a list of options, but  textboxes only need the <i>value</i>, so repeat the <code>EMPLOYEE_NAME</code> field twice in the query. Without two fields, the query will not work correctly.</p>
+
+<p>The XML definition of the Employee_Name field will be:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;">&nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Employee_Name</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">defaultvalue</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">sqlconnection</span>=<span style="color: #ff0000;">&quot;&quot;</span> </span><br />
+<span style="color: #009900;"><span style="color: #000066;">style</span>=<span style="color: #ff0000;">&quot;text-align:center;background: rgb(209, 222, 223) none repeat scroll 0% 0%;font-weight:bold;background-color:##D2D4E1;text-transform: uppercase;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+<span style="color: #339933;">&lt;![CDATA[ select EMPLOYEE_NAME, EMPLOYEE_NAME from EMPLOYEE where EMPLOYEE_CODE = @@Employee_code]]&gt;</span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Employee Name<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Employee_Name<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p><b>Running the example:</b></p>
+<p>- Entering the Employee Code</p>
+<p><img alt="" src="../sites/default/files/IntroducingCode.png" height="207" width="509"></p>
+<p>- Then, press TAB to see the result:</span></p>
+<p><img alt="" src="../sites/default/files/EmployeeData.png" height="205" width="532"></p>
+<p>The two fields were automatically filled according to the employee code entered in the first field.</p>
+
+<h3><span id="Dependent_Fields_in_grids">Dependent Fields inside grids</span></h3>
+<p style="margin-left:25px"><strong><font color="#009688">Available Version:</font></strong><font color="dimgray"><strong> 2.5.2 </strong> and later.</font></p>
+<p>It is not possible to populate an entire grid as a dependent field, but it is possible to use dependent fields inside grids in version 2.5.2 and later. 
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong><font color="dimgray"> If needing to populate entire grids as dependent fields, see <a href="../index.php/AJAX_in_DynaForms.html#Repopulating_a_Grid">Repopulating Grids with AJAX</a>.</font></p> 
+
+<p>The following example shows how to use a grid which lists the members of a department as a dependent field.</p>
+<p>First, create the following table:</p>
+<p><strong>Table Name:</strong> EMPLOYEE</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">+-----------------+--------------+------+------+<br />
+| Field &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Type &nbsp; &nbsp; &nbsp; &nbsp; | Null | Key | <br />
++-----------------+--------------+------+-----+<br />
+| DEP_CODE &nbsp; &nbsp; &nbsp; &nbsp;| varchar(5) &nbsp; | NO &nbsp; | PRI | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br />
+| DEPARTMENT_NAME | varchar(100) | NO &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br />
+| NUMBER_EMPLOYEE | varchar(5) &nbsp; | NO &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br />
++-----------------+--------------+------+-----+</div></div>
+
+<p>Fill the table with some values.</p>
+<p>Then create a grid with the following fields: <strong>Department_Code</strong> (textbox), <strong>Department_Name</strong> (textarea) and <strong>Number_Employee</strong> (textbox)</p>
+<p>The two dependent fields in the grid are <strong>Department_Name</strong> and <strong> Number_Employee</strong>. When the user enters a department code, it will return the name of the department and the number of employees in that department</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;">&nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Department_Code</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">validate</span>=<span style="color: #ff0000;">&quot;Any&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;Department_Name,Number_Employee&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">sqlconnection</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">enablehtml</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">style</span>=<span style="color: #ff0000;">&quot;text-align:center;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Department Code<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Department_Code<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>In <strong>Department_Name</strong> field, add the SQL query to obtain the department name based on the department code:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Department_Name</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;textarea&quot;</span> <span style="color: #000066;">rows</span>=<span style="color: #ff0000;">&quot;2&quot;</span> <span style="color: #000066;">cols</span>=<span style="color: #ff0000;">&quot;75&quot;</span> <span style="color: #000066;">defaultvalue</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">group</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">sqlconnection</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">style</span>=<span style="color: #ff0000;">&quot;text-align:center;background: rgb(209, 222, 223) none repeat scroll 0% 0%;font-weight:bold;background-color:#ADD4F7;text-transform: uppercase;&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; select DEPARTMENT_NAME, DEPARTMENT_NAME from PMT_EMPLOYEE where DEP_CODE = @@Department_Code<br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Department Name<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Department_Name<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>Finally, in the <strong>Number_Employee</strong> field, add an SQL query to lookup the number of number of employees in the department, based on its department code:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Number_Employee</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">size</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">maxlength</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">dependentfields</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">readonly</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">sqlconnection</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">enablehtml</span>=<span style="color: #ff0000;">&quot;1&quot;</span> <span style="color: #000066;">mode</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">style</span>=<span style="color: #ff0000;">&quot;font-size:20px; font-type:Arial;color:#084B8A;font-weight:bold&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+select NUMBER_EMPLOYEE, NUMBER_EMPLOYEE from PMT_EMPLOYEE where DEP_CODE = @@Department_Code<br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span># Employee<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/en<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Number_Employee<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>After defining the grid, add it to the master form. Note that dependent fields in a grid will only function when embedded in a master form.</p>
+<p>To test the dependent fields in the grid, enter the code for a department, which in this example is <tt>1533</tt>. Then, press TAB and the department name and the employee number will be automatically filled.</p>
+<p><img alt="" src="../sites/default/files/GridDependentFieldsExample.png" height="225" width="687"></p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

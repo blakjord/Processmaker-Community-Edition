@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Solr_Implementation_in_ProcessMaker.html" />
+<link rel="shortlink" href="../node/425.html" />
+<title>Solr Implementation in ProcessMaker | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"lWc7bCA5vrJCjKljnvz5bFTmm4Qtw3bmkFEbA4vpH6k","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-425 node-type-processmakerbpm">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Solr_Implementation_in_ProcessMaker.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-vnYkokqCXhHBk9m566lPUz882nwrq_vlrUIjCwgl6BQ" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">Solr Implementation in ProcessMaker</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.2/Solr_Implementation_in_ProcessMaker.html" class="">3.2</a></li><li><a href="../3.1/Solr_Implementation_in_ProcessMaker.html" class="">3.1</a></li><li><a href="../3.1/Solr_Implementation_in_ProcessMaker.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="Solr Implementation in ProcessMaker" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-processmakerbpm">
+    <div class="field field-name-field-how-useful-did-you-find-th field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Solr_Implementation_in_ProcessMaker.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Solr Implementation in ProcessMaker 1/5</option><option value="40" selected="selected">Give Solr Implementation in ProcessMaker 2/5</option><option value="60">Give Solr Implementation in ProcessMaker 3/5</option><option value="80">Give Solr Implementation in ProcessMaker 4/5</option><option value="100">Give Solr Implementation in ProcessMaker 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2</span></span> <span class="total-votes">(<span >1</span> vote)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-pFMr03x_iM-RM0oAn9ARk_aO9NWkXnkyMC2fA1arY1g" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Solr_Implementation_in_ProcessMaker.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Solr_Server_Description">Solr Server Description</a></li>
+<ol class="toc">
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Solr_Schema">Solr Schema</a></li>
+</ol>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Architecture">Architecture</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Solr_4.0_Installation_on_Tomcat">Solr 4.0 Installation on Tomcat</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Modified_Files_-_deployment">Modified Files - deployment</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Solr_Activation_in_ProcessMaker">Solr Activation in ProcessMaker</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Indexation_and_reindexation">Indexation and reindexation</a></li>
+<ol class="toc">
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Solr_Failover">Solr Failover</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Case_Lists_validation">Case Lists validation</a></li>
+</ol>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#ProcessMaker_views_implemented_with_SOLR">ProcessMaker views implemented with SOLR</a></li>
+<ol class="toc">
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Search_functionality">Search functionality</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#In-box_view">Inbox view</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Draft_view">Draft view</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Participated_view">Participated view</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Unassigned_view">Unassigned view</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Paused_view">Paused view</a></li>
+<li class="toc"><a href="Solr_Implementation_in_ProcessMaker.html#Not_supported">Not supported</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Solr_Server_Description">Solr Server Description</span></h2>
+<p>The Solr server is used as an alternative to display the Inbox, Draft, Participated, unassigned and advanced search. The views are going to be displayed consulting the Solr index and completing the data using the database. The Solr server index the Application records of ProcessMaker. The Solr server must be maintained in synchronization with the database.</p>
+<p>The purpose to use Solr is the additional functionality to search in the application data  <code>(APP_DATA)</code> and the faster response of the index to search queries. It is ideal for ten thousand users defined on ProcessMaker.</p>
+<p><br><strong><span style="color: red;">Note:</span></strong> It's important to mention that for the moment on a Solr installation Case List Builder plug-in doesn't work.</p>
+
+<h3><span id="Solr_Schema">Solr Schema</span></h3>
+<p>Basically, the Solr server is a Data Base that allows data storage according to a schema definition. The schema could be understood as a Data Base table. The schema is a xml file which contains the fields definition that will be used to index data. The following code is the Solr schema for ProcessMaker. The Solr server defines the fields that are going to be stored and indexed in a file called <tt>schema.xml</tt>. The following are the fields that are going to be stored in the Schema:</p>
+
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;UTF-8&quot;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></span><br />
+&nbsp;<br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;schema</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;pmos2&quot;</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.5&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;fields<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_UID&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_TITLE&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text_general_rev&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_PRO_TITLE&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text_general_rev&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;DEL_MAX_PRIORITY&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;tlong&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_NUMBER&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;tlong&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_STATUS&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;PRO_UID&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_CREATE_DATE&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;tdate&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;DEL_LAST_UPDATE_DATE&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;tdate&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;DEL_LAST_INDEX&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;tlong&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_ASSIGNED_USERS&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_ASSIGNED_USERS_READ&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_ASSIGNED_USERS_UNREAD&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_DRAFT_USER&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_PARTICIPATED_USERS&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_PARTICIPATED_USERS_STARTED&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_PARTICIPATED_USERS_COMPLETED&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_UNASSIGNED_USERS&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_UNASSIGNED_GROUPS&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;APP_PAUSED_USERS&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;string&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">required</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;field</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;text&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;text_general&quot;</span> <span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> <span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+<br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dynamicField</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;*_i&quot;</span> &nbsp;<span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;int&quot;</span> &nbsp; &nbsp;<span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> &nbsp;<span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dynamicField</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;*_is&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;int&quot;</span> &nbsp; &nbsp;<span style="color: #000066;">indexed</span>=<span style="color: #ff0000;">&quot;true&quot;</span> &nbsp;<span style="color: #000066;">stored</span>=<span style="color: #ff0000;">&quot;false&quot;</span> &nbsp;<span style="color: #000066;">multiValued</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; &nbsp;...<br />
+&nbsp;<br />
+&nbsp;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/fields<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+
+<p>Where:</p>
+
+<ul>
+<li><strong>APP_UID</strong>: Application identifier.</li>
+<li><strong>APP_NUMBER</strong>: Application number.</li>
+<li><strong>APP_STATUS</strong>: Application status. (DRAFT, TODO, COMPLETED)</li>
+<li><strong>PRO_UID</strong>: Process identifier.</li>
+<li><strong>APP_TITLE</strong>: Application title. (The title is stored with the default language “en”)</li>
+<li><strong>APP_PRO_TITLE</strong>: Process title. (The title is stored with the default language “en”)</li>
+<li><strong>APP_CREATE_DATE</strong>: Application creation date.</li>
+<li><strong>DEL_LAST_UPDATE_DATE</strong>: The most actual date of delegation. The date of the last delegation. The field <code>DEL_DELEGATE_DATE</code> in <code>APP_DELEGATION</code> table is used to calculate this field.</li>
+<li><strong>DEL_MAX_PRIORITY</strong>: The highest priority of all the delegations of the application that are open. If the case is closed or completed the last priority is used. The priority is defined in the field<code>DEL_PRIORITY</code> of the <code>APP_DELEGATION</code> table.</li>
+<li><strong>APP_ASSIGNED_USERS</strong>: Multi-value field used to store the list of assigned users to the application. The list of users that have an assigned case in the application.</li>
+<li><strong>APP_ASSIGNED_USERS_READ</strong>: Multi-value field used to store the list of assigned users to a case that is already read. This value is defined when the <code>DEL_INIT_DATE</code> is not null in the <code>APP_DELEGATION</code> table.</li>
+<li><strong>APP_ASSIGNED_USERS_UNREAD</strong>: Multi-value field used to store the list of assigned users to a case that didn't read yet the case. This value is defined when the <code>DEL_INIT_DATE</code> is null in the<code>APP_DELEGATION</code> table.</li>
+<li><strong>APP_DRAFT_USER</strong>: Field used to store the user, that created the case(application) and didn't delegate the case to other person yet. The <code>APP_STATUS == 'DRAFT'</code> condition is used.</li>
+<li><strong>APP_PARTICIPATED_USERS</strong>: Multi-value field used to store the list of users that participated in the case(application). Only the user identifier is search in the application.</li>
+<li><strong>APP_PARTICIPATED_USERS_STARTED</strong>: Multi-value field used to store the list of users that participated in the case(application). The user must have created the first delegation. (User identifier and <code>DEL_INDEX == 1</code> are used to search these users).</li>
+<li><strong>APP_PARTICIPATED_USERS_COMPLETED</strong>: Multi-value field used to store the list of users that participated in the case(application). The case must be completed. (User identifier and<code>APP_STATUS == 'COMPLETED'</code> are used to search these users).</li>
+<li><strong>APP_UNASSIGNED_USERS</strong>: Multi-value field used to store the list of users that can select the case to work on it. Self service list of users.</li>
+<li><strong>APP_UNASSIGNED_GROUPS</strong>: Multi-value field used to store the list of groups that can select the case to work on it. Self service list of groups.</li>
+<li><strong>APP_PAUSED_USERS</strong>: Multi-value field used to store the list of users that paused their assigned case or task. (Not implemented yet)</li>
+</ul>
+
+<p>All the variables that have a value defined in the Application are included in the index as dynamic fields.</p>
+
+<ul>
+<li>&lt;uniqueKey&gt;APP_UID&lt;/uniqueKey&gt;</li>
+<li>&lt;defaultSearchField&gt;text&lt;/defaultSearchField&gt;</li>
+<li>&lt;solrQueryParser defaultOperator="OR"/&gt;</li>
+<li>&lt;copyField source="APP_TITLE" dest="text"/&gt; &lt;copyField source="APP_PRO_TITLE" dest="text"/&gt; &lt;copyField source="APP_STATUS" dest="text"/&gt; &lt;copyField source="APP_NUMBER" dest="text"/&gt;</li>
+<li>&lt;types&gt; &lt;fieldType name="string" class="solr.StrField" sortMissingLast="true" /&gt;</li>
+<li>&lt;fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/&gt;</li>
+<li>....</li>
+</ul>
+
+<p>The main tag is &lt;fields&gt; which defines the schema fields. I.e.: <tt>&lt;field name="APP_UID" type="string" indexed="true" stored="true" required="true"/&gt;</tt></p>
+<p>The field <strong>APP_UID</strong> has the following characteristics:</p>
+<ul>
+<li><strong>type="string":</strong> it’s a string type field</li>
+<li><strong>indexed="true":</strong> this is included in the index as well, it means that you can do searches with this field.</li>
+<li><strong>stored="true":</strong> the field is stored in Solr, it means that you can return the original value that was stored.</li>
+<li><strong>required="true":</strong> the field is required, it means that cannot be null.
+<p>&lt;field name="APP_NUMBER" type="tlong" indexed="true" stored="false" required="true"/&gt;</p>
+</li>
+</ul>
+
+<p><strong>APP_NUMBER</strong> field has this characteristics:</p>
+<ul>
+<li><strong>type="tlong":</strong> tlong Type (types are defined forward)</li>
+<li><strong>indexed="true":</strong> this is included in the index as well, it means that you can do searches with this field.</li>
+<li><strong>stored="false":</strong> the field is not stored in Solr, it means that you cannot return the original value that was stored.. i.e. APP_NUMBER=9933 the value is not indexed in Solr but is not possible to return 9933 from Solr, you will have to do a search of this value in the APP_UID field. This needs to be done in order to keep the server efficiency, then less data stored in index the less RAM need, and less time for re indexation</li>
+<li><strong>required="true":</strong></code> the field is required, it means that cannot be null.
+<p>&lt;dynamicField name="*_i" type="int" indexed="true" stored="false"/&gt;</p>
+</li>
+</ul>
+
+<p>This type of field is a dynamic type, with this definition the following fields can be stored dynamically:</p>
+
+<ul>
+<li>phonenumber_i</li>
+<li>age_i</li>
+<li>height_i</li>
+<li>shoesize_i</li>
+<li>etc..</li>
+</ul>
+
+<p>These fields allow you to store data dynamically. The dynamic fields are used to store in App_Data data from each case.</p>
+<p><code><strong>&lt;uniqueKey&gt;APP_UID&lt;/uniqueKey&gt;</strong></code>: This setting is important and indicates which field is used as a registration key. Mapping a database would be as the field which is primary key.</p>
+
+<p><code><strong>&lt;defaultSearchField&gt;text&lt;/defaultSearchField&gt;</strong></code>: This setting indicates which field is used to perform searches by default, in this case the text field. Is used when you do not specify a specific field to make a search (explanation below).</p>
+<p><code><strong>&lt;solrQueryParser defaultOperator="OR"/&gt;</strong></code> It defines which operator is used by default in order to search using one or more criteria</p>
+<p><code>&lt;copyField source="APP_TITLE" dest="text"/&gt;</code></p> 
+<p><code>&lt;copyField source="APP_PRO_TITLE" dest="text"/&gt;</code></p> 
+<p><code>&lt;copyField source="APP_STATUS" dest="text"/&gt;</code></p>
+<p><code>&lt;copyField source="APP_NUMBER" dest="text"/&gt;</code></p>
+
+<p>It is used to copy the contents of one field to another, it is copying the contents of multiple text fields to the field.</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&nbsp; &nbsp;<br />
+&lt;types&gt;<br />
+&lt;fieldType name=&quot;string&quot; class=&quot;solr.StrField&quot; sortMissingLast=&quot;true&quot; /&gt;</div></div>
+
+<p>Then comes the definition of the types of data that supports the schema to define the fields. It is recommended to leave this setting unchanged (Solr advanced topic).</p><p>Mapping between the structure of a database table and a schema in Solr:</p>
+
+<p><img alt="" src="../sites/default/files/MappingSolr.png"></p>
+
+<h2><span id="Architecture">Architecture</span></h2>
+<p>The Solr 4.0 Implementation in PMOS objetive is to provide a indexation server, that allows to run indexed searchs on stored data in cases (APP_DATA). Aditionally, this server can be used to see the cases list in ProcessMaker(Lists: Inbox, Draft, Participated, Unassigned and advanced search) in order to improve this lists performance.</p>
+
+<p><img alt="" src="../sites/default/files/SolrArchitecture.png"></p>
+
+<p>Solr’s logic is the following:</p>
+<ol>
+<li>The Browser client requires ProcessMaker server to show the cases lists in Inbox.</li>
+<li>The ProcessMaker server query Solr for the list that needs to be show, depending on pagination conditions, text to search, current user filter, and other filter selected by the user to search the cases information on APP_DATA.</li>
+<li>The Solr server return the cases ID’s to be shown according the (list APP_UID).</li>
+<li>The ProcessMaker server completes the cases information querying the Data Base. For example, it completes the process name, the task name, the initial date, etc. etc.</li>
+</ol>
+<p>Finally, the ProcessMaker server return the filtered list to the Browser user.</p>
+
+<h2><span id="Solr_4.0_Installation_on_Tomcat">Solr 4.0 Installation on Tomcat</span></h2>
+<p>In order to have Solr integrated successfully, it is required to install Solr 4.0</p>
+<p>You’ll find the <a href="ProcessMaker_Server_Sizing.html" title="ProcessMaker Server Sizing">server requirement</a>.</p>
+<p>In order to use Solr, we recomment to have a Enterprise Edition plugin installed.</p>
+
+<table>
+<tbody>
+<tr>
+<th>No</th>
+<th>Step</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Install JDK: For tomcat 7 is required JDK 1.6 or superior.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Tomcat 7 Installation:<br><p>Generally tomcat 7 is install in /usr/share/tomcat7<br>Create the file setenv.sh in folder /usr/share/tomcat7/bin to define the environment variables.<br><code>JAVA_HOME="/usr/lib/jvm/default-java" <br>JRE_HOME="/usr/lib/jvm/default-java/jre"<br></code></p><div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">#set initial memory requirements&lt;br&gt;</div></div><p><code>CATALINA_OPTS="-Xms1024m -Xmx2560m"<br>start tomcat:<br>/usr/share/tomcat7/bin/catalina.sh start</code></p></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Create the following folder structure:<br><p><code>&gt;mkdir /opt/solr<br>&gt;mkdir /opt/solr/workflow<br></code>workflow is the name of the Solr instance. A Solr instance refers to a ProcessMaker workspace.<br>A server can have more than one Solr instance running.<br>If you want to create a new instance, you have to create a new folder inside /opt/solr. By convention, Solr instances are named like the workspace</p></td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Copy in to the recent created folders the next files:<br><p>This files must be re distributed with the Solr Implementation for ProcessMaker.<br><code>&gt;cp solr.war /opt/solr/solr.war<br>&gt;cp solr.xml /opt/solr/solr.xml<br>&gt;cp -r lib/ /opt/solr/lib/<br>&gt;cp -r conf/ /opt/solr/workflow/conf</code></p></td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>The files has the following content:<br><p>Add Solr cores or instances that you want in this file, every instance must have it’s own folder:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;UTF-8&quot;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;solr</span> <span style="color: #000066;">persistent</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000066;">sharedLib</span>=<span style="color: #ff0000;">&quot;lib&quot;</span> <span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;cores</span> <span style="color: #000066;">adminPath</span>=<span style="color: #ff0000;">&quot;/admin/cores&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;core</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;workflow&quot;</span> <span style="color: #000066;">instanceDir</span>=<span style="color: #ff0000;">&quot;workflow&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/cores<span style="color: #000000; font-weight: bold;">&gt;</span></span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/solr<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Configure tomcat to start Solr application:<br><p><code>&gt;vim /usr/share/tomcat7/conf/Catalina/localhost/solr.xml</code><br>where solr.xml content is:</p>
+<div class="geshifilter"><div class="xml geshifilter-xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Context</span> <span style="color: #000066;">docBase</span>=<span style="color: #ff0000;">&quot;/opt/solr/solr.war&quot;</span> <span style="color: #000066;">debug</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">crossContext</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000000; font-weight: bold;">&gt;</span></span><br />
+&nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Environment</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;solr/home&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;java.lang.String&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;/opt/solr&quot;</span> <span style="color: #000066;">override</span>=<span style="color: #ff0000;">&quot;true&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span><br />
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Context<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></div></div>
+</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>With this steps, Solr in installed and configured to work with ProcessMaker.<br><p>For server Access go to:<br><code>http://[server-ip]:8080/solr/</code></p></td>
+</tr>
+</tbody>
+</table>
+
+<h2><span id="Modified_Files_-_deployment">Modified Files - deployment</span></h2>
+<p>The following files must be added in ProcessMaker version 2.0.45. However, in ProcessMaker version 2.5.1 files are included.</p>
+
+<table>
+<tbody>
+<tr>
+<th>No</th>
+<th>Path</th>
+<th>File</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>class.AppSolr.php<br>class.solr.php<br>class.seachindex.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>AppSolrQueue.php<br>FacetInterfaceResult.php<br>SelectedFacetGroupItem.php<br>Base.php<br>FacetItem.php<br><p>SolrQueryResult.php<br>FacetGroup.php<br>FacetRequest.php<br>SolrRequestData.php<br>FacetInterfaceRequest.php<br>FacetResult.php<br>SolrUpdateDocument.php</p></td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/entities/</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>reindex_solr.php<br>verify_solr.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/bin/</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>class.fileCache.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>AppSolrQueue.php<br>AppSolrQueuePeer.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/model/</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>AppSolrQueueMapBuilder.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/model/map/</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>BaseAppSolrQueue.php<br>BaseAppSolrQueuePeer.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/classes/model/om/</td>
+</tr>
+</tbody>
+</table>
+
+<p>Modified files list:</p>
+
+<table>
+<tbody>
+<tr>
+<th>No</th>
+<th>Path</th>
+<th>File</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>proxyCasesList.php<br>casesMenuLoader.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/methods/cases/</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>class.system.php -&gt; funcion solrEnv</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><strong>schema.xml</strong></td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/config/</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td><strong>schema.sql</strong></td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/data/mssql/schema.sql</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td><strong>schema.sql</strong></td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/data/mysql/schema.sql</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>casesList.js</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/templates/cases/</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>class.case.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>class.memcached.php</td>
+<td>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/classes/</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2><span id="Solr_Activation_in_ProcessMaker">Solr Activation in ProcessMaker</span></h2>
+<p>Once Solr is installed, we have to configure ProcessMaker to use this server.</p>
+<p>Since every workspace has it’s own Solr instance, the ProcessMaker configuration must be done for every workspace that will use solr instance in the following file.</p>
+
+<dl><dd><dl><dd>
+<code>&lt;INSTALL-DIRECTORY&gt;/shared/sites/workflow/env.ini</code>
+</dd></dl></dd></dl>
+
+<p>This is the content of the file:</p>
+<dl><dd><dl>
+<dd>solr_enabled=1</dd>
+<dd>solr_host=http://[ip_tomcat:port_tomcat]/solr/</dd>
+<dd>solr_instance=[workspace_name]</dd>
+</dl></dd></dl>
+
+<p>To let ProcessMaker used Solr implementation, the file</p>
+
+<dl><dd><dl>
+<dd>
+<tt>&lt;INSTALL-DIRECTORY&gt;/shared/sites/workflow/env.ini</tt>
+</dd>
+</dl></dd></dl>
+
+<p>Must exists with the 3 parameters.</p>
+<p>If you want to disable solr, you have to delete the configuration file (env.ini). it’s not enough changing solr_enabled=0. This flag has control on if Solr server is going to be used for case lists. If you disable this flag, the case lists will be returned from the Data Base, but the Solr server synchronization will continue running in background.</p>
+
+<h2><span id="Indexation_and_reindexation">Indexation and reindexation</span></h2>
+<p>The Solr server must be synchronized with the Data Base in order to return updated information</p>
+<p>Once Solr is implemented for use in a workspace, you have to run a synchronization called indexation first.</p>
+<p>There is a File that was created for indexation in this folder:</p>
+
+<dl><dd><dl>
+<dd>
+<tt>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/bin/reindex_solr.php</tt>
+</dd>
+</dl></dd></dl>
+
+<p>The script possible options are:</p>
+<p>syntax: <code>php reindex_solr.php [workspace_name] [reindexall|reindexmissing|optimizeindex|reindexone] [-skip {record_number}] [-reindextrunksize {trunk_size}] [-appuid {APP_UID}]</code></p>
+
+<p>Where:</p>
+
+<codeblock>      
+<code>reindexall:</code> reindex all the database. 
+      <code>reindexmissing:</code> reindex only the missing records stored in database. 
+                    (records defined in APP_SOLR_QUEUE table are required)
+      <code>optimizeindex:</code> optimize the changes in the search index. (used to get faster results) 
+</codeblock>
+
+<p>Other Options:</p>
+<codeblock>      
+<code>-skip {record_number}:</code> used to skip a number of records. 
+      ex: -skip 10000 //skips the first 10000 records. 
+      <code>-reindextrunksize {trunk_size}:</code> specify the number of records sent to index each time. 
+      ex: -reindextrunksize 100 //(default = 1000) 
+</codeblock>
+
+<p>Reduce the trunk if using big documents, and memory is not enough.</p>
+<p>To reindex the entire Data Base:</p>
+
+<dl><dd><dl>
+<dd>
+<code>php reindex_solr.php [workspace_name] reindexall</code>
+</dd>
+</dl></dd></dl>
+
+<p>To reindex the misising data that is stored in the APP_SOLR_QUEUE table.</p>
+
+<dl><dd><dl>
+<dd>
+<code>php reindex_solr.php [workspace_name] reindexmissing</code>
+</dd>
+</dl></dd></dl>
+
+<p>To reindex a single case:</p>
+<dl><dd><dl>
+<dd>
+<code>php reindex_solr.php [workspace_name] reindexone -appuid {APP_UID}]</code>
+</dd>
+</dl></dd></dl>
+<p>Other options:</p>
+
+<codeblock>    
+<code>-skip {record_number}:</code> used to skip a number of records. 
+    ex: -skip 10000 //skips the first 10000 records. 
+    <code>-reindextrunksize {trunk_size}:</code> specify the number of records sent to index each time. 
+    ex: -reindextrunksize 100 //(default = 1000) 
+</codeblock>
+
+<p>Reduce the trunk if using big documents, and memory is not enough.</p>
+<p>All the case changes will be automatically synchronized by Solr once ProcessMaker is configured and the first time Synchronization was done. The following events must re-index an application:</p>
+
+<ul>
+<li>The first time that a database must be indexed. All the application records must be indexed.</li>
+<li>A change in the application table.</li>
+<li>A new delegation is created or modified, when a user delegates a case.</li>
+<li>A user creates a new application.</li>
+<li>A user finish a case.</li>
+<li>A user read a case.</li>
+<li>A user pause a case.</li>
+</ul>
+
+<p><code>APP_SOLR_QUEUE</code> table was created as a warehouse to store all the cases that need to be re indexed.</p>
+
+<table>
+<tbody>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><span style="text-decoration: underline;">APP_UID</span></td>
+<td>Varchar(32)</td>
+<td>The application identifier UID.</td>
+</tr>
+
+<tr>
+<td>APP_UPDATED</td>
+<td>tinyint(1)</td>
+<td>0: false not require update<br><p>1: true update required for application<br>2: deleted application</p></td>
+</tr>
+
+<tr>
+<td>APP_CHANGE_DATE</td>
+<td>datetime</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>APP_CHANGE_TRACE</td>
+<td>varchar(500)</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+
+<div class="geshifilter"><div class="sql geshifilter-sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">DROP</span> <span style="color: #993333; font-weight: bold;">TABLE</span> APP_SOLR_QUEUE;<br />
+<span style="color: #993333; font-weight: bold;">CREATE</span> <span style="color: #993333; font-weight: bold;">TABLE</span> APP_SOLR_QUEUE <span style="color: #66cc66;">&#40;</span>APP_UID <span style="color: #993333; font-weight: bold;">VARCHAR</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">32</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">,</span> APP_UPDATED TINYINT<span style="color: #66cc66;">,</span> APP_CHANGE_DATE DATETIME<span style="color: #66cc66;">,</span> APP_CHANGE_TRACE <span style="color: #993333; font-weight: bold;">VARCHAR</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">500</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>;</div></div>
+
+<h3><span id="Solr_Failover">Solr Failover</span></h3>
+<p>Solr Implementation includes failover functionality.</p>
+<p>For implementation, Solr can be used by ProcessMaker configuration file</p>
+
+<dl><dd>
+<tt>&lt;INSTALL-DIRECTORY&gt;/shared/sites/[workspace name]/</tt>
+</dd></dl>
+
+<p><code>env.ini</code> must exist and must have the required configuration (three fields).</p>
+<p>If you want to disable the use of Solr, delete the configuration file. Not enough off the flag eg. solr_enabled = 0, this flag controls whether the server will use Solr for listings of cases. If it is off the list of cases consult the database, however the Solr server synchronization remains active.</p>
+<p>The following table details the possible states for the Solr implementation and recovering the same in each case.</p><p>Where:</p><p><code>Flag Solr_enabled:</code> is defined in the configuration file workspace:</p>
+
+<dl><dd>
+<tt>&lt;INSTALL-DIRECTORY&gt;/shared/sites/[workspace name]/env.ini</tt>
+</dd></dl>
+
+<p><code>Solr Server:</code> Can be turned on or off. If there is no network communication between the ProcessMaker server with the same Solr server is considered off.</p>
+
+<table>
+<tbody>
+<tr>
+<th>Flag Solr_Enabled</th>
+<th>Solr Server</th>
+<th>Status</th>
+<th>Recovery</th>
+</tr>
+
+<tr>
+<td>solr_enabled=1</td>
+<td>ON</td>
+<td>Solr server synchronized and case lists are retrieved from solr server.</td>
+<td>It is not necessary, the server is synchronized and responding to requests.</td>
+</tr>
+
+<tr>
+<td>solr_enabled=1</td>
+<td>OFF</td>
+<td>As the Solr server is off, is not possible to pair, and lists of cases are consulted to the database automatically.<br>Cases to be synchronized are recorded with the Solr server once it becomes available</td>
+<td>You must verify network communication with Solr server.<br>Once the server is available again, the same is automatically synchronized with the database server.<br>Synchronization is activated with the application of case listings. No need to do anything extra.</td>
+</tr>
+
+<tr>
+<td>solr_enabled=0</td>
+<td>ON</td>
+<td>Solr Server synchronized, but the lists of cases are returned from the database.</td>
+<td>No need for correction, when required to return the list of cases from the Solr server, should only be activated solr_enabled = 1</td>
+</tr>
+
+<tr>
+<td>solr_enabled=0</td>
+<td>OFF</td>
+<td>Solr Server is out of sync, and case lists queries are being obtained from the database automatically.<br>The modified cases are occurring, to be synchronized when the Solr server is available.</td>
+<td>You must verify network communication with Solr server.<br>Once the server is available again, you should run the script to re-indexing of pending cases.<br>php reindex_solr.php [workspace name] reindexmissing<br>After running the script, the Solr server is synchronized with the database.</td>
+</tr>
+</tbody>
+</table>
+
+<h3><span id="Case_Lists_validation">Case Lists validation</span></h3>
+<p>There is a script that was created to compare the cases in Solr and Data Base.</p>
+<p>This script compares the cases list in every folder (Inbox, Draft, Participated, Unassigned) that returns the Data Base versus Solr.</p>
+<p>The script must be run for every user, the only one parameter is the user UID (USR_UID).</p>
+<p>It is not necessary to stop services, in fact, services must be running. Also is not necessary to have solr_enabled enabled (solr_enabled=1) this doesn’t have any effect on the script.</p><p>The script is located at:</p>
+
+<dl><dd>
+<tt>&lt;INSTALL-DIRECTORY&gt;/workflow/engine/bin/</tt>
+</dd></dl>
+
+<p>To run script, follow the instructions below:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">cd /opt/processmaker/workflow/engine/bin/<br />
+php verify_solr.php [workspace_name] [-usruid {USR_UID}]</div></div>
+
+<p>Where</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&nbsp; &nbsp; &nbsp; &nbsp;<br />
+workspace_name : is the workspace that is being verified. <br />
+&nbsp; &nbsp; &nbsp; -usruid {USR_UID}: verify only one user with the specified user uid.</div></div>
+
+<p>example: php verify_solr.php workflow -usruid 00000000000000000000000000000001</p>
+<p>Verifies the cases list for Admin user (USR_UID = 00000000000000000000000000000001).</p>
+<p>Result must be like this:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">PATH_HOME: /opt/processmaker/workflow/<br />
+PATH_DB: /opt/processmaker/shared/sites/<br />
+PATH_CORE: /opt/processmaker/workflow/engine/<br />
+TIME_ZONE: America/New_York<br />
+MEMCACHED_ENABLED: 0<br />
+MEMCACHED_SERVER: 192.168.11.21<br />
+Processing workspace: workflow<br />
+***********************<br />
+Verify Inbox list: &nbsp;<br />
+***********************<br />
+Solr Configuration file: /opt/processmaker/shared/sites/workflow/env.ini<br />
+solr_enabled: 1<br />
+solr_host: &lt;a href=&quot;http://192.168.10.60:8080/solr/&quot; class=&quot;external free&quot; rel=&quot;nofollow&quot;&gt;http://192.168.10.60:8080/solr/&lt;/a&gt;<br />
+solr_instance: workflow<br />
+Get DB Uids <br />
+Get Solr Uids <br />
+&nbsp;Number of cases: DB:1 Solr:1<br />
+&nbsp;Cases in DB but not in Solr: <br />
+&nbsp;Cases in Solr but not in DB: <br />
+***********************<br />
+Verify Draft list: <br />
+***********************<br />
+...<br />
+Get DB Uids <br />
+Get Solr Uids <br />
+&nbsp;Number of cases: DB:5 Solr:5<br />
+&nbsp;Cases in DB but not in Solr: <br />
+&nbsp;Cases in Solr but not in DB: <br />
+******************************<br />
+Verify Participated list: <br />
+******************************<br />
+...<br />
+******************************<br />
+Verify Unassigned list: <br />
+******************************<br />
+...</div></div>
+
+<p>A note will appear if the number of cases in solr or in DB is not the same (Cases in DB but not in Solr: Cases in Solr but not in DB)</p>
+<p>You may be able to run verifications with this UID’s.</p>
+
+<h2><span id="ProcessMaker_views_implemented_with_SOLR">ProcessMaker views implemented with SOLR</span></h2>
+<p>The following views and functionality are going to be implemented with the SOLR server:</p>
+<ul>
+<li><a href="Solr_Implementation_in_ProcessMaker.html#Search_functionality" title="Solr Implementation in ProcessMaker">Search functionality</a></li>
+<li><a href="Solr_Implementation_in_ProcessMaker.html#In-box_view" title="Solr Implementation in ProcessMaker">In-box view</a></li>
+<li><a href="Solr_Implementation_in_ProcessMaker.html#Draft_view" title="Solr Implementation in ProcessMaker">Draft view</a></li>
+<li><a href="Solr_Implementation_in_ProcessMaker.html#Participated_view" title="Solr Implementation in ProcessMaker">Participated view</a></li>
+<li><a href="Solr_Implementation_in_ProcessMaker.html#Unassigned_view" title="Solr Implementation in ProcessMaker">Unassigned view</a></li>
+<li><a href="Solr_Implementation_in_ProcessMaker.html#Paused_view" title="Solr Implementation in ProcessMaker">Paused view</a></li>
+</ul>
+
+<h3><span id="Search_functionality">Search functionality</span></h3>
+<p>The new search functionality is available in all the views that include a search field.</p>
+
+<p><img alt="" src="../sites/default/files/SOLR_Search_Functionality.png"></p>
+
+<p>The search functionality can search in the fields of application title, process title and application status. To search in those fields the user only has to write the text to search for in the search field. Additionally the user can search in all the variables of the application data defined in the process and filled in the application.</p>
+<p>+ The following syntax must be used to search in a specific application variable.</p>
+
+<p><code>{variable_name}:{search text}</code></p>
+<p>Where <code>{variable_name}</code> must be replaced by the name of the variable defined in the application and <code>{search text}</code> is used to search in the specified variable.</p>
+
+<p>For example if a variable UserID is defined, then the search syntax to search for all the applications where a user has participated is:</p>
+<p><code>UserID:45654334</code></p>
+
+<ul>
+<li>Use of wild-cards in search: Use * as wild-card at the begin or end of word, only lowercase and no accents and no special characters are admitted with wild-cards.</li>
+<li>Multiple conditions in search: Separate multiple conditions by space ex2:"Materials causal:20*" means that we are searching for the word Materials and the causal that begin with 20.</li>
+<li>date Search:</li>
+</ul>
+
+<p>format: <code>{variable_fecha}:[yyyy-mm-dd TO yyyy-mm-dd]</code> ex.: RegistryDate:[2011-04-15 TO 2011-04-30] 
+<tt><span style="color: green;">//registers with date between 2011-04-15 and 2011-04-30.</span></tt></p>
+<p>Use of wildcard * ex.: RegistryDate:<code>[* TO 2011-04-30]</code> <tt><span style="color: green;">//records with date less or equal to 2011-04-30.</span></tt></p>
+<p>RegistryDate:<code>[2011-04-15 TO *]</code> <tt><span style="color: green;">//records with date greater to 2011-04-15.</span></tt></p><p>Searching the exact word:</p>
+<p>format=&gt; {variable}:"phrase to search for" ex.: Cliente:"Jesus Marin"</p>
+
+<h3><span id="In-box_view">Inbox view</span></h3>
+<p>This implementation uses the same view that the database version.</p>
+<p><img alt="" src="../sites/default/files/SOLR_Inbox.png"></p>
+
+<p>The following characteristics are available:</p>
+
+<ul>
+<li>The following columns can be ordered (ascending and descending): #, Case, Process, Last Modify (the last modification of the application), Priority (the maximum priority assigned to a case in the application).</li>
+<li>The task, sent by, and due date columns can't be ordered.</li>
+<li>The filters Read, Unread and all are available.</li>
+<li>The filter by process is available.</li>
+<li>The search field is available. See the description of the search functionality.</li>
+</ul>
+
+<h3><span id="Draft_view">Draft view</span></h3>
+<p><img alt="" src="../sites/default/files/SOLR_Draft.png"></p>
+
+<p>The following characteristics are available:</p>
+<ul>
+<li>The following columns can be ordered (ascending and descending): #, Case, Process, Last Modify (the last modification of the application), Priority (the maximum priority assigned to a case in the application).</li>
+<li>The task and due date columns can't be ordered.</li>
+<li>The filter by process is available.</li>
+<li>The search field is available. See the description of the search functionality.</li>
+</ul>
+
+<h3><span id="Participated_view">Participated view</span></h3>
+<p><img alt="" src="../sites/default/files/SOLR_Participated.png"></p>
+
+<p>The following characteristics are available:</p>
+<ul>
+<li>The following columns can be ordered (ascending and descending): #, Case, Process, Last Modify (the last modification of the application), Status.</li>
+<li>The task and current user columns can't be ordered.</li>
+<li>The filter by process is available.</li>
+<li>The filter by status is available.</li>
+<li>The filter Started by me, Completed by me and all are available.</li>
+<li>The search field is available. See the description of the search functionality.</li>
+<li>The participated view has these changes: The counter display the number of processes but the grid can display more than the specified number because the grid display all the tasks in which participated the user in a process. Usually there are more records display in the grid.</li>
+</ul>
+
+<h3><span id="Unassigned_view">Unassigned view</span></h3>
+<p><img alt="" src="../sites/default/files/SOLR_Unassigned.png"></p>
+
+<p>The following characteristics are available:</p>
+
+<ul>
+<li>The following columns can be ordered (ascending and descending): #, Case, Process, Last Modify (the last modification of the application).</li>
+<li>The task and sent By columns can't be ordered.</li>
+<li>The filter by process is available.</li>
+<li>The filter read and unread are going to be removed.</li>
+<li>The search field is available. See the description of the search functionality.</li>
+</ul>
+
+<h3><span id="Paused_view">Paused view</span></h3>
+<p>Not implemented yet with SOLR server, the database connection is used to display this view.</p>
+
+<h3><span id="Not_supported">Not supported</span></h3>
+<p>The following functionality are not included in the implementation:</p>
+<ul>
+<li>Order by task, sent by, and due date columns.</li>
+<li>Search in grids.</li>
+<li>PM tables are not supported, or anything related with them.</li>
+</ul></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

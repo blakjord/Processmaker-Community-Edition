@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Double_Connection.html" />
+<link rel="shortlink" href="../../node/283.html" />
+<title>2.8 - Double Connection | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"vnBEeYPuKSqYxAUgbfWkR4Qo-RyabOLYv-VwC4Pwuao","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-283 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../../index.html" title="Home"><img src="../../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Double_Connection.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-wTBqPQDVSZgymdLh4vVBcurWADuyu6SE4jAIUHm0zc8" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">2.8 - Double Connection</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../../3.2/Double_Connection.html" class="">3.8</a></li><li><a href="../../3.2/Double_Connection.html" class="">3.7</a></li><li><a href="../../3.2/Double_Connection.html" class="">3.6</a></li><li><a href="../../3.2/Double_Connection.html" class="">3.5</a></li><li><a href="../../3.2/Double_Connection.html" class="">3.4</a></li><li><a href="../../3.2/Double_Connection.html" class="">3.3</a></li><li><a href="../../3.2/Double_Connection.html" class="">3.2</a></li><li><a href="../../3.2/Double_Connection.html" class="">3.1</a></li><li><a href="../../3.2/Double_Connection.html" class="">3.0</a></li><li><a  class="active-version">2.8</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="2.8 - Double Connection" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Double_Connection.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 2.8 - Double Connection 1/5</option><option value="40">Give 2.8 - Double Connection 2/5</option><option value="60" selected="selected">Give 2.8 - Double Connection 3/5</option><option value="80">Give 2.8 - Double Connection 4/5</option><option value="100">Give 2.8 - Double Connection 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.4</span></span> <span class="total-votes">(<span >7</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-SjCdJM018lN8k0rKcqQGU7RBAqdw_DRCFTQAdThgZ1I" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Double_Connection.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Double_Connection.html#Overview">Overview</a></li>
+<li class="toc"><a href="Double_Connection.html#Requirements">Requirements</a></li>
+<li class="toc"><a href="Double_Connection.html#Configuring_MySQL_replication">Configuring MySQL Replication</a></li>
+<ol class="toc">
+<li class="toc"><a href="Double_Connection.html#Configuring_the_master_database">Configuring the master database</a></li>
+<li class="toc"><a href="Double_Connection.html#Configuring_the_slave_database">Configuring the slave database</a></li>
+</ol>
+<li class="toc"><a href="Double_Connection.html#Configuring_the_Double_Connection_in_the_ProcessMaker_code">Configuring the Double Connection in the ProcessMaker code</a></li>
+<ol class="toc">
+<li class="toc"><a href="Double_Connection.html#Testing_the_double_connection">Testing the double connection</a></li>
+</ol>
+<li class="toc"><a href="Double_Connection.html#Example:_How_to_configure_the_double_connection_to_a_slave_database">Example: How to configure the double connection to a slave database</a></li>
+</ol>
+</div></div>
+
+<h2><span id="Overview">Overview</span></h2>
+
+<p>When working with large databases as well as working with many different users or just for security issues, system administrators often prefer to work with more than one database. This type of database management helps to improve the performance of systems when working with a great number of transactions in a short time frame or environments located at great distances from one another. It also manages better data security and integrity, making it possible to secure data that not everyone should have access to.</p><p>ProcessMaker uses <a href="http://www.mysql.com/">MySQL</a> as its principal database program to store ProcessMaker's <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database. MySQL offers <a href="http://dev.mysql.com/doc/refman/5.0/en/replication.html">replication</a> between <i>master</i> and <i>slave</i> databases. In version 2.8 and later, ProcessMaker takes advantage of MySQL replication to offer the <strong>Double Connection</strong> feature that allows it to manage two database connections inside ProcessMaker. One of them is a connection to a "master" database with <i>write</i> access and the other is to a replicated "slave" database, that has only <i>read</i> access.</p><p>These connections can be made to two different servers where the databases are installed. One connection will be used for reading only and the other for writing. It also has a <i>data access layer</i> that identifies, separates and/or redirects queries to one of the two connections and inserts and updates to the other connection.</p><p>This feature is available with the acquisition of the Enterprise Edition license for ProcessMaker 2.8. To check if your installation of ProcessMaker has this feature installed, go to <strong>Admin &gt; Plugins &gt; Enterprise Manager</strong>. Click on the <strong>Enterprise Features</strong> tab, where it should be listed as installed and enabled</p><p><img alt="" height="338" src="../../sites/default/files/EnterpriseFeatureDoubleConnectionView.png" width="1030"></p>
+
+<h2><span id="Requirements">Requirements</span></h2>
+<p>Before setting up a second connection in ProcessMaker, take into account the following:</p><ul><li>The slave database <i>must</i> be configured in MySQL.</li><li>ProcessMaker's database(s) must be replicated in another server with read-only access (slave).</li></ul><dl><dd><ul><li>If ProcessMaker 2.8 was installed in a clean environment the only database created is: wf_&lt;WORKSPACE&gt;.</li><li>If ProcessMaker was upgraded from a version before 2.8, there will be three databases: wf_&lt;WORKSPACE&gt;, rb_&lt;WORKSPACE&gt; and rp_&lt;WORKSPACE&gt;.</li></ul></dd></dl>
+
+<h2><span id="Configuring_MySQL_replication">Configuring MySQL Replication</span></h2>
+<p>To set up MySQL replication with a master and slave databases, first install MySQL on a second server which will hold the slave database. Then, follow these instructions to set up the replication. In this example, the master database is located at a server named <tt>master.pmexample.com</tt> and the slave database is located at a server named <tt>slave.pmexample.com</tt>.</p>
+
+<h3><span id="Configuring_the_master_database">Configuring the master database</span></h3>
+
+<p>Go to the first server, which holds the original MySQL database which will be the master. With a plain text editor, open the MySQL configuration file <strong><tt>my.cnf</tt></strong>, whose <a href="../2.0/Additional_Configuration.html#Configuring_MySQL" title="2.0/Additional Configuration">location depends on the operating system</a>.</p>
+<p>In the <strong><tt>my.cnf</tt></strong> file, set the following settings:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">bind-address &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= master.pmexample.com<br />
+server-id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 1<br />
+log_bin &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = /var/log/mysql/mysql-bin.log<br />
+binlog_do_db &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= wf_workflow<br />
+binlog_format &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = ROW</div></div>
+
+<p>Set the <strong><tt>bind-address</tt></strong> to the IP address or domain name of the server holding the master database. Set the <strong><tt>server-id</tt></strong> to a unique integer, which must be different from the server-id of the slave database. In this example, the master has an ID of <strong><tt>1</tt></strong> and the slave has an ID of <strong><tt>2</tt></strong>.</p>
+<p>The <strong><tt>log-bin</tt></strong> is the name of a binary file which will hold a log of the changes made in the master database. The slave database will replicate any change recorded in this binary log file. If unsure where to place the file, just set it to <tt>mysql-bin</tt> and MySQL will place it in its default log directory.</p>
+<p><strong><tt>binlog_do_db</tt></strong> is set to the name of the workflow database which will be replicated in the slave server, which by default is named <strong><tt>wf_workflow</tt></strong>. Setting <tt>binlog_format</tt> to <tt>ROW</tt> will help avoid errors. If processmaker 2.8 was upgraded from a previous version, then list both the wf_&lt;WORKSPACE&gt; and rb_&lt;WORKSPACE&gt; databases. For example:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">binlog_do_db &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= wf_workflow<br />
+binlog_do_db &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= rb_workflow</div></div>
+
+<p>After saving the changes to the <strong><tt>my.cnf</tt></strong> file, then <a href="../2.0/Additional_Configuration.html#Restarting_MySQL" title="2.0/Additional Configuration">restart the MySQL server</a> for the changes to take effect. On most Linux/UNIX systems it can be restarted with the command:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">service mysqld restart</div></div>
+
+<p>Then, enter MySQL as the root user:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql -u root -p</div></div>
+
+<p>In Windows it is necessary to navigate in the file system to the directory to where the <tt>mysql.exe</tt> executable is located:</p>
+<div style="margin-left:25px"><p><strong>Windows XP/Server 2000/2003:</strong></p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">cd C:\Program Files\ProcessMaker-2_X_X\mysql\bin<br />
+mysql -u root -p</div></div>
+
+<p><strong>Windows Vista/7/8/Server 2008:</strong></p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">cd C:\User\USERNAME\AppData\Roaming\ProcessMaker-2_X_X\mysql\bin<br />
+mysql -u root -p</div></div>
+</div>
+
+<p>After logging into MySQL, configure MySQL to allow a user on the slave database to replicate the master database:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; GRANT REPLICATION SLAVE ON *.* TO slave_user'@'slave_address' IDENTIFIED BY 'password';</div></div>
+
+<p>For better security, it is recommended to create a new user for the <tt>'<i><strong>slave_user'</strong></i></tt>, and not use <tt>'root'</tt>. Then also give the '<i><strong>slave_user'</strong></i> the right to connect to the master database:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; GRANT ALL ON *.* TO 'slave_user'@'slave_address' IDENTIFIED BY 'password';</div></div>
+
+<p>For example, to setup the user 'pmreplicator' from the server slave.pmexample.com to do replication of the master database:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; GRANT REPLICATION SLAVE ON *.* TO 'pmreplicator'@'slave.pmexample.com' IDENTIFIED BY 'p4sSw0rD';<br />
+mysql&gt; GRANT ALL ON *.* TO 'pmreplicator'@'slave_address' IDENTIFIED BY 'p4sSw0rD';</div></div>
+
+<p>Then issue the following command to display information about the master database:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; SHOW MASTER STATUS;<br />
++------------------+----------+----------------+------------------+<br />
+| File &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Position | Binlog_Do_DB &nbsp; | Binlog_Ignore_DB |<br />
++------------------+----------+----------------+------------------+<br />
+| mysql-bin.000023 | &nbsp; &nbsp; &nbsp;107 | wf_workflow &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|<br />
++------------------+----------+----------------+------------------+<br />
+1 row in set (0.00 sec)</div></div>
+
+<p>Copy the File and Position, since these values will be used later when configuring the slave database.</p>
+<p>Finally, exit MySQL:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; QUIT;</div></div>
+
+<p>Then enter the following command to make a copy of the database to be replicated.</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysqldump -u root -p --master-data=2 --flush-privileges wf_workflow &gt; pm-db.sql</div></div>
+
+<p>Change <tt><i><strong>wf_workflow</strong></i></tt> to the name of wf_&lt;WORKSPACE&gt; database to be replicated. If ProcessMaker was upgraded from version 2.5 or earlier, then make a copy of both the wf_&lt;WORKSPACE&gt; and rb_&lt;WORKSPACE&gt; databases. For example:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysqldump -u root -p --master-data=2 --flush-privileges --databases wf_workflow rb_workflow &gt; pm-db.sql</div></div>
+
+<p>Then copy the pm-db.sql file from the master server to the slave server. For example, if using <strong><tt>scp</tt></strong> to copy the file:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">scp pm-db.sql user@master.pmexample.com:~</div></div>
+
+<h3><span id="Configuring_the_slave_database">Configuring the slave database</span></h3>
+<p>Go to the server where the slave database will be located. If not already installed, install MySQL in the server.</p>
+<p>Then create the databases in the slave which are saved in the <strong><tt>pm-db.sql</tt></strong> file:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql -u root -p &lt; pm-db.sql</div></div>
+
+<p>If using Windows, remember to change the the directory containing the mysql.exe executable before issuing the above command and include the path to the <strong><tt>pm-db.sql</tt></strong> file.</p>
+<p>Then, open the <a href="../2.0/Additional_Configuration.html#Configuring_MySQL" title="2.0/Additional Configuration"><strong><tt>my.cnf</tt></strong> file</a> on the slave server with a plain text editor (such as vim, nano, gedit, notepad or Notepad++) to set the following settings:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">bind-address &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= slave.pmexample.com <br />
+server-id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 2<br />
+relay-log &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = /var/log/mysql/mysql-relay-bin.log<br />
+log_bin &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = /var/log/mysql/mysql-bin.log<br />
+binlog_do_db &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= wf_workflow<br />
+binlog_format &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = ROW</div></div>
+
+<p>Set the <strong><tt>bind-address</tt></strong> to the domain name or IP address of the slave server. Set the slave <strong><tt>server-id</tt></strong> to a integer which is unique from the master <strong><tt>server-id</tt></strong>. Add the setting for the <strong><tt>relay-log</tt></strong>, which doesn't exist by default. The <strong><tt>relay-log</tt></strong> and <strong><tt>log_bin</tt></strong> can be set to any location writable by MySQL. If unsure where to place the files, then set them to <strong><tt>mysql-relay-bin</tt></strong> and <strong><tt>mysql-bin</tt></strong> and they will automatically be placed in the default log directory for MySQL.</p>
+<p>Set the <strong><tt>binlog_do_db</tt></strong> to the name of the <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database which is being replicated, which is named <tt>wf_workflow</tt> by default. If processmaker was upgraded from version 2.5 or earlier, then also add the name of the <strong><tt>rb_&lt;WORKSPACE&gt;</tt></strong> database:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">binlog_do_db &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= wf_workflow<br />
+binlog_do_db &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= rb_workflow</div></div>
+
+<p>Then save the changes in the <strong><tt>my.cnf</tt></strong> file and <a href="../2.0/Additional_Configuration.html#Restarting_MySQL" title="2.0/Additional Configuration">restart the MySQL server</a> for the new changes to take effect.</p>
+<p>After restarting MySQL, login as the root user:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql -u root -p</div></div>
+
+<p>If using Windows, remember to first change the the directory where the mysql.exe executable is located.</p>
+<p>Then configure the slave database to be able to connect to the master database.</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; CHANGE MASTER TO MASTER_HOST='master.pmexample.com', MASTER_USER='slave_user', MASTER_PASSWORD='password', <br />
+&nbsp; &nbsp; &nbsp; &nbsp;MASTER_LOG_FILE='mysql-bin.000023', MASTER_LOG_POS=107; </div></div>
+
+<p>This command sets the address and login credentials to replicate the master database. The <tt>MASTER_LOG_FILE</tt> and <tt>MASTER_LOG_POS</tt> should be set to the log file and log position which were previously displayed with the <tt>SHOW MASTER STATUS</tt> command in the master database.</p>
+<p>Finally, start the slave database replication:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; START SLAVE;</div></div>
+
+<p>Check to see whether the slave database is able to connect to the master database:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; SHOW SLAVE STATUS\G<br />
+*************************** 1. row ***************************<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Slave_IO_State: Waiting for master to send event<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Master_Host: 192.168.0.107<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Master_User: root<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Master_Port: 3306<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Connect_Retry: 60<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Master_Log_File: mysql-bin.000024<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Read_Master_Log_Pos: 107<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Relay_Log_File: mysql-relay-bin.000016<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Relay_Log_Pos: 253<br />
+&nbsp; &nbsp; &nbsp; &nbsp; Relay_Master_Log_File: mysql-bin.000024<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Slave_IO_Running: Yes<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Slave_SQL_Running: Yes<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Replicate_Do_DB: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Replicate_Ignore_DB: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Replicate_Do_Table: <br />
+&nbsp; &nbsp; &nbsp; &nbsp;Replicate_Ignore_Table: <br />
+&nbsp; &nbsp; &nbsp; Replicate_Wild_Do_Table: <br />
+&nbsp; Replicate_Wild_Ignore_Table: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last_Errno: 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last_Error: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Skip_Counter: 1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Exec_Master_Log_Pos: 107<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Relay_Log_Space: 555<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Until_Condition: None<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Until_Log_File: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Until_Log_Pos: 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Master_SSL_Allowed: No<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Master_SSL_CA_File: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Master_SSL_CA_Path: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Master_SSL_Cert: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Master_SSL_Cipher: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Master_SSL_Key: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; Seconds_Behind_Master: 0<br />
+Master_SSL_Verify_Server_Cert: No<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Last_IO_Errno: 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Last_IO_Error: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last_SQL_Errno: 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last_SQL_Error: <br />
+&nbsp; Replicate_Ignore_Server_Ids: <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Master_Server_Id: 1</div></div>
+
+<p>If the database replication is set up correctly, then both <strong>Slave_IO_Running</strong> and <strong>Slave_SQL_Running</strong> will be set to <strong><tt>Yes</tt></strong>. If the Slave_SQL_Running is set to <strong>No</strong>, then check the value of the <strong>Last_SQL_Error</strong> for more details. To ignore the SQL error and restart the slave, issue the commands:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; STOP SLAVE;<br />
+mysql&gt; SET GLOBAL SQL_SLAVE_SKIP_COUNTER=1; START SLAVE;</div></div>
+
+<p>If the slave cannot connect to the master, then the <strong>SLave_IO_State</strong> will indicate <tt>Connecting</tt>:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Slave_IO_Running: Connecting<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;...<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last_IO_Errno: 2003<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last_IO_Error: error reconnecting to master 'root@192.168.0.107:3306' - retry-time: 60 &nbsp;retries: 86400</div></div>
+
+<p>In this case, check the value of the <strong>Master_Host, Master_User, Master_Port, Master_Log_File</strong> and <strong>Read_Master_Log_Pos</strong> to verify that they are correct. If they need to be changed, then stop the database replication and issue the CHANGE MASTER command again. Then restart the slave replication:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">Slave_IO_Running: Connecting<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;...<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last_IO_Errno: 2003<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last_IO_Error: error reconnecting to master 'root@192.168.0.107:3306' - retry-time: 60 &nbsp;retries: 86400</div></div>
+
+<p>Try to connect to the master database from the command line of the slave server:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;"># mysql -u slave-user -h master.pmserver.com -p</div></div>
+
+<p>If able to connect as the root user, but not as the <i><strong>slave-user</strong></i>, then the <tt>GRANT</tt> commands weren't issued correctly in the master database.</p>
+<p>Also check whether MySQL on the master server is running and whether a firewall might be blocking its port. To check the port, use a command such as <tt>netstat</tt> to check whether the master server is listening on its MySQL port, which is 3306 by default and whether it has established a connection with slave server:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;"># netstat -an | grep 3306 <br />
+tcp &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp;0 192.168.0.107:3306 &nbsp; &nbsp; &nbsp; 0.0.0.0:* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LISTEN &nbsp; &nbsp; <br />
+tcp &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp;0 192.168.0.107:3306 &nbsp; &nbsp; &nbsp; 192.168.0.97:51941 &nbsp; &nbsp; &nbsp;ESTABLISHED</div></div>
+
+<p>If the MySQL port is blocked by the firewall, unblock it. For example, if using IP Tables on a Linux/UNIX server, it can be unblocked with the following command:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;"># iptables -A INPUT -i eth0 -p tcp --destination-port 3306 -j ACCEPT</div></div>
+
+<h2><span id="Configuring_the_Double_Connection_in_the_ProcessMaker_code">Configuring the Double Connection in the ProcessMaker code</span></h2>
+<p>After setting up MySQL replication of a master and slave databases, then the code of ProcessMaker needs to be changed to read from the slave database.</p>
+<p>Go to the <a href="../File_Locations.html#Installation_Directory" title="File Locations">directory where ProcessMaker is installed</a> and edit the configuration file <strong><tt>database.php</tt></strong> with a plain text editor:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&lt;INSTALLATION DIRECTORY&gt;/&lt;WORKSPACE&gt;/engine/config/databases.php</div></div>
+
+<p>Replace <strong><tt>&lt;WORKSPACE&gt;</tt></strong> with the name of the workspace, which by default is named <strong><tt>workflow</tt></strong>. For example:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">/opt/processmaker/workflow/engine/config/databases.php</div></div>
+
+<p>In the <strong><tt>database.php</tt></strong> file, add the following lines at the end of the script before the <tt>return $pro;</tt> statement:</p>
+<ul><li>If ProcessMaker 2.8 was installed from scratch, only one database will be created, the <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database:</li></ul>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/defined"><span style="color: #990000;">defined</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'SYS_SYS'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&amp;&amp;</span> SYS_SYS <span style="color: #339933;">==</span> <span style="color: #0000ff;">'WORKSPACE-NAME'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$pro</span> <span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'datasources'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'workflow_ro'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'connection'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'mysql://MYSQL-USER:PASSWORD@SLAVE-SERVER-ADDRESS:PORT/SLAVE-DATABASE-NAME?encoding=utf8'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$pro</span> <span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'datasources'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'workflow_ro'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'adapter'</span><span style="color: #009900;">&#93;</span> &nbsp; &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">'mysql'</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+&nbsp;<span style="color: #b1b100;">return</span> <span style="color: #000088;">$pro</span><span style="color: #339933;">;</span><br />
+&nbsp;</div></div>
+ 
+<ul><li>If ProcessMaker was upgraded from version 2.5 or earlier, the <strong><tt>rbac</tt></strong> database must also be replicated and added in the configuration:</li></ul>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/defined"><span style="color: #990000;">defined</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'SYS_SYS'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&amp;&amp;</span> SYS_SYS <span style="color: #339933;">==</span> <span style="color: #0000ff;">'WORKSPACE-NAME'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$pro</span> <span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'datasources'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'workflow_ro'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'connection'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'mysql://MYSQL-USER:PASSWORD@SLAVE-SERVER-ADDRESS:PORT/SLAVE-DATABASE-NAME?encoding=utf8'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$pro</span> <span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'datasources'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'workflow_ro'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'adapter'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'mysql'</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; <span style="color: #000088;">$pro</span> <span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'datasources'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'rbac_ro'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'connection'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'mysql://MYSQL-USER:PASSWORD@SLAVE-SERVER-ADDRESS:PORT/SLAVE-DATABASE-NAME?encoding=utf8'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$pro</span> <span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'datasources'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'rbac_ro'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'adapter'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'mysql'</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<br />
+&nbsp;<span style="color: #b1b100;">return</span> <span style="color: #000088;">$pro</span><span style="color: #339933;">;</span></div></div>
+
+<p>The condition is added for each workspace that will use a second connection for read-only queries. Inside the condition <strong><tt>'WORKSPACE-NAME'</tt></strong> must be replaced with the name of the workspace which by default is <tt>'workflow'</tt>.</p>
+<p>For the DSN string, replace the following parameters:</p>
+<ul><li><tt><strong>MYSQL-USER</strong></tt> Replace this parameter with the MySQL user of the server where the slave database is installed. This user can be <tt>root</tt>, but for greater security it is recommended to create a new MySQL user on the slave server for this purpose.</li><li><tt><strong>PASSWORD</strong></tt> Replace this parameter with the password of the user in the slave database. If no password is set for the MySQL user, set the string as:</li></ul>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql://MYSQL-USER@SLAVE-SERVER-ADDRESS:PORT/SLAVE-DATABASE-NAME?encoding=utf8 &nbsp;</div></div>
+
+<ul><li><tt><strong>SLAVE-SERVER-ADDRESS</strong></tt> Specify the IP address or domain name of the server where the slave database is installed.</li><li><tt><strong>PORT</strong></tt> Specify the number of the port where the slave database is installed. If using the default MySQL port <tt>3306</tt>, it is not a required parameter and the string would look like.</li></ul>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql://MYSQL-USER:PASSWORD@SLAVE-SERVER-ADDRESS/SLAVE-DATABASE-NAME?encoding=utf8</div></div>
+
+<ul><li><tt><strong>SLAVE-DATABASE-NAME</strong></tt> Name of the slave database in which ProcessMaker was replicated.</li></ul>
+<h3><span id="Testing_the_double_connection">Testing the double connection</span></h3>
+<p>After setting up MySQL replication and configuring ProcessMaker to use the slave database, then test to see whether the replication works. Login to ProcessMaker and execute any action, such as opening the case list, which requires reading from the slave database. If there is a problem connecting to the slave database an error message will be displayed.</p>
+<p><img alt="" height="120" src="../../sites/default/files/ErrorConnnectingToSlaveDatabaseMessage.png" width="589"></p>
+<p>To check whether the database is replicating, add a new user in ProcessMaker. Then login to the slave database from the command line:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql -u root -p</div></div>
+
+<p>After logging into MySQL, query the slave database for the new user that was just added:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">mysql&gt; select USR_USERNAME from wf_workflow.USERS;<br />
++--------------+<br />
+| USR_USERNAME |<br />
++--------------+<br />
+| admin &nbsp; &nbsp; &nbsp; &nbsp;|<br />
+| bwagner &nbsp; &nbsp; &nbsp;|<br />
+| rwilliams &nbsp; &nbsp;|<br />
+| mgates &nbsp; &nbsp; &nbsp; |<br />
+| abatto &nbsp; &nbsp; &nbsp; |<br />
++--------------+</div></div>
+
+<p>If not using the default <tt><strong>wf_workflow</strong></tt>, change it to the name of your <strong><tt>wf_&lt;WORKSPACE&gt;</tt></strong> database. If database replication is working correctly, the username of the new user will appear in the list.</p>
+<h2><span id="Example:_How_to_configure_the_double_connection_to_a_slave_database">Example: How to configure the double connection to a slave database</span></h2>
+<p>This example includes the following:</p>
+<ul><li>ProcessMaker's main database will be installed in a local server</li><li>ProcessMaker's replicated (slave) database will be installed in server: 198.168.100.177</li></ul>
+<p>To configure a second database let's open the <i>databases.php</i> file located in Windows at:</p>
+
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">C:\Users\User\AppData\Roaming\ProcessMaker-2_8\processmaker\workflow\engine\config\databases.php</div></div>
+
+<p>As this was a clean installation of ProcessMaker 2.8, only the database wf_workflow was replicated, let's add the second connection:</p>
+<p><img alt="" height="164" src="../../sites/default/files/ReplicatedDatabaseConfig.png" width="1121"></p>
+<p>Save it and the workspace "workflow" will work from now on with two database connections.</p>
+<p>To verify that the second connection is working, let's access ProcessMaker and view all processes created in the <strong>DESIGNER</strong>:</p>
+<p><img alt="" height="238" src="../../sites/default/files/DoubleConnectionExampleDesigner.png" width="542"></p>
+<p>This is already making the select query to the slave database. To prove it, let's access the slave database:<i>replicatedprocessmaker</i></p>
+<p><img alt="" height="227" src="../../sites/default/files/ReplicatedProcessmakerDatabaseAccess.png" width="382"></p>
+<p>Let's change the name of the process in the table <strong>content</strong>, let's replace <strong>MASTER PROCESS 2</strong> for <strong>SLAVE MASTER 2</strong>:</p>
+<p><img alt="" height="441" src="../../sites/default/files/DoubleConnectionChangeinSlaveDatabaseContent.png" width="863"></p>
+<p>Let's log into ProcessMaker again and refresh the page:</p>
+<p><img alt="" height="252" src="../../sites/default/files/DoubleConnectionSlaveReading.png" width="574"></p>
+<p>As the list of processes is being shown from the slave database the name changes, nevertheless all creations and updates are still querying where ProcessMaker is installed.</p>
+<p>To have better results keep the replicated databases always synchronized with the master database.</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

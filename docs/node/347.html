@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../3.0/Backing_up_and_Restoring_ProcessMaker.html" />
+<link rel="shortlink" href="347.html" />
+<title>3.0 - 3.8 - Backing up and Restoring Workspaces | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"LQEot4tf_MigfHWlTTeCIoECmT_XV1SUjBtxrQQCpxc","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-347 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="347.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="../3.1/user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="../3.1/developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="../3.1/resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="347.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-blgppmn_JPEwMr4rDYQlN0iroaBxjaMYbZ8AlLgS0_o" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.0 - 3.8 - Backing up and Restoring Workspaces</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a  class="active-version">3.8</a></li><li><a  class="active-version">3.7</a></li><li><a  class="active-version">3.6</a></li><li><a  class="active-version">3.5</a></li><li><a  class="active-version">3.4</a></li><li><a  class="active-version">3.3</a></li><li><a  class="active-version">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a  class="active-version">3.0</a></li><li><a href="../index.php/2.0/Backing_up_and_Restoring_ProcessMaker.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.0 - 3.8 - Backing up and Restoring Workspaces" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="347.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.0 - 3.8 - Backing up and Restoring Workspaces 1/5</option><option value="40">Give 3.0 - 3.8 - Backing up and Restoring Workspaces 2/5</option><option value="60">Give 3.0 - 3.8 - Backing up and Restoring Workspaces 3/5</option><option value="80" selected="selected">Give 3.0 - 3.8 - Backing up and Restoring Workspaces 4/5</option><option value="100">Give 3.0 - 3.8 - Backing up and Restoring Workspaces 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >3.4</span></span> <span class="total-votes">(<span >8</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-OPfkUbsYhyOKib3iJk_LpR9pXbNhNCrlDwSrmNzCEdQ" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="347.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="347.html#Overview">Overview</a></li>
+<li class="toc"><a href="347.html#Tested_Systems">Tested Systems</a></li>
+<li class="toc"><a href="347.html#Before_Backing_Up_and_Restoring_Workspaces">Before Backing Up and Restoring Workspaces</a></li>
+<li class="toc"><a href="347.html#Backing_up_Workspaces">Backing Up Workspaces</a></li>
+<ol class="toc">
+<li class="toc"><a href="347.html#Backing_up_Bigger_Workspaces">Backing Up Bigger Workspaces</a></li>
+<li class="toc"><a href="347.html#Backing_up_Multiple_Workspaces" class="mw-headline">Backing Up Multiple Workspaces</a></li>
+<li class="toc"><a href="347.html#AutomatingBackups">Automating Backups</a></li>
+<ol class="toc">
+<li class="toc"><a href="347.html#AutomaticBackupsLinux" class="mw-headline">Linux/UNIX</a></li>
+<ol class="toc">
+<li class="toc"><a href="347.html#InsertingDateTimeFilenames" class="mw-headline">Inserting Date/Time in File Names</a></li>
+<li class="toc"><a href="347.html#StoringBackupsRemotely" class="mw-headline">Storing Backups Remotely</a></li>
+</ol>
+<li class="toc"><a href="347.html#AutomaticBackupsLinux" class="mw-headline">Windows</a></li>
+<ol class="toc">
+<li class="toc"><a href="347.html#Inserting_Date.2FTime_in_Filenames_2">Inserting Date/Time in File Names</a></li>
+<li class="toc"><a href="347.html#StoringBackupsRemotelyWindows" class="mw-headline">Storing Backups Remotely</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="347.html#Errors_While_Backing_Up_Workspaces">Errors While Backing Up Workspaces</a></li>
+<ol class="toc">
+<li class="toc"><a href="347.html#Mysqldump_Error">Mysqldump Error</a></li>
+</ol>
+</ol>
+<li class="toc"><a href="347.html#RestoringWorkspaces" class="mw-headline">Restoring Workspaces</a></li>
+<ol class="toc">
+<li class="toc"><a href="347.html#After_restoring_a_workspace">After Restoring a Workspace</a></li>
+<li class="toc"><a href="347.html#Cleaning_and_restoring_table_PLUGIN_REGISTRY_table">Cleaning and restoring table PLUGIN_REGISTRY table</a></li>
+</ol>
+</div></div>
+
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>ProcessMaker holds vital information about your organization's users and their work; therefore, it is very important to setup a backup system to safeguard the data being stored in ProcessMaker. If periodic backups aren't being made, one lightning strike or an accidental deletion of key files on your system could bring your organization to a grinding halt. Backups can also be very useful for returning to a previous state after making experimental changes to your system or backing up ProcessMaker.</p>
+<p>It is recommended that your entire system be backed up in case the entire operating system needs to be restored. For the data stored in ProcessMaker, it is recommended to periodically backup your workspaces. Depending on how critical your data is and how often it is being updated, a daily backup or a weekly backup would be appropriate.</p>
+<p>In general, it is recommended to backup and restore workspaces in the same version of ProcessMaker, because the database structure and file structure can change from one version of ProcessMaker to the next. Nonetheless, it is possible to backup a workspace from version 2.5.X and restore it in version 2.8 or version 3.0.</p>
+
+<p style="margin-left:25px"><strong><font color=green>Note:</font></strong> <font color=dimgrey>
+It is recommended to have MySQL installed on the server at least as a service. Otherwise, MySQL will be executed externally, which will slow the response time of the backup/restore process.
+</font></p>
+
+<h2><span id="Tested_Systems">Tested Systems</span></h2>
+<p>Backing up and restoring workspaces has been tested in the following systems. It will probably work in other systems as well, but it hasn't been tested.</p>
+
+<table class="wikitable" style="text-align: center; width: 700px; border-color: #B7B7B7;" border="1" cellpadding="5" cellspacing="0"><tbody>
+<tr>
+<th style="width: 70px; background: #098ed9; color: white; border-color: #CACACA;"><strong>Backup From</strong></th>
+<th style="width: 70px; background: #098ed9; color: white; border-color: #CACACA;"><strong>Restore To</strong></th>
+</tr>
+<tr><td colspan="2"><center>CentOS 7: php 5.4 + apache 2.4 + mysql 5.6</center></td></tr>
+<tr><td>CentOS 7</td><td>CentOS 6.3</td></tr>
+<tr><td>CentOS 7</td><td>CentOS 6.6</td></tr>
+<tr><td colspan="2"><center>Centos 6.3: php 5.3 + apache 2.2.15</center></td></tr>
+<tr><td>CentOS 6.3</td><td>CentOS 7 (*)</td></tr>
+<tr><td colspan="2"><center>Centos 6.6: php 5.4 + apache 2.2.15</center></td></tr>
+<tr><td>CentOS 6.6</td><td>CentOS 7 (*)</td></tr>
+<tr><td>CentOS 6.6</td><td>CentOS 6.3</td></tr></tbody>
+</table>
+
+<p>(*) Even though there is a warning with <code>mysql_connect()</code>, the restore procedure finishes successfully.</p><table class="wikitable" style="text-align: center; width: 700px; border-color: #B7B7B7;"><tbody>
+<tr><th style="width: 70px; background: #098ed9; color: white; border-color: #CACACA;"><strong>Backup From</strong></th><th style="width: 70px; background: #098ed9; color: white; border-color: #CACACA;"><strong>Restore To</strong></th></tr>
+<tr><td>Windows server 2012</td><td>Windows Server 2012</td></tr>
+<tr><td>Windows 8.1</td><td>Windows Server 2012</td></tr></tbody></table>
+<p>Note that some issues were found when restoring backups from Windows 8.1 to Windows 8.1 and from Windows Server 2012 to Windows v. 8.1. These issues will be solved in future versions.</p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> The restoration and backup of a workspace can only be made in the same platform (Windows -> Windows, Linux -> Linux), because the names of the MySQL tables in Windows are not case sensitive, which may cause ProcessMaker to have problems.</font></p>
+
+<h2><span id="Before_Backing_Up_and_Restoring_Workspaces">Before Backing Up and Restoring Workspaces</span></h2>
+<p>Before <a href="347.html#Backing_up_Workspaces">backing</a> or <a href="347.html#RestoringWorkspaces">restoring</a> a workspace, follow the next steps:</p>
+
+<p><b>Step 1:</b> In the server where ProcessMaker is running, open a command line prompt.</p>
+<p>To open a command line prompt in Windows go to <b>Start > All Programs > Accessories > Command Prompt</b>. In most Linux/UNIX systems, it can be found under <b>Accessories > Command Prompt</b>.</p>
+
+<p><b>Step 2:</b> In the server where ProcessMaker is running, login as the root user or administrator. On Windows systems, start the <a href="https://technet.microsoft.com/en-us/library/cc947813%28v=ws.10%29.aspx">command prompt as the administrator</a>. On Linux/UNIX systems, open a terminal and login as <tt>root</tt> user or use the <code>sudo</code> command to gain <tt>root</tt> privileges:</p>
+<codeblock>su     <font color=green><i>or</i></font>     sudo -i</codeblock>
+
+<div style="margin-left:25px">
+<p><strong><font color="green">Note:</font></strong> <font color="dimgray">To avoid permission problems when running <tt>processmaker</tt> command in Linux, use the following best practice: Run the processmaker command using the apache user permissions. To do so, ownership of the ProcessMaker directory must belong to the apache user, so that Apache can read and write data. The <code>-R</code> option makes the ownership changes recursive, so it applies to all files and subdirectories within <code>/opt/processmaker</code>.</p>
+<codeblock>chown -R <font color=blue><i>apache:apache</i></font> /opt/processmaker</codeblock>
+<p>The Apache user and group is <code>apache:apache</code> in CentOS/Red Hat, <code>www-data:www-data</code> in Debian/Ubuntu and  <code>wwwrun:www</code> in SUSE/OpenSUSE.</p></font>
+</div>
+
+<p><b>Step 3:</b> Navigate to the directory where ProcessMaker is installed. For example:</p>
+<div style="margin-left:25px;">
+<p>Manual install in Linux/UNIX:</p>
+<codeblock>cd /opt/processmaker</codeblock>
+<p>Bitnami install in Linux/UNIX:</p>
+<codeblock>cd /opt/processmaker-3.<font color=blue><i>X.X</i></font>.b1-0/apps/processmaker/htdocs</codeblock>
+<p>Manual install in Windows:</p>
+<codeblock>cd C:\opt\processmaker</codeblock>
+<p>Bitnami install in Windows:</p>
+<codeblock>cd C:\Bitnami\processmaker-3.<font color=blue><i>X.X</i></font>-1\apps\processmaker\htdocs</codeblock>
+<p>Automatic install of version 3.0.1.7 and earlier in Windows:</p>
+<codeblock>cd C:\Users\<font color=blue><i>USERNAME</i></font>\AppData\Roaming\ProcessMaker-3_0_<font color=blue><i>X_X</i></font>\processmaker</codeblock>
+<p><font color="green"><b>Note:</b></font>  <font color="dimgrey">The <tt><b>AppData</b></tt> directory is a hidden directory, but the File Explorer can be configured to <a href="http://www.howtogeek.com/howto/windows-vista/show-hidden-files-and-folders-in-windows-vista/">show hidden files</a>.</font></p>
+</div>
+<h2><span class="mw-headline" id="Backing_up_Workspaces">Backing Up Workspaces</span></h2>
+<p>The workspace backup utility creates a <tt>tar</tt> file that contains a dump of the database for each workspace and its associated files, which are stored in the <b><tt><a href="../3.0/File_Locations.html#Installation_Directory"><i>INSTALL-DIRECTORY</i></a>/shared/sites/{WORKSPACE}/</tt></b> directory. Additional workspaces can be created in ProcessMaker, but most installations of ProcessMaker will have the default <b>"workflow"</b> workspace, which uses the <b>wf_workflow</b> database and stores its files in the <b><tt><a href="../3.0/File_Locations.html#Installation_Directory"><i>INSTALL-DIRECTORY</i></a>/shared/sites/workflow/</tt></b> directory.</p>
+
+<div style="margin-left:25px">
+<p><b><font color=green>Note for Linux/UNIX:</font></b> <font color=dimgrey>If the shared directory has been set to <code>770</code> permissions for security reasons, then log in as "root" or use the <code>sudo</code> command when backing up a workspace. Another option is to add your user to the apache group (which is "apache" for Red Hat/CentOS/Fedora, "www-data" for Debian/Ubuntu, and "www" for SUSE/OpenSUSE), so that the user can do backups:</font></p>
+<codeblock>useradd -G <i><font color=blue>apache-group username</font></i></codeblock>
+</div>
+
+<p>Issue the command to back up a workspace:</p>
+<p><strong>LINUX/UNIX:</strong></p>
+<codeblock>php processmaker workspace-backup <font color=blue>[WORKSPACE-NAME] [BACKUP-FILE]</font>
+</codeblock>
+
+<p><strong>Windows:</strong></p>
+<codeblock><i>PHP-DIRECTORY</i>\php.exe processmaker workspace-backup <font color=blue>[WORKSPACE-NAME] [BACKUP-FILE]</font>
+</codeblock>
+
+<p>Remember that workspace names are case sensitive. 
+
+<p>By default, the backup file will be created at:<br>
+ &nbsp; &nbsp; <strong><tt><a href="../3.0/File_Locations.html#Installation_Directory"><i>INSTALL-DIRECTORY</i></a>/shared/backups/<i><font color=blue>workspace</font></i>.tar</tt></strong>
+
+<p>However, the location of the backup file can be specified with the optional <font color=blue>[BACKUP-FILE]</font> parameter. This parameter can include forward slashes "/" to specify a path in Linux/UNIX or backward slashes "\" to specify a path in Windows. If the path or filename contains spaces, enclose it in quotation marks. If using a relative path, then it will start from the location of the processmaker script. If no path is specified, then the file will be created in the <b><tt><a href="../3.0/File_Locations.html#Installation_Directory"><i>INSTALL-DIRECTORY</i></a>/shared/backups</tt></b> directory.
+
+<p><b>Examples:</b></p>
+<div style="margin-left:25px">
+<p>Backup the default "workflow" workspace on a Linux/UNIX server to the location <b><tt>/opt/processmaker/shared/backups/workflow.tar</tt></b>:</p> 
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-backup workflow</div></div>
+<p>Backup the "sales" workspace on a Linux/UNIX server to the location <b><tt>/home/fred/store/pm_sales.tar</tt></b>:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-backup sales <span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>fred<span style="color: #000000; font-weight: bold;">/</span>store<span style="color: #000000; font-weight: bold;">/</span>pm_sales.tar</div></div>
+<p>Backup the "Finance" workspace to the location <b><tt>/opt/store/Finance/FinanceBackup.tar</tt></b>, using a relative path:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-backup Finance ..<span style="color: #000000; font-weight: bold;">/</span>store<span style="color: #000000; font-weight: bold;">/</span>FinanceBackup.tar </div></div>
+<p>Backup the "sales" workspace on a Windows server to the location <b><tt>C:\Documents and Settings\Amos\sales backup.tar</tt></b>. Remember to enclose paths and filenames with spaces in quotation marks:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">PHP-DIRECTORY\php.exe processmaker workspace-backup sales &quot;C:\Documents and Settings\Amos\sales backup.tar&quot;</div></div>
+</div>
+
+<p>For help using the <code>workspace-backup</code> option, enter the command: </p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">php processmaker help workspace-backup</div></div>
+
+<p>While executing a workspace backup, the output will indicate which tables are being backed up and print a summary of the backup at the end, similar to the following: </p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-backup workflow<br />
+Backing up to <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<span style="color: #000000; font-weight: bold;">/</span>shared<span style="color: #000000; font-weight: bold;">/</span>backups<span style="color: #000000; font-weight: bold;">/</span>workflow.tar<br />
+Backing up database...<br />
+Saving database wf_workflow30001<br />
+LOCK TABLES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #7a0874; font-weight: bold;">&#91;</span>OK<span style="color: #7a0874; font-weight: bold;">&#93;</span><br />
+Dump of table ABE_CONFIGURATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table ABE_REQUESTS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table ABE_RESPONSES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table ADDITIONAL_TABLES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table ADDONS_MANAGER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">2466</span> Bytes Saved<br />
+Dump of table ADDONS_STORE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APPLICATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">3056</span> Bytes Saved<br />
+Dump of table APP_ASSIGN_SELF_SERVICE_VALUE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_CACHE_VIEW &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">3721</span> Bytes Saved<br />
+Dump of table APP_DELAY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">303</span> Bytes Saved<br />
+Dump of table APP_DELEGATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">2559</span> Bytes Saved<br />
+Dump of table APP_DOCUMENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_EVENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_FOLDER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_HISTORY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_MESSAGE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_NOTES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_OWNER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_SOLR_QUEUE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table APP_THREAD &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">372</span> Bytes Saved<br />
+Dump of table APP_TIMEOUT_ACTION_EXECUTED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table BPMN_ACTIVITY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">929</span> Bytes Saved<br />
+Dump of table BPMN_ARTIFACT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table BPMN_BOUND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">2762</span> Bytes Saved<br />
+Dump of table BPMN_DATA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table BPMN_DIAGRAM &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">140</span> Bytes Saved<br />
+Dump of table BPMN_DOCUMENTATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table BPMN_EVENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">767</span> Bytes Saved<br />
+Dump of table BPMN_EXTENSION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table BPMN_FLOW &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">2345</span> Bytes Saved<br />
+Dump of table BPMN_GATEWAY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">217</span> Bytes Saved<br />
+Dump of table BPMN_LANE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">358</span> Bytes Saved<br />
+Dump of table BPMN_LANESET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">184</span> Bytes Saved<br />
+Dump of table BPMN_PARTICIPANT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table BPMN_PROCESS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">194</span> Bytes Saved<br />
+Dump of table BPMN_PROJECT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">213</span> Bytes Saved<br />
+Dump of table CALENDAR_ASSIGNMENTS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table CALENDAR_BUSINESS_HOURS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">106</span> Bytes Saved<br />
+Dump of table CALENDAR_DEFINITION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">188</span> Bytes Saved<br />
+Dump of table CALENDAR_HOLIDAYS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table CASE_CONSOLIDATED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table CASE_SCHEDULER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table CASE_TRACKER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table CASE_TRACKER_OBJECT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table CATALOG &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">1111</span> Bytes Saved<br />
+Dump of table CONFIGURATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">261</span> Bytes Saved<br />
+Dump of table CONTENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">5477</span> Bytes Saved<br />
+Dump of table DASHBOARD &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table DASHBOARD_DAS_IND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table DASHBOARD_INDICATOR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table DASHLET &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">1008</span> Bytes Saved<br />
+Dump of table DASHLET_INSTANCE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">1139</span> Bytes Saved<br />
+Dump of table DB_SOURCE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table DEPARTMENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table DIM_TIME_COMPLETE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table DIM_TIME_DELEGATE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table DYNAFORM &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table ELEMENT_TASK_RELATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table EMAIL_SERVER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">98</span> Bytes Saved<br />
+Dump of table EVENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table FIELDS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table FIELD_CONDITION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table GATEWAY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table GROUPWF &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table GROUP_USER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table HOLIDAY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table INPUT_DOCUMENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table ISO_COUNTRY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">14834</span> Bytes Saved<br />
+Dump of table ISO_LOCATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">3988501</span> Bytes Saved<br />
+Dump of table ISO_SUBDIVISION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">64199</span> Bytes Saved<br />
+Dump of table LANGUAGE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">11823</span> Bytes Saved<br />
+Dump of table LEXICO &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LICENSE_MANAGER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_CANCELED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_COMPLETED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_INBOX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_MY_INBOX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_PARTICIPATED_HISTORY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_PARTICIPATED_LAST &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_PAUSED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_UNASSIGNED &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LIST_UNASSIGNED_GROUP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table LOGIN_LOG &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">214</span> Bytes Saved<br />
+Dump of table LOG_CASES_SCHEDULER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table MESSAGE_APPLICATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table MESSAGE_EVENT_DEFINITION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table MESSAGE_EVENT_RELATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table MESSAGE_TYPE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table MESSAGE_TYPE_VARIABLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table OAUTH_ACCESS_TOKENS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">202</span> Bytes Saved<br />
+Dump of table OAUTH_AUTHORIZATION_CODES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table OAUTH_CLIENTS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">275</span> Bytes Saved<br />
+Dump of table OAUTH_REFRESH_TOKENS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">203</span> Bytes Saved<br />
+Dump of table OAUTH_SCOPES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table OBJECT_PERMISSION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table OUTPUT_DOCUMENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table PMOAUTH_USER_ACCESS_TOKENS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">217</span> Bytes Saved<br />
+Dump of table PROCESS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">339</span> Bytes Saved<br />
+Dump of table PROCESS_CATEGORY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table PROCESS_FILES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table PROCESS_OWNER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table PROCESS_USER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table PROCESS_VARIABLES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table PRO_REPORTING &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table RBAC_AUTHENTICATION_SOURCE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table RBAC_PERMISSIONS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">3417</span> Bytes Saved<br />
+Dump of table RBAC_ROLES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">729</span> Bytes Saved<br />
+Dump of table RBAC_ROLES_PERMISSIONS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">4248</span> Bytes Saved<br />
+Dump of table RBAC_SYSTEMS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">270</span> Bytes Saved<br />
+Dump of table RBAC_USERS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">534</span> Bytes Saved<br />
+Dump of table RBAC_USERS_ROLES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">224</span> Bytes Saved<br />
+Dump of table REPORT_TABLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table REPORT_VAR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table ROUTE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">976</span> Bytes Saved<br />
+Dump of table SEQUENCES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">52</span> Bytes Saved<br />
+Dump of table SESSION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table SESSION_STORAGE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table SHADOW_TABLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table STAGE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table STEP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table STEP_SUPERVISOR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table STEP_TRIGGER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table SUB_APPLICATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table SUB_PROCESS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table SWIMLANES_ELEMENTS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table TASK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">1549</span> Bytes Saved<br />
+Dump of table TASK_USER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">230</span> Bytes Saved<br />
+Dump of table TRANSLATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">375013</span> Bytes Saved<br />
+Dump of table TRIGGERS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table USERS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">806</span> Bytes Saved<br />
+Dump of table USERS_PROPERTIES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">320</span> Bytes Saved<br />
+Dump of table USR_REPORTING &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table WEB_ENTRY &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+Dump of table WEB_ENTRY_EVENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">0</span> Bytes Saved<br />
+UNLOCK TABLES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #7a0874; font-weight: bold;">&#91;</span>OK<span style="color: #7a0874; font-weight: bold;">&#93;</span><br />
+Copying database to backup...<br />
+&nbsp;+ <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<span style="color: #000000; font-weight: bold;">/</span>shared<span style="color: #000000; font-weight: bold;">/</span>upgrade<span style="color: #000000; font-weight: bold;">/</span>DTgnB7<br />
+Copying files to backup...<br />
+&nbsp;+ <span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<span style="color: #000000; font-weight: bold;">/</span>shared<span style="color: #000000; font-weight: bold;">/</span>sites<span style="color: #000000; font-weight: bold;">/</span>workflow<br />
+<br />
+ProcessMaker Version <span style="color: #000000;">3.0</span>-GA-community<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System CentOS release <span style="color: #000000;">6.5</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>Final<span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>Linux<span style="color: #7a0874; font-weight: bold;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PHP Version 5.4.37<br />
+&nbsp; &nbsp; &nbsp; Server Address 192.168.1.228<br />
+&nbsp; &nbsp;Client IP Address 192.168.0.124<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Plugins charts<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;openFlash<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pmosCommunity<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;processTemplate<br />
+<br />
+&nbsp; &nbsp; &nbsp; Workspace Name workflow<br />
+&nbsp; &nbsp;Workflow Database mysql:<span style="color: #000000; font-weight: bold;">//</span>wf_workflow30001:r93fh2vx1zb0<span style="color: #000000; font-weight: bold;">@</span>localhost<span style="color: #000000; font-weight: bold;">/</span>wf_workflow30001<br />
+&nbsp; &nbsp; &nbsp; &nbsp;MySql Version MySql <span style="color: #7a0874; font-weight: bold;">&#40;</span>Version 5.5.41<span style="color: #7a0874; font-weight: bold;">&#41;</span></div></div>
+
+
+<h3><span id="Backing_up_Bigger_Workspaces">Backing Up Bigger Workspaces</span></h3></p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">This parameter can NOT be used on Windows systems.</font></p>
+
+<p>If ProcessMaker is installed on a 32 bit Linux/UNIX system that does not have <a href="http://people.redhat.com/berrange/notes/largefile.html">Large File Support</a> enabled, then the <b>.tar</b> backup file can not be larger than 2GB in size.<br>
+To back up a workspace that is larger than 2 GB, use the <code>-s:<font color=blue>[<i>MAX-SIZE</i>]</font></code> or <code>--filesize=<font color=blue>[<i>MAX-SIZE</i>]</font></code> option to break the backup file into multiple compressed files: </p>
+
+<codeblock>php processmaker workspace-backup -s<font color=blue>[MAX-SIZE] [WORKSPACE-NAME]
+ [BACKUP-FILE]</font>
+</codeblock>
+
+<p>By default, the maximum size of the backup file is 1000 megabytes. To use a different maximum file size, set the <code><font color=blue><i>[MAX-SIZE]</i></font></code> in megabytes.</p>
+
+<p>For example, if this option is set to 512 when backing up the "dev" workspace on a Linux system:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-backup <span style="color: #660033;">-s512</span> dev</div></div>
+
+<p>Then, a 1.5 GB backup will produce 3 backup files named <tt>dev.tar.01</tt>, <tt>dev.tar.02</tt> and <tt>dev.tar.03</tt>.</p>
+
+<h3><span id="Backing_up_Multiple_Workspaces" class="mw-headline">Backing Up Multiple Workspaces</span></h3></p>
+<p>Back up multiple workspaces at the same time with the command: </p>
+<codeblock>php processmaker workspace-backup <font color=blue>[WORKSPACE1] [WORKSPACE2] [WORKSPACE3] [BACKUP-FILE]</font>
+</codeblock>
+
+<p>Separate each workspace name with a <b>space</b>. The last parameter will be considered the name of the backup file.</p>
+<p>For example, to backup the "workflow", "sales" and "Finance" workspaces to the file "pmBackup.tar": </p>
+
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-backup workflow sales Finance pmBackup.tar</div></div>
+
+<h3><span class="mw-headline" id="AutomatingBackups">Automating Backups</span></h3>
+<p>Backups should be made periodically, so it is best to automate the backup process.</p>
+<p>
+<h4><span id="AutomaticBackupsLinux" class="mw-headline">Linux/UNIX</span></h4></p>
+<p>In Linux/UNIX, the backups can be scheduled as a cron job. For more information on the format of the <em>crontab</em> file, see <a href="../3.0/Executing_cron.php.html#Configuring_crontab_in_Linux.2FUNIX">Configuring crontab in Linux/UNIX</a>.</p>
+
+<p>For example, the following line can be added to the <b><tt>/etc/crontab</tt></b> file to automatically backup the "workflow" workspace every 12 hours and save it to a file at <b><tt>/opt/processmaker/backups/workflow.tar</tt></b>:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*/</span><span style="color: #000000;">12</span> <span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*</span> &nbsp;root &nbsp;<span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<span style="color: #000000; font-weight: bold;">/</span>processmaker workspace-backup workflow</div></div>
+
+<h5><span id="InsertingDateTimeFilenames" class="mw-headline">Inserting Date/Time in File Names</span></h5></p>
+<p>Since the backup file will be overwritten every 12 hours, it will not be possible to use the processmaker script's <b><code>workspace-restore</code></b> command to roll the workspace back to a state older than 12 hours.</p>
+
+<p>For example, if a database was corrupted 3 days ago, the backup file will have already been overwritten, so it isn't possible to recover the old database. Therefore, it is recommended to use a time stamp in the backup file name, so multiple backup files can be maintained. However, old backup files also need to be periodically eliminated so that the backups don't eat up all the hard drive space on the server. </p>
+
+<p>These cron jobs can be used to make a backup file every 12 hours and save it to a file at <b><tt>/root/backups/workflow_<i><font color=blue>YYYY-MM-DD_HH-MM</font></i>.tar</tt></b>, as well as automatically delete the old backup files more than 30 days old: </p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*/</span><span style="color: #000000;">12</span> <span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*</span> &nbsp;root &nbsp;<span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<span style="color: #000000; font-weight: bold;">/</span>processmaker workspace-backup workflow <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>backups<span style="color: #000000; font-weight: bold;">/</span>workflow_<span style="color: #000000; font-weight: bold;">`</span><span style="color: #c20cb9; font-weight: bold;">date</span> +<span style="color: #000000; font-weight: bold;">%</span>F_<span style="color: #000000; font-weight: bold;">%</span>H-<span style="color: #000000; font-weight: bold;">%</span>M<span style="color: #000000; font-weight: bold;">`</span>.tar<br />
+<span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*/</span><span style="color: #000000;">23</span> <span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*</span> &nbsp;root &nbsp;tmpwatch <span style="color: #000000;">720</span> <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>backups</div></div>
+<p>The current date and time is automatically inserted into the filename with the date command, such as <b><tt>workflow_2011-03-21_12-01.tar</tt></b>. Make sure to use `` (backticks), so Linux/UNIX will execute the <code>date</code> command, rather than treating it like a quoted string.</p>
+<p>The second command automatically deletes any files older than 30 days (30days x 24hours = 720hours) in the <b><tt>/root/backups/</tt></b> directory every night at midnight, so old backup files will not occupy too much space. If on a Debian/Ubuntu/Mint server, use the <a href='http://pwet.fr/man/linux/administration_systeme/tmpreaper'>tmpreaper</a> command instead of <a href="http://linux.die.net/man/8/tmpwatch/">tmpwatch</a>.</p>
+
+<h5><span id="StoringBackupsRemotely" class="mw-headline">Storing Backups Remotely</span></h5>
+<p>It is recommended to keep backup copies on a different server (in a different location), so that a hard drive failure or lightning strike won't also destroy the backup copies on the ProcessMaker server. The following script located at <b><tt>/usr/local/bin/pmbackup.sh</tt></b> can be used to make a backup of the "workflow" workspace and store it in another location: </p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">#!/bin/bash</span><br />
+<span style="color: #007800;">CURDATE</span>=$<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">date</span> +<span style="color: #000000; font-weight: bold;">%</span>F_<span style="color: #000000; font-weight: bold;">%</span>H-<span style="color: #000000; font-weight: bold;">%</span>M<span style="color: #7a0874; font-weight: bold;">&#41;</span> <br />
+<span style="color: #000000; font-weight: bold;">/</span>opt<span style="color: #000000; font-weight: bold;">/</span>processmaker<span style="color: #000000; font-weight: bold;">/</span>processmaker workspace-backup workflow <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>backups<span style="color: #000000; font-weight: bold;">/</span>workflow_<span style="color: #007800;">$CURDATE</span>.tar<br />
+<span style="color: #c20cb9; font-weight: bold;">gzip</span> <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>backups<span style="color: #000000; font-weight: bold;">/</span>workflow_<span style="color: #007800;">$CURDATE</span>.tar <br />
+<span style="color: #c20cb9; font-weight: bold;">scp</span> <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>backups<span style="color: #000000; font-weight: bold;">/</span>workflow_<span style="color: #007800;">$CURDATE</span>.tar.gz root<span style="color: #000000; font-weight: bold;">@</span>backups.example.com:<span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>backups<span style="color: #000000; font-weight: bold;">/</span><br />
+<span style="color: #c20cb9; font-weight: bold;">rm</span> <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>backups<span style="color: #000000; font-weight: bold;">/</span>workflow_<span style="color: #007800;">$CURDATE</span>.tar.gz</div></div>
+<p>Make sure that the script file is executable:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">chmod</span> +x <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>pmbackup.sh</div></div>
+
+<p>To copy the backup files to the remote server at <tt>backups.example.com</tt> without having to enter a password for the root user, generate a public/private key with the command: </p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">ssh-keygen</span> <span style="color: #660033;">-t</span> rsa</div></div>
+
+<p>Add the public key to the <b><tt>/root/.ssh/authorized_keys</tt></b> file in the <tt>backups.example.com</tt> server. For more information, see <a href="http://www.linuxjournal.com/article/8600">this article</a>.</p>
+
+<p>Then, add the <b><tt>pmbackup.sh</tt></b> script as a cron job on the ProcessMaker server by adding the following line to the <b><tt>/etc/crontab</tt></b> file:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*/</span><span style="color: #000000;">23</span> <span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*</span> <span style="color: #000000; font-weight: bold;">*</span> &nbsp;root &nbsp;<span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>pmbackup.sh</div></div>
+
+<h4><span id="AutomaticBackupsLinux" class="mw-headline">Windows</span></h4>
+<p>On Windows systems, workspaces can be periodically backed up as a scheduled task. Use the <a href="https://technet.microsoft.com/en-us/library/cc725744%28WS.10%29.aspx">SCHTASKS</a> command in DOS to create a scheduled task that periodically executes the <code>processmaker workspace-backup</code> command. For more information on using the <code>SCHTASKS</code> command, see <a href="../3.0/Executing_cron.php.html#SCHTASKS_command">Executing cron.php with the <code>SCHTASKS</code> command</a>.</p>
+<p><b>Examples:</b></p>
+<div style="margin-left:25px;">
+<p>1. Backup the default "workflow" workspace every day at midnight on a ProcessMaker server installed at <b><tt>C:\Users\Bob\AppData\Roaming\ProcessMaker-3_0_0\processmaker</tt></b>:</p> 
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">SCHTASKS /Create /U administrator /P p4s5w0rd /SC DAILY /ST 00:00 /TN PMBackup /TR &quot;C:\Users\Bob\AppData\Roaming\ProcessMaker-3_0_0\processmaker\processmaker workflow-backup workflow&quot;</div></div>
+
+<p>2. Backup the "sales" workspace to the file <b><tt>C:\Documents and Settings\Bob\Backups\sales workspace.tar</tt></b> every Sunday and Wednesday at midnight on a ProcessMaker server installed at <b><tt>C:\Program Files\ProcessMaker-3_0_0\processmaker</tt></b>:</p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">SCHTASKS /Create /U administrator /P p4s5w0rd /SC WEEKLY /D SUN,WED /ST 00:00 /TN PMBackupSunWed /TR &quot;'C:\Program Files\ProcessMaker-3_0_0\processmaker\processmaker' workflow-backup sales 'C:\Documents and Settings\Bob\Backups\sales workspace.tar'&quot;</div></div>
+<p>Notice how paths and file names that contain spaces are enclosed inside single quotation marks. </p>
+
+<p>3. Backup the "sales" workspace to the file <b><tt>SalesBackup.tar</tt></b> on the 15th of every month at 11pm: </p>
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">SCHTASKS /Create /U administrator /P p4s5w0rd /SC MONTHLY /D 15 /ST 23:00 /TN PMBackup15Month /TR &quot;C:\Users\Bob\AppData\Roaming\ProcessMaker-2_0_30\processmaker\processmaker workflow-backup sales SalesBackup.tar&quot;</div></div>
+</div>
+
+<h5><span id="Inserting_Date.2FTime_in_Filenames_2">Inserting Date/Time in File Names</span></h5>
+<p>It is not possible to insert the current date and time into the backup file name using the system <code>%date%</code> and <code>%time%</code> variables, since <code>SCHTASKS</code> treats them as literal strings. Instead, create a <b><tt>.bat</tt></b> file to execute the <code>processmaker workspace-backup</code> command. For example, the file <b><tt>C:\Users\Bob\pmbackup.bat</tt></b> contains:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">C:\Users\Bob\AppData\Roaming\ProcessMaker-<span style="color: #000000;">3</span>_0_0\processmaker\processmaker workflow-backup workflow workflow-<span style="color: #000000; font-weight: bold;">%</span>date<span style="color: #000000; font-weight: bold;">%</span>-<span style="color: #000000; font-weight: bold;">%</span>time<span style="color: #000000; font-weight: bold;">%</span>.tar</div></div>
+<p>Then, use the <code>SCHTASKS</code> command to schedule the periodic execution of the <b><tt>C:\Users\Bob\pmbackup.bat</tt></b> file:</p> 
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">SCHTASKS <span style="color: #000000; font-weight: bold;">/</span>Create <span style="color: #000000; font-weight: bold;">/</span>U administrator <span style="color: #000000; font-weight: bold;">/</span>P p4s5w0rd <span style="color: #000000; font-weight: bold;">/</span>SC DAILY <span style="color: #000000; font-weight: bold;">/</span>ST <span style="color: #000000;">13</span>:00 <span style="color: #000000; font-weight: bold;">/</span>TN PMBackupBat <span style="color: #000000; font-weight: bold;">/</span>TR <span style="color: #ff0000;">&quot;C:\Users\Bob\pmbackup.bat&quot;</span></div></div>
+
+
+<h5><span id="StoringBackupsRemotelyWindows" class="mw-headline">Storing Backups Remotely</span></h5>
+<p>To securely copy files from Windows, install <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY's</a> <a href="http://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter5.html">pscp</a> program on the ProcessMaker server. Then, create a <b><tt>.bat</tt></b> file to execute the <code>processmaker workspace-backup</code> command and use <code>pscp</code> to copy the backup file to a remote server.</p>
+<p>For example, the file <b><tt>C:\Documents and Settings\Bob\pmbackup.bat</tt></b> contains the following code to copy the backup file to the <b><tt>/root/backups</tt></b> directory on a remote Linux/UNIX server with a domain name of "example.com": </p> 
+<div class="geshifilter"><div class="text geshifilter-text" style="font-family:monospace;">&quot;C:\Program Files\ProcessMaker-3_0_0\processmaker\processmaker&quot; workflow-backup workflow ^<br />
+&quot;C:\Program Files\PuTTY\PSCP.EXE&quot; -pw p4s5w0rd &quot;C:\Program Files\ProcessMaker-2_0_30\processmaker\backups\workflow.tar&quot; root@example.com:/root/backups/workflow-%date%-%time%.tar</div></div>
+
+<p>Then, use the <code>SCHTASKS</code> command to schedule the periodic execution of the <b><tt>C:\Documents and Settings\Bob\pmbackup.bat</tt></b> file:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">SCHTASKS <span style="color: #000000; font-weight: bold;">/</span>Create <span style="color: #000000; font-weight: bold;">/</span>U administrator <span style="color: #000000; font-weight: bold;">/</span>P p4s5w0rd <span style="color: #000000; font-weight: bold;">/</span>SC DAILY <span style="color: #000000; font-weight: bold;">/</span>ST 00:00 <span style="color: #000000; font-weight: bold;">/</span>TN UploadPMBackup <span style="color: #000000; font-weight: bold;">/</span>TR <span style="color: #ff0000;">&quot;Documents and Settings\Bob\pmbackup.bat&quot;</span></div></div>
+
+<p>To copy the backup files to a remote Windows server, install an SSH server on the remote Windows server (with programs such as <a href="http://www.freesshd.com/">freeSSHd</a>, <a href="http://www.cygwin.com/">CygWin</a> or <a href="http://www.bitvise.com/winsshd">WinSSHD</a>), so it can accept secure file transfers. Another option is using <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY's</a> <a href="http://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter6.html#psftp">psftp</a> command to transfer the files using the SFTP protocol. </p>
+
+<h3><span id="Errors_While_Backing_Up_Workspaces">Errors While Backing Up Workspaces</span></h3>
+<p>The following section displays possible error while backing up workspaces.</p>
+<h4><span id="Mysqldump_Error">Mysqldump Error</span></h4>
+<p>By default, <a href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html">mysqldump</a> locks all the tables it's about to dump. This ensures the data is in a consistent state during the dump.</p>
+<p>The following error can occur:</p>
+<!--<p><img src="/sites/default/files/3.2MysqldumpError.png" alt=""></p>-->
+<codeblock># <b>./processmaker workspace-backup wsbundletmp</b>
+Backing up to /opt/processmaker/shared/backups/wsbundletmp.tar
+Backing up database...
+Saving database wf_wsbundletmp
+<font color="red">mysqldump: Got error : 1045: Access denied for user 'wf_wsbundletmp'@'localhost' (using password: YES) when using LOCK TABLES
+Copying database to backup...
+ + /opt/processmaker/shared/upgrade/hbh9gS</font>
+Copying files to backup...
+ + /opt/processmaker/shared/sites/wsbundletmp</codeblock>
+<p>It shows because the requested database breaks the data consistency while dumping (e.g. invalid tables, columns, functions or definer/invoker). Usually this error occurs when there is <tt>mysqldump</tt> with big data. Since ProcessMaker uses a motor engine in various workspaces, this error should occur because a new thread starts that locks tables and the next user can see this error.</p>
+<p>There are two solutions to this error:</p>
+<ul>
+     <li>Use one of these mysqldump commands:
+     <codeblock>mysqldump --opt --lock-tables=false -u <font color="blue">[USER]</font> -p <font color="blue">[DBNAME]</font> > dump.sql
+mysqldump --opt --single-transaction -u <font color="blue">[USER]</font> -p <font color="blue">[DBNAME]</font> > dump.sql</codeblock></li>
+     <li>Add the 'LOCK TABLES' permission to the user:
+     <codeblock>GRANT SELECT,LOCK TABLES ON wf_<font color="blue">[DBNAME_original]</font>.* TO 'wf_<font color="blue">[new_DBNAME]</font>'@'<font color="blue">[ServerIP]</font>';</codeblock></li>
+</ul>
+
+<h2><span id="RestoringWorkspaces" class="mw-headline">Restoring Workspaces</span></h2>
+<p>The restoration and backup of a workspace can only be made on the <b>same platform</b> (Windows -> Windows, Linux -> Linux), because the names of the MySQL tables in Windows are not case sensitive, which may cause ProcessMaker to have problems.</p>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">Before the restoration takes place, it is necessary to apply the <a href="../3.1/ProcessMaker_CentOS_RHEL_Installation.html#Set_file_permissions">File Permissions</a> as it was a new installation of <strong>ProcessMaker</strong> in order to work properly. </font></p>
+
+<p>To restore a workspace from a backup use the command:</p>
+<p><strong><u>LINUX/UNIX</u></strong></p>
+<codeblock>php processmaker workspace-restore <font color="blue">[BACKUP-FILE] [WORKSPACE-NAME]</font>
+</codeblock>
+
+<p><strong><u>Windows</u></strong></p>
+<codeblock>PHP-DIRECTORY\php.exe -f processmaker workspace-restore <font color="blue">[BACKUP-FILE] [WORKSPACE-NAME]</font>
+</codeblock>
+
+<p>If the backup file has a <b>.tar</b> extension and it is located in the <b><tt><i>INSTALL-DIRECTORY</i></a>/shared/backups</tt></b> directory, then it is not necessary to specify the path or the file extension.</p>
+<p>If it is not located in the shared/backups directory, or it doesn't have a <b>.tar</b> extension, then specify the path. Remember to enclose it within double quotes if the file name or path contains spaces.</p>
+
+<p>By default, the backup will be restored to the same workspace name and use the same database names as the original. To overwrite an existing workspace, use the <b><code>-o</code></b> or <b><code>--overwrite</code></b> option. For example, to overwrite the existing "workflow" workspace: </p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-restore <span style="color: #660033;">-o</span> workflow</div></div>
+
+<p>To restore to a different workspace name, specify the optional <font color=blue><code>[WORKSPACE-NAME]</code></font> parameter. The files from the backup workspace will be copied into the <b><tt><i>INSTALL-DIRECTORY</i>/shared/sites/<i>[WORKSPACE-NAME]</i>/</tt></b> directory. 
+
+<p>Remember that the workspace name should only contain 13 valid characters in MySQL databases or less, so it can not contain hyphens "-", spaces, periods, commas, semicolons or other special characters. To avoid problems, it is recommended to only use ASCII letters, numbers and underscores "_" for workspace names, since the workspace name should be easy to represent in a web address. Remember that workspace names are case sensitive when being entered in a URL in a web browser, but MySQL databases in Windows are not case sensitive, whereas MySQL databases in Linux are case sensitive.</p>
+
+<p>Restoring a workspace takes a large amount of time. If restoring a workspace that users need to access, it is recommended to do the restore operation during a period when users will not need to access the workspace. The execution time of the <code>processmaker workspace-restore</code> command has been improved to some degree, but the restoration of a workspace with a few cases will still take at least 10 minutes, and large workspaces with many cases can take much longer.</font></p>
+
+<p><b>Examples:</b></p>
+<div style="margin-left:25px;">
+<p>To restore a workspace from the <b><tt><i>INSTALL-DIRECTORY</i>/shared/backups/workflow.tar</tt></b> backup file in Linux:</p> 
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-restore workflow</div></div>
+
+<p>To restore a workspace from the <b><tt>c:\Documents and Settings\Amos\sales backup.tar</tt></b> file in Windows:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">processmaker workspace-restore <span style="color: #ff0000;">&quot;C:\Documents and Settings\Amos\sales backup.tar&quot;</span></div></div>
+
+<p>To copy the contents of the "workflow" workspace stored in the backup file at <b><tt>shared/backups/workflow.tar</tt></b> to a new workspace named "finance":</p>
+
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-restore workflow.tar finance</div></div>
+</div>
+</p>
+
+<p>While the <code>processmaker backup-restore</code> command is executing, it will not display any output on the screen for many minutes. When it has terminated, it will display information similar to the following on the screen:</p>
+<codeblock># <b>php processmaker workspace-restore workflow.tar finance</b> 
+Restoring from /opt/processmaker/shared/backups/workflow.tar
+Found 1 workspaces in backup:
+-> workflow.meta
+> Restoring <font color=green>workflow</font> to <font color=green>finance</font>
++> Restoring directory 'workflow.files'
+> Changing file permissions
+> Connecting to system database in 'localhost'
++> Restoring database wf_workflow to wf_finance
+Creating user wf_finance for localhost
+Creating user wf_finance for %
+<font color=green>3.0.0.4 < 3.0.0.4</font>
+> Verify files enterprise old...
+    Without changes... 
+<*>   Verify took 0.30658888816833 seconds.
+> Updating List tables...
+<*>   Updating List Process took 0.019959926605225 seconds.
+Removing temporary files
+<font color=green>Done restoring</font>
+</codeblock>
+
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray">A workspace from a newer version of ProcessMaker can NOT be restored in an older version of ProcessMaker. For example, restoring from v.3.0 to v.2.5 will not work. However, it may be possible to restore a workspace from an older version to an newer version of ProcessMaker, although error messages may be displayed during the restore process.</font></p>
+
+<div style="margin-left:25px">
+<font color=green><b>Note:</b></font> <font color=dimgrey>If restoring a workspace from the Enterprise Edition, the output will also contain the lines: 
+<codeblock>> Verify License Enterprise...                  
+<*>   Verify took 0.24472689628601 seconds.
+</codeblock>
+</font></div>
+
+<p>After logging into the new workspace for the first time, a dialog box will appear, asking that the Enterprise license file be uploaded for the workspace. If the same organization is still using the workspace, then the same <tt>license_<font color=blue>XXXXXXXXXXXXX</font>.dat</tt> file can be used for the new workspace as well. There is no limit on the number of workspaces that can be created with an Enterprise License. If a different organization will be using the workspace, then contact ProcessMaker Sales to obtain a new Enterprise license.</p> 
+<img src="../sites/default/files/PM3_ActivateLicense.png">
+<p>Click on <b>Browse</b> and select the <tt>license_<font color=blue>XXXXXXXXXXXXX</font>.dat</tt> file to upload it. If the license file is valid, then the login screen will appear again with the message "License installed successfully":</font></p>
+<img src="../sites/default/files/PM3_ActivatingLicenseOK.png">
+
+  
+<p>To only show information about a backup file, use the <b><code>-i</code></b> option. For example, to show information about the workspace(s) in the <b><tt>shared/backups/sales.tar</tt></b> backup file:</p>
+<codeblock># <b>php processmaker workspace-restore -i sales</b>
+Found 1 workspace(s) in backup
+
+  Workspace Name <font color=green>workflow</font>
+  Workflow Database <font color=green>mysql://wf_sales:7v9j0dqft6bk@localhost:3306/wf_sales</font>
+  MySql Version <font color=green>MySql (Version 5.5.43-0+deb7u1-log)</font>
+</codeblock>
+
+<p>To restore a workspace from a backup file that has <a href="../3.0/Backing_up_and_Restoring_ProcessMaker.html#Backing_up_Multiple_Workspaces">multiple workspaces</a>, use the <b><code>-w<font color=blue><i>WORKSPACE</i></font></code></b> or <b><code>--workspace=<font color=blue><i>WORKSPACE</i></font></code></b> option to specify which workspace should be restored. For example, to restore the "finance" workspace from the file <b><tt>/root/pmBackup.tar</tt></b> and overwrite the existing "accounting" workspace:</p> 
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-restore <span style="color: #660033;">-o</span> <span style="color: #660033;">--workspace</span>=finance <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>pmBackup.tar accounting</div></div>
+<p>or: </p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-restore <span style="color: #660033;">-o</span> <span style="color: #660033;">-wfinance</span> <span style="color: #000000; font-weight: bold;">/</span>root<span style="color: #000000; font-weight: bold;">/</span>pmBackup.tar accounting</div></div>
+<p>For help using the <b><code>processmaker workspace-restore</code></b> command:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker <span style="color: #7a0874; font-weight: bold;">help</span> workspace-restore</div></div>
+
+<p>The <code>-m</code> option can be used to restore workspaces from multiple backup files (created with the <code>-s</code> option). Specify the name of the backup file, but do not include the numbers at the end of the file name. For example, if restoring from three backup files named <tt>pmbackup.tar.00</tt>, <tt>pmbackup.tar.01</tt> and <tt>pmbackup.tar.02</tt>, then issue the command:
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker workspace-restore <span style="color: #660033;">-m</span> pmbackup.tar</div></div>
+<p>ProcessMaker will automatically join all the files whose file names start with "pmbackup.tar" when restoring the workspace(s).</p>
+ 
+<p><font color=blue>BACKUP-FILE1</font> is the name of the first backup file, which typically has the extension <b><tt>tar.00</tt></b>.</p>
+<dl><dd><strong><span style="color: green;">Note:</span></strong> <span style="color: dimgrey;">All the workspace files from the backup will be created in the <b><tt><font color=blue>INSTALL-DIRECTORY</font></a>/shared/sites/<font color=blue>WORKSPACE</font>/</tt></b> directory, with the same file permissions and same file owner as the <b><tt>shared</tt></b> directory. If not, for greater security, change folders and files permissions of the restored workspace to the same permissions as in the shared folder.</span></dd></dl>
+
+<h3><span class="mw-headline" id="After_restoring_a_workspace">After Restoring a Workspace</span></h3>
+<p>After using the <code>processmaker workspace-restore</code> command, it is strongly recommended to issue the following command that repairs the cache of cases in the <b><tt>APP_CACHE_VIEW</tt></b> table:
+<codeblock>php processmaker cacheview-repair <font color=blue>[WORKSPACE]</font>
+</codeblock>
+
+<p>If no workspace is specified, then the cache will be repaired for all workspaces.</p>
+<p>If this command is not executed, the number of cases listed under the Home menu will not be correct. To sort the cases with a language other than English (which is the default), use the <code>-l<font color=blue><i>ISO-CODE</i></font></code> or <code>--lang=<font color=blue><i>ISO-CODE</i></font></code> option to specify the <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO 639-1 code</a> for another language, such as es (Spanish), pt-BR (Brazilian Portuguese), or <code>zh-CN</code> (mainland Chinese). For example, to repair the case cache of the "workflow" and "development" workspaces in French in a Linux system:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker cacheview-repair <span style="color: #660033;">-lfr</span> workflow development</div></div>
+
+<p>In addition, if restoring from a different a workspace from a different version of ProcessMaker, the following command must be executed to update the case schema used by the new version of ProcessMaker:</p>
+<codeblock>php processmaker migrate-new-cases-lists <font color=blue>[WORKSPACE]</font>
+</codeblock>
+<p>For example, to migrate the case schema for the "workflow" and "development workspaces on a Linux server:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;">php processmaker migrate-new-cases-lists workflow development</div></div>
+
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> Take into account that until ProcessMaker version 3.0.1.5, this command only worked for workspaces that had only <a href="../3.0/ProcessMaker_Database_Model.html">one database</a> <tt>wf_&lt;WORKSPACE&gt;</tt> and not for workspaces that kept on working with the <a href="../index.php/ProcessMaker_Database_Model.html">three databases</a> ProcessMaker used to manage. </font></p>
+
+<h3><span id="Cleaning_and_restoring_table_PLUGIN_REGISTRY_table">Cleaning and restoring table PLUGIN_REGISTRY table</span></h3>
+<p>After you have restored the workspace, you can follow these steps to clean the cache and force ProcessMaker to read the updated table <span class="geshifilter"><code class="text geshifilter-text">PLUGIN_REGISTRY</code></span>:</p>
+<p><b>1. </b>Remove all records from table <span class="geshifilter"><code class="text geshifilter-text">PLUGINS_REGISTRY</code></span>.</p>
+<codeblock>DELETE FROM wf_workflow.PLUGINS_REGISTRY WHERE PLUGIN_NAMESPACE <> 'enterprise';</codeblock>
+<p style="margin-left:25px"><strong><font color="red">Warning:</font></strong> <font color="dimgray">Do not remove the <b>enterprise</b> plugin (ProcessMaker Enterprise Core Edition). If you delete the <b>enterprise</b> plugin, ProcessMaker becomes unstable. Therefore, it is important to not erase that plugin.</font></p>
+<p><b>2. </b>Apply the following command to clear the application cache.</p>
+<codeblock>./processmaker flush-cache</codeblock>
+<p><b>3. </b>Remove the directory <span class="geshifilter"><code class="text geshifilter-text">cache</code></span> inside ProcessMaker.</p>
+<codeblock>rm -R processmaker/shared/framework/cache</codeblock>
+<p><b>4. </b>Reload ProcessMaker site.</p></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

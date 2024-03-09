@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="Datetime_Control.html" />
+<link rel="shortlink" href="../node/595.html" />
+<title>3.1 - Datetime Control | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"a_ZzfQy__HNFvIKAzxmsSKeU2M3DDBrKv2C9k-vYAzI","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-595 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                    	  <div class="menu_wrapper">
+            <nav id="main-menu"  role="navigation">
+              <a class="nav-toggle" href="Datetime_Control.html#">Navigation</a>
+              <div class="menu-navigation-container">
+                <ul class="menu"><li class="first leaf"><a href="../PM_Classic.html" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="leaf"><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="leaf"><a href="user_guide.html">User Guide</a></li>
+<li class="leaf"><a href="developer_info.html">Developer Info</a></li>
+<li class="leaf"><a href="../3.2/sys_administration.html">Sys Administration</a></li>
+<li class="leaf"><a href="resources.html">Helpful Resources</a></li>
+<li class="leaf"><a href="../Sitemap.html">Sitemap</a></li>
+<li class="last leaf"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>              </div>
+              <div class="clear"></div>
+            </nav>
+          </div>
+                  <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="Datetime_Control.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-l-jv4cOnL9XMhykZ979nzUZwrktfJUuDvkAgCllRARw" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">3.1 - Datetime Control</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.2/Datetime_Control.html" class="">3.8</a></li><li><a href="../3.2/Datetime_Control.html" class="">3.7</a></li><li><a href="../3.2/Datetime_Control.html" class="">3.6</a></li><li><a href="../3.2/Datetime_Control.html" class="">3.5</a></li><li><a href="../3.2/Datetime_Control.html" class="">3.4</a></li><li><a href="../3.2/Datetime_Control.html" class="">3.3</a></li><li><a href="../3.2/Datetime_Control.html" class="">3.2</a></li><li><a  class="active-version">3.1</a></li><li><a href="../3.0/Datetime_Control.html" class="">3.0</a></li><li><a href="../index.php/2.0/Dates.html" class="">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="3.1 - Datetime Control" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="Datetime_Control.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give 3.1 - Datetime Control 1/5</option><option value="40">Give 3.1 - Datetime Control 2/5</option><option value="60" selected="selected">Give 3.1 - Datetime Control 3/5</option><option value="80">Give 3.1 - Datetime Control 4/5</option><option value="100">Give 3.1 - Datetime Control 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >3</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-1rSv3-P699Rj-z-39jmJY2Kpo0W27a6Ujq12V0005no" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="Datetime_Control.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="Datetime_Control.html#Overview">Overview</a></li>
+<li class="toc"><a href="Datetime_Control.html#Managing_the_Datetime_Control">Managing a Datetime Control</a></li>
+<li class="toc"><a href="Datetime_Control.html#DateTime_Control_Properties">DateTime Control Properties</a></li>
+<ol class="toc">
+<li class="toc"><a href="Datetime_Control.html#Format">Format</a></li>
+<ol class="toc">
+<li class="toc"><a href="Datetime_Control.html#hh_mm_Format">About hh:mm</a></li>
+</ol>
+<li class="toc"><a href="Datetime_Control.html#Min_Date">Min Date</a></li>
+<li class="toc"><a href="Datetime_Control.html#Max_Date">Max Date</a></li>
+<li class="toc"><a href="Datetime_Control.html#Use_Current">Initial Selection Date</a></li>
+<li class="toc"><a href="Datetime_Control.html#Default_Date">Default Date</a></li>
+<li class="toc"><a href="Datetime_Control.html#View_Mode">Datepicker View Mode</a></li>
+<li class="toc"><a href="Datetime_Control.html#Clear_Button">Show Clear Button</a></li>
+</ol>
+<li class="toc"><a href="Datetime_Control.html#Datetime_Control_Example">Datetime Control Example</a></li>
+<li class="toc"><a href="Datetime_Control.html#JavaScript_in_Textboxes_and_Textareas">JavaScript in Datetimes</a></li>
+<ol class="toc">
+<li class="toc"><a href="Datetime_Control.html#JavaScript_Methods">JavaScript Methods</a></li>
+<li class="toc"><a href="Datetime_Control.html#Getting_Datetimes">Getting Datetimes</a></li>
+<li class="toc"><a href="Datetime_Control.html#Getting_Datetimes">Setting Datetimes</a></li>
+<li class="toc"><a href="Datetime_Control.html#Manipulating_Datetimes">Manipulating Datetimes with <code>moment.js</code></a></li>
+<li class="toc"><a href="Datetime_Control.html#Comparing_Datetimes">Comparing datetimes</a></li>
+<li class="toc"><a href="Datetime_Control.html#Adding_days_to_a_datetime">Adding days to a datetime</a></li>
+</ol>
+<li class="toc"><a href="Datetime_Control.html#Accessing_Dates_with_PHP">Accessing Datetimes with PHP</a></li>
+<ol class="toc">
+<li class="toc"><a href="Datetime_Control.html#Comparing_Dates_with_PHP">Comparing Datetimes with PHP</a></li>
+<li class="toc"><a href="Datetime_Control.html#Converting_Dates_to_Timestamps">Converting Datetimes to Timestamps</a></li>
+<li class="toc"><a href="Datetime_Control.html#Extracting_Date_Information_2">Extracting Datetime Information</a></li>
+<li class="toc"><a href="Datetime_Control.html#Converting_from_Timestamps_to_Dates">Converting from Timestamps to Datetimes</a></li>
+<li class="toc"><a href="Datetime_Control.html#Formatting_Dates_in_English">Formatting Datetimes in English</a></li>
+<li class="toc"><a href="Datetime_Control.html#Formatting_Dates_in_Other_Locales">Formatting Datetimes in Other Locales</a></li>
+<li class="toc"><a href="Datetime_Control.html#Dynamic_dates_using_variables">Dynamic datetimes using variables</a></li>
+</ol>
+</div></div>
+
+
+<h2><span id="Overview">Overview</span></h2>
+<p>Clicking on a date field opens a calendar popup where users can easily select and input a date. This helps standardize date formats and prevents common mistakes.</p>
+<p><img alt="" height="31" src="../sites/default/files/DateTImeControlIconVersion3.png" width="29"></p>
+
+<p>DynaForms in ProcessMaker version 3 use the library <a href="https://eonasdan.github.io/bootstrap-datetimepicker/" rel="nofollow">Bootstrap 3 Datepicker</a> to construct its datetime control. This library bases its format using the library <a href="http://momentjs.com/docs/"><code>Moment.js</code></a>, a powerful JavaScript library that manages dates and formats. Take a look at the properties of this control to learn more about how to manage it.</p>
+
+<p>After adding a datetime control to the DynaForm design, it looks as follows:</p>
+<p><img alt="" src="../sites/default/files/DateTimeControlFormDesignerVersion3.png"></p>
+<p>When running a case with this control, the date picker popup will be available:</p>
+<p><img alt="" src="../sites/default/files/ProcessMaker3_DynaFormDesigner_DateTimeRendered.png"></p>
+
+<p style="margin-left:25px"><strong><font color="red">Known Issue:</font></strong> <font color="dimgray"> Take into consideration that when there is not enough space for the calendar to display, the control will be displayed cut off.</font></p>
+
+<h2><span id="Managing_the_Datetime_Control">Managing a Datetime Control</span></h2>
+<p>After adding a datetime to the DynaForm design, it is possible to customize its functionality and behavior, using the properties panel.</p>
+<p><img src="../sites/default/files/ProcessMaker3_Datetime_PropertyPanel.png"></p>
+<p>The properties set by default are the following:</p>
+<ul>
+    <li><strong>type</strong>: Set by default as "<code>datetime</code>". This definition can not be modified.</li>
+    <li><p><strong>id</strong>: Set by default as <code>datetime000000000X</code> where "X" represents the corresponding numbering of the control in the design. This numbering starts in 1. After a variable is related to this control, the ID changes to the name of the variable, nevertheless it is possible to set a new ID to work with the control using JavaScript, for example.</p>
+</li>
+    <li><strong>label</strong>: Set by default as "<code>datetime_X</code>" where "X"  represents the corresponding numbering of the control in the design. This numbering starts in 1.</li>
+    <li><strong>display mode</strong>: Set by default as "<code>parent</code>". See <a href="../3.0/DynaForm_Field_Properties.html#Mode">this documentation</a> for more information of the modes available for this control.</li>
+    <li><strong>format</strong>: Set by default to "<code>YYYY-MM-DD</code>" which represents the date format "Year-Month-Day". Read <a href="Datetime_Control.html#Format">the explanation of this property</a> below to learn how to configure the format.</li>
+    <li><strong>initial selection date</strong>: Set by default to "<code>true</code>" to set the current date in the date picker (when it is opened) and in the field (also when the date picker is opened).</li>
+    <li><strong>datepicker view mode</strong>: Set by default to "<code>days</code>" to show the days of the month when the date picker is opened.</li>
+    <li><strong>show clear button</strong>: Set by default to "<code>hide</code>" to not show the garbage icon in the date picker when working with the field in the form. For more information, read the explanation of this property.</li>
+</ul>
+
+<h2><span id="DateTime_Control_Properties">DateTime Control Properties</span></h2>
+<p>The properties related to this web control are the following:</p>
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="../3.0/DynaForm_Field_Properties.html#Type">Type</a></td>
+        <td><code>datetime</code> (readonly)</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/DynaForm_Field_Properties.html#Variable">Variable</a></td>
+        <td><p>Click on the <u>...</u> option to select the variable from the list of available variables. Check <a href="../3.0/HTML5_Responsive_DynaForm_Designer.html#Relating_a_Variable_with_a_Control">this section</a> to learn more of how to relate a variable to a control.<br/>
+Only variables of the following data types can be selected:<br/>
+<ul>
+<li>datetime</li>
+</ul>
+</p>
+        </td>
+        <tr>
+            <td><a href="../3.0/DynaForm_Field_Properties.html#Data_Type">Variable Data type</a></td>
+            <td>After a variable has been related to the control, this property shows the data type of the variable
+                (readonly).
+            </td>
+        </tr>
+        <tr>
+            <td><a href="../3.0/DynaForm_Field_Properties.html#ID">ID</a></td>
+            <td><p>[Required]</p>
+                <p>Field and HTML unique identifier.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="../3.0/DynaForm_Field_Properties.html#Label">Label</a></td>
+            <td>Set the label of the control in this property</td>
+        </tr>
+        <tr>
+            <td><a href="../3.0/DynaForm_Field_Properties.html#PlaceHolder">Placeholder</a></td>
+            <td>Set the text that will be shown as help to fill the field inside the fields.</td>
+        </tr>
+        <tr>
+            <td><a href="../3.0/DynaForm_Field_Properties.html#Hint">Hint</a></td>
+            <td>Used to show help when the textbox is rendered. It is shown when the pointer of the mouse is hovered
+                over the ? icon.</td>
+        </tr>
+        <tr>
+            <td><a href="../3.0/DynaForm_Field_Properties.html#Required">Required</a></td>
+            <td>By checking this option, an asterisk is added in the label to indicate that the field is required.
+                It means that an option must be selected mandatorily from the control. When a required field is
+                not filled in with any value, it will not possible to go to the next step.</td>
+        </tr>
+        <tr>
+            <td><a href="../3.0/DynaForm_Field_Properties.html#Mode">Display Mode</a></td>
+            <td><p>[Required]</p>
+                <p>Display mode:</p>
+                <ul>
+                    <li><strong>parent:</strong> inherits the display mode defined in the parent container (form/grid)</li>
+                    <li><strong>edit:</strong> the field is enabled for edition when it is rendered.</li>
+                    <li><strong>view:</strong> the field can only be viewed when it is rendered. The content can’t be edited.</li>
+                    <li><strong>disabled:</strong> the field is displayed as disabled. The field is displayed in gray in order to indicate the disabled mode. The content can't be edited either.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="Datetime_Control.html#Format">Format</a></td>
+            <td><p>[Required]<br/>
+Define the display format of the date. By hovering the pointer of the mouse on the ? icon the list of possible options is shown as a hint to fill this property .</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="Datetime_Control.html#Min_Date">Min Date</a></td>
+            <td>Define in this property the minimum valid date which will be available in the date picker when rendering
+                the form. The property can be set in design (using the date picker) or use a variable to define
+                the value <code>@@MinDate</code>.</td>
+        </tr>
+        <tr>
+            <td><a href="Datetime_Control.html#Max_Date">Max Date</a></td>
+            <td>Define in this property the maximum valid date which will be available in the date picker when rendering
+                the form. The property can be set in design (using the date picker) or use a variable to define
+                the value <code>@@MaxDate</code>.</td>
+        </tr>
+        <tr>
+            <td><a href="Datetime_Control.html#Use_Current">Initial Selection Date</a></td>
+            <td>When this property is set as "true", it set the date picker with the current date and time.</td>
+        </tr>
+        <tr>
+            <td><a href="Datetime_Control.html#Default_Date">Default Date</a></td>
+            <td>Define the default date in the field.
+                <p>To learn more how default dates work, read <a href="../3.0/DynaForm_Controls.html#Default_Value">this documentation</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="Datetime_Control.html#Pick_Date_By">Datepicker View Mode</a></td>
+            <td>Default: 'days' Accepts: 'years','months','days' The default view to display when the picker is shown.
+                <p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> To limit the picker to selecting, for instance the year and month, use format: MM/YYYY </font></p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="Datetime_Control.html#Clear_Button">Show Clear Button</a></td>
+            <td>Default: false Show the "Clear" button in the icon toolbar. Clicking the "Clear" button will set the
+                calendar to null.
+            </td>
+        </tr>
+</table>
+
+<h3><span id="Format">Format</span></h3>
+<p>This property allows formatting the date and time selected as input. As the designer uses bootstrap, this is a more robust option. Take into account the following name and conventions to set the format.</p>
+<dl>
+    <dd>
+        <table style="width:auto;">
+            <tbody>
+                <tr>
+                    <th></th>
+                    <th><strong>Token</strong></th>
+                    <th><strong>Example</strong></th>
+                </tr>
+                <tr>
+                    <td><strong>Month</strong></td>
+                    <td>M</td>
+                    <td>1 2 ... 11 12</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Mo</td>
+                    <td>1st 2nd ... 11th 12th</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>MM</td>
+                    <td>01 02 ... 11 12</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>MMM</td>
+                    <td>Jan Feb ... Nov Dec</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>MMMM</td>
+                    <td>January February ... November December</td>
+                </tr>
+                <tr>
+                    <td><strong>Quarter</strong></td>
+                    <td>Q</td>
+                    <td>1 2 3 4</td>
+                </tr>
+                <tr>
+                    <td><strong>Day of Month</strong></td>
+                    <td>D</td>
+                    <td>1 2 ... 30 31</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Do</td>
+                    <td>1st 2nd ... 30th 31st</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>DD</td>
+                    <td>01 02 ... 30 31</td>
+                </tr>
+                <tr>
+                    <td><strong>Day of Year</strong></td>
+                    <td>DDD</td>
+                    <td>1 2 ... 364 365</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>DDDo</td>
+                    <td>1st 2nd ... 364th 365th</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>DDDD</td>
+                    <td>001 002 ... 364 365</td>
+                </tr>
+                <tr>
+                    <td><strong>Day of Week</strong></td>
+                    <td>d</td>
+                    <td>0 1 ... 5 6</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>do</td>
+                    <td>0th 1st ... 5th 6th</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>dd</td>
+                    <td>Su Mo ... Fr Sa</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>ddd</td>
+                    <td>Sun Mon ... Fri Sat</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>dddd</td>
+                    <td>Sunday Monday ... Friday Saturday</td>
+                </tr>
+                <tr>
+                    <td><strong>Day of Week (Locale)</strong></td>
+                    <td>e</td>
+                    <td>0 1 ... 5 6</td>
+                </tr>
+                <tr>
+                    <td><strong>Day of Week (ISO)</strong></td>
+                    <td>E</td>
+                    <td>1 2 ... 6 7</td>
+                </tr>
+                <tr>
+                    <td><strong>Week of Year</strong></td>
+                    <td>w</td>
+                    <td>1 2 ... 52 53</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>wo</td>
+                    <td>1st 2nd ... 52nd 53rd</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>ww</td>
+                    <td>01 02 ... 52 53</td>
+                </tr>
+                <tr>
+                    <td><strong>Week of Year (ISO)</strong></td>
+                    <td>W</td>
+                    <td>1 2 ... 52 53</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Wo</td>
+                    <td>1st 2nd ... 52nd 53rd</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>WW</td>
+                    <td>01 02 ... 52 53</td>
+                </tr>
+                <tr>
+                    <td><strong>Year</strong></td>
+                    <td>YY</td>
+                    <td>70 71 ... 29 30</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>YYYY</td>
+                    <td>1970 1971 ... 2029 2030</td>
+                </tr>
+                <tr>
+                    <td><strong>Week Year</strong></td>
+                    <td>gg</td>
+                    <td>70 71 ... 29 30</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>gggg</td>
+                    <td>1970 1971 ... 2029 2030</td>
+                </tr>
+                <tr>
+                    <td><strong>Week Year (ISO)</strong></td>
+                    <td>GG</td>
+                    <td>70 71 ... 29 30</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>GGGG</td>
+                    <td>1970 1971 ... 2029 2030</td>
+                </tr>
+                <tr>
+                    <td><strong>AM/PM</strong></td>
+                    <td>A</td>
+                    <td>AM PM</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>a</td>
+                    <td>am pm</td>
+                </tr>
+                <tr>
+                    <td><strong>Hour</strong></td>
+                    <td>H</td>
+                    <td>0 1 ... 22 23</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>HH</td>
+                    <td>00 01 ... 22 23</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>h</td>
+                    <td>1 2 ... 11 12</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>hh</td>
+                    <td>01 02 ... 11 12</td>
+                </tr>
+                <tr>
+                    <td><strong>Minute</strong></td>
+                    <td>m</td>
+                    <td>0 1 ... 58 59</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>mm</td>
+                    <td>00 01 ... 58 59</td>
+                </tr>
+                <tr>
+                    <td><strong>Second</strong></td>
+                    <td>s</td>
+                    <td>0 1 ... 58 59</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>ss</td>
+                    <td>00 01 ... 58 59</td>
+                </tr>
+                <tr>
+                    <td><strong>Fractional Second</strong></td>
+                    <td>S</td>
+                    <td>0 1 ... 8 9</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>SS</td>
+                    <td>0 1 ... 98 99</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>SSS</td>
+                    <td>0 1 ... 998 999</td>
+                </tr>
+                <tr>
+                    <td><strong>Unix Timestamp</strong></td>
+                    <td>X</td>
+                    <td>1360013296</td>
+                </tr>
+                <tr>
+                    <td><strong>Unix Millisecond Timestamp</strong></td>
+                    <td>x</td>
+                    <td>1360013296123</td>
+                </tr>
+            </tbody>
+        </table>
+    </dd>
+</dl>
+<dl>
+    <dd><p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray">Name and format taken from <a href="http://momentjs.com/docs/#/displaying/format/">[1]</a></font></p></dd>
+</dl>
+
+<p>For example, if the following format is set in this property:</p>
+<codeblock>dddd, MMMM Do YYYY, h:mm:ss a</codeblock>
+<p>When picking a date from the date picker, the following will be the input for the field.</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyFormatPropertyVersion3.png"></p>
+<div style="margin-left:25px">
+    <p><font color=green><b>Note:</b></font> <font color=dimgrey>If the user needs to edit the hours and minutes in a datetime control, make sure to include hours and minutes in the <b>format</b>. For example, a <b>format</b> of <code>YYYY-MM-DD hh:mm A</code> will allow the user to directly edit the time in datetime field.<br>
+In addition, a <img src="../sites/default/files/ClockIconInDatePicker.png"> icon will be added at the bottom of the date picker dialog if the <b>format</b> includes hours, minutes, seconds or AM/PM. Clicking on it will change the dialog to select the time units in the <b>format</b>:</font></p>
+    <p><img alt="" src="../sites/default/files/SelectTimeInDatePicker.png"> <img alt="" src="../sites/default/files/TimePickerInDatePicker.png"></p>
+</div>
+
+<h4><span id="hh_mm_Format">About hh:mm</span></h4>
+<p>If the following format is set in this property:</p>
+<codeblock>hh:mm</codeblock>
+
+<p>Notice that the hour picker can NOT differentiate between "a.m." and "p.m." by itself. Therefore, if the user selects <tt>17:00</tt> with this configuration, it will be written as <tt>05:00</tt> because of the format of the <code>hh</code> token. To avoid ambiguity and differentiate between "a.m." and "p.m.", add the meridian definition:</p>
+
+<codeblock>hh:mm A</codeblock>
+
+<p><img src="../sites/default/files/3.1Datetimehhmm.png"></p>
+
+<div style="margin-left:25px">
+    <font color=green><b>Note:</b></font> <font color=dimgrey>Datetime controls allow the user to select the hours and minutes in the date picker dialog box if the control's <b>format</b> property contains hours and minutes. However, it can be more convenient to simply create a normal textbox where the user can enter datetime value. To do this, set its <b>validate</b> property to:<br>
+<code>^(19[0-9]{2}|20[0-9]{2})-(1[0-2]|0[1-9])-(0[1-9]|[12][0-9]|3[01])( [0-5][0-9]:[0-5][0-9]){0,1}$</code></font>
+</div>
+
+<h3><span id="Min_Date">Min Date</span></h3>
+<p>This property prevents users from making date/time selections before the date set in this property. By default, this property is not set, so no restriction is made to dates.
+Select the minimum date from the calendar shown by clicking on the calendar icon at the right side of the box of the property.</p>
+<p>For example, when setting the minimum date to <code>03/12/2015</code>:</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyMinDatePropertyVersion3.png"></p>
+<p>As shown in the image, the dates before "03/12/2015" are not enabled and it is not possible to jump to February. If attempting to so that, the mouse cursor shows a prohibited sign.</p>
+
+<h3><span id="Max_Date">Max Date</span></h3>
+<p>This property prevents users from making date/time selections after the date set in this property.By default, this property is not set, so no restriction is made to dates.
+Select the maximum date from the calendar shown by clicking on the calendar icon at the right side of the box of the property.</p>
+<p>For example, when setting the maximum date to 03/17/2015:</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyCurrDatePropertyVersion3.png"></p>
+<p>As shown in the image, the dates after "03/17/2015" are not enabled and it is not possible to the next months. If attempting to so that, the mouse cursor shows a prohibited sign.</p>
+
+<h3><span id="Use_Current">Initial Selection Date</span></h3>
+<p>This property defines the initial date/time that will be added in the value of the control when the DynaForm is rendered and the datepicker is opened the first time.  When this property is set as "true", it sets the date picker with the current date and time.</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyUseCurrDatePropertyVersion3.png"></p>
+<p>The other options of this property are the following:</p>
+<ul>
+    <li><strong>Year:</strong> It shows the datepicker and fills the box with the first day of the first month of the current year.</li>
+    <li><strong>Month:</strong>  It shows the datepicker and fills the box with the first day of the current month.</li>
+    <li><strong>Day:</strong>  It shows the datepicker and fills the box with the current day.</li>
+    <li><strong>Hour:</strong>  It shows the datepicker and fills the box with the current hour (it is necessary to configure the format to show also hours ). </li>
+    <li><strong>Minute:</strong> It shows the datepicker and fills the box with the hour and minute (it is necessary to configure the format to show also hours and minutes). </li>
+</ul>
+
+<h3><span id="Default_Date">Default Date</span></h3>
+<p>This property sets the default date and time when using the date picker.</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyDatetimeDefDateVersion3.png"></p>
+<p>This property is not set by default. To set a default date, enter it manually (taking care of the format) or, to not make mistakes, click on the calendar at the right side of the box of this property and select the default date from the datetime picker</p>
+
+
+<h3><span id="View_Mode">Datepicker View Mode</span></h3>
+<p>This property sets the default view to display when the picker is shown. The possible values of this control are described below.</p>
+<ul><li>"<u><strong>Days</strong></u>" Shows the date picker by days.</li></ul>
+<dl>
+    <dd>
+        <p><img alt="" src="../sites/default/files/ControlPropertyDatetimeModeDaysVersion3.png"></p>
+    </dd>
+</dl>
+<ul><li>"<u><strong>Months</strong></u>" Shows the date picker by months.</li></ul>
+<dl>
+    <dd>
+        <p><img alt="" src="../sites/default/files/ControlPropertymDatetimeModeMonthsVersion3.png"></p>
+    </dd>
+</dl>
+<ul><li>"<u><strong>Years</strong></u>" Shows the date picker by years.</li></ul>
+<dl>
+    <dd>
+        <p><img alt="" src="../sites/default/files/ControlPropertyDatetimeModeYearsVersion3.png"></p>
+    </dd>
+</dl>
+<p>This property is set by default with "Days".</p>
+
+<h3><span id="Clear_Button">Show Clear Button</span></h3>
+<p>This property shows the "Clear" button in the icon toolbar (represented by a garbage icon). When this button is clicked it will set the calendar to null.</p>
+<p><img alt="" src="../sites/default/files/ControlPropertyDatetimeShowClearVersion3.png"></p>
+
+
+<h2><span id="Datetime_Control_Example">Datetime Control Example</span></h2>
+<p>For this example add a "Datetime" control by simply dragging and dropping it into the Dynaform canvas from the Web Control located on the left panel.</p>
+<p><img src="../sites/default/files/1PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>After adding the control notice that immediately a new window will pop up. This window is the <a href="../3.0/Variables.html#CreatingVariablesDynaForm">Create Variable</a> window where a variable for the control can be created. For this example create a variable named "date1". Then click on the "Save" button to store the variable to the control</p>
+<p><img src="../sites/default/files/2PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>After the variable has been created and added click on any empty space of the control to display its properties on the left hand panel. Notice that the "variable", "variable data type" and "id" properties have the values of the variable.</p>
+<p><img src="../sites/default/files/3PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>For the control to have a proper name instead of "datetime_1", changed the label (for this example) to "Current Date" as seen in the image below.</p>
+<p><img src="../sites/default/files/4PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>Next is the "placeholder" property which adds text into the control that is used as help to fill the field. For example add the following text: "Add the current date" and the image below shows that the control will show this text until a value is added.</p>
+<p><img src="../sites/default/files/5PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The "hint" property is used to show help by adding an icon on the right side corner of the control. An example text for showing help can be the following: "Select the current date". As seen in the image below when running a case there will be an icon next to the control, hover the pointer of the mouse to display the hint added.</p>
+<p><img src="../sites/default/files/6PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The next property is the "required" property which adds an asterisk in the label to indicate that the field is required therefore when running a case and if/when an option isn't selected then an error message will be displayed (This field is required).</p>
+<p><img src="../sites/default/files/7PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The "display mode" property has different options and each of those options can make the following alterations to the control:</p>
+<p><img src="../sites/default/files/8PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The following field is the "format" property which will define the display format of the date. By default it is set to show the year, then the month and finally the day but there are several options that can be added. Hover your mouse over the questions mark icon to learn more about it or read more about this in the following <a href= "http://momentjs.com/docs/#/displaying/format/">page</a>. For this example try adding the following text to the "format" property: "dddd, MMMM Do YYYY, hh:mm:ssa"; this will show the day of the week, the current month, the date and the time. Observe the results in the image below.</p>
+<p><img src="../sites/default/files/9PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>Next, the "min date" property defines the minimum valid date. This can be set by clicking on the calendar of the control and choosing which will be the minimum valid date shown when running a case. For example if the first day of November is chosen then when running a case the control won't show a date before November 1st. and if the user tries to pick a date before November it is not going to be possible. As seen in the image below the arrow to go back a month will appear as disabled. </p>
+<p><img src="../sites/default/files/10PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The "max date" property is similar to the "min date" property but it defines maximum valid date that can be chosen. For example, choose the last day of November as maximum valid date and when running the control won't show a date after November and the arrow to go forward a month will appear as disabled.</p>
+<p><img src="../sites/default/files/11PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>Moving on, the "initial selection date" property defines the initial selection date that display the datepicker. By default is set on true which does not make any bigger changes to the control. Learn more about how to use this property by clicking on the question mark icon. </p>
+<p><img src="../sites/default/files/12PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The first change that can be done in the "initial selection date" property is choosing the "year" option which will show the first day of the current year as observed in the image below.</p>
+<p><img src="../sites/default/files/13PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The second change in the "initial selection date" property can be choosing the "month" option which will show the first day of the current month.</p>
+<p><img src="../sites/default/files/14PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The third change in the "initial selection date" property can be choosing the "day" option which shows the current day as seen in the image below.</p>
+<p><img src="../sites/default/files/15PM3_DynaformFieldProperties_Datetime.png"></p>
+<p style="margin-left:25px"><strong><font color="green">Note:</font></strong> <font color="dimgray"> For the moment the options "hour" and "minute" do not have the proper functionality but they will be fixed for next versions. </font></p>
+<!--<p>The fourth change in the "initial selection date" property can be choosing the "hour" option which will show the current hour without minutes, observe the image below.</p>
+<p><img src="/sites/default/files/16PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>Finally, the fifth change in the "initial selection date" property can be choosing the "minute" option which will show the current hour with minutes as observed in the image below.</p>
+<p><img src="/sites/default/files/17PM3_DynaformFieldProperties_Datetime.png"></p>
+-->
+<p>After this comes the "default value" property which defines the default date in the field. Click on the small calendar icon in the property to choose a default date and this date chosen will be shown automatically when running a case as observed in the image below.</p>
+<p><img src="../sites/default/files/18PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>The "datepicker view mode" property will select the default view to display when the picker is shown and can select days, months or years. For this example, try one by one. The default is set to days and it is shown as the image below.</p>
+<p><img src="../sites/default/files/19PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>Choose the "datepicker view mode" to "months" and observe the results in the image below.</p>
+<p><img src="../sites/default/files/20PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>Then, change it to "years" and observe the alterations made in the control.</p>
+<p><img src="../sites/default/files/21PM3_DynaformFieldProperties_Datetime.png"></p>
+<p>Now the "show clear button" property is the final one in the Datetime list of properties. This property provides two options which are: </p>
+<ul>
+    <li><strong>Show:</strong> Shows the "Clear" button when choosing a date which looks like an small garbage can. Clicking the "Clear" button will set the calendar to null.</li>
+    <p><img src="../sites/default/files/22PM3_DynaformFieldProperties_Datetime.png"></p>
+    <li><strong>Hide:</strong> It won't show the "Clear" button in the control.</li>
+    <p><img src="../sites/default/files/23PM3_DynaformFieldProperties_Datetime.png"></p>
+</ul>
+
+<h2><span id="JavaScript_in_Textboxes_and_Textareas">JavaScript in Datetimes</span></h2>
+<p>To learn how to manipulate DynaForm controls using JavaScript, see <a href="../3.0/JavaScript_in_DynaForms.html">JavaScript in DynaForms</a>.</p>
+
+<p>Datetime controls in ProcessMaker 3 have the following </i>field components</i>:</p>
+<ul>
+    <li><b>Label:</b> The text displayed above or to the left of the field to identify it to the user.</li>
+    <li><b>Text:</b> The datetime displayed to the user, as configured by the <a href="Datetime_Control.html#Format">format</a> property.</li>
+    <li><b>Value:</b> The stored value for the field in standard "YYYY-MM-DD" format for dates and "YYYY-MM-DD hh:mm:ss" format for datetimes. Examples: "2010-01-01", "1999-07-25 04:01:01", "2015-12-31 23:59:59"</li>
+</ul>
+<p><img src="../sites/default/files/ProcessMaker3_Datetime_JavaScript_LabelValueText.png"></p>
+
+<h3><span id="JavaScript_Methods">JavaScript Methods</span></h3>
+
+<p>Some of the JavaScript methods to manipulate datetime controls include:</p>
+
+<table>
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.getControl">getControl</a></code>()</td>
+        <td><p>Use this function to obtain the control's input field, rather its DIV which is obtained with <code>$("#<font color=blue><i>id</i></font>")</code></p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.disableValidation">disableValidation</a></code>()</td>
+        <td>Disable the validation of the field, so it doesn't check whether the field is <b>required</b> when the
+            form is submitted.</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.enableValidation">enableValidation</a></code>()</td>
+        <td>Enable validation of the field, so it will check whether the field is required when the form is submitted.</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href = "../3.0/JavaScript_Functions_and_Methods.html#control.getValue">getValue</code></a>()</td>
+        <td>Returns the stored datetime of the field in "YYYY-MM-DD hh:mm:ss" format.</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.getText">getText</a></code>()</td>
+        <td>Returns the displayed <i>text</i> of the datetime in the configured <a href="Datetime_Control.html#Format">format</a>.</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.getLabel">getLabel</code></a>()</td>
+        <td>Returns the field's label, which is the text displayed above or to the left of the field to identify it.</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.setValue">setValue</a></code>("newValue")</td>
+        <td>Sets a new value in the field. Make sure to "YYYY-MM-DD" format for dates and "YYYY-MM-DD hh:mm:ss" format
+            for datetimes.</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.setText">setText</a></code>("newText")</td>
+        <td>Sets a new <i>text</i> in the field, which is the displayed datetime. The datetime should be in the same
+            format as configured by the <a href="Datetime_Control.html#Format">format</a> property.</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.setLabel">setLabel</a></code>("newLabel")
+        </td>
+        <td>Change the field's label, which is the text displayed above or to the left of the field to identify it.</td>
+    </tr>
+    <tr>
+        <td><a href="../3.0/JavaScript_Functions_and_Methods.html#jQuery.28.22.23id.22.29_or_.24.28.22.23id.22.29">jQuery("#fieldID")</a>.<code><a href="../3.0/JavaScript_Functions_and_Methods.html#control.setOnchange">setOnchange</a></code>(<br>            function(newVal, oldVal){...})</td>
+        <td>Define a <tt>change</tt> event handler, which is a custom function that executes after the value of the
+            field changes. The function may contain the following parameters:</p>
+            <ul>
+                <li><strong>newVal:</strong> The new value that has just been set in the field.</li>
+                <li><strong>oldVal:</strong> The old value which was changed.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<p>To see code examples for these methods, see <a href="../3.0/JavaScript_Functions_and_Methods.html" class="ref">JavaScript Functions and Methods</a>.</p>
+
+<p><font color=green><b>Note:</b></font> <font color=dimgrey>The <code>setValue()</code> method cannot be used to clear the value of a datetime control. See this <a href="https://forum.processmaker.com/viewtopic.php?f=47&t=709978">workaround</a> for clearing datetime controls with JavaScript.</font>
+
+<h3><span id="Getting_Datetimes">Getting Datetimes</span></h3>
+<p>The value of datetime controls is stored as a string in the format <code>"YYYY-MM-DD HH:mm:ss"</code>, such as <code>"1999-12-31 23:59:59"</code> or <code>"2017-01-15 08:25:03"</code>. Use the <a href="../3.0/JavaScript_Functions_and_Methods.html#control.getText">getValue()</a> method to get the value of a datetime control. The value always uses the same format.
+<p>In contrast, the <a href="../3.0/JavaScript_Functions_and_Methods.html#control.getText">getText()</a> method will return the formatted date which is displayed to the user. What is displayed in the datetime control is set by its <b>format</b> property. For example, a datatime using a format of "MM/DD/YY" might have a value of "2017-08-26 00:00:00" and a displayed text of "08/26/17".
+<p>If the hours, minutes, and/or seconds are not included in the datetime's <b>format</b> property, then they will automatically be set to zeros. For example, a datetime with the format "D-M-YYYY h:m a" might have a value of "1980-07-04 16:15:00" and a displayed text of "4-7-1980 4:15 pm". Note that the seconds are set to "00" because they aren't included in the format.
+For example, to get the value and displayed text of a datetime control whose ID is "dueDate":</p>
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> dueValue <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#dueDate&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> dueText <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#dueDate&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getText</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<h3><span id="Getting_Datetimes">Setting Datetimes</span></h3>
+<p>The <a href="../3.0/JavaScript_Functions_and_Methods.html#control.setValue">setValue()</a> method is used to set a datetime. Make sure that the datetime is in the <code>"YYYY-MM-DD HH:mm:ss"</code> format. The hours, minutes and seconds are optional and will be set to <code>00</code> by default if not included. For example, to set datetime controls, which have the IDs "startDate", "endDate" and "pauseDate":
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#startDate&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;2017-06-23&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#endDate&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;2017-11-01 17:30&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#pauseDate&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;2017-10-25 08:15:50&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+<p>The <a href="../3.0/JavaScript_Functions_and_Methods.html#control.setText">setText()</a> method can also be used to set the value of a datetime control. The new datetime should either be in standard <code>"YYYY-MM-DD HH:mm:ss"</code> format or in the custom format set by the control's <b>format</b> property.
+
+<h3><span id="Manipulating_Datetimes">Manipulating Datetimes with <code>moment.js</code></span></h3>
+<p>It is possible to manipulate datetime strings in JavaScript by converting them into <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> objects, but it is much easier to use the <a href="http://momentjs.com/">moment.js</a> library, which is included in ProcessMaker Desktop, ProcessMaker Mobile for iOS and ProcessMaker Mobile for Android. Read the <a href="http://momentjs.com/docs/#/query/">moment.js documentation</a> to learn about the functions included in its library.</p>
+
+<p>To use a function in the <code>moment.js</code> library, first instantiate a <code>moment</code> object. The <code>moment</code> object can be instantiated by using a datetime string in <code>"YYYY-MM-DD HH:mm:ss"</code>, <code>"YYYY-MM-DD HH:mm"</code> or <code>"YYYY-MM-DD HH:mm:ss"</code> format.  
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> currentTime <span style="color: #339933;">=</span> moment<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp;<span style="color: #006600; font-style: italic;">//set to the current datetime</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> endJanuary <span style="color: #339933;">=</span> moment<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;2018-01-31&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp;<br />
+<span style="color: #003366; font-weight: bold;">var</span> endYear <span style="color: #339933;">=</span> moment<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;2018-12-31 23:59:59&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+If needing to instantiate a <code>moment</code> object using a datatime string which uses a different format, set the format in the second parameter:
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> idesOfMarch <span style="color: #339933;">=</span> moment<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;03/15/1983&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;MM/DD/YYYY&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> &nbsp;</div></div>
+Since datetime fields in ProcessMaker store their values in <code>"YYYY-MM-DD HH:mm:ss"</code> format, it not necessary to specify the format of the datetime string. The following example instantiates a <code>moment</code> object with the value in a datetime field whose ID is "dueDate":
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> due <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#dueDate&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> currentTime <span style="color: #339933;">=</span> moment<span style="color: #009900;">&#40;</span>due<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+The <a href="https://momentjs.com/docs/#/displaying/format/">.format()</a> method can be used to convert a <code>moment</code> object into a datatime string which can be set in a datetime field. For example, to set a  datetime field with the ID "today" to the current time:
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> now <span style="color: #339933;">=</span> moment<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">format</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;YYYY-MM-DD HH:mm:ss&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#today&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span>now<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Comparing_Datetimes">Comparing datetimes</span></h3>
+<p>The <a href="https://momentjs.com/docs/">moment.js</a> library provides a number of functions for comparing datetimes, such as <a href="https://momentjs.com/docs/#/query/is-before/">.isBefore()<a>, <a href="https://momentjs.com/docs/#/query/is-after/">.isAfter()</a>, <a href="https://momentjs.com/docs/#/query/is-same/">.isSame()</a> and <a href="https://momentjs.com/docs/#/displaying/fromnow/">.fromNow()</a>.</p> 
+<p><b>Example - Time from current date: </b></p>
+<div style="margin-left:25px;">
+    <p>The code below retrieves how much time exists between an specific date entered by the user and the current date.</p>
+    <div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">function</span> checkTime<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">var</span> startDt <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#datetimeVar'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #003366; font-weight: bold;">var</span> rest<span style="color: #339933;">=</span> moment<span style="color: #009900;">&#40;</span>startDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">fromNow</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#textVar&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span>rest<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#button0000000004'</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Traversing/find"><span style="color: #000066;">find</span></a><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;button&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Events/click"><span style="color: #000066;">click</span></a><span style="color: #009900;">&#40;</span>checkTime<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+    <p><img src="../sites/default/files/PM3.0DateMomentFromNow.png"></p>
+</div>
+
+<p><b>Example - Comparing two dates:</b></p>
+<div style="margin-left:25px;">
+    <p>The following example compares two instances of DateTime and returns an alert message that indicates whether the first date is earlier than, the same as, or later than the second date.</p>
+    <div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">function</span> comparingDates<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">var</span> startDt <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#datetimeVar'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #003366; font-weight: bold;">var</span> endDt <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#datetimeVar2'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>moment<span style="color: #009900;">&#40;</span>startDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">isBefore</span><span style="color: #009900;">&#40;</span>endDt<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'1rst Date is earlier than 2nd date.'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span><span style="color: #009900;">&#40;</span>moment<span style="color: #009900;">&#40;</span>startDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">isAfter</span><span style="color: #009900;">&#40;</span>endDt<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'2nd date is earlier than 1rst date.'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span><span style="color: #009900;">&#40;</span>moment<span style="color: #009900;">&#40;</span>startDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">isSame</span><span style="color: #009900;">&#40;</span>endDt<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000066;">alert</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Both dates are the same.'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#button0000000001'</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Traversing/find"><span style="color: #000066;">find</span></a><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;button&quot;</span><span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Events/click"><span style="color: #000066;">click</span></a><span style="color: #009900;">&#40;</span>comparingDates<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+    <p><img src="../sites/default/files/PM3.0DateMoment1.png"></p>
+</div>
+
+<p>The following code does the same thing using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date"><code>Date</code></a> and <a href="https://msdn.microsoft.com/en-us/library/7hcawkw2(v=vs.94).aspx"><code>.getTime()</code></a> to manipulate the dates and converting date strings into Date objects. Nevertheless, take into consideration that the example below <b>does not work with ProcessMaker Mobile for iOS</b>, because Safari does not recognize the ISO format returned by the method <a href="../3.0/JavaScript_Functions_and_Methods.html#control.getValue">.getValue()</a>.</p>
+
+<p><b>Example:</b></p>
+<div style="margin-left:25px;">
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> comparingDates<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> startDt <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#datetimeVar'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> endDt <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#datetimeVar2'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> newstartDt <span style="color: #339933;">=</span> startDt.<span style="color: #660066;">replace</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">/</span> <span style="color: #339933;">/</span>g<span style="color: #339933;">,</span><span style="color: #3366CC;">'T'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">var</span> newendDt <span style="color: #339933;">=</span> endDt.<span style="color: #660066;">replace</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">/</span> <span style="color: #339933;">/</span>g<span style="color: #339933;">,</span><span style="color: #3366CC;">'T'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span>newstartDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&lt;</span> <span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span>newendDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'1rst Date is earlier than 2nd date.'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span>newstartDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> <span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span>newendDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'2nd date is earlier than 1rst date.'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp;<span style="color: #000066; font-weight: bold;">else</span> <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span>newstartDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span>newendDt<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Both dates are the same.'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'#button0000000001'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">find</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;button&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">click</span><span style="color: #009900;">&#40;</span>comparingDates<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+</div>
+
+<h3><span id="Adding_days_to_a_datetime">Adding days to a datetime</span></h3>
+<p>Moment.js's <a href="https://momentjs.com/docs/#/manipulating/add/">.add()</a> and <a href="https://momentjs.com/docs/#/manipulating/subtract/">.subtract()</a> methods can be used to add or subtract units of time from a datetime. </a> 
+
+<p>In the following example, when the value in the "start_date" field is changed, 2 months are automatically added to its value and set in the "end_date" field:
+<div class="geshifilter"><div class="jquery geshifilter-jquery" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">function</span> setEndDate<span style="color: #009900;">&#40;</span>startDate<span style="color: #339933;">,</span> oldDate<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> &nbsp;<br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> endDate <span style="color: #339933;">=</span> <span style="color: #3366CC;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>startDate <span style="color: #339933;">!=</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; endDate <span style="color: #339933;">=</span> moment<span style="color: #009900;">&#40;</span>startDate<span style="color: #009900;">&#41;</span>.<a href="http://docs.jquery.com/Traversing/add"><span style="color: #000066;">add</span></a><span style="color: #009900;">&#40;</span><span style="color: #CC0000;">2</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">'months'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">format</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;YYYY-MM-DD HH:mm:ss&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span> &nbsp;<br />
+&nbsp; <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#end_date&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setValue</span><span style="color: #009900;">&#40;</span>endDate<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<br />
+<span style="color: #006600; font-style: italic;">//execute when value of the &quot;start_date&quot; changes:</span><br />
+<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#start_date&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">setOnchange</span><span style="color: #009900;">&#40;</span>setEndDate<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+<span style="color: #006600; font-style: italic;">//execute when the DynaForm loads:</span><br />
+setEndDate<span style="color: #009900;">&#40;</span><span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;#start_date&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getValue</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h2><span id="Accessing_Dates_with_PHP">Accessing Datetimes with PHP</span></h2>
+<p>When a DynaForm is submitted, its datetimes will be stored as strings in the associated case variables, which then can be manipulated with PHP code in a trigger.
+
+For instance, if a DynaForm datetime is associated with the <code>orderDate</code> variable, then it can be accessed in a trigger as the case variable <code>@@orderDate</code>. If a trigger sets the case variable <code>@@orderDate</code> beforehand, then the datetime control associated with that variable will display its value when the DynaForm is displayed.</p>
+<p>For example, to set the value of a datetime control associated with the <code>orderDate</code> variable to the current date, create a trigger which fires <i>before</i> the DynaForm and use the ProcessMaker function <tt><a href="../index.php/ProcessMaker_Functions.html#getCurrentDate.28.29" title="ProcessMaker Functions">getCurrentDate()</a></tt> to set the date:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>orderDate <span style="color: #339933;">=</span> getCurrentDate<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Likewise, the value entered into a DynaForm data field can be read in a trigger fired <i>after</i> the DynaForm is submitted:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$x</span> <span style="color: #339933;">=</span> <span style="color: #339933;">@@</span>orderDate<span style="color: #339933;">;</span></div></div>
+
+<p>In addition to <tt>getCurrentDate()</tt>, ProcessMaker provides the custom function <tt><a href="ProcessMaker_Functions.html#getCurrentTime.28.29" title="3.1/ProcessMaker Functions">getCurrentTime()</a></tt> to return the current time as a string. If the option is selected to also use the time (HH:mm:ss) in a date field, then a date and its time can be set by concatenating the strings returned by the two functions:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>orderDate <span style="color: #339933;">=</span> getCurrentDate<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot; &quot;</span> <span style="color: #339933;">.</span> getCurrentTime<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>A datetime's value is stored as a string in the control's associated case variable in the standard <code>"YYYY-MM-DD HH:mm:ss"</code> format, such as "2017-01-25 23:59:59". If the <b>format</b> property of the datetime control does not contain hours, minutes and/or seconds, then these elements will be set to <code>00</code>, such as "2017-01-25 00:00:00". This is the same format which is used by the MySQL database to store datetimes.</p>
+
+<h3><span id="Comparing_Dates_with_PHP">Comparing Datetimes with PHP</span></h3>
+<p>If doing simple comparisons of strings, such as testing whether a date is <i>before</i>, <i>after</i> or <i>equal to</i> another date, then the two dates can be compared as strings. For example:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>DueDate <span style="color: #339933;">&lt;</span> <span style="color: #339933;">@@</span>StartDate or <span style="color: #339933;">@@</span>DueDate <span style="color: #339933;">&gt;=</span> <span style="color: #0000ff;">&quot;2010-12-31&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp;<span style="color: #339933;">...</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+
+<h3><span id="Converting_Dates_to_Timestamps">Converting Datetimes to Timestamps</span></h3>
+<p>To do more advanced operations with datetimes, it is necessary to first convert the datetimes to a PHP timestamp, which is the number of seconds between the current datetime and January 1, 1970 00:00:00 GMT. Use the PHP <tt><a href="http://www.php.net/manual/en/function.strtotime.php">strtotime()</a></tt> function to convert a datetime from a string to a timestamp. For example, to convert <tt>@@orderDate</tt> to a timestamp:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$x</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>orderDate<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p><span id="gooddateformats">The <tt>strtotime()</tt> function can convert any date stored in the standard "<tt>YYYY-MM-DD</tt>" format. If working with other types of date strings, then reorder the date string to one of the formats below which <tt>strtotime()</tt> understands:</span></p>
+<table>
+    <tbody>
+        <tr>
+            <th>Format</th>
+            <th>strtotime() example</th>
+        </tr>
+        <tr>
+            <td>YYYY Month DD</td>
+            <td>strtotime("2000 March 15")</td>
+        </tr>
+        <tr>
+            <td>DD Month YYYY</td>
+            <td>strtotime("15 March 2000")</td>
+        </tr>
+        <tr>
+            <td>Month DD, YYYY</td>
+            <td>strtotime("March 15, 2000")</td>
+        </tr>
+        <tr>
+            <td>Mon DD, YYYY</td>
+            <td>strtotime("Mar 15, 2000")</td>
+        </tr>
+        <tr>
+            <td>MM/DD/YYYY</td>
+            <td>strtotime("03/15/2000")</td>
+        </tr>
+        <tr>
+            <td>MM/DD/YY</td>
+            <td>strtotime("03/15/00")</td>
+        </tr>
+        <tr>
+            <td>YYYY/MM/DD</td>
+            <td>strtotime("2000/03/15")</td>
+        </tr>
+        <tr>
+            <td>DD-MM-YYYY</td>
+            <td>strtotime("15-03-2000")</td>
+        </tr>
+        <tr>
+            <td>YY-MM-DD</td>
+            <td>strtotime("00-03-15")</td>
+        </tr>
+        <tr>
+            <td>YYYY-MM-DD</td>
+            <td>strtotime("2000-03-15")</td>
+        </tr>
+    </tbody>
+</table>
+<p>If separating the elements with a "/" (forward slash), <tt>strtotime()</tt> expects an English-style date, whereas a "-" (hyphen) indicates an international-style date. <tt>strtotime()</tt> also accepts relative dates, which count from the current time. Use a positive or negative number followed by the unit of time (<tt>seconds</tt>, <tt>minutes</tt>, <tt>hours</tt>, <tt>days</tt>, <tt>weeks</tt>, <tt>months</tt>, <tt>years</tt>):</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$x</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;+3 hours&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$x</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;-15 weeks&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$x</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;+1 week 2 days 4 hours 2 seconds&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>If the date should be relative to a time other than the present, then provide a timestamp as the second parameter:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$x</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;+36 days 7 hours&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;2005-12-31&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>After converting to timestamps, dates can be compared.</p>
+
+<p><b>Example - Charge 15% more for any delivery which is after the due date</b></p>
+<div style="margin-left:25px;">
+    <p>If designing a process that charges 15% more for any delivery after the due date, then use <tt>strtotime()</tt> to convert the delivery date and the due date to timestamps and then check whether the delivery date is greater than the due date:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>strtotime<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>deliveryDate<span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> strtotime<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@%</span>charge <span style="color: #339933;">=</span> <span style="color: #339933;">@%</span>charge <span style="color: #339933;">+</span> <span style="color: #339933;">@%</span>charge <span style="color: #339933;">*</span> <span style="color: #CC0000;">0.15</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p>This trigger code will send out a message only if the due date is today:</p>
+    <div class="geshifilter"><div class="javascript geshifilter-javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>strtotime<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> strtotime<span style="color: #009900;">&#40;</span>getCurrentDate<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;boss@acme.com&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;lazyemployee@acme.com&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; <span style="color: #3366CC;">&quot;Deliver it TODAY!!!&quot;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&quot;duetodaymessage.html&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+</div>
+
+<p><b>Example - Calculate the difference between two dates in days</b></p>
+<div style="margin-left:25px;">
+    <p>Timestamps are in seconds, so subtracting one time stamp from another will yield the difference in seconds. In order to get the difference in days, divide by 24 hours times 60 minutes times 60 seconds: <br>
+<span class="geshifilter"><code class="php geshifilter-php"><span style="color: #000088;">$days</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$timestamp1</span> <span style="color: #339933;">-</span> <span style="color: #000088;">$timestamp2</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">/</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">24</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span></code></span><br>
+The following example compares two datetimes and returns the number of days between them. After that, it inserts both datetimes and the result into a PM Table named "PMT_MY_TABLE" using the <a href="ProcessMaker_Functions.html#executeQuery.28.29">executeQuery()</a> function.</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date1<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date1<span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date2<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date2<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$date1</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date1<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$date2</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date2<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$days</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$date2</span> <span style="color: #339933;">-</span> <span style="color: #000088;">$date1</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">/</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">24</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<br />
+&nbsp; &nbsp; <span style="color: #000088;">$sql</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;INSERT INTO PMT_MY_TABLE (DATE1, DATE2, DAYS_DIFFERENCE) VALUES ('<span style="color: #006699; font-weight: bold;">$date1</span>', '<span style="color: #006699; font-weight: bold;">$date2</span>', <span style="color: #006699; font-weight: bold;">$days</span>)&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; executeQuery<span style="color: #009900;">&#40;</span><span style="color: #000088;">$sql</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+    <p>To round the number of days, the <a href="http://php.net/manual/en/function.round.php">round()</a> function can be used.</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">&nbsp; &nbsp; <span style="color: #000088;">$days</span> <span style="color: #339933;">=</span> <a href="http://php.net/round"><span style="color: #990000;">round</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$days</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+    <p>To calculate the number of days without considering the time, the time can be removed from the datetimes with the <a href="http://php.net/manual/en/function.substr.php">substr()</a> function.</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date1<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date1<span style="color: #009900;">&#41;</span> and <a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date2<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date2<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$date1</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span> <a href="http://php.net/substr"><span style="color: #990000;">substr</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date1<span style="color: #339933;">,</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">10</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$date2</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span> <a href="http://php.net/substr"><span style="color: #990000;">substr</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>date2<span style="color: #339933;">,</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">10</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$days</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>int<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$date2</span> <span style="color: #339933;">-</span> <span style="color: #000088;">$date1</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">/</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">24</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+</div>
+
+<p><b>Example - Calculate the difference between the first day of the year and the present day</b></p>
+<div style="margin-left:25px;">
+    <p>The following code example calculates the number of days that have passed from the first day of the current year until the present day:</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$today</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Y-m-d&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$newYear</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Y-01-01&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$days</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$today</span> <span style="color: #339933;">-</span> <span style="color: #000088;">$newYear</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">/</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">24</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+</div>
+
+<p><b>Example - Calculate the difference between the present day and a datetime</b></p>
+<div style="margin-left:25px;">
+    <p>The following code example calculates the difference between the present day and a datetime selected by the user, in days, hours, minutes and seconds.</p>
+
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span> and <span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$dueDate</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$present</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;now&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">//present date and time</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$overdue</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$dueDate</span> <span style="color: #339933;">-</span> <span style="color: #000088;">$present</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$days</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>int<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$overdue</span> <span style="color: #339933;">/</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">24</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$remainder</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$overdue</span> <span style="color: #339933;">%</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">24</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$hours</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>int<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$remainder</span> <span style="color: #339933;">/</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$remainder</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$remainder</span> <span style="color: #339933;">%</span> <span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">60</span><span style="color: #339933;">*</span><span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$minutes</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>int<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$remainder</span> <span style="color: #339933;">/</span> <span style="color: #cc66cc;">60</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$seconds</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$remainder</span> <span style="color: #339933;">%</span> <span style="color: #cc66cc;">60</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>timeOverdue <span style="color: #339933;">=</span> <a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$days</span><span style="color: #009900;">&#41;</span> ? <span style="color: #0000ff;">''</span> <span style="color: #339933;">:</span> <span style="color: #000088;">$days</span> <span style="color: #339933;">.</span><span style="color: #0000ff;">' days'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>timeOverdue <span style="color: #339933;">.=</span> <span style="color: #009900;">&#40;</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>timeOverdue<span style="color: #009900;">&#41;</span> ? <span style="color: #0000ff;">''</span> <span style="color: #339933;">:</span> <span style="color: #0000ff;">' '</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;<span style="color: #006699; font-weight: bold;">$hours</span>:<span style="color: #006699; font-weight: bold;">$minutes</span>:<span style="color: #006699; font-weight: bold;">$seconds</span>&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+</div>
+<h3><span id="Extracting_Date_Information_2">Extracting Datetime Information</span></h3>
+<p>PHP's <a href="http://www.php.net/manual/en/function.getdate.php">getdate()</a> function is useful for pulling particular information out of a timestamp. getdate() returns an associative array with the number of "seconds", "minutes", "hours", "mday" (day of the month), "wday" (day of the week), "mon" (month), "year", and "yday" (day of the year), plus a textual representation of the "weekday" and the "month". For instance, to send out a message if the due date is in the current month:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$due</span> <span style="color: #339933;">=</span> <a href="http://php.net/getdate"><span style="color: #990000;">getdate</span></a><span style="color: #009900;">&#40;</span><a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$current</span> <span style="color: #339933;">=</span> <a href="http://php.net/getdate"><span style="color: #990000;">getdate</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$due</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&quot;mon&quot;</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">==</span> <span style="color: #000088;">$current</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&quot;mon&quot;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;boss@acme.com&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;employee@acme.com&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">&quot;Deliver it this month&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;duethismonthmessage.html&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Converting_from_Timestamps_to_Dates">Converting from Timestamps to Datetimes</span></h3>
+<p>After converting to a timestamp, use PHP's <a href="http://www.php.net/manual/en/function.date.php">date()</a> function to convert a timestamp back to a string which can be displayed in a DynaForm datetime control or be inserted into an Output Document or email template. To convert a timestamp to the "YYYY-MM-DD" or "YYYY-MM-DD HH:mm:ss" format used by ProcessMaker in datetime controls and the MySQL database, use:</p>
+<dl>
+    <dd><strong><tt>date('Y-m-d', $timestamp)</tt></strong>
+        <dl>
+            <dd><i>or</i></dd>
+        </dl>
+    </dd>
+    <dd><strong><tt>date('Y-m-d H:i:s', $timestamp)</tt></strong></dd>
+</dl>
+<p>For example, to add 10 days to the due date, which will be redisplayed in a subsequent DynaForm:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$due</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$duePlusTen</span> <span style="color: #339933;">=</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;+10 days&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$due</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>dueDate <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;Y-m-d&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$duePlusTen</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Formatting_Dates_in_English">Formatting Datetimes in English</span></h3>
+<p><tt>date()</tt> can also be used to create textual representations of datetimes. For example, to create a datetime in a format like "Tuesday, March 15, 2010":</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>textualDueDate <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;l, F j, Y&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$duePlusTen</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<h3><span id="Formatting_Dates_in_Other_Locales">Formatting Datetimes in Other Locales</span></h3>
+<p>To create a textual representation of a date in a language other than English, use the <a href="http://www.php.net/manual/en/function.strftime.php">strftime()</a> function. It will format the datetime in the language of the locale of the ProcessMaker server. To specify a different locale, such as "pt" (Portuguese), "pt_BR" (Portuguese from Brazil), or "pt_BR@UTF-8" (Portuguese from Brazil in the UTF-8 character set), use PHP's <a href="http://www.php.net/manual/en/function.setlocale.php">setlocale()</a>. For instance, to output today's date in Spanish:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><a href="http://php.net/setlocale"><span style="color: #990000;">setlocale</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;LC_TIME&quot;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;es&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #339933;">@@</span>textualDueDate <span style="color: #339933;">=</span> <a href="http://php.net/strftime"><span style="color: #990000;">strftime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;%A, <span style="color: #009933; font-weight: bold;">%e</span> %B %Y&quot;</span><span style="color: #339933;">,</span> <a href="http://php.net/time"><span style="color: #990000;">time</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>To set the locale to the language of the current ProcessMaker user:</p>
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><a href="http://php.net/setlocale"><span style="color: #990000;">setlocale</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;LC_TIME&quot;</span><span style="color: #339933;">,</span> <span style="color: #339933;">@@</span>LANG<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>Note that the selected locale must also be installed on the ProcessMaker server.</p>
+<p>To add locales in <strong>Debian/Ubuntu</strong>, use the command as root:</p>
+
+<codeblock>dpkg-reconfigure locale</codeblock>
+
+<p>In <strong>Red Hat/CentOS/Fedora</strong>, go to <strong>System &gt; Add/Remove Packages</strong>. In the <strong>Package Manager</strong>, go to the <strong>Browse</strong> tab and select the <strong>Languages</strong>. Then click on the desired language and install it.</p>
+<p>If multiple languages are installed in Microsoft Windows, then use <tt><a href="http://www.php.net/manual/en/function.setlocale.php">setlocale()</a></tt> to select the language. See this list of <a href="http://msdn.microsoft.com/en-us/library/39cwe7zf%28vs.71%29.aspx">supported Microsoft locales</a>.</p>
+
+
+
+
+
+<h3><span id="Dynamic_dates_using_variables">Dynamic datetimes using variables</span></h3>
+<p>The <a href="Datetime_Control.html#Default_Date">default date</a>, <a href="Datetime_Control.html#Min_Date">min date</a>, and <a href="Datetime_Control.html#Max_Date">max date</a> properties used by a datetime control can be set <i>dynamically</i> by using <a href="../3.0/Variables.html">case variables</a>. The properties of the datetime control will be set according to the variables (as long as these variables are set in a prior <a href="../3.0/Triggers.html">trigger</a> or in fields in a prior DynaForm). The variables should use the format <code>"YYYY-MM-DD"</code> or <code>"YYYY-MM-DD HH:MM:SS"</code>, such as <code>"1999-01-01"</code> or <code>"2016-12-31 23:59:59"</code>.</p>
+
+<p><b>Example setting to the current datetime:</b></p>
+<div style="margin-left:25px;">
+    <p>A datetime control whose variable is named "currentDate" needs to be set to the current datetime. First, create a trigger which is set to fire before the DynaForm, which uses the <a href="../3.0/ProcessMaker_Functions.html#getCurrentDate.28.29">getCurrentDate()</a> and <a href="../3.0/ProcessMaker_Functions.html#getCurrentTime.28.29">getCurrentTime()</a> functions to set the current datetime in <code>YYYY-MM-DD HH:MM:SS</code> format:</p>
+    <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>currentDate <span style="color: #339933;">=</span> getCurrentDate<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">' '</span> <span style="color: #339933;">.</span> getCurrentTime<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+    <p>When the DynaForm is loaded, the datetime control associated with the <code>@@currentDate</code> variable will automatically have the current datetime. If the user shouldn't be able to change the value of the datetime field, then set its <b>mode</b> property to <i>disabled</i>.
+</div>
+
+<p><b>Example setting 3 relative Dates:</b></p>
+    <div style="margin-left:25px;">
+        <p>In this example, the <code>@@minDate</code>, <code>@@maxDate</code> and <code>@@defaultDate</code> variables are inserted in the <a href="Datetime_Control.html#Min_Date">min date</a>, <a href="Datetime_Control.html#Max_Date">max date</a>, and <a href="Datetime_Control.html#Default_Date">default date</a> properties, respectively.</p>
+
+        <img src="../sites/default/files/DynamicDateVariables.png">
+
+        <p>The following trigger which executes <i>before</i> the DynaForm sets the three variables. If the user set the <code>@@dueDate</code> variable in a prior DynaForm, the trigger sets <b>min date</b> to the first day of the month of the @@dueDate, the <b>max date</b> to the last day of the month @dueDate and the <b>default date</b> to the middle of the month of the dueDate. If no value was selected for the @@dueDate, then the trigger sets the three variables to the first day, last day and middle day of the next month, respectively:</p>
+        <div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/isset"><span style="color: #990000;">isset</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span> or <a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>minDate <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-01'</span><span style="color: #339933;">,</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'+1 month'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>maxDate <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-t'</span><span style="color: #339933;">,</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'+1 month'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>defaultDate <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-15'</span><span style="color: #339933;">,</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'+1 month'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>minDate <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-01'</span><span style="color: #339933;">,</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>maxDate <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-t'</span><span style="color: #339933;">,</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #339933;">@@</span>defaultDate <span style="color: #339933;">=</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y-m-15'</span><span style="color: #339933;">,</span> <a href="http://php.net/strtotime"><span style="color: #990000;">strtotime</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>dueDate<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+    </div>
+</div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>

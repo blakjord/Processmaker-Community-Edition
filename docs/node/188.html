@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="BPM, business process management, workflow, processmaker, business, BPM Windows, BPM Linux, wiki, BPM documentation, BPM FAQ, task documentation, BPM PHP, BPM Open Source, BPM Variables, BPM Installation, BPM Programming, BPM Elements, BPM Concepts, BPM Frequently Asked Questions, BPM 3.0, BPM News, Release notes, DynaForms, BPM Community, BPM Enterprise, BPM Mobile, BPM Responsive Web Design, User Manual, BPM Resources" />
+<link rel="alternate" hreflang="en" href="../index.html" />
+<link rel="shortcut icon" href="https://wiki.processmaker.com/themes/thecompany_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="ProcessMaker is commercial open source workflow and business process management software." />
+<meta name="viewport" content="width=device-width" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../index.php/Business_Rules.html" />
+<link rel="shortlink" href="188.html" />
+<title>Business Rules Plugin | Documentation@ProcessMaker</title>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/system/system.base.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.messages.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/system/system.theme.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/modules/aggregator/aggregator.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/comment/comment.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/field/theme/field.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/node/node.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/search/search.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/toc_filter/toc_filter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/user/user.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/views/css/views.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/ctools/css/ctools.css?s743n7");
+@import url("https://wiki.processmaker.com/sites/all/modules/geshifilter/geshifilter.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/panels/css/panels.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/nice_menus/css/nice_menus_default.css?s743n7");
+@import url("https://wiki.processmaker.com/modules/fivestar/css/fivestar.css?s743n7");
+</style>
+<style type="text/css" media="all">
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/style.css?s743n7");
+@import url("https://wiki.processmaker.com/themes/thecompany_responsive_theme/css/media.css?s743n7");
+</style>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/drupal.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/ajax.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/toc_filter/toc_filter.js?s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/js/colorbox.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/colorbox/styles/default/colorbox_style.js@s743n7"></script>
+<script type="text/javascript" src="../sites/all/modules/google_analytics/googleanalytics.js@s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3380652-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://wiki.processmaker.com/misc/progress.js?v=7.34"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.ajax.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/modules/fivestar/js/fivestar.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-1.10.2.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/jquery-ui.min.js?s743n7"></script>
+<script type="text/javascript" src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/js/custom.js?s743n7"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"thecompany_responsive_theme","theme_token":"iq48mzIGrUwH2YRZ8smWdsD7qV_r1wNFD1Y0go1uIFM","jquery_version":"1.9","js":{"modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/nice_menus\/js\/jquery.bgiframe.js":1,"modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"modules\/nice_menus\/js\/superfish.js":1,"modules\/nice_menus\/js\/nice_menus.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"modules\/jquery_update\/js\/jquery_update.js":1,"modules\/toc_filter\/toc_filter.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"misc\/progress.js":1,"modules\/fivestar\/js\/fivestar.ajax.js":1,"modules\/fivestar\/js\/fivestar.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-1.10.2.min.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.js":1,"themes\/thecompany_responsive_theme\/js\/jquery-ui.min.js":1,"themes\/thecompany_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/toc_filter\/toc_filter.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"modules\/panels\/css\/panels.css":1,"modules\/nice_menus\/css\/nice_menus.css":1,"modules\/nice_menus\/css\/nice_menus_default.css":1,"modules\/fivestar\/css\/fivestar.css":1,"themes\/thecompany_responsive_theme\/css\/style.css":1,"themes\/thecompany_responsive_theme\/css\/media.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"toc_filter_smooth_scroll_duration":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":"800","speed":"slow"},"ajax":{"edit-vote--2":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}}}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+// Insert Your Facebook Pixel ID below.
+fbq('init', '735235999992228');
+fbq('track', 'PageView');
+</script>
+<!-- Insert Your Facebook Pixel ID below. -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=735235999992228&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-188 node-type-community-edition">
+    
+<div class="wrap">
+
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+      
+      <div class="header_inner_wrapper">
+        <div class="header_left">
+                      <div id="logo">
+              <a href="../index.html" title="Home"><img src="../sites/default/files/full-logo.png"/></a>
+            </div>
+                            <!--  <h1 id="site-title">
+            <a href="/" title="Home">Documentation@ProcessMaker</a>
+            <div id="site-description"></div>
+          </h1> -->
+            
+        </div>
+      </div>
+      <div class="header_right">
+          <div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+        <h2 >_</h2>
+    
+  <div class="content">
+    <form action="188.html" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-VAMclzpIqpwQkI_m5ITypRKxQ9WFRgqWwBPOi729CXI" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                  <h1 class="page-title">Business Rules Plugin</h1>                <p class="page-title-suffix"></p>
+                 <div style="margin-top: 5px;"></div>
+      </div>
+    </header>
+    <div class="region-version">
+      <span>Version: </span><ul><li><a href="../3.2/Business_Rules.html" class="">3.8</a></li><li><a href="../3.2/Business_Rules.html" class="">3.7</a></li><li><a href="../3.2/Business_Rules.html" class="">3.6</a></li><li><a href="../3.2/Business_Rules.html" class="">3.5</a></li><li><a href="../3.2/Business_Rules.html" class="">3.4</a></li><li><a href="../3.2/Business_Rules.html" class="">3.3</a></li><li><a href="../3.2/Business_Rules.html" class="">3.2</a></li><li><a href="../3.2/Business_Rules.html" class="">3.1</a></li><li><a href="../3.2/Business_Rules.html" class="">3.0</a></li><li><a  class="active-version">2.x</a></li></ul>    </div>
+  </div>
+</div>
+<!-- <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-0"><li class="menu-506 menu-path-node-1078 first odd "><a href="/PM_Classic" title="Learn how to develop business solutions in ProcessMaker Platform while maintaining your existing ProcessMaker 3 solutions in PM Classic: the perfect bridge between your new and existing solutions with a state-of--the-art BPM platform.">PM Classic</a></li>
+<li class="menu-319 menu-path-processmakercom-tutorials  even "><a href="http://www.processmaker.com/tutorials" title="">Tutorials</a></li>
+<li class="menu-320 menu-path-node-571  odd "><a href="/3.1/user_guide">User Guide</a></li>
+<li class="menu-1138 menu-path-node-572  even "><a href="/3.1/developer_info">Developer Info</a></li>
+<li class="menu-1197 menu-path-node-876  odd "><a href="/3.2/sys_administration">Sys Administration</a></li>
+<li class="menu-1140 menu-path-node-236  even "><a href="/3.1/resources">Helpful Resources</a></li>
+<li class="menu-1141 menu-path-node-554  odd "><a href="/Sitemap">Sitemap</a></li>
+<li class="menu-1213 menu-path-sprocessmakergitbookio-processmaker-  even last"><a href="https://processmaker.gitbook.io/processmaker/" title="Read ProcessMaker Platform Spring 2023 documentation to learn more about the next generation of BPM.">ProcessMaker Platform</a></li>
+</ul>
+-->
+  
+  <div id="container">
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+
+              <!-- <div id="breadcrumbs">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div> -->
+      
+      <section id="post-content" role="main">
+                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="Business Rules Plugin" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-community-edition">
+    <div class="field field-name-field-how-useful field-type-fivestar field-label-above"><div class="field-label">Please rate how useful you found this document:&nbsp;</div><div class="field-items"><div class="field-item even"><form class="fivestar-widget" action="188.html" method="post" id="fivestar-custom-widget" accept-charset="UTF-8"><div><div  class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select id="edit-vote--2" name="vote" class="form-select"><option value="-">Select rating</option><option value="20">Give Business Rules Plugin 1/5</option><option value="40">Give Business Rules Plugin 2/5</option><option value="60" selected="selected">Give Business Rules Plugin 3/5</option><option value="80">Give Business Rules Plugin 4/5</option><option value="100">Give Business Rules Plugin 5/5</option></select>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Average: <span >2.3</span></span> <span class="total-votes">(<span >4</span> votes)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" type="submit" id="edit-fivestar-submit" name="op" value="Rate" /><input type="hidden" name="form_build_id" value="form-C_1dvvenk4_r94twwiBac8dUNowE08pBjyp3388NP8U" />
+<input type="hidden" name="form_id" value="fivestar_custom_widget" />
+</div></form></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div style="float: right; margin-left: 5px; background-color: #f9f9f9; border: 1px solid #aaaaaa; padding: 5px;"><center><strong>Contents:</strong> [<a href="188.html#" onclick="var el = document.getElementById('toc');
+        var txt = ('innerText' in el)? 'innerText' : 'textContent';
+        if (el.style.display=='none') { 
+           el.style.display = '';
+           document.getElementById('hideLabel')[txt] = 'hide';
+        }
+        else {
+	        el.style.display = 'none';
+           document.getElementById('hideLabel')[txt] = 'show';
+        }"><span id="hideLabel">hide</span></a>]</b></center><div id="toc" ><ol class="toc">
+<li class="toc"><a href="188.html#Overview">Overview</a></li>
+<li class="toc"><a href="188.html#Requirements">Requirements</a></li>
+<ol class="toc">
+<li class="toc"><a href="188.html#ProcessMaker_Compatibility">ProcessMaker Compatibility</a></li>
+</ol>
+<li class="toc"><a href="188.html#How_the_plugin_works">How the plugin works</a></li>
+<li class="toc"><a href="188.html#Installation_and_Configuration">Installation and Configuration</a></li>
+<li class="toc"><a href="188.html#Considerations_before_starting">Considerations before starting</a></li>
+<li class="toc"><a href="188.html#Business_Rule_Configuration">Business Rule Configuration</a></li>
+<ol class="toc">
+<li class="toc"><a href="188.html#Managing_Business_Rules">Managing Business Rules</a></li>
+<li class="toc"><a href="188.html#Creating_a_New_Business_Rule_Set">Creating a New Business Rule Set</a></li>
+<ol class="toc">
+<li class="toc"><a href="188.html#Defining_conditions_in_a_rule_set">Defining conditions in a rule set</a></li>
+<ol class="toc">
+<li class="toc"><a href="188.html#Setting_the_criteria_for_conditions">Setting the criteria for conditions</a></li>
+</ol>
+<li class="toc"><a href="188.html#Defining_the_return_value">Defining the return value </a></li>
+<li class="toc"><a href="188.html#Setting_Output_Variables">Setting Output Variables</a></li>
+</ol>
+<li class="toc"><a href="188.html#Editing_the_Rule_Set_Properties">Editing the Rule Set Properties</a></li>
+<li class="toc"><a href="188.html#Opening_in_Editor">Opening in Editor</a></li>
+<li class="toc"><a href="188.html#Editing_the_Rule_Set_Source">Editing the Rule Set Source</a></li>
+<li class="toc"><a href="188.html#Exporting_and_Importing_a_Rule_Set">Exporting and Importing a Rule Set</a></li>
+<li class="toc"><a href="188.html#Deleting_a_Rule_Set">Deleting a Rule Set</a></li>
+<li class="toc"><a href="188.html#Business_Rule_Trigger">Business Rule Trigger</a></li>
+<ol class="toc">
+<li class="toc"><a href="188.html#PMBREvaluate.28.29"><tt>PMBREvaluate()</tt></a></li>
+</ol>
+</ol>
+<li class="toc"><a href="188.html#Single-Hit_Example:_Credit_Approval">Single-Hit Example: Credit Approval</a></li>
+<ol class="toc">
+<li class="toc"><a href="188.html#Creating_the_process">Creating the process</a></li>
+<li class="toc"><a href="188.html#Creating_the_Dynaforms">Creating the Dynaforms</a></li>
+<li class="toc"><a href="188.html#Creating_the_Business_Rule">Creating the Business Rule</a></li>
+<li class="toc"><a href="188.html#Creating_the_Trigger">Creating the Trigger</a></li>
+<li class="toc"><a href="188.html#Starting_the_case">Starting the case</a></li>
+</ol>
+<li class="toc"><a href="188.html#Multi-Hit_Example:_Credit_Approval">Multi-Hit Example: Credit Approval </a></li>
+<li class="toc"><a href="188.html#Glossary">Glossary</a></li>
+<ol class="toc">
+<li class="toc"><a href="188.html#Business_Rule_engine"><tt><strong>Business Rule engine</strong></tt></a></li>
+<li class="toc"><a href="188.html#Decision_Table"><tt><strong>Decision Table</strong></tt> </a></li>
+<li class="toc"><a href="188.html#Multi_Hit"><tt><strong>Multi Hit</strong></tt></a></li>
+<li class="toc"><a href="188.html#PMRL"><tt><strong>PMRL</strong></tt></a></li>
+<li class="toc"><a href="188.html#Ruleset"><tt><strong>Ruleset</strong></tt></a></li>
+<li class="toc"><a href="188.html#Single_Hit"><tt><strong>Single Hit</strong></tt></a></li>
+</ol>
+</div></div>
+
+<p>
+<img src="../sites/default/files/faviconpm_23.png" alt="" width="16" height="16"> 
+<span style="color: #009688"><strong>Plugin Version:</strong></span>
+<span style="color: dimgrey"><strong>3.1</strong></span> |
+<a href="https://goo.gl/qKkuPc">Release Notes</a>  | <a href="../index.php/Business_Rules_Old_Versions.html" title="Business Rules Old Versions">Old Versions</a></p>
+<hr>
+
+<h2><span id="Overview">Overview</span></h2>
+<p>A business rule is a set of conditions in a process that allows you to change output values based on process variables. A rule can enforce business policy, make a decision, or generate new data from existing data.</p>
+<p>The Business Rules plugin helps process designers to define business logic rule sets and share them among cases. These rules are defined for each process by using a graphical interface that requires no coding, making rule definition easy to do. The rule sets are executed by a trigger.</p>
+<p>The main objectives of the Business Rules plugin are:</p>
+<ul>
+<li>To apply business rules to all the cases in a process.</li>
+<li>To design business rules in a graphical interface which is easier to understand than trigger code.</li>
+<li>To allow process designers the ability to define, analyze, and test business rules while developing processes and running cases.</li>
+</ul>
+
+<h2><span id="Requirements">Requirements</span></h2>
+<h3><span id="ProcessMaker_Compatibility">ProcessMaker Compatibility</span></h3>
+
+<p>This plugin is fully compatible with the following ProcessMaker versions:</p>
+<ul>
+<li>v. 2.5.2.x</li>
+<li>v. 2.8.0.x</li>
+<li>v. 3.0.1.x</li>
+<li>v. 3.1.x</li>
+<li>v. 3.2.1</li>
+</ul>
+
+<h2><span id="How_the_plugin_works">How the plugin works</span></h2>
+<p>The following graphic shows how the Business Rules plugin works and the relation between its components:</p>
+<p><img alt="" src="../sites/default/files/BusinessRulesGrahic.png"></p>
+<ol>
+<li>The <tt>PMBREvaluate()</tt> function evaluates a business rule set, which is defined for the process.</li>
+<li>The <tt>PMBREvaluate()</tt> function needs to be executed in a trigger, which is set to fire <i>before</i> the results of the business rule are needed in the process.</li>
+<li>Only the current case and its data are evaluated by the business rule set.</li>
+</ol>
+
+
+<h2><span id="Installation_and_Configuration">Installation and Configuration</span></h2>
+<p>If using ProcessMaker 2.5, the Business Rules plugin will be available once the <a href="../index.php/Enterprise_Edition_2.0.html" title="Enterprise Edition 2.0">Enterprise Edition plugin</a> has been imported and its license has been activated. If using ProcessMaker Enterprise Edition 2.8 or later, the Business Rules plugin is available by default.</p>
+<ul>
+<li>To enable the Business Rules plugin, login with a user such as "admin" who has the <a href="../index.php/2.0/Roles.html#PM_SETUPADVANCE" title="2.0/Roles">PM_SETUPADVANCE</a> permission in his/her <a href="../index.php/2.0/Roles.html" title="2.0/Roles">role</a> and then go to <strong>ADMIN &gt; Plugins &gt; Enterprise Manager</strong>. Either <a href="../index.php/Enterprise_Edition_2.0.html" title="Enterprise Edition 2.0">install</a> the Business Rules plugin by clicking on 
+<img alt="" src="../sites/default/files/InstallPluginIcon.png"> <strong>Install from File</strong> and uploading the plugin file <i><strong>or</strong></i> by clicking on its <strong>Install Now</strong> button in the list of available plugins. <p><img alt="" src="../sites/default/files/BusinessRulesPluginInstall2.png"></p>
+</li>
+<li>After installing the plugin, make sure that the Business Rules plugin is enabled.
+<p><img alt="" src="../sites/default/files/BusinessRulesPluginEnabledStatus.png"></p>
+</li>
+<li>Now the <strong>Business Rules</strong> option should appear under <strong>ADMIN &gt; Plugins</strong>: <p><img alt="" height="166" src="../sites/default/files/BusinessRulesEnabled.png" width="255"></p>
+</li>
+</ul>
+
+<h2><span id="Considerations_before_starting">Considerations before starting</span></h2>
+<ul>
+<li>Business rules can use data from most types of fields, but the following fields are unsupported:
+<ul>
+<li><a href="../index.php/PM_Tables.html" title="2.0/PM Tables"><tt>PM Tables:</tt></a></li>
+<li><a href="../index.php/2.0/Grids.html" title="2.0/Grids"><tt>Grid fields</tt></a></li>
+<li><a href="../index.php/2.0/Dropdown_Boxes_and_Listboxes.html#Listbox" title="2.0/Dropdown Boxes and Listboxes"><tt>Listbox</tt></a></li>
+<li><a href="../index.php/2.0/Checkboxes_and_Radio_Buttons.html#Checkgroup" title="2.0/Checkboxes and Radio Buttons"><tt>Checkgroup</tt></a></li>
+</ul>
+</li>
+<li>If using a <a href="../index.php/2.0/Textboxes_and_Textareas.html#Currency" title="2.0/Textboxes and Textareas"><tt>Currency</tt></a> field in a business rule, values should have no currency symbol (such as $) and no thousands separator. Only the period (.) is allowed as a decimal separator.</li>
+<li>The Business Rules are evaluated when the <tt>PMBREvaluate()</tt> function is called in a trigger, so the trigger needs to be set to fire before the results of the Business Rules are used in the process. For example, if the Business Rules set the value of a field in a DynaForm, set the trigger to fire before the DynaForm.</li>
+<li>The Business Rules plugin evaluates rules using only the data defined inside the current case.</li>
+</ul>
+
+<h2><span id="Business_Rule_Configuration">Business Rule Configuration</span></h2>
+<p>In order to create and edit business rules, login to ProcessMaker with a user such as <strong>admin</strong>, who has the <a href="../index.php/2.0/Roles.html#PM_SETUPADVANCE" title="2.0/Roles">PM_SETUPADVANCE</a> permission in his/her <a href="../index.php/2.0/Roles.html" title="2.0/Roles">role</a>. Then, follow the steps listed below to add a business rule to a process:</p>
+<ol>
+<li><a href="188.html#Creating_a_New_Business_Rule_Set">Create a business rule set</a>.</li>
+<li><a href="188.html#Business_Rule_Trigger" title="Business Rules">Create the trigger</a>, which calls the <a href="188.html#PMBREvaluate.28.29">PMBREvaluate()</a> function which will evaluate the business rule set.</li>
+</ol>
+
+<h3><span id="Managing_Business_Rules">Managing Business Rules</span></h3>
+<p>To manage the existing Business Rules, go to <strong>ADMIN &gt; Plugins &gt; Business Rules</strong>:</p>
+<p><img alt="" src="../sites/default/files/1100px-BusinessruleInterface.png"></p>
+<p>The existing rules will be listed:</p>
+<p><img alt="" src="../sites/default/files/RuleSetCreatedBR.png"></p>
+<p>On the right-hand side of each business rule, the following group of buttons is provided to manipulate the business rule:</p>
+<ul>
+<li><a href="188.html#Creating_a_New_Business_Rule_Set"> <strong>New:</strong></a> Click on this button to define a new rule set.</li>
+<li><a href="188.html#Exporting_and_Importing_a_Rule_Set"> <strong>Import:</strong></a> Click on this button to import a rule set file, which should have the <a href="188.html#PMRL"><tt>.pmrl</tt></a> extension.</li>
+<li><a href="188.html#Editing_the_Rule_Set_Properties"> <strong>Edit Properties:</strong></a> Change the rule set properties.</li>
+<li><a href="188.html#Opening_in_Editor"> <strong>Open in Editor:</strong></a> Edit the conditions for a rule set.</li>
+<li><a href="188.html#Editing_the_Rule_Set_Source"> <strong>Edit Rule Set Source:</strong></a> Edit the rule set source generated when the business rule is created.</li>
+<li><a href="188.html#Exporting_and_Importing_a_Rule_Set"> <strong>Export:</strong></a> Export a rule set file with the <a href="188.html#PMRL"><tt>.pmrl</tt></a> extension.</li>
+<li><a href="188.html#Deleting_a_Rule_Set"> <strong>Delete Rule:</strong></a> Deletes the selected business rule set.</li>
+</ul>
+
+<h3><span id="Creating_a_New_Business_Rule_Set">Creating a New Business Rule Set</span></h3>
+<p>To create a new Business Rule, click on the <strong>New</strong> button and define the properties of the new rule set in the window that opens:</p>
+<p><img alt="" src="../sites/default/files/700px-CreatingABusinessRule.png"></p>
+<ul>
+<li><strong>Name:</strong> Provide a name for the rule set.</li>
+<li><strong>Description:</strong> Enter a brief description of the rule set.</li>
+<li><strong>Type:</strong> Select how the rule set will be evaluated:
+<ul>
+<li><strong><a href="188.html#Single_Hit" title="Business Rules">Single Hit</a></strong>: The business rule engine evaluates rules until finding the first condition which evaluates as <strong><tt>true</tt></strong> and then returns the results and executes any action defined in the rule.</li>
+<li><strong><a href="188.html#Multi_Hit" title="Business Rules">Multi Hit</a></strong>: The business rules engine evaluates <i>all</i> rules and for each condition evaluated as <strong><tt>true</tt></strong>, it executes any action defined in the rule. The returned value is the result from the last rule evaluated as <strong><tt>true</tt></strong>.</li>
+</ul>
+</li>
+<li><strong>Process:</strong> Select the process to which the rule set will apply. Note that only processes in the current workspace may be selected.</li>
+</ul>
+<p>After defining the new rule set, click on <strong>Save</strong>. In next window the <a href="188.html#Decision_Table" title="Business Rules">decision table</a> is displayed, which defines the conditions and results for the rule set:</p>
+<p><img alt="" src="../sites/default/files/AddingABusinessRule.png"></p>
+<p>Where:</p>
+<ol>
+<li>The Title of the Rule Set. It can be edited by clicking on it.<p><img alt="" src="../sites/default/files/EditingTitle.png"></p></li>
+<li>Title of the process where the business rules will apply.</li>
+<li><strong>Conditions:</strong> This section defines the conditions which will be evaluated. Click on the <strong><tt>+</tt></strong> button to add additional condition columns. See <a href="188.html#Defining_conditions_in_a_Business_Rule_Set">Defining conditions in a Business Rule Set</a> below.</li>
+<li><strong>Conclusions:</strong> This section shows the results which are returned if the condition evaluates to <tt>true</tt>. By default, a <tt>true</tt> condition only results in a return value. To also set the value of a case variable when a condition is <tt>true</tt>, click on the <strong><tt>+</tt></strong> button to add more conclusion columns.</li>
+<li>The <strong><tt>+</tt></strong> button in the left column is used to add more conditions.</li>
+<li>To select which field will be compared in the conditions, click on the dropdown box at the top of the table and select one of the fields from the DynaForms in the process. <p><img alt="" src="../sites/default/files/DynaformFieldsLisBR.png"></p></li>
+<li><strong>Settings:</strong> click on the gear icon and select the format for the date, to convert the value of a date field to standard "YYYY-MM-DD" format or a UNIX timestamp (which is the number of seconds since January 1, 1970 00:00:00) so it can be used in comparisons:
+<ul>
+<li><strong>dateFormat('d-m-Y') to String:</strong> Converts a date in format "DD-MM-YYYY" or "DD/MM/YYYY" to "YYYY-MM-DD" format. Ex: <tt>"31/12/2014"</tt> ? <tt>"2014-12-31"</tt></li>
+<li><strong>dateFormat('d-m-Y') to Time:</strong> Converts a date in format "DD-MM-YYYY" or "DD/MM/YYYY" to a UNIX timestamp. Ex: <tt>"25-01-2008"</tt> ? <tt>1200801600</tt></li>
+<li><strong>dateFormat('Y-m-d') to String:</strong> Converts a date in format "YYYY-MM-DD" or "YYYY/MM/DD" to "YYYY-MM-DD" format. Ex: <tt>"2014/12/31"</tt> ? <tt>"2014-12-31"</tt></li>
+<li><strong>dateFormat('Y-m-d') to Time:</strong> Converts a date in format "YYYY-MM-DD" or "YYYY/MM/DD" to a UNIX time stamp. Ex: <tt>"2000-01-25"</tt> ? <tt>948772800</tt></li>
+<li><strong>dateFormat('Y-m-d H:i:s') to String:</strong> Converts a date in format "YYYY-MM-DD HH:MM:SS" or "YYYY/MM/DD HH:MM:SS" to "YYYY-MM-DD HH:MM:SS" format. Ex: <tt>"2014/11/03 23:01:30"</tt> ? <tt>"2014-11-03 23:01:30"</tt></li>
+<li><strong>dateFormat('Y-m-d H:i:s') to Time:</strong> Converts a date in format "YYYY-MM-DD HH:MM:SS" or "YYYY/MM/DD HH:MM:SS" to a UNIX time stamp. Ex: <tt>"2014-11-03 23:01:30"</tt> ? <tt>1415070090</tt></li>
+</ul>
+</li>
+<li><strong>Comparison Operator:</strong> Select the comparison operator which will be used in the condition:<p><img alt="" src="../sites/default/files/LogicalOperatorsBR.png"></p></li>
+<li><strong>Value Compared:</strong> Enter a field, constant, literal value or a complex statement which will be compared to the value in the selected field. Click in the blank area to open the criteria builder, which can be used to select elements. See <a href="188.html#Defining_conditions_in_a_rule_set">Defining conditions in a rule set</a>.<p><img alt="" src="../sites/default/files/BusinessRulesOperators.png"></p></li>
+<li><strong>Return Value:</strong> Enter a field, constant, literal value or a complex expression which will returned if the condition evaluates as <tt>true</tt>. Click in the blank area to open the criteria builder, which can be used to select elements. See <a href="188.html#Defining_the_return_value">Defining the return value</a> below.</li>
+<li><strong>Save and cancel buttons:</strong> click on these buttons to either save the conditions or to cancel them.</li>
+</ol>
+
+<h4><span id="Defining_conditions_in_a_rule_set">Defining conditions in a rule set</span></h4>
+<p>A business rule set consist of one or more conditions, which are evaluated when the <a href="188.html#PMBREvaluate.28.29">PMBREvaluate()</a> function is called in a trigger.</p>
+<p>To construct a condition, first select the field which will be used in the comparison for all the conditions. Click on the dropdown box at the top of the table and select one of the fields from the DynaForms in the process.</p>
+<p><img alt="" src="../sites/default/files/ListFieldsBRLogical.png"></p>
+<dl><dd><strong><font color="green">Note:</font></strong> <font color="dimgrey">If needing to use a case variable which was defined in a trigger, concatenate several fields or call a function to modify the value of the field, then select a field for now and later edit the source and replace the field in the source code.</font></dd></dl>
+<p>Then, select the comparison operator used in the condition. To select the operator for the condition, click on the first column of the condition:</p>
+<p><img alt="" src="../sites/default/files/ListLogicalOperatorsBR.png"></p>
+<p>The following operators are available:</p>
+<table>
+<tbody>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>=</td>
+<td>equals</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>greater than or equals</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>less than or equals</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>greater than</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>less than</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>not equals</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>not equals (<a href="../index.php/Using_Conditions.html#Operator_Precedence_in_Conditions" title="Using Conditions">higher precedence</a> than !=)</td>
+</tr>
+<tr>
+<td>within</td>
+<td>value is found in an array</td>
+</tr>
+<tr>
+<td>not within</td>
+<td>value is not found in an array</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <strong>Country</strong> field is selected and the operator is <tt><strong>=</strong></tt> (equals):</p>
+<p><img alt="" src="../sites/default/files/ChoosingLogicalOperator.png"></p>
+<p>The condition turns into red, meaning that the condition is not complete or an error has been detected. In order to complete the condition, the criteria with which the comparison will be made needs to be defined.</p>
+
+<h5><span id="Setting_the_criteria_for_conditions">Setting the criteria for conditions</span></h5>
+<p>To complete the condition set the criteria to which the selected field will be compared. By clicking in the blank area, a window will appear to define the criteria, which can be contain variables, constants, operators and literal values:</p>
+<p><img alt="" src="../sites/default/files/BusinessRulesOperators.png"></p>
+<p>To insert a field from a DynaForm, click on the <strong>Variables</strong> tab and select a field to Insert. To enter a literal value, simply type the value. Real numbers should use a period (.) as the decimal point and should not have any thousands separators. Strings (text) need to be enclosed in '...' (single quotation marks) or "..." (double quotation marks). If comparing dates, remember to either compare them as strings in the "YYYY-MM-DD" format or convert them to UNIX timestamps before comparing them. After entering a literal value, press ENTER to add it.</p>
+<p><img alt="" src="../sites/default/files/DefiningCriteriaBR.png"></p>
+<p>Moreover, it is possible to build a complex expression by using a combination of variables, constants and/or operators:</p>
+<p><img alt="" src="../sites/default/files/CombinationOfElementsInConditionBR.png"></p>
+<p>If needing to make additional comparisons in the condition, then click the <strong><tt>+</tt></strong> button to add another condition column. Then enter another variable, operator and criteria. The comparisons are joined with <tt>AND</tt>, meaning that <i>all</i> the comparisons have to be <tt>true</tt> in order for the whole condition to be <tt>true</tt>.</p>
+<p><img alt="" src="../sites/default/files/TwoComparisonsInConditionBR.png"></p>
+<p>Another way to do multiple comparisons is to use the <a href="../index.php/Using_Conditions.html#Logical_Operators_in_Conditions" title="Using Conditions">logical operators</a> <tt>AND</tt>, <tt>OR</tt>, <tt>NOT</tt> to combine two or more expressions and parentheses () can be used to group together parts of the expression or indicate the order which the parts are evaluated. For more information, see <a href="../index.php/Using_Conditions.html" title="Using Conditions">U</a><a href="../index.php/Using_Conditions.html" title="Using Conditions">sing Conditions</a>.</p>
+<p><img alt="" src="../sites/default/files/LogicalOperatorsInBRCondition.png"></p>
+<p>If making more than one comparison in the condition, make sure to use a complete expression in subsequent comparisons. For example, if needing to check whether the @@country field equals "Canada" or "Mexico", this condition will NOT work correctly:</p>
+<p><img alt="" src="../sites/default/files/IncompleteExpressionInCondition.png"></p>
+<p>The above condition will always evaluate as true, since PHP considers non-empty strings like "Mexico" to be true.</p>
+<p>Likewise, this condition will NOT work, because it will generate an error:</p>
+<p><img alt="" src="../sites/default/files/SyntaxErrorInCondition.png"></p>
+<p>Instead, use a condition like this one, which specifies what field is being compared in the second comparison:</p>
+<p><img alt="" src="../sites/default/files/CorrectCondition2Comparisions.png"></p>
+<p>After adding part of the condition, that part can be deleted by clicking on its <tt>X</tt> icon. To change an operator in the condition, click on the operator and select a different operator in the dropdown box below:</p>
+<p><img alt="" src="../sites/default/files/ModifyingTheconditionBR.png"></p>
+<p>To use today's date or part of today's date, go to the <strong>Constants</strong> tab and select one of the options:</p>
+<p><img alt="" src="../sites/default/files/ConstantsTabBR.png"></p>
+<p>Where:</p>
+<ul>
+<li><strong>NOW:</strong> Returns today's datetime as a UNIX timestamp, which is the number of seconds since the January 1, 1970 00:00:00. Ex: <strong><tt>1383928630</tt></strong></li>
+<li><strong>TODAY_DAY:</strong> Number of the current day of the month. If today is the eighth day of the month, then it is: <strong><tt>08</tt></strong></li>
+<li><strong>TODAY_MONTH:</strong> Number of the current month, where <strong><tt>01</tt></strong> is January and <strong><tt>12</tt></strong> is December.</li>
+<li><strong>TODAY_YEAR:</strong> Number of the current year. Ex: <strong><tt>2015</tt></strong></li>
+<li><strong>TODAY_WEEK:</strong> Number of the current week in the year (according to the ISO-8601 standard), where weeks start on Monday. The first week in January would be <strong><tt>01</tt></strong>, the third week in March would be <strong><tt>11</tt></strong>, and the last week in December would be <strong><tt>52</tt></strong>.</li>
+<li><strong>TODAY_WEEKDAY:</strong> Number of the current day of the week, where <strong><tt>0</tt></strong> is Sunday, <strong><tt>1</tt></strong> is Monday, <strong><tt>2</tt></strong> is Tuesday, and so on until <strong><tt>6</tt></strong>, which is Saturday.</li>
+</ul>
+<div style="margin-left:25px"><p><strong><font color="green">Note:</font></strong> <font color="dimgrey">To compare a field with today's date, make sure that the field is in "YYYY-MM-DD" format. To construct today's date using constants, first create the criteria <tt>TODAY_YEAR + TODAY_MONTH + TODAY_DAY</tt>: </font></p>
+<p><img alt="" src="../sites/default/files/ConcatenateDateInCriteriaBuilderBR.png"></p>
+<p><font color="dimgrey">Then, manually edit the source code and change the <strong><tt>+</tt></strong> operators to <strong><tt>. '-' .</tt></strong> to concatenate the parts of the date. Change the line from: </font></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>dueDate <span style="color: #339933;">&gt;=</span> &nbsp;<a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y'</span><span style="color: #009900;">&#41;</span> &nbsp;<span style="color: #339933;">+</span> &nbsp;<a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'m'</span><span style="color: #009900;">&#41;</span> &nbsp;<span style="color: #339933;">+</span> &nbsp;<a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'d'</span><span style="color: #009900;">&#41;</span> </div></div>
+
+<p><font color="dimgrey">To: </font></p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>dueDate <span style="color: #339933;">&gt;=</span> &nbsp;<a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Y'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'-'</span> <span style="color: #339933;">.</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'m'</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">'-'</span> <span style="color: #339933;">.</span> <a href="http://php.net/date"><span style="color: #990000;">date</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'d'</span><span style="color: #009900;">&#41;</span></div></div>
+</div>
+
+<h4><span id="Defining_the_return_value">Defining the return value </span></h4>
+<p>The return value is a value that will be returned by the <a href="188.html#PMBREvaluate.28.29">PMBREvaluate()</a> function when a condition evaluates as true. The return value can be constructed using variables, constants, operators and/or literal values.</p>
+<p>In this example, the return value is <strong>"<tt>1150 $</tt>"</strong> if "Mexico" is chosen as the country.</p>
+<p><img alt="" src="../sites/default/files/FinalConditionBR.png"></p>
+<h4><span id="Setting_Output_Variables">Setting Output Variables</span></h4>
+<p>For each condition in a rule set, it is possible to set output variables. These variables will only be set if the condition evaluates as <tt>true</tt>.</p>
+<p>To add an output variable to a condition, click on <strong>+</strong> button next to <strong>Conclusions</strong> and an additional conclusions column will be added. Then select which variable will be set if the condition is <tt>true</tt>.</p>
+<dl><dd><strong><font color="green">Note:</font></strong> <font color="dimgrey">If needing to set an output variable which isn't a field in a DynaForm, select any variable for now and later <a href="188.html#Editing_the_Rule_Set_Source">manually edit the source code</a> to change the variable.</font></dd></dl>
+<p>Then select how the output variable will be set by clicking on the gear icon next to the dropdown box to select the output variable:</p>
+<ul>
+<li><strong>set</strong>: Is a simple assigment <span class="geshifilter"><code class="text geshifilter-text">@@myVar = &quot;string&quot;</code></span>. It can also receive numbers and booleans. This is the default option. If a single-hit rule set, the output variable will be set to the value of the first condition which is <span class="geshifilter"><code class="text geshifilter-text">true</code></span>. If a multi-hit rule set, then the output variable will be set to the value of the last condition which is <span class="geshifilter"><code class="text geshifilter-text">true</code></span>.</li>
+<li><strong>concat</strong>: Adds the element to the string variable, <span class="geshifilter"><code class="text geshifilter-text">@@myString = &quot;string&quot;</code></span>. It can also receive numbers and booleans althought they will be first casted as strings. If a single-hit rule set, then the output variable will be set to the value of the first condition which is <span class="geshifilter"><code class="text geshifilter-text">true</code></span>. If a multi-hit rule set, the values of all the true conditions will be concatenated (joined together as text).</li>
+<li><strong>array</strong>: Adds a new item the the variable <span class="geshifilter"><code class="text geshifilter-text">@@myArray[] = &quot;string&quot;</code></span>. It can also receive numbers and booleans. If a single-hit rule set, the value of the first condition which is true will be placed as the only element in an array. If a multi-hit rule set, all the values of the conditions which are true will be placed as elements in an array.</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<p>In this example, the @@amount is increased by a percentage and the @@taxRate is set, depending upon the country. If the @@country equals "USA", then the existing @@amount is increased by 5% and the @@taxRate is set to 8%. If the @@country equals "Canada", then the existing @@amount is increased by 10% and the @@taxRate is set to 12%. If the @@country equals "Mexico", then the existing amount is increased by 15% and the @@taxRate is set to 3%. If any other country, then the @@amount will not be changed and the @@taxRate will not be set.</p>
+<p><img alt="" src="../sites/default/files/PercentageBasedOnCountryBR.png"></p>
+<p><strong>Example 2:</strong></p>
+<p>In this example, an email about a bill will be sent out to all the email addresses in the output variable @@recipients. The list of recipients will be determined by the size of the @@amount. If the @@amount is between 20.00 and 200.00, then only the local manager will receive the email about the bill. If between 200.00 and 1000.00, then both the local manager and the regional manager will receive the email. If greater than 1000.00, than the local, regional and national managers will all receive the email about the bill.</p>
+<p>The rule set in this example is multi-hit, so all conditions which are true will be executed, and the output variable is set to "array" so each email address will be placed as an element in an array.</p>
+<p><img alt="" src="../sites/default/files/EmailListExampleBR.png"></p>
+<p>This rule set is executed by the following trigger code, which first evaluates the rule set by calling the PMBREvaluate() function. Then, it takes each of the email addresses in the @=recipients array and creates a string of email addresses which is passed to the <a href="../index.php/ProcessMaker_Functions.html#PMFSendMessage.28.29" title="ProcessMaker Functions">PMFSendMessage()</a> function.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;">PMBREvaluate<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Set Email Recipients'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>recipients<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp;<span style="color: #000088;">$to</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">@=</span>recipients <span style="color: #b1b100;">as</span> <span style="color: #000088;">$recipient</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000088;">$to</span> <span style="color: #339933;">.=</span> <a href="http://php.net/empty"><span style="color: #990000;">empty</span></a><span style="color: #009900;">&#40;</span>to<span style="color: #009900;">&#41;</span> ? <span style="color: #000088;">$recipient</span> <span style="color: #339933;">:</span> <span style="color: #0000ff;">', '</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$recipient</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp;<span style="color: #009900;">&#125;</span> <br />
+&nbsp; &nbsp;PMFSendMessage<span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>APPLICATION<span style="color: #339933;">,</span> <span style="color: #0000ff;">'admin@acme.com'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$to</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">''</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'Billing Notification'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'billToApprove.html'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h3><span id="Editing_the_Rule_Set_Properties">Editing the Rule Set Properties</span></h3>
+<p>To change the properties of an existing rule set, click on its <strong>Edit Properties</strong> button and the following window will display:</p>
+<p><img alt="" src="../sites/default/files/EditingRuleSetProperties.png"></p>
+<p>After editing the rule set's properties, click on the <strong>Save</strong> button.</p>
+<p><strong><font color="green">Note:</font></strong> <font color="dimgrey">It possible to change the rule set's name, description and type, but it is not possible to change its process. If needing to change the process for a rule set, a new rule set must be created.</font></p>
+
+<h3><span id="Opening_in_Editor">Opening in Editor</span></h3>
+<p>To edit the conditions and conclusions for a rule set, click on its <strong>Open in Editor</strong> button.</p>
+<p><img alt="" src="../sites/default/files/OpeninginEditorBR.png"></p>
+
+<h3><span id="Editing_the_Rule_Set_Source">Editing the Rule Set Source</span></h3>
+<p>Once the rule set is created, its source code can be manually edited, which is often necessary if creating complex conditions which can't be created with the Criteria Builder. For example, the source code needs to be modified if needing to call a ProcessMaker or PHP function or if needing to join together several elements with the <a class="external text" href="http://php.net/manual/en/language.operators.string.php" rel="nofollow">concatenate operator</a> (.).</p>
+<p>To view the rule set's source, click on its <strong>Edit Source</strong> button to open the following editor window:</p>
+<p><img alt="" src="../sites/default/files/SourceCodeBR.png"></p>
+<p>To modify the source code, click on the <strong>Edit</strong> button.</p>
+<table border="0" style="width: 500 px; background:#B3DCEF; color:Black;font-weight:bold;">
+<tbody>
+<tr>
+<td><i>Once the source code is modified, it is no longer possible to use the graphical decision table for the rule set. The rule set's source must be manually edited afterwards.</i></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../sites/default/files/ModifyingThecodeBR.png"></p>
+<p>After editing the source code, click on <strong>Save</strong> to save any changes or <strong>Cancel</strong> to discard any changes. Clicking on <strong>Close</strong> will close the editor window, without saving any changes to the source code.</p>
+<h3><span id="Exporting_and_Importing_a_Rule_Set">Exporting and Importing a Rule Set</span></h3>
+<p>To reuse a rule set from a different process or workspace, first export that rule set as a file with the <strong><tt>.pmrl</tt></strong> extension.</p>
+<p>Go to <strong>ADMIN &gt; Plugins &gt; Business Rules</strong> and find a rule set in the list. Click on its <strong>Export</strong> button and the following dialog box will display:<img alt=""  src="../sites/default/files/DialogBoxExportBR.png"></p>
+<p>The file will be saved with the <strong>Import</strong> button to select the rule set file to import:</p>
+<p><img alt="" src="../sites/default/files/ImportingARuleSet.png"></p>
+<p>Click on the <strong>Browse</strong> button and search for the rule set file, which has an <a href="188.html#PMRL" title="Business Rules"><tt>.pmrl</tt></a> extension. Once the file is selected, click on the <strong>Import</strong> button. The imported rule set will now be displayed in the list.</p>
+<p><font color="Red"><strong>Note:</strong></font> If the rule set to import already exists in the list, select the <strong>Overwrite if exists</strong> option. Otherwise, a copy of the rule set will be created, as shown in the image below:</p>
+<p><img alt="" src="../sites/default/files/RuleSetImportCopy.png"></p>
+<p>If the fields from the original process have different names, select new fields for the conditions in the imported rule set.</p>
+
+<h3><span id="Deleting_a_Rule_Set">Deleting a Rule Set</span></h3>
+<p>A business rule set can be deleted by clicking on its <strong>Delete Rule</strong> button. A dialog box will appear to confirm the deletion:</p>
+<p><img alt="" src="../sites/default/files/DialgoBoxDeleteBR.png"></p>
+<p>To delete the business rule set click on <strong>Yes</strong>; otherwise, click on <strong>No</strong>.</p>
+
+<h3><span id="Business_Rule_Trigger">Business Rule Trigger</span></h3>
+<p>The second step to adding Business Rules to a process is to create a trigger which executes the <tt>PMBREvaluate()</tt> function.</p>
+
+<h4><span id="PMBREvaluate.28.29"><tt>PMBREvaluate()</tt></span></h4>
+<p>The <tt>PMBREvaluate()</tt> function evaluates the conditions in a specified business rule set and returns the result of the condition(s) which are <tt>true</tt>.</p>
+
+<codeblock>object PMBREvaluate(string $nameFile)
+</codeblock>
+
+<p><strong>Parameter:</strong></p>
+<ul>
+<li><i>string</i> <strong><tt>nameFile</tt></strong>: Name of the business rule set to evaluate. Note that the name of the rule set can contain spaces and is case sensitive.
+<p>To find the name of a business rule set, go to <strong>ADMIN &gt; Plugins &gt; Business Rules</strong> and find the name of the rule set in the list:</p>
+<p><img alt="" src="../sites/default/files/RuleSetList.png"></p>
+</li>
+</ul>
+<p><strong>Return Value:</strong></p>
+<p>An object with the results of the evaluated condition(s). If a single-hit rule set, then it returns the result for the first condition which evaluates to <tt>true</tt>. If a multi-hit rule set, it returns the results for all the conditions which evaluated to <tt>true</tt>.</p>
+<p>The returned object has the following member variables:</p>
+<ul>
+<li><i>boolean</i> <tt><strong>success</strong></tt>: Set to <strong><tt>true</tt></strong> or <strong><tt>1</tt></strong> if at least one condition in the rule set evaluated to <tt>true</tt>; otherwise, set to <strong><tt>false</tt></strong>.</li>
+<li><i>string</i> <tt><strong>successAction</strong></tt>: Contains any code which was executed when setting output variables for conditions that are <tt>true</tt>.</li>
+<li><i>string</i> <tt><strong>returnValue</strong></tt>: The return value of the first condition which evaluated as true if a single-hit rule set or the last condition which evaluated as true if a multi-hit rule set.</li>
+<li><i>string</i> <tt><strong>log</strong></tt>: A record of how each condition evaluated, which can be <tt>"$ruleName evaluated to true\n"</tt> or <tt>"$ruleName evaluated to false\n"</tt></li>
+<li><i>string</i> <tt><strong>message</strong></tt>: Message for single-hit rule sets. For multi-hit rule set, set to "" (empty string), unless an error was found in condition.
+<ul>
+<li>If a condition evaluated to true, then set to: <tt>"rule $successRule executed\n"</tt></li>
+<li>If none of the conditions in the rule set evaluated to true, then set to: <tt>"all rules fired, but all rules returns false!\n"</tt></li>
+<li>If an error was found in the condition, then set to: <tt>"error in line: $line"</tt></li>
+</ul>
+</li>
+<li><i>array</i> <tt><strong>rulesFired</strong></tt>: An associative array, where the keys are the name of the rule set and the number of the condition, starting from 1, and the value is <strong><tt>true</tt></strong> or <strong><tt>false</tt></strong>, depending on how the condition evaluated.</li>
+</ul>
+<p><font color="green"><strong>Note:</strong></font> <font color="dimgrey">The trigger containing the <tt>PMBREvaluate()</tt> function should be set to fire before the results from the business rule set are needed. For example, if needing to use a variable set by the business rule set in a Dynaform, set the trigger to fire <i>before</i> the DynaForm. If using business rules to <a href="../index.php/2.0/Tasks.html#Value_Based_Assignment" title="2.0/Tasks">set the assigned user</a> for a task, set the trigger to fire <i>before assignment</i> in the previous task.</font></p>
+
+<p><strong>Example:</strong></p>
+<p>In this example, the "BRCurrency" rule set will be evaluated. If none of the conditions in the rule set evaluate to true, then the <a href="../index.php/Internal_Functions_and_Classes.html#G::SendMessageText.28.29" title="Internal Functions and Classes">G::SendMessageText()</a> function is used to display a warning message at the top of the next screen.</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #000088;">$res</span> <span style="color: #339933;">=</span> PMBREvaluate <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'BRCurrency'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">success</span> <span style="color: #339933;">==</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000088;">$g</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> G<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000088;">$g</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">SendMessageText</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>LOG:<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><a href="http://php.net/log"><span style="color: #990000;">log</span></a><span style="color: #339933;">,</span> <span style="color: #0000ff;">&quot;WARNING&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<h2><span id="Single-Hit_Example:_Credit_Approval">Single-Hit Example: Credit Approval</span></h2>
+<p>This example shows how to create a single-hit business rule set. This process uses a condition in a business rule set to evaluate whether a loan should approved or not:</p>
+
+<codeblock>+--------------------+----------------+
+| Amount             |Answer          |
++--------------------+----------------+
+| $10.000,00 or less |Credit Approved |
+| $10.000,00 or more |Credit Rejected |
++-------------------------------------+
+</codeblock>
+
+<h3><span id="Creating_the_process">Creating the process</span></h3>
+<p>Create a simple process as the one shown in the image below:</p>
+<p><img alt="" src="../sites/default/files/ExampleProcessBR_0.png"></p>
+<p>Then create the following Dynaform and assign into the first task:</p>
+<p><img alt="" src="../sites/default/files/DynaformProcessBR.png"></p>
+
+<h3><span id="Creating_the_Dynaforms">Creating the Dynaforms</span></h3>
+<p>Create the following DynaForm, reusing some elements of the first DynaForm, and assign it to the second task</p>
+<p><img alt="" src="../sites/default/files/Dynaform2ProcessBR.png"></p>
+<p>Finally, create the last DynaForm where the result of the condition will display, showing if the loan has been approved or not:</p>
+<p><img alt="" src="../sites/default/files/Dynaform3ProcessBR.png"></p>
+
+<h3><span id="Creating_the_Business_Rule">Creating the Business Rule</span></h3>
+<p>Now, create the business rule set, so go to <strong>ADMIN &gt; Plugins &gt; Business Rules</strong>, and create the following condition:</p>
+<p><img alt="" src="../sites/default/files/ConditionSingleHitExampleBR.png"></p>
+<p><tt>credit_card_amount</tt> is the name of the DynaForm field corresponding to <strong>Credit amount</strong>.</p>
+
+<h3><span id="Creating_the_Trigger">Creating the Trigger</span></h3>
+<p>Now, create a trigger named <strong>Execute BR - Single HIt</strong>, inside it, define a <tt>@@brName</tt> variable where the condition set on the business rules will be stored, then use the <tt>PMBREvaluate</tt> which will evaluate the condition; store it in a <tt>$res</tt> variable, the result will be:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #339933;">@@</span>brName <span style="color: #339933;">=</span> <span style="color: #0000ff;">'BRCreditCard'</span><span style="color: #339933;">;</span><br />
+<span style="color: #000088;">$res</span> <span style="color: #339933;">=</span> PMBREvaluate <span style="color: #009900;">&#40;</span><span style="color: #339933;">@@</span>brName<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></div>
+
+<p>This will only evaluate the condition; however, we need to show the result of the condition, so we will add the following code:</p>
+
+<div class="geshifilter"><div class="php geshifilter-php" style="font-family:monospace;"><span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">success</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>returnvalue &nbsp; <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>string<span style="color: #009900;">&#41;</span> <span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">returnValue</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>successAction <span style="color: #339933;">=</span> <span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">successAction</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>message &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=</span> <span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span><a href="http://php.net/log"><span style="color: #990000;">log</span></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=</span> <span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><a href="http://php.net/log"><span style="color: #990000;">log</span></a><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>rulesFired &nbsp; &nbsp;<span style="color: #339933;">=</span> <a href="http://php.net/print_r"><span style="color: #990000;">print_r</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">rulesFired</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span> <span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>returnvalue &nbsp; <span style="color: #339933;">=</span> <span style="color: #0000ff;">'null'</span><span style="color: #339933;">;</span> <br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>successAction <span style="color: #339933;">=</span> <span style="color: #0000ff;">'null'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>rulesFired &nbsp; &nbsp;<span style="color: #339933;">=</span> <span style="color: #0000ff;">'null'</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span>message &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=</span> <span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #339933;">@@</span><a href="http://php.net/log"><span style="color: #990000;">log</span></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #339933;">=</span> <span style="color: #000088;">$res</span><span style="color: #339933;">-&gt;</span><a href="http://php.net/log"><span style="color: #990000;">log</span></a><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div></div>
+
+<p>Where:</p>
+<ul>
+<li><strong>returnvalue:</strong> The return value from the evaluation of the business rule will display in this field.</li>
+<li><strong>successAction:</strong> It shows the executed actions when the condition is fulfilled.</li>
+<li><strong>message:</strong> It return the message showing the rule was executed.</li>
+<li><strong>log</strong> It shows the result for each condition defined.</li>
+<li><strong>rulesFired</strong> It shows the result for each business rule, inside an array.</li>
+</ul>
+<p><font color="green"><strong>Note:</strong></font> The names of the variables used in the trigger have to be defined as fields in the third DynaForm. You can choose which variables will be defined in your DynaForm depending on the information to be shown. It is recommended to change the name of the variables according to the message to be displayed.</p>
+<p>Save the trigger and assign it on the second task <strong>before</strong> the second DynaForm assigned in the second task.</p>
+<p><img alt="" src="../sites/default/files/AssingTriggerBR.png"></p>
+
+<h3><span id="Starting_the_case">Starting the case</span></h3>
+<p>Assign users to the tasks, and start a case. Enter the amount of 10500.00 in the Credit amount field. When the case is routed to the second task, it displays:</p>
+<p><img alt=""src="../sites/default/files/RunningACaseBR.png"></p>
+<p>Click on the <strong>Validate information</strong> button and the credit amount will evaluate, showing the following message:</p>
+<p><img alt="" src="../sites/default/files/ResultEvaluationCreditExample.png"></p>
+<p>In this example, the return value contains the message <strong>"Your credit has been accepted"</strong>.</p>
+
+<h2><span id="Multi-Hit_Example:_Credit_Approval">Multi-Hit Example: Credit Approval </span></h2>
+<p>A multi-hit rule set evaluates all the conditions in a rule set. This example shows how to use a multi-hit rule set, using the same process that was used in the single-hit example above. Create the following business rule set:</p>
+<p><img alt="" src="../sites/default/files/MultipleHitCreditExampleBR.png"></p>
+<p>The same conditions are used, but different return values are set. In addition, a column was added in the <strong>Conclusions</strong> section to set an output variable for all the conditions which are <strong><tt>true</tt></strong>.</p>
+<p>It is important to add a textarea field, named <tt>outputvariable</tt> inside the dyanform in order to display those values. Moreover, choose <strong>concat</strong> as format to have all the values for <tt>true</tt> conditions displayed inside the textarea:</p>
+<p><img alt="" src="../sites/default/files/ConcatFormatBR.png"></p>
+<p>Final result will be:</p>
+<p><img alt="" src="../sites/default/files/DynaformMultipleHitResultBR.png"></p>
+
+<h2><span id="Glossary">Glossary</span></h2>
+<p>Before you begin using the Business Rules plugin, here are a few terms to become familiar with.</p>
+<h3><span id="Business_Rule_engine"><tt><strong>Business Rule engine</strong></tt></span></h3>
+<dl><dd>It is the class inside the plugin that evaluates the rules defined in the PMRL using the <tt>APP_DATA</tt> array and the Global variables array.</dd></dl>
+<h3><span id="Decision_Table"><tt><strong>Decision Table</strong></tt> </span></h3>
+<dl><dd>It is a common format to represent Business Rules, similar to other systems like drools. Decision Tables have the following components: <tt>name</tt>, <tt>process</tt>, <tt>type of ruleset</tt>, <tt>conditions columns</tt>,<tt> conclusion columns</tt> and <tt>the rules</tt>.</dd></dl>
+<h3><span id="Multi_Hit"><tt><strong>Multi Hit</strong></tt></span></h3>
+<dl><dd>It is a type of rule set, the business rules engine evaluates all rules and for each condition evaluated as true, it executes any action defined in the rule. This allows users to make comparisons between different rules. The returned value is the return value from the last rule evaluated as true.</dd></dl>
+<h3><span id="PMRL"><tt><strong>PMRL</strong></tt></span></h3>
+<dl><dd>This is the ProcessMaker file format for rulesets. When rule sets are exported or imported, the file should have the <strong><tt>.pmrl</tt></strong> extension. This extension can't be used in other business rules tools.</dd></dl>
+<h3><span id="Ruleset"><tt><strong>Ruleset</strong></tt></span></h3>
+<dl><dd>It is a set of rules, instead of using the words <i>Business Rules</i>, it is commonly accepted to call ruleset to all rules related to a specific “topic”. In ProcessMaker a ruleset is associated to the Decision Table</dd></dl>
+<h3><span id="Single_Hit"><tt><strong>Single Hit</strong></tt></span></h3>
+<dl><dd>It is a type of rule set. The Business Rule engine evaluates all rules until finding the first condition evaluated as true and then returns the results and execute any action defined in the rule.</dd></dl></div></div></div>  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section>
+    </div>
+  
+      
+    </div>
+
+      
+</div>
+
+ <!---add diego--->
+  <div id="download-app-section" class="download-app mobile-none">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text_app">Download our app</div>
+							<a href="https://itunes.apple.com/us/app/processmaker/id992576284?ls=1&mt=8" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/appstore.png">
+							<a href="https://play.google.com/store/apps/details?id=com.colosa.processmaker" target="_blank">
+								<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/playstore.png">				
+				</div>
+			</div>
+  </div>
+  <!---end diego--->
+<!----add diego----->    
+		<div class="logo_processmaker"><a href="http://www.processmaker.com">
+		<img src="https://wiki.processmaker.com/themes/thecompany_responsive_theme/images/logo_processmaker.png"></div>
+<!----end diego----->
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+
+  <div class="social-media-wrapper">
+         <div id="social-media-icons">
+       <ul>
+       	<div class="text_contact">Contact us</div>
+				<div class="text_number">+1-617-340-3377</div>
+        <!--<li><a class="rss" href="/rss.xml">rss</a></li> <!--edit diego-->
+        <li><a class="facebook" href="http://facebook.com/processmaker/" target="_blank" rel="me">facebook</a></li>
+        <li><a class="twitter" href="https://twitter.com/processmaker" target="_blank" rel="me">twitter</a></li>
+        <li><a class="gplus" href="https://www.google.com/+ProcessMakerOpenSource" target="_blank" rel="me">Gplus</a></li>
+        <li><a class="linkedin" href="https://www.linkedin.com/groups?mostRecent=&gid=3970335&trk=my_groups-tile-flipgrp" target="_blank" rel="me">Linked in</a></li>
+        <!--<li><a class="dribbble" href="http://dribbble.com" target="_blank" rel="me">Dribbble</a></li>
+        <li><a class="vimeo" href="http://vimeo.com" target="_blank" rel="me">Vimeo</a></li>-->
+        <li><a class="youtube" href="https://www.youtube.com/user/processmaker" target="_blank" rel="me">Youtube</a></li>
+       </ul>
+      </div>
+      </div>
+  
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot"><div class="region region-footer">
+  <div id="block-block-2" class="block block-block">
+
+      
+  <div class="content">
+    <p><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">Automate your Workflow with Business Process Management<br>Software licensed under the <a 1px="" class="external text" href="http://www.gnu.org/licenses/agpl.html" rel="nofollow" style="padding-right: 13px; color:white;">GNU Affero General Public License version 3</a><br>Contact us:&nbsp;<a class="external free" href="mailto:community@processmaker.com" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">community@processmaker.com</a><br><a class="external free" href="https://www.processmaker.com/privacy-statement" rel="nofollow" style="font-weight:bold;color:white;text-decoration:underline;">Privacy Statement</a></font><br><font style="font-family:arial,sans-serif; font-size:15px; font-weight: none; color:#FFF">© Copyright 2000-2024 ProcessMaker Inc. All rights reserved.</font></p>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+         
+   <!-- <div id="copyright">
+      <p class="copyright">Copyright &copy; 2024, Documentation@ProcessMaker </p>
+      <!--<p class="credits"> Developed by  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+      <div class="clear"></div>
+    </div>-->
+  </div>
+  
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  document.write (
+    '<img src="https://marketing.processmaker.com/acton/bn/3812/visitor.gif?ts='+ new Date().getTime()+ '&ref='+escape(document.referrer) + '">'
+  );
+  /* ]]> */
+</script>
+  
+</div>
+    <style>
+    .center-div{
+        width: 100%;        
+        margin: 0 auto;
+        z-index:10000;
+        position:fixed;
+        bottom: 0px;
+        cursor:pointer;
+    }
+    .round-popup{
+        margin:0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: lighter;
+        width: 412px;
+        height: 50px;
+        padding-top: 7px;
+        text-align: center;
+        position:relative;
+    }
+    .round-popup-button{
+        position:absolute;
+        top: 11px;
+        right: 15px;
+        background: transparent;
+        border:none;
+        font-size:15px;
+        font-weight:normal;
+        line-height:20px;
+        width:20px;
+        height:20px;
+        padding:0;
+    }
+    .round-background-blue{
+        background: url('http://www.processmaker.com/uploads/blue.png')no-repeat;
+        color:white;
+        
+    }
+    #box-pm31-button-blue{
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    #box-pm31-button-blue:active,#box-pm31-button-blue:focus{
+        border:none;
+        outline:none;
+    }
+    .round-background-blue a{
+        color: white!important;
+        text-decoration: none;
+        font-size: 15px;
+        line-height:45px;
+        font-family:Montserrat, sans-serif;
+    }
+    .round-background-blue span{
+        font-weight: bold;
+    }
+    /*WHITE background*/
+    .round-background-white{
+        background: url('http://www.processmaker.com/uploads/white.png')no-repeat;
+        background-position-x: -9px;        
+        color: #3397E1;
+    }
+    .round-background-white a:hover{
+        color: #3397E1!important;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    #box-pm31-button-white{
+        color: rgba(51, 151, 225, 0.7);
+    }
+</style>
+    <div id="box-pm31" class="center-div" style="display:none;">
+        <div class="round-popup round-background-blue">
+            <a onclick="ga('send', 'event', 'WikiBlueBanner','click','PM31Release');" href="http://www.processmaker.com/download-processmaker-landing-page">
+                <span>ProcessMaker 3.1</span> is Here! Download Now <span style="font-size:20px;font-weigth:normal;">»</span>
+            </a>
+            <button id="box-pm31-button-blue" class="round-popup-button">&times;</button>
+        </div>
+    </div>
+    <script>
+
+function pmCreateCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function pmReadCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function pmEraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+     jQuery(document).ready(function( $ ) {
+        $('#box-pm31-button-blue').click(function(e){
+                e.stopPropagation();
+                $('#box-pm31').slideUp('fast');
+                pmCreateCookie('ppcookie','val',10);
+            });
+        });
+        jQuery(window).load(function() {
+            if(pmReadCookie('ppcookie') !== 'val'){
+                //jQuery('#box-pm31').delay( 2000 ).slideDown('slow');
+            }
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/586a7ec3a2ae6b728400003d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+
+</body>
+</html>
